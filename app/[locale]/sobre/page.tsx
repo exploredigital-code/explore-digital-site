@@ -1,0 +1,249 @@
+'use client'
+
+import Link from 'next/link'
+import { useLocale, useTranslations } from 'next-intl'
+import { motion } from 'framer-motion'
+import { cn } from '@/lib/utils'
+import { Navbar }  from '@/components/sections/Navbar'
+import { Footer }  from '@/components/sections/Footer'
+import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
+import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
+import { Button } from '@/components/ui/Button'
+
+const WHATSAPP = 'https://wa.me/5585910430670'
+
+const founders = [
+  {
+    initials: 'F1',
+    name: 'Fundador',
+    role: 'CEO & Estratégia',
+    bio: 'Liderança e visão estratégica por trás da Explore Digital. Especialista em posicionamento de marca para hotelaria, experiências e real estate.',
+    color: 'from-g-dark to-s4',
+  },
+  {
+    initials: 'F2',
+    name: 'Co-fundador',
+    role: 'Diretor Criativo',
+    bio: 'À frente da identidade criativa da agência. Responsável pelo padrão visual e pela narrativa de cada marca que a Explore Digital constrói.',
+    color: 'from-s3 to-g-mid',
+  },
+]
+
+const creativeTeam = [
+  {
+    initials: 'EG',
+    name: 'Esperanza Governa',
+    role: 'Time Criativo',
+    bio: 'Criação de conteúdo estratégico e produção visual para as marcas que atendemos.',
+    color: 'from-g-mid to-s4',
+  },
+  {
+    initials: 'DM',
+    name: 'David Marroni',
+    role: 'Time Criativo',
+    bio: 'Design e identidade visual. Responsável por dar vida à personalidade de cada marca.',
+    color: 'from-s4 to-g-dark',
+  },
+  {
+    initials: 'SL',
+    name: 'Styven Lord',
+    role: 'Time Criativo',
+    bio: 'Captação, edição e storytelling visual. Especialista em conteúdo para redes sociais.',
+    color: 'from-s3 to-g-mid',
+  },
+]
+
+const performanceTeam = [
+  {
+    initials: 'WM',
+    name: 'Winicius Moreira',
+    role: 'Time de Performance',
+    bio: 'Gestão de tráfego pago no Google e Meta. Focado em ROI e geração de leads qualificados.',
+    color: 'from-g-dark to-s3',
+  },
+]
+
+function MemberCard({ member, dark = false }: {
+  member: typeof creativeTeam[0]
+  dark?: boolean
+}) {
+  return (
+    <motion.div variants={itemVariants}
+      className={cn(
+        'group flex flex-col overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1',
+        dark
+          ? 'border border-white/[0.07] hover:border-g-mid/40 bg-white/[0.03] hover:bg-white/[0.05]'
+          : 'border border-g-dark/8 hover:border-g-mid/35 bg-white hover:shadow-md'
+      )}>
+      <div className={cn('h-32 bg-gradient-to-br flex items-center justify-center shrink-0', member.color)}>
+        <span className="text-[24px] font-semibold text-white/75 tracking-widest">{member.initials}</span>
+      </div>
+      <div className="p-5 flex-1 flex flex-col">
+        <div className={cn('text-[9px] font-bold tracking-[0.15em] uppercase mb-1', dark ? 'text-g-mid' : 'text-g-mid/80')}>{member.role}</div>
+        <div className={cn('font-bold text-[15px] mb-2', dark ? 'text-white' : 'text-g-dark')}>{member.name}</div>
+        <p className={cn('text-[13px] leading-[1.65] flex-1', dark ? 'text-white/55' : 'text-g-dark/55')}>{member.bio}</p>
+      </div>
+    </motion.div>
+  )
+}
+
+export default function SobrePage() {
+  const t = useTranslations('about_page')
+  const locale = useLocale()
+
+  const values = [
+    { title: t('v1_title'), desc: t('v1_desc') },
+    { title: t('v2_title'), desc: t('v2_desc') },
+    { title: t('v3_title'), desc: t('v3_desc') },
+  ]
+
+  return (
+    <>
+      <Navbar />
+
+      {/* ══ HERO ══ */}
+      <section className="page-hero pt-36 pb-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_60%_-20%,#2D5238,transparent_70%)] opacity-50 pointer-events-none" />
+        <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
+          <AnimateIn>
+            <SectionEyebrow>{t('eyebrow')}</SectionEyebrow>
+            <h1 className="text-[clamp(36px,5.5vw,72px)] leading-[0.95] tracking-[-0.03em] text-white mt-2 mb-5 max-w-[700px]">
+              {t('title')}
+            </h1>
+            <p className="text-g-light/60 text-[17px] leading-[1.7] max-w-[500px]">{t('sub')}</p>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ══ NOSSA HISTÓRIA — white ══ */}
+      <section className="bg-white py-24 lg:py-32">
+        <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
+          <div className="grid lg:grid-cols-2 gap-14 lg:gap-24">
+            <AnimateIn>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-5 h-px bg-g-mid shrink-0" />
+                <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-mid">Nossa História</span>
+              </div>
+              <p className="text-[18px] text-g-dark/65 leading-[1.85] mb-6">{t('story')}</p>
+              <p className="text-[18px] text-g-dark/65 leading-[1.85]">{t('story2')}</p>
+            </AnimateIn>
+            <AnimateIn delay={0.1}>
+              <div className="relative rounded-3xl overflow-hidden bg-g-dark p-10 h-full min-h-[300px] flex flex-col justify-end">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_50%_-20%,#2D5238,transparent)]" />
+                <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E\")", backgroundSize: '200px' }} />
+                <div className="relative z-10">
+                  <div className="text-[clamp(56px,8vw,80px)] font-semibold text-g-light leading-none mb-2">5+</div>
+                  <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-g-light/35">Anos de expertise</div>
+                  <div className="mt-8 grid grid-cols-3 gap-4">
+                    {[['80+', 'Marcas'], ['3', 'Países'], ['100%', 'Foco']].map(([v, l]) => (
+                      <div key={l}>
+                        <div className="text-[22px] font-semibold text-white">{v}</div>
+                        <div className="text-[10px] text-white/45 tracking-widest uppercase mt-0.5">{l}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </AnimateIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ VALORES — g-pale (logo após Nossa História) ══ */}
+      <section className="bg-g-pale py-24 lg:py-28">
+        <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
+          <AnimateIn className="mb-12">
+            <SectionEyebrow light>{t('values_eyebrow')}</SectionEyebrow>
+            <h2 className="text-[clamp(26px,3.5vw,40px)] text-g-dark tracking-tight mt-2">O que nos move todos os dias.</h2>
+          </AnimateIn>
+          <AnimateStagger className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {values.map((v, i) => (
+              <motion.div key={i} variants={itemVariants}
+                className="p-8 rounded-2xl border border-g-dark/10 hover:border-g-mid/40 bg-white hover:shadow-sm transition-all duration-300 group">
+                <div className="w-10 h-10 rounded-full bg-g-mid/12 flex items-center justify-center mb-6 group-hover:bg-g-mid/20 transition-colors">
+                  <div className="w-3 h-3 rounded-full bg-g-mid" />
+                </div>
+                <h3 className="text-[17px] text-g-dark mb-3">{v.title}</h3>
+                <p className="text-[14px] text-g-dark/50 leading-[1.7]">{v.desc}</p>
+              </motion.div>
+            ))}
+          </AnimateStagger>
+        </div>
+      </section>
+
+      {/* ══ FUNDADORES — white ══ */}
+      <section className="bg-white py-24 lg:py-28">
+        <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
+          <AnimateIn className="mb-12">
+            <SectionEyebrow light>Os Fundadores</SectionEyebrow>
+            <h2 className="text-[clamp(26px,3.5vw,40px)] text-g-dark tracking-tight mt-2">Quem está por trás da Explore.</h2>
+            <p className="text-g-dark/55 text-[15px] mt-3 max-w-[480px] leading-[1.7]">
+              A Explore Digital foi fundada por pessoas que vieram do setor e entendem, de dentro, o que marcas de hotelaria, experiências e real estate precisam.
+            </p>
+          </AnimateIn>
+          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl">
+            {founders.map((member, i) => (
+              <MemberCard key={i} member={member} dark={false} />
+            ))}
+          </AnimateStagger>
+        </div>
+      </section>
+
+      {/* ══ TIME CRIATIVO — g-dark ══ */}
+      <section className="bg-g-dark py-24 lg:py-32">
+        <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
+
+          {/* Time Criativo */}
+          <AnimateIn className="mb-12">
+            <SectionEyebrow>Time Criativo</SectionEyebrow>
+            <h2 className="text-[clamp(26px,3.5vw,42px)] text-white tracking-tight mt-2 mb-3">Os criadores por trás das marcas.</h2>
+            <p className="text-white/55 text-[15px] max-w-[460px]">Design, conteúdo e storytelling visual que transformam marcas em referências.</p>
+          </AnimateIn>
+          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16">
+            {creativeTeam.map((member, i) => (
+              <MemberCard key={i} member={member} dark />
+            ))}
+          </AnimateStagger>
+
+          {/* Time de Performance */}
+          <AnimateIn className="mb-12">
+            <SectionEyebrow>Time de Performance</SectionEyebrow>
+            <h2 className="text-[clamp(26px,3.5vw,42px)] text-white tracking-tight mt-2 mb-3">Resultados mensuráveis. Sempre.</h2>
+            <p className="text-white/55 text-[15px] max-w-[460px]">Especialistas em tráfego pago que entendem a linguagem do seu setor.</p>
+          </AnimateIn>
+          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+            {performanceTeam.map((member, i) => (
+              <MemberCard key={i} member={member} dark />
+            ))}
+          </AnimateStagger>
+
+          {/* CTA vagas */}
+          <AnimateIn>
+            <div className="rounded-2xl bg-[#0D1A12] border border-white/[0.06] p-10 lg:p-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 relative overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_0%_50%,#2D5238,transparent)] opacity-35" />
+              <div className="relative z-10">
+                <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-g-light/45 mb-3">Faça parte do time</div>
+                <h3 className="text-[clamp(20px,2.5vw,30px)] text-white leading-tight max-w-[440px]">
+                  Buscamos profissionais apaixonados pelo que fazem.
+                </h3>
+                <p className="text-white/45 text-[14px] mt-3 max-w-[400px]">
+                  Temos vagas abertas para design, social media, tráfego pago, vendas e mais.
+                </p>
+              </div>
+              <div className="relative z-10 flex flex-col sm:flex-row gap-3 shrink-0">
+                <Link
+                  href={`/${locale}/vagas`}
+                  className="inline-flex items-center gap-2 bg-g-light text-g-dark font-bold px-7 py-3.5 rounded-full hover:bg-g-pale hover:-translate-y-0.5 transition-all duration-200 text-[14px]"
+                >
+                  Ver vagas abertas →
+                </Link>
+              </div>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  )
+}

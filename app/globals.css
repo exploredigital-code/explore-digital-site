@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Quanta Grotesk Pro (Titulos) ── */
+@font-face { font-family: 'Quanta'; src: url('/fonts/QuantaGroteskPro-Light.otf') format('opentype'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Quanta'; src: url('/fonts/QuantaGroteskPro-Regular.otf') format('opentype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Quanta'; src: url('/fonts/QuantaGroteskPro-SemiBold.otf') format('opentype'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Quanta'; src: url('/fonts/QuantaGroteskPro-Bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Quanta'; src: url('/fonts/QuantaGroteskPro-ExtraBold.otf') format('opentype'); font-weight: 800; font-display: swap; }
+
+/* ── Kohinoor Latin (Corpo) ── */
+@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Light.otf') format('opentype'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Book.otf') format('opentype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Medium.otf') format('opentype'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Demi.otf') format('opentype'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Black.otf') format('opentype'); font-weight: 900; font-display: swap; }
+
+/* ── Base ── */
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Kohinoor', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1B3025;
+  color: #1B3025;
+  overflow-x: hidden;
+}
+
+/* ── H1/H2/H3 — Quanta Grotesk ── */
+h1 { font-family: 'Quanta', system-ui, sans-serif; font-weight: 700; }
+h2 { font-family: 'Quanta', system-ui, sans-serif; font-weight: 600; }
+h3 { font-family: 'Quanta', system-ui, sans-serif; font-weight: 600; }
+
+/* ── Contrast tokens ─────────────────────────────────
+   RULE: dark bg (#1B3025, #0D1A12, #4E7D57) → white text
+         light bg (white, #E3F3E6) → g-dark text (#1B3025)
+──────────────────────────────────────────────────── */
+
+/* Dark sections set white text baseline */
+.dark-section { color: #ffffff; }
+.dark-section p, .dark-section span, .dark-section li { color: rgba(255,255,255,0.72); }
+
+/* Light sections set dark text baseline */
+.light-section { color: #1B3025; }
+.light-section p, .light-section span, .light-section li { color: rgba(27,48,37,0.72); }
+
+/* ── Custom selection ── */
+::selection { background: #4E7D57; color: #E3F3E6; }
+
+/* ── Noise texture overlay ── */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* ── Marquee ── */
+.marquee-track { display: flex; width: max-content; animation: marquee-scroll 56s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── Word reveal ── */
+.word-clip { display: inline-block; overflow: hidden; vertical-align: bottom; }
+
+/* ── Portfolio hover overlay ── */
+.card-overlay { transform: translateY(100%); transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1); }
+.portfolio-card:hover .card-overlay { transform: translateY(0); }
+
+/* ── Nav underline ── */
+.nav-link { position: relative; }
+.nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: #C1D5BD; transition: width 0.25s ease; }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+/* ── Focus ── */
+:focus-visible { outline: 2px solid #4E7D57; outline-offset: 3px; border-radius: 4px; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1B3025; }
+::-webkit-scrollbar-thumb { background: #4E7D57; border-radius: 3px; }
+
+/* ── Page hero (inner pages) ── */
+.page-hero { background: linear-gradient(160deg, #1B3025 60%, #243D2D 100%); }

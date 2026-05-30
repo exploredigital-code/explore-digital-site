@@ -1,0 +1,188 @@
+{
+  "nav": {
+    "home": "Início",
+    "portfolio": "Portfolio",
+    "services": "Serviços",
+    "marketplace": "Planos",
+    "about": "Sobre",
+    "contact": "Contato",
+    "cta": "Fale Conosco"
+  },
+  "process": {
+    "eyebrow": "Como funciona",
+    "title": "Simples, direto e com resultado.",
+    "subtitle": "Não complicamos. Em três passos você sai do zero para uma marca que gera desejo e clientes.",
+    "cta": "Consultoria gratuita →",
+    "s1_title": "Escolha o serviço",
+    "s1_desc": "Navegue pelos nossos planos e escolha o que melhor se encaixa ao momento da sua marca.",
+    "s2_title": "Consultoria gratuita",
+    "s2_desc": "Entre em contato para uma conversa sem compromisso. Vamos entender o seu negócio e alinhar os detalhes.",
+    "s3_title": "Crescimento começa",
+    "s3_desc": "Assinamos o contrato e iniciamos. Você acompanha tudo em tempo real com seu time dedicado."
+  },
+  "about_page": {
+    "eyebrow": "Nossa história",
+    "title": "Uma agência feita para marcas que vendem desejo.",
+    "sub": "Nascemos do setor. Crescemos com ele.",
+    "story": "A Explore Digital surgiu da convicção de que marcas de hotelaria, experiências e real estate merecem uma agência que realmente entende o setor — não apenas aplica templates genéricos. Construímos nossa expertise dentro do universo que mais exige identidade, emoção e desejo.",
+    "story2": "Atendemos marcas no Brasil, Portugal e mercados internacionais de língua portuguesa. Nossa equipe é pequena por escolha — preferimos ser parceiros estratégicos de poucos do que fornecedores de muitos.",
+    "values_eyebrow": "Nossos valores",
+    "v1_title": "Foco gera excelência",
+    "v1_desc": "Só trabalhamos com hotelaria, experiências e real estate. Isso nos torna melhores naquilo que mais importa para você.",
+    "v2_title": "Resultado é obrigação",
+    "v2_desc": "Não vendemos impressões. Vendemos reservas diretas, leads qualificados e crescimento real e mensurável.",
+    "v3_title": "Transparência total",
+    "v3_desc": "Você sabe o que está sendo feito, por quê e quais resultados está gerando — sempre, sem asteriscos.",
+    "tab_story": "Nossa História",
+    "tab_team": "A Equipe",
+    "team_eyebrow": "As pessoas por trás da Explore",
+    "team_title": "Um time pequeno. Um impacto grande.",
+    "team_sub": "Cada cliente tem um time dedicado que entende o negócio e pensa estrategicamente no crescimento.",
+    "team_cta": "Trabalhe com a gente"
+  },
+  "marketplace_page": {
+    "eyebrow": "Catálogo de Serviços",
+    "title": "Tudo que sua marca precisa para crescer no digital.",
+    "sub": "Escolha o serviço ou pacote que faz sentido para o seu momento. Sem taxa de setup oculta, sem surpresas.",
+    "monthly": "por mês",
+    "once": "pagamento único",
+    "recommended": "Recomendado",
+    "whatsapp_cta": "Contratar via WhatsApp",
+    "cat_social": "Planos de Social Media",
+    "cat_traffic": "Planos de Ads",
+    "cat_sites": "Sites",
+    "cat_setup": "Setups de redes sociais",
+    "cat_branding": "Branding"
+  },
+  "hero": {
+    "eyebrow": "Agência Criativa · Hotelaria · Experiências · Real Estate",
+    "line1": "Marcas que geram",
+    "line2": "desejo.",
+    "sub": "Transformamos marcas de hotelaria, experiências e real estate em referências digitais. Do branding ao digital — tudo com foco em resultado real.",
+    "cta_primary": "Ver Portfolio",
+    "cta_secondary": "Fale Conosco"
+  },
+  "marquee": "HOTELARIA · EXPERIÊNCIAS · REAL ESTATE · BRANDING · WEB DESIGN · SOCIAL MEDIA · PERFORMANCE · EXPLORE DIGITAL ·",
+  "stats": {
+    "eyebrow": "Números que falam",
+    "s1_value": "80+",
+    "s1_label": "Marcas Atendidas",
+    "s2_value": "5+",
+    "s2_label": "Anos de Expertise",
+    "s3_value": "3",
+    "s3_label": "Mercados: BR · PT · Intl",
+    "s4_value": "3",
+    "s4_label": "Setores: Hotel · Exp · RE"
+  },
+  "portfolio": {
+    "eyebrow": "Nosso Trabalho",
+    "title": "Cases que geram resultados reais",
+    "subtitle": "Cada projeto tem uma história. Essas são algumas das marcas que ajudamos a construir.",
+    "filter_all": "Todos",
+    "filter_branding": "Branding",
+    "filter_web": "Web Design",
+    "filter_social": "Social Media",
+    "filter_performance": "Performance",
+    "see_case": "Ver projeto →",
+    "result_label": "Resultado",
+    "cta": "Ver todos os projetos"
+  },
+  "services": {
+    "eyebrow": "O que fazemos",
+    "title": "Serviços que constroem marcas de desejo",
+    "subtitle": "Cada disciplina foi desenvolvida com base em anos de experiência nos setores que mais exigem identidade e emoção.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Branding",
+        "description": "Identidade visual que gera desejo. Criamos marcas que comunicam o valor único do seu negócio e criam conexão emocional com o cliente antes mesmo da primeira experiência.",
+        "tags": ["Identidade Visual", "Logotipo", "Manual de Marca", "Copywriting"]
+      },
+      {
+        "number": "02",
+        "title": "Web Design",
+        "description": "Sites e landing pages que convertem visitantes em clientes. Design premium que reflete a experiência que o cliente terá e que funciona perfeitamente em qualquer dispositivo.",
+        "tags": ["Site Institucional", "Landing Page", "UX/UI", "Otimização SEO"]
+      },
+      {
+        "number": "03",
+        "title": "Social Media",
+        "description": "Conteúdo estratégico que transforma seguidores em clientes pagantes. Gestão completa com foco em engajamento qualificado e geração de leads e reservas diretas.",
+        "tags": ["Gestão de Redes", "Criação de Conteúdo", "Fotografia", "Reels"]
+      },
+      {
+        "number": "04",
+        "title": "Performance Ads",
+        "description": "Campanhas no Google e Meta com ROI mensurável. Cada real investido é rastreado e otimizado para que você saiba exatamente quanto está ganhando com anúncios.",
+        "tags": ["Google Ads", "Meta Ads", "Remarketing", "Analytics & Relatórios"]
+      },
+      {
+        "number": "05",
+        "title": "Sistemas",
+        "description": "Sistemas internos e automações que eliminam processos manuais, reduzem erros e liberam sua equipe para o que realmente importa.",
+        "tags": ["Sistemas Internos", "Automações", "Integrações", "Make · n8n · Zapier"]
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "Por que a Explore",
+    "title": "Especialistas no que mais exige identidade.",
+    "description": "Hotelaria, experiências e real estate são setores onde a marca é o produto. Entendemos isso — e construímos marcas à altura dessa responsabilidade.",
+    "d1_title": "Foco no setor",
+    "d1_desc": "Nossa metodologia, repertório criativo e casos de sucesso foram construídos dentro dos setores que mais exigem identidade, emoção e desejo.",
+    "d2_title": "Resultados mensuráveis",
+    "d2_desc": "Trabalhamos com métricas claras: reservas diretas, custo por lead, ROI de campanhas e crescimento de audiência qualificada.",
+    "d3_title": "Parceria estratégica",
+    "d3_desc": "Não somos uma agência de volume. Cada cliente tem um time dedicado que entende o negócio e pensa estrategicamente no crescimento.",
+    "markets": "Atendemos Brasil, Portugal e mercados internacionais de língua portuguesa."
+  },
+  "testimonials": {
+    "eyebrow": "O que dizem",
+    "title": "Clientes que viraram casos de sucesso",
+    "items": [
+      {
+        "quote": "A Explore Digital transformou completamente a presença digital da nossa pousada. As reservas diretas triplicaram em 6 meses — e a identidade visual finalmente representa o que somos.",
+        "author": "Ana Cavalcanti",
+        "role": "Proprietária · Pousada Miramar",
+        "location": "Alagoas, BR"
+      },
+      {
+        "quote": "Trabalhar com uma agência que entende o nosso mercado faz toda a diferença. Eles chegam na reunião sabendo o que precisamos — sem precisar explicar o setor do zero.",
+        "author": "Carlos Mendes",
+        "role": "Diretor · Serra Verde Resort",
+        "location": "Minas Gerais, BR"
+      },
+      {
+        "quote": "O branding que criaram capturou exatamente a essência das nossas experiências. Os clientes se identificam imediatamente — e isso se reflete nas vendas.",
+        "author": "Juliana Ferreira",
+        "role": "Fundadora · Experiências do Pantanal",
+        "location": "Mato Grosso, BR"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Vamos conversar",
+    "title": "Pronto para transformar sua marca?",
+    "description": "Conte-nos sobre o seu negócio. Respondemos em até 24 horas.",
+    "whatsapp": "Falar no WhatsApp",
+    "email_label": "Ou envie um e-mail",
+    "email": "agencia.exploredigital@gmail.com",
+    "form_name": "Nome completo",
+    "form_email": "E-mail",
+    "form_phone": "WhatsApp / Telefone",
+    "form_business": "Tipo de negócio",
+    "form_service": "Serviço de interesse",
+    "form_message": "Como podemos ajudar?",
+    "form_submit": "Enviar mensagem →",
+    "form_sending": "Enviando...",
+    "form_success": "Mensagem enviada! Retornaremos em breve.",
+    "form_error": "Erro ao enviar. Tente pelo WhatsApp."
+  },
+  "footer": {
+    "tagline": "Construindo marcas de desejo em hotelaria, experiências e real estate.",
+    "nav_title": "Navegação",
+    "social_title": "Redes Sociais",
+    "contact_title": "Contato",
+    "copyright": "Todos os direitos reservados."
+  }
+}
