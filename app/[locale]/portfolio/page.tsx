@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useLocale } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -27,23 +28,24 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
         href={`/${locale}/portfolio/${project.slug}`}
         className="group block overflow-hidden rounded-2xl bg-white border border-g-dark/8 hover:border-g-mid/35 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md"
       >
-        {/* Gradient visual */}
-        <div className={cn('relative h-52 bg-gradient-to-br overflow-hidden', project.gradient)}>
-          <div
-            className="absolute inset-0 opacity-[0.07]"
-            style={{
-              backgroundImage: 'radial-gradient(circle, rgba(193,213,189,0.8) 1px, transparent 1px)',
-              backgroundSize: '22px 22px',
-            }}
+        {/* Foto real com overlay */}
+        <div className="relative h-52 overflow-hidden">
+          <Image
+            src={project.imageUrl}
+            alt={project.client}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
+          <div className="absolute inset-0 bg-g-dark/30" />
           {project.featured && (
             <div className="absolute top-4 left-4 bg-g-mid text-white text-[9px] font-bold tracking-[0.18em] uppercase px-2.5 py-1 rounded-full">
               Destaque
             </div>
           )}
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white/10 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-g-dark/30 to-transparent" />
           {/* Hover arrow */}
-          <div className="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+          <div className="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round">
               <path d="M2 7h10M8 3l4 4-4 4" />
             </svg>
@@ -210,18 +212,19 @@ function FeaturedProjectCard({ project }: { project: (typeof projects)[0] }) {
       className="group block overflow-hidden rounded-2xl bg-g-dark border border-white/[0.08] hover:border-g-mid/40 transition-colors duration-300"
     >
       <div className="grid md:grid-cols-2">
-        {/* Visual */}
-        <div className={cn('h-56 md:h-auto bg-gradient-to-br relative overflow-hidden min-h-[260px]', project.gradient)}>
-          <div
-            className="absolute inset-0 opacity-[0.06]"
-            style={{
-              backgroundImage: 'radial-gradient(circle, rgba(193,213,189,0.8) 1px, transparent 1px)',
-              backgroundSize: '22px 22px',
-            }}
+        {/* Foto destaque */}
+        <div className="relative h-56 md:h-auto min-h-[260px] overflow-hidden">
+          <Image
+            src={project.imageUrl}
+            alt={project.client}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-g-dark/50 hidden md:block" />
+          <div className="absolute inset-0 bg-g-dark/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-g-dark/60 hidden md:block" />
           <div className="absolute top-5 left-5">
-            <span className="text-[9px] font-bold tracking-[0.18em] uppercase text-g-light/70 bg-g-dark/50 backdrop-blur-sm px-3 py-1.5 rounded-full">
+            <span className="text-[9px] font-bold tracking-[0.18em] uppercase text-g-light/80 bg-g-dark/60 backdrop-blur-sm px-3 py-1.5 rounded-full">
               {project.sector}
             </span>
           </div>
