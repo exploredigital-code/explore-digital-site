@@ -15,7 +15,7 @@ const U = (id: string) =>
   `https://images.unsplash.com/photo-${id}?w=800&h=480&fit=crop&auto=format&q=80`
 
 const IMG = {
-  kite:       U('1580628122228-d8013bb23d1b'),
+  kite:       U('1506905925346-21bda4d32df4'),
   kiteAerial: U('1530870110042-98b2cb110834'),
   kiteAction: U('1544551763-46a013bb70d5'),
   wingfoil:   U('1558618666-fcd25c85cd64'),
@@ -30,7 +30,7 @@ const IMG = {
   laptop:     U('1498050108023-c5249f4df085'),
   analytics:  U('1460925895917-afdab827c52f'),
   social:     U('1611162617213-7d7a39e9b1d7'),
-  socialPhone:U('1611162616305-c69b3037a1d3'),
+  socialPhone:U('1516321318423-f06f85e504b3'),
   mktDigital: U('1533750349088-cd871a92f312'),
   coding:     U('1432888498266-38ffec3eaf0a'),
   branding:   U('1561070791-2526d30994b5'),
