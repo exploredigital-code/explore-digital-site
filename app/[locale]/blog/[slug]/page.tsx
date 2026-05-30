@@ -154,7 +154,7 @@ export default function BlogPostPage() {
             {content.pullQuote && (
               <AnimateIn>
                 <blockquote className="my-12 px-8 py-6 bg-g-pale rounded-2xl border-l-4 border-g-mid relative overflow-hidden">
-                  <div className="absolute top-4 right-6 text-[64px] leading-none text-g-mid/10 font-serif select-none">"</div>
+                  <div className="absolute top-4 right-6 text-[64px] leading-none text-g-mid/10 font-serif select-none">&ldquo;</div>
                   <p className="text-[18px] font-bold text-g-dark leading-[1.5] relative z-10 italic">
                     {content.pullQuote}
                   </p>
