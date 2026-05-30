@@ -81,13 +81,27 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   )
 }
 
+const GRID_LIMIT = 8 // featured (1) + grid (8) = 9 cards visíveis por padrão
+
 export default function PortfolioPage() {
   const [active, setActive] = useState<Category | 'all'>('all')
+  const [expanded, setExpanded] = useState(false)
 
   const featured = projects.find(p => p.featured)
   const filtered = active === 'all'
     ? projects.filter(p => !p.featured)
     : projects.filter(p => !p.featured && p.categories.includes(active))
+
+  // Limita apenas no filtro "Todos"; em categorias mostra tudo
+  const displayLimit = active === 'all' && !expanded ? GRID_LIMIT : filtered.length
+  const displayed = filtered.slice(0, displayLimit)
+  const hiddenCount = filtered.length - displayLimit
+
+  // Reset ao trocar filtro
+  const handleFilter = (key: Category | 'all') => {
+    setActive(key)
+    setExpanded(false)
+  }
 
   return (
     <>
@@ -132,7 +146,7 @@ export default function PortfolioPage() {
               {FILTERS.map(f => (
                 <button
                   key={f.key}
-                  onClick={() => setActive(f.key)}
+                  onClick={() => handleFilter(f.key)}
                   className={cn(
                     'px-5 py-4 text-[13px] font-bold whitespace-nowrap transition-colors duration-200 border-b-2 -mb-px',
                     active === f.key
@@ -158,10 +172,27 @@ export default function PortfolioPage() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.25 }}
               >
-                {filtered.length > 0 ? (
-                  <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {filtered.map(p => <ProjectCard key={p.id} project={p} />)}
-                  </AnimateStagger>
+                {displayed.length > 0 ? (
+                  <>
+                    <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                      {displayed.map(p => <ProjectCard key={p.id} project={p} />)}
+                    </AnimateStagger>
+
+                    {/* Botão "Ver mais" — aparece quando há projetos ocultos */}
+                    {hiddenCount > 0 && (
+                      <div className="mt-10 text-center">
+                        <button
+                          onClick={() => setExpanded(true)}
+                          className="inline-flex items-center gap-2 border border-g-dark/20 hover:border-g-mid/50 text-g-dark/70 hover:text-g-dark font-bold text-[14px] px-8 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5"
+                        >
+                          Ver mais {hiddenCount} {hiddenCount === 1 ? 'projeto' : 'projetos'}
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                            <path d="M7 2v10M2 7l5 5 5-5"/>
+                          </svg>
+                        </button>
+                      </div>
+                    )}
+                  </>
                 ) : (
                   <div className="text-center py-20 text-g-dark/30">
                     <div className="text-[40px] mb-4">✦</div>
