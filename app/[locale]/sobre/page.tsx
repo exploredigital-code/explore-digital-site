@@ -219,7 +219,7 @@ export default function SobrePage() {
             <h2 className="text-[clamp(26px,3.5vw,42px)] text-white tracking-tight mt-2 mb-3">Resultados mensuráveis. Sempre.</h2>
             <p className="text-white/55 text-[15px] max-w-[460px]">Especialistas em tráfego pago que entendem a linguagem do seu setor.</p>
           </AnimateIn>
-          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16 items-stretch">
+          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16 items-stretch">
             {performanceTeam.map((member, i) => (
               <MemberCard key={i} member={member} dark />
             ))}
