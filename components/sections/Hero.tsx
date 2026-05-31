@@ -31,19 +31,21 @@ export function Hero() {
       id="home"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-g-dark"
     >
-      {/* ── Vimeo background ── */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      {/* ── Mobile: gradient background (instant) ── */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_60%_-10%,#2D5238,#0D1A12)] lg:hidden" />
+
+      {/* ── Desktop: Vimeo iframe ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block">
         <iframe
-          src={`https://player.vimeo.com/video/${VIMEO_ID}?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&autopause=0&playsinline=1`}
+          src={`https://player.vimeo.com/video/${VIMEO_ID}?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&autopause=0`}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           style={{ width: 'max(100%, 177.78vh)', height: 'max(100%, 56.25vw)' }}
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture"
         />
+        {/* Overlay 30% */}
+        <div className="absolute inset-0 bg-black/30" />
       </div>
-
-      {/* ── Overlay 30% ── */}
-      <div className="absolute inset-0 bg-black/30" />
 
       {/* ── Noise texture ── */}
       <div
