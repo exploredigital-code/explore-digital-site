@@ -69,7 +69,7 @@ function MemberCard({ member, dark = false }: {
           ? 'border border-white/[0.07] hover:border-g-mid/40 bg-white/[0.03] hover:bg-white/[0.05]'
           : 'border border-g-dark/8 hover:border-g-mid/35 bg-white hover:shadow-md'
       )}>
-      {/* Foto quadrada — object-cover preenche sem espaço vazio */}
+      {/* Foto quadrada */}
       <div className="relative aspect-square shrink-0 overflow-hidden">
         <Image
           src={member.photo}
@@ -79,8 +79,8 @@ function MemberCard({ member, dark = false }: {
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
         />
       </div>
-      {/* Info */}
-      <div className="p-5 flex flex-col gap-1">
+      {/* Info — altura fixa para padronizar todos os cards */}
+      <div className="p-5 flex flex-col gap-1 flex-1">
         <div className={cn('text-[9px] font-bold tracking-[0.18em] uppercase', dark ? 'text-g-mid' : 'text-g-mid/80')}>
           {member.role}
         </div>
@@ -189,7 +189,7 @@ export default function SobrePage() {
               A Explore Digital foi fundada por pessoas que vieram do setor e entendem, de dentro, o que marcas de hotelaria, experiências e real estate precisam.
             </p>
           </AnimateIn>
-          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl">
+          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl items-stretch">
             {founders.map((member, i) => (
               <MemberCard key={i} member={member} dark={false} />
             ))}
@@ -207,7 +207,7 @@ export default function SobrePage() {
             <h2 className="text-[clamp(26px,3.5vw,42px)] text-white tracking-tight mt-2 mb-3">Os criadores por trás das marcas.</h2>
             <p className="text-white/55 text-[15px] max-w-[460px]">Design, conteúdo e storytelling visual que transformam marcas em referências.</p>
           </AnimateIn>
-          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16">
+          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16 items-stretch">
             {creativeTeam.map((member, i) => (
               <MemberCard key={i} member={member} dark />
             ))}
@@ -219,7 +219,7 @@ export default function SobrePage() {
             <h2 className="text-[clamp(26px,3.5vw,42px)] text-white tracking-tight mt-2 mb-3">Resultados mensuráveis. Sempre.</h2>
             <p className="text-white/55 text-[15px] max-w-[460px]">Especialistas em tráfego pago que entendem a linguagem do seu setor.</p>
           </AnimateIn>
-          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16 items-stretch">
             {performanceTeam.map((member, i) => (
               <MemberCard key={i} member={member} dark />
             ))}
