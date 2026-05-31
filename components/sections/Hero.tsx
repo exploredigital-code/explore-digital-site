@@ -36,10 +36,10 @@ export function Hero() {
 
       {/* ── Desktop: thumbnail instantâneo + Vimeo iframe ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block">
-        {/* Primeiro frame carrega em ~50ms via CDN */}
+        {/* Primeiro frame — carrega instantaneamente do servidor */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://i.vimeocdn.com/video/2163282237-31be8363e1a082d838840dfe7ba2964054c46b845e2b6a28ac327092b4c7e6bc-d_1280?region=us"
+          src="/images/hero-poster.jpg"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
