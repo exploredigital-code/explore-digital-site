@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Início",
-    "portfolio": "Portfolio",
+    "portfolio": "Portfólio",
     "services": "Serviços",
     "marketplace": "Planos",
     "about": "Sobre",
@@ -56,10 +56,10 @@
   },
   "hero": {
     "eyebrow": "Agência Criativa · Hotelaria · Experiências · Real Estate",
-    "line1": "Marcas que",
-    "line2": "geram desejo.",
-    "sub": "Transformamos marcas de hotelaria, experiências e real estate em referências digitais. Do branding ao digital — tudo com foco em resultado real.",
-    "cta_primary": "Ver Portfolio",
+    "line1": "Criamos marcas",
+    "line2": "que geram desejo.",
+    "sub": "Transformamos marcas de hotelaria, experiências e real estate em referências digitais, com foco em resultado real.",
+    "cta_primary": "Ver Portfólio",
     "cta_secondary": "Fale Conosco"
   },
   "marquee": "SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SISTEMAS · BRANDING · EXPLORE DIGITAL · SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SISTEMAS · BRANDING · EXPLORE DIGITAL ·",

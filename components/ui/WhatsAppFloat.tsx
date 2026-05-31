@@ -1,9 +1,9 @@
-'use client'
+﻿'use client'
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const WA_URL = 'https://wa.me/5585910430670?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Explore%20Digital%20e%20gostaria%20de%20conversar.'
+const WA_URL = 'https://wa.me/55859910430670?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Explore%20Digital%20e%20gostaria%20de%20conversar.'
 
 export function WhatsAppFloat() {
   const [visible, setVisible] = useState(false)

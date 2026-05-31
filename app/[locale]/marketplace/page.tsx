@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
@@ -9,7 +9,7 @@ import { Footer } from '@/components/sections/Footer'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 
-const WHATSAPP_BASE = 'https://wa.me/5585910430670?text='
+const WHATSAPP_BASE = 'https://wa.me/55859910430670?text='
 
 function waLink(plan: string) {
   return WHATSAPP_BASE + encodeURIComponent(`Olá! Vim pelo site e tenho interesse no plano: ${plan}. Podemos conversar?`)

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import Image from 'next/image'
@@ -10,7 +10,7 @@ import { Footer }  from '@/components/sections/Footer'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 
-const WHATSAPP = 'https://wa.me/5585910430670'
+const WHATSAPP = 'https://wa.me/55859910430670'
 
 const founders = [
   {

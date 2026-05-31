@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import Image from 'next/image'
@@ -12,7 +12,7 @@ import { Footer }  from '@/components/sections/Footer'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 import { VideoLightbox } from '@/components/ui/VideoLightbox'
 
-const WHATSAPP = 'https://wa.me/5585910430670?text=Ol%C3%A1!%20Vi%20o%20portfolio%20no%20site%20e%20quero%20conversar%20sobre%20o%20meu%20projeto.'
+const WHATSAPP = 'https://wa.me/55859910430670?text=Ol%C3%A1!%20Vi%20o%20portfolio%20no%20site%20e%20quero%20conversar%20sobre%20o%20meu%20projeto.'
 
 function VideoSlot({ videoId, index, clientName }: { videoId: string; index: number; clientName: string }) {
   const [thumbnail, setThumbnail] = useState<string | undefined>(undefined)

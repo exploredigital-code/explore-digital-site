@@ -45,7 +45,7 @@ export function Stats() {
             </span>
           </div>
           <h2 className="text-[clamp(26px,3.5vw,42px)] font-bold text-white leading-[1.05] tracking-tight max-w-[480px]">
-            Somos especialistas nos nichos que mais exigem identidade.
+            Mais que uma agência de marketing, uma parceria digital
           </h2>
         </AnimateIn>
 
