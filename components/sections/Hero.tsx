@@ -34,7 +34,7 @@ export function Hero() {
       {/* ── Vimeo background ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <iframe
-          src={`https://player.vimeo.com/video/${VIMEO_ID}?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&autopause=0`}
+          src={`https://player.vimeo.com/video/${VIMEO_ID}?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&autopause=0&playsinline=1`}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           style={{ width: 'max(100%, 177.78vh)', height: 'max(100%, 56.25vw)' }}
           frameBorder="0"

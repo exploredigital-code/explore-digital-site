@@ -231,9 +231,9 @@ export function Services() {
                         transition={{ duration: 0.35, ease: 'easeOut' }}
                         className="overflow-hidden"
                       >
-                        <div className="pb-10 pl-[88px]">
+                        <div className="pb-10 pl-[30px] sm:pl-[88px]">
                           {/* Horizontal scrollable row */}
-                          <div className="flex gap-4 overflow-x-auto pb-2 -mr-6 pr-6 sm:-mr-10 sm:pr-10 lg:-mr-16 lg:pr-16">
+                          <div className="flex gap-4 overflow-x-auto pb-2 -mr-6 pr-6 sm:-mr-10 sm:pr-10 lg:-mr-16 lg:pr-16" style={{ scrollbarWidth: 'none' }}>
                             {svcData.subServices.map(sub => (
                               <SubServiceCard key={sub.slug} sub={sub} localePrefix={locale} />
                             ))}
