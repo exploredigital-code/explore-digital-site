@@ -99,51 +99,36 @@ interface PlanCard {
   price: string
   period: 'monthly' | 'once'
   features: string[]
-  recommended?: boolean
 }
 
-function PricingCard({ plan, monthly, once, recommended, whatsappCta }: {
+function PricingCard({ plan, monthly, once, whatsappCta }: {
   plan: PlanCard
   monthly: string
   once: string
-  recommended: string
   whatsappCta: string
 }) {
   return (
     <motion.div
       variants={itemVariants}
-      className={cn(
-        'relative flex flex-col overflow-hidden transition-all duration-300 rounded-2xl',
-        plan.recommended
-          ? 'bg-g-dark border border-g-mid shadow-[0_0_40px_rgba(78,125,87,0.2)] scale-[1.02]'
-          : 'bg-white border border-g-dark/10 hover:border-g-mid/35 hover:-translate-y-1'
-      )}
+      className="relative flex flex-col overflow-hidden transition-all duration-300 rounded-2xl bg-white border border-g-dark/10 hover:border-g-mid/35 hover:-translate-y-1"
     >
-      {plan.recommended && (
-        <div className="bg-g-mid text-white text-[10px] font-bold tracking-[0.22em] uppercase text-center py-2.5">
-          ✦ {recommended}
-        </div>
-      )}
       <div className="p-7 flex flex-col flex-1">
-        <div className={cn(
-          'text-[10px] font-bold tracking-[0.2em] uppercase mb-4 pb-4 border-b',
-          plan.recommended ? 'text-g-light/50 border-white/[0.08]' : 'text-g-mid border-g-dark/8'
-        )}>
+        <div className="text-[10px] font-bold tracking-[0.2em] uppercase mb-4 pb-4 border-b text-g-mid border-g-dark/8">
           {plan.name}
         </div>
         <div className="mb-7">
-          <div className={cn('text-[46px] font-semibold leading-none tracking-[-0.025em]', plan.recommended ? 'text-g-light' : 'text-g-dark')}>
+          <div className="text-[46px] font-semibold leading-none tracking-[-0.025em] text-g-dark">
             {plan.price}
           </div>
-          <div className={cn('text-[12px] font-bold tracking-[0.08em] uppercase mt-2', plan.recommended ? 'text-white/45' : 'text-g-dark/50')}>
+          <div className="text-[12px] font-bold tracking-[0.08em] uppercase mt-2 text-g-dark/50">
             {plan.period === 'monthly' ? monthly : once}
           </div>
         </div>
         <ul className="flex flex-col gap-3.5 mb-8 flex-1">
           {plan.features.map((f, i) => (
             <li key={i} className="flex items-start gap-3">
-              <span className={cn('shrink-0 mt-[3px] text-[14px] leading-none select-none', plan.recommended ? 'text-g-mid' : 'text-g-mid/60')}>—</span>
-              <span className={cn('text-[14px] leading-[1.55]', plan.recommended ? 'text-white/60' : 'text-g-dark/58')}>{f}</span>
+              <span className="shrink-0 mt-[3px] text-[14px] leading-none select-none text-g-mid/60">—</span>
+              <span className="text-[14px] leading-[1.55] text-g-dark/58">{f}</span>
             </li>
           ))}
         </ul>
@@ -151,12 +136,7 @@ function PricingCard({ plan, monthly, once, recommended, whatsappCta }: {
           href={waLink(`${plan.name} (${plan.price})`)}
           target="_blank"
           rel="noopener noreferrer"
-          className={cn(
-            'flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-[13px] tracking-[0.04em] transition-all duration-200',
-            plan.recommended
-              ? 'bg-g-light text-g-dark hover:bg-g-pale hover:-translate-y-0.5'
-              : 'bg-g-dark text-g-pale hover:bg-s2 hover:-translate-y-0.5'
-          )}
+          className="flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-[13px] tracking-[0.04em] transition-all duration-200 bg-g-dark text-g-pale hover:bg-s2 hover:-translate-y-0.5"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="shrink-0">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -168,9 +148,9 @@ function PricingCard({ plan, monthly, once, recommended, whatsappCta }: {
   )
 }
 
-function CategorySection({ title, icon, plans, monthly, once, recommended, whatsappCta }: {
+function CategorySection({ title, icon, plans, monthly, once, whatsappCta }: {
   title: string; icon: React.ReactNode; plans: PlanCard[]
-  monthly: string; once: string; recommended: string; whatsappCta: string
+  monthly: string; once: string; whatsappCta: string
 }) {
   return (
     <div className="mb-20">
@@ -188,7 +168,7 @@ function CategorySection({ title, icon, plans, monthly, once, recommended, whats
         'grid-cols-1 max-w-xl'
       )}>
         {plans.map((plan, i) => (
-          <PricingCard key={i} plan={plan} monthly={monthly} once={once} recommended={recommended} whatsappCta={whatsappCta} />
+          <PricingCard key={i} plan={plan} monthly={monthly} once={once} whatsappCta={whatsappCta} />
         ))}
       </AnimateStagger>
     </div>
@@ -224,7 +204,6 @@ export default function MarketplacePage() {
   const t = useTranslations('marketplace_page')
   const monthly = t('monthly')
   const once = t('once')
-  const recommended = t('recommended')
   const whatsappCta = t('whatsapp_cta')
 
   const categories = [
@@ -245,7 +224,7 @@ export default function MarketplacePage() {
       plans: [
         { name: 'Meta Ads', price: 'R$ 1.200', period: 'monthly' as const, features: ['Criação de campanhas no Instagram e Facebook', 'Análise e otimização diária', 'Relatório de métricas de desempenho', 'Grupo exclusivo no WhatsApp'] },
         { name: 'Google Ads', price: 'R$ 1.200', period: 'monthly' as const, features: ['Criação e gestão de campanhas no Google Ads', 'Segmentação para públicos específicos', 'Otimização diária das campanhas', 'Relatório mensal de performance', 'Grupo exclusivo no WhatsApp'] },
-        { name: 'Meta Ads + Google Ads', price: 'R$ 2.200', period: 'monthly' as const, recommended: true, features: ['Campanhas no Instagram, Facebook e Google', 'Segmentação de públicos e testes de criativos', 'Otimização contínua focada em leads e reservas', 'Relatório mensal unificado de performance'] },
+        { name: 'Meta Ads + Google Ads', price: 'R$ 2.200', period: 'monthly' as const, features: ['Campanhas no Instagram, Facebook e Google', 'Segmentação de públicos e testes de criativos', 'Otimização contínua focada em leads e reservas', 'Relatório mensal unificado de performance'] },
       ],
     },
     {
@@ -263,7 +242,7 @@ export default function MarketplacePage() {
       icon: <IconSetup />,
       plans: [
         { name: 'Setup Essencial', price: 'R$ 4.500', period: 'once' as const, features: ['Criação de destaques', 'Otimização biografia + links', '15 conteúdos (reels/design)', '20 artes design'] },
-        { name: 'Setup Premium', price: 'R$ 11.000', period: 'once' as const, recommended: true, features: ['Criação de destaques', 'Otimização da biografia + links', '25 conteúdos (reels/design)', '40 artes design', 'Website institucional incluído'] },
+        { name: 'Setup Premium', price: 'R$ 11.000', period: 'once' as const, features: ['Criação de destaques', 'Otimização da biografia + links', '25 conteúdos (reels/design)', '40 artes design', 'Website institucional incluído'] },
       ],
     },
     {
@@ -273,7 +252,7 @@ export default function MarketplacePage() {
       plans: [
         { name: 'Naming', price: 'R$ 1.900', period: 'once' as const, features: ['Briefing estratégico', 'Pesquisa de mercado e concorrência', 'Geração de opções de nomes', 'Análise de disponibilidade de domínio e redes', 'Apresentação com justificativa criativa'] },
         { name: 'Identidade Visual', price: 'R$ 2.800', period: 'once' as const, features: ['Logotipo principal e variações', 'Paleta de cores', 'Tipografia', 'Ícones e elementos gráficos', 'Mockups de aplicação', 'Manual de identidade visual em PDF'] },
-        { name: 'Branding Completo', price: 'R$ 7.000', period: 'once' as const, recommended: true, features: ['Definição de propósito, missão, visão e valores', 'Tom de voz e personalidade da marca', 'Identidade visual completa', 'Estudo de mercado', 'Guia de aplicação da marca', 'Apresentação estratégica final'] },
+        { name: 'Branding Completo', price: 'R$ 7.000', period: 'once' as const, features: ['Definição de propósito, missão, visão e valores', 'Tom de voz e personalidade da marca', 'Identidade visual completa', 'Estudo de mercado', 'Guia de aplicação da marca', 'Apresentação estratégica final'] },
       ],
     },
   ]
@@ -355,7 +334,6 @@ export default function MarketplacePage() {
                   plans={cat.plans}
                   monthly={monthly}
                   once={once}
-                  recommended={recommended}
                   whatsappCta={whatsappCta}
                 />
               ))}
