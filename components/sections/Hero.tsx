@@ -31,15 +31,8 @@ export function Hero() {
       id="home"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-g-dark"
     >
-      {/* ── Mobile: vídeo local ── */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover lg:hidden"
-        src="/videos/hero.mp4"
-      />
+      {/* ── Mobile: gradient ── */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_60%_-10%,#2D5238,#0D1A12)] lg:hidden" />
 
       {/* ── Desktop: Vimeo iframe ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block">
@@ -53,9 +46,6 @@ export function Hero() {
         {/* Overlay 30% */}
         <div className="absolute inset-0 bg-black/30" />
       </div>
-
-      {/* ── Overlay mobile ── */}
-      <div className="absolute inset-0 bg-black/30 lg:hidden" />
 
       {/* ── Noise texture ── */}
       <div
