@@ -16,7 +16,7 @@ const founders = [
   {
     name: 'João Teixeira',
     role: 'Co-fundador · Diretor Criativo',
-    bio: 'Visionário criativo por trás da identidade da Explore Digital. Especialista em branding, estratégia de conteúdo e posicionamento de marcas no universo de hotelaria, experiências e real estate.',
+    bio: 'Criativo à frente da equipe de conteúdo da Explore Digital. Especialista em estratégia, posicionamento digital e construção de marcas digitais.',
     photo: '/images/team/João.png',
   },
   {
@@ -69,16 +69,13 @@ function MemberCard({ member, dark = false }: {
           ? 'border border-white/[0.07] hover:border-g-mid/40 bg-white/[0.03] hover:bg-white/[0.05]'
           : 'border border-g-dark/8 hover:border-g-mid/35 bg-white hover:shadow-md'
       )}>
-      {/* Foto quadrada — object-contain garante foto inteira sem corte */}
-      <div className={cn(
-        'relative aspect-square shrink-0 overflow-hidden',
-        dark ? 'bg-[#0D1A12]' : 'bg-g-pale'
-      )}>
+      {/* Foto quadrada — object-cover preenche sem espaço vazio */}
+      <div className="relative aspect-square shrink-0 overflow-hidden">
         <Image
           src={member.photo}
           alt={member.name}
           fill
-          className="object-contain"
+          className="object-cover object-top"
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
         />
       </div>
