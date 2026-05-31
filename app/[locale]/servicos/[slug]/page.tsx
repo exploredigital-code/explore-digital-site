@@ -18,13 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export async function generateStaticParams() {
-  const slugs: { slug: string }[] = []
-  for (const service of servicesData) {
-    for (const sub of service.subServices) slugs.push({ slug: sub.slug })
-  }
-  return slugs
-}
+export const dynamic = 'force-dynamic'
 
 export default async function ServicoPage({ params }: Props) {
   const { slug, locale } = await params
