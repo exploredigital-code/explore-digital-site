@@ -38,7 +38,7 @@ export function Hero() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block">
         <iframe
           src={`https://player.vimeo.com/video/${VIMEO_ID}?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&autopause=0`}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-[fadeIn_1s_ease-in_forwards]"
           style={{ width: 'max(100%, 177.78vh)', height: 'max(100%, 56.25vw)' }}
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture"
