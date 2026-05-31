@@ -1,14 +1,11 @@
 'use client'
 
-import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/Button'
 
 const WHATSAPP = 'https://wa.me/5585910430670'
-
-// ── Place your video at public/videos/hero.mp4
-// ── Recommended: 1920×1080, H.264, 10–30s loop, muted
+const VIMEO_ID = '1197034435'
 
 const wordVariant = {
   hidden: { y: '105%', opacity: 0 },
@@ -27,33 +24,26 @@ const fadeIn = (delay: number) => ({
 export function Hero() {
   const t = useTranslations('hero')
   const line1 = t('line1').split(' ')
-  const line2 = t('line2')
-  const videoRef = useRef<HTMLVideoElement>(null)
+  const line2 = t('line2').split(' ')
 
   return (
     <section
       id="home"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-g-dark"
     >
-      {/* ── Video background ── */}
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        src="/videos/hero.mp4"
-      />
+      {/* ── Vimeo background ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <iframe
+          src={`https://player.vimeo.com/video/${VIMEO_ID}?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&autopause=0`}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          style={{ width: 'max(100%, 177.78vh)', height: 'max(100%, 56.25vw)' }}
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+        />
+      </div>
 
-      {/* ── Overlays (readability + brand color) ── */}
-      {/* Primary dark overlay */}
-      <div className="absolute inset-0 bg-g-dark/72" />
-      {/* Directional green gradient — left side stronger */}
-      <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(27,48,37,0.90)_0%,rgba(27,48,37,0.55)_60%,rgba(27,48,37,0.20)_100%)]" />
-      {/* Top + bottom fade */}
-      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-g-dark/60 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-g-dark to-transparent" />
+      {/* ── Overlay 30% ── */}
+      <div className="absolute inset-0 bg-black/30" />
 
       {/* ── Noise texture ── */}
       <div
@@ -62,19 +52,12 @@ export function Hero() {
       />
 
       {/* ── Content ── */}
-      <div className="relative z-10 max-w-screen-xl mx-auto w-full px-6 sm:px-10 lg:px-16 pt-28 pb-20">
-
-        {/* Eyebrow */}
-        <motion.div {...fadeIn(0.1)} className="flex items-center gap-3 mb-10">
-          <div className="w-5 h-px bg-g-mid shrink-0" />
-          <span className="text-g-light text-[11px] font-bold tracking-[0.2em] uppercase">
-            {t('eyebrow')}
-          </span>
-        </motion.div>
+      <div className="relative z-10 max-w-screen-xl mx-auto w-full px-6 sm:px-10 lg:px-16 pt-20 sm:pt-28 pb-16 sm:pb-20 flex flex-col justify-center min-h-screen">
 
         {/* Headline */}
         <div className="mb-7">
           <h1 className="leading-[0.92] tracking-[-0.03em] text-[clamp(52px,8.5vw,128px)]">
+            {/* Linha 1: todas as palavras em branco */}
             <span className="flex flex-wrap items-end gap-x-[0.18em]">
               {line1.map((word, i) => (
                 <span key={i} className="word-clip">
@@ -84,17 +67,28 @@ export function Hero() {
                 </span>
               ))}
             </span>
-            <span className="word-clip block">
-              <motion.span className="inline-block text-g-light" variants={wordVariant} initial="hidden" animate="visible" custom={line1.length}>
-                {line2}
-              </motion.span>
+            {/* Linha 2: palavras em branco, última em verde */}
+            <span className="flex flex-wrap items-end gap-x-[0.18em]">
+              {line2.map((word, i) => (
+                <span key={i} className="word-clip">
+                  <motion.span
+                    className={`inline-block ${i === line2.length - 1 ? 'text-g-light' : 'text-white'}`}
+                    variants={wordVariant}
+                    initial="hidden"
+                    animate="visible"
+                    custom={line1.length + i}
+                  >
+                    {word}
+                  </motion.span>
+                </span>
+              ))}
             </span>
           </h1>
         </div>
 
         {/* Sub + CTAs */}
         <div className="max-w-[520px]">
-          <motion.p {...fadeIn(0.9)} className="text-white/55 text-[16px] leading-[1.8] mb-10">
+          <motion.p {...fadeIn(0.9)} className="text-white text-[16px] leading-[1.8] mb-10">
             {t('sub')}
           </motion.p>
           <motion.div {...fadeIn(1.1)} className="flex flex-wrap gap-3">

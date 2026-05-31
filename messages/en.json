@@ -62,7 +62,7 @@
     "cta_primary": "View Portfolio",
     "cta_secondary": "Get in Touch"
   },
-  "marquee": "HOSPITALITY · EXPERIENCES · REAL ESTATE · BRANDING · WEB DESIGN · SOCIAL MEDIA · PERFORMANCE · EXPLORE DIGITAL ·",
+  "marquee": "SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SYSTEMS · BRANDING · EXPLORE DIGITAL · SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SYSTEMS · BRANDING · EXPLORE DIGITAL ·",
   "stats": {
     "eyebrow": "Numbers that speak",
     "s1_value": "80+",
@@ -94,33 +94,33 @@
     "items": [
       {
         "number": "01",
-        "title": "Branding",
-        "description": "Visual identity that creates desire. We build brands that communicate your business's unique value and create emotional connection with clients before the first experience.",
-        "tags": ["Visual Identity", "Logo", "Brand Guidelines", "Copywriting"]
-      },
-      {
-        "number": "02",
-        "title": "Web Design",
-        "description": "Sites and landing pages that convert visitors into clients. Premium design that reflects the client experience and works flawlessly on any device.",
-        "tags": ["Institutional Site", "Landing Page", "UX/UI", "SEO Optimization"]
-      },
-      {
-        "number": "03",
         "title": "Social Media",
         "description": "Strategic content that turns followers into paying clients. Full management focused on qualified engagement and lead and booking generation.",
         "tags": ["Social Management", "Content Creation", "Photography", "Reels"]
       },
       {
-        "number": "04",
+        "number": "02",
         "title": "Performance Ads",
         "description": "Google and Meta campaigns with measurable ROI. Every dollar invested is tracked and optimized so you know exactly what you're earning from ads.",
         "tags": ["Google Ads", "Meta Ads", "Remarketing", "Analytics & Reports"]
       },
       {
-        "number": "05",
+        "number": "03",
+        "title": "Web Design",
+        "description": "Sites and landing pages that convert visitors into clients. Premium design that reflects the client experience and works flawlessly on any device.",
+        "tags": ["Institutional Site", "Landing Page", "UX/UI", "SEO Optimization"]
+      },
+      {
+        "number": "04",
         "title": "Systems",
         "description": "Internal systems and automations that eliminate manual processes, reduce errors and free your team to focus on what really matters.",
         "tags": ["Internal Systems", "Automations", "Integrations", "Make · n8n · Zapier"]
+      },
+      {
+        "number": "05",
+        "title": "Branding",
+        "description": "Visual identity that creates desire. We build brands that communicate your business's unique value and create emotional connection with clients before the first experience.",
+        "tags": ["Visual Identity", "Logo", "Brand Guidelines", "Copywriting"]
       }
     ]
   },
@@ -141,22 +141,22 @@
     "title": "Clients who became success stories",
     "items": [
       {
-        "quote": "Explore Digital completely transformed our guesthouse's digital presence. Direct bookings tripled in 6 months — and the visual identity finally represents who we are.",
-        "author": "Ana Cavalcanti",
-        "role": "Owner · Pousada Miramar",
-        "location": "Alagoas, BR"
+        "quote": "Working with Explore Digital was a game-changer for our business. They understood our audience from day one and created content that actually converts. The growth we've seen in six months exceeded every expectation.",
+        "author": "James K.",
+        "role": "",
+        "location": "Spain"
       },
       {
-        "quote": "Working with an agency that understands our market makes all the difference. They come to meetings knowing what we need — without us having to explain the industry from scratch.",
-        "author": "Carlos Mendes",
-        "role": "Director · Serra Verde Resort",
-        "location": "Minas Gerais, BR"
+        "quote": "Explore Digital transformed the way we communicate our business. In just a few months, engagement tripled and direct bookings grew significantly. They truly understand our market.",
+        "author": "Rafael M.",
+        "role": "",
+        "location": "Brazil"
       },
       {
-        "quote": "The branding they created captured exactly the essence of our experiences. Clients identify with it immediately — and that shows in sales.",
-        "author": "Juliana Ferreira",
-        "role": "Founder · Pantanal Experiences",
-        "location": "Mato Grosso, BR"
+        "quote": "El equipo de Explore Digital captó la esencia de nuestra marca desde el primer día. El contenido que crean convierte seguidores en clientes reales. Los resultados hablan por sí solos.",
+        "author": "Sofía R.",
+        "role": "",
+        "location": "España"
       }
     ]
   },

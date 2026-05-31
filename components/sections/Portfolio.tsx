@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn } from '@/components/ui/AnimateIn'
@@ -13,7 +14,6 @@ type Filter = 'all' | Category
 
 const FILTERS: { key: Filter; labelKey: string }[] = [
   { key: 'all',         labelKey: 'filter_all' },
-  { key: 'branding',   labelKey: 'filter_branding' },
   { key: 'web',        labelKey: 'filter_web' },
   { key: 'social',     labelKey: 'filter_social' },
   { key: 'performance',labelKey: 'filter_performance' },
@@ -35,26 +35,31 @@ function ProjectCard({ project, seeCase, locale }: {
       className="portfolio-card group relative overflow-hidden rounded-2xl cursor-pointer bg-s2 border border-white/[0.07] hover:border-g-light/20 transition-all duration-300 block"
     >
       {/* Visual */}
-      <div className={cn('w-full aspect-[4/3] bg-gradient-to-br relative overflow-hidden', project.gradient)}>
-        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, rgba(193,213,189,0.08) 1px, transparent 1px)', backgroundSize: '22px 22px' }} />
-
-        {/* Sector — dot + label, no container */}
+      <div className="w-full aspect-[4/3] relative overflow-hidden">
+        <Image
+          src={project.imageUrl}
+          alt={project.client}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+        {/* Sector */}
         <div className="absolute top-4 left-4">
-          <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-g-light/60">
+          <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-g-light/80">
             · {project.sector}
           </span>
         </div>
 
         {/* Year */}
-        <div className="absolute top-4 right-4 text-[10px] font-bold tracking-widest text-g-light/30 uppercase">
+        <div className="absolute top-4 right-4 text-[10px] font-bold tracking-widest text-g-light/50 uppercase">
           {project.year}
         </div>
 
-        {/* Category tags — thin border, rectangular */}
+        {/* Category tags */}
         <div className="absolute bottom-4 left-4 flex flex-wrap gap-1.5">
           {project.categories.map(cat => (
             <span key={cat}
-              className="text-[9px] font-bold tracking-[0.14em] uppercase text-g-light/55 border border-g-light/20 px-2 py-0.5 rounded-sm">
+              className="text-[9px] font-bold tracking-[0.14em] uppercase text-g-light/70 border border-g-light/25 px-2 py-0.5 rounded-sm backdrop-blur-sm">
               {CATEGORY_LABELS[cat]}
             </span>
           ))}
@@ -78,6 +83,7 @@ function ProjectCard({ project, seeCase, locale }: {
       <div className="p-5">
         <div className="font-bold text-[16px] text-white">{project.client}</div>
         <div className="text-[11px] text-white/50 mt-0.5 tracking-wide uppercase">{project.sector} · {project.location}</div>
+        <div className="mt-2 text-[12px] text-g-mid/70 font-medium line-clamp-1 md:hidden">{project.tagline}</div>
       </div>
     </Link>
   )
@@ -88,7 +94,10 @@ export function Portfolio() {
   const locale = useLocale()
   const [active, setActive] = useState<Filter>('all')
 
-  const filtered = active === 'all' ? projects : projects.filter(p => p.categories.includes(active as Category))
+  const visible = projects.filter(p => !p.hidden)
+  const filtered = active === 'all' ? visible : visible.filter(p => p.categories.includes(active as Category))
+  const displayed = filtered.slice(0, 6)
+  const remaining = filtered.length - displayed.length
 
   return (
     <section id="portfolio" className="bg-g-pale py-24 lg:py-32">
@@ -137,19 +146,34 @@ export function Portfolio() {
             transition={{ duration: 0.3 }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
           >
-            {filtered.map((project, i) => (
+            {displayed.map((project, i) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05, duration: 0.45, ease: [0.21, 0.47, 0.32, 0.98] }}
-                className={cn(project.featured && filtered.length > 2 && 'sm:col-span-2 lg:col-span-1')}
+                className={cn(project.featured && displayed.length > 2 && 'sm:col-span-2 lg:col-span-1')}
               >
                 <ProjectCard project={project} seeCase={t('see_case')} locale={locale} />
               </motion.div>
             ))}
           </motion.div>
         </AnimatePresence>
+
+        {/* Ver mais */}
+        {remaining > 0 && (
+          <AnimateIn className="mt-10 text-center">
+            <Link
+              href={`/${locale}/portfolio`}
+              className="inline-flex items-center gap-2 border border-g-dark/20 hover:border-g-mid/50 text-g-dark/70 hover:text-g-dark font-bold text-[14px] px-8 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5"
+            >
+              Ver mais {remaining} {remaining === 1 ? 'projeto' : 'projetos'}
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <path d="M2 7h10M8 3l4 4-4 4" />
+              </svg>
+            </Link>
+          </AnimateIn>
+        )}
       </div>
     </section>
   )

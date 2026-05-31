@@ -87,10 +87,11 @@ export default function PortfolioPage() {
   const [active, setActive] = useState<Category | 'all'>('all')
   const [expanded, setExpanded] = useState(false)
 
-  const featured = projects.find(p => p.featured)
+  const visible = projects.filter(p => !p.hidden)
+  const featured = visible.find(p => p.featured)
   const filtered = active === 'all'
-    ? projects.filter(p => !p.featured)
-    : projects.filter(p => !p.featured && p.categories.includes(active))
+    ? visible.filter(p => !p.featured)
+    : visible.filter(p => !p.featured && p.categories.includes(active))
 
   // Limita apenas no filtro "Todos"; em categorias mostra tudo
   const displayLimit = active === 'all' && !expanded ? GRID_LIMIT : filtered.length

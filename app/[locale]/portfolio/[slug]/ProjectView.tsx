@@ -1,6 +1,8 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
+import { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useLocale } from 'next-intl'
 import { cn } from '@/lib/utils'
@@ -8,21 +10,30 @@ import type { Project } from '@/data/portfolio'
 import { Navbar }  from '@/components/sections/Navbar'
 import { Footer }  from '@/components/sections/Footer'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
+import { VideoLightbox } from '@/components/ui/VideoLightbox'
 
 const WHATSAPP = 'https://wa.me/5585910430670?text=Ol%C3%A1!%20Vi%20o%20portfolio%20no%20site%20e%20quero%20conversar%20sobre%20o%20meu%20projeto.'
 
 function VideoSlot({ videoId, index, clientName }: { videoId: string; index: number; clientName: string }) {
+  const [thumbnail, setThumbnail] = useState<string | undefined>(undefined)
+
+  useEffect(() => {
+    if (!videoId) return
+    fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${videoId}&width=640`)
+      .then(r => r.json())
+      .then(d => setThumbnail(d.thumbnail_url))
+      .catch(() => {})
+  }, [videoId])
+
   if (videoId) {
     return (
-      <div className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl">
-        <iframe
-          src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
-          title={`${clientName} — Vídeo ${index + 1}`}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className="absolute inset-0 w-full h-full"
-        />
-      </div>
+      <VideoLightbox
+        src={`https://player.vimeo.com/video/${videoId}?autoplay=1&title=0&byline=0&portrait=0`}
+        thumbnail={thumbnail}
+        aspect="9/16"
+        label={`${clientName} — Vídeo ${index + 1}`}
+        placeholderClass="bg-[radial-gradient(ellipse_80%_60%_at_50%_30%,#2D5238,#0F2018)]"
+      />
     )
   }
   return (
@@ -58,9 +69,15 @@ export function ProjectView({ project, next, prev }: Props) {
 
       {/* ══ HERO ══ */}
       <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
-        <div className={cn('absolute inset-0 bg-gradient-to-br', project.gradient)} />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_30%_20%,rgba(255,255,255,0.04),transparent)]" />
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E\")", backgroundSize: '200px' }} />
+        <Image
+          src={project.imageUrl}
+          alt={project.client}
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-t from-[#0D1A12] to-transparent" />
 
         <div className="relative z-10 max-w-screen-xl mx-auto w-full px-6 sm:px-10 lg:px-16 pt-36 pb-20">

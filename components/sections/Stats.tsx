@@ -1,78 +1,68 @@
 'use client'
 
-import { useRef, useEffect, useState } from 'react'
-import { useTranslations } from 'next-intl'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 
-function Counter({ target, suffix = '' }: { target: string; suffix?: string }) {
-  const [display, setDisplay] = useState('0')
-  const ref = useRef<HTMLSpanElement>(null)
-  const animated = useRef(false)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !animated.current) {
-          animated.current = true
-          const num = parseInt(target.replace(/\D/g, ''), 10)
-          if (isNaN(num)) { setDisplay(target); return }
-          let start = 0
-          const duration = 1600
-          const step = Math.ceil(num / (duration / 16))
-          const timer = setInterval(() => {
-            start += step
-            if (start >= num) { setDisplay(target); clearInterval(timer) }
-            else setDisplay(`${start}${suffix}`)
-          }, 16)
-        }
-      },
-      { threshold: 0.5 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [target, suffix])
-
-  return <span ref={ref}>{display}</span>
-}
+const NICHES = [
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    ),
+    title: 'Hotelaria',
+    desc: 'Pousadas, hotéis, hostels e resorts que precisam de uma presença digital à altura da experiência que entregam.',
+  },
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+      </svg>
+    ),
+    title: 'Experiências & Esportes',
+    desc: 'Escolas de kite, surf, experiências gastronômicas, beach clubs e destinos de aventura no litoral.',
+  },
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+      </svg>
+    ),
+    title: 'Real Estate',
+    desc: 'Imobiliárias e incorporadoras que vendem estilo de vida no litoral para investidores nacionais e internacionais.',
+  },
+]
 
 export function Stats() {
-  const t = useTranslations('stats')
-
-  const stats = [
-    { value: t('s1_value'), label: t('s1_label') },
-    { value: t('s2_value'), label: t('s2_label') },
-    { value: t('s3_value'), label: t('s3_label') },
-    { value: t('s4_value'), label: t('s4_label') },
-  ]
-
   return (
     <section className="bg-g-dark border-b border-white/[0.07]">
-      <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 py-20">
-        <AnimateIn className="mb-12">
-          <div className="flex items-center gap-3">
+      <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 py-20 lg:py-24">
+
+        <AnimateIn className="mb-12 lg:mb-16">
+          <div className="flex items-center gap-3 mb-4">
             <div className="w-5 h-px bg-g-light shrink-0" />
             <span className="text-g-light text-[11px] font-bold tracking-[0.2em] uppercase">
-              {t('eyebrow')}
+              Nichos que atuamos
             </span>
           </div>
+          <h2 className="text-[clamp(26px,3.5vw,42px)] font-bold text-white leading-[1.05] tracking-tight max-w-[480px]">
+            Somos especialistas nos nichos que mais exigem identidade.
+          </h2>
         </AnimateIn>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06] rounded-2xl overflow-hidden">
-          {stats.map((stat, i) => (
-            <AnimateIn key={i} delay={i * 0.07}>
-              <div className="bg-g-dark px-8 py-10 flex flex-col gap-2">
-                <div className="text-[clamp(38px,5vw,60px)] font-bold leading-none tracking-[-0.03em] text-g-light">
-                  <Counter target={stat.value} />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {NICHES.map((n, i) => (
+            <AnimateIn key={i} delay={i * 0.1}>
+              <div className="group p-8 rounded-2xl border border-white/[0.07] hover:border-g-mid/40 bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-g-mid/15 flex items-center justify-center text-g-light mb-6 group-hover:bg-g-mid/25 transition-colors">
+                  {n.icon}
                 </div>
-                <div className="text-[12px] font-bold tracking-[0.1em] uppercase text-white/40 leading-snug">
-                  {stat.label}
-                </div>
+                <h3 className="text-[20px] font-bold text-white mb-3 leading-tight">{n.title}</h3>
+                <p className="text-[14px] text-white/45 leading-[1.75]">{n.desc}</p>
               </div>
             </AnimateIn>
           ))}
         </div>
+
       </div>
     </section>
   )

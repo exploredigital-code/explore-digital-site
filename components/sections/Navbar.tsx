@@ -50,6 +50,7 @@ export function Navbar() {
     { href: `/${localePrefix}/marketplace`, label: t('marketplace') },
     { href: `/${localePrefix}/sobre`,       label: t('about') },
     { href: `/${localePrefix}/blog`,        label: 'Blog' },
+    { href: `/${localePrefix}/vagas`,       label: 'Trabalhe Conosco' },
     { href: homeHref('#contact'),           label: t('contact') },
   ]
 
@@ -166,7 +167,7 @@ export function Navbar() {
                 <Link
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block text-[34px] font-bold text-white hover:text-g-light transition-colors py-2 text-center"
+                  className="block text-[26px] font-bold text-white hover:text-g-light transition-colors py-1.5 text-center"
                 >
                   {link.label}
                 </Link>

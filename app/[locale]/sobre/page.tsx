@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLocale, useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
@@ -8,63 +9,56 @@ import { Navbar }  from '@/components/sections/Navbar'
 import { Footer }  from '@/components/sections/Footer'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
-import { Button } from '@/components/ui/Button'
 
 const WHATSAPP = 'https://wa.me/5585910430670'
 
 const founders = [
   {
-    initials: 'F1',
-    name: 'Fundador',
-    role: 'CEO & Estratégia',
-    bio: 'Liderança e visão estratégica por trás da Explore Digital. Especialista em posicionamento de marca para hotelaria, experiências e real estate.',
-    color: 'from-g-dark to-s4',
+    name: 'João Teixeira',
+    role: 'Co-fundador · Diretor Criativo',
+    bio: 'Visionário criativo por trás da identidade da Explore Digital. Especialista em branding, estratégia de conteúdo e posicionamento de marcas no universo de hotelaria, experiências e real estate.',
+    photo: '/images/team/João.png',
   },
   {
-    initials: 'F2',
-    name: 'Co-fundador',
-    role: 'Diretor Criativo',
-    bio: 'À frente da identidade criativa da agência. Responsável pelo padrão visual e pela narrativa de cada marca que a Explore Digital constrói.',
-    color: 'from-s3 to-g-mid',
+    name: 'Pablo Frias',
+    role: 'Co-fundador · Diretor de Vendas',
+    bio: 'Responsável pelo crescimento comercial e pelo relacionamento com os clientes da Explore Digital. Especialista em estratégia de negócios, expansão de mercado e construção de parcerias de longo prazo.',
+    photo: '/images/team/Pablo.png',
   },
 ]
 
 const creativeTeam = [
   {
-    initials: 'EG',
     name: 'Esperanza Governa',
-    role: 'Time Criativo',
-    bio: 'Criação de conteúdo estratégico e produção visual para as marcas que atendemos.',
-    color: 'from-g-mid to-s4',
+    role: 'Conteúdo & Storytelling',
+    bio: 'Criação de conteúdo estratégico, storytelling e produção visual para as marcas que atendemos.',
+    photo: '/images/team/Esperanza.png',
   },
   {
-    initials: 'DM',
     name: 'David Marroni',
-    role: 'Time Criativo',
-    bio: 'Design e identidade visual. Responsável por dar vida à personalidade de cada marca.',
-    color: 'from-s4 to-g-dark',
+    role: 'Captação & Edição',
+    bio: 'Captação, edição e storytelling visual. Especialista em conteúdo para redes sociais.',
+    photo: '/images/team/David.png',
   },
   {
-    initials: 'SL',
     name: 'Styven Lord',
-    role: 'Time Criativo',
-    bio: 'Captação, edição e storytelling visual. Especialista em conteúdo para redes sociais.',
-    color: 'from-s3 to-g-mid',
+    role: 'Design & Branding',
+    bio: 'Designer especialista em branding e marcas que crescem no digital.',
+    photo: '/images/team/Styven.png',
   },
 ]
 
 const performanceTeam = [
   {
-    initials: 'WM',
     name: 'Winicius Moreira',
-    role: 'Time de Performance',
+    role: 'Performance & Tráfego',
     bio: 'Gestão de tráfego pago no Google e Meta. Focado em ROI e geração de leads qualificados.',
-    color: 'from-g-dark to-s3',
+    photo: '/images/team/Winicius.png',
   },
 ]
 
 function MemberCard({ member, dark = false }: {
-  member: typeof creativeTeam[0]
+  member: { name: string; role: string; bio: string; photo: string }
   dark?: boolean
 }) {
   return (
@@ -75,8 +69,14 @@ function MemberCard({ member, dark = false }: {
           ? 'border border-white/[0.07] hover:border-g-mid/40 bg-white/[0.03] hover:bg-white/[0.05]'
           : 'border border-g-dark/8 hover:border-g-mid/35 bg-white hover:shadow-md'
       )}>
-      <div className={cn('h-32 bg-gradient-to-br flex items-center justify-center shrink-0', member.color)}>
-        <span className="text-[24px] font-semibold text-white/75 tracking-widest">{member.initials}</span>
+      <div className="relative h-48 shrink-0 overflow-hidden bg-g-dark/10">
+        <Image
+          src={member.photo}
+          alt={member.name}
+          fill
+          className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
       </div>
       <div className="p-5 flex-1 flex flex-col">
         <div className={cn('text-[9px] font-bold tracking-[0.15em] uppercase mb-1', dark ? 'text-g-mid' : 'text-g-mid/80')}>{member.role}</div>
@@ -135,7 +135,7 @@ export default function SobrePage() {
                   <div className="text-[clamp(56px,8vw,80px)] font-semibold text-g-light leading-none mb-2">5+</div>
                   <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-g-light/35">Anos de expertise</div>
                   <div className="mt-8 grid grid-cols-3 gap-4">
-                    {[['80+', 'Marcas'], ['3', 'Países'], ['100%', 'Foco']].map(([v, l]) => (
+                    {[['+30', 'Marcas'], ['3', 'Países'], ['100%', 'Foco']].map(([v, l]) => (
                       <div key={l}>
                         <div className="text-[22px] font-semibold text-white">{v}</div>
                         <div className="text-[10px] text-white/45 tracking-widest uppercase mt-0.5">{l}</div>
@@ -149,7 +149,7 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* ══ VALORES — g-pale (logo após Nossa História) ══ */}
+      {/* ══ VALORES — g-pale ══ */}
       <section className="bg-g-pale py-24 lg:py-28">
         <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
           <AnimateIn className="mb-12">

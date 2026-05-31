@@ -45,8 +45,7 @@ export function Testimonials() {
 
               <div className="border-t border-white/[0.07] pt-5">
                 <div className="font-bold text-[15px] text-white">{item.author}</div>
-                <div className="text-[12px] text-white/40 mt-0.5">{item.role}</div>
-                <div className="text-[11px] font-bold tracking-[0.1em] uppercase text-g-mid/70 mt-2">{item.location}</div>
+                <div className="text-[11px] font-bold tracking-[0.1em] uppercase text-g-mid/70 mt-1">{item.location}</div>
               </div>
             </motion.div>
           ))}

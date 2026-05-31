@@ -1,17 +1,29 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn } from '@/components/ui/AnimateIn'
+import { VideoLightbox } from '@/components/ui/VideoLightbox'
+
+const ABOUT_VIDEO_ID = '1197006693'
 
 const MARKETS = [
-  { flag: '🇧🇷', label: 'Brasil' },
-  { flag: '🇵🇹', label: 'Portugal' },
-  { flag: '🌎', label: 'Internacional' },
+  { flag: '🇧🇷', label: 'Português' },
+  { flag: '🇬🇧', label: 'English' },
+  { flag: '🇪🇸', label: 'Español' },
 ]
 
 export function About() {
   const t = useTranslations('about')
+  const [thumbnail, setThumbnail] = useState<string | undefined>(undefined)
+
+  useEffect(() => {
+    fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${ABOUT_VIDEO_ID}&width=640`)
+      .then(r => r.json())
+      .then(d => setThumbnail(d.thumbnail_url))
+      .catch(() => {})
+  }, [])
 
   const differentials = [
     { title: t('d1_title'), desc: t('d1_desc') },
@@ -40,20 +52,14 @@ export function About() {
 
             {/* Coluna esquerda: vídeo vertical */}
             <AnimateIn className="flex justify-center">
-              <div className="relative w-full max-w-[280px]">
-                <div className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-g-dark shadow-2xl shadow-g-dark/20">
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_30%,#2D5238,#0F2018)]" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center px-6">
-                    <div className="w-16 h-16 rounded-full border-2 border-g-light/30 flex items-center justify-center">
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="white" className="translate-x-0.5 opacity-70">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                    <p className="text-[11px] text-g-light/40 tracking-widest uppercase leading-[1.6]">
-                      Vídeo institucional<br />Explore Digital
-                    </p>
-                  </div>
-                </div>
+              <div className="w-full max-w-[280px] shadow-2xl shadow-g-dark/20 rounded-2xl overflow-hidden">
+                <VideoLightbox
+                  src={`https://player.vimeo.com/video/${ABOUT_VIDEO_ID}?autoplay=1&title=0&byline=0&portrait=0`}
+                  thumbnail={thumbnail}
+                  aspect="9/16"
+                  label="Explore Digital"
+                  placeholderClass="bg-[radial-gradient(ellipse_80%_60%_at_50%_30%,#2D5238,#0F2018)]"
+                />
               </div>
             </AnimateIn>
 

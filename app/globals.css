@@ -63,7 +63,7 @@ h3 { font-family: 'Quanta', system-ui, sans-serif; font-weight: 600; }
 @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ── Word reveal ── */
-.word-clip { display: inline-block; overflow: hidden; vertical-align: bottom; }
+.word-clip { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.15em; margin-bottom: -0.15em; }
 
 /* ── Portfolio hover overlay ── */
 .card-overlay { transform: translateY(100%); transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1); }

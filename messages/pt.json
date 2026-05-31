@@ -24,8 +24,8 @@
     "eyebrow": "Nossa história",
     "title": "Uma agência feita para marcas que vendem desejo.",
     "sub": "Nascemos do setor. Crescemos com ele.",
-    "story": "A Explore Digital surgiu da convicção de que marcas de hotelaria, experiências e real estate merecem uma agência que realmente entende o setor — não apenas aplica templates genéricos. Construímos nossa expertise dentro do universo que mais exige identidade, emoção e desejo.",
-    "story2": "Atendemos marcas no Brasil, Portugal e mercados internacionais de língua portuguesa. Nossa equipe é pequena por escolha — preferimos ser parceiros estratégicos de poucos do que fornecedores de muitos.",
+    "story": "A Explore Digital nasceu da convicção de que marcas de hotelaria, experiências e real estate merecem uma agência que realmente entende o setor — não apenas aplica templates genéricos. Construímos nossa expertise dentro do universo que mais exige identidade, emoção e desejo.",
+    "story2": "Atendemos marcas no Brasil e mercados internacionais. Nossa equipe atua 100% online mas com disponibilidade para viajar e transmitir a experiência de nossos clientes.",
     "values_eyebrow": "Nossos valores",
     "v1_title": "Foco gera excelência",
     "v1_desc": "Só trabalhamos com hotelaria, experiências e real estate. Isso nos torna melhores naquilo que mais importa para você.",
@@ -56,16 +56,16 @@
   },
   "hero": {
     "eyebrow": "Agência Criativa · Hotelaria · Experiências · Real Estate",
-    "line1": "Marcas que geram",
-    "line2": "desejo.",
+    "line1": "Marcas que",
+    "line2": "geram desejo.",
     "sub": "Transformamos marcas de hotelaria, experiências e real estate em referências digitais. Do branding ao digital — tudo com foco em resultado real.",
     "cta_primary": "Ver Portfolio",
     "cta_secondary": "Fale Conosco"
   },
-  "marquee": "HOTELARIA · EXPERIÊNCIAS · REAL ESTATE · BRANDING · WEB DESIGN · SOCIAL MEDIA · PERFORMANCE · EXPLORE DIGITAL ·",
+  "marquee": "SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SISTEMAS · BRANDING · EXPLORE DIGITAL · SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SISTEMAS · BRANDING · EXPLORE DIGITAL ·",
   "stats": {
     "eyebrow": "Números que falam",
-    "s1_value": "80+",
+    "s1_value": "+30",
     "s1_label": "Marcas Atendidas",
     "s2_value": "5+",
     "s2_label": "Anos de Expertise",
@@ -94,33 +94,33 @@
     "items": [
       {
         "number": "01",
-        "title": "Branding",
-        "description": "Identidade visual que gera desejo. Criamos marcas que comunicam o valor único do seu negócio e criam conexão emocional com o cliente antes mesmo da primeira experiência.",
-        "tags": ["Identidade Visual", "Logotipo", "Manual de Marca", "Copywriting"]
-      },
-      {
-        "number": "02",
-        "title": "Web Design",
-        "description": "Sites e landing pages que convertem visitantes em clientes. Design premium que reflete a experiência que o cliente terá e que funciona perfeitamente em qualquer dispositivo.",
-        "tags": ["Site Institucional", "Landing Page", "UX/UI", "Otimização SEO"]
-      },
-      {
-        "number": "03",
         "title": "Social Media",
         "description": "Conteúdo estratégico que transforma seguidores em clientes pagantes. Gestão completa com foco em engajamento qualificado e geração de leads e reservas diretas.",
         "tags": ["Gestão de Redes", "Criação de Conteúdo", "Fotografia", "Reels"]
       },
       {
-        "number": "04",
+        "number": "02",
         "title": "Performance Ads",
         "description": "Campanhas no Google e Meta com ROI mensurável. Cada real investido é rastreado e otimizado para que você saiba exatamente quanto está ganhando com anúncios.",
         "tags": ["Google Ads", "Meta Ads", "Remarketing", "Analytics & Relatórios"]
       },
       {
-        "number": "05",
+        "number": "03",
+        "title": "Web Design",
+        "description": "Sites e landing pages que convertem visitantes em clientes. Design premium que reflete a experiência que o cliente terá e que funciona perfeitamente em qualquer dispositivo.",
+        "tags": ["Site Institucional", "Landing Page", "UX/UI", "Otimização SEO"]
+      },
+      {
+        "number": "04",
         "title": "Sistemas",
         "description": "Sistemas internos e automações que eliminam processos manuais, reduzem erros e liberam sua equipe para o que realmente importa.",
         "tags": ["Sistemas Internos", "Automações", "Integrações", "Make · n8n · Zapier"]
+      },
+      {
+        "number": "05",
+        "title": "Branding",
+        "description": "Identidade visual que gera desejo. Criamos marcas que comunicam o valor único do seu negócio e criam conexão emocional com o cliente antes mesmo da primeira experiência.",
+        "tags": ["Identidade Visual", "Logotipo", "Manual de Marca", "Copywriting"]
       }
     ]
   },
@@ -134,29 +134,29 @@
     "d2_desc": "Trabalhamos com métricas claras: reservas diretas, custo por lead, ROI de campanhas e crescimento de audiência qualificada.",
     "d3_title": "Parceria estratégica",
     "d3_desc": "Não somos uma agência de volume. Cada cliente tem um time dedicado que entende o negócio e pensa estrategicamente no crescimento.",
-    "markets": "Atendemos Brasil, Portugal e mercados internacionais de língua portuguesa."
+    "markets": "Trabalhamos com marcas no Brasil e na Espanha, em português, inglês e espanhol."
   },
   "testimonials": {
     "eyebrow": "O que dizem",
     "title": "Clientes que viraram casos de sucesso",
     "items": [
       {
-        "quote": "A Explore Digital transformou completamente a presença digital da nossa pousada. As reservas diretas triplicaram em 6 meses — e a identidade visual finalmente representa o que somos.",
-        "author": "Ana Cavalcanti",
-        "role": "Proprietária · Pousada Miramar",
-        "location": "Alagoas, BR"
+        "quote": "A Explore Digital transformou a forma como comunicamos o nosso negócio. Em poucos meses o engajamento triplicou e as reservas diretas cresceram de forma expressiva. É a agência que entende o nosso mercado de verdade.",
+        "author": "Rafael M.",
+        "role": "",
+        "location": "Brasil"
       },
       {
-        "quote": "Trabalhar com uma agência que entende o nosso mercado faz toda a diferença. Eles chegam na reunião sabendo o que precisamos — sem precisar explicar o setor do zero.",
-        "author": "Carlos Mendes",
-        "role": "Diretor · Serra Verde Resort",
-        "location": "Minas Gerais, BR"
+        "quote": "Working with Explore Digital was a game-changer for our business. They understood our audience from day one and created content that actually converts. The growth we've seen in six months exceeded every expectation.",
+        "author": "James K.",
+        "role": "",
+        "location": "Spain"
       },
       {
-        "quote": "O branding que criaram capturou exatamente a essência das nossas experiências. Os clientes se identificam imediatamente — e isso se reflete nas vendas.",
-        "author": "Juliana Ferreira",
-        "role": "Fundadora · Experiências do Pantanal",
-        "location": "Mato Grosso, BR"
+        "quote": "El equipo de Explore Digital captó la esencia de nuestra marca desde el primer día. El contenido que crean convierte seguidores en clientes reales. Los resultados hablan por sí solos.",
+        "author": "Sofía R.",
+        "role": "",
+        "location": "España"
       }
     ]
   },
