@@ -69,19 +69,30 @@ function MemberCard({ member, dark = false }: {
           ? 'border border-white/[0.07] hover:border-g-mid/40 bg-white/[0.03] hover:bg-white/[0.05]'
           : 'border border-g-dark/8 hover:border-g-mid/35 bg-white hover:shadow-md'
       )}>
-      <div className="relative h-48 shrink-0 overflow-hidden bg-g-dark/10">
+      {/* Foto quadrada — object-contain garante foto inteira sem corte */}
+      <div className={cn(
+        'relative aspect-square shrink-0 overflow-hidden',
+        dark ? 'bg-[#0D1A12]' : 'bg-g-pale'
+      )}>
         <Image
           src={member.photo}
           alt={member.name}
           fill
-          className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-contain"
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
         />
       </div>
-      <div className="p-5 flex-1 flex flex-col">
-        <div className={cn('text-[9px] font-bold tracking-[0.15em] uppercase mb-1', dark ? 'text-g-mid' : 'text-g-mid/80')}>{member.role}</div>
-        <div className={cn('font-bold text-[15px] mb-2', dark ? 'text-white' : 'text-g-dark')}>{member.name}</div>
-        <p className={cn('text-[13px] leading-[1.65] flex-1', dark ? 'text-white/55' : 'text-g-dark/55')}>{member.bio}</p>
+      {/* Info */}
+      <div className="p-5 flex flex-col gap-1">
+        <div className={cn('text-[9px] font-bold tracking-[0.18em] uppercase', dark ? 'text-g-mid' : 'text-g-mid/80')}>
+          {member.role}
+        </div>
+        <div className={cn('font-bold text-[16px]', dark ? 'text-white' : 'text-g-dark')}>
+          {member.name}
+        </div>
+        <p className={cn('text-[13px] leading-[1.7] mt-1', dark ? 'text-white/50' : 'text-g-dark/55')}>
+          {member.bio}
+        </p>
       </div>
     </motion.div>
   )
