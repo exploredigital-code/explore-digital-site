@@ -94,7 +94,7 @@ export const projects: Project[] = [
     location: 'Rio de Janeiro — RJ',
     sector: 'Hotelaria',
     categories: ['social'],
-    result: '+110 mil seguidores no Instagram',
+    result: 'Instagram +400% em 2 anos — de 27 mil para 110 mil seguidores',
     year: '2023',
     gradient: 'from-[#0F2018] via-[#1B3025] to-[#2D5238]',
     imageUrl: '/images/portfolio/maresiasdoleme.jpg',
