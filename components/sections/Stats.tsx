@@ -45,7 +45,7 @@ export function Stats() {
             </span>
           </div>
           <h2 className="text-[clamp(26px,3.5vw,42px)] font-bold text-white leading-[1.05] tracking-tight max-w-[480px]">
-            Mais que uma agência de marketing, somos uma parceira para seu negócio.
+            Uma agência de marketing. Uma parceira para seu negócio.
           </h2>
         </AnimateIn>
 
