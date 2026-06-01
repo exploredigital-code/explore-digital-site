@@ -8,7 +8,7 @@ import { Navbar } from '@/components/sections/Navbar'
 import { Footer } from '@/components/sections/Footer'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 
-const WA_BASE = 'https://wa.me/55859910430670?text='
+const WA_BASE = 'https://wa.me/5585991043067?text='
 
 interface Props {
   sub: SubService

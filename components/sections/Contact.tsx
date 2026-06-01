@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/Button'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 import { cn } from '@/lib/utils'
 
-const WHATSAPP_BASE = 'https://wa.me/55859910430670?text='
+const WHATSAPP_BASE = 'https://wa.me/5585991043067?text='
 const FORMSPREE = 'https://formspree.io/f/YOUR_FORM_ID'
 
 const inputClass = cn(

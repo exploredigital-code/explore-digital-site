@@ -10,7 +10,7 @@ import { Footer }  from '@/components/sections/Footer'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 
-const WHATSAPP = 'https://wa.me/55859910430670'
+const WHATSAPP = 'https://wa.me/5585991043067'
 
 const founders = [
   {

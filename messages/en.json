@@ -10,15 +10,15 @@
   },
   "process": {
     "eyebrow": "How it works",
-    "title": "Simple, direct, results-driven.",
-    "subtitle": "We keep it simple. In three steps you go from zero to a brand that generates desire and clients.",
+    "title": "From first contact to first booking.",
+    "subtitle": "In three steps you understand exactly what we'll do, how much it costs and when results start showing.",
     "cta": "Free consultation →",
     "s1_title": "Choose your service",
     "s1_desc": "Browse our plans and choose the one that best fits your brand's current stage.",
     "s2_title": "Free consultation",
     "s2_desc": "Reach out for a no-commitment conversation. We'll understand your business and align the details.",
-    "s3_title": "Growth begins",
-    "s3_desc": "We sign the contract and start. You follow everything in real time with your dedicated team."
+    "s3_title": "Results in the first 90 days",
+    "s3_desc": "We define tracking metrics. You see the progress week by week in the exclusive group with your dedicated team."
   },
   "about_page": {
     "eyebrow": "Our story",
@@ -42,8 +42,8 @@
   },
   "marketplace_page": {
     "eyebrow": "Services Catalog",
-    "title": "Everything your brand needs to grow digitally.",
-    "sub": "Choose the service or package that makes sense for your moment. No hidden setup fees, no surprises.",
+    "title": "Plans and services for brands that want to grow digitally. Without depending on intermediaries.",
+    "sub": "Choose what makes sense for your moment. Monthly contracts. No exit penalty.",
     "monthly": "per month",
     "once": "one-time payment",
     "recommended": "Recommended",
@@ -65,19 +65,19 @@
   "marquee": "SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SYSTEMS · BRANDING · EXPLORE DIGITAL · SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SYSTEMS · BRANDING · EXPLORE DIGITAL ·",
   "stats": {
     "eyebrow": "Numbers that speak",
-    "s1_value": "80+",
-    "s1_label": "Brands Served",
+    "s1_value": "+30",
+    "s1_label": "brands in 3 countries",
     "s2_value": "5+",
-    "s2_label": "Years of Expertise",
-    "s3_value": "3",
-    "s3_label": "Markets: BR · PT · Intl",
+    "s2_label": "years solely in the sector",
+    "s3_value": "+100%",
+    "s3_label": "average social media growth",
     "s4_value": "3",
     "s4_label": "Sectors: Hotel · Exp · RE"
   },
   "portfolio": {
     "eyebrow": "Our Work",
-    "title": "Cases that deliver real results",
-    "subtitle": "Every project has a story. These are some of the brands we helped build.",
+    "title": "Strategic projects, real results.",
+    "subtitle": "Social media growth. Fully booked high seasons. Direct bookings rising. These are the results of brands that stopped being ordinary.",
     "filter_all": "All",
     "filter_branding": "Branding",
     "filter_web": "Web Design",
@@ -89,38 +89,38 @@
   },
   "services": {
     "eyebrow": "What we do",
-    "title": "Services that build desire-driven brands",
-    "subtitle": "Each discipline was built on years of experience in the sectors that demand the most identity and emotion.",
+    "title": "Everything your brand needs to sell before the first contact",
+    "subtitle": "From branding to paid traffic, every service was designed for hotels, guesthouses and experiences that want to grow without depending on intermediaries.",
     "items": [
       {
         "number": "01",
         "title": "Social Media",
-        "description": "Strategic content that turns followers into paying clients. Full management focused on qualified engagement and lead and booking generation.",
+        "description": "Content that makes guests dream about their stay before opening Booking. Full social media management focused on qualified engagement and direct bookings.",
         "tags": ["Social Management", "Content Creation", "Photography", "Reels"]
       },
       {
         "number": "02",
         "title": "Performance Ads",
-        "description": "Google and Meta campaigns with measurable ROI. Every dollar invested is tracked and optimized so you know exactly what you're earning from ads.",
+        "description": "When someone searches 'guesthouse in [city]', you appear first. And we convert that click into a booking, with measurable ROI on every dollar invested.",
         "tags": ["Google Ads", "Meta Ads", "Remarketing", "Analytics & Reports"]
       },
       {
         "number": "03",
         "title": "Web Design",
-        "description": "Sites and landing pages that convert visitors into clients. Premium design that reflects the client experience and works flawlessly on any device.",
-        "tags": ["Institutional Site", "Landing Page", "UX/UI", "SEO Optimization"]
+        "description": "Does your site generate more direct bookings than the commission you pay Booking.com today? Ours does. Sites and landing pages that convert visits into guests.",
+        "tags": ["Hotel Website", "Landing Page", "UX/UI", "SEO Optimization"]
       },
       {
         "number": "04",
         "title": "Systems",
-        "description": "Internal systems and automations that eliminate manual processes, reduce errors and free your team to focus on what really matters.",
+        "description": "Automate follow-ups, check-ins and billing. Your team focuses on the guest, not the spreadsheet. Custom systems and integrations for your operation.",
         "tags": ["Internal Systems", "Automations", "Integrations", "Make · n8n · Zapier"]
       },
       {
         "number": "05",
         "title": "Branding",
-        "description": "Visual identity that creates desire. We build brands that communicate your business's unique value and create emotional connection with clients before the first experience.",
-        "tags": ["Visual Identity", "Logo", "Brand Guidelines", "Copywriting"]
+        "description": "Your brand defines the price you can charge. Premium identities justify premium rates, from naming to the complete visual identity.",
+        "tags": ["Visual Identity", "Logo", "Brand Guidelines", "Naming"]
       }
     ]
   },
@@ -128,13 +128,13 @@
     "eyebrow": "Why Explore",
     "title": "Specialists in what demands identity the most.",
     "description": "Hospitality, experiences, and real estate are sectors where the brand is the product. We understand this — and we build brands equal to that responsibility.",
-    "d1_title": "Sector focus",
-    "d1_desc": "Our methodology, creative repertoire, and success cases were built within the sectors that demand the most identity, emotion, and desire.",
-    "d2_title": "Measurable results",
-    "d2_desc": "We work with clear metrics: direct bookings, cost per lead, campaign ROI, and qualified audience growth.",
-    "d3_title": "Strategic partnership",
-    "d3_desc": "We're not a volume agency. Each client has a dedicated team that understands the business and thinks strategically about growth.",
-    "markets": "We serve Brazil, Portugal, and international Portuguese-speaking markets."
+    "d1_title": "Specialists in your sector",
+    "d1_desc": "We don't work with e-commerce, startups or retail. Only hotels, guesthouses, real estate and experiences. That makes us the best at what you need. Not the cheapest on the market.",
+    "d2_title": "Direct bookings, not vanity metrics",
+    "d2_desc": "Followers who don't book don't pay the bills. Every campaign, post and landing page we deliver is measured by one metric: real growth of your revenue.",
+    "d3_title": "Dedicated team, not a rotation",
+    "d3_desc": "You don't talk to an intern. You have a fixed team that knows your brand, your season and your ideal client, thinking strategically about growth throughout the year.",
+    "markets": "We work with brands in Brazil and Spain, in Portuguese, English and Spanish."
   },
   "testimonials": {
     "eyebrow": "What they say",
@@ -162,14 +162,16 @@
   },
   "contact": {
     "eyebrow": "Let's talk",
-    "title": "Ready to transform your brand?",
-    "description": "Tell us about your business. We respond within 24 hours.",
+    "title": "Let's talk about your business.",
+    "description": "A 20-minute conversation is enough to understand what your brand needs and what will generate results. No pitch. No generic proposal. We respond within 24h.",
     "whatsapp": "Chat on WhatsApp",
     "email_label": "Or send an email",
     "email": "agencia.exploredigital@gmail.com",
-    "form_name": "Your name",
+    "form_name": "Full name",
     "form_email": "Email",
-    "form_business": "Business type (hotel, guesthouse, experience, real estate...)",
+    "form_phone": "WhatsApp / Phone",
+    "form_business": "Business type",
+    "form_service": "Service of interest",
     "form_message": "How can we help?",
     "form_submit": "Send message →",
     "form_sending": "Sending...",
@@ -177,7 +179,7 @@
     "form_error": "Error sending. Try WhatsApp instead."
   },
   "footer": {
-    "tagline": "Building desire-driven brands in hospitality, experiences, and real estate.",
+    "tagline": "Digital marketing agency for hotels, guesthouses and real estate. Direct bookings, not OTA dependence.",
     "nav_title": "Navigation",
     "social_title": "Social Media",
     "contact_title": "Contact",

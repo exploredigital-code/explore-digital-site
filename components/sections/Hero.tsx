@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/Button'
 
-const WHATSAPP = 'https://wa.me/55859910430670'
+const WHATSAPP = 'https://wa.me/5585991043067'
 const VIMEO_ID = '1197034435'
 
 const wordVariant = {

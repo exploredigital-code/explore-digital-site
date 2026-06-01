@@ -135,7 +135,7 @@ export default function BlogPostPage() {
                   Prefere conversar antes? Nossa equipe está no WhatsApp.
                 </p>
                 <a
-                  href="https://wa.me/55859910430670?text=Ol%C3%A1!%20Vi%20o%20blog%20da%20Explore%20Digital%20e%20quero%20saber%20mais."
+                  href="https://wa.me/5585991043067?text=Ol%C3%A1!%20Vi%20o%20blog%20da%20Explore%20Digital%20e%20quero%20saber%20mais."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold text-[13px] px-5 py-3 rounded-xl hover:brightness-95 transition-all duration-200"

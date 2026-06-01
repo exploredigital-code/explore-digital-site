@@ -218,7 +218,7 @@ export default function PortfolioPage() {
                   </h3>
                 </div>
                 <a
-                  href="https://wa.me/55859910430670?text=Ol%C3%A1!%20Vi%20o%20portfolio%20e%20quero%20conversar%20sobre%20o%20meu%20projeto."
+                  href="https://wa.me/5585991043067?text=Ol%C3%A1!%20Vi%20o%20portfolio%20e%20quero%20conversar%20sobre%20o%20meu%20projeto."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative z-10 shrink-0 inline-flex items-center gap-2 bg-g-light text-g-dark font-bold px-7 py-3.5 rounded-full hover:bg-g-pale hover:-translate-y-0.5 transition-all duration-200 text-[14px]"

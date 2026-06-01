@@ -6,7 +6,7 @@ import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 import { Button } from '@/components/ui/Button'
 
-const WHATSAPP = 'https://wa.me/55859910430670?text=Ol%C3%A1!%20Gostaria%20de%20uma%20consultoria%20gratuita.'
+const WHATSAPP = 'https://wa.me/5585991043067?text=Ol%C3%A1!%20Gostaria%20de%20uma%20consultoria%20gratuita.'
 
 export function Process() {
   const t = useTranslations('process')
