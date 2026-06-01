@@ -10,7 +10,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const project = projects.find(p => p.slug === slug)
-  if (!project) return { title: 'Projeto não encontrado' }
+  if (!project || project.hidden) return { title: 'Projeto não encontrado' }
 
   return {
     title: `${project.client} — Explore Digital`,
@@ -27,11 +27,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProjectPage({ params }: Props) {
   const { slug } = await params
   const project = projects.find(p => p.slug === slug)
-  if (!project) notFound()
+  if (!project || project.hidden) notFound()
 
-  const idx  = projects.findIndex(p => p.slug === slug)
-  const next = projects[(idx + 1) % projects.length]
-  const prev = projects[(idx - 1 + projects.length) % projects.length]
+  const visible = projects.filter(p => !p.hidden)
+  const idx  = visible.findIndex(p => p.slug === slug)
+  const next = visible[(idx + 1) % visible.length]
+  const prev = visible[(idx - 1 + visible.length) % visible.length]
 
-  return <ProjectView project={project!} next={next} prev={prev} />
+  return <ProjectView project={project} next={next} prev={prev} />
 }
