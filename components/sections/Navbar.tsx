@@ -77,9 +77,9 @@ export function Navbar() {
           <Image
             src="/images/logo.png"
             alt="Explore Digital"
-            width={140}
-            height={35}
-            className="h-8 w-auto"
+            width={182}
+            height={46}
+            className="h-[42px] w-auto"
             priority
           />
         </Link>

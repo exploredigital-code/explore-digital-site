@@ -19,6 +19,21 @@ const inputClass = cn(
   'transition-all duration-200'
 )
 
+const selectClass = cn(
+  inputClass,
+  'appearance-none cursor-pointer pr-10'
+)
+
+function SelectArrow() {
+  return (
+    <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-white/40">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+        <path d="M3 5l4 4 4-4" />
+      </svg>
+    </div>
+  )
+}
+
 const BUSINESS_TYPES = [
   'Hotel / Resort',
   'Pousada / Hostel',
@@ -158,17 +173,23 @@ export function Contact() {
                   <input type="email" name="email" placeholder={t('form_email') + ' *'} required value={form.email} onChange={handleChange} className={inputClass} />
                   <input type="tel" name="phone" placeholder="WhatsApp / Telefone" value={form.phone} onChange={handleChange} className={inputClass} />
 
-                  <select name="businessType" value={form.businessType} onChange={handleChange}
-                    className={cn(inputClass, 'cursor-pointer', !form.businessType && 'text-white/40')}>
-                    <option value="" disabled>{t('form_business')}</option>
-                    {BUSINESS_TYPES.map(b => <option key={b} value={b} className="text-g-dark bg-white">{b}</option>)}
-                  </select>
+                  <div className="relative">
+                    <select name="businessType" value={form.businessType} onChange={handleChange}
+                      className={cn(selectClass, !form.businessType && 'text-white/40')}>
+                      <option value="" disabled>{t('form_business')}</option>
+                      {BUSINESS_TYPES.map(b => <option key={b} value={b} className="text-g-dark bg-white">{b}</option>)}
+                    </select>
+                    <SelectArrow />
+                  </div>
 
-                  <select name="service" value={form.service} onChange={handleChange}
-                    className={cn(inputClass, 'cursor-pointer', !form.service && 'text-white/40')}>
-                    <option value="" disabled>Serviço de interesse</option>
-                    {SERVICES.map(s => <option key={s} value={s} className="text-g-dark bg-white">{s}</option>)}
-                  </select>
+                  <div className="relative">
+                    <select name="service" value={form.service} onChange={handleChange}
+                      className={cn(selectClass, !form.service && 'text-white/40')}>
+                      <option value="" disabled>Serviço de interesse</option>
+                      {SERVICES.map(s => <option key={s} value={s} className="text-g-dark bg-white">{s}</option>)}
+                    </select>
+                    <SelectArrow />
+                  </div>
 
                   <textarea name="message" rows={3} placeholder={t('form_message')} value={form.message} onChange={handleChange}
                     className={cn(inputClass, 'resize-none')} />

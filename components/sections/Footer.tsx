@@ -30,9 +30,9 @@ export function Footer() {
             <Image
               src="/images/logo.png"
               alt="Explore Digital"
-              width={130}
-              height={33}
-              className="h-8 w-auto mb-5 opacity-90"
+              width={169}
+              height={43}
+              className="h-[42px] w-auto mb-5 opacity-90"
             />
             <p className="text-[14px] text-white/50 leading-[1.75] max-w-[260px]">
               {t('tagline')}
