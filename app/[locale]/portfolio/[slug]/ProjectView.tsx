@@ -13,7 +13,7 @@ import { Footer }  from '@/components/sections/Footer'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 import { VideoLightbox } from '@/components/ui/VideoLightbox'
 
-const WA_BASE = 'https://wa.me/5585991043067?text='
+const WA_BASE = 'https://wa.me/+5585991043067?text='
 
 const SECTOR_KEY: Record<string, string> = {
   'Beach Club': 'sector_beach_club',

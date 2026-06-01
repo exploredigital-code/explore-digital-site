@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 
-const WA_BASE = 'https://wa.me/5585991043067?text='
+const WA_BASE = 'https://wa.me/+5585991043067?text='
 
 export function WhatsAppFloat() {
   const t = useTranslations('contact')

@@ -21,7 +21,7 @@ const CATEGORY_LABEL_KEY: Record<string, string> = {
   'Sistemas': 'cat_sistemas',
 }
 
-const WA_BASE = 'https://wa.me/5585991043067?text='
+const WA_BASE = 'https://wa.me/+5585991043067?text='
 
 export default function BlogPostPage() {
   const t = useTranslations('blog')

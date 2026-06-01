@@ -10,13 +10,13 @@ import { Footer }  from '@/components/sections/Footer'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 
-const WHATSAPP = 'https://wa.me/5585991043067'
+const WHATSAPP = 'https://wa.me/+5585991043067'
 
 const FOUNDER_PHOTOS = ['/images/team/João.png', '/images/team/Pablo.png']
 const CREATIVE_PHOTOS = ['/images/team/Esperanza.png', '/images/team/David.png', '/images/team/Styven.png']
 const PERFORMANCE_PHOTOS = ['/images/team/Winicius.png']
 const FOUNDER_NAMES = ['João Teixeira', 'Pablo Frias']
-const CREATIVE_NAMES = ['Esperanza Governa', 'David Marroni', 'Styven Lord']
+const CREATIVE_NAMES = ['Esperanza Governa', 'David Marroni', 'Styven Elord']
 const PERFORMANCE_NAMES = ['Winicius Moreira']
 
 function MemberCard({ member, dark = false }: {

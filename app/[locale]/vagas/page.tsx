@@ -9,7 +9,7 @@ import { Footer } from '@/components/sections/Footer'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 
-const WA_BASE = 'https://wa.me/5585991043067?text='
+const WA_BASE = 'https://wa.me/+5585991043067?text='
 const EMAIL = 'agencia.exploredigital@gmail.com'
 const FORMSPREE = 'https://formspree.io/f/YOUR_FORM_ID'
 

@@ -9,7 +9,7 @@ import { Footer } from '@/components/sections/Footer'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 
-const WHATSAPP_BASE = 'https://wa.me/5585991043067?text='
+const WHATSAPP_BASE = 'https://wa.me/+5585991043067?text='
 
 /* ─── SVG Stickers alinhados com a identidade visual ─── */
 function IconSocial() {
@@ -113,14 +113,7 @@ function PricingCard({ plan, monthly, once, whatsappCta, waUrl }: {
         <div className="text-[10px] font-bold tracking-[0.2em] uppercase mb-4 pb-4 border-b text-g-mid border-g-dark/8">
           {plan.name}
         </div>
-        <div className="mb-7">
-          <div className="text-[46px] font-semibold leading-none tracking-[-0.025em] text-g-dark">
-            {plan.price}
-          </div>
-          <div className="text-[12px] font-bold tracking-[0.08em] uppercase mt-2 text-g-dark/50">
-            {plan.period === 'monthly' ? monthly : once}
-          </div>
-        </div>
+        <div className="mb-7" />
         <ul className="flex flex-col gap-3.5 mb-8 flex-1">
           {plan.features.map((f, i) => (
             <li key={i} className="flex items-start gap-3">
@@ -184,8 +177,6 @@ function IndividualCard({ name, price, icon, waUrl }: { name: string; price: str
       </div>
       <div>
         <div className="text-[15px] font-bold text-g-dark mb-1">{name}</div>
-        <div className="text-[22px] font-semibold text-g-mid">{price}</div>
-        <div className="text-[11px] text-g-dark/40 mt-0.5 tracking-wide">{t('per_delivery')}</div>
       </div>
       <a
         href={waUrl}
