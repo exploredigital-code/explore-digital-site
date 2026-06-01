@@ -49,11 +49,11 @@ export function Stats() {
           </h2>
         </AnimateIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-stretch">
           {NICHES.map((n, i) => (
-            <AnimateIn key={i} delay={i * 0.1}>
-              <div className="group p-8 rounded-2xl border border-white/[0.07] hover:border-g-mid/40 bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-g-mid/15 flex items-center justify-center text-g-light mb-6 group-hover:bg-g-mid/25 transition-colors">
+            <AnimateIn key={i} delay={i * 0.1} className="h-full">
+              <div className="group h-full p-8 rounded-2xl border border-white/[0.07] hover:border-g-mid/40 bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-300 flex flex-col">
+                <div className="w-12 h-12 rounded-xl bg-g-mid/15 flex items-center justify-center text-g-light mb-6 group-hover:bg-g-mid/25 transition-colors shrink-0">
                   {n.icon}
                 </div>
                 <h3 className="text-[20px] font-bold text-white mb-3 leading-tight">{n.title}</h3>
