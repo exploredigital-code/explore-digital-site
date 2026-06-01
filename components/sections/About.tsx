@@ -88,7 +88,7 @@ export function About() {
         {/* Onde atuamos — centralizado na parte inferior */}
         <AnimateIn className="mt-14 text-center">
           <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-mid mb-4">
-            Onde atuamos
+            {t('where_eyebrow')}
           </div>
           <div className="flex flex-wrap justify-center gap-3">
             {MARKETS.map((m) => (

@@ -6,7 +6,9 @@
     "marketplace": "Planes",
     "about": "Nosotros",
     "contact": "Contacto",
-    "cta": "Hablemos"
+    "cta": "Hablemos",
+    "work": "Trabaja Con Nosotros",
+    "blog": "Blog"
   },
   "process": {
     "eyebrow": "Cómo funciona",
@@ -72,7 +74,10 @@
     "s3_value": "+100%",
     "s3_label": "crecimiento medio en redes",
     "s4_value": "3",
-    "s4_label": "Sectores: Hotel · Exp · RE"
+    "s4_label": "Sectores: Hotel · Exp · RE",
+    "nichos_eyebrow": "Nuestros nichos",
+    "nichos_title1": "Más que una agencia de marketing.",
+    "nichos_title2": "Una socia para tu negocio."
   },
   "portfolio": {
     "eyebrow": "Nuestro Trabajo",
@@ -89,6 +94,8 @@
   },
   "services": {
     "eyebrow": "Lo que hacemos",
+    "see_more": "Ver detalles",
+    "recommended": "Recomendado",
     "title": "Todo lo que tu marca necesita para vender antes del primer contacto",
     "subtitle": "Del branding al tráfico pagado, cada servicio fue diseñado para hoteles, posadas y experiencias que quieren crecer sin depender de intermediarios.",
     "items": [
@@ -134,7 +141,8 @@
     "d2_desc": "Los seguidores que no reservan no pagan las cuentas. Cada campaña, post y landing page que entregamos se mide por una métrica: crecimiento real de tu facturación.",
     "d3_title": "Equipo dedicado, no rotación",
     "d3_desc": "No hablas con un pasante. Tienes un equipo fijo que conoce tu marca, tu temporada y tu cliente ideal, pensando estratégicamente en el crecimiento a lo largo del año.",
-    "markets": "Trabajamos con marcas en Brasil y España, en portugués, inglés y español."
+    "markets": "Trabajamos con marcas en Brasil y España, en portugués, inglés y español.",
+    "where_eyebrow": "Dónde operamos"
   },
   "testimonials": {
     "eyebrow": "Lo que dicen",
@@ -176,7 +184,44 @@
     "form_submit": "Enviar mensaje →",
     "form_sending": "Enviando...",
     "form_success": "¡Mensaje enviado! Te contactaremos pronto.",
-    "form_error": "Error al enviar. Intenta por WhatsApp."
+    "form_error": "Error al enviar. Intenta por WhatsApp.",
+    "trust_1": "Respuesta en menos de 24h",
+    "trust_2": "Consultoría gratuita",
+    "trust_3": "Datos protegidos",
+    "trust_4": "BR · ES · Internacional",
+    "form_disclaimer": "Al enviar, tu mensaje llega por email y WhatsApp simultáneamente.",
+    "success_sub": "También abrimos WhatsApp con tus datos para agilizar el contacto."
+  },
+  "service_detail": {
+    "back": "Volver",
+    "recommended": "Recomendado",
+    "hire_whatsapp": "Contratar por WhatsApp",
+    "about_service": "Sobre este servicio",
+    "for_whom": "Para quién es",
+    "whats_included": "Qué incluye",
+    "you_receive": "Todo lo que recibes.",
+    "expected_result": "Resultado esperado",
+    "want_service": "Quiero este servicio",
+    "see_all_plans": "Ver todos los planes"
+  },
+  "portfolio_detail": {
+    "client": "Cliente",
+    "sector": "Sector",
+    "year": "Año",
+    "result": "Resultado",
+    "about_project": "Sobre el Proyecto",
+    "services_done": "Servicios realizados",
+    "location": "Ubicación",
+    "videos": "Videos",
+    "brand_in_motion": "La marca en movimiento",
+    "main_result": "Resultado principal",
+    "want_result": "Quiero un resultado así →",
+    "more_projects": "Más proyectos",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "work_together": "Trabajemos juntos",
+    "cta_title": "¿Quieres un proyecto así para tu marca?",
+    "cta_button": "Hablar con Explore"
   },
   "footer": {
     "tagline": "Agencia de marketing digital para hoteles, posadas y real estate. Reservas directas, sin depender de OTAs.",

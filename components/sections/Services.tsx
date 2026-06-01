@@ -82,9 +82,11 @@ const PILLAR_ICONS: Record<string, React.ReactNode> = {
   ),
 }
 
-function SubServiceCard({ sub, localePrefix }: {
+function SubServiceCard({ sub, localePrefix, seeMore, recommended }: {
   sub: { slug: string; name: string; tagline: string; recommended?: boolean }
   localePrefix: string
+  seeMore: string
+  recommended: string
 }) {
   const imgSrc = CARD_IMAGE[sub.slug]
   const gradient = CARD_GRADIENT[sub.slug] ?? 'from-[#1B3025] to-[#2D5238]'
@@ -113,7 +115,7 @@ function SubServiceCard({ sub, localePrefix }: {
           {sub.recommended && (
             <div className="absolute top-3 left-3 z-10">
               <span className="text-[8px] font-bold tracking-[0.15em] uppercase bg-g-mid text-white px-2 py-0.5 rounded-full">
-                Recomendado
+                {recommended}
               </span>
             </div>
           )}
@@ -128,7 +130,7 @@ function SubServiceCard({ sub, localePrefix }: {
             {sub.tagline}
           </p>
           <span className="inline-flex items-center gap-1 text-[11px] font-bold text-g-mid/70 group-hover:text-g-mid group-hover:gap-1.5 transition-all duration-200 mt-auto pt-2">
-            Ver detalhes
+            {seeMore}
             <svg width="11" height="11" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <path d="M2 7h10M8 3l4 4-4 4" />
             </svg>
@@ -235,7 +237,7 @@ export function Services() {
                           {/* Horizontal scrollable row */}
                           <div className="flex gap-4 overflow-x-auto pb-2 -mr-6 pr-6 sm:-mr-10 sm:pr-10 lg:-mr-16 lg:pr-16" style={{ scrollbarWidth: 'none' }}>
                             {svcData.subServices.map(sub => (
-                              <SubServiceCard key={sub.slug} sub={sub} localePrefix={locale} />
+                              <SubServiceCard key={sub.slug} sub={sub} localePrefix={locale} seeMore={t('see_more')} recommended={t('recommended')} />
                             ))}
                           </div>
                         </div>

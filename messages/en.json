@@ -6,7 +6,9 @@
     "marketplace": "Plans",
     "about": "About",
     "contact": "Contact",
-    "cta": "Get in Touch"
+    "cta": "Get in Touch",
+    "work": "Work With Us",
+    "blog": "Blog"
   },
   "process": {
     "eyebrow": "How it works",
@@ -72,7 +74,10 @@
     "s3_value": "+100%",
     "s3_label": "average social media growth",
     "s4_value": "3",
-    "s4_label": "Sectors: Hotel · Exp · RE"
+    "s4_label": "Sectors: Hotel · Exp · RE",
+    "nichos_eyebrow": "Our niches",
+    "nichos_title1": "More than a marketing agency.",
+    "nichos_title2": "A partner for your business."
   },
   "portfolio": {
     "eyebrow": "Our Work",
@@ -89,6 +94,8 @@
   },
   "services": {
     "eyebrow": "What we do",
+    "see_more": "See details",
+    "recommended": "Recommended",
     "title": "Everything your brand needs to sell before the first contact",
     "subtitle": "From branding to paid traffic, every service was designed for hotels, guesthouses and experiences that want to grow without depending on intermediaries.",
     "items": [
@@ -134,7 +141,8 @@
     "d2_desc": "Followers who don't book don't pay the bills. Every campaign, post and landing page we deliver is measured by one metric: real growth of your revenue.",
     "d3_title": "Dedicated team, not a rotation",
     "d3_desc": "You don't talk to an intern. You have a fixed team that knows your brand, your season and your ideal client, thinking strategically about growth throughout the year.",
-    "markets": "We work with brands in Brazil and Spain, in Portuguese, English and Spanish."
+    "markets": "We work with brands in Brazil and Spain, in Portuguese, English and Spanish.",
+    "where_eyebrow": "Where we operate"
   },
   "testimonials": {
     "eyebrow": "What they say",
@@ -176,7 +184,44 @@
     "form_submit": "Send message →",
     "form_sending": "Sending...",
     "form_success": "Message sent! We'll be in touch soon.",
-    "form_error": "Error sending. Try WhatsApp instead."
+    "form_error": "Error sending. Try WhatsApp instead.",
+    "trust_1": "Response within 24h",
+    "trust_2": "Free consultation",
+    "trust_3": "Data protected",
+    "trust_4": "BR · ES · International",
+    "form_disclaimer": "When you submit, your message reaches us by email and WhatsApp simultaneously.",
+    "success_sub": "We also opened WhatsApp with your details to speed things up."
+  },
+  "service_detail": {
+    "back": "Back",
+    "recommended": "Recommended",
+    "hire_whatsapp": "Hire via WhatsApp",
+    "about_service": "About this service",
+    "for_whom": "Who it's for",
+    "whats_included": "What's included",
+    "you_receive": "Everything you get.",
+    "expected_result": "Expected result",
+    "want_service": "I want this service",
+    "see_all_plans": "See all plans"
+  },
+  "portfolio_detail": {
+    "client": "Client",
+    "sector": "Sector",
+    "year": "Year",
+    "result": "Result",
+    "about_project": "About the Project",
+    "services_done": "Services delivered",
+    "location": "Location",
+    "videos": "Videos",
+    "brand_in_motion": "The brand in motion",
+    "main_result": "Main result",
+    "want_result": "I want a result like this →",
+    "more_projects": "More projects",
+    "prev": "Previous",
+    "next": "Next",
+    "work_together": "Let's work together",
+    "cta_title": "Want a project like this for your brand?",
+    "cta_button": "Talk to Explore"
   },
   "footer": {
     "tagline": "Digital marketing agency for hotels, guesthouses and real estate. Direct bookings, not OTA dependence.",

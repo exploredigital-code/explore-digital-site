@@ -139,10 +139,10 @@ export function Contact() {
               {/* Trust signals */}
               <div className="mt-10 grid grid-cols-2 gap-3">
                 {[
-                  { icon: '⚡', label: 'Resposta em até 24h' },
-                  { icon: '✦', label: 'Consultoria sem custo' },
-                  { icon: '🔒', label: 'Dados protegidos' },
-                  { icon: '🌎', label: 'BR · PT · Internacional' },
+                  { icon: '⚡', label: t('trust_1') },
+                  { icon: '✦', label: t('trust_2') },
+                  { icon: '🔒', label: t('trust_3') },
+                  { icon: '🌎', label: t('trust_4') },
                 ].map((s, i) => (
                   <div key={i} className="flex items-center gap-2.5 text-[12px] text-white/40">
                     <span>{s.icon}</span>
@@ -165,7 +165,7 @@ export function Contact() {
                     </svg>
                   </div>
                   <h3 className="text-[22px] font-bold text-white mb-2">{t('form_success')}</h3>
-                  <p className="text-white/45 text-[15px]">Também abrimos o WhatsApp com seus dados para agilizar o contato.</p>
+                  <p className="text-white/45 text-[15px]">{t('success_sub')}</p>
                 </motion.div>
               ) : (
                 <motion.form key="form" onSubmit={handleSubmit} className="flex flex-col gap-3" noValidate>
@@ -208,7 +208,7 @@ export function Contact() {
                     {status === 'sending' ? t('form_sending') : t('form_submit')}
                   </button>
                   <p className="text-[11px] text-white/30 text-center">
-                    Ao enviar, sua mensagem chega por e-mail e WhatsApp simultaneamente.
+                    {t('form_disclaimer')}
                   </p>
                 </motion.form>
               )}

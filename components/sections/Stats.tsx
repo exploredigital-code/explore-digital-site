@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 
 const NICHES = [
@@ -33,6 +34,7 @@ const NICHES = [
 ]
 
 export function Stats() {
+  const t = useTranslations('stats')
   return (
     <section className="bg-g-dark border-b border-white/[0.07]">
       <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 py-20 lg:py-24">
@@ -41,12 +43,12 @@ export function Stats() {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-5 h-px bg-g-light shrink-0" />
             <span className="text-g-light text-[11px] font-bold tracking-[0.2em] uppercase">
-              Nichos que atuamos
+              {t('nichos_eyebrow')}
             </span>
           </div>
           <h2 className="text-[clamp(30px,4.5vw,52px)] font-bold text-white leading-[1.05] tracking-[-0.025em]">
-            <span className="block">Mais que uma agência de marketing.</span>
-            <span className="block">Uma parceira para seu negócio.</span>
+            <span className="block">{t('nichos_title1')}</span>
+            <span className="block">{t('nichos_title2')}</span>
           </h2>
         </AnimateIn>
 

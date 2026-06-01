@@ -49,8 +49,8 @@ export function Navbar() {
     { href: homeHref('#portfolio'),         label: t('portfolio') },
     { href: `/${localePrefix}/marketplace`, label: t('marketplace') },
     { href: `/${localePrefix}/sobre`,       label: t('about') },
-    { href: `/${localePrefix}/blog`,        label: 'Blog' },
-    { href: `/${localePrefix}/vagas`,       label: 'Trabalhe Conosco' },
+    { href: `/${localePrefix}/blog`,        label: t('blog') },
+    { href: `/${localePrefix}/vagas`,       label: t('work') },
     { href: homeHref('#contact'),           label: t('contact') },
   ]
 
