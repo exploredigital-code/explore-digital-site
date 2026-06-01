@@ -10,7 +10,7 @@
   },
   "process": {
     "eyebrow": "Como funciona",
-    "title": "Do primeiro contato à primeira reserva.",
+    "title": "Do primeiro contato até a primeira reserva.",
     "subtitle": "Em três passos você entende exatamente o que vamos fazer, quanto vai custar e quando começa a aparecer no resultado.",
     "cta": "Consultoria gratuita →",
     "s1_title": "Escolha o serviço",
@@ -24,7 +24,7 @@
     "eyebrow": "Nossa história",
     "title": "Uma agência feita para marcas que vendem desejo.",
     "sub": "Nascemos do setor. Crescemos com ele.",
-    "story": "A Explore Digital nasceu da convicção de que marcas de hotelaria, experiências e real estate merecem uma agência que realmente entende o setor — não apenas aplica templates genéricos. Construímos nossa expertise dentro do universo que mais exige identidade, emoção e desejo.",
+    "story": "A Explore Digital nasceu da convicção de que marcas de hotelaria, experiências e real estate merecem uma agência que realmente entende o setor. Não apenas aplica templates genéricos. Construímos nossa expertise dentro do universo que mais exige identidade, emoção e desejo.",
     "story2": "Atendemos marcas no Brasil e mercados internacionais. Nossa equipe atua 100% online mas com disponibilidade para viajar e transmitir a experiência de nossos clientes.",
     "values_eyebrow": "Nossos valores",
     "v1_title": "Foco gera excelência",
@@ -32,7 +32,7 @@
     "v2_title": "Resultado é obrigação",
     "v2_desc": "Não vendemos impressões. Vendemos reservas diretas, leads qualificados e crescimento real e mensurável.",
     "v3_title": "Transparência total",
-    "v3_desc": "Você sabe o que está sendo feito, por quê e quais resultados está gerando — sempre, sem asteriscos.",
+    "v3_desc": "Você sabe o que está sendo feito, por quê e quais resultados está gerando. Sempre, sem asteriscos.",
     "tab_story": "Nossa História",
     "tab_team": "A Equipe",
     "team_eyebrow": "As pessoas por trás da Explore",
@@ -42,7 +42,7 @@
   },
   "marketplace_page": {
     "eyebrow": "Catálogo de Serviços",
-    "title": "Planos e serviços para marcas que querem crescer no digital — sem depender de intermediários.",
+    "title": "Planos e serviços para marcas que querem crescer no digital. Sem depender de intermediários.",
     "sub": "Escolha o que faz sentido para o seu momento. Contratos mensais. Sem multa de saída.",
     "monthly": "por mês",
     "once": "pagamento único",
@@ -101,7 +101,7 @@
       {
         "number": "02",
         "title": "Performance Ads",
-        "description": "Quando alguém busca 'pousada em [cidade]', você aparece primeiro. E convertemos esse clique em reserva — com ROI mensurável em cada real investido.",
+        "description": "Quando alguém busca 'pousada em [cidade]', você aparece primeiro. E convertemos esse clique em reserva, com ROI mensurável em cada real investido.",
         "tags": ["Google Ads", "Meta Ads", "Remarketing", "Analytics & Relatórios"]
       },
       {
@@ -119,7 +119,7 @@
       {
         "number": "05",
         "title": "Branding",
-        "description": "Sua marca define o preço que você consegue cobrar. Identidades premium justificam diárias premium — do naming à identidade visual completa.",
+        "description": "Sua marca define o preço que você consegue cobrar. Identidades premium justificam diárias premium, do naming até a identidade visual completa.",
         "tags": ["Identidade Visual", "Logotipo", "Manual de Marca", "Naming"]
       }
     ]
@@ -127,13 +127,13 @@
   "about": {
     "eyebrow": "Por que a Explore",
     "title": "Especialistas no que mais exige identidade.",
-    "description": "Hotelaria, experiências e real estate são setores onde a marca é o produto. Entendemos isso — e construímos marcas à altura dessa responsabilidade.",
+    "description": "Hotelaria, experiências e real estate são setores onde a marca é o produto. Entendemos isso. Construímos marcas no nível dessa responsabilidade.",
     "d1_title": "Especialistas no seu setor",
-    "d1_desc": "Não trabalhamos com e-commerce, startups ou varejo. Só hotéis, pousadas, imobiliárias e experiências. Isso faz de nós os melhores no que você precisa — não os mais baratos do mercado.",
+    "d1_desc": "Não trabalhamos com e-commerce, startups ou varejo. Só hotéis, pousadas, imobiliárias e experiências. Isso faz de nós os melhores no que você precisa. Não os mais baratos do mercado.",
     "d2_title": "Reservas diretas, não métricas vazias",
     "d2_desc": "Seguidores que não reservam não pagam as contas. Cada campanha, post e landing page que entregamos é medido por uma métrica: crescimento real do seu faturamento.",
     "d3_title": "Time dedicado, não revezamento",
-    "d3_desc": "Você não fala com estagiário. Tem um time fixo que conhece a sua marca, a sua temporada e o seu cliente ideal — e pensa estrategicamente no crescimento ao longo do ano.",
+    "d3_desc": "Você não fala com estagiário. Tem um time fixo que conhece a sua marca, a sua temporada e o seu cliente ideal, pensando estrategicamente no crescimento ao longo do ano.",
     "markets": "Trabalhamos com marcas no Brasil e na Espanha, em português, inglês e espanhol."
   },
   "testimonials": {
@@ -163,7 +163,7 @@
   "contact": {
     "eyebrow": "Vamos conversar",
     "title": "Vamos conversar sobre o seu negócio.",
-    "description": "Uma conversa de 20 minutos é suficiente para entender o que sua marca precisa — e o que vai gerar resultado. Sem pitch. Sem proposta genérica. Respondemos em até 24h.",
+    "description": "Uma conversa de 20 minutos é suficiente para entender o que sua marca precisa e o que vai gerar resultado. Sem pitch. Sem proposta genérica. Respondemos em até 24h.",
     "whatsapp": "Falar no WhatsApp",
     "email_label": "Ou envie um e-mail",
     "email": "agencia.exploredigital@gmail.com",

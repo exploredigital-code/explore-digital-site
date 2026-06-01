@@ -1,4 +1,4 @@
-export type ServicePillar = 'branding' | 'web' | 'social' | 'performance' | 'sistemas'
+﻿export type ServicePillar = 'branding' | 'web' | 'social' | 'performance' | 'sistemas'
 
 export interface ServiceStep { number: string; title: string; desc: string }
 
@@ -39,7 +39,7 @@ export const servicesData: ServiceData[] = [
     tagline: 'Identidade que gera desejo antes do primeiro contato.',
     description: 'Construímos marcas que comunicam valor, geram conexão emocional e posicionam o seu negócio exatamente onde ele precisa estar.',
     gradient: 'from-[#1B3025] via-[#2D5238] to-[#345E3F]',
-    what: 'Branding é o conjunto de elementos visuais, verbais e estratégicos que definem como a sua marca é percebida. É a diferença entre ser lembrado e ser esquecido — entre atrair o cliente certo e disputar preço com qualquer concorrente.',
+    what: 'Branding é o conjunto de elementos visuais, verbais e estratégicos que definem como a sua marca é percebida. É a diferença entre ser lembrado e ser esquecido, entre atrair o cliente certo e disputar preço com qualquer concorrente.',
     how: [
       { number: '01', title: 'Imersão & Diagnóstico', desc: 'Mergulhamos fundo no seu negócio, mercado e concorrência para entender o que torna a sua marca única.' },
       { number: '02', title: 'Estratégia de Marca', desc: 'Definimos posicionamento, personalidade, tom de voz e os pilares que vão guiar todas as decisões criativas.' },
@@ -62,7 +62,7 @@ export const servicesData: ServiceData[] = [
         price: 'R$ 1.900',
         period: 'once',
         tagline: 'O nome que define tudo.',
-        description: 'O nome é o primeiro ativo da sua marca — e também o mais permanente. Criamos nomes únicos, memoráveis e estratégicos que comunicam o DNA do seu negócio e funcionam tanto no Brasil quanto internacionalmente.',
+        description: 'O nome é o primeiro ativo da sua marca. Também o mais permanente. Criamos nomes únicos, memoráveis e estratégicos que comunicam o DNA do seu negócio e funcionam tanto no Brasil quanto internacionalmente.',
         forWhom: ['Novos negócios em busca do nome certo', 'Marcas em processo de rebranding', 'Empreendedores que querem um nome com estratégia por trás'],
         features: [
           'Briefing estratégico aprofundado',
@@ -99,9 +99,9 @@ export const servicesData: ServiceData[] = [
         name: 'Branding Completo',
         price: 'R$ 7.000',
         period: 'once',
-        tagline: 'Do posicionamento à identidade visual.',
+        tagline: 'Do posicionamento até a identidade visual.',
         recommended: true,
-        description: 'Do zero ao completo. Construímos sua marca de dentro para fora: do propósito e posicionamento à identidade visual aplicada. Para marcas que querem ser referência no setor — não apenas mais uma opção no mercado.',
+        description: 'Do zero ao completo. Construímos sua marca de dentro para fora: do propósito e posicionamento até a identidade visual aplicada. Para marcas que querem ser referência no setor. Não apenas mais uma opção no mercado.',
         forWhom: ['Novos negócios que querem começar com tudo definido', 'Marcas em processo de reinvenção estratégica', 'Hotéis, experiências e real estate de alto padrão'],
         features: [
           'Definição de propósito, missão, visão e valores',
@@ -112,7 +112,7 @@ export const servicesData: ServiceData[] = [
           'Guia de aplicação da marca (brand book)',
           'Apresentação estratégica final',
         ],
-        result: 'Marca completa do zero — estratégia + identidade visual',
+        result: 'Marca completa do zero: estratégia + identidade visual',
       },
     ],
   },
@@ -123,16 +123,16 @@ export const servicesData: ServiceData[] = [
     tagline: 'Sites que convertem visitantes em clientes antes da ligação.',
     description: 'Criamos sites e landing pages que comunicam o valor da sua marca, geram confiança imediata e convertem visitas em reservas e leads qualificados.',
     gradient: 'from-[#0F2018] via-[#1B3025] to-[#243D2D]',
-    what: 'Um bom site é o melhor vendedor da sua marca — trabalha 24h por dia, comunica credibilidade antes de qualquer conversa e guia o visitante exatamente para onde você quer que ele vá. Sites ruins perdem clientes silenciosamente.',
+    what: 'Um bom site é o melhor vendedor da sua marca. Trabalha 24h por dia, comunica credibilidade antes de qualquer conversa e guia o visitante exatamente para onde você quer que ele vá. Sites ruins perdem clientes silenciosamente.',
     how: [
       { number: '01', title: 'Briefing & Estratégia', desc: 'Entendemos o seu negócio, público e objetivos para definir a arquitetura e o fluxo ideal do site.' },
       { number: '02', title: 'UX & Prototipagem', desc: 'Criamos wireframes e protótipos navegáveis antes de qualquer linha de código.' },
-      { number: '03', title: 'Design & Desenvolvimento', desc: 'Desenvolvemos o design final e construímos o site em código — rápido, responsivo e otimizado.' },
+      { number: '03', title: 'Design & Desenvolvimento', desc: 'Desenvolvemos o design final e construímos o site em código, rápido, responsivo e otimizado.' },
       { number: '04', title: 'Lançamento & Suporte', desc: 'Configuramos domínio, hospedagem, SEO básico e entregamos o site pronto para receber clientes.' },
     ],
     whoFor: [
       'Hotéis e pousadas que dependem de reservas diretas (sem OTA)',
-      'Beach clubs com presença digital à altura da experiência física',
+      'Beach clubs com presença digital no nível da experiência física',
       'Imobiliárias e incorporadoras que vendem imóveis de alto padrão',
       'Marcas que nunca tiveram um site profissional',
     ],
@@ -146,14 +146,14 @@ export const servicesData: ServiceData[] = [
         price: 'R$ 2.000',
         period: 'once',
         tagline: 'Focada em converter visitantes em clientes.',
-        description: 'Uma página criada com um único objetivo: converter. Seja para gerar leads, vender uma experiência ou capturar reservas diretas — o design e o copy trabalham juntos para guiar o visitante até a ação.',
+        description: 'Uma página criada com um único objetivo: converter. Seja para gerar leads, vender uma experiência ou capturar reservas diretas. O design e o copy trabalham juntos para guiar o visitante até a ação.',
         forWhom: ['Lançamentos de produtos ou serviços', 'Campanhas de tráfego pago', 'Negócios que precisam de uma página rápida e eficiente'],
         features: [
           'Design premium focado em conversão',
-          'Copy estratégico orientado à ação',
+          'Copy estratégico orientado para ação',
           'Integração com WhatsApp ou formulário',
           'Otimização completa para mobile e desktop',
-          'Desenvolvida em código — sem mensalidade de plataforma',
+          'Desenvolvida em código, sem mensalidade de plataforma',
           'SEO básico configurado',
         ],
         result: 'Página que converte visitantes em leads e reservas',
@@ -165,7 +165,7 @@ export const servicesData: ServiceData[] = [
         price: 'R$ 3.500',
         period: 'once',
         tagline: 'Presença digital completa da sua marca.',
-        description: 'Seu site é o único ativo digital que você realmente controla. Construímos sites que representam a experiência que o cliente vai ter — rápidos, bonitos e otimizados para gerar reservas diretas sem depender de OTAs.',
+        description: 'Seu site é o único ativo digital que você realmente controla. Construímos sites que representam a experiência que o cliente vai ter: rápidos, bonitos e otimizados para gerar reservas diretas sem depender de OTAs.',
         forWhom: ['Hotéis, pousadas e resorts', 'Experiências e destinos turísticos', 'Empresas de real estate e construtoras'],
         features: [
           'Design personalizado com identidade visual',
@@ -184,9 +184,9 @@ export const servicesData: ServiceData[] = [
     pillar: 'social',
     title: 'Social Media',
     tagline: 'Conteúdo que transforma seguidores em clientes pagantes.',
-    description: 'Gerenciamos as redes sociais da sua marca com estratégia, consistência e criatividade — construindo audiência qualificada e gerando resultados mensuráveis.',
+    description: 'Gerenciamos as redes sociais da sua marca com estratégia, consistência e criatividade, construindo audiência qualificada e gerando resultados mensuráveis.',
     gradient: 'from-[#162B20] via-[#243D2D] to-[#345E3F]',
-    what: 'Social media para hotelaria, experiências e real estate não é sobre postar fotos bonitas. É sobre contar histórias que geram desejo, construir comunidade que confia na marca e criar conteúdo que move o cliente em direção à compra.',
+    what: 'Social media para hotelaria, experiências e real estate não é sobre postar fotos bonitas. É sobre contar histórias que geram desejo, construir comunidade que confia na marca e criar conteúdo que direciona o cliente para a compra.',
     how: [
       { number: '01', title: 'Diagnóstico & Planejamento', desc: 'Auditamos as redes existentes, analisamos o mercado e criamos um plano editorial estratégico.' },
       { number: '02', title: 'Produção de Conteúdo', desc: 'Criamos reels, artes, stories e legendas que comunicam o valor da marca com consistência.' },
@@ -235,7 +235,7 @@ export const servicesData: ServiceData[] = [
           'Captação de vídeos para reels e conteúdo',
           'Edição profissional de fotos e vídeos',
           'Entrega em alta resolução e formatos para redes',
-          'Direção criativa alinhada à identidade da marca',
+          'Direção criativa alinhada com a identidade da marca',
         ],
         result: 'Banco de fotos e vídeos profissionais prontos para usar',
       },
@@ -266,7 +266,7 @@ export const servicesData: ServiceData[] = [
     tagline: 'Cada real investido rastreado até a reserva.',
     description: 'Gerenciamos campanhas no Google e Meta com foco absoluto em ROI. Você sabe exatamente quanto investiu, quanto gerou e como estamos otimizando para ir mais longe.',
     gradient: 'from-[#243D2D] via-[#1B3025] to-[#0F2018]',
-    what: 'Performance Ads é marketing com accountability total. Não trabalhamos com "parece que está indo bem" — trabalhamos com dados, métricas e metas claras. Cada campanha é gerenciada para gerar o máximo de retorno com o mínimo de desperdício.',
+    what: 'Performance Ads é marketing com accountability total. Não trabalhamos com "parece que está indo bem". Trabalhamos com dados, métricas e metas claras. Cada campanha é gerenciada para gerar o máximo de retorno com o mínimo de desperdício.',
     how: [
       { number: '01', title: 'Setup & Rastreamento', desc: 'Configuramos pixels, tags e todos os eventos necessários para rastrear conversões com precisão.' },
       { number: '02', title: 'Estratégia & Segmentação', desc: 'Definimos públicos, objetivos e estrutura de campanhas para cada etapa do funil.' },
@@ -289,7 +289,7 @@ export const servicesData: ServiceData[] = [
         price: 'R$ 1.200',
         period: 'monthly',
         tagline: 'Campanhas no Instagram e Facebook.',
-        description: 'Anúncios no Instagram e Facebook com segmentação precisa para o público certo — no momento certo. Cada real investido é monitorado e otimizado para maximizar leads e reservas.',
+        description: 'Anúncios no Instagram e Facebook com segmentação precisa para o público certo, no momento certo. Cada real investido é monitorado e otimizado para maximizar leads e reservas.',
         forWhom: ['Marcas que querem aumentar visibilidade', 'Hotéis e pousadas que buscam reservas diretas', 'Experiências que querem alcançar novos públicos'],
         features: [
           'Criação de campanhas no Instagram e Facebook',
@@ -308,7 +308,7 @@ export const servicesData: ServiceData[] = [
         price: 'R$ 1.200',
         period: 'monthly',
         tagline: 'Apareça no momento certo no Google.',
-        description: 'Quando alguém busca o que você oferece, sua marca aparece primeiro. Campanhas no Google com foco em intenção de compra — o tráfego mais qualificado que existe.',
+        description: 'Quando alguém busca o que você oferece, sua marca aparece primeiro. Campanhas no Google com foco em intenção de compra. O tráfego mais qualificado que existe.',
         forWhom: ['Hotéis que querem reduzir dependência das OTAs', 'Experiências e destinos turísticos', 'Real estate com imóveis para vender ou alugar'],
         features: [
           'Criação e gestão de campanhas no Google Ads',
@@ -329,10 +329,10 @@ export const servicesData: ServiceData[] = [
     tagline: 'Tecnologia que automatiza e escala o seu negócio.',
     description: 'Desenvolvemos sistemas internos e automações que eliminam processos manuais, reduzem erros e liberam sua equipe para o que realmente importa.',
     gradient: 'from-[#0F2018] via-[#162B20] to-[#1B3025]',
-    what: 'Sistemas e automações bem implementados são o diferencial que permite escalar sem aumentar proporcionalmente a equipe. Desde CRMs personalizados até integrações automáticas entre plataformas — construímos a infraestrutura tecnológica do seu negócio.',
+    what: 'Sistemas e automações bem implementados são o diferencial que permite escalar sem aumentar proporcionalmente a equipe. Desde CRMs personalizados até integrações automáticas entre plataformas. Construímos a infraestrutura tecnológica do seu negócio.',
     how: [
       { number: '01', title: 'Diagnóstico & Mapeamento', desc: 'Entendemos os processos atuais, identificamos gargalos e mapeamos as oportunidades de automação.' },
-      { number: '02', title: 'Arquitetura da Solução', desc: 'Desenhamos a solução técnica ideal para o seu contexto — sem over-engineering.' },
+      { number: '02', title: 'Arquitetura da Solução', desc: 'Desenhamos a solução técnica ideal para o seu contexto, sem over-engineering.' },
       { number: '03', title: 'Desenvolvimento', desc: 'Construímos e integramos os sistemas com as ferramentas que você já usa.' },
       { number: '04', title: 'Implantação & Suporte', desc: 'Treinamos a equipe, documentamos e acompanhamos a operação após o lançamento.' },
     ],
@@ -388,7 +388,7 @@ export const servicesData: ServiceData[] = [
         price: 'Sob consulta',
         period: 'once',
         tagline: 'Gestão de clientes e pipeline de vendas centralizado.',
-        description: 'Implementamos e configuramos o CRM ideal para o seu negócio — organizando leads, histórico de atendimento, follow-ups e pipeline de vendas em um único lugar.',
+        description: 'Implementamos e configuramos o CRM ideal para o seu negócio, organizando leads, histórico de atendimento, follow-ups e pipeline de vendas em um único lugar.',
         forWhom: ['Times de vendas que dependem de planilhas', 'Agências e prestadores de serviço com múltiplos clientes', 'Hotéis e operadoras com alto volume de leads'],
         features: [
           'Escolha e configuração do CRM ideal',

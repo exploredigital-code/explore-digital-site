@@ -19,7 +19,7 @@ const NICHES = [
       </svg>
     ),
     title: 'Experiências & Esportes',
-    desc: 'Você vende um estilo de vida. A copy, o vídeo e o anúncio precisam transmitir isso antes da matrícula.',
+    desc: 'Você vende um estilo de vida. O conteúdo e o anúncio precisam transmitir isso antes da matrícula.',
   },
   {
     icon: (
@@ -45,7 +45,7 @@ export function Stats() {
             </span>
           </div>
           <h2 className="text-[clamp(26px,3.5vw,42px)] font-bold text-white leading-[1.05] tracking-tight max-w-[480px]">
-            Apenas três setores. Toda a nossa energia neles.
+            Não atendemos todo mundo. Só quem mais precisa de nós.
           </h2>
         </AnimateIn>
 

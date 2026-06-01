@@ -16,7 +16,7 @@ const founders = [
   {
     name: 'João Teixeira',
     role: 'Co-fundador · Diretor Criativo',
-    bio: 'Criativo à frente da equipe de conteúdo da Explore Digital. Especialista em estratégia, posicionamento digital e construção de marcas digitais.',
+    bio: 'Liderança criativa da equipe de conteúdo da Explore Digital. Especialista em estratégia, posicionamento digital e construção de marcas digitais.',
     photo: '/images/team/João.png',
   },
   {

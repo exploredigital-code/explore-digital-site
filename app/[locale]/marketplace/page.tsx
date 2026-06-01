@@ -232,7 +232,7 @@ export default function MarketplacePage() {
       title: t('cat_sites'),
       icon: <IconSites />,
       plans: [
-        { name: 'Landing Page', price: 'R$ 2.000', period: 'once' as const, features: ['Design focado em conversão', 'Copy estratégico orientado à ação', 'Integração com WhatsApp ou formulário', 'Otimização para mobile e desktop', 'Desenvolvida em código — sem mensalidade de plataforma'] },
+        { name: 'Landing Page', price: 'R$ 2.000', period: 'once' as const, features: ['Design focado em conversão', 'Copy estratégico orientado para ação', 'Integração com WhatsApp ou formulário', 'Otimização para mobile e desktop', 'Desenvolvida em código — sem mensalidade de plataforma'] },
         { name: 'Website Institucional', price: 'R$ 3.500', period: 'once' as const, features: ['Design personalizado com identidade visual', 'Páginas institucionais (home, sobre, serviços, contato)', 'Otimizado para mobile e carregamento rápido', 'Configuração de SEO', 'Integração com WhatsApp e formulário', 'Domínio e hospedagem configurados'] },
       ],
     },
