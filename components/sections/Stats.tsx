@@ -45,7 +45,7 @@ export function Stats() {
             </span>
           </div>
           <h2 className="text-[clamp(26px,3.5vw,42px)] font-bold text-white leading-[1.15] tracking-tight max-w-[480px]">
-            <span className="block">Uma agência de marketing.</span>
+            <span className="block">Mais que uma agência de marketing.</span>
             <span className="block">Uma parceira para seu negócio.</span>
           </h2>
         </AnimateIn>
