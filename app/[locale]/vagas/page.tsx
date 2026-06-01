@@ -84,7 +84,7 @@ export default function VagasPage() {
           <AnimateIn>
             <SectionEyebrow>Carreiras</SectionEyebrow>
             <h1 className="text-[clamp(36px,5.5vw,72px)] leading-[0.95] tracking-[-0.03em] text-white mt-2 mb-5 max-w-[660px]">
-              Faça parte do time que constrói marcas de desejo.
+              Faça parte do nosso time.
             </h1>
             <p className="text-g-light/55 text-[16px] leading-[1.75] max-w-[500px]">
               Buscamos pessoas apaixonadas pelo que fazem, que entendem o setor e querem crescer junto com a Explore Digital.
