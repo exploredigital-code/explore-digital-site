@@ -351,7 +351,9 @@
     "next": "Próximo",
     "work_together": "Vamos trabalhar juntos",
     "cta_title": "Quer um projeto assim para a sua marca?",
-    "cta_button": "Falar com a Explore"
+    "cta_button": "Falar com a Explore",
+    "video_label": "Vídeo",
+    "videos_subtitle": "6 vídeos · 9:16"
   },
   "blog": {
     "eyebrow": "Blog & Insights",
@@ -371,7 +373,14 @@
     "whatsapp_text": "Prefere conversar antes? Nossa equipe está no WhatsApp.",
     "whatsapp_button": "Falar no WhatsApp",
     "read_also": "Leia também",
-    "back": "Voltar para o Blog"
+    "back": "Voltar para o Blog",
+    "cat_web_design": "Web Design",
+    "cat_trafego_pago": "Tráfego Pago",
+    "cat_social_media": "Social Media",
+    "cat_branding": "Branding",
+    "cat_kitesurf": "Kitesurf & Wingfoil",
+    "cat_captacoes": "Captações",
+    "cat_sistemas": "Sistemas"
   },
   "vagas": {
     "eyebrow": "Carreiras",

@@ -13,8 +13,24 @@ import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { blogPosts, type BlogPostMeta } from '@/data/blog-posts'
 
 const CATEGORIES = ['Todos', 'Web Design', 'Tráfego Pago', 'Social Media', 'Branding', 'Kitesurf & Wingfoil', 'Captações', 'Sistemas']
+
+const CATEGORY_LABEL_KEY: Record<string, string> = {
+  'Todos':              'cat_all',
+  'Web Design':         'cat_web_design',
+  'Tráfego Pago':       'cat_trafego_pago',
+  'Social Media':       'cat_social_media',
+  'Branding':           'cat_branding',
+  'Kitesurf & Wingfoil':'cat_kitesurf',
+  'Captações':          'cat_captacoes',
+  'Sistemas':           'cat_sistemas',
+}
 const PER_PAGE = 12
 type Post = BlogPostMeta
+
+function getCategoryLabel(t: ReturnType<typeof useTranslations<'blog'>>, category: string): string {
+  const key = CATEGORY_LABEL_KEY[category]
+  return key ? t(key as Parameters<typeof t>[0]) : category
+}
 
 /* ── Card do post em destaque ── */
 function FeaturedCard({ post }: { post: Post }) {
@@ -40,7 +56,7 @@ function FeaturedCard({ post }: { post: Post }) {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-g-dark/60 hidden md:block" />
             <div className="absolute top-5 left-5">
               <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-white/90 bg-g-dark/60 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                {post.category}
+                {getCategoryLabel(t, post.category)}
               </span>
             </div>
           </div>
@@ -91,7 +107,7 @@ function PostCard({ post }: { post: Post }) {
         <div className="absolute inset-0 bg-g-dark/20" />
         <div className="absolute top-4 left-4">
           <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-white bg-g-dark/60 backdrop-blur-sm px-2.5 py-1 rounded-full">
-            {post.category}
+            {getCategoryLabel(t, post.category)}
           </span>
         </div>
       </div>
@@ -226,7 +242,7 @@ export default function BlogPage() {
                       : 'text-g-dark/50 border-transparent hover:text-g-dark/65'
                   )}
                 >
-                  {cat}
+                  {t(CATEGORY_LABEL_KEY[cat] as Parameters<typeof t>[0])}
                 </button>
               ))}
             </div>

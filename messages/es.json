@@ -340,7 +340,14 @@
     "whatsapp_text": "¿Prefieres hablar antes? Nuestro equipo está en WhatsApp.",
     "whatsapp_button": "Hablar en WhatsApp",
     "read_also": "Lee también",
-    "back": "Volver al Blog"
+    "back": "Volver al Blog",
+    "cat_web_design": "Web Design",
+    "cat_trafego_pago": "Tráfico Pago",
+    "cat_social_media": "Social Media",
+    "cat_branding": "Branding",
+    "cat_kitesurf": "Kitesurf & Wingfoil",
+    "cat_captacoes": "Fotografía & Video",
+    "cat_sistemas": "Sistemas"
   },
   "vagas": {
     "eyebrow": "Carreras",
@@ -407,7 +414,9 @@
     "next": "Siguiente",
     "work_together": "Trabajemos juntos",
     "cta_title": "¿Quieres un proyecto así para tu marca?",
-    "cta_button": "Hablar con Explore"
+    "cta_button": "Hablar con Explore",
+    "video_label": "Video",
+    "videos_subtitle": "6 videos · 9:16"
   },
   "footer": {
     "tagline": "Agencia de marketing digital para hoteles, posadas y real estate. Reservas directas, sin depender de OTAs.",

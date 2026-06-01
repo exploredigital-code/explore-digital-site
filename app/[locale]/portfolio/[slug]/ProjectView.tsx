@@ -12,7 +12,16 @@ import { Footer }  from '@/components/sections/Footer'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 import { VideoLightbox } from '@/components/ui/VideoLightbox'
 
-const WHATSAPP = 'https://wa.me/5585991043067?text=Ol%C3%A1!%20Vi%20o%20portfolio%20no%20site%20e%20quero%20conversar%20sobre%20o%20meu%20projeto.'
+const WA_BASE = 'https://wa.me/5585991043067?text='
+
+const SECTOR_KEY: Record<string, string> = {
+  'Beach Club': 'sector_beach_club',
+  'Hotelaria': 'sector_hotelaria',
+  'Turismo': 'sector_turismo',
+  'Esporte & Experiência': 'sector_esporte',
+  'Real Estate': 'sector_real_estate',
+  'Gastronomia': 'sector_gastronomia',
+}
 
 function VideoSlot({ videoId, index, clientName }: { videoId: string; index: number; clientName: string }) {
   const [thumbnail, setThumbnail] = useState<string | undefined>(undefined)
@@ -44,7 +53,7 @@ function VideoSlot({ videoId, index, clientName }: { videoId: string; index: num
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-g-dark/40 translate-x-0.5 group-hover:text-g-mid transition-colors"><path d="M8 5v14l11-7z"/></svg>
         </div>
         <div>
-          <div className="text-[13px] font-bold text-g-dark/50 group-hover:text-g-dark/55 transition-colors">Vídeo {index + 1}</div>
+          <div className="text-[13px] font-bold text-g-dark/50 group-hover:text-g-dark/55 transition-colors">Video {index + 1}</div>
           <div className="text-[10px] text-g-dark/30 mt-1 tracking-wide">9:16 · Vertical</div>
         </div>
       </div>
@@ -58,8 +67,17 @@ interface Props { project: Project; next: Project; prev: Project }
 export function ProjectView({ project, next, prev }: Props) {
   const locale = useLocale()
   const t = useTranslations('portfolio_detail')
+  const tNav = useTranslations('nav')
+  const tPortfolio = useTranslations('portfolio')
+  const tContact = useTranslations('contact')
   const { scrollYProgress } = useScroll()
   const progressWidth = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
+
+  const getSector = (s: string) => {
+    const k = SECTOR_KEY[s]
+    return k ? tPortfolio(k as Parameters<typeof tPortfolio>[0]) : s
+  }
+  const waUrl = WA_BASE + encodeURIComponent(tContact('whatsapp_intro'))
 
   return (
     <>
@@ -85,12 +103,12 @@ export function ProjectView({ project, next, prev }: Props) {
           <motion.div initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="mb-12">
             <Link href={`/${locale}#portfolio`} className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-white/45 hover:text-white/70 transition-colors">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 7H2M6 3L2 7l4 4"/></svg>
-              Portfolio
+              {tNav('portfolio')}
             </Link>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="mb-6">
             <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-light/45">
-              · {project.sector} · {project.year}
+              · {getSector(project.sector)} · {project.year}
             </span>
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.28, ease: [0.33, 1, 0.68, 1] }}
@@ -168,7 +186,7 @@ export function ProjectView({ project, next, prev }: Props) {
             <div className="flex items-center gap-3 mb-3"><div className="w-5 h-px bg-g-mid" /><span className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-mid">{t('videos')}</span></div>
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <h2 className="text-[clamp(28px,4vw,48px)] text-g-dark tracking-tight">{t('brand_in_motion')}</h2>
-              <span className="text-[11px] font-bold tracking-widest text-g-dark/40 uppercase shrink-0">6 vídeos · 9:16</span>
+              <span className="text-[11px] font-bold tracking-widest text-g-dark/40 uppercase shrink-0">{t('videos_subtitle')}</span>
             </div>
           </AnimateIn>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4">
@@ -178,9 +196,6 @@ export function ProjectView({ project, next, prev }: Props) {
               </AnimateIn>
             ))}
           </div>
-          <p className="text-[10px] text-g-dark/30 tracking-widest mt-6 text-center uppercase">
-            Adicione os IDs do YouTube em <code className="text-g-dark/45">data/portfolio.ts → videoIds</code>
-          </p>
         </div>
       </section>
 
@@ -193,7 +208,7 @@ export function ProjectView({ project, next, prev }: Props) {
                 <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-g-light/45 mb-3">{t('main_result')}</div>
                 <div className="text-[clamp(32px,5vw,64px)] font-semibold text-g-light leading-none tracking-tight">{project.result}</div>
               </div>
-              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+              <a href={waUrl} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-g-light text-g-dark font-bold px-8 py-4 rounded-full hover:bg-g-pale hover:-translate-y-0.5 transition-all duration-200 shrink-0 self-start lg:self-auto">
                 {t('want_result')}
               </a>
@@ -224,7 +239,7 @@ export function ProjectView({ project, next, prev }: Props) {
                 {t('prev')}
               </div>
               <div>
-                <div className="text-[11px] font-bold tracking-widest uppercase text-white/45 mb-3">{prev.sector} · {prev.year}</div>
+                <div className="text-[11px] font-bold tracking-widest uppercase text-white/45 mb-3">{getSector(prev.sector)} · {prev.year}</div>
                 <div className="text-[clamp(24px,3.5vw,44px)] font-semibold text-white group-hover:text-g-light transition-colors leading-tight">
                   {prev.client}
                 </div>
@@ -245,7 +260,7 @@ export function ProjectView({ project, next, prev }: Props) {
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
               </div>
               <div>
-                <div className="text-[11px] font-bold tracking-widest uppercase text-white/45 mb-3">{next.sector} · {next.year}</div>
+                <div className="text-[11px] font-bold tracking-widest uppercase text-white/45 mb-3">{getSector(next.sector)} · {next.year}</div>
                 <div className="text-[clamp(24px,3.5vw,44px)] font-semibold text-white group-hover:text-g-light transition-colors leading-tight">
                   {next.client}
                 </div>
@@ -264,7 +279,7 @@ export function ProjectView({ project, next, prev }: Props) {
             <h2 className="text-[clamp(40px,7vw,90px)] leading-[0.9] tracking-[-0.04em] text-white mb-10 max-w-[700px]">
               {t('cta_title')}
             </h2>
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+            <a href={waUrl} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-g-light text-g-dark font-bold px-9 py-5 rounded-full text-[16px] hover:bg-g-pale hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(193,213,189,0.18)] transition-all duration-200">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               {t('cta_button')}

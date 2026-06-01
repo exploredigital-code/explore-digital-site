@@ -11,8 +11,21 @@ import { AnimateIn } from '@/components/ui/AnimateIn'
 import { blogContent } from '@/data/blog-content'
 import { blogPosts, getBlogPost, getRelatedPosts } from '@/data/blog-posts'
 
+const CATEGORY_LABEL_KEY: Record<string, string> = {
+  'Web Design': 'cat_web_design',
+  'Tráfego Pago': 'cat_trafego_pago',
+  'Social Media': 'cat_social_media',
+  'Branding': 'cat_branding',
+  'Kitesurf & Wingfoil': 'cat_kitesurf',
+  'Captações': 'cat_captacoes',
+  'Sistemas': 'cat_sistemas',
+}
+
+const WA_BASE = 'https://wa.me/5585991043067?text='
+
 export default function BlogPostPage() {
   const t = useTranslations('blog')
+  const tContact = useTranslations('contact')
   const params = useParams()
   const slug = params.slug as string
   const locale = params.locale as string
@@ -43,7 +56,7 @@ export default function BlogPostPage() {
         <div className="absolute bottom-0 left-0 right-0 max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 pb-10">
           <AnimateIn>
             <span className="inline-block text-[10px] font-bold tracking-[0.18em] uppercase text-g-light/80 bg-g-dark/60 backdrop-blur-sm px-3 py-1.5 rounded-full mb-4">
-              {post.category}
+              {CATEGORY_LABEL_KEY[post.category] ? t(CATEGORY_LABEL_KEY[post.category] as Parameters<typeof t>[0]) : post.category}
             </span>
             <h1 className="font-display text-[clamp(22px,3.8vw,48px)] font-normal leading-[1.1] tracking-[-0.025em] text-white max-w-[820px]">
               {post.title}
@@ -137,7 +150,7 @@ export default function BlogPostPage() {
                   {t('whatsapp_text')}
                 </p>
                 <a
-                  href="https://wa.me/5585991043067?text=Ol%C3%A1!%20Vi%20o%20blog%20da%20Explore%20Digital%20e%20quero%20saber%20mais."
+                  href={WA_BASE + encodeURIComponent(tContact('whatsapp_intro'))}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold text-[13px] px-5 py-3 rounded-xl hover:brightness-95 transition-all duration-200"

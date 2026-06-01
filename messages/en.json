@@ -340,7 +340,14 @@
     "whatsapp_text": "Prefer to talk first? Our team is on WhatsApp.",
     "whatsapp_button": "Chat on WhatsApp",
     "read_also": "Read also",
-    "back": "Back to Blog"
+    "back": "Back to Blog",
+    "cat_web_design": "Web Design",
+    "cat_trafego_pago": "Paid Traffic",
+    "cat_social_media": "Social Media",
+    "cat_branding": "Branding",
+    "cat_kitesurf": "Kitesurf & Wingfoil",
+    "cat_captacoes": "Photo & Video",
+    "cat_sistemas": "Systems"
   },
   "vagas": {
     "eyebrow": "Careers",
@@ -407,7 +414,9 @@
     "next": "Next",
     "work_together": "Let's work together",
     "cta_title": "Want a project like this for your brand?",
-    "cta_button": "Talk to Explore"
+    "cta_button": "Talk to Explore",
+    "video_label": "Video",
+    "videos_subtitle": "6 videos · 9:16"
   },
   "footer": {
     "tagline": "Digital marketing agency for hotels, guesthouses and real estate. Direct bookings, not OTA dependence.",
