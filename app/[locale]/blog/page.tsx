@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/sections/Navbar'
@@ -19,6 +19,7 @@ type Post = BlogPostMeta
 /* ── Card do post em destaque ── */
 function FeaturedCard({ post }: { post: Post }) {
   const locale = useLocale()
+  const t = useTranslations('blog')
   return (
     <AnimateIn>
       <Link
@@ -49,7 +50,7 @@ function FeaturedCard({ post }: { post: Post }) {
               <div className="flex items-center gap-3 mb-5">
                 <span className="text-[11px] text-g-light/40">{post.date}</span>
                 <span className="text-g-light/20">·</span>
-                <span className="text-[11px] text-g-light/40">{post.readTime} de leitura</span>
+                <span className="text-[11px] text-g-light/40">{post.readTime} {t('read_time')}</span>
               </div>
               <h2 className="font-sans text-[clamp(20px,2.5vw,28px)] font-semibold text-white leading-[1.3] tracking-tight mb-4 group-hover:text-g-light transition-colors">
                 {post.title}
@@ -57,7 +58,7 @@ function FeaturedCard({ post }: { post: Post }) {
               <p className="text-[15px] font-normal text-white/55 leading-[1.8]">{post.excerpt}</p>
             </div>
             <div className="mt-8 inline-flex items-center gap-2 text-[13px] font-bold text-g-mid/60 group-hover:text-g-light transition-colors">
-              Ler artigo
+              {t('read_article')}
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <path d="M2 7h10M8 3l4 4-4 4" />
               </svg>
@@ -72,6 +73,7 @@ function FeaturedCard({ post }: { post: Post }) {
 /* ── Card de post normal ── */
 function PostCard({ post }: { post: Post }) {
   const locale = useLocale()
+  const t = useTranslations('blog')
   return (
     <Link
       href={`/${locale}/blog/${post.slug}`}
@@ -98,14 +100,14 @@ function PostCard({ post }: { post: Post }) {
         <div className="flex items-center gap-2 mb-3">
           <span className="text-[11px] text-g-dark/50">{post.date}</span>
           <span className="text-g-dark/30">·</span>
-          <span className="text-[11px] text-g-dark/50">{post.readTime} leitura</span>
+          <span className="text-[11px] text-g-dark/50">{post.readTime} {t('read_time')}</span>
         </div>
         <h3 className="font-sans text-[16px] font-semibold text-g-dark leading-[1.4] tracking-tight mb-3 flex-1 group-hover:text-g-mid transition-colors">
           {post.title}
         </h3>
         <p className="text-[13px] font-normal text-g-dark/55 leading-[1.7] line-clamp-3 mb-5">{post.excerpt}</p>
         <span className="inline-flex items-center gap-1.5 text-[12px] font-bold text-g-mid/70 group-hover:text-g-mid transition-colors mt-auto">
-          Ler artigo
+          {t('read_article')}
           <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <path d="M2 7h10M8 3l4 4-4 4" />
           </svg>
@@ -117,6 +119,7 @@ function PostCard({ post }: { post: Post }) {
 
 /* ── Paginação numerada ── */
 function Pagination({ current, total, onChange }: { current: number; total: number; onChange: (p: number) => void }) {
+  const t = useTranslations('blog')
   if (total <= 1) return null
   const pages = Array.from({ length: total }, (_, i) => i + 1)
   return (
@@ -125,7 +128,7 @@ function Pagination({ current, total, onChange }: { current: number; total: numb
         onClick={() => onChange(current - 1)}
         disabled={current === 1}
         className="w-9 h-9 rounded-lg border border-g-dark/15 flex items-center justify-center text-g-dark/50 hover:border-g-mid/40 hover:text-g-dark disabled:opacity-30 disabled:cursor-not-allowed transition-all"
-        aria-label="Página anterior"
+        aria-label={t('prev_page')}
       >
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
           <path d="M9 3L5 7l4 4" />
@@ -149,7 +152,7 @@ function Pagination({ current, total, onChange }: { current: number; total: numb
         onClick={() => onChange(current + 1)}
         disabled={current === total}
         className="w-9 h-9 rounded-lg border border-g-dark/15 flex items-center justify-center text-g-dark/50 hover:border-g-mid/40 hover:text-g-dark disabled:opacity-30 disabled:cursor-not-allowed transition-all"
-        aria-label="Próxima página"
+        aria-label={t('next_page')}
       >
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
           <path d="M5 3l4 4-4 4" />
@@ -161,6 +164,7 @@ function Pagination({ current, total, onChange }: { current: number; total: numb
 
 /* ── Página principal do Blog ── */
 export default function BlogPage() {
+  const t = useTranslations('blog')
   const [activeCategory, setActiveCategory] = useState('Todos')
   const [currentPage, setCurrentPage] = useState(1)
 
@@ -187,12 +191,12 @@ export default function BlogPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_-20%,#2D5238,transparent_70%)] opacity-45 pointer-events-none" />
         <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
           <AnimateIn>
-            <SectionEyebrow>Blog & Insights</SectionEyebrow>
+            <SectionEyebrow>{t('eyebrow')}</SectionEyebrow>
             <h1 className="font-display text-[clamp(36px,5.5vw,72px)] font-normal leading-[0.95] tracking-[-0.03em] text-white mt-2 mb-5 max-w-[640px]">
-              Conteúdo para marcas que geram desejo.
+              {t('title')}
             </h1>
             <p className="text-g-light/55 text-[16px] leading-[1.75] max-w-[480px]">
-              Marketing digital para kitesurf, wingfoil, pousadas e beach clubs no litoral cearense — sem enrolação.
+              {t('subtitle')}
             </p>
           </AnimateIn>
         </div>
@@ -250,7 +254,7 @@ export default function BlogPage() {
                 ) : (
                   <div className="text-center py-20 text-g-dark/30">
                     <div className="text-[40px] mb-4">✦</div>
-                    <p className="text-[15px]">Em breve, conteúdo sobre {activeCategory}.</p>
+                    <p className="text-[15px]">{t('empty_state_prefix')} {activeCategory}.</p>
                   </div>
                 )}
               </motion.div>
@@ -265,9 +269,9 @@ export default function BlogPage() {
               <div className="bg-g-dark rounded-2xl p-10 lg:p-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 relative overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_0%_50%,#2D5238,transparent)] opacity-40" />
                 <div className="relative z-10">
-                  <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-g-light/35 mb-3">Receba antes de todo mundo</div>
+                  <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-g-light/35 mb-3">{t('cta_eyebrow')}</div>
                   <h3 className="font-display text-[clamp(20px,2.5vw,30px)] font-normal text-white max-w-[420px] leading-tight">
-                    Insights de marketing para kitesurf, wingfoil e turismo no Ceará.
+                    {t('cta_title')}
                   </h3>
                 </div>
                 <a
@@ -276,7 +280,7 @@ export default function BlogPage() {
                   rel="noopener noreferrer"
                   className="relative z-10 shrink-0 inline-flex items-center gap-2 bg-g-light text-g-dark font-bold px-7 py-3.5 rounded-full hover:bg-g-pale hover:-translate-y-0.5 transition-all duration-200 text-[14px]"
                 >
-                  Quero receber →
+                  {t('cta_button')}
                 </a>
               </div>
             </AnimateIn>

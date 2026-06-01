@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { projects, type Category } from '@/data/portfolio'
@@ -12,16 +12,17 @@ import { Footer } from '@/components/sections/Footer'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 
-const FILTERS: { key: Category | 'all'; label: string }[] = [
-  { key: 'all',         label: 'Todos' },
-  { key: 'branding',    label: 'Branding' },
-  { key: 'web',         label: 'Web Design' },
-  { key: 'social',      label: 'Social Media' },
-  { key: 'performance', label: 'Performance' },
+const FILTER_KEYS: { key: Category | 'all'; labelKey: string }[] = [
+  { key: 'all',         labelKey: 'filter_all' },
+  { key: 'branding',    labelKey: 'filter_branding' },
+  { key: 'web',         labelKey: 'filter_web' },
+  { key: 'social',      labelKey: 'filter_social' },
+  { key: 'performance', labelKey: 'filter_performance' },
 ]
 
 function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const locale = useLocale()
+  const t = useTranslations('portfolio')
   return (
     <motion.div variants={itemVariants}>
       <Link
@@ -40,7 +41,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
           <div className="absolute inset-0 bg-g-dark/30" />
           {project.featured && (
             <div className="absolute top-4 left-4 bg-g-mid text-white text-[9px] font-bold tracking-[0.18em] uppercase px-2.5 py-1 rounded-full">
-              Destaque
+              {t('featured_badge')}
             </div>
           )}
           <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-g-dark/30 to-transparent" />
@@ -69,7 +70,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
           <div className="pt-4 border-t border-g-dark/6 flex items-center justify-between">
             <span className="text-[12px] text-g-dark/40">{project.location}</span>
             <span className="text-[12px] font-bold text-g-mid/70 group-hover:text-g-mid transition-colors flex items-center gap-1">
-              Ver projeto
+              {t('view_project')}
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <path d="M2 7h10M8 3l4 4-4 4" />
               </svg>
@@ -84,6 +85,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
 const GRID_LIMIT = 8 // featured (1) + grid (8) = 9 cards visíveis por padrão
 
 export default function PortfolioPage() {
+  const t = useTranslations('portfolio')
   const [active, setActive] = useState<Category | 'all'>('all')
   const [expanded, setExpanded] = useState(false)
 
@@ -113,12 +115,12 @@ export default function PortfolioPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_60%_-20%,#2D5238,transparent_70%)] opacity-50 pointer-events-none" />
         <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
           <AnimateIn>
-            <SectionEyebrow>Portfolio</SectionEyebrow>
+            <SectionEyebrow>{t('page_eyebrow')}</SectionEyebrow>
             <h1 className="text-[clamp(36px,5.5vw,72px)] leading-[0.95] tracking-[-0.03em] text-white mt-2 mb-5 max-w-[660px]">
-              Cases que geram resultados reais.
+              {t('page_hero_title')}
             </h1>
             <p className="text-g-light/55 text-[16px] leading-[1.75] max-w-[480px]">
-              Cada projeto tem uma história. Aqui estão algumas das marcas que construímos juntos.
+              {t('page_hero_sub')}
             </p>
           </AnimateIn>
         </div>
@@ -131,7 +133,7 @@ export default function PortfolioPage() {
           <section className="py-16 lg:py-20 border-b border-g-dark/8">
             <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
               <AnimateIn className="mb-8">
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-g-mid/65">Projeto em Destaque</span>
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-g-mid/65">{t('featured_label')}</span>
               </AnimateIn>
               <AnimateIn>
                 <FeaturedProjectCard project={featured} />
@@ -144,7 +146,7 @@ export default function PortfolioPage() {
         <div className="sticky top-[68px] z-30 bg-white border-b border-g-dark/8">
           <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 overflow-x-auto">
             <div className="flex gap-0 min-w-max">
-              {FILTERS.map(f => (
+              {FILTER_KEYS.map(f => (
                 <button
                   key={f.key}
                   onClick={() => handleFilter(f.key)}
@@ -155,7 +157,7 @@ export default function PortfolioPage() {
                       : 'text-g-dark/50 border-transparent hover:text-g-dark/65'
                   )}
                 >
-                  {f.label}
+                  {t(f.labelKey)}
                 </button>
               ))}
             </div>
@@ -186,7 +188,7 @@ export default function PortfolioPage() {
                           onClick={() => setExpanded(true)}
                           className="inline-flex items-center gap-2 border border-g-dark/20 hover:border-g-mid/50 text-g-dark/70 hover:text-g-dark font-bold text-[14px] px-8 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5"
                         >
-                          Ver mais {hiddenCount} {hiddenCount === 1 ? 'projeto' : 'projetos'}
+                          {t('see_more')} {hiddenCount} {hiddenCount === 1 ? t('project_singular') : t('project_plural')}
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                             <path d="M7 2v10M2 7l5 5 5-5"/>
                           </svg>
@@ -197,7 +199,7 @@ export default function PortfolioPage() {
                 ) : (
                   <div className="text-center py-20 text-g-dark/30">
                     <div className="text-[40px] mb-4">✦</div>
-                    <p className="text-[15px]">Em breve, novos projetos nessa categoria.</p>
+                    <p className="text-[15px]">{t('empty_state')}</p>
                   </div>
                 )}
               </motion.div>
@@ -212,9 +214,9 @@ export default function PortfolioPage() {
               <div className="bg-g-dark rounded-2xl p-10 lg:p-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 relative overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_0%_50%,#2D5238,transparent)] opacity-40" />
                 <div className="relative z-10">
-                  <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-g-light/35 mb-3">Próximo na fila</div>
+                  <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-g-light/35 mb-3">{t('cta_eyebrow')}</div>
                   <h3 className="text-[clamp(20px,2.5vw,32px)] text-white max-w-[440px] leading-tight">
-                    Quer que a sua marca seja o próximo case?
+                    {t('cta_title')}
                   </h3>
                 </div>
                 <a
@@ -223,7 +225,7 @@ export default function PortfolioPage() {
                   rel="noopener noreferrer"
                   className="relative z-10 shrink-0 inline-flex items-center gap-2 bg-g-light text-g-dark font-bold px-7 py-3.5 rounded-full hover:bg-g-pale hover:-translate-y-0.5 transition-all duration-200 text-[14px]"
                 >
-                  Falar com a Explore →
+                  {t('cta_button')}
                 </a>
               </div>
             </AnimateIn>
@@ -238,6 +240,7 @@ export default function PortfolioPage() {
 
 function FeaturedProjectCard({ project }: { project: (typeof projects)[0] }) {
   const locale = useLocale()
+  const t = useTranslations('portfolio')
   return (
     <Link
       href={`/${locale}/portfolio/${project.slug}`}
@@ -277,7 +280,7 @@ function FeaturedProjectCard({ project }: { project: (typeof projects)[0] }) {
             <div className="text-[13px] font-bold text-g-mid/70">{project.result}</div>
           </div>
           <div className="mt-8 inline-flex items-center gap-2 text-[13px] font-bold text-g-light/50 group-hover:text-g-light transition-colors">
-            Ver case completo
+            {t('view_full_case')}
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <path d="M2 7h10M8 3l4 4-4 4" />
             </svg>

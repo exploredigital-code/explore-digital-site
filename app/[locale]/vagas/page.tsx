@@ -1,6 +1,7 @@
 ﻿'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/sections/Navbar'
@@ -33,6 +34,7 @@ const inputClass = cn(
 const textareaClass = cn(inputClass, 'resize-none')
 
 export default function VagasPage() {
+  const t = useTranslations('vagas')
   const [selected, setSelected] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [form, setForm] = useState({
@@ -82,12 +84,12 @@ export default function VagasPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_40%_-20%,#2D5238,transparent_70%)] opacity-50 pointer-events-none" />
         <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
           <AnimateIn>
-            <SectionEyebrow>Carreiras</SectionEyebrow>
+            <SectionEyebrow>{t('eyebrow')}</SectionEyebrow>
             <h1 className="text-[clamp(36px,5.5vw,72px)] leading-[0.95] tracking-[-0.03em] text-white mt-2 mb-5 max-w-[660px]">
-              Faça parte do nosso time.
+              {t('title')}
             </h1>
             <p className="text-g-light/55 text-[16px] leading-[1.75] max-w-[500px]">
-              Buscamos pessoas apaixonadas pelo que fazem, que entendem o setor e querem crescer junto com a Explore Digital.
+              {t('subtitle')}
             </p>
           </AnimateIn>
         </div>
@@ -99,9 +101,9 @@ export default function VagasPage() {
           <AnimateIn className="mb-12">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-5 h-px bg-g-mid" />
-              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-mid">Posições abertas</span>
+              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-mid">{t('positions_eyebrow')}</span>
             </div>
-            <h2 className="text-[clamp(26px,3.5vw,42px)] text-g-dark tracking-tight">Vagas disponíveis agora.</h2>
+            <h2 className="text-[clamp(26px,3.5vw,42px)] text-g-dark tracking-tight">{t('positions_title')}</h2>
           </AnimateIn>
           <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {VAGAS.map((v, i) => (
@@ -123,7 +125,7 @@ export default function VagasPage() {
                 <h3 className={cn('text-[17px] font-bold', selected === v.area ? 'text-white' : 'text-g-dark')}>{v.area}</h3>
                 <p className={cn('text-[13px] leading-[1.6] flex-1', selected === v.area ? 'text-white/55' : 'text-g-dark/50')}>{v.descricao}</p>
                 <div className={cn('text-[12px] font-bold flex items-center gap-1 mt-2 transition-colors', selected === v.area ? 'text-g-light' : 'text-g-mid/60 group-hover:text-g-mid')}>
-                  Candidatar-se
+                  {t('apply')}
                   <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
                 </div>
               </motion.div>
@@ -141,11 +143,11 @@ export default function VagasPage() {
             <AnimateIn>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-5 h-px bg-g-mid" />
-                <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-mid">Formulário de candidatura</span>
+                <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-mid">{t('form_eyebrow')}</span>
               </div>
-              <h2 className="text-[clamp(28px,4vw,48px)] text-g-dark tracking-tight mb-4">Conta pra gente quem você é.</h2>
+              <h2 className="text-[clamp(28px,4vw,48px)] text-g-dark tracking-tight mb-4">{t('form_title')}</h2>
               <p className="text-g-dark/55 text-[15px] leading-[1.75] mb-8">
-                Preencha o formulário com cuidado. O que mais valorizamos é clareza, personalidade e evidências do seu trabalho.
+                {t('form_desc')}
               </p>
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3 p-4 bg-white rounded-xl border border-g-dark/8">
@@ -154,7 +156,7 @@ export default function VagasPage() {
                   </svg>
                   <div>
                     <div className="text-[11px] font-bold tracking-wider text-g-dark/40 uppercase">WhatsApp</div>
-                    <div className="text-[14px] text-g-dark/65">Ao enviar, abriremos o WhatsApp com sua candidatura</div>
+                    <div className="text-[14px] text-g-dark/65">{t('form_note')}</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 p-4 bg-white rounded-xl border border-g-dark/8">
@@ -184,37 +186,37 @@ export default function VagasPage() {
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
                     </div>
-                    <h3 className="text-[22px] font-bold text-g-dark mb-2">Candidatura enviada!</h3>
-                    <p className="text-g-dark/55 text-[15px]">Recebemos sua candidatura por e-mail e o WhatsApp foi aberto com os seus dados. Entraremos em contato em breve.</p>
+                    <h3 className="text-[22px] font-bold text-g-dark mb-2">{t('form_success_title')}</h3>
+                    <p className="text-g-dark/55 text-[15px]">{t('form_success_desc')}</p>
                   </motion.div>
                 ) : (
                   <motion.form key="form" onSubmit={handleSubmit} className="flex flex-col gap-3 bg-white p-8 rounded-2xl border border-g-dark/8 shadow-sm" noValidate>
-                    <input type="text" name="name" placeholder="Nome completo *" required value={form.name} onChange={handleChange} className={inputClass} />
-                    <input type="email" name="email" placeholder="E-mail *" required value={form.email} onChange={handleChange} className={inputClass} />
+                    <input type="text" name="name" placeholder={t('form_name')} required value={form.name} onChange={handleChange} className={inputClass} />
+                    <input type="email" name="email" placeholder={t('form_email')} required value={form.email} onChange={handleChange} className={inputClass} />
 
                     <select name="vaga" required value={form.vaga} onChange={handleChange}
                       className={cn(inputClass, 'cursor-pointer', !form.vaga && 'text-g-dark/35')}>
-                      <option value="" disabled>Vaga de interesse *</option>
+                      <option value="" disabled>{t('form_position')}</option>
                       {VAGAS.map(v => (
                         <option key={v.area} value={v.area}>{v.area}</option>
                       ))}
                     </select>
 
-                    <input type="url" name="portfolio" placeholder="Link do portfolio (Behance, Drive, site...)" value={form.portfolio} onChange={handleChange} className={inputClass} />
+                    <input type="url" name="portfolio" placeholder={t('form_portfolio')} value={form.portfolio} onChange={handleChange} className={inputClass} />
 
                     <div>
-                      <label className="block text-[11px] font-bold tracking-wider text-g-dark/45 uppercase mb-1.5 pl-1">Apresentação pessoal *</label>
-                      <textarea name="apresentacao" rows={4} placeholder="Quem você é, sua experiência e o que faz de melhor." required value={form.apresentacao} onChange={handleChange} className={textareaClass} />
+                      <label className="block text-[11px] font-bold tracking-wider text-g-dark/45 uppercase mb-1.5 pl-1">{t('form_intro_label')}</label>
+                      <textarea name="apresentacao" rows={4} placeholder={t('form_intro_placeholder')} required value={form.apresentacao} onChange={handleChange} className={textareaClass} />
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-bold tracking-wider text-g-dark/45 uppercase mb-1.5 pl-1">Por que a Explore Digital? *</label>
-                      <textarea name="motivo" rows={3} placeholder="O que te motivou a se candidatar." required value={form.motivo} onChange={handleChange} className={textareaClass} />
+                      <label className="block text-[11px] font-bold tracking-wider text-g-dark/45 uppercase mb-1.5 pl-1">{t('form_why_label')}</label>
+                      <textarea name="motivo" rows={3} placeholder={t('form_why_placeholder')} required value={form.motivo} onChange={handleChange} className={textareaClass} />
                     </div>
 
                     {status === 'error' && (
                       <p className="text-[13px] text-red-500">
-                        Erro ao enviar o formulário. Tente entrar em contato direto pelo WhatsApp.
+                        {t('form_error')}
                       </p>
                     )}
 
@@ -225,10 +227,10 @@ export default function VagasPage() {
                         'hover:shadow-[0_8px_28px_rgba(27,48,37,0.15)]',
                         'disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0'
                       )}>
-                      {status === 'sending' ? 'Enviando...' : 'Enviar candidatura →'}
+                      {status === 'sending' ? t('form_sending') : t('form_submit')}
                     </button>
                     <p className="text-[11px] text-g-dark/35 text-center">
-                      Ao enviar, sua candidatura será encaminhada por e-mail e WhatsApp simultaneamente.
+                      {t('form_note')}
                     </p>
                   </motion.form>
                 )}
