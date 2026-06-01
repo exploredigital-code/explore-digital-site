@@ -44,8 +44,9 @@ export function Stats() {
               Nichos que atuamos
             </span>
           </div>
-          <h2 className="text-[clamp(26px,3.5vw,42px)] font-bold text-white leading-[1.05] tracking-tight max-w-[480px]">
-            Uma agência de marketing. Uma parceira para seu negócio.
+          <h2 className="text-[clamp(26px,3.5vw,42px)] font-bold text-white leading-[1.15] tracking-tight max-w-[480px]">
+            <span className="block">Uma agência de marketing.</span>
+            <span className="block">Uma parceira para seu negócio.</span>
           </h2>
         </AnimateIn>
 
