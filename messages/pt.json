@@ -10,15 +10,15 @@
   },
   "process": {
     "eyebrow": "Como funciona",
-    "title": "Simples, direto e com resultado.",
-    "subtitle": "Não complicamos. Em três passos você sai do zero para uma marca que gera desejo e clientes.",
+    "title": "Do primeiro contato à primeira reserva.",
+    "subtitle": "Em três passos você entende exatamente o que vamos fazer, quanto vai custar e quando começa a aparecer no resultado.",
     "cta": "Consultoria gratuita →",
     "s1_title": "Escolha o serviço",
     "s1_desc": "Navegue pelos nossos planos e escolha o que melhor se encaixa ao momento da sua marca.",
     "s2_title": "Consultoria gratuita",
     "s2_desc": "Entre em contato para uma conversa sem compromisso. Vamos entender o seu negócio e alinhar os detalhes.",
-    "s3_title": "Crescimento começa",
-    "s3_desc": "Assinamos o contrato e iniciamos. Você acompanha tudo em tempo real com seu time dedicado."
+    "s3_title": "Resultados nos primeiros 90 dias",
+    "s3_desc": "Definimos métricas de acompanhamento. Você vê o progresso semana a semana no grupo exclusivo com seu time dedicado."
   },
   "about_page": {
     "eyebrow": "Nossa história",
@@ -42,8 +42,8 @@
   },
   "marketplace_page": {
     "eyebrow": "Catálogo de Serviços",
-    "title": "Tudo que sua marca precisa para crescer no digital.",
-    "sub": "Escolha o serviço ou pacote que faz sentido para o seu momento. Sem taxa de setup oculta, sem surpresas.",
+    "title": "Planos e serviços para marcas que querem crescer no digital — sem depender de intermediários.",
+    "sub": "Escolha o que faz sentido para o seu momento. Contratos mensais. Sem multa de saída.",
     "monthly": "por mês",
     "once": "pagamento único",
     "recommended": "Recomendado",
@@ -55,10 +55,10 @@
     "cat_branding": "Branding"
   },
   "hero": {
-    "eyebrow": "Agência Criativa · Hotelaria · Experiências · Real Estate",
+    "eyebrow": "Agência de Marketing para Hotéis · Pousadas · Real Estate",
     "line1": "Criamos marcas",
     "line2": "que geram desejo.",
-    "sub": "Transformamos marcas de hotelaria, experiências e real estate em referências digitais, com foco em resultado real.",
+    "sub": "Hotéis, pousadas e experiências que nos contratam param de depender das OTAs. Construímos a presença digital que faz o hóspede reservar direto com você.",
     "cta_primary": "Ver Portfólio",
     "cta_secondary": "Fale Conosco"
   },
@@ -66,18 +66,18 @@
   "stats": {
     "eyebrow": "Números que falam",
     "s1_value": "+30",
-    "s1_label": "Marcas Atendidas",
+    "s1_label": "marcas em 3 países",
     "s2_value": "5+",
-    "s2_label": "Anos de Expertise",
-    "s3_value": "3",
-    "s3_label": "Mercados: BR · PT · Intl",
+    "s2_label": "anos só no setor",
+    "s3_value": "+100%",
+    "s3_label": "crescimento médio nas redes",
     "s4_value": "3",
     "s4_label": "Setores: Hotel · Exp · RE"
   },
   "portfolio": {
     "eyebrow": "Nosso Trabalho",
-    "title": "Cases que geram resultados reais",
-    "subtitle": "Cada projeto tem uma história. Essas são algumas das marcas que ajudamos a construir.",
+    "title": "Hotéis, pousadas e experiências que cresceram com a gente",
+    "subtitle": "+400% no Instagram. Fila de espera na alta temporada. Reservas diretas crescendo. Esses são os resultados das empresas que deixaram de ser comuns.",
     "filter_all": "Todos",
     "filter_branding": "Branding",
     "filter_web": "Web Design",
@@ -89,38 +89,38 @@
   },
   "services": {
     "eyebrow": "O que fazemos",
-    "title": "Serviços que constroem marcas de desejo",
-    "subtitle": "Cada disciplina foi desenvolvida com base em anos de experiência nos setores que mais exigem identidade e emoção.",
+    "title": "Tudo que sua marca precisa para vender antes do primeiro contato",
+    "subtitle": "Do branding ao tráfego pago, cada serviço foi desenhado para hotéis, pousadas e experiências que querem crescer sem depender de intermediários.",
     "items": [
       {
         "number": "01",
         "title": "Social Media",
-        "description": "Conteúdo estratégico que transforma seguidores em clientes pagantes. Gestão completa com foco em engajamento qualificado e geração de leads e reservas diretas.",
+        "description": "Conteúdo que faz o hóspede sonhar com a estadia antes de abrir o Booking. Gestão completa de redes sociais com foco em engajamento qualificado e reservas diretas.",
         "tags": ["Gestão de Redes", "Criação de Conteúdo", "Fotografia", "Reels"]
       },
       {
         "number": "02",
         "title": "Performance Ads",
-        "description": "Campanhas no Google e Meta com ROI mensurável. Cada real investido é rastreado e otimizado para que você saiba exatamente quanto está ganhando com anúncios.",
+        "description": "Quando alguém busca 'pousada em [cidade]', você aparece primeiro. E convertemos esse clique em reserva — com ROI mensurável em cada real investido.",
         "tags": ["Google Ads", "Meta Ads", "Remarketing", "Analytics & Relatórios"]
       },
       {
         "number": "03",
         "title": "Web Design",
-        "description": "Sites e landing pages que convertem visitantes em clientes. Design premium que reflete a experiência que o cliente terá e que funciona perfeitamente em qualquer dispositivo.",
-        "tags": ["Site Institucional", "Landing Page", "UX/UI", "Otimização SEO"]
+        "description": "Seu site vende mais reservas diretas do que a comissão que você paga ao Booking hoje? O nosso sim. Sites e landing pages que convertem visitas em hóspedes.",
+        "tags": ["Site para Pousada", "Landing Page", "UX/UI", "Otimização SEO"]
       },
       {
         "number": "04",
         "title": "Sistemas",
-        "description": "Sistemas internos e automações que eliminam processos manuais, reduzem erros e liberam sua equipe para o que realmente importa.",
+        "description": "Automatize follow-ups, check-ins e cobranças. Sua equipe foca no hóspede, não na planilha. Sistemas e integrações sob medida para a operação do seu negócio.",
         "tags": ["Sistemas Internos", "Automações", "Integrações", "Make · n8n · Zapier"]
       },
       {
         "number": "05",
         "title": "Branding",
-        "description": "Identidade visual que gera desejo. Criamos marcas que comunicam o valor único do seu negócio e criam conexão emocional com o cliente antes mesmo da primeira experiência.",
-        "tags": ["Identidade Visual", "Logotipo", "Manual de Marca", "Copywriting"]
+        "description": "Sua marca define o preço que você consegue cobrar. Identidades premium justificam diárias premium — do naming à identidade visual completa.",
+        "tags": ["Identidade Visual", "Logotipo", "Manual de Marca", "Naming"]
       }
     ]
   },
@@ -128,12 +128,12 @@
     "eyebrow": "Por que a Explore",
     "title": "Especialistas no que mais exige identidade.",
     "description": "Hotelaria, experiências e real estate são setores onde a marca é o produto. Entendemos isso — e construímos marcas à altura dessa responsabilidade.",
-    "d1_title": "Foco no setor",
-    "d1_desc": "Nossa metodologia, repertório criativo e casos de sucesso foram construídos dentro dos setores que mais exigem identidade, emoção e desejo.",
-    "d2_title": "Resultados mensuráveis",
-    "d2_desc": "Trabalhamos com métricas claras: reservas diretas, custo por lead, ROI de campanhas e crescimento de audiência qualificada.",
-    "d3_title": "Parceria estratégica",
-    "d3_desc": "Não somos uma agência de volume. Cada cliente tem um time dedicado que entende o negócio e pensa estrategicamente no crescimento.",
+    "d1_title": "Especialistas no seu setor",
+    "d1_desc": "Não trabalhamos com e-commerce, startups ou varejo. Só hotéis, pousadas, imobiliárias e experiências. Isso faz de nós os melhores no que você precisa — não os mais baratos do mercado.",
+    "d2_title": "Reservas diretas, não métricas vazias",
+    "d2_desc": "Seguidores que não reservam não pagam as contas. Cada campanha, post e landing page que entregamos é medido por uma métrica: crescimento real do seu faturamento.",
+    "d3_title": "Time dedicado, não revezamento",
+    "d3_desc": "Você não fala com estagiário. Tem um time fixo que conhece a sua marca, a sua temporada e o seu cliente ideal — e pensa estrategicamente no crescimento ao longo do ano.",
     "markets": "Trabalhamos com marcas no Brasil e na Espanha, em português, inglês e espanhol."
   },
   "testimonials": {
@@ -143,7 +143,7 @@
       {
         "quote": "A Explore Digital transformou a forma como comunicamos o nosso negócio. Em poucos meses o engajamento triplicou e as reservas diretas cresceram de forma expressiva. É a agência que entende o nosso mercado de verdade.",
         "author": "Rafael M.",
-        "role": "",
+        "role": "Gerente Geral · Pousada · Brasil",
         "location": "Brasil"
       },
       {
@@ -162,8 +162,8 @@
   },
   "contact": {
     "eyebrow": "Vamos conversar",
-    "title": "Pronto para transformar sua marca?",
-    "description": "Conte-nos sobre o seu negócio. Respondemos em até 24 horas.",
+    "title": "Vamos conversar sobre o seu negócio.",
+    "description": "Uma conversa de 20 minutos é suficiente para entender o que sua marca precisa — e o que vai gerar resultado. Sem pitch. Sem proposta genérica. Respondemos em até 24h.",
     "whatsapp": "Falar no WhatsApp",
     "email_label": "Ou envie um e-mail",
     "email": "agencia.exploredigital@gmail.com",
@@ -179,7 +179,7 @@
     "form_error": "Erro ao enviar. Tente pelo WhatsApp."
   },
   "footer": {
-    "tagline": "Construindo marcas de desejo em hotelaria, experiências e real estate.",
+    "tagline": "Agência de marketing digital para hotéis, pousadas e real estate. Reservas diretas, não dependência de OTAs.",
     "nav_title": "Navegação",
     "social_title": "Redes Sociais",
     "contact_title": "Contato",

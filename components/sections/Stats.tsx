@@ -10,7 +10,7 @@ const NICHES = [
       </svg>
     ),
     title: 'Hotelaria',
-    desc: 'Pousadas, hotéis, hostels e resorts que precisam de uma presença digital à altura da experiência que entregam.',
+    desc: 'Reduzimos a dependência de OTAs e construímos audiências que reservam direto.',
   },
   {
     icon: (
@@ -19,7 +19,7 @@ const NICHES = [
       </svg>
     ),
     title: 'Experiências & Esportes',
-    desc: 'Escolas de kite, surf, experiências gastronômicas, beach clubs e destinos de aventura no litoral.',
+    desc: 'Você vende um estilo de vida. A copy, o vídeo e o anúncio precisam transmitir isso antes da matrícula.',
   },
   {
     icon: (
@@ -28,7 +28,7 @@ const NICHES = [
       </svg>
     ),
     title: 'Real Estate',
-    desc: 'Imobiliárias e incorporadoras que vendem estilo de vida no litoral para investidores nacionais e internacionais.',
+    desc: 'Imóveis de alto padrão vendem experiência antes de metros quadrados. Fazemos isso.',
   },
 ]
 
@@ -45,7 +45,7 @@ export function Stats() {
             </span>
           </div>
           <h2 className="text-[clamp(26px,3.5vw,42px)] font-bold text-white leading-[1.05] tracking-tight max-w-[480px]">
-            Mais que uma agência de marketing, uma parceria digital
+            Apenas três setores. Toda a nossa energia neles.
           </h2>
         </AnimateIn>
 

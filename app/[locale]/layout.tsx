@@ -5,11 +5,12 @@ import { WhatsAppFloat } from '@/components/ui/WhatsAppFloat'
 import '../globals.css'
 
 export const metadata: Metadata = {
-  title: 'Explore Digital — Agência de Marketing | Hotelaria · Experiências · Real Estate',
-  description: 'Transformamos marcas de hotelaria, experiências e real estate em referências digitais. Branding, web design, social media e performance.',
+  title: 'Explore Digital — Agência de Marketing para Hotéis, Pousadas e Real Estate',
+  description: 'Agência de marketing turismo especializada em hotéis, pousadas e real estate. Reservas diretas, gestão de redes sociais, tráfego pago e branding. Menos OTA, mais lucro.',
+  keywords: 'agência de marketing para hotéis, marketing digital pousada, reservas diretas hotel, gestão de redes sociais hotelaria, tráfego pago hotel, site para pousada, agência marketing turismo',
   openGraph: {
-    title: 'Explore Digital',
-    description: 'Agência criativa especializada em hotelaria, experiências e real estate.',
+    title: 'Explore Digital — Agência de Marketing para Hotéis e Pousadas',
+    description: 'Especialistas em marketing digital para hotelaria, experiências e real estate. Reduzimos a dependência de OTAs e construímos audiências que reservam direto.',
     images: ['/images/logo.png'],
     siteName: 'Explore Digital',
   },
