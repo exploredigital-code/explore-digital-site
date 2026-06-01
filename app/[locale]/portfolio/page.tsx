@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { projects, type Category } from '@/data/portfolio'
+import { getLocalizedProject } from '@/data/portfolio-content'
 import { Navbar } from '@/components/sections/Navbar'
 import { Footer } from '@/components/sections/Footer'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
@@ -33,6 +34,8 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const locale = useLocale()
   const t = useTranslations('portfolio')
   const getSector = (s: string) => { const k = SECTOR_KEY[s]; return k ? t(k as Parameters<typeof t>[0]) : s }
+  const localized = getLocalizedProject(locale, project.slug)
+  const tagline = localized?.tagline ?? project.tagline
   return (
     <motion.div variants={itemVariants}>
       <Link
@@ -75,7 +78,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
             {project.client}
           </h3>
           <p className="text-[13px] text-g-dark/50 leading-[1.65] line-clamp-2 mb-4">
-            {project.tagline}
+            {tagline}
           </p>
           <div className="pt-4 border-t border-g-dark/6 flex items-center justify-between">
             <span className="text-[12px] text-g-dark/40">{project.location}</span>
@@ -253,6 +256,9 @@ function FeaturedProjectCard({ project }: { project: (typeof projects)[0] }) {
   const locale = useLocale()
   const t = useTranslations('portfolio')
   const getSector = (s: string) => { const k = SECTOR_KEY[s]; return k ? t(k as Parameters<typeof t>[0]) : s }
+  const localized = getLocalizedProject(locale, project.slug)
+  const tagline = localized?.tagline ?? project.tagline
+  const result = localized?.result ?? project.result
   return (
     <Link
       href={`/${locale}/portfolio/${project.slug}`}
@@ -288,8 +294,8 @@ function FeaturedProjectCard({ project }: { project: (typeof projects)[0] }) {
             <h2 className="text-[clamp(28px,3.5vw,44px)] text-white leading-[1.05] tracking-tight mb-3 group-hover:text-g-light transition-colors">
               {project.client}
             </h2>
-            <p className="text-[15px] text-white/45 leading-[1.75] mb-4">{project.tagline}</p>
-            <div className="text-[13px] font-bold text-g-mid/70">{project.result}</div>
+            <p className="text-[15px] text-white/45 leading-[1.75] mb-4">{tagline}</p>
+            <div className="text-[13px] font-bold text-g-mid/70">{result}</div>
           </div>
           <div className="mt-8 inline-flex items-center gap-2 text-[13px] font-bold text-g-light/50 group-hover:text-g-light transition-colors">
             {t('view_full_case')}

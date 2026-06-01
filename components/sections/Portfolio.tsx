@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 import { projects, type Category } from '@/data/portfolio'
+import { getLocalizedProject } from '@/data/portfolio-content'
 
 type Filter = 'all' | Category
 
@@ -35,9 +36,12 @@ const SECTOR_KEY: Record<string, string> = {
   'Gastronomia': 'sector_gastronomia',
 }
 
-function ProjectCard({ project, seeCase, locale, getSector }: {
-  project: typeof projects[0]; seeCase: string; locale: string; getSector: (s: string) => string
+function ProjectCard({ project, seeCase, locale, getSector, getTagline }: {
+  project: typeof projects[0]; seeCase: string; locale: string
+  getSector: (s: string) => string
+  getTagline: (slug: string, fallback: string) => string
 }) {
+  const tagline = getTagline(project.slug, project.tagline)
   return (
     <Link
       href={`/${locale}/portfolio/${project.slug}`}
@@ -81,7 +85,7 @@ function ProjectCard({ project, seeCase, locale, getSector }: {
         <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-g-mid mb-2">{getSector(project.sector)}</div>
         <div className="text-[20px] font-bold text-white leading-tight mb-1">{project.client}</div>
         <div className="text-[13px] text-white/55 mb-3">{project.location}</div>
-        <div className="text-[14px] text-g-light mb-5 leading-snug">{project.tagline}</div>
+        <div className="text-[14px] text-g-light mb-5 leading-snug">{tagline}</div>
         <span className="inline-flex items-center gap-1.5 text-[12px] font-bold text-g-light/70 group-hover:text-g-light transition-colors">
           {seeCase}
           <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
@@ -92,7 +96,7 @@ function ProjectCard({ project, seeCase, locale, getSector }: {
       <div className="p-5">
         <div className="font-bold text-[16px] text-white">{project.client}</div>
         <div className="text-[11px] text-white/50 mt-0.5 tracking-wide uppercase">{getSector(project.sector)} · {project.location}</div>
-        <div className="mt-2 text-[12px] text-g-mid/70 font-medium line-clamp-1 md:hidden">{project.tagline}</div>
+        <div className="mt-2 text-[12px] text-g-mid/70 font-medium line-clamp-1 md:hidden">{tagline}</div>
       </div>
     </Link>
   )
@@ -107,6 +111,9 @@ export function Portfolio() {
     const key = SECTOR_KEY[sector]
     return key ? t(key as Parameters<typeof t>[0]) : sector
   }
+
+  const getTagline = (slug: string, fallback: string) =>
+    getLocalizedProject(locale, slug)?.tagline ?? fallback
 
   const visible = projects.filter(p => !p.hidden)
   const filtered = active === 'all' ? visible : visible.filter(p => p.categories.includes(active as Category))
@@ -168,7 +175,7 @@ export function Portfolio() {
                 transition={{ delay: i * 0.05, duration: 0.45, ease: [0.21, 0.47, 0.32, 0.98] }}
                 className={cn(project.featured && displayed.length > 2 && 'sm:col-span-2 lg:col-span-1')}
               >
-                <ProjectCard project={project} seeCase={t('see_case')} locale={locale} getSector={getSector} />
+                <ProjectCard project={project} seeCase={t('see_case')} locale={locale} getSector={getSector} getTagline={getTagline} />
               </motion.div>
             ))}
           </motion.div>

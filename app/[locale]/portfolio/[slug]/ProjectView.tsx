@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useLocale, useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
 import type { Project } from '@/data/portfolio'
+import { getLocalizedProject } from '@/data/portfolio-content'
 import { Navbar }  from '@/components/sections/Navbar'
 import { Footer }  from '@/components/sections/Footer'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
@@ -79,6 +80,12 @@ export function ProjectView({ project, next, prev }: Props) {
   }
   const waUrl = WA_BASE + encodeURIComponent(tContact('whatsapp_intro'))
 
+  const localized = getLocalizedProject(locale, project.slug)
+  const tagline = localized?.tagline ?? project.tagline
+  const description = localized?.description ?? project.description
+  const result = localized?.result ?? project.result
+  const services = localized?.services ?? project.services
+
   return (
     <>
       {/* Reading progress bar */}
@@ -117,7 +124,7 @@ export function ProjectView({ project, next, prev }: Props) {
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }}
             className="text-[18px] text-white/50 leading-[1.7] max-w-[520px]">
-            {project.tagline}
+            {tagline}
           </motion.p>
         </div>
       </section>
@@ -130,7 +137,7 @@ export function ProjectView({ project, next, prev }: Props) {
               { label: t('client'),    value: project.client },
               { label: t('sector'),     value: project.sector },
               { label: t('year'),       value: project.year },
-              { label: t('result'), value: project.result },
+              { label: t('result'), value: result },
             ].map((item, i) => (
               <AnimateIn key={i} delay={i * 0.07}>
                 <div className="py-8 px-6 lg:px-10">
@@ -153,7 +160,7 @@ export function ProjectView({ project, next, prev }: Props) {
                   <div className="w-5 h-px bg-g-mid" />
                   <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-mid">{t('about_project')}</span>
                 </div>
-                <p className="text-[19px] text-g-dark/65 leading-[1.85]">{project.description}</p>
+                <p className="text-[19px] text-g-dark/65 leading-[1.85]">{description}</p>
               </AnimateIn>
             </div>
             <div className="lg:col-span-5">
@@ -161,7 +168,7 @@ export function ProjectView({ project, next, prev }: Props) {
                 <div className="bg-white rounded-2xl p-8 border border-g-dark/8 shadow-sm">
                   <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-g-dark/45 mb-6">{t('services_done')}</div>
                   <div className="flex flex-col divide-y divide-g-dark/6">
-                    {project.services.map((s, i) => (
+                    {services.map((s, i) => (
                       <div key={i} className="flex items-center justify-between py-4">
                         <span className="text-[15px] text-g-dark/65">{s}</span>
                         <span className="text-[11px] font-bold text-g-dark/30 tracking-widest">{String(i + 1).padStart(2, '0')}</span>
@@ -206,7 +213,7 @@ export function ProjectView({ project, next, prev }: Props) {
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
               <div>
                 <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-g-light/45 mb-3">{t('main_result')}</div>
-                <div className="text-[clamp(32px,5vw,64px)] font-semibold text-g-light leading-none tracking-tight">{project.result}</div>
+                <div className="text-[clamp(32px,5vw,64px)] font-semibold text-g-light leading-none tracking-tight">{result}</div>
               </div>
               <a href={waUrl} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-g-light text-g-dark font-bold px-8 py-4 rounded-full hover:bg-g-pale hover:-translate-y-0.5 transition-all duration-200 shrink-0 self-start lg:self-auto">
