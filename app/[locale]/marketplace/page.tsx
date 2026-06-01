@@ -110,10 +110,15 @@ function PricingCard({ plan, monthly, once, whatsappCta, waUrl }: {
       className="relative flex flex-col overflow-hidden transition-all duration-300 rounded-2xl bg-white border border-g-dark/10 hover:border-g-mid/35 hover:-translate-y-1"
     >
       <div className="p-7 flex flex-col flex-1">
-        <div className="text-[10px] font-bold tracking-[0.2em] uppercase mb-4 pb-4 border-b text-g-mid border-g-dark/8">
-          {plan.name}
+        <div className="mb-4 pb-4 border-b border-g-dark/8">
+          <div className="text-[22px] font-bold tracking-tight text-g-dark leading-tight">
+            {plan.name}
+          </div>
+          <div className="text-[12px] font-semibold tracking-[0.08em] uppercase mt-1.5 text-g-mid/70">
+            {plan.period === 'monthly' ? monthly : once}
+          </div>
         </div>
-        <div className="mb-7" />
+        <div className="mb-5" />
         <ul className="flex flex-col gap-3.5 mb-8 flex-1">
           {plan.features.map((f, i) => (
             <li key={i} className="flex items-start gap-3">
