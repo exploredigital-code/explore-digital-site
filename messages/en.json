@@ -61,7 +61,19 @@
     "join_eyebrow": "Join the team",
     "join_title": "We're looking for passionate professionals.",
     "join_desc": "We have open positions in design, social media, paid traffic, sales and more.",
-    "join_button": "See open positions →"
+    "join_button": "See open positions →",
+    "f1_role": "Co-founder · Creative Director",
+    "f1_bio": "Creative leadership of Explore Digital's content team. Specialist in strategy, digital positioning and building digital brands.",
+    "f2_role": "Co-founder · Sales Director",
+    "f2_bio": "Responsible for commercial growth and client relationships at Explore Digital. Specialist in business strategy, market expansion and long-term partnership building.",
+    "ct1_role": "Content & Storytelling",
+    "ct1_bio": "Strategic content creation, storytelling and visual production for the brands we serve.",
+    "ct2_role": "Capture & Editing",
+    "ct2_bio": "Video capture, editing and visual storytelling. Specialist in content for social media.",
+    "ct3_role": "Design & Branding",
+    "ct3_bio": "Designer specializing in branding and brands that grow in the digital space.",
+    "pt1_role": "Performance & Traffic",
+    "pt1_bio": "Paid traffic management on Google and Meta. Focused on ROI and qualified lead generation."
   },
   "marketplace_page": {
     "eyebrow": "Services Catalog",
@@ -169,6 +181,12 @@
     "see_more": "See more",
     "project_singular": "project",
     "project_plural": "projects",
+    "sector_beach_club": "Beach Club",
+    "sector_hotelaria": "Hospitality",
+    "sector_turismo": "Tourism",
+    "sector_esporte": "Sport & Experience",
+    "sector_real_estate": "Real Estate",
+    "sector_gastronomia": "Gastronomy",
     "empty_state": "New projects in this category coming soon.",
     "cta_eyebrow": "Next in line",
     "cta_title": "Want your brand to be the next case study?",
@@ -347,7 +365,18 @@
     "form_success_title": "Application sent!",
     "form_success_desc": "We received your application by email and WhatsApp was opened with your details. We'll be in touch soon.",
     "form_error": "Error submitting the form. Try contacting us directly on WhatsApp.",
-    "form_note": "When you submit, your application will be sent by email and WhatsApp simultaneously."
+    "form_note": "When you submit, your application will be sent by email and WhatsApp simultaneously.",
+    "wa_apply": "Hi! I'm applying for the *{vaga}* position at Explore Digital.\n\n*Name:* {name}\n*Email:* {email}\n*Portfolio:* {portfolio}\n\n*Introduction:*\n{apresentacao}\n\n*Why I want to work at Explore:*\n{motivo}",
+    "positions": [
+      { "area": "Sales", "descricao": "Prospecting and relationship building with new clients. Focus on hospitality, experiences and real estate.", "tipo": "Commission" },
+      { "area": "Design", "descricao": "Creation of visual identities, social media graphics and brand materials.", "tipo": "Full-time / Freelance" },
+      { "area": "Traffic Manager", "descricao": "Campaign management on Google Ads and Meta Ads focused on ROI and lead generation.", "tipo": "Full-time / Freelance" },
+      { "area": "Drone Pilot", "descricao": "Professional aerial capture with certification for projects across Brazil.", "tipo": "Freelance" },
+      { "area": "AI Developer", "descricao": "Implementation of artificial intelligence solutions applied to marketing and internal processes.", "tipo": "Freelance" },
+      { "area": "Social Media", "descricao": "Planning and creation of strategic content for social media in the tourism and hospitality sector.", "tipo": "Full-time / Freelance" },
+      { "area": "Video Editor", "descricao": "Editing of reels, institutional videos and vertical content for social media.", "tipo": "Full-time / Freelance" },
+      { "area": "Project Manager", "descricao": "Coordination of internal projects and delivery monitoring with clients.", "tipo": "Full-time" }
+    ]
   },
   "service_detail": {
     "back": "Back",

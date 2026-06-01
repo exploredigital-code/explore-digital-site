@@ -12,6 +12,15 @@ import { Footer } from '@/components/sections/Footer'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 
+const SECTOR_KEY: Record<string, string> = {
+  'Beach Club': 'sector_beach_club',
+  'Hotelaria': 'sector_hotelaria',
+  'Turismo': 'sector_turismo',
+  'Esporte & Experiência': 'sector_esporte',
+  'Real Estate': 'sector_real_estate',
+  'Gastronomia': 'sector_gastronomia',
+}
+
 const FILTER_KEYS: { key: Category | 'all'; labelKey: string }[] = [
   { key: 'all',         labelKey: 'filter_all' },
   { key: 'branding',    labelKey: 'filter_branding' },
@@ -23,6 +32,7 @@ const FILTER_KEYS: { key: Category | 'all'; labelKey: string }[] = [
 function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const locale = useLocale()
   const t = useTranslations('portfolio')
+  const getSector = (s: string) => { const k = SECTOR_KEY[s]; return k ? t(k as Parameters<typeof t>[0]) : s }
   return (
     <motion.div variants={itemVariants}>
       <Link
@@ -57,7 +67,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
         <div className="p-6">
           <div className="flex items-center justify-between mb-3">
             <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-g-mid/70">
-              {project.sector}
+              {getSector(project.sector)}
             </span>
             <span className="text-[10px] text-g-dark/35 tracking-widest">{project.year}</span>
           </div>
@@ -86,6 +96,7 @@ const GRID_LIMIT = 8 // featured (1) + grid (8) = 9 cards visíveis por padrão
 
 export default function PortfolioPage() {
   const t = useTranslations('portfolio')
+  const tContact = useTranslations('contact')
   const [active, setActive] = useState<Category | 'all'>('all')
   const [expanded, setExpanded] = useState(false)
 
@@ -220,7 +231,7 @@ export default function PortfolioPage() {
                   </h3>
                 </div>
                 <a
-                  href="https://wa.me/5585991043067?text=Ol%C3%A1!%20Vi%20o%20portfolio%20e%20quero%20conversar%20sobre%20o%20meu%20projeto."
+                  href={`https://wa.me/5585991043067?text=${encodeURIComponent(tContact('whatsapp_intro'))}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative z-10 shrink-0 inline-flex items-center gap-2 bg-g-light text-g-dark font-bold px-7 py-3.5 rounded-full hover:bg-g-pale hover:-translate-y-0.5 transition-all duration-200 text-[14px]"
@@ -241,6 +252,7 @@ export default function PortfolioPage() {
 function FeaturedProjectCard({ project }: { project: (typeof projects)[0] }) {
   const locale = useLocale()
   const t = useTranslations('portfolio')
+  const getSector = (s: string) => { const k = SECTOR_KEY[s]; return k ? t(k as Parameters<typeof t>[0]) : s }
   return (
     <Link
       href={`/${locale}/portfolio/${project.slug}`}
@@ -260,7 +272,7 @@ function FeaturedProjectCard({ project }: { project: (typeof projects)[0] }) {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-g-dark/60 hidden md:block" />
           <div className="absolute top-5 left-5">
             <span className="text-[9px] font-bold tracking-[0.18em] uppercase text-g-light/80 bg-g-dark/60 backdrop-blur-sm px-3 py-1.5 rounded-full">
-              {project.sector}
+              {getSector(project.sector)}
             </span>
           </div>
         </div>

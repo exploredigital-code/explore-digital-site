@@ -61,7 +61,19 @@
     "join_eyebrow": "Faça parte do time",
     "join_title": "Buscamos profissionais apaixonados pelo que fazem.",
     "join_desc": "Temos vagas abertas para design, social media, tráfego pago, vendas e mais.",
-    "join_button": "Ver vagas abertas →"
+    "join_button": "Ver vagas abertas →",
+    "f1_role": "Co-fundador · Diretor Criativo",
+    "f1_bio": "Liderança criativa da equipe de conteúdo da Explore Digital. Especialista em estratégia, posicionamento digital e construção de marcas digitais.",
+    "f2_role": "Co-fundador · Diretor de Vendas",
+    "f2_bio": "Responsável pelo crescimento comercial e pelo relacionamento com os clientes da Explore Digital. Especialista em estratégia de negócios, expansão de mercado e construção de parcerias de longo prazo.",
+    "ct1_role": "Conteúdo & Storytelling",
+    "ct1_bio": "Criação de conteúdo estratégico, storytelling e produção visual para as marcas que atendemos.",
+    "ct2_role": "Captação & Edição",
+    "ct2_bio": "Captação, edição e storytelling visual. Especialista em conteúdo para redes sociais.",
+    "ct3_role": "Design & Branding",
+    "ct3_bio": "Designer especialista em branding e marcas que crescem no digital.",
+    "pt1_role": "Performance & Tráfego",
+    "pt1_bio": "Gestão de tráfego pago no Google e Meta. Focado em ROI e geração de leads qualificados."
   },
   "marketplace_page": {
     "eyebrow": "Catálogo de Serviços",
@@ -169,6 +181,12 @@
     "see_more": "Ver mais",
     "project_singular": "projeto",
     "project_plural": "projetos",
+    "sector_beach_club": "Beach Club",
+    "sector_hotelaria": "Hotelaria",
+    "sector_turismo": "Turismo",
+    "sector_esporte": "Esporte & Experiência",
+    "sector_real_estate": "Real Estate",
+    "sector_gastronomia": "Gastronomia",
     "empty_state": "Em breve, novos projetos nessa categoria.",
     "cta_eyebrow": "Próximo na fila",
     "cta_title": "Quer que a sua marca seja o próximo case?",
@@ -378,7 +396,18 @@
     "form_success_title": "Candidatura enviada!",
     "form_success_desc": "Recebemos sua candidatura por e-mail e o WhatsApp foi aberto com os seus dados. Entraremos em contato em breve.",
     "form_error": "Erro ao enviar o formulário. Tente entrar em contato direto pelo WhatsApp.",
-    "form_note": "Ao enviar, sua candidatura será encaminhada por e-mail e WhatsApp simultaneamente."
+    "form_note": "Ao enviar, sua candidatura será encaminhada por e-mail e WhatsApp simultaneamente.",
+    "wa_apply": "Olá! Estou me candidatando para a vaga de *{vaga}* na Explore Digital.\n\n*Nome:* {name}\n*E-mail:* {email}\n*Portfolio:* {portfolio}\n\n*Apresentação:*\n{apresentacao}\n\n*Por que quero trabalhar na Explore:*\n{motivo}",
+    "positions": [
+      { "area": "Vendas", "descricao": "Prospecção e relacionamento com novos clientes. Foco em hotelaria, experiências e real estate.", "tipo": "Comissional" },
+      { "area": "Design", "descricao": "Criação de identidades visuais, artes para redes sociais e materiais de marca.", "tipo": "CLT / PJ" },
+      { "area": "Gestor de Tráfego", "descricao": "Gestão de campanhas no Google Ads e Meta Ads com foco em ROI e geração de leads.", "tipo": "CLT / PJ" },
+      { "area": "Piloto de Drone", "descricao": "Captação aérea profissional com certificação ANAC para projetos em todo o Brasil.", "tipo": "Freela / PJ" },
+      { "area": "Desenvolvedor IA", "descricao": "Implementação de soluções com inteligência artificial aplicadas ao marketing e processos internos.", "tipo": "PJ" },
+      { "area": "Social Media", "descricao": "Planejamento e criação de conteúdo estratégico para redes sociais no setor de turismo e hotelaria.", "tipo": "CLT / PJ" },
+      { "area": "Editor de Vídeo", "descricao": "Edição de reels, vídeos institucionais e conteúdo vertical para redes sociais.", "tipo": "CLT / PJ" },
+      { "area": "Gestor de Projetos", "descricao": "Coordenação de projetos internos e acompanhamento de entregas junto aos clientes.", "tipo": "CLT" }
+    ]
   },
   "footer": {
     "tagline": "Agência de marketing digital para hotéis, pousadas e real estate. Reservas diretas, não dependência de OTAs.",

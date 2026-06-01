@@ -61,7 +61,19 @@
     "join_eyebrow": "Únete al equipo",
     "join_title": "Buscamos profesionales apasionados por lo que hacen.",
     "join_desc": "Tenemos vacantes abiertas en diseño, social media, tráfico pago, ventas y más.",
-    "join_button": "Ver vacantes abiertas →"
+    "join_button": "Ver vacantes abiertas →",
+    "f1_role": "Co-fundador · Director Creativo",
+    "f1_bio": "Liderazgo creativo del equipo de contenido de Explore Digital. Especialista en estrategia, posicionamiento digital y construcción de marcas digitales.",
+    "f2_role": "Co-fundador · Director de Ventas",
+    "f2_bio": "Responsable del crecimiento comercial y las relaciones con los clientes de Explore Digital. Especialista en estrategia de negocios, expansión de mercado y construcción de alianzas a largo plazo.",
+    "ct1_role": "Contenido & Storytelling",
+    "ct1_bio": "Creación de contenido estratégico, storytelling y producción visual para las marcas que atendemos.",
+    "ct2_role": "Captación & Edición",
+    "ct2_bio": "Captación, edición y storytelling visual. Especialista en contenido para redes sociales.",
+    "ct3_role": "Diseño & Branding",
+    "ct3_bio": "Diseñador especialista en branding y marcas que crecen en el entorno digital.",
+    "pt1_role": "Performance & Tráfico",
+    "pt1_bio": "Gestión de tráfico pago en Google y Meta. Enfocado en ROI y generación de leads calificados."
   },
   "marketplace_page": {
     "eyebrow": "Catálogo de Servicios",
@@ -169,6 +181,12 @@
     "see_more": "Ver más",
     "project_singular": "proyecto",
     "project_plural": "proyectos",
+    "sector_beach_club": "Beach Club",
+    "sector_hotelaria": "Hotelería",
+    "sector_turismo": "Turismo",
+    "sector_esporte": "Deporte & Experiencia",
+    "sector_real_estate": "Real Estate",
+    "sector_gastronomia": "Gastronomía",
     "empty_state": "Próximamente, nuevos proyectos en esta categoría.",
     "cta_eyebrow": "El siguiente en la fila",
     "cta_title": "¿Quieres que tu marca sea el próximo case?",
@@ -347,7 +365,18 @@
     "form_success_title": "¡Candidatura enviada!",
     "form_success_desc": "Recibimos tu candidatura por email y WhatsApp fue abierto con tus datos. Estaremos en contacto pronto.",
     "form_error": "Error al enviar el formulario. Intenta contactarnos directamente por WhatsApp.",
-    "form_note": "Al enviar, tu candidatura será enviada por email y WhatsApp simultáneamente."
+    "form_note": "Al enviar, tu candidatura será enviada por email y WhatsApp simultáneamente.",
+    "wa_apply": "¡Hola! Me estoy postulando para el puesto de *{vaga}* en Explore Digital.\n\n*Nombre:* {name}\n*Email:* {email}\n*Portfolio:* {portfolio}\n\n*Presentación:*\n{apresentacao}\n\n*Por qué quiero trabajar en Explore:*\n{motivo}",
+    "positions": [
+      { "area": "Ventas", "descricao": "Prospección y relación con nuevos clientes. Foco en hotelería, experiencias y real estate.", "tipo": "Comisional" },
+      { "area": "Diseño", "descricao": "Creación de identidades visuales, artes para redes sociales y materiales de marca.", "tipo": "Full-time / Freelance" },
+      { "area": "Gestor de Tráfico", "descricao": "Gestión de campañas en Google Ads y Meta Ads con foco en ROI y generación de leads.", "tipo": "Full-time / Freelance" },
+      { "area": "Piloto de Dron", "descricao": "Captación aérea profesional con certificación para proyectos en todo Brasil.", "tipo": "Freelance" },
+      { "area": "Desarrollador IA", "descricao": "Implementación de soluciones con inteligencia artificial aplicadas al marketing y procesos internos.", "tipo": "Freelance" },
+      { "area": "Social Media", "descricao": "Planificación y creación de contenido estratégico para redes sociales en el sector de turismo y hotelería.", "tipo": "Full-time / Freelance" },
+      { "area": "Editor de Video", "descricao": "Edición de reels, videos institucionales y contenido vertical para redes sociales.", "tipo": "Full-time / Freelance" },
+      { "area": "Gestor de Proyectos", "descricao": "Coordinación de proyectos internos y seguimiento de entregas con los clientes.", "tipo": "Full-time" }
+    ]
   },
   "service_detail": {
     "back": "Volver",

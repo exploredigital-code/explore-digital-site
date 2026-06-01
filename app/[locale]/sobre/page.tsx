@@ -12,50 +12,12 @@ import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/Animate
 
 const WHATSAPP = 'https://wa.me/5585991043067'
 
-const founders = [
-  {
-    name: 'João Teixeira',
-    role: 'Co-fundador · Diretor Criativo',
-    bio: 'Liderança criativa da equipe de conteúdo da Explore Digital. Especialista em estratégia, posicionamento digital e construção de marcas digitais.',
-    photo: '/images/team/João.png',
-  },
-  {
-    name: 'Pablo Frias',
-    role: 'Co-fundador · Diretor de Vendas',
-    bio: 'Responsável pelo crescimento comercial e pelo relacionamento com os clientes da Explore Digital. Especialista em estratégia de negócios, expansão de mercado e construção de parcerias de longo prazo.',
-    photo: '/images/team/Pablo.png',
-  },
-]
-
-const creativeTeam = [
-  {
-    name: 'Esperanza Governa',
-    role: 'Conteúdo & Storytelling',
-    bio: 'Criação de conteúdo estratégico, storytelling e produção visual para as marcas que atendemos.',
-    photo: '/images/team/Esperanza.png',
-  },
-  {
-    name: 'David Marroni',
-    role: 'Captação & Edição',
-    bio: 'Captação, edição e storytelling visual. Especialista em conteúdo para redes sociais.',
-    photo: '/images/team/David.png',
-  },
-  {
-    name: 'Styven Lord',
-    role: 'Design & Branding',
-    bio: 'Designer especialista em branding e marcas que crescem no digital.',
-    photo: '/images/team/Styven.png',
-  },
-]
-
-const performanceTeam = [
-  {
-    name: 'Winicius Moreira',
-    role: 'Performance & Tráfego',
-    bio: 'Gestão de tráfego pago no Google e Meta. Focado em ROI e geração de leads qualificados.',
-    photo: '/images/team/Winicius.png',
-  },
-]
+const FOUNDER_PHOTOS = ['/images/team/João.png', '/images/team/Pablo.png']
+const CREATIVE_PHOTOS = ['/images/team/Esperanza.png', '/images/team/David.png', '/images/team/Styven.png']
+const PERFORMANCE_PHOTOS = ['/images/team/Winicius.png']
+const FOUNDER_NAMES = ['João Teixeira', 'Pablo Frias']
+const CREATIVE_NAMES = ['Esperanza Governa', 'David Marroni', 'Styven Lord']
+const PERFORMANCE_NAMES = ['Winicius Moreira']
 
 function MemberCard({ member, dark = false }: {
   member: { name: string; role: string; bio: string; photo: string }
@@ -103,6 +65,19 @@ export default function SobrePage() {
     { title: t('v1_title'), desc: t('v1_desc') },
     { title: t('v2_title'), desc: t('v2_desc') },
     { title: t('v3_title'), desc: t('v3_desc') },
+  ]
+
+  const founders = [
+    { name: FOUNDER_NAMES[0], role: t('f1_role'), bio: t('f1_bio'), photo: FOUNDER_PHOTOS[0] },
+    { name: FOUNDER_NAMES[1], role: t('f2_role'), bio: t('f2_bio'), photo: FOUNDER_PHOTOS[1] },
+  ]
+  const creativeTeam = [
+    { name: CREATIVE_NAMES[0], role: t('ct1_role'), bio: t('ct1_bio'), photo: CREATIVE_PHOTOS[0] },
+    { name: CREATIVE_NAMES[1], role: t('ct2_role'), bio: t('ct2_bio'), photo: CREATIVE_PHOTOS[1] },
+    { name: CREATIVE_NAMES[2], role: t('ct3_role'), bio: t('ct3_bio'), photo: CREATIVE_PHOTOS[2] },
+  ]
+  const performanceTeam = [
+    { name: PERFORMANCE_NAMES[0], role: t('pt1_role'), bio: t('pt1_bio'), photo: PERFORMANCE_PHOTOS[0] },
   ]
 
   return (

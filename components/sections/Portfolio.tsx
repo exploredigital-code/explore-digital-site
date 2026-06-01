@@ -26,8 +26,17 @@ const CATEGORY_LABELS: Record<Category, string> = {
   performance: 'Performance',
 }
 
-function ProjectCard({ project, seeCase, locale }: {
-  project: typeof projects[0]; seeCase: string; locale: string
+const SECTOR_KEY: Record<string, string> = {
+  'Beach Club': 'sector_beach_club',
+  'Hotelaria': 'sector_hotelaria',
+  'Turismo': 'sector_turismo',
+  'Esporte & Experiência': 'sector_esporte',
+  'Real Estate': 'sector_real_estate',
+  'Gastronomia': 'sector_gastronomia',
+}
+
+function ProjectCard({ project, seeCase, locale, getSector }: {
+  project: typeof projects[0]; seeCase: string; locale: string; getSector: (s: string) => string
 }) {
   return (
     <Link
@@ -46,7 +55,7 @@ function ProjectCard({ project, seeCase, locale }: {
         {/* Sector */}
         <div className="absolute top-4 left-4">
           <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-g-light/80">
-            · {project.sector}
+            · {getSector(project.sector)}
           </span>
         </div>
 
@@ -69,7 +78,7 @@ function ProjectCard({ project, seeCase, locale }: {
       {/* Hover overlay */}
       <div className="card-overlay absolute inset-0 bg-g-dark/95 flex flex-col justify-end p-6">
         {/* Sector in hover */}
-        <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-g-mid mb-2">{project.sector}</div>
+        <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-g-mid mb-2">{getSector(project.sector)}</div>
         <div className="text-[20px] font-bold text-white leading-tight mb-1">{project.client}</div>
         <div className="text-[13px] text-white/55 mb-3">{project.location}</div>
         <div className="text-[14px] text-g-light mb-5 leading-snug">{project.tagline}</div>
@@ -82,7 +91,7 @@ function ProjectCard({ project, seeCase, locale }: {
       {/* Bottom info */}
       <div className="p-5">
         <div className="font-bold text-[16px] text-white">{project.client}</div>
-        <div className="text-[11px] text-white/50 mt-0.5 tracking-wide uppercase">{project.sector} · {project.location}</div>
+        <div className="text-[11px] text-white/50 mt-0.5 tracking-wide uppercase">{getSector(project.sector)} · {project.location}</div>
         <div className="mt-2 text-[12px] text-g-mid/70 font-medium line-clamp-1 md:hidden">{project.tagline}</div>
       </div>
     </Link>
@@ -93,6 +102,11 @@ export function Portfolio() {
   const t = useTranslations('portfolio')
   const locale = useLocale()
   const [active, setActive] = useState<Filter>('all')
+
+  const getSector = (sector: string) => {
+    const key = SECTOR_KEY[sector]
+    return key ? t(key as Parameters<typeof t>[0]) : sector
+  }
 
   const visible = projects.filter(p => !p.hidden)
   const filtered = active === 'all' ? visible : visible.filter(p => p.categories.includes(active as Category))
@@ -154,7 +168,7 @@ export function Portfolio() {
                 transition={{ delay: i * 0.05, duration: 0.45, ease: [0.21, 0.47, 0.32, 0.98] }}
                 className={cn(project.featured && displayed.length > 2 && 'sm:col-span-2 lg:col-span-1')}
               >
-                <ProjectCard project={project} seeCase={t('see_case')} locale={locale} />
+                <ProjectCard project={project} seeCase={t('see_case')} locale={locale} getSector={getSector} />
               </motion.div>
             ))}
           </motion.div>

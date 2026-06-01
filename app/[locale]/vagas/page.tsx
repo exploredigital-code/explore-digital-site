@@ -13,16 +13,7 @@ const WA_BASE = 'https://wa.me/5585991043067?text='
 const EMAIL = 'agencia.exploredigital@gmail.com'
 const FORMSPREE = 'https://formspree.io/f/YOUR_FORM_ID'
 
-const VAGAS = [
-  { area: 'Vendas', descricao: 'Prospecção e relacionamento com novos clientes. Foco em hotelaria, experiências e real estate.', tipo: 'Comissional' },
-  { area: 'Design', descricao: 'Criação de identidades visuais, artes para redes sociais e materiais de marca.', tipo: 'CLT / PJ' },
-  { area: 'Gestor de Tráfego', descricao: 'Gestão de campanhas no Google Ads e Meta Ads com foco em ROI e geração de leads.', tipo: 'CLT / PJ' },
-  { area: 'Piloto de Drone', descricao: 'Captação aérea profissional com certificação ANAC para projetos em todo o Brasil.', tipo: 'Freela / PJ' },
-  { area: 'Desenvolvedor IA', descricao: 'Implementação de soluções com inteligência artificial aplicadas ao marketing e processos internos.', tipo: 'PJ' },
-  { area: 'Social Media', descricao: 'Planejamento e criação de conteúdo estratégico para redes sociais no setor de turismo e hotelaria.', tipo: 'CLT / PJ' },
-  { area: 'Editor de Vídeo', descricao: 'Edição de reels, vídeos institucionais e conteúdo vertical para redes sociais.', tipo: 'CLT / PJ' },
-  { area: 'Gestor de Projetos', descricao: 'Coordenação de projetos internos e acompanhamento de entregas junto aos clientes.', tipo: 'CLT' },
-]
+type Vaga = { area: string; descricao: string; tipo: string }
 
 const inputClass = cn(
   'w-full px-4 py-3.5 rounded-xl',
@@ -35,6 +26,7 @@ const textareaClass = cn(inputClass, 'resize-none')
 
 export default function VagasPage() {
   const t = useTranslations('vagas')
+  const VAGAS = t.raw('positions') as Vaga[]
   const [selected, setSelected] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [form, setForm] = useState({
@@ -54,7 +46,13 @@ export default function VagasPage() {
     e.preventDefault()
     setStatus('sending')
 
-    const waMsg = `Olá! Estou me candidatando para a vaga de *${form.vaga}* na Explore Digital.\n\n*Nome:* ${form.name}\n*E-mail:* ${form.email}\n*Portfolio:* ${form.portfolio}\n\n*Apresentação:*\n${form.apresentacao}\n\n*Por que quero trabalhar na Explore:*\n${form.motivo}`
+    const waMsg = t('wa_apply')
+      .replace('{vaga}', form.vaga)
+      .replace('{name}', form.name)
+      .replace('{email}', form.email)
+      .replace('{portfolio}', form.portfolio)
+      .replace('{apresentacao}', form.apresentacao)
+      .replace('{motivo}', form.motivo)
     const waUrl = WA_BASE + encodeURIComponent(waMsg)
 
     try {
