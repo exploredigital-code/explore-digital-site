@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 import { servicesData } from '@/data/services'
+import { getLocalizedSubService } from '@/data/services-content'
 
 /* ─── Imagem de capa por sub-serviço (Unsplash) ─── */
 const CARD_IMAGE: Record<string, string> = {
@@ -82,12 +83,16 @@ const PILLAR_ICONS: Record<string, React.ReactNode> = {
   ),
 }
 
-function SubServiceCard({ sub, localePrefix, seeMore, recommended }: {
+function SubServiceCard({ sub, localePrefix, locale, seeMore, recommended }: {
   sub: { slug: string; name: string; tagline: string; recommended?: boolean }
   localePrefix: string
+  locale: string
   seeMore: string
   recommended: string
 }) {
+  const localized = getLocalizedSubService(locale, sub.slug)
+  const displayName = localized?.name ?? sub.name
+  const displayTagline = localized?.tagline ?? sub.tagline
   const imgSrc = CARD_IMAGE[sub.slug]
   const gradient = CARD_GRADIENT[sub.slug] ?? 'from-[#1B3025] to-[#2D5238]'
 
@@ -103,7 +108,7 @@ function SubServiceCard({ sub, localePrefix, seeMore, recommended }: {
           {imgSrc ? (
             <Image
               src={imgSrc}
-              alt={sub.name}
+              alt={displayName}
               fill
               sizes="240px"
               className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -124,10 +129,10 @@ function SubServiceCard({ sub, localePrefix, seeMore, recommended }: {
         {/* Conteúdo — metade inferior */}
         <div className="p-5 flex flex-col gap-2 flex-1">
           <div className="text-[12px] font-bold tracking-[0.1em] uppercase text-g-mid">
-            {sub.name}
+            {displayName}
           </div>
           <p className="text-[12px] text-g-dark/55 leading-[1.6] flex-1" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', minHeight: '2.4em' }}>
-            {sub.tagline}
+            {displayTagline}
           </p>
           <span className="inline-flex items-center gap-1 text-[11px] font-bold text-g-mid/70 group-hover:text-g-mid group-hover:gap-1.5 transition-all duration-200 mt-auto pt-2">
             {seeMore}
@@ -237,7 +242,7 @@ export function Services() {
                           {/* Horizontal scrollable row */}
                           <div className="flex gap-4 overflow-x-auto pb-2 -mr-6 pr-6 sm:-mr-10 sm:pr-10 lg:-mr-16 lg:pr-16" style={{ scrollbarWidth: 'none' }}>
                             {svcData.subServices.map(sub => (
-                              <SubServiceCard key={sub.slug} sub={sub} localePrefix={locale} seeMore={t('see_more')} recommended={t('recommended')} />
+                              <SubServiceCard key={sub.slug} sub={sub} localePrefix={locale} locale={locale} seeMore={t('see_more')} recommended={t('recommended')} />
                             ))}
                           </div>
                         </div>

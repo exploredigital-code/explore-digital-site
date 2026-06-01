@@ -8,7 +8,9 @@
     "contact": "Contato",
     "cta": "Fale Conosco",
     "work": "Trabalhe Conosco",
-    "blog": "Blog"
+    "blog": "Blog",
+    "menu_open": "Abrir menu",
+    "menu_close": "Fechar menu"
   },
   "process": {
     "eyebrow": "Como funciona",
@@ -82,7 +84,36 @@
     "cta_eyebrow": "Ficou com dúvidas?",
     "cta_title": "Consultoria gratuita, sem compromisso.",
     "cta_desc": "Fale com a gente e vamos indicar qual serviço faz mais sentido para o seu momento.",
-    "cta_button": "Falar com especialista"
+    "cta_button": "Falar com especialista",
+    "plan_interest": "Olá! Vim pelo site e tenho interesse no plano: {plan}. Podemos conversar?",
+    "ind_interest": "Olá! Tenho interesse no serviço de {service} ({price}). Podemos conversar?",
+    "soc_p1": "Essencial",
+    "soc_p2": "Pro",
+    "soc_p3": "Premium",
+    "soc_p1_features": ["8 Conteúdos (reels/design)", "10 Artes design", "Calendário editorial mensal", "Grupo de WhatsApp exclusivo"],
+    "soc_p2_features": ["12 Conteúdos (reels/design)", "20 Artes design", "Calendário editorial mensal", "Grupo exclusivo no Instagram"],
+    "soc_p3_features": ["16 Conteúdos (reels/design)", "30 Artes design", "Calendário editorial mensal", "Programação no TikTok e YouTube Shorts", "Grupo exclusivo no WhatsApp"],
+    "traf_p1_features": ["Criação de campanhas no Instagram e Facebook", "Análise e otimização diária", "Relatório de métricas de desempenho", "Grupo exclusivo no WhatsApp"],
+    "traf_p2_features": ["Criação e gestão de campanhas no Google Ads", "Segmentação para públicos específicos", "Otimização diária das campanhas", "Relatório mensal de performance", "Grupo exclusivo no WhatsApp"],
+    "traf_p3": "Meta Ads + Google Ads",
+    "traf_p3_features": ["Campanhas no Instagram, Facebook e Google", "Segmentação de públicos e testes de criativos", "Otimização contínua focada em leads e reservas", "Relatório mensal unificado de performance"],
+    "site_p1_features": ["Design focado em conversão", "Copy estratégico orientado para ação", "Integração com WhatsApp ou formulário", "Otimização para mobile e desktop", "Desenvolvida em código — sem mensalidade de plataforma"],
+    "site_p2": "Website Institucional",
+    "site_p2_features": ["Design personalizado com identidade visual", "Páginas institucionais (home, sobre, serviços, contato)", "Otimizado para mobile e carregamento rápido", "Configuração de SEO", "Integração com WhatsApp e formulário", "Domínio e hospedagem configurados"],
+    "setup_p1": "Setup Essencial",
+    "setup_p1_features": ["Criação de destaques", "Otimização biografia + links", "15 conteúdos (reels/design)", "20 artes design"],
+    "setup_p2": "Setup Premium",
+    "setup_p2_features": ["Criação de destaques", "Otimização da biografia + links", "25 conteúdos (reels/design)", "40 artes design", "Website institucional incluído"],
+    "brand_p1_features": ["Briefing estratégico", "Pesquisa de mercado e concorrência", "Geração de opções de nomes", "Análise de disponibilidade de domínio e redes", "Apresentação com justificativa criativa"],
+    "brand_p2": "Identidade Visual",
+    "brand_p2_features": ["Logotipo principal e variações", "Paleta de cores", "Tipografia", "Ícones e elementos gráficos", "Mockups de aplicação", "Manual de identidade visual em PDF"],
+    "brand_p3": "Branding Completo",
+    "brand_p3_features": ["Definição de propósito, missão, visão e valores", "Tom de voz e personalidade da marca", "Identidade visual completa", "Estudo de mercado", "Guia de aplicação da marca", "Apresentação estratégica final"],
+    "ind_video_edit": "Edição de Vídeo",
+    "ind_design": "Design",
+    "ind_video_prod": "Captação de Vídeo",
+    "ind_photo": "Fotografia",
+    "ind_drone": "Drone"
   },
   "hero": {
     "eyebrow": "Agência de Marketing para Hotéis · Pousadas · Real Estate",
@@ -93,6 +124,10 @@
     "cta_secondary": "Fale Conosco"
   },
   "marquee": "SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SISTEMAS · BRANDING · EXPLORE DIGITAL · SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SISTEMAS · BRANDING · EXPLORE DIGITAL ·",
+  "marquee_items": {
+    "hospitality": "Hotelaria",
+    "experiences": "Experiências"
+  },
   "stats": {
     "eyebrow": "Números que falam",
     "s1_value": "+30",
@@ -105,7 +140,13 @@
     "s4_label": "Setores: Hotel · Exp · RE",
     "nichos_eyebrow": "Nichos que atuamos",
     "nichos_title1": "Mais que uma agência de marketing.",
-    "nichos_title2": "Uma parceira para seu negócio."
+    "nichos_title2": "Uma parceira para seu negócio.",
+    "n1_title": "Hotelaria",
+    "n1_desc": "Reduzimos a dependência de OTAs e construímos audiências que reservam direto.",
+    "n2_title": "Experiências & Esportes",
+    "n2_desc": "Você vende um estilo de vida. O conteúdo e o anúncio precisam transmitir isso antes da matrícula.",
+    "n3_title": "Real Estate",
+    "n3_desc": "Imóveis de alto padrão vendem experiência antes de metros quadrados. Fazemos isso."
   },
   "portfolio": {
     "eyebrow": "Nosso Trabalho",
@@ -232,7 +273,36 @@
     "trust_3": "Dados protegidos",
     "trust_4": "BR · ES · Internacional",
     "form_disclaimer": "Ao enviar, sua mensagem chega por e-mail e WhatsApp simultaneamente.",
-    "success_sub": "Também abrimos o WhatsApp com seus dados para agilizar o contato."
+    "success_sub": "Também abrimos o WhatsApp com seus dados para agilizar o contato.",
+    "business_types": [
+      "Hotel / Resort",
+      "Pousada / Hostel",
+      "Beach Club",
+      "Escola de Esporte (kite, surf...)",
+      "Operadora de Experiências",
+      "Real Estate / Incorporadora",
+      "Gastronomia / Restaurante",
+      "Outro"
+    ],
+    "services_list": [
+      "Branding",
+      "Web Design",
+      "Social Media",
+      "Performance Ads (Google/Meta)",
+      "Setup Inicial",
+      "Serviço Avulso",
+      "Não sei ainda — quero consultoria"
+    ],
+    "whatsapp_greeting": "Olá! Vim pelo site da Explore Digital.",
+    "whatsapp_intro": "Olá! Vim pelo site e gostaria de saber mais sobre os serviços da Explore Digital.",
+    "whatsapp_tooltip": "Fale com a gente 👋",
+    "whatsapp_aria": "Falar no WhatsApp",
+    "wa_field_name": "Nome",
+    "wa_field_email": "E-mail",
+    "wa_field_business": "Tipo de negócio",
+    "wa_field_service": "Serviço de interesse",
+    "wa_field_message": "Mensagem",
+    "service_inquiry": "Olá! Vi o serviço *{service}* no site e gostaria de saber mais."
   },
   "service_detail": {
     "back": "Voltar",
@@ -316,5 +386,11 @@
     "social_title": "Redes Sociais",
     "contact_title": "Contato",
     "copyright": "Todos os direitos reservados."
+  },
+  "meta": {
+    "site_title": "Explore Digital — Agência de Marketing para Hotéis, Pousadas e Real Estate",
+    "description": "Agência de marketing digital especializada em hotelaria e turismo. Reservas diretas, gestão de redes sociais, tráfego pago e branding para hotéis, pousadas e real estate. Menos OTA, mais lucro.",
+    "og_title": "Explore Digital — Agência de Marketing para Hotéis e Pousadas",
+    "og_description": "Especialistas em marketing digital para hotelaria, experiências e real estate. Reduzimos a dependência de OTAs e construímos audiências que reservam direto."
   }
 }

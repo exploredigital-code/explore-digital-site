@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
-const WA_URL = 'https://wa.me/5585991043067?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Explore%20Digital%20e%20gostaria%20de%20conversar.'
+const WA_BASE = 'https://wa.me/5585991043067?text='
 
 export function WhatsAppFloat() {
+  const t = useTranslations('contact')
   const [visible, setVisible] = useState(false)
   const [tooltip, setTooltip] = useState(false)
 
@@ -14,6 +16,8 @@ export function WhatsAppFloat() {
     window.addEventListener('scroll', handler, { passive: true })
     return () => window.removeEventListener('scroll', handler)
   }, [])
+
+  const waUrl = WA_BASE + encodeURIComponent(t('whatsapp_intro'))
 
   return (
     <AnimatePresence>
@@ -35,20 +39,20 @@ export function WhatsAppFloat() {
                 transition={{ duration: 0.15 }}
                 className="bg-white text-g-dark text-[13px] font-bold px-4 py-2.5 rounded-xl shadow-xl whitespace-nowrap"
               >
-                Fale com a gente 👋
+                {t('whatsapp_tooltip')}
               </motion.div>
             )}
           </AnimatePresence>
 
           {/* Button */}
           <a
-            href={WA_URL}
+            href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={() => setTooltip(true)}
             onMouseLeave={() => setTooltip(false)}
             className="relative w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:bg-[#1FAD54] hover:scale-110 active:scale-95 transition-all duration-200"
-            aria-label="Falar no WhatsApp"
+            aria-label={t('whatsapp_aria')}
           >
             {/* Ping animation */}
             <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20" />

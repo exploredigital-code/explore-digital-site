@@ -139,7 +139,7 @@ export function Navbar() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="lg:hidden flex flex-col gap-[5px] p-2 -mr-1"
-          aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+          aria-label={menuOpen ? t('menu_close') : t('menu_open')}
         >
           <span className={cn('w-6 h-0.5 bg-white transition-all duration-300', menuOpen && 'rotate-45 translate-y-[7px]')} />
           <span className={cn('w-6 h-0.5 bg-white transition-all duration-300', menuOpen && 'opacity-0')} />

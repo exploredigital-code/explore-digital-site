@@ -8,7 +8,9 @@
     "contact": "Contact",
     "cta": "Get in Touch",
     "work": "Work With Us",
-    "blog": "Blog"
+    "blog": "Blog",
+    "menu_open": "Open menu",
+    "menu_close": "Close menu"
   },
   "process": {
     "eyebrow": "How it works",
@@ -82,7 +84,36 @@
     "cta_eyebrow": "Have questions?",
     "cta_title": "Free consultation, no commitment.",
     "cta_desc": "Talk to us and we'll recommend which service makes the most sense for your moment.",
-    "cta_button": "Talk to a specialist"
+    "cta_button": "Talk to a specialist",
+    "plan_interest": "Hi! I found you through the website and I'm interested in the plan: {plan}. Can we talk?",
+    "ind_interest": "Hi! I'm interested in the {service} service ({price}). Can we talk?",
+    "soc_p1": "Essential",
+    "soc_p2": "Pro",
+    "soc_p3": "Premium",
+    "soc_p1_features": ["8 Content pieces (reels/design)", "10 Design graphics", "Monthly editorial calendar", "Exclusive WhatsApp group"],
+    "soc_p2_features": ["12 Content pieces (reels/design)", "20 Design graphics", "Monthly editorial calendar", "Exclusive Instagram group"],
+    "soc_p3_features": ["16 Content pieces (reels/design)", "30 Design graphics", "Monthly editorial calendar", "TikTok and YouTube Shorts scheduling", "Exclusive WhatsApp group"],
+    "traf_p1_features": ["Campaign creation on Instagram and Facebook", "Daily analysis and optimization", "Performance metrics report", "Exclusive WhatsApp group"],
+    "traf_p2_features": ["Google Ads campaign creation and management", "Targeting for specific audiences", "Daily campaign optimization", "Monthly performance report", "Exclusive WhatsApp group"],
+    "traf_p3": "Meta Ads + Google Ads",
+    "traf_p3_features": ["Campaigns on Instagram, Facebook, and Google", "Audience targeting and creative testing", "Continuous optimization focused on leads and bookings", "Unified monthly performance report"],
+    "site_p1_features": ["Conversion-focused design", "Strategic action-oriented copy", "WhatsApp or form integration", "Mobile and desktop optimization", "Built in code — no platform monthly fee"],
+    "site_p2": "Institutional Website",
+    "site_p2_features": ["Custom design with visual identity", "Institutional pages (home, about, services, contact)", "Optimized for mobile and fast loading", "SEO configuration", "WhatsApp and form integration", "Domain and hosting configured"],
+    "setup_p1": "Essential Setup",
+    "setup_p1_features": ["Highlights creation", "Bio + links optimization", "15 content pieces (reels/design)", "20 design graphics"],
+    "setup_p2": "Premium Setup",
+    "setup_p2_features": ["Highlights creation", "Bio + links optimization", "25 content pieces (reels/design)", "40 design graphics", "Institutional website included"],
+    "brand_p1_features": ["Strategic briefing", "Market and competitive research", "Name options generation", "Domain and social media availability check", "Presentation with creative rationale"],
+    "brand_p2": "Visual Identity",
+    "brand_p2_features": ["Primary logo and variations", "Color palette", "Typography", "Icons and graphic elements", "Application mockups", "Visual identity manual in PDF"],
+    "brand_p3": "Complete Branding",
+    "brand_p3_features": ["Purpose, mission, vision, and values definition", "Brand voice and personality", "Complete visual identity", "Market study", "Brand application guide", "Final strategic presentation"],
+    "ind_video_edit": "Video Editing",
+    "ind_design": "Design",
+    "ind_video_prod": "Video Production",
+    "ind_photo": "Photography",
+    "ind_drone": "Drone"
   },
   "hero": {
     "eyebrow": "Creative Agency · Hospitality · Experiences · Real Estate",
@@ -93,6 +124,10 @@
     "cta_secondary": "Get in Touch"
   },
   "marquee": "SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SYSTEMS · BRANDING · EXPLORE DIGITAL · SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SYSTEMS · BRANDING · EXPLORE DIGITAL ·",
+  "marquee_items": {
+    "hospitality": "Hospitality",
+    "experiences": "Experiences"
+  },
   "stats": {
     "eyebrow": "Numbers that speak",
     "s1_value": "+30",
@@ -105,7 +140,13 @@
     "s4_label": "Sectors: Hotel · Exp · RE",
     "nichos_eyebrow": "Our niches",
     "nichos_title1": "More than a marketing agency.",
-    "nichos_title2": "A partner for your business."
+    "nichos_title2": "A partner for your business.",
+    "n1_title": "Hospitality",
+    "n1_desc": "We reduce OTA dependency and build audiences that book direct.",
+    "n2_title": "Experiences & Sports",
+    "n2_desc": "You sell a lifestyle. Content and ads must convey that before enrollment.",
+    "n3_title": "Real Estate",
+    "n3_desc": "Premium properties sell experience before square footage. We do exactly that."
   },
   "portfolio": {
     "eyebrow": "Our Work",
@@ -232,7 +273,36 @@
     "trust_3": "Data protected",
     "trust_4": "BR · ES · International",
     "form_disclaimer": "When you submit, your message reaches us by email and WhatsApp simultaneously.",
-    "success_sub": "We also opened WhatsApp with your details to speed things up."
+    "success_sub": "We also opened WhatsApp with your details to speed things up.",
+    "business_types": [
+      "Hotel / Resort",
+      "Guesthouse / Hostel",
+      "Beach Club",
+      "Sports School (kite, surf...)",
+      "Experience Operator",
+      "Real Estate / Developer",
+      "Restaurant / Gastronomy",
+      "Other"
+    ],
+    "services_list": [
+      "Branding",
+      "Web Design",
+      "Social Media",
+      "Performance Ads (Google/Meta)",
+      "Initial Setup",
+      "One-off Service",
+      "Not sure yet — I want a consultation"
+    ],
+    "whatsapp_greeting": "Hi! I found you through the Explore Digital website.",
+    "whatsapp_intro": "Hi! I found you through the website and would like to know more about Explore Digital's services.",
+    "whatsapp_tooltip": "Chat with us 👋",
+    "whatsapp_aria": "Chat on WhatsApp",
+    "wa_field_name": "Name",
+    "wa_field_email": "Email",
+    "wa_field_business": "Business type",
+    "wa_field_service": "Service of interest",
+    "wa_field_message": "Message",
+    "service_inquiry": "Hi! I saw the *{service}* service on your website and would like to know more."
   },
   "blog": {
     "eyebrow": "Blog & Insights",
@@ -316,5 +386,11 @@
     "social_title": "Social Media",
     "contact_title": "Contact",
     "copyright": "All rights reserved."
+  },
+  "meta": {
+    "site_title": "Explore Digital — Digital Marketing Agency for Hotels, Guesthouses & Real Estate",
+    "description": "Digital marketing agency specializing in hospitality and real estate. Direct bookings, social media management, paid ads and branding for hotels, guesthouses and real estate.",
+    "og_title": "Explore Digital — Marketing Agency for Hotels & Guesthouses",
+    "og_description": "Specialists in digital marketing for hospitality, experiences and real estate. We reduce OTA dependency and build audiences that book direct."
   }
 }

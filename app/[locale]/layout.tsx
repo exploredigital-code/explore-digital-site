@@ -1,25 +1,29 @@
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
+import { getMessages, getTranslations } from 'next-intl/server'
 import { WhatsAppFloat } from '@/components/ui/WhatsAppFloat'
 import '../globals.css'
-
-export const metadata: Metadata = {
-  title: 'Explore Digital — Agência de Marketing para Hotéis, Pousadas e Real Estate',
-  description: 'Agência de marketing turismo especializada em hotéis, pousadas e real estate. Reservas diretas, gestão de redes sociais, tráfego pago e branding. Menos OTA, mais lucro.',
-  keywords: 'agência de marketing para hotéis, marketing digital pousada, reservas diretas hotel, gestão de redes sociais hotelaria, tráfego pago hotel, site para pousada, agência marketing turismo',
-  openGraph: {
-    title: 'Explore Digital — Agência de Marketing para Hotéis e Pousadas',
-    description: 'Especialistas em marketing digital para hotelaria, experiências e real estate. Reduzimos a dependência de OTAs e construímos audiências que reservam direto.',
-    images: ['/images/logo.png'],
-    siteName: 'Explore Digital',
-  },
-  twitter: { card: 'summary_large_image' },
-}
 
 interface Props {
   children: React.ReactNode
   params: Promise<{ locale: string }>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'meta' })
+  return {
+    title: t('site_title'),
+    description: t('description'),
+    openGraph: {
+      title: t('og_title'),
+      description: t('og_description'),
+      images: ['/images/logo.png'],
+      siteName: 'Explore Digital',
+    },
+    twitter: { card: 'summary_large_image' },
+    alternates: { canonical: 'https://somosexplore.com' },
+  }
 }
 
 export default async function LocaleLayout({ children, params }: Props) {

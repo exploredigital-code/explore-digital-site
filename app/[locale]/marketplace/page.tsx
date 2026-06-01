@@ -11,10 +11,6 @@ import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/Animate
 
 const WHATSAPP_BASE = 'https://wa.me/5585991043067?text='
 
-function waLink(plan: string) {
-  return WHATSAPP_BASE + encodeURIComponent(`Olá! Vim pelo site e tenho interesse no plano: ${plan}. Podemos conversar?`)
-}
-
 /* ─── SVG Stickers alinhados com a identidade visual ─── */
 function IconSocial() {
   return (
@@ -101,11 +97,12 @@ interface PlanCard {
   features: string[]
 }
 
-function PricingCard({ plan, monthly, once, whatsappCta }: {
+function PricingCard({ plan, monthly, once, whatsappCta, waUrl }: {
   plan: PlanCard
   monthly: string
   once: string
   whatsappCta: string
+  waUrl: string
 }) {
   return (
     <motion.div
@@ -133,7 +130,7 @@ function PricingCard({ plan, monthly, once, whatsappCta }: {
           ))}
         </ul>
         <a
-          href={waLink(`${plan.name} (${plan.price})`)}
+          href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-[13px] tracking-[0.04em] transition-all duration-200 bg-g-dark text-g-pale hover:bg-s2 hover:-translate-y-0.5"
@@ -148,9 +145,10 @@ function PricingCard({ plan, monthly, once, whatsappCta }: {
   )
 }
 
-function CategorySection({ title, icon, plans, monthly, once, whatsappCta }: {
+function CategorySection({ title, icon, plans, monthly, once, whatsappCta, waLink }: {
   title: string; icon: React.ReactNode; plans: PlanCard[]
   monthly: string; once: string; whatsappCta: string
+  waLink: (name: string) => string
 }) {
   return (
     <div className="mb-20">
@@ -168,7 +166,7 @@ function CategorySection({ title, icon, plans, monthly, once, whatsappCta }: {
         'grid-cols-1 max-w-xl'
       )}>
         {plans.map((plan, i) => (
-          <PricingCard key={i} plan={plan} monthly={monthly} once={once} whatsappCta={whatsappCta} />
+          <PricingCard key={i} plan={plan} monthly={monthly} once={once} whatsappCta={whatsappCta} waUrl={waLink(`${plan.name} (${plan.price})`)} />
         ))}
       </AnimateStagger>
     </div>
@@ -176,7 +174,7 @@ function CategorySection({ title, icon, plans, monthly, once, whatsappCta }: {
 }
 
 /* ─── Card de serviço individual ─── */
-function IndividualCard({ name, price, icon, waText }: { name: string; price: string; icon: React.ReactNode; waText: string }) {
+function IndividualCard({ name, price, icon, waUrl }: { name: string; price: string; icon: React.ReactNode; waUrl: string }) {
   const t = useTranslations('marketplace_page')
   return (
     <motion.div variants={itemVariants}
@@ -190,7 +188,7 @@ function IndividualCard({ name, price, icon, waText }: { name: string; price: st
         <div className="text-[11px] text-g-dark/40 mt-0.5 tracking-wide">{t('per_delivery')}</div>
       </div>
       <a
-        href={WHATSAPP_BASE + encodeURIComponent(waText)}
+        href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-auto w-full py-3 rounded-xl bg-g-dark text-g-pale font-bold text-[13px] hover:bg-s2 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
@@ -203,9 +201,21 @@ function IndividualCard({ name, price, icon, waText }: { name: string; price: st
 
 export default function MarketplacePage() {
   const t = useTranslations('marketplace_page')
+  const tContact = useTranslations('contact')
   const monthly = t('monthly')
   const once = t('once')
   const whatsappCta = t('whatsapp_cta')
+
+  function waLink(planName: string) {
+    return WHATSAPP_BASE + encodeURIComponent(
+      t('plan_interest').replace('{plan}', planName)
+    )
+  }
+  function waIndLink(serviceName: string, price: string) {
+    return WHATSAPP_BASE + encodeURIComponent(
+      t('ind_interest').replace('{service}', serviceName).replace('{price}', price)
+    )
+  }
 
   const categories = [
     {
@@ -213,9 +223,9 @@ export default function MarketplacePage() {
       title: t('cat_social'),
       icon: <IconSocial />,
       plans: [
-        { name: 'Essencial', price: 'R$ 1.700', period: 'monthly' as const, features: ['8 Conteúdos (reels/design)', '10 Artes design', 'Calendário editorial mensal', 'Grupo de WhatsApp exclusivo'] },
-        { name: 'Pro', price: 'R$ 2.500', period: 'monthly' as const, features: ['12 Conteúdos (reels/design)', '20 Artes design', 'Calendário editorial mensal', 'Grupo exclusivo no Instagram'] },
-        { name: 'Premium', price: 'R$ 3.200', period: 'monthly' as const, features: ['16 Conteúdos (reels/design)', '30 Artes design', 'Calendário editorial mensal', 'Programação no TikTok e YouTube Shorts', 'Grupo exclusivo no WhatsApp'] },
+        { name: t('soc_p1'), price: 'R$ 1.700', period: 'monthly' as const, features: t.raw('soc_p1_features') as string[] },
+        { name: t('soc_p2'), price: 'R$ 2.500', period: 'monthly' as const, features: t.raw('soc_p2_features') as string[] },
+        { name: t('soc_p3'), price: 'R$ 3.200', period: 'monthly' as const, features: t.raw('soc_p3_features') as string[] },
       ],
     },
     {
@@ -223,9 +233,9 @@ export default function MarketplacePage() {
       title: t('cat_traffic'),
       icon: <IconTraffic />,
       plans: [
-        { name: 'Meta Ads', price: 'R$ 1.200', period: 'monthly' as const, features: ['Criação de campanhas no Instagram e Facebook', 'Análise e otimização diária', 'Relatório de métricas de desempenho', 'Grupo exclusivo no WhatsApp'] },
-        { name: 'Google Ads', price: 'R$ 1.200', period: 'monthly' as const, features: ['Criação e gestão de campanhas no Google Ads', 'Segmentação para públicos específicos', 'Otimização diária das campanhas', 'Relatório mensal de performance', 'Grupo exclusivo no WhatsApp'] },
-        { name: 'Meta Ads + Google Ads', price: 'R$ 2.200', period: 'monthly' as const, features: ['Campanhas no Instagram, Facebook e Google', 'Segmentação de públicos e testes de criativos', 'Otimização contínua focada em leads e reservas', 'Relatório mensal unificado de performance'] },
+        { name: 'Meta Ads', price: 'R$ 1.200', period: 'monthly' as const, features: t.raw('traf_p1_features') as string[] },
+        { name: 'Google Ads', price: 'R$ 1.200', period: 'monthly' as const, features: t.raw('traf_p2_features') as string[] },
+        { name: t('traf_p3'), price: 'R$ 2.200', period: 'monthly' as const, features: t.raw('traf_p3_features') as string[] },
       ],
     },
     {
@@ -233,8 +243,8 @@ export default function MarketplacePage() {
       title: t('cat_sites'),
       icon: <IconSites />,
       plans: [
-        { name: 'Landing Page', price: 'R$ 2.000', period: 'once' as const, features: ['Design focado em conversão', 'Copy estratégico orientado para ação', 'Integração com WhatsApp ou formulário', 'Otimização para mobile e desktop', 'Desenvolvida em código — sem mensalidade de plataforma'] },
-        { name: 'Website Institucional', price: 'R$ 3.500', period: 'once' as const, features: ['Design personalizado com identidade visual', 'Páginas institucionais (home, sobre, serviços, contato)', 'Otimizado para mobile e carregamento rápido', 'Configuração de SEO', 'Integração com WhatsApp e formulário', 'Domínio e hospedagem configurados'] },
+        { name: 'Landing Page', price: 'R$ 2.000', period: 'once' as const, features: t.raw('site_p1_features') as string[] },
+        { name: t('site_p2'), price: 'R$ 3.500', period: 'once' as const, features: t.raw('site_p2_features') as string[] },
       ],
     },
     {
@@ -242,8 +252,8 @@ export default function MarketplacePage() {
       title: t('cat_setup'),
       icon: <IconSetup />,
       plans: [
-        { name: 'Setup Essencial', price: 'R$ 4.500', period: 'once' as const, features: ['Criação de destaques', 'Otimização biografia + links', '15 conteúdos (reels/design)', '20 artes design'] },
-        { name: 'Setup Premium', price: 'R$ 11.000', period: 'once' as const, features: ['Criação de destaques', 'Otimização da biografia + links', '25 conteúdos (reels/design)', '40 artes design', 'Website institucional incluído'] },
+        { name: t('setup_p1'), price: 'R$ 4.500', period: 'once' as const, features: t.raw('setup_p1_features') as string[] },
+        { name: t('setup_p2'), price: 'R$ 11.000', period: 'once' as const, features: t.raw('setup_p2_features') as string[] },
       ],
     },
     {
@@ -251,19 +261,19 @@ export default function MarketplacePage() {
       title: t('cat_branding'),
       icon: <IconBranding />,
       plans: [
-        { name: 'Naming', price: 'R$ 1.900', period: 'once' as const, features: ['Briefing estratégico', 'Pesquisa de mercado e concorrência', 'Geração de opções de nomes', 'Análise de disponibilidade de domínio e redes', 'Apresentação com justificativa criativa'] },
-        { name: 'Identidade Visual', price: 'R$ 2.800', period: 'once' as const, features: ['Logotipo principal e variações', 'Paleta de cores', 'Tipografia', 'Ícones e elementos gráficos', 'Mockups de aplicação', 'Manual de identidade visual em PDF'] },
-        { name: 'Branding Completo', price: 'R$ 7.000', period: 'once' as const, features: ['Definição de propósito, missão, visão e valores', 'Tom de voz e personalidade da marca', 'Identidade visual completa', 'Estudo de mercado', 'Guia de aplicação da marca', 'Apresentação estratégica final'] },
+        { name: 'Naming', price: 'R$ 1.900', period: 'once' as const, features: t.raw('brand_p1_features') as string[] },
+        { name: t('brand_p2'), price: 'R$ 2.800', period: 'once' as const, features: t.raw('brand_p2_features') as string[] },
+        { name: t('brand_p3'), price: 'R$ 7.000', period: 'once' as const, features: t.raw('brand_p3_features') as string[] },
       ],
     },
   ]
 
   const individualServices = [
-    { name: 'Edição de Vídeo', price: 'R$ 300', icon: <IconVideo />, waText: 'Olá! Tenho interesse no serviço de Edição de Vídeo (R$ 300 por entrega).' },
-    { name: 'Design', price: 'R$ 100', icon: <IconDesign />, waText: 'Olá! Tenho interesse no serviço de Design (R$ 100 por arte).' },
-    { name: 'Captação de Vídeo', price: 'R$ 800', icon: <IconVideo />, waText: 'Olá! Tenho interesse no serviço de Captação de Vídeo (R$ 800 por dia).' },
-    { name: 'Fotografia', price: 'R$ 800', icon: <IconCamera />, waText: 'Olá! Tenho interesse no serviço de Fotografia (R$ 800 por sessão).' },
-    { name: 'Drone', price: 'R$ 1.000', icon: <IconDrone />, waText: 'Olá! Tenho interesse no serviço de Drone (R$ 1.000 por sessão).' },
+    { name: t('ind_video_edit'), price: 'R$ 300', icon: <IconVideo /> },
+    { name: t('ind_design'), price: 'R$ 100', icon: <IconDesign /> },
+    { name: t('ind_video_prod'), price: 'R$ 800', icon: <IconVideo /> },
+    { name: t('ind_photo'), price: 'R$ 800', icon: <IconCamera /> },
+    { name: t('ind_drone'), price: 'R$ 1.000', icon: <IconDrone /> },
   ]
 
   const [activeTab, setActiveTab] = useState('all')
@@ -336,6 +346,7 @@ export default function MarketplacePage() {
                   monthly={monthly}
                   once={once}
                   whatsappCta={whatsappCta}
+                  waLink={waLink}
                 />
               ))}
             </motion.div>
@@ -354,7 +365,7 @@ export default function MarketplacePage() {
               </AnimateIn>
               <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
                 {individualServices.map((s, i) => (
-                  <IndividualCard key={i} name={s.name} price={s.price} icon={s.icon} waText={s.waText} />
+                  <IndividualCard key={i} name={s.name} price={s.price} icon={s.icon} waUrl={waIndLink(s.name, s.price)} />
                 ))}
               </AnimateStagger>
             </div>
@@ -369,7 +380,7 @@ export default function MarketplacePage() {
                 <h3 className="text-[clamp(24px,3.5vw,40px)] font-bold text-white mb-3">{t('cta_title')}</h3>
                 <p className="text-white/45 text-[15px] mb-8 max-w-[480px] mx-auto">{t('cta_desc')}</p>
                 <a
-                  href={WHATSAPP_BASE + encodeURIComponent('Olá! Vim pelo site e gostaria de uma consultoria gratuita para entender qual serviço é ideal para mim.')}
+                  href={WHATSAPP_BASE + encodeURIComponent(tContact('whatsapp_intro'))}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-g-light text-g-dark font-bold px-8 py-4 rounded-full hover:bg-g-pale hover:-translate-y-0.5 transition-all duration-200"

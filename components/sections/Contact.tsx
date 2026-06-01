@@ -34,29 +34,10 @@ function SelectArrow() {
   )
 }
 
-const BUSINESS_TYPES = [
-  'Hotel / Resort',
-  'Pousada / Hostel',
-  'Beach Club',
-  'Escola de Esporte (kite, surf...)',
-  'Operadora de Experiências',
-  'Real Estate / Incorporadora',
-  'Gastronomia / Restaurante',
-  'Outro',
-]
-
-const SERVICES = [
-  'Branding',
-  'Web Design',
-  'Social Media',
-  'Performance Ads (Google/Meta)',
-  'Setup Inicial',
-  'Serviço Avulso',
-  'Não sei ainda — quero consultoria',
-]
-
 export function Contact() {
   const t = useTranslations('contact')
+  const BUSINESS_TYPES = t.raw('business_types') as string[]
+  const SERVICES = t.raw('services_list') as string[]
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [form, setForm] = useState({
     name: '',
@@ -75,7 +56,7 @@ export function Contact() {
     e.preventDefault()
     setStatus('sending')
 
-    const waMsg = `Olá! Vim pelo site da Explore Digital.\n\n*Nome:* ${form.name}\n*E-mail:* ${form.email}\n*WhatsApp:* ${form.phone}\n*Tipo de negócio:* ${form.businessType}\n*Serviço de interesse:* ${form.service}\n\n*Mensagem:*\n${form.message}`
+    const waMsg = `${t('whatsapp_greeting')}\n\n*${t('wa_field_name')}:* ${form.name}\n*${t('wa_field_email')}:* ${form.email}\n*WhatsApp:* ${form.phone}\n*${t('wa_field_business')}:* ${form.businessType}\n*${t('wa_field_service')}:* ${form.service}\n\n*${t('wa_field_message')}:*\n${form.message}`
     const waUrl = WHATSAPP_BASE + encodeURIComponent(waMsg)
 
     try {
@@ -116,7 +97,7 @@ export function Contact() {
               </p>
 
               <a
-                href={WHATSAPP_BASE + encodeURIComponent('Olá! Vim pelo site e gostaria de saber mais sobre os serviços da Explore Digital.')}
+                href={WHATSAPP_BASE + encodeURIComponent(t('whatsapp_intro'))}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-[#25D366] text-white font-bold px-7 py-4 rounded-full hover:bg-[#20ba5a] hover:-translate-y-0.5 transition-all duration-200 w-full sm:w-auto justify-center sm:justify-start"
@@ -171,7 +152,7 @@ export function Contact() {
                 <motion.form key="form" onSubmit={handleSubmit} className="flex flex-col gap-3" noValidate>
                   <input type="text" name="name" placeholder={t('form_name') + ' *'} required value={form.name} onChange={handleChange} className={inputClass} />
                   <input type="email" name="email" placeholder={t('form_email') + ' *'} required value={form.email} onChange={handleChange} className={inputClass} />
-                  <input type="tel" name="phone" placeholder="WhatsApp / Telefone" value={form.phone} onChange={handleChange} className={inputClass} />
+                  <input type="tel" name="phone" placeholder={t('form_phone')} value={form.phone} onChange={handleChange} className={inputClass} />
 
                   <div className="relative">
                     <select name="businessType" value={form.businessType} onChange={handleChange}
@@ -185,7 +166,7 @@ export function Contact() {
                   <div className="relative">
                     <select name="service" value={form.service} onChange={handleChange}
                       className={cn(selectClass, !form.service && 'text-white/40')}>
-                      <option value="" disabled>Serviço de interesse</option>
+                      <option value="" disabled>{t('form_service')}</option>
                       {SERVICES.map(s => <option key={s} value={s} className="text-g-dark bg-white">{s}</option>)}
                     </select>
                     <SelectArrow />

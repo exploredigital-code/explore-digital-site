@@ -2,9 +2,10 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { cn } from '@/lib/utils'
 import type { SubService, ServiceData } from '@/data/services'
+import { getLocalizedSubService, getLocalizedService } from '@/data/services-content'
 import { Navbar } from '@/components/sections/Navbar'
 import { Footer } from '@/components/sections/Footer'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
@@ -19,7 +20,22 @@ interface Props {
 
 export function ServiceDetailView({ sub, parentService, locale }: Props) {
   const t = useTranslations('service_detail')
-  const waMsg = `Olá! Vi o serviço *${sub.name}* no site e gostaria de saber mais.`
+  const tContact = useTranslations('contact')
+  const currentLocale = useLocale()
+
+  const localizedSub = getLocalizedSubService(currentLocale, sub.slug) ?? {
+    name: sub.name,
+    tagline: sub.tagline,
+    description: sub.description,
+    forWhom: sub.forWhom,
+    features: sub.features,
+    result: sub.result,
+  }
+  const localizedService = getLocalizedService(currentLocale, parentService.slug) ?? {
+    title: parentService.title,
+  }
+
+  const waMsg = tContact('service_inquiry').replace('{service}', localizedSub.name)
   const waUrl = WA_BASE + encodeURIComponent(waMsg)
 
   return (
@@ -36,7 +52,7 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
           <motion.div initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="mb-10">
             <Link href={`/${locale}#services`} className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-white/40 hover:text-white/70 transition-colors">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 7H2M6 3L2 7l4 4"/></svg>
-              {parentService.title}
+              {localizedService.title}
             </Link>
           </motion.div>
           {sub.recommended && (
@@ -48,7 +64,7 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
           )}
           <motion.h1 initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.25, ease: [0.33, 1, 0.68, 1] }}
             className="text-[clamp(48px,8vw,110px)] leading-[0.9] tracking-[-0.04em] text-white mb-6">
-            {sub.name}
+            {localizedSub.name}
           </motion.h1>
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }} className="flex flex-wrap items-center gap-6">
             <a href={waUrl} target="_blank" rel="noopener noreferrer"
@@ -69,13 +85,13 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
                 <div className="w-5 h-px bg-g-mid" />
                 <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-mid">{t('about_service')}</span>
               </div>
-              <p className="text-[19px] text-g-dark/65 leading-[1.85]">{sub.description}</p>
+              <p className="text-[19px] text-g-dark/65 leading-[1.85]">{localizedSub.description}</p>
             </AnimateIn>
             <AnimateIn delay={0.1} className="lg:col-span-5">
               <div className="bg-g-pale rounded-2xl p-8 border border-g-dark/8">
                 <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-g-dark/45 mb-5">{t('for_whom')}</div>
                 <ul className="flex flex-col gap-4">
-                  {sub.forWhom.map((f, i) => (
+                  {localizedSub.forWhom.map((f, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <span className="shrink-0 w-5 h-5 rounded-full bg-g-mid/20 flex items-center justify-center mt-0.5">
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#4E7D57" strokeWidth="2" strokeLinecap="round"><path d="M2 5l2 2 4-4"/></svg>
@@ -101,7 +117,7 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
             <h2 className="text-[clamp(26px,3.5vw,40px)] text-g-dark tracking-tight">{t('you_receive')}</h2>
           </AnimateIn>
           <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {sub.features.map((f, i) => (
+            {localizedSub.features.map((f, i) => (
               <motion.div key={i} variants={itemVariants}
                 className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-g-dark/8 hover:border-g-mid/35 hover:shadow-sm transition-all duration-300">
                 <div className="shrink-0 w-8 h-8 rounded-full bg-g-mid/15 flex items-center justify-center mt-0.5">
@@ -121,7 +137,7 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
           <AnimateIn>
             <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-g-light/45 mb-4">{t('expected_result')}</div>
             <div className="text-[clamp(22px,3.5vw,42px)] font-semibold text-g-light leading-tight mb-12 max-w-[600px]">
-              {sub.result}
+              {localizedSub.result}
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href={waUrl} target="_blank" rel="noopener noreferrer"
