@@ -1,15 +1,16 @@
 ﻿'use client'
 
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useRouter } from 'next/navigation'
+import { useTranslations, useLocale } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
-import { Button } from '@/components/ui/Button'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 import { cn } from '@/lib/utils'
 
 const WHATSAPP_BASE = 'https://wa.me/+5585991043067?text='
-const FORMSPREE = 'https://formspree.io/f/YOUR_FORM_ID'
+const FORMSPREE = 'https://formspree.io/f/mlgkrjng'
+
 
 const inputClass = cn(
   'w-full px-4 py-3.5 rounded-xl',
@@ -36,6 +37,8 @@ function SelectArrow() {
 
 export function Contact() {
   const t = useTranslations('contact')
+  const locale = useLocale()
+  const router = useRouter()
   const BUSINESS_TYPES = t.raw('business_types') as string[]
   const SERVICES = t.raw('services_list') as string[]
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
@@ -56,9 +59,6 @@ export function Contact() {
     e.preventDefault()
     setStatus('sending')
 
-    const waMsg = `${t('whatsapp_greeting')}\n\n*${t('wa_field_name')}:* ${form.name}\n*${t('wa_field_email')}:* ${form.email}\n*WhatsApp:* ${form.phone}\n*${t('wa_field_business')}:* ${form.businessType}\n*${t('wa_field_service')}:* ${form.service}\n\n*${t('wa_field_message')}:*\n${form.message}`
-    const waUrl = WHATSAPP_BASE + encodeURIComponent(waMsg)
-
     try {
       const res = await fetch(FORMSPREE, {
         method: 'POST',
@@ -66,13 +66,11 @@ export function Contact() {
         body: JSON.stringify({ ...form, _subject: `Novo contato — ${form.name} · ${form.businessType}` }),
       })
       if (res.ok) {
-        window.open(waUrl, '_blank')
-        setStatus('sent')
+        router.push(`/${locale}/obrigado`)
       } else {
         setStatus('error')
       }
     } catch {
-      window.open(waUrl, '_blank')
       setStatus('error')
     }
   }

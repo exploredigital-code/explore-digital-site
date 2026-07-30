@@ -1,7 +1,8 @@
 ﻿'use client'
 
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useRouter } from 'next/navigation'
+import { useTranslations, useLocale } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/sections/Navbar'
@@ -9,16 +10,15 @@ import { Footer } from '@/components/sections/Footer'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 
-const WA_BASE = 'https://wa.me/+5585991043067?text='
 const EMAIL = 'agencia.exploredigital@gmail.com'
-const FORMSPREE = 'https://formspree.io/f/YOUR_FORM_ID'
+const FORMSPREE = 'https://formspree.io/f/xqeozpqa'
 
 type Vaga = { area: string; descricao: string; tipo: string }
 
 const inputClass = cn(
   'w-full px-4 py-3.5 rounded-xl',
   'bg-white border border-g-dark/12',
-  'text-[15px] text-g-dark placeholder:text-g-dark/35',
+  'text-[15px] text-g-dark placeholder:text-g-dark/55',
   'focus:outline-none focus:border-g-mid/60 focus:ring-2 focus:ring-g-mid/10',
   'transition-all duration-200'
 )
@@ -26,12 +26,15 @@ const textareaClass = cn(inputClass, 'resize-none')
 
 export default function VagasPage() {
   const t = useTranslations('vagas')
+  const locale = useLocale()
+  const router = useRouter()
   const VAGAS = t.raw('positions') as Vaga[]
   const [selected, setSelected] = useState('')
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [form, setForm] = useState({
     name: '',
     email: '',
+    phone: '',
     vaga: '',
     apresentacao: '',
     portfolio: '',
@@ -46,15 +49,6 @@ export default function VagasPage() {
     e.preventDefault()
     setStatus('sending')
 
-    const waMsg = t('wa_apply')
-      .replace('{vaga}', form.vaga)
-      .replace('{name}', form.name)
-      .replace('{email}', form.email)
-      .replace('{portfolio}', form.portfolio)
-      .replace('{apresentacao}', form.apresentacao)
-      .replace('{motivo}', form.motivo)
-    const waUrl = WA_BASE + encodeURIComponent(waMsg)
-
     try {
       const res = await fetch(FORMSPREE, {
         method: 'POST',
@@ -62,13 +56,11 @@ export default function VagasPage() {
         body: JSON.stringify({ ...form, _subject: `Candidatura: ${form.vaga} — ${form.name}` }),
       })
       if (res.ok) {
-        window.open(waUrl, '_blank')
-        setStatus('sent')
+        router.push(`/${locale}/obrigado`)
       } else {
         setStatus('error')
       }
     } catch {
-      window.open(waUrl, '_blank')
       setStatus('error')
     }
   }
@@ -191,9 +183,10 @@ export default function VagasPage() {
                   <motion.form key="form" onSubmit={handleSubmit} className="flex flex-col gap-3 bg-white p-8 rounded-2xl border border-g-dark/8 shadow-sm" noValidate>
                     <input type="text" name="name" placeholder={t('form_name')} required value={form.name} onChange={handleChange} className={inputClass} />
                     <input type="email" name="email" placeholder={t('form_email')} required value={form.email} onChange={handleChange} className={inputClass} />
+                    <input type="tel" name="phone" placeholder={t('form_phone')} required value={form.phone} onChange={handleChange} className={inputClass} />
 
                     <select name="vaga" required value={form.vaga} onChange={handleChange}
-                      className={cn(inputClass, 'cursor-pointer', !form.vaga && 'text-g-dark/35')}>
+                      className={cn(inputClass, 'cursor-pointer', !form.vaga && 'text-g-dark/55')}>
                       <option value="" disabled>{t('form_position')}</option>
                       {VAGAS.map(v => (
                         <option key={v.area} value={v.area}>{v.area}</option>

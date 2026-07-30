@@ -10,7 +10,8 @@
     "work": "Trabalhe Conosco",
     "blog": "Blog",
     "menu_open": "Abrir menu",
-    "menu_close": "Fechar menu"
+    "menu_close": "Fechar menu",
+    "consultoria": "Consultoria Gratuita"
   },
   "process": {
     "eyebrow": "Como funciona",
@@ -102,25 +103,101 @@
     "soc_p1": "Essencial",
     "soc_p2": "Pro",
     "soc_p3": "Premium",
-    "soc_p1_features": ["8 Conteúdos (reels/design)", "10 Artes design", "Calendário editorial mensal", "Grupo de WhatsApp exclusivo"],
-    "soc_p2_features": ["12 Conteúdos (reels/design)", "20 Artes design", "Calendário editorial mensal", "Grupo exclusivo no Instagram"],
-    "soc_p3_features": ["16 Conteúdos (reels/design)", "30 Artes design", "Calendário editorial mensal", "Programação no TikTok e YouTube Shorts", "Grupo exclusivo no WhatsApp"],
-    "traf_p1_features": ["Criação de campanhas no Instagram e Facebook", "Análise e otimização diária", "Relatório de métricas de desempenho", "Grupo exclusivo no WhatsApp"],
-    "traf_p2_features": ["Criação e gestão de campanhas no Google Ads", "Segmentação para públicos específicos", "Otimização diária das campanhas", "Relatório mensal de performance", "Grupo exclusivo no WhatsApp"],
+    "soc_p1_features": [
+      "8 Conteúdos (reels/design)",
+      "10 Artes design",
+      "Calendário editorial mensal",
+      "Grupo de WhatsApp exclusivo"
+    ],
+    "soc_p2_features": [
+      "12 Conteúdos (reels/design)",
+      "20 Artes design",
+      "Calendário editorial mensal",
+      "Grupo exclusivo no Instagram"
+    ],
+    "soc_p3_features": [
+      "16 Conteúdos (reels/design)",
+      "30 Artes design",
+      "Calendário editorial mensal",
+      "Programação no TikTok e YouTube Shorts",
+      "Grupo exclusivo no WhatsApp"
+    ],
+    "traf_p1_features": [
+      "Criação de campanhas no Instagram e Facebook",
+      "Análise e otimização diária",
+      "Relatório de métricas de desempenho",
+      "Grupo exclusivo no WhatsApp"
+    ],
+    "traf_p2_features": [
+      "Criação e gestão de campanhas no Google Ads",
+      "Segmentação para públicos específicos",
+      "Otimização diária das campanhas",
+      "Relatório mensal de performance",
+      "Grupo exclusivo no WhatsApp"
+    ],
     "traf_p3": "Meta Ads + Google Ads",
-    "traf_p3_features": ["Campanhas no Instagram, Facebook e Google", "Segmentação de públicos e testes de criativos", "Otimização contínua focada em leads e reservas", "Relatório mensal unificado de performance"],
-    "site_p1_features": ["Design focado em conversão", "Copy estratégico orientado para ação", "Integração com WhatsApp ou formulário", "Otimização para mobile e desktop", "Desenvolvida em código — sem mensalidade de plataforma"],
+    "traf_p3_features": [
+      "Campanhas no Instagram, Facebook e Google",
+      "Segmentação de públicos e testes de criativos",
+      "Otimização contínua focada em leads e reservas",
+      "Relatório mensal unificado de performance"
+    ],
+    "site_p1_features": [
+      "Design focado em conversão",
+      "Copy estratégico orientado para ação",
+      "Integração com WhatsApp ou formulário",
+      "Otimização para mobile e desktop",
+      "Desenvolvida em código — sem mensalidade de plataforma"
+    ],
     "site_p2": "Website Institucional",
-    "site_p2_features": ["Design personalizado com identidade visual", "Páginas institucionais (home, sobre, serviços, contato)", "Otimizado para mobile e carregamento rápido", "Configuração de SEO", "Integração com WhatsApp e formulário", "Domínio e hospedagem configurados"],
+    "site_p2_features": [
+      "Design personalizado com identidade visual",
+      "Páginas institucionais (home, sobre, serviços, contato)",
+      "Otimizado para mobile e carregamento rápido",
+      "Configuração de SEO",
+      "Integração com WhatsApp e formulário",
+      "Domínio e hospedagem configurados"
+    ],
     "setup_p1": "Setup Essencial",
-    "setup_p1_features": ["Criação de destaques", "Otimização biografia + links", "15 conteúdos (reels/design)", "20 artes design"],
+    "setup_p1_features": [
+      "Criação de destaques",
+      "Otimização biografia + links",
+      "15 conteúdos (reels/design)",
+      "20 artes design"
+    ],
     "setup_p2": "Setup Premium",
-    "setup_p2_features": ["Criação de destaques", "Otimização da biografia + links", "25 conteúdos (reels/design)", "40 artes design", "Website institucional incluído"],
-    "brand_p1_features": ["Briefing estratégico", "Pesquisa de mercado e concorrência", "Geração de opções de nomes", "Análise de disponibilidade de domínio e redes", "Apresentação com justificativa criativa"],
+    "setup_p2_features": [
+      "Criação de destaques",
+      "Otimização da biografia + links",
+      "25 conteúdos (reels/design)",
+      "40 artes design",
+      "Website institucional incluído"
+    ],
+    "brand_p1_features": [
+      "Briefing estratégico",
+      "Pesquisa de mercado e concorrência",
+      "Geração de opções de nomes",
+      "Análise de disponibilidade de domínio e redes",
+      "Apresentação com justificativa criativa"
+    ],
     "brand_p2": "Identidade Visual",
-    "brand_p2_features": ["Logotipo principal e variações", "Paleta de cores", "Tipografia", "Ícones e elementos gráficos", "Mockups de aplicação", "Manual de identidade visual em PDF"],
+    "brand_p2_features": [
+      "Logotipo principal e variações",
+      "Paleta de cores",
+      "Tipografia",
+      "Ícones e elementos gráficos",
+      "Mockups de aplicação",
+      "Manual de identidade visual em PDF"
+    ],
     "brand_p3": "Branding Completo",
-    "brand_p3_features": ["Definição de propósito, missão, visão e valores", "Tom de voz e personalidade da marca", "Identidade visual completa", "Estudo de mercado", "Guia de aplicação da marca", "Apresentação estratégica final"],
+    "brand_p3_features": [
+      "Definição de propósito, missão, visão e valores",
+      "Tom de voz e personalidade da marca",
+      "Identidade visual completa",
+      "Estudo de mercado",
+      "Guia de aplicação da marca",
+      "Apresentação estratégica final"
+    ],
     "ind_video_edit": "Edição de Vídeo",
     "ind_design": "Design",
     "ind_video_prod": "Captação de Vídeo",
@@ -204,31 +281,56 @@
         "number": "01",
         "title": "Social Media",
         "description": "Conteúdo que faz o hóspede sonhar com a estadia antes de abrir o Booking. Gestão completa de redes sociais com foco em engajamento qualificado e reservas diretas.",
-        "tags": ["Gestão de Redes", "Criação de Conteúdo", "Fotografia", "Reels"]
+        "tags": [
+          "Gestão de Redes",
+          "Criação de Conteúdo",
+          "Fotografia",
+          "Reels"
+        ]
       },
       {
         "number": "02",
         "title": "Performance Ads",
         "description": "Quando alguém busca 'pousada em [cidade]', você aparece primeiro. E convertemos esse clique em reserva, com ROI mensurável em cada real investido.",
-        "tags": ["Google Ads", "Meta Ads", "Remarketing", "Analytics & Relatórios"]
+        "tags": [
+          "Google Ads",
+          "Meta Ads",
+          "Remarketing",
+          "Analytics & Relatórios"
+        ]
       },
       {
         "number": "03",
         "title": "Web Design",
         "description": "Seu site vende mais reservas diretas do que a comissão que você paga ao Booking hoje? O nosso sim. Sites e landing pages que convertem visitas em hóspedes.",
-        "tags": ["Site para Pousada", "Landing Page", "UX/UI", "Otimização SEO"]
+        "tags": [
+          "Site para Pousada",
+          "Landing Page",
+          "UX/UI",
+          "Otimização SEO"
+        ]
       },
       {
         "number": "04",
         "title": "Sistemas",
         "description": "Automatize follow-ups, check-ins e cobranças. Sua equipe foca no hóspede, não na planilha. Sistemas e integrações sob medida para a operação do seu negócio.",
-        "tags": ["Sistemas Internos", "Automações", "Integrações", "Make · n8n · Zapier"]
+        "tags": [
+          "Sistemas Internos",
+          "Automações",
+          "Integrações",
+          "Make · n8n · Zapier"
+        ]
       },
       {
         "number": "05",
         "title": "Branding",
         "description": "Sua marca define o preço que você consegue cobrar. Identidades premium justificam diárias premium, do naming até a identidade visual completa.",
-        "tags": ["Identidade Visual", "Logotipo", "Manual de Marca", "Naming"]
+        "tags": [
+          "Identidade Visual",
+          "Logotipo",
+          "Manual de Marca",
+          "Naming"
+        ]
       }
     ]
   },
@@ -322,6 +424,19 @@
     "wa_field_message": "Mensagem",
     "service_inquiry": "Olá! Vi o serviço *{service}* no site e gostaria de saber mais."
   },
+  "obrigado": {
+    "eyebrow": "Mensagem recebida",
+    "title": "Obrigado pelo contato.",
+    "desc": "Recebemos sua mensagem e entraremos em contato em até 24 horas. Enquanto isso, o WhatsApp já foi aberto com seus dados para agilizar o atendimento.",
+    "wa_button": "Falar no WhatsApp",
+    "home_button": "Voltar ao início",
+    "step1_label": "Mensagem recebida",
+    "step1_desc": "Seu formulário chegou com sucesso.",
+    "step2_label": "Análise em 24h",
+    "step2_desc": "Vamos revisar seu perfil e necessidades.",
+    "step3_label": "Primeiro contato",
+    "step3_desc": "Nossa equipe entra em contato para alinhar os próximos passos."
+  },
   "service_detail": {
     "back": "Voltar",
     "recommended": "Recomendado",
@@ -394,6 +509,7 @@
     "form_desc": "Preencha o formulário com cuidado. O que mais valorizamos é clareza, personalidade e evidências do seu trabalho.",
     "form_name": "Nome completo *",
     "form_email": "E-mail *",
+    "form_phone": "WhatsApp / Telefone *",
     "form_position": "Vaga de interesse *",
     "form_portfolio": "Link do portfólio (Behance, Drive, site...)",
     "form_intro_label": "Apresentação pessoal *",
@@ -408,14 +524,46 @@
     "form_note": "Ao enviar, sua candidatura será encaminhada por e-mail e WhatsApp simultaneamente.",
     "wa_apply": "Olá! Estou me candidatando para a vaga de *{vaga}* na Explore Digital.\n\n*Nome:* {name}\n*E-mail:* {email}\n*Portfolio:* {portfolio}\n\n*Apresentação:*\n{apresentacao}\n\n*Por que quero trabalhar na Explore:*\n{motivo}",
     "positions": [
-      { "area": "Vendas", "descricao": "Prospecção e relacionamento com novos clientes. Foco em hotelaria, experiências e real estate.", "tipo": "Comissional" },
-      { "area": "Design", "descricao": "Criação de identidades visuais, artes para redes sociais e materiais de marca.", "tipo": "CLT / PJ" },
-      { "area": "Gestor de Tráfego", "descricao": "Gestão de campanhas no Google Ads e Meta Ads com foco em ROI e geração de leads.", "tipo": "CLT / PJ" },
-      { "area": "Piloto de Drone", "descricao": "Captação aérea profissional com certificação ANAC para projetos em todo o Brasil.", "tipo": "Freela / PJ" },
-      { "area": "Desenvolvedor IA", "descricao": "Implementação de soluções com inteligência artificial aplicadas ao marketing e processos internos.", "tipo": "PJ" },
-      { "area": "Social Media", "descricao": "Planejamento e criação de conteúdo estratégico para redes sociais no setor de turismo e hotelaria.", "tipo": "CLT / PJ" },
-      { "area": "Editor de Vídeo", "descricao": "Edição de reels, vídeos institucionais e conteúdo vertical para redes sociais.", "tipo": "CLT / PJ" },
-      { "area": "Gestor de Projetos", "descricao": "Coordenação de projetos internos e acompanhamento de entregas junto aos clientes.", "tipo": "CLT" }
+      {
+        "area": "Vendas",
+        "descricao": "Prospecção e relacionamento com novos clientes. Foco em hotelaria, experiências e real estate.",
+        "tipo": "Comissional"
+      },
+      {
+        "area": "Design",
+        "descricao": "Criação de identidades visuais, artes para redes sociais e materiais de marca.",
+        "tipo": "CLT / PJ"
+      },
+      {
+        "area": "Gestor de Tráfego",
+        "descricao": "Gestão de campanhas no Google Ads e Meta Ads com foco em ROI e geração de leads.",
+        "tipo": "CLT / PJ"
+      },
+      {
+        "area": "Piloto de Drone",
+        "descricao": "Captação aérea profissional com certificação ANAC para projetos em todo o Brasil.",
+        "tipo": "Freela / PJ"
+      },
+      {
+        "area": "Desenvolvedor IA",
+        "descricao": "Implementação de soluções com inteligência artificial aplicadas ao marketing e processos internos.",
+        "tipo": "PJ"
+      },
+      {
+        "area": "Social Media",
+        "descricao": "Planejamento e criação de conteúdo estratégico para redes sociais no setor de turismo e hotelaria.",
+        "tipo": "CLT / PJ"
+      },
+      {
+        "area": "Editor de Vídeo",
+        "descricao": "Edição de reels, vídeos institucionais e conteúdo vertical para redes sociais.",
+        "tipo": "CLT / PJ"
+      },
+      {
+        "area": "Gestor de Projetos",
+        "descricao": "Coordenação de projetos internos e acompanhamento de entregas junto aos clientes.",
+        "tipo": "CLT"
+      }
     ]
   },
   "footer": {
@@ -430,5 +578,340 @@
     "description": "Agência de marketing digital especializada em hotelaria e turismo. Reservas diretas, gestão de redes sociais, tráfego pago e branding para hotéis, pousadas e real estate. Menos OTA, mais lucro.",
     "og_title": "Explore Digital — Agência de Marketing para Hotéis e Pousadas",
     "og_description": "Especialistas em marketing digital para hotelaria, experiências e real estate. Reduzimos a dependência de OTAs e construímos audiências que reservam direto."
+  },
+  "consultoria": {
+    "meta_title": "Consultoria Gratuita para Hotéis, Pousadas e Real Estate | Explore Digital",
+    "meta_description": "45 minutos com uma agência que só trabalha com turismo, hotelaria e real estate. Um raio-X completo da sua presença digital — site, Instagram, Google do Negócio, reputação e posicionamento — por escrito em até 24h. Sem custo e sem compromisso.",
+    "og_title": "Consultoria gratuita para negócios de turismo, hotelaria e real estate",
+    "og_description": "Raio-X da sua presença digital: site, Instagram, Google do Negócio, reputação e posicionamento. 45 minutos, relatório em 24h, sem custo.",
+    "nav_cta": "Quero minha consultoria",
+    "nav_site": "Ir para o site",
+    "hero_badge": "Consultoria gratuita · Agenda limitada por mês",
+    "hero_title": "O hóspede te encontra.",
+    "hero_title_accent": "E reserva pela Booking.",
+    "hero_sub": "Em 45 minutos passamos um raio-X no seu site, Instagram, Google e reputação — e mostramos onde você está perdendo o hóspede para a OTA.",
+    "hero_bullets": [
+      "Raio-X feito antes da conversa",
+      "Relatório por escrito em até 24h",
+      "Sem custo e sem compromisso"
+    ],
+    "hero_scroll": "Entenda como funciona",
+    "cred_items": [
+      {
+        "value": "+30",
+        "label": "marcas atendidas em 3 países"
+      },
+      {
+        "value": "5+",
+        "label": "anos dedicados só ao setor"
+      },
+      {
+        "value": "+100%",
+        "label": "crescimento médio nas redes"
+      },
+      {
+        "value": "45min",
+        "label": "é tudo que a consultoria leva"
+      }
+    ],
+    "audience_eyebrow": "Para quem é",
+    "audience_title": "Feita para quem vive de ocupação, temporada e reserva.",
+    "audience_sub": "Não atendemos todo mundo. São mais de cinco anos dedicados a um recorte específico de negócios.",
+    "audience_items": [
+      {
+        "title": "Hotéis e resorts",
+        "desc": "Que veem 15% a 25% de cada reserva ir embora em comissão e querem construir canal direto de verdade."
+      },
+      {
+        "title": "Pousadas e hostels",
+        "desc": "Que dependem de uma alta temporada para fechar o ano e precisam encher a baixa."
+      },
+      {
+        "title": "Beach clubs e gastronomia",
+        "desc": "Casa cheia no fim de semana, silêncio no resto. Falta constância na demanda."
+      },
+      {
+        "title": "Escolas de esporte e experiências",
+        "desc": "Kite, surf, mergulho, passeios. Você vende estilo de vida — e o conteúdo precisa transmitir isso antes da matrícula."
+      },
+      {
+        "title": "Real Estate e incorporadoras",
+        "desc": "Alto padrão vende experiência antes de metro quadrado. O lead qualificado vem daí."
+      }
+    ],
+    "notfor_title": "Provavelmente não é para você se…",
+    "notfor_items": [
+      "Você espera resultado em sete dias.",
+      "Você quer alguém só para postar, sem estratégia por trás.",
+      "Você não tem nenhuma disposição de mudar o que faz hoje."
+    ],
+    "notfor_note": "Preferimos dizer isso agora do que ocupar 45 minutos da sua agenda à toa.",
+    "pain_eyebrow": "O diagnóstico",
+    "pain_title": "O problema quase nunca é o seu produto.",
+    "pain_sub": "O quarto é bom e a localização é boa. O que trava costuma estar em um destes três lugares.",
+    "pain_items": [
+      {
+        "title": "A OTA fica com um quarto de cada reserva",
+        "desc": "Você paga comissão para vender o próprio quarto — e o hóspede nunca chega a ser seu."
+      },
+      {
+        "title": "Instagram bonito que não vira reserva",
+        "desc": "Feed impecável, direct vazio. Falta a ponte entre encantar e reservar."
+      },
+      {
+        "title": "Anúncio rodando no escuro",
+        "desc": "A verba sai todo mês e ninguém sabe qual campanha trouxe hóspede."
+      }
+    ],
+    "deliver_eyebrow": "O que você recebe",
+    "deliver_title": "Um raio-X completo da sua presença digital.",
+    "deliver_sub": "Analisamos cada ponto antes da call e devolvemos por escrito em até 24 horas — contratando a Explore ou não.",
+    "deliver_items": [
+      {
+        "num": "01",
+        "title": "Seu site",
+        "desc": "Se carrega rápido, se comunica o que precisa e quantos cliques separam o hóspede da reserva."
+      },
+      {
+        "num": "02",
+        "title": "Seu Instagram",
+        "desc": "Bio, destaques, constância e o caminho entre o post e a conversa no direct."
+      },
+      {
+        "num": "03",
+        "title": "Google do Negócio",
+        "desc": "Ficha, fotos e como você aparece quando alguém pesquisa hospedagem na sua região."
+      },
+      {
+        "num": "04",
+        "title": "Sua reputação",
+        "desc": "O que se repete nas avaliações do Google, da Booking e do TripAdvisor."
+      },
+      {
+        "num": "05",
+        "title": "Seu posicionamento",
+        "desc": "O que a marca diz que é e o que o público entende. Quando não bate, sobra só o preço."
+      },
+      {
+        "num": "06",
+        "title": "Sua concorrência",
+        "desc": "Como você aparece ao lado de quem disputa o mesmo hóspede — e o espaço que está livre."
+      }
+    ],
+    "how_eyebrow": "Como funciona",
+    "how_title": "Três passos. Nenhuma reunião perdida.",
+    "how_items": [
+      {
+        "num": "01",
+        "title": "Você preenche o formulário",
+        "desc": "Dois minutos. São as perguntas que precisamos para entender o momento do seu negócio."
+      },
+      {
+        "num": "02",
+        "title": "Analisamos antes da call",
+        "desc": "Você não gasta a reunião explicando o básico. Chegamos com os seus dados na mão."
+      },
+      {
+        "num": "03",
+        "title": "45 minutos e o raio-X no e-mail",
+        "desc": "Videochamada ou WhatsApp, no horário que você escolher. O relatório chega em até 24 horas."
+      }
+    ],
+    "free_eyebrow": "A pergunta que todo mundo faz",
+    "free_title": "Por que a gente faz isso de graça?",
+    "free_body": "Porque foi assim que a maioria dos nossos clientes começou. Preferimos mostrar como pensamos antes de cobrar qualquer coisa.",
+    "free_body_2": "Se fizer sentido ir além do raio-X, apresentamos uma proposta no fim da conversa. Se não fizer, o diagnóstico é seu do mesmo jeito.",
+    "free_badges": [
+      "Sem cartão de crédito",
+      "Sem contrato nem fidelidade",
+      "O raio-X é seu de qualquer forma"
+    ],
+    "proof_eyebrow": "Quem já passou por aqui",
+    "proof_quote": "A Explore Digital transformou a forma como comunicamos o nosso negócio. Em poucos meses o engajamento triplicou e as reservas diretas cresceram de forma expressiva. É a agência que entende o nosso mercado de verdade.",
+    "proof_author": "Rafael M.",
+    "proof_role": "Gerente Geral · Pousada · Brasil",
+    "faq_eyebrow": "Perguntas frequentes",
+    "faq_title": "O que costumam perguntar antes de marcar.",
+    "faq_items": [
+      {
+        "q": "É gratuita mesmo? Onde está a pegadinha?",
+        "a": "Não tem. Não pedimos cartão e não cobramos nada depois. Parte de quem atendemos vira cliente, a outra parte indica a gente. Os dois cenários valem a pena."
+      },
+      {
+        "q": "Quanto tempo dura?",
+        "a": "45 minutos, por videochamada ou WhatsApp, no dia e horário que você escolher."
+      },
+      {
+        "q": "Preciso já ter verba para anúncios?",
+        "a": "Não. O raio-X aponta ajustes de posicionamento, conteúdo e conversão que não dependem de mídia paga."
+      },
+      {
+        "q": "Minha pousada é pequena. Vale a pena?",
+        "a": "Vale, e normalmente vale mais. Quanto menor a operação, mais peso tem cada reserva direta. Já atendemos de pousadas com oito quartos a resorts."
+      },
+      {
+        "q": "Vocês atendem fora do Brasil?",
+        "a": "Sim. Já trabalhamos com marcas em três países e atendemos em português, inglês e espanhol."
+      },
+      {
+        "q": "E se eu não quiser contratar nada depois?",
+        "a": "Nada acontece. O raio-X é seu e você executa internamente ou com outro parceiro."
+      }
+    ],
+    "form_eyebrow": "Agende a sua",
+    "form_title": "Comece pelo seu negócio.",
+    "form_sub": "Três etapas rápidas. Ao enviar, seus dados chegam direto no WhatsApp da nossa equipe.",
+    "form_step_of": "Etapa {current} de {total}",
+    "s1_title": "Sobre o seu negócio",
+    "s1_sub": "Para saber com quem estamos falando.",
+    "f_type": "Qual o tipo do seu negócio?",
+    "f_business": "Nome do negócio",
+    "f_business_ph": "Ex.: Pousada Vista Mar",
+    "f_city": "Cidade / região",
+    "f_city_ph": "Ex.: Jericoacoara, CE",
+    "f_size": "Tamanho da operação",
+    "size_options": [
+      "Até 10 quartos / suítes / unidades",
+      "De 11 a 30 quartos / suítes / unidades",
+      "De 31 a 80 quartos / suítes / unidades",
+      "Mais de 80 quartos / suítes / unidades",
+      "Não trabalho com unidades (experiências, gastronomia...)"
+    ],
+    "business_types": [
+      "Hotel / Resort",
+      "Pousada / Hostel",
+      "Beach Club",
+      "Escola de esporte",
+      "Experiências e passeios",
+      "Real Estate",
+      "Gastronomia",
+      "Outro"
+    ],
+    "s2_title": "O seu desafio hoje",
+    "s2_sub": "É o que vamos analisar antes da conversa.",
+    "f_challenge": "Qual o principal desafio agora?",
+    "challenges": [
+      "Dependo demais das OTAs",
+      "Ocupação baixa fora da temporada",
+      "Redes sociais paradas",
+      "Anúncios sem retorno claro",
+      "Marca e identidade desatualizadas",
+      "Não tenho site que converte",
+      "Outro"
+    ],
+    "f_adspend": "Investe em anúncios hoje?",
+    "adspend_options": [
+      "Ainda não invisto",
+      "Até R$ 1.000 por mês",
+      "De R$ 1.000 a R$ 5.000",
+      "Mais de R$ 5.000"
+    ],
+    "s3_title": "Como falamos com você",
+    "s3_sub": "Último passo. Depois disso o WhatsApp abre com tudo preenchido.",
+    "f_name": "Seu nome",
+    "f_name_ph": "Nome e sobrenome",
+    "f_phone": "WhatsApp",
+    "f_phone_ph": "(00) 00000-0000",
+    "f_email": "E-mail",
+    "f_email_ph": "voce@seunegocio.com",
+    "f_time": "Melhor horário para falar",
+    "time_options": [
+      "Manhã",
+      "Tarde",
+      "Noite"
+    ],
+    "btn_next": "Continuar",
+    "btn_back": "Voltar",
+    "btn_submit": "Enviar e falar no WhatsApp",
+    "btn_sending": "Enviando...",
+    "err_required": "Preencha os campos obrigatórios para continuar.",
+    "err_email": "Confira o e-mail digitado.",
+    "form_disclaimer": "Ao enviar, seus dados vão para o WhatsApp da Explore Digital e uma cópia chega no nosso e-mail. Não compartilhamos suas informações com ninguém.",
+    "trust": [
+      "Resposta em até 24h",
+      "Consultoria sem custo",
+      "Dados protegidos",
+      "BR · ES · Internacional"
+    ],
+    "final_title": "Sua próxima temporada começa a ser decidida agora.",
+    "final_sub": "A agenda é limitada porque cada consultoria exige análise antes da conversa.",
+    "final_cta": "Quero minha consultoria gratuita",
+    "final_note": "45 minutos · sem custo · sem compromisso",
+    "sticky_cta": "Agendar consultoria gratuita",
+    "wa_header": "NOVA SOLICITAÇÃO DE CONSULTORIA GRATUITA",
+    "wa_footer": "Enviado pela landing page de consultoria",
+    "wa_labels": {
+      "name": "Nome",
+      "phone": "WhatsApp",
+      "email": "E-mail",
+      "type": "Tipo de negócio",
+      "business": "Negócio",
+      "city": "Cidade",
+      "size": "Tamanho",
+      "challenge": "Principal desafio",
+      "adspend": "Investimento em anúncios",
+      "time": "Melhor horário",
+      "instagram": "Instagram",
+      "site": "Site"
+    },
+    "ty_eyebrow": "Solicitação recebida",
+    "ty_title": "Pronto. Sua consultoria está na fila.",
+    "ty_desc": "Abrimos o WhatsApp com os seus dados já preenchidos. Se a janela não abriu, escolha abaixo por onde prefere falar com a gente — os dois caminhos levam a mesma informação para a nossa equipe.",
+    "ty_wa_button": "Continuar no WhatsApp",
+    "ty_wa_fallback": "A janela do WhatsApp foi bloqueada pelo navegador. Toque no botão para enviar.",
+    "ty_home": "Voltar ao site",
+    "ty_steps": [
+      {
+        "label": "Recebemos seus dados",
+        "desc": "Seu formulário chegou para a nossa equipe."
+      },
+      {
+        "label": "Analisamos seu digital",
+        "desc": "Estudamos site, redes e reputação antes da conversa."
+      },
+      {
+        "label": "Confirmamos o horário",
+        "desc": "Entramos em contato em até 24h para marcar os 45 minutos."
+      }
+    ],
+    "f_size_note": "Quartos ou suítes na hotelaria · unidades ou empreendimentos no real estate · vagas por turma nas experiências.",
+    "f_instagram": "Instagram do negócio",
+    "f_instagram_ph": "seuperfil",
+    "f_site": "Site",
+    "f_site_ph": "seusite.com.br",
+    "f_site_note": "Opcional. Se ainda não tem site, deixe em branco — isso já é parte do diagnóstico.",
+    "ty_email_button": "Prefiro por e-mail",
+    "ty_email_subject": "Solicitação de consultoria gratuita",
+    "ty_channels_note": "Respondemos em até 24 horas, de segunda a sexta."
+  },
+  "bio": {
+    "meta_title": "Explore Digital — Links",
+    "meta_description": "Consultoria gratuita, site, planos e atendimento da Explore Digital. Agência de marketing para hotelaria, turismo e real estate.",
+    "handle": "@somosexplore",
+    "tagline": "Marketing para hotelaria, turismo e real estate.",
+    "items": [
+      {
+        "key": "consultoria",
+        "title": "Consultoria gratuita",
+        "desc": "Análise do seu negócio digital, por nossa conta."
+      },
+      {
+        "key": "whatsapp",
+        "title": "Fale conosco no WhatsApp",
+        "desc": "Atendimento em Espanhol, Inglês e Português"
+      },
+      {
+        "key": "site",
+        "title": "Site da Explore",
+        "desc": "Quem somos e o que fazemos"
+      },
+      {
+        "key": "vagas",
+        "title": "Trabalhe conosco",
+        "desc": "Vagas abertas no time"
+      }
+    ],
+    "wa_message": "Olá! Vim pelo link da bio do Instagram.",
+    "rights": "Todos os direitos reservados"
   }
 }

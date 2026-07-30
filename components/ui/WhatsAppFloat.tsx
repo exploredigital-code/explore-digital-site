@@ -1,6 +1,7 @@
 ﻿'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 
@@ -8,14 +9,21 @@ const WA_BASE = 'https://wa.me/+5585991043067?text='
 
 export function WhatsAppFloat() {
   const t = useTranslations('contact')
+  const pathname = usePathname()
   const [visible, setVisible] = useState(false)
   const [tooltip, setTooltip] = useState(false)
+
+  // Consultoria: tem barra fixa própria no mobile e o flutuante abriria uma rota
+  // de fuga sem os dados do lead. Bio: já existe um botão de WhatsApp na lista.
+  const hidden = pathname.includes('/consultoria') || pathname.includes('/bio')
 
   useEffect(() => {
     const handler = () => setVisible(window.scrollY > 200)
     window.addEventListener('scroll', handler, { passive: true })
     return () => window.removeEventListener('scroll', handler)
   }, [])
+
+  if (hidden) return null
 
   const waUrl = WA_BASE + encodeURIComponent(t('whatsapp_intro'))
 

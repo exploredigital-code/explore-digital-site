@@ -130,8 +130,8 @@ export function Navbar() {
             </AnimatePresence>
           </div>
 
-          <Button href={homeHref('#contact')} size="sm">
-            {t('cta')}
+          <Button href={`/${localePrefix}/consultoria`} size="sm">
+            {t('consultoria')}
           </Button>
         </div>
 
@@ -179,8 +179,8 @@ export function Navbar() {
               transition={{ delay: 0.35 }}
               className="mt-6"
             >
-              <Button href={homeHref('#contact')} size="lg" onClick={() => setMenuOpen(false)}>
-                {t('cta')}
+              <Button href={`/${localePrefix}/consultoria`} size="lg" onClick={() => setMenuOpen(false)}>
+                {t('consultoria')}
               </Button>
             </motion.div>
             <motion.div

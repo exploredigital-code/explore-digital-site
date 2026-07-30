@@ -1,15 +1,14 @@
 ﻿'use client'
 
 import { motion } from 'framer-motion'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 import { Button } from '@/components/ui/Button'
 
-const WHATSAPP = 'https://wa.me/+5585991043067?text=Ol%C3%A1!%20Gostaria%20de%20uma%20consultoria%20gratuita.'
-
 export function Process() {
   const t = useTranslations('process')
+  const locale = useLocale()
 
   const steps = [
     { n: '01', title: t('s1_title'), desc: t('s1_desc') },
@@ -32,7 +31,7 @@ export function Process() {
             <p className="text-g-dark/55 text-[16px] leading-[1.8] mb-10">
               {t('subtitle')}
             </p>
-            <Button href={WHATSAPP} variant="primary" size="lg" target="_blank" rel="noopener noreferrer"
+            <Button href={`/${locale}/consultoria`} variant="primary" size="lg"
               className="!bg-g-dark !text-g-pale hover:!bg-s2">
               {t('cta')}
             </Button>
