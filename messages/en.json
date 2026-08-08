@@ -29,15 +29,15 @@
     "eyebrow": "Our story",
     "title": "An agency built for brands that sell desire.",
     "sub": "Born from the industry. Grown with it.",
-    "story": "Explore Digital was born from the conviction that hospitality, experience, and real estate brands deserve an agency that truly understands the industry — not one that just applies generic templates. We built our expertise within the universe that demands identity, emotion, and desire.",
-    "story2": "We work along the coast of Ceará and Rio Grande do Norte — Preá, Ilha do Guajirú and Pipa — in Portuguese, English and Spanish, because much of the guest and owner base on this coast comes from abroad.",
+    "story": "Explore Digital was born from the conviction that hospitality, experience, and real estate brands deserve an agency that truly understands the industry, not one that just applies generic templates. We built our expertise within the universe that demands identity, emotion, and desire.",
+    "story2": "We work along the coast of Ceará and Rio Grande do Norte: Preá, Ilha do Guajirú and Pipa. We work in Portuguese, English and Spanish, because much of the guest and owner base on this coast comes from abroad.",
     "values_eyebrow": "Our values",
     "v1_title": "Focus breeds excellence",
     "v1_desc": "We only work with hospitality on the coast of Ceará and Rio Grande do Norte. That makes us better at what matters most to you.",
     "v2_title": "Results are mandatory",
     "v2_desc": "We don't sell impressions. We sell direct bookings, qualified leads, and real measurable growth.",
     "v3_title": "Total transparency",
-    "v3_desc": "You know what's being done, why, and what results it's generating — always, no asterisks.",
+    "v3_desc": "You know what's being done, why, and what results it's generating. Always, no asterisks.",
     "tab_story": "Our Story",
     "tab_team": "The Team",
     "team_eyebrow": "The team",
@@ -77,10 +77,10 @@
     "design_desc": "For branding and visual identity we work with a partner studio. Same model as performance: a specialist running their own operation, with Explore as your single point of contact.",
     "cta_eyebrow": "Next step",
     "cta_title": "Want Explore looking after your brand?",
-    "cta_desc": "In 45 minutes we X-ray your website, Instagram, Google listing and reputation — and show you what to prioritise. No cost, no commitment.",
+    "cta_desc": "In 45 minutes we X-ray your website, Instagram, Google listing and reputation, and show you what to prioritise. No cost, no commitment.",
     "cta_button": "Book your free consultation",
     "cta_secondary": "Chat on WhatsApp",
-    "meta_title": "About Explore Digital — hospitality marketing",
+    "meta_title": "About Explore Digital · hospitality marketing",
     "meta_description": "An agency specialised in hospitality on the coast of Ceará and Rio Grande do Norte, Brazil. Our story, our values and the team behind the work."
   },
   "hero": {
@@ -140,7 +140,7 @@
     "cta_title": "Want your brand to be the next case study?",
     "cta_button": "Talk to Explore →",
     "view_full_case": "View full case",
-    "page_meta_title": "Case portfolio — Explore Digital",
+    "page_meta_title": "Case portfolio · Explore Digital",
     "page_meta_description": "Marketing projects for guesthouses, hostels and beach clubs on the coast of Ceará and Rio Grande do Norte. Real results in social media, paid traffic and web."
   },
   "services": {
@@ -210,7 +210,7 @@
   "about": {
     "eyebrow": "Why Explore",
     "title": "Specialists in what demands identity the most.",
-    "description": "Hospitality, experiences, and real estate are sectors where the brand is the product. We understand this — and we build brands equal to that responsibility.",
+    "description": "Hospitality, experiences, and real estate are sectors where the brand is the product. We understand this, and we build brands equal to that responsibility.",
     "d1_title": "Specialists in your sector",
     "d1_desc": "We do not work with e-commerce, startups or retail. Only hotels, guesthouses, hostels, beach clubs and holiday rentals on the coast of Ceará and Rio Grande do Norte. That makes us the best at what you need. Not the cheapest on the market.",
     "d2_title": "Direct bookings, not vanity metrics",
@@ -284,7 +284,7 @@
       "Performance Ads (Google/Meta)",
       "Initial Setup",
       "One-off Service",
-      "Not sure yet — I want a consultation"
+      "Not sure yet, I want a consultation"
     ],
     "whatsapp_greeting": "Hi! I found you through the Explore Digital website.",
     "whatsapp_intro": "Hi! I found you through the website and would like to know more about Explore Digital's services.",
@@ -313,7 +313,7 @@
   "blog": {
     "eyebrow": "Blog & Insights",
     "title": "Content for brands that create desire.",
-    "subtitle": "Digital marketing for hospitality, experiences and real estate — straight to the point.",
+    "subtitle": "Digital marketing for hospitality, experiences and real estate, straight to the point.",
     "read_time": "read",
     "read_article": "Read article",
     "view_post": "View post",
@@ -336,7 +336,7 @@
     "cat_kitesurf": "Kitesurf & Wingfoil",
     "cat_captacoes": "Photo & Video",
     "cat_sistemas": "Systems",
-    "meta_title": "Hospitality marketing blog — Explore Digital",
+    "meta_title": "Hospitality marketing blog · Explore Digital",
     "meta_description": "Practical content on direct bookings, paid traffic, social media and branding for guesthouses, hostels and beach clubs on the coast of Ceará and Rio Grande do Norte, Brazil."
   },
   "vagas": {
@@ -407,7 +407,7 @@
         "tipo": "Full-time"
       }
     ],
-    "meta_title": "Work with us — Explore Digital",
+    "meta_title": "Work with us · Explore Digital",
     "meta_description": "Open roles in design, social media, paid traffic and sales at Explore Digital, a hospitality marketing agency."
   },
   "service_detail": {
@@ -451,14 +451,14 @@
     "copyright": "All rights reserved."
   },
   "meta": {
-    "site_title": "Explore Digital — Hospitality marketing in Ceará and Rio Grande do Norte",
+    "site_title": "Explore Digital · Hospitality marketing in Ceará and Rio Grande do Norte",
     "description": "A marketing agency specialised in hospitality on the coast of Ceará and Rio Grande do Norte, Brazil. Direct bookings, social media, paid traffic and branding for guesthouses, hostels and beach clubs.",
-    "og_title": "Explore Digital — Hospitality marketing on the CE and RN coast",
+    "og_title": "Explore Digital · Hospitality marketing on the CE and RN coast",
     "og_description": "Specialists in guesthouses, hostels and beach clubs on the Ceará and Rio Grande do Norte coast. Fewer OTAs, more direct bookings."
   },
   "consultoria": {
     "meta_title": "Free Consulting for Hotels, Inns and Real Estate | Explore Digital",
-    "meta_description": "45 minutes with an agency that works exclusively with tourism, hospitality and real estate. A full X-ray of your digital presence — website, Instagram, Google Business Profile, reputation and positioning — in writing within 24h. No cost, no strings.",
+    "meta_description": "45 minutes with an agency that works exclusively with tourism, hospitality and real estate. A full X-ray of your digital presence: website, Instagram, Google Business Profile, reputation and positioning, in writing within 24h. No cost, no strings.",
     "og_title": "Free consulting for tourism, hospitality and real estate brands",
     "og_description": "An X-ray of your digital presence: website, Instagram, Google Business Profile, reputation and positioning. 45 minutes, report in 24h, at no cost.",
     "nav_cta": "Book my session",
@@ -466,7 +466,7 @@
     "hero_badge": "Free consulting · Limited slots per month",
     "hero_title": "Guests find you.",
     "hero_title_accent": "Then book on Booking.",
-    "hero_sub": "In 45 minutes we run an X-ray on your website, Instagram, Google and reputation — and show you where you are losing guests to the OTAs.",
+    "hero_sub": "In 45 minutes we run an X-ray on your website, Instagram, Google and reputation, and show you where you are losing guests to the OTAs.",
     "hero_bullets": [
       "X-ray done before we talk",
       "Written report within 24h",
@@ -509,7 +509,7 @@
       },
       {
         "title": "Sports schools and experiences",
-        "desc": "Kite, surf, diving, tours. You sell a lifestyle — and the content has to convey it before anyone signs up."
+        "desc": "Kite, surf, diving, tours. You sell a lifestyle, and the content has to convey it before anyone signs up."
       },
       {
         "title": "Real estate and developers",
@@ -529,7 +529,7 @@
     "pain_items": [
       {
         "title": "The OTA takes a quarter of every booking",
-        "desc": "You pay commission to sell your own room — and the guest never becomes yours."
+        "desc": "You pay commission to sell your own room, and the guest never becomes yours."
       },
       {
         "title": "A beautiful Instagram that doesn’t book",
@@ -542,7 +542,7 @@
     ],
     "deliver_eyebrow": "What you get",
     "deliver_title": "A full X-ray of your digital presence.",
-    "deliver_sub": "We review every point before the call and send it in writing within 24 hours — whether you hire Explore or not.",
+    "deliver_sub": "We review every point before the call and send it in writing within 24 hours, whether you hire Explore or not.",
     "deliver_items": [
       {
         "num": "01",
@@ -572,7 +572,7 @@
       {
         "num": "06",
         "title": "Your competition",
-        "desc": "How you look next to whoever wants the same guest — and which space is still open."
+        "desc": "How you look next to whoever wants the same guest, and which space is still open."
       }
     ],
     "how_eyebrow": "How it works",
@@ -733,7 +733,7 @@
     },
     "ty_eyebrow": "Request received",
     "ty_title": "Done. Your session is in the queue.",
-    "ty_desc": "We opened WhatsApp with your details already filled in. If the window didn’t open, choose below how you’d rather reach us — both routes send our team the same information.",
+    "ty_desc": "We opened WhatsApp with your details already filled in. If the window didn’t open, choose below how you’d rather reach us. Both routes send our team the same information.",
     "ty_wa_button": "Continue on WhatsApp",
     "ty_wa_fallback": "Your browser blocked the WhatsApp window. Tap the button to send it.",
     "ty_home": "Back to the site",
@@ -756,13 +756,14 @@
     "f_instagram_ph": "yourhandle",
     "f_site": "Website",
     "f_site_ph": "yoursite.com",
-    "f_site_note": "Optional. If you don't have a website yet, leave it blank — that's already part of the diagnosis.",
+    "f_site_note": "Optional. If you don't have a website yet, leave it blank. That's already part of the diagnosis.",
     "ty_email_button": "I’d rather use email",
     "ty_email_subject": "Free consulting request",
-    "ty_channels_note": "We reply within 24 hours, Monday to Friday."
+    "ty_channels_note": "We reply within 24 hours, Monday to Friday.",
+    "f_select": "Select"
   },
   "bio": {
-    "meta_title": "Explore Digital — Links",
+    "meta_title": "Explore Digital · Links",
     "meta_description": "Free consulting, website, plans and support from Explore Digital. Marketing agency for hospitality, tourism and real estate.",
     "handle": "@somosexplore",
     "tagline": "Marketing for hospitality, tourism and real estate.",
@@ -799,12 +800,12 @@
     "rights": "All rights reserved"
   },
   "solucoes": {
-    "meta_title": "Solutions — Explore Digital",
+    "meta_title": "Solutions · Explore Digital",
     "meta_description": "One-off deliverables with a price and a deadline (photo, video, drone, editing, design, landing page) or full projects in branding, web, social, paid traffic and systems for hospitality.",
     "nav_label": "Solutions",
     "eyebrow": "What we do",
     "title": "One-off deliverables or a full project.",
-    "sub": "You hire what your moment calls for — a specific piece with a price and a deadline, or a whole track that starts with a diagnosis.",
+    "sub": "You hire what your moment calls for: a specific piece with a price and a deadline, or a whole track that starts with a diagnosis.",
     "count": "{n} solutions · {p} fronts",
     "rail_label": "Fronts",
     "includes": "What’s included",
@@ -840,11 +841,11 @@
     "od_onsite": "Requires an on-site shoot",
     "od_season_badge": "High season · August to December",
     "od_season_title": "Your property only looks like this from August to December.",
-    "od_season_desc": "A full house, good wind and the right light happen once a year. Shoot now what you will publish all year round — you cannot photograph high season in February.",
+    "od_season_desc": "A full house, good wind and the right light happen once a year. Shoot now what you will publish all year round. You cannot photograph high season in February.",
     "od_season_note": "Shooting slots fill up in high season: book at least 10 days ahead.",
     "proj_eyebrow": "Projects",
     "proj_title": "Five tracks, five different problems.",
-    "proj_sub": "We do not sell closed packages. You hire the track your moment calls for — on its own or combined with others.",
+    "proj_sub": "We do not sell closed packages. You hire the track your moment calls for, on its own or combined with others.",
     "rail_ondemand": "On demand",
     "rail_projects": "Projects",
     "wa_item": "Hi! I came from the website and I would like to book: {item}.",
@@ -852,7 +853,7 @@
       {
         "slug": "fotografia",
         "name": "Photography",
-        "tagline": "Rooms, breakfast and common areas — ready for Booking and for the feed.",
+        "tagline": "Rooms, breakfast and common areas, ready for Booking and for the feed.",
         "includes": [
           "On-site shoot with creative direction",
           "Professional image retouching",
@@ -874,7 +875,7 @@
       {
         "slug": "drone",
         "name": "Drone",
-        "tagline": "The aerial that sells location — your property and its surroundings from above.",
+        "tagline": "The aerial that sells location: your property and its surroundings from above.",
         "includes": [
           "Flight over the property and surroundings",
           "Beach, lagoon or dune footage",

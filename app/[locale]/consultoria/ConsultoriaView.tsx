@@ -379,7 +379,7 @@ function ConsultForm() {
                   onChange={e => set('size', e.target.value)}
                   className={cn(inputClass, 'cursor-pointer', !form.size && 'text-g-dark/40')}
                 >
-                  <option value="">—</option>
+                  <option value="">{t('f_select')}</option>
                   {SIZES.map(s => <option key={s} value={s} className="text-g-dark">{s}</option>)}
                 </select>
                 <p className="text-[11px] text-g-dark/45 leading-relaxed mt-1.5">{t('f_size_note')}</p>

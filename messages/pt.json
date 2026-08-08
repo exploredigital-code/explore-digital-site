@@ -30,7 +30,7 @@
     "title": "Uma agência feita para marcas que vendem desejo.",
     "sub": "Nascemos do setor. Crescemos com ele.",
     "story": "A Explore Digital nasceu da convicção de que marcas de hotelaria, experiências e real estate merecem uma agência que realmente entende o setor. Não apenas aplica templates genéricos. Construímos nossa expertise dentro do universo que mais exige identidade, emoção e desejo.",
-    "story2": "Atuamos no litoral do Ceará e do Rio Grande do Norte — Preá, Ilha do Guajirú e Pipa — e atendemos em português, inglês e espanhol, porque boa parte do hóspede e do proprietário dessa costa vem de fora.",
+    "story2": "Atuamos no litoral do Ceará e do Rio Grande do Norte: Preá, Ilha do Guajirú e Pipa. Atendemos em português, inglês e espanhol, porque boa parte do hóspede e do proprietário dessa costa vem de fora.",
     "values_eyebrow": "Nossos valores",
     "v1_title": "Foco gera excelência",
     "v1_desc": "Só trabalhamos com hotelaria no litoral do Ceará e do Rio Grande do Norte. Isso nos torna melhores naquilo que mais importa para você.",
@@ -77,10 +77,10 @@
     "design_desc": "Para branding e identidade visual trabalhamos com estúdio parceiro. Mesmo modelo da performance: especialista que toca a própria operação, com a Explore como ponto único de contato.",
     "cta_eyebrow": "Próximo passo",
     "cta_title": "Quer a Explore cuidando da sua marca?",
-    "cta_desc": "Em 45 minutos passamos um raio-X no seu site, Instagram, Google e reputação — e apontamos o que priorizar. Sem custo e sem compromisso.",
+    "cta_desc": "Em 45 minutos passamos um raio-X no seu site, Instagram, Google e reputação, e apontamos o que priorizar. Sem custo e sem compromisso.",
     "cta_button": "Agendar consultoria gratuita",
     "cta_secondary": "Falar no WhatsApp",
-    "meta_title": "Sobre a Explore Digital — marketing para hotelaria",
+    "meta_title": "Sobre a Explore Digital · marketing para hotelaria",
     "meta_description": "Agência especializada em hotelaria no litoral do Ceará e do Rio Grande do Norte. Conheça a história, os valores e o time por trás dos projetos."
   },
   "hero": {
@@ -140,7 +140,7 @@
     "cta_title": "Quer que a sua marca seja o próximo case?",
     "cta_button": "Falar com a Explore →",
     "view_full_case": "Ver case completo",
-    "page_meta_title": "Portfólio de cases — Explore Digital",
+    "page_meta_title": "Portfólio de cases · Explore Digital",
     "page_meta_description": "Projetos de marketing para pousadas, hostels e beach clubs no litoral do Ceará e do Rio Grande do Norte. Resultados reais em redes sociais, tráfego pago e web."
   },
   "services": {
@@ -284,7 +284,7 @@
       "Performance Ads (Google/Meta)",
       "Setup Inicial",
       "Serviço Avulso",
-      "Não sei ainda — quero consultoria"
+      "Não sei ainda, quero consultoria"
     ],
     "whatsapp_greeting": "Olá! Vim pelo site da Explore Digital.",
     "whatsapp_intro": "Olá! Vim pelo site e gostaria de saber mais sobre os serviços da Explore Digital.",
@@ -346,7 +346,7 @@
   "blog": {
     "eyebrow": "Blog & Insights",
     "title": "Conteúdo para marcas que geram desejo.",
-    "subtitle": "Marketing digital para hotelaria, experiências e real estate — sem enrolação.",
+    "subtitle": "Marketing digital para hotelaria, experiências e real estate, sem enrolação.",
     "read_time": "de leitura",
     "read_article": "Ler artigo",
     "view_post": "Ver post",
@@ -369,7 +369,7 @@
     "cat_kitesurf": "Kitesurf & Wingfoil",
     "cat_captacoes": "Captações",
     "cat_sistemas": "Sistemas",
-    "meta_title": "Blog de marketing para hotelaria — Explore Digital",
+    "meta_title": "Blog de marketing para hotelaria · Explore Digital",
     "meta_description": "Conteúdo prático sobre reservas diretas, tráfego pago, redes sociais e branding para pousadas, hostels e beach clubs do litoral do Ceará e do Rio Grande do Norte."
   },
   "vagas": {
@@ -440,7 +440,7 @@
         "tipo": "CLT"
       }
     ],
-    "meta_title": "Trabalhe conosco — Explore Digital",
+    "meta_title": "Trabalhe conosco · Explore Digital",
     "meta_description": "Vagas abertas em design, social media, tráfego pago e vendas na Explore Digital, agência de marketing para hotelaria."
   },
   "footer": {
@@ -451,14 +451,14 @@
     "copyright": "Todos os direitos reservados."
   },
   "meta": {
-    "site_title": "Explore Digital — Marketing para hotelaria no Ceará e Rio Grande do Norte",
+    "site_title": "Explore Digital · Marketing para hotelaria no Ceará e Rio Grande do Norte",
     "description": "Agência de marketing especializada em hotelaria no litoral do Ceará e do Rio Grande do Norte. Reservas diretas, redes sociais, tráfego pago e branding para pousadas, hostels e beach clubs.",
-    "og_title": "Explore Digital — Marketing para hotelaria no litoral do CE e RN",
+    "og_title": "Explore Digital · Marketing para hotelaria no litoral do CE e RN",
     "og_description": "Especialistas em pousadas, hostels e beach clubs do litoral cearense e potiguar. Menos OTA, mais reserva direta."
   },
   "consultoria": {
     "meta_title": "Consultoria Gratuita para Hotéis, Pousadas e Real Estate | Explore Digital",
-    "meta_description": "45 minutos com uma agência que só trabalha com turismo, hotelaria e real estate. Um raio-X completo da sua presença digital — site, Instagram, Google do Negócio, reputação e posicionamento — por escrito em até 24h. Sem custo e sem compromisso.",
+    "meta_description": "45 minutos com uma agência que só trabalha com turismo, hotelaria e real estate. Um raio-X completo da sua presença digital: site, Instagram, Google do Negócio, reputação e posicionamento, por escrito em até 24h. Sem custo e sem compromisso.",
     "og_title": "Consultoria gratuita para negócios de turismo, hotelaria e real estate",
     "og_description": "Raio-X da sua presença digital: site, Instagram, Google do Negócio, reputação e posicionamento. 45 minutos, relatório em 24h, sem custo.",
     "nav_cta": "Quero minha consultoria",
@@ -466,7 +466,7 @@
     "hero_badge": "Consultoria gratuita · Agenda limitada por mês",
     "hero_title": "O hóspede te encontra.",
     "hero_title_accent": "E reserva pela Booking.",
-    "hero_sub": "Em 45 minutos passamos um raio-X no seu site, Instagram, Google e reputação — e mostramos onde você está perdendo o hóspede para a OTA.",
+    "hero_sub": "Em 45 minutos passamos um raio-X no seu site, Instagram, Google e reputação, e mostramos onde você está perdendo o hóspede para a OTA.",
     "hero_bullets": [
       "Raio-X feito antes da conversa",
       "Relatório por escrito em até 24h",
@@ -509,7 +509,7 @@
       },
       {
         "title": "Escolas de esporte e experiências",
-        "desc": "Kite, surf, mergulho, passeios. Você vende estilo de vida — e o conteúdo precisa transmitir isso antes da matrícula."
+        "desc": "Kite, surf, mergulho, passeios. Você vende estilo de vida, e o conteúdo precisa transmitir isso antes da matrícula."
       },
       {
         "title": "Real Estate e incorporadoras",
@@ -529,7 +529,7 @@
     "pain_items": [
       {
         "title": "A OTA fica com um quarto de cada reserva",
-        "desc": "Você paga comissão para vender o próprio quarto — e o hóspede nunca chega a ser seu."
+        "desc": "Você paga comissão para vender o próprio quarto, e o hóspede nunca chega a ser seu."
       },
       {
         "title": "Instagram bonito que não vira reserva",
@@ -542,7 +542,7 @@
     ],
     "deliver_eyebrow": "O que você recebe",
     "deliver_title": "Um raio-X completo da sua presença digital.",
-    "deliver_sub": "Analisamos cada ponto antes da call e devolvemos por escrito em até 24 horas — contratando a Explore ou não.",
+    "deliver_sub": "Analisamos cada ponto antes da call e devolvemos por escrito em até 24 horas, contratando a Explore ou não.",
     "deliver_items": [
       {
         "num": "01",
@@ -572,7 +572,7 @@
       {
         "num": "06",
         "title": "Sua concorrência",
-        "desc": "Como você aparece ao lado de quem disputa o mesmo hóspede — e o espaço que está livre."
+        "desc": "Como você aparece ao lado de quem disputa o mesmo hóspede, e o espaço que está livre."
       }
     ],
     "how_eyebrow": "Como funciona",
@@ -733,7 +733,7 @@
     },
     "ty_eyebrow": "Solicitação recebida",
     "ty_title": "Pronto. Sua consultoria está na fila.",
-    "ty_desc": "Abrimos o WhatsApp com os seus dados já preenchidos. Se a janela não abriu, escolha abaixo por onde prefere falar com a gente — os dois caminhos levam a mesma informação para a nossa equipe.",
+    "ty_desc": "Abrimos o WhatsApp com os seus dados já preenchidos. Se a janela não abriu, escolha abaixo por onde prefere falar com a gente. Os dois caminhos levam a mesma informação para a nossa equipe.",
     "ty_wa_button": "Continuar no WhatsApp",
     "ty_wa_fallback": "A janela do WhatsApp foi bloqueada pelo navegador. Toque no botão para enviar.",
     "ty_home": "Voltar ao site",
@@ -756,13 +756,14 @@
     "f_instagram_ph": "seuperfil",
     "f_site": "Site",
     "f_site_ph": "seusite.com.br",
-    "f_site_note": "Opcional. Se ainda não tem site, deixe em branco — isso já é parte do diagnóstico.",
+    "f_site_note": "Opcional. Se ainda não tem site, deixe em branco. Isso já é parte do diagnóstico.",
     "ty_email_button": "Prefiro por e-mail",
     "ty_email_subject": "Solicitação de consultoria gratuita",
-    "ty_channels_note": "Respondemos em até 24 horas, de segunda a sexta."
+    "ty_channels_note": "Respondemos em até 24 horas, de segunda a sexta.",
+    "f_select": "Selecione"
   },
   "bio": {
-    "meta_title": "Explore Digital — Links",
+    "meta_title": "Explore Digital · Links",
     "meta_description": "Consultoria gratuita, site, planos e atendimento da Explore Digital. Agência de marketing para hotelaria, turismo e real estate.",
     "handle": "@somosexplore",
     "tagline": "Marketing para hotelaria, turismo e real estate.",
@@ -799,12 +800,12 @@
     "rights": "Todos os direitos reservados"
   },
   "solucoes": {
-    "meta_title": "Soluções — Explore Digital",
+    "meta_title": "Soluções · Explore Digital",
     "meta_description": "Entregas pontuais com preço e prazo (foto, vídeo, drone, edição, design, landing page) ou projetos completos de branding, web, social, tráfego pago e sistemas para hotelaria.",
     "nav_label": "Soluções",
     "eyebrow": "O que fazemos",
     "title": "Entregas pontuais ou projeto completo.",
-    "sub": "Você contrata o que o seu momento pede — uma peça específica com preço e prazo, ou uma frente inteira que começa por um diagnóstico.",
+    "sub": "Você contrata o que o seu momento pede: uma peça específica com preço e prazo, ou uma frente inteira que começa por um diagnóstico.",
     "count": "{n} soluções · {p} frentes",
     "rail_label": "Frentes",
     "includes": "O que inclui",
@@ -840,11 +841,11 @@
     "od_onsite": "Exige captação no local",
     "od_season_badge": "Alta temporada · agosto a dezembro",
     "od_season_title": "Sua pousada só fica assim de agosto a dezembro.",
-    "od_season_desc": "Casa cheia, vento bom e luz certa acontecem uma vez por ano. Capte agora o material que você vai publicar o ano inteiro — em fevereiro não dá para fotografar alta temporada.",
+    "od_season_desc": "Casa cheia, vento bom e luz certa acontecem uma vez por ano. Capte agora o material que você vai publicar o ano inteiro. Em fevereiro não dá para fotografar alta temporada.",
     "od_season_note": "Em alta temporada a agenda de captação enche: reserve com 10 dias de antecedência.",
     "proj_eyebrow": "Projetos",
     "proj_title": "Cinco frentes, cinco problemas diferentes.",
-    "proj_sub": "Não vendemos pacote fechado. Você contrata a frente que o seu momento pede — sozinha ou combinada com outras.",
+    "proj_sub": "Não vendemos pacote fechado. Você contrata a frente que o seu momento pede, sozinha ou combinada com outras.",
     "rail_ondemand": "Sob demanda",
     "rail_projects": "Projetos",
     "wa_item": "Olá! Vim pelo site e quero contratar: {item}.",
@@ -852,7 +853,7 @@
       {
         "slug": "fotografia",
         "name": "Fotografia",
-        "tagline": "Quartos, café da manhã e área comum — prontos para o Booking e para o feed.",
+        "tagline": "Quartos, café da manhã e área comum, prontos para o Booking e para o feed.",
         "includes": [
           "Ensaio no local, com direção",
           "Tratamento profissional das imagens",
@@ -874,7 +875,7 @@
       {
         "slug": "drone",
         "name": "Drone",
-        "tagline": "O aéreo que vende localização — a propriedade e o entorno vistos de cima.",
+        "tagline": "O aéreo que vende localização: a propriedade e o entorno vistos de cima.",
         "includes": [
           "Voo sobre a propriedade e o entorno",
           "Imagem da praia, da lagoa ou das dunas",

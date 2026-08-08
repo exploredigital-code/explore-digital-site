@@ -258,7 +258,7 @@ const content: Record<string, LocaleContent> = {
         how: [
           { title: 'Briefing & Strategy', desc: 'We understand your business, audience, and goals to define the ideal site architecture and flow.' },
           { title: 'UX & Prototyping', desc: 'We create wireframes and navigable prototypes before a single line of code.' },
-          { title: 'Design & Development', desc: 'We build the final design and code the site — fast, responsive, and optimized.' },
+          { title: 'Design & Development', desc: 'We build the final design and code the site, fast, responsive, and optimized.' },
           { title: 'Launch & Support', desc: 'We configure domain, hosting, basic SEO, and deliver the site ready to receive clients.' },
         ],
         whoFor: [
@@ -272,7 +272,7 @@ const content: Record<string, LocaleContent> = {
       'social-media': {
         title: 'Social Media',
         tagline: 'Content that turns followers into paying clients.',
-        description: 'We manage your brand\'s social media with strategy, consistency, and creativity — building a qualified audience and delivering measurable results.',
+        description: 'We manage your brand\'s social media with strategy, consistency, and creativity, building a qualified audience and delivering measurable results.',
         what: 'Social media for hospitality, experiences, and real estate isn\'t about posting pretty photos. It\'s about telling stories that create desire, building a community that trusts the brand, and creating content that drives the client toward purchase.',
         how: [
           { title: 'Diagnosis & Planning', desc: 'We audit existing channels, analyze the market, and create a strategic editorial plan.' },
@@ -331,7 +331,7 @@ const content: Record<string, LocaleContent> = {
       naming: {
         name: 'Naming',
         tagline: 'The name that defines everything.',
-        description: 'The name is the first asset of your brand — and the most permanent. We create unique, memorable, and strategic names that communicate your business DNA and work both locally and internationally.',
+        description: 'The name is the first asset of your brand, and the most permanent. We create unique, memorable, and strategic names that communicate your business DNA and work both locally and internationally.',
         forWhom: ['New businesses looking for the right name', 'Brands going through a rebrand', 'Entrepreneurs who want a name with strategy behind it'],
         features: ['In-depth strategic briefing', 'Market research and competitive analysis', 'Generation of 10+ name options', 'Domain and social media availability check', 'Trademark registration guidance', 'Presentation with creative rationale for each option'],
         result: 'Unique, available name with strategy behind it',
@@ -347,7 +347,7 @@ const content: Record<string, LocaleContent> = {
       'branding-completo': {
         name: 'Complete Branding',
         tagline: 'From positioning to visual identity.',
-        description: 'From zero to complete. We build your brand from the inside out: from purpose and positioning to the applied visual identity. For brands that want to be the industry reference — not just another option.',
+        description: 'From zero to complete. We build your brand from the inside out: from purpose and positioning to the applied visual identity. For brands that want to be the industry reference, not just another option.',
         forWhom: ['New businesses wanting to start with everything defined', 'Brands in a strategic reinvention process', 'Premium hotels, experiences, and real estate'],
         features: ['Purpose, mission, vision, and values definition', 'Brand architecture and competitive positioning', 'Tone of voice and brand personality', 'Complete visual identity (logo, colors, typography, elements)', 'Market study and competitive analysis', 'Brand application guide (brand book)', 'Final strategic presentation'],
         result: 'Complete brand from scratch: strategy + visual identity',
@@ -357,7 +357,7 @@ const content: Record<string, LocaleContent> = {
         tagline: 'Focused on converting visitors into clients.',
         description: 'A page built with a single goal: convert. Whether to generate leads, sell an experience, or capture direct bookings. Design and copy work together to guide the visitor to action.',
         forWhom: ['Product or service launches', 'Paid traffic campaigns', 'Businesses needing a fast and efficient page'],
-        features: ['Premium conversion-focused design', 'Strategic action-oriented copy', 'WhatsApp or form integration', 'Full mobile and desktop optimization', 'Built in code — no platform monthly fee', 'Basic SEO configured'],
+        features: ['Premium conversion-focused design', 'Strategic action-oriented copy', 'WhatsApp or form integration', 'Full mobile and desktop optimization', 'Built in code: no platform monthly fee', 'Basic SEO configured'],
         result: 'Page that converts visitors into leads and bookings',
       },
       'website-institucional': {
@@ -537,7 +537,7 @@ const content: Record<string, LocaleContent> = {
       naming: {
         name: 'Naming',
         tagline: 'El nombre que lo define todo.',
-        description: 'El nombre es el primer activo de tu marca — y el más permanente. Creamos nombres únicos, memorables y estratégicos que comunican el ADN de tu negocio y funcionan tanto localmente como internacionalmente.',
+        description: 'El nombre es el primer activo de tu marca, y el más permanente. Creamos nombres únicos, memorables y estratégicos que comunican el ADN de tu negocio y funcionan tanto localmente como internacionalmente.',
         forWhom: ['Nuevos negocios en busca del nombre correcto', 'Marcas en proceso de rebranding', 'Emprendedores que quieren un nombre con estrategia detrás'],
         features: ['Briefing estratégico en profundidad', 'Investigación de mercado y análisis de la competencia', 'Generación de 10+ opciones de nombres', 'Verificación de disponibilidad de dominio y redes sociales', 'Orientación sobre registro de marca', 'Presentación con justificación creativa para cada opción'],
         result: 'Nombre único y disponible, con estrategia detrás',
@@ -553,7 +553,7 @@ const content: Record<string, LocaleContent> = {
       'branding-completo': {
         name: 'Branding Completo',
         tagline: 'Del posicionamiento a la identidad visual.',
-        description: 'De cero a completo. Construimos tu marca de adentro hacia afuera: desde el propósito y el posicionamiento hasta la identidad visual aplicada. Para marcas que quieren ser referencia en el sector — no solo otra opción.',
+        description: 'De cero a completo. Construimos tu marca de adentro hacia afuera: desde el propósito y el posicionamiento hasta la identidad visual aplicada. Para marcas que quieren ser referencia en el sector, no solo otra opción.',
         forWhom: ['Nuevos negocios que quieren empezar con todo definido', 'Marcas en proceso de reinvención estratégica', 'Hoteles, experiencias y real estate de alto estándar'],
         features: ['Definición de propósito, misión, visión y valores', 'Arquitectura de marca y posicionamiento competitivo', 'Tono de voz y personalidad de la marca', 'Identidad visual completa (logo, colores, tipografía, elementos)', 'Estudio de mercado y análisis de competencia', 'Guía de aplicación de la marca (brand book)', 'Presentación estratégica final'],
         result: 'Marca completa desde cero: estrategia + identidad visual',
@@ -563,7 +563,7 @@ const content: Record<string, LocaleContent> = {
         tagline: 'Enfocada en convertir visitantes en clientes.',
         description: 'Una página creada con un único objetivo: convertir. Ya sea para generar leads, vender una experiencia o capturar reservas directas. El diseño y el copy trabajan juntos para guiar al visitante hacia la acción.',
         forWhom: ['Lanzamientos de productos o servicios', 'Campañas de tráfico pago', 'Negocios que necesitan una página rápida y eficiente'],
-        features: ['Diseño premium enfocado en conversión', 'Copy estratégico orientado a la acción', 'Integración con WhatsApp o formulario', 'Optimización completa para móvil y escritorio', 'Desarrollada en código — sin mensualidad de plataforma', 'SEO básico configurado'],
+        features: ['Diseño premium enfocado en conversión', 'Copy estratégico orientado a la acción', 'Integración con WhatsApp o formulario', 'Optimización completa para móvil y escritorio', 'Desarrollada en código: sin mensualidad de plataforma', 'SEO básico configurado'],
         result: 'Página que convierte visitantes en leads y reservas',
       },
       'website-institucional': {
