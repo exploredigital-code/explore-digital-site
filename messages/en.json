@@ -886,7 +886,8 @@
     "doors_home_title": "Two ways to work with Explore.",
     "od_orcamento": "Request a quote",
     "od_count": "{n} deliverables",
-    "proj_ver_disciplina": "See discipline"
+    "proj_ver_disciplina": "See discipline",
+    "trilho_label": "Pieces from {disciplina}"
   },
   "home": {
     "gargalos_eyebrow": "Onde a gente entra",

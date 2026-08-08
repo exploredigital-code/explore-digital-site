@@ -116,7 +116,7 @@ export function DisciplineView({ discipline }: { discipline: ServiceData }) {
           {midia && (
             <section className="py-14 border-b border-tinta-16">
               <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-tinta-50 mb-6">{t('media_label')}</div>
-              <GradeMidia variante={midia.variante}>
+              <GradeMidia variante={midia.variante} rotuloTrilho={tServicos('trilho_label', { disciplina: titulo })}>
                 {midia.slots.map((s, i) => <SlotMidia key={i} proporcao={s.p} rotulo={s.rotulo} />)}
               </GradeMidia>
             </section>

@@ -261,7 +261,7 @@ export function ServicosView() {
             </aside>
 
             {/* conteúdo */}
-            <div className="py-14 lg:py-20">
+            <div className="min-w-0 py-14 lg:py-20">
 
               {/* ═══════ PORTA 1 — SOB DEMANDA ═══════ */}
               <section
@@ -476,7 +476,7 @@ export function ServicosView() {
 
                       {/* Grade de mídia. Placeholder marcado até o acervo
                           chegar: o rótulo diz o que entra em cada slot. */}
-                      <GradeMidia variante={MIDIA[frente.slug].variante}>
+                      <GradeMidia variante={MIDIA[frente.slug].variante} rotuloTrilho={t('trilho_label', { disciplina: frente.title })}>
                         {MIDIA[frente.slug].slots.map((slot, i) => (
                           <SlotMidia key={i} proporcao={slot.p} rotulo={slot.rotulo} />
                         ))}

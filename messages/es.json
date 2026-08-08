@@ -886,7 +886,8 @@
     "doors_home_title": "Dos formas de trabajar con Explore.",
     "od_orcamento": "Pedir presupuesto",
     "od_count": "{n} entregas",
-    "proj_ver_disciplina": "Ver disciplina"
+    "proj_ver_disciplina": "Ver disciplina",
+    "trilho_label": "Piezas de {disciplina}"
   },
   "home": {
     "gargalos_eyebrow": "Onde a gente entra",
