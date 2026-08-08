@@ -6,6 +6,14 @@ import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 import { Button } from '@/components/ui/Button'
 
+/**
+ * Como começa.
+ *
+ * Saiu da home no redesign e voltou para /servicos, que é onde a pergunta
+ * aparece: depois de ver as seis disciplinas, o visitante quer saber qual é o
+ * primeiro passo. A promessa de preço saiu dos dois lugares em que estava,
+ * porque o site não exibe valor em lugar nenhum.
+ */
 export function Process() {
   const t = useTranslations('process')
   const locale = useLocale()
@@ -32,7 +40,7 @@ export function Process() {
               {t('subtitle')}
             </p>
             <Button href={`/${locale}/consultoria`} variant="primary" size="lg"
-              className="!bg-g-dark !text-g-pale hover:!bg-s2">
+              className="!bg-sol !text-verde hover:!bg-sol-forte">
               {t('cta')}
             </Button>
           </AnimateIn>

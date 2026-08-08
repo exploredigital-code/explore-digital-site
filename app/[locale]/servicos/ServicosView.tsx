@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/sections/Navbar'
 import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer } from '@/components/sections/Footer'
+import { Process } from '@/components/sections/Process'
 import { disciplines } from '@/data/services'
 import { SlotMidia, GradeMidia, type Proporcao } from '@/components/ui/SlotMidia'
 import { onDemandItems, formatDays } from '@/data/on-demand'
@@ -573,6 +574,10 @@ export function ServicosView() {
           </div>
         </div>
       </main>
+
+      {/* Como começa. Depois das seis disciplinas, a pergunta que sobra é
+          qual o primeiro passo. */}
+      <Process />
 
       {/* ───────────────────────── CTA FINAL ───────────────────────── */}
       <section className="bg-g-dark relative overflow-hidden py-20 lg:py-28">

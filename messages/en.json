@@ -17,10 +17,10 @@
   "process": {
     "eyebrow": "How it works",
     "title": "From first contact to first booking.",
-    "subtitle": "In three steps you understand exactly what we'll do, how much it costs and when results start showing.",
+    "subtitle": "In three steps you understand what we will do and when it starts showing in the result.",
     "cta": "Free consultation →",
     "s1_title": "Choose your service",
-    "s1_desc": "Browse our plans and choose the one that best fits your brand's current stage.",
+    "s1_desc": "Look at the six disciplines and spot the one that fits your moment.",
     "s2_title": "Free consultation",
     "s2_desc": "Reach out for a no-commitment conversation. We'll understand your business and align the details.",
     "s3_title": "Results in the first 90 days",
@@ -92,7 +92,6 @@
     "cta_primary": "View Portfolio",
     "cta_secondary": "Get in Touch"
   },
-  "marquee": "SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SYSTEMS · BRANDING · EXPLORE DIGITAL · SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SYSTEMS · BRANDING · EXPLORE DIGITAL ·",
   "marquee_items": {
     "hospitality": "Hospitality",
     "experiences": "Experiences"
@@ -732,7 +731,7 @@
   },
   "bio": {
     "meta_title": "Explore Digital · Links",
-    "meta_description": "Free consulting, website, plans and support from Explore Digital. Marketing agency for hospitality and experiences.",
+    "meta_description": "Free consultation, website and support from Explore Digital. Marketing agency for hospitality and experiences on the coast of Ceará and Rio Grande do Norte.",
     "handle": "@somosexplore",
     "tagline": "Marketing for hospitality and experiences.",
     "items": [
@@ -768,25 +767,23 @@
     "rights": "All rights reserved"
   },
   "servicos": {
-    "meta_title": "Solutions · Explore Digital",
-    "meta_description": "One-off deliverables with a scope and a deadline (photo, video, drone, editing, design, landing page) or full projects in branding, web, social, paid traffic and systems for hospitality.",
-    "nav_label": "Solutions",
+    "meta_title": "Services · Explore Digital",
+    "meta_description": "Branding, web design, social media, performance ads, motion and automations for hospitality and experiences on the coast of Ceará and Rio Grande do Norte. One-off deliverables with a scope and a deadline, or a full project.",
     "eyebrow": "What we do",
     "title": "One-off deliverables or a full project.",
     "sub": "You hire what your moment calls for: a specific piece with a scope and a deadline, or a whole track that starts with a diagnosis.",
-    "count": "{n} solutions · {p} fronts",
+    "count": "{n} sub-services · {p} disciplines",
     "rail_label": "Fronts",
     "includes": "What’s included",
     "for_whom": "Best for",
     "result": "Outcome",
     "details": "See details",
-    "solutions_count": "{n} solutions",
     "cta_eyebrow": "Not sure where to start",
     "cta_title": "Not sure which of the two doors is yours?",
     "cta_desc": "In 45 minutes we review your digital presence and show you what to prioritise. No cost, no commitment.",
     "cta_button": "Book free consulting",
     "cta_secondary": "Chat on WhatsApp",
-    "wa_message": "Hi! I came from the solutions page and would like to talk.",
+    "wa_message": "Hi! I came from the services page and would like to talk.",
     "doors_eyebrow": "Two ways to work with us",
     "door1_label": "On demand",
     "door1_title": "You know what you need.",
@@ -811,7 +808,7 @@
     "od_season_desc": "A full house, good wind and the right light happen once a year. Shoot now what you will publish all year round. You cannot photograph high season in February.",
     "od_season_note": "Shooting slots fill up in high season: book at least 10 days ahead.",
     "proj_eyebrow": "Projects",
-    "proj_title": "Five tracks, five different problems.",
+    "proj_title": "Six disciplines, six different problems.",
     "proj_sub": "We do not sell closed packages. You hire the track your moment calls for, on its own or combined with others.",
     "rail_ondemand": "On demand",
     "rail_projects": "Disciplines",
@@ -916,7 +913,7 @@
     ],
     "disc_eyebrow": "O que fazemos",
     "disc_title": "Seis disciplinas, um objetivo.",
-    "disc_sub": "Da marca ao sistema que sustenta a operação. Cada disciplina foi desenvolvida dentro de hotelaria e experiências.",
+    "disc_sub": "Seis disciplinas que se sustentam sozinhas e conversam entre si. Quatro nasceram atendendo hotelaria e experiências. Duas nasceram da nossa própria operação, quando precisamos resolver por dentro o que hoje resolvemos para o cliente.",
     "disc_cta": "Ver todos os serviços",
     "disc_items": [
       {

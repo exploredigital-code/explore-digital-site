@@ -101,10 +101,7 @@ h3 { font-family: var(--font-quanta), system-ui, sans-serif; font-weight: 600; }
 /* ── Fade-in ── */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* ── Marquee ── */
-.marquee-track { display: flex; width: max-content; animation: marquee-scroll 56s linear infinite; }
-.marquee-track:hover { animation-play-state: paused; }
-@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
 
 /* ── Word reveal ── */
 .word-clip { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.15em; margin-bottom: -0.15em; }

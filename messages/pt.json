@@ -17,10 +17,10 @@
   "process": {
     "eyebrow": "Como funciona",
     "title": "Do primeiro contato até a primeira reserva.",
-    "subtitle": "Em três passos você entende exatamente o que vamos fazer, quanto vai custar e quando começa a aparecer no resultado.",
+    "subtitle": "Em três passos você entende o que vamos fazer e quando começa a aparecer no resultado.",
     "cta": "Consultoria gratuita →",
     "s1_title": "Escolha o serviço",
-    "s1_desc": "Navegue pelos nossos planos e escolha o que melhor se encaixa ao momento da sua marca.",
+    "s1_desc": "Veja as seis disciplinas e identifique a que resolve o seu momento.",
     "s2_title": "Consultoria gratuita",
     "s2_desc": "Entre em contato para uma conversa sem compromisso. Vamos entender o seu negócio e alinhar os detalhes.",
     "s3_title": "Resultados nos primeiros 90 dias",
@@ -92,7 +92,6 @@
     "cta_primary": "Ver Portfólio",
     "cta_secondary": "Fale Conosco"
   },
-  "marquee": "SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SISTEMAS · BRANDING · EXPLORE DIGITAL · SOCIAL MEDIA · PERFORMANCE ADS · WEB DESIGN · SISTEMAS · BRANDING · EXPLORE DIGITAL ·",
   "marquee_items": {
     "hospitality": "Hotelaria",
     "experiences": "Experiências"
@@ -730,7 +729,7 @@
   },
   "bio": {
     "meta_title": "Explore Digital · Links",
-    "meta_description": "Consultoria gratuita, site, planos e atendimento da Explore Digital. Agência de marketing para hotelaria e experiências.",
+    "meta_description": "Consultoria gratuita, site e atendimento da Explore Digital. Agência de marketing para hotelaria e experiências no litoral do Ceará e do Rio Grande do Norte.",
     "handle": "@somosexplore",
     "tagline": "Marketing para hotelaria e experiências.",
     "items": [
@@ -766,25 +765,23 @@
     "rights": "Todos os direitos reservados"
   },
   "servicos": {
-    "meta_title": "Soluções · Explore Digital",
-    "meta_description": "Entregas pontuais com escopo e prazo (foto, vídeo, drone, edição, design, landing page) ou projetos completos de branding, web, social, tráfego pago e sistemas para hotelaria.",
-    "nav_label": "Soluções",
+    "meta_title": "Serviços · Explore Digital",
+    "meta_description": "Branding, web design, social media, performance ads, motion e automatizações para hotelaria e experiências no litoral do Ceará e do Rio Grande do Norte. Entregas pontuais com escopo e prazo, ou projeto completo.",
     "eyebrow": "O que fazemos",
     "title": "Entregas pontuais ou projeto completo.",
     "sub": "Você contrata o que o seu momento pede: uma peça específica com escopo e prazo, ou uma frente inteira que começa por um diagnóstico.",
-    "count": "{n} soluções · {p} frentes",
+    "count": "{n} sub-serviços · {p} disciplinas",
     "rail_label": "Frentes",
     "includes": "O que inclui",
     "for_whom": "Indicado para",
     "result": "Resultado",
     "details": "Ver detalhes",
-    "solutions_count": "{n} soluções",
     "cta_eyebrow": "Não sabe por onde começar",
     "cta_title": "Não sabe qual das duas portas é a sua?",
     "cta_desc": "Em 45 minutos analisamos o seu digital e apontamos o que priorizar. Sem custo e sem compromisso.",
     "cta_button": "Agendar consultoria gratuita",
     "cta_secondary": "Falar no WhatsApp",
-    "wa_message": "Olá! Vim pela página de soluções do site e gostaria de conversar.",
+    "wa_message": "Olá! Vim pela página de serviços do site e gostaria de conversar.",
     "doors_eyebrow": "Duas formas de trabalhar com a gente",
     "door1_label": "Sob demanda",
     "door1_title": "Você sabe o que precisa.",
@@ -809,7 +806,7 @@
     "od_season_desc": "Casa cheia, vento bom e luz certa acontecem uma vez por ano. Capte agora o material que você vai publicar o ano inteiro. Em fevereiro não dá para fotografar alta temporada.",
     "od_season_note": "Em alta temporada a agenda de captação enche: reserve com 10 dias de antecedência.",
     "proj_eyebrow": "Projetos",
-    "proj_title": "Cinco frentes, cinco problemas diferentes.",
+    "proj_title": "Seis disciplinas, seis problemas diferentes.",
     "proj_sub": "Não vendemos pacote fechado. Você contrata a frente que o seu momento pede, sozinha ou combinada com outras.",
     "rail_ondemand": "Sob demanda",
     "rail_projects": "Disciplinas",
@@ -914,7 +911,7 @@
     ],
     "disc_eyebrow": "O que fazemos",
     "disc_title": "Seis disciplinas, um objetivo.",
-    "disc_sub": "Da marca ao sistema que sustenta a operação. Cada disciplina foi desenvolvida dentro de hotelaria e experiências.",
+    "disc_sub": "Seis disciplinas que se sustentam sozinhas e conversam entre si. Quatro nasceram atendendo hotelaria e experiências. Duas nasceram da nossa própria operação, quando precisamos resolver por dentro o que hoje resolvemos para o cliente.",
     "disc_cta": "Ver todos os serviços",
     "disc_items": [
       {
