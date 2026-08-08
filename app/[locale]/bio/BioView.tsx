@@ -13,7 +13,7 @@ const LINKEDIN = 'https://linkedin.com/company/explore-digital'
 
 const NOISE_BG = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")`
 
-type BioItem = { key: string; title: string; desc: string }
+type BioItem = { key: string; title: string; desc: string; badge?: string }
 
 /* ────────────────────────────── ícones ────────────────────────────── */
 
@@ -38,6 +38,14 @@ const icons: Record<string, React.ReactNode> = {
       <circle cx="10.5" cy="10.5" r="6.75" />
       <path d="M15.4 15.4L20.5 20.5" />
       <path d="M8.2 12.3v-1.6M10.5 12.3V9.2M12.8 12.3V7.9" />
+    </svg>
+  ),
+  // calendário com check = reserva na agenda
+  reserva: (
+    <svg {...strokeProps}>
+      <rect x="3.2" y="5.2" width="17.6" height="15.6" rx="2.6" />
+      <path d="M3.2 9.8h17.6M8.2 3.4v3.4M15.8 3.4v3.4" />
+      <path d="M9 15.1l2.1 2.1 4-4.2" />
     </svg>
   ),
   // balão de conversa com as ondas do telefone
@@ -80,9 +88,16 @@ export function BioView() {
   const locale = useLocale()
   const items = t.raw('items') as BioItem[]
 
+  // Mês corrente no idioma do visitante — o card de reserva se atualiza sozinho
+  // todo mês, sem precisar mexer nos arquivos de tradução.
+  const month = new Intl.DateTimeFormat(locale, { month: 'long' }).format(new Date())
+  // `items` vem de t.raw(), que não passa por ICU — a troca aqui é na mão.
+  const withMonth = (s: string) => s.replace('{month}', month)
+
   const hrefFor = (key: string) => {
     switch (key) {
       case 'consultoria': return `/${locale}/consultoria`
+      case 'reserva': return WA_BASE + encodeURIComponent(t('wa_message_reserva', { month }))
       case 'whatsapp': return WA_BASE + encodeURIComponent(t('wa_message'))
       case 'site': return `/${locale}`
       case 'vagas': return `/${locale}/vagas`
@@ -142,6 +157,7 @@ export function BioView() {
         <nav className="flex flex-col gap-2">
           {items.map((item, i) => {
             const destaque = item.key === 'consultoria'
+            const acento = item.key === 'reserva'
             const href = hrefFor(item.key)
             const externo = href.startsWith('http')
 
@@ -150,24 +166,39 @@ export function BioView() {
                 <span
                   className={cn(
                     'w-10 h-10 shrink-0 rounded-xl flex items-center justify-center transition-colors duration-200',
-                    destaque
-                      ? 'bg-g-dark/10 text-g-dark'
-                      : 'bg-g-mid/20 text-g-light group-hover:bg-g-mid/30'
+                    destaque && 'bg-g-dark/10 text-g-dark',
+                    acento && 'bg-g-light/15 text-g-light group-hover:bg-g-light/25',
+                    !destaque && !acento && 'bg-g-mid/20 text-g-light group-hover:bg-g-mid/30'
                   )}
                 >
                   {icons[item.key]}
                 </span>
 
                 <span className="flex-1 min-w-0 text-left">
-                  <span className={cn('block text-[15.5px] font-bold leading-tight', destaque ? 'text-g-dark' : 'text-white')}>
-                    {item.title}
+                  <span className={cn('flex items-center gap-2 text-[15.5px] font-bold leading-tight', destaque ? 'text-g-dark' : 'text-white')}>
+                    <span className="truncate">{withMonth(item.title)}</span>
+                    {item.badge && (
+                      <span className="shrink-0 rounded-full bg-g-light/20 px-2 py-[3px] text-[9.5px] font-semibold uppercase tracking-[0.06em] text-g-light">
+                        {item.badge}
+                      </span>
+                    )}
                   </span>
-                  <span className={cn('block text-[12.5px] leading-snug mt-0.5', destaque ? 'text-g-dark/60' : 'text-white/45')}>
+                  <span
+                    className={cn(
+                      'block text-[12.5px] leading-snug mt-0.5',
+                      destaque ? 'text-g-dark/60' : acento ? 'text-g-light/65' : 'text-white/45'
+                    )}
+                  >
                     {item.desc}
                   </span>
                 </span>
 
-                <span className={cn('shrink-0 transition-transform duration-200 group-hover:translate-x-1', destaque ? 'text-g-dark/50' : 'text-white/30')}>
+                <span
+                  className={cn(
+                    'shrink-0 transition-transform duration-200 group-hover:translate-x-1',
+                    destaque ? 'text-g-dark/50' : acento ? 'text-g-light/60' : 'text-white/30'
+                  )}
+                >
                   <ArrowIcon />
                 </span>
               </>
@@ -176,9 +207,9 @@ export function BioView() {
             const classe = cn(
               'group flex items-center gap-3.5 w-full rounded-2xl px-4 py-3.5 min-h-[68px]',
               'border transition-all duration-200 active:scale-[0.985]',
-              destaque
-                ? 'bg-g-light border-g-light hover:bg-g-pale shadow-[0_6px_24px_rgba(193,213,189,0.16)]'
-                : 'bg-white/[0.05] border-white/[0.1] hover:bg-white/[0.09] hover:border-white/25'
+              destaque && 'bg-g-light border-g-light hover:bg-g-pale shadow-[0_6px_24px_rgba(193,213,189,0.16)]',
+              acento && 'bg-g-mid/[0.18] border-g-light/40 hover:bg-g-mid/25 hover:border-g-light/60',
+              !destaque && !acento && 'bg-white/[0.05] border-white/[0.1] hover:bg-white/[0.09] hover:border-white/25'
             )
 
             return (

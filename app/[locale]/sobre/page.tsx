@@ -12,12 +12,25 @@ import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/Animate
 
 const WHATSAPP = 'https://wa.me/+5585991043067'
 
-const FOUNDER_PHOTOS = ['/images/team/João.png', '/images/team/Pablo.png']
-const CREATIVE_PHOTOS = ['/images/team/Esperanza.png', '/images/team/David.png', '/images/team/Styven.png']
-const PERFORMANCE_PHOTOS = ['/images/team/Winicius.png']
-const FOUNDER_NAMES = ['João Teixeira', 'Pablo Frias']
-const CREATIVE_NAMES = ['Esperanza Governa', 'David Marroni', 'Styven Elord']
-const PERFORMANCE_NAMES = ['Winicius Moreira']
+// Um bloco só, sem separar fundadores do resto — a hierarquia visual saiu de
+// propósito. Os parceiros de performance ficam à parte porque tocam as próprias
+// agências, não porque estão acima ou abaixo de alguém.
+const TEAM = [
+  { name: 'João Teixeira',     photo: '/images/team/João.png',       roleKey: 'f1_role',  bioKey: 'f1_bio' },
+  { name: 'Pablo Frias',       photo: '/images/team/Pablo.png',      roleKey: 'f2_role',  bioKey: 'f2_bio' },
+  { name: 'Esperanza Governa', photo: '/images/team/Esperanza.png',  roleKey: 'ct1_role', bioKey: 'ct1_bio' },
+  { name: 'David Marroni',     photo: '/images/team/David.png',      roleKey: 'ct2_role', bioKey: 'ct2_bio' },
+] as const
+
+// Parceiros tocam as próprias agências e entram nos projetos por frente.
+const PERFORMANCE_PARTNERS = [
+  { name: 'Winicius Moreira', photo: '/images/team/Winicius.png',     roleKey: 'pt1_role', bioKey: 'pt1_bio' },
+  { name: 'Maya Sampaio',     photo: '/images/team/maya.jpg',         roleKey: 'pt2_role', bioKey: 'pt2_bio' },
+] as const
+
+const DESIGN_PARTNERS = [
+  { name: 'Styven Elord',     photo: '/images/team/Styven.png',       roleKey: 'ct3_role', bioKey: 'ct3_bio' },
+] as const
 
 function MemberCard({ member, dark = false }: {
   member: { name: string; role: string; bio: string; photo: string }
@@ -41,15 +54,23 @@ function MemberCard({ member, dark = false }: {
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
         />
       </div>
-      {/* Info — altura fixa para padronizar todos os cards */}
+      {/* Alturas fixas por linha: o cargo pode ocupar duas linhas e a bio até
+          três, então cada faixa reserva o seu espaço. Sem isso, os cards ficam
+          com alturas diferentes entre as seções. */}
       <div className="p-5 flex flex-col gap-1 flex-1">
-        <div className={cn('text-[9px] font-bold tracking-[0.18em] uppercase', dark ? 'text-g-mid' : 'text-g-mid/80')}>
+        <div className={cn(
+          'text-[9px] font-bold tracking-[0.18em] uppercase leading-[1.5] min-h-[2.7em]',
+          dark ? 'text-g-mid' : 'text-g-mid/80'
+        )}>
           {member.role}
         </div>
-        <div className={cn('font-bold text-[16px]', dark ? 'text-white' : 'text-g-dark')}>
+        <div className={cn('font-bold text-[16px] leading-tight', dark ? 'text-white' : 'text-g-dark')}>
           {member.name}
         </div>
-        <p className={cn('text-[13px] leading-[1.7] mt-1', dark ? 'text-white/50' : 'text-g-dark/55')}>
+        <p className={cn(
+          'text-[13px] leading-[1.7] mt-1 min-h-[5.1em]',
+          dark ? 'text-white/50' : 'text-g-dark/55'
+        )}>
           {member.bio}
         </p>
       </div>
@@ -67,18 +88,12 @@ export default function SobrePage() {
     { title: t('v3_title'), desc: t('v3_desc') },
   ]
 
-  const founders = [
-    { name: FOUNDER_NAMES[0], role: t('f1_role'), bio: t('f1_bio'), photo: FOUNDER_PHOTOS[0] },
-    { name: FOUNDER_NAMES[1], role: t('f2_role'), bio: t('f2_bio'), photo: FOUNDER_PHOTOS[1] },
-  ]
-  const creativeTeam = [
-    { name: CREATIVE_NAMES[0], role: t('ct1_role'), bio: t('ct1_bio'), photo: CREATIVE_PHOTOS[0] },
-    { name: CREATIVE_NAMES[1], role: t('ct2_role'), bio: t('ct2_bio'), photo: CREATIVE_PHOTOS[1] },
-    { name: CREATIVE_NAMES[2], role: t('ct3_role'), bio: t('ct3_bio'), photo: CREATIVE_PHOTOS[2] },
-  ]
-  const performanceTeam = [
-    { name: PERFORMANCE_NAMES[0], role: t('pt1_role'), bio: t('pt1_bio'), photo: PERFORMANCE_PHOTOS[0] },
-  ]
+  const build = (list: readonly { name: string; photo: string; roleKey: string; bioKey: string }[]) =>
+    list.map(p => ({ name: p.name, photo: p.photo, role: t(p.roleKey), bio: t(p.bioKey) }))
+
+  const team = build(TEAM)
+  const performancePartners = build(PERFORMANCE_PARTNERS)
+  const designPartners = build(DESIGN_PARTNERS)
 
   return (
     <>
@@ -154,48 +169,50 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* ══ FUNDADORES — white ══ */}
+      {/* ══ TIME — bloco único, todo mundo do mesmo tamanho ══ */}
       <section className="bg-white py-24 lg:py-28">
         <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
           <AnimateIn className="mb-12">
-            <SectionEyebrow light>{t('founders_eyebrow')}</SectionEyebrow>
-            <h2 className="text-[clamp(26px,3.5vw,40px)] text-g-dark tracking-tight mt-2">{t('founders_title')}</h2>
-            <p className="text-g-dark/55 text-[15px] mt-3 max-w-[480px] leading-[1.7]">
-              {t('founders_desc')}
+            <SectionEyebrow light>{t('team_eyebrow')}</SectionEyebrow>
+            <h2 className="text-[clamp(26px,3.5vw,40px)] text-g-dark tracking-tight mt-2">{t('team_title')}</h2>
+            <p className="text-g-dark/55 text-[15px] mt-3 max-w-[520px] leading-[1.7]">
+              {t('team_desc')}
             </p>
           </AnimateIn>
-          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl items-stretch">
-            {founders.map((member, i) => (
+          {/* Mesma contagem de colunas dos blocos de parceiros, para que todos
+              os cards da página tenham exatamente a mesma largura. */}
+          <AnimateStagger className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 items-stretch">
+            {team.map((member, i) => (
               <MemberCard key={i} member={member} dark={false} />
             ))}
           </AnimateStagger>
         </div>
       </section>
 
-      {/* ══ TIME CRIATIVO — g-dark ══ */}
+      {/* ══ PARCEIROS DE PERFORMANCE — g-dark ══ */}
       <section className="bg-g-dark py-24 lg:py-32">
         <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
 
-          {/* Time Criativo */}
+          {/* Parceiros de Performance */}
           <AnimateIn className="mb-12">
-            <SectionEyebrow>{t('creative_eyebrow')}</SectionEyebrow>
-            <h2 className="text-[clamp(26px,3.5vw,42px)] text-white tracking-tight mt-2 mb-3">{t('creative_title')}</h2>
-            <p className="text-white/55 text-[15px] max-w-[460px]">{t('creative_desc')}</p>
+            <SectionEyebrow>{t('partners_eyebrow')}</SectionEyebrow>
+            <h2 className="text-[clamp(26px,3.5vw,42px)] text-white tracking-tight mt-2 mb-3">{t('partners_title')}</h2>
+            <p className="text-white/55 text-[15px] max-w-[560px] leading-[1.7]">{t('partners_desc')}</p>
           </AnimateIn>
-          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16 items-stretch">
-            {creativeTeam.map((member, i) => (
+          <AnimateStagger className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-20 items-stretch">
+            {performancePartners.map((member, i) => (
               <MemberCard key={i} member={member} dark />
             ))}
           </AnimateStagger>
 
-          {/* Time de Performance */}
+          {/* Parceiros de Design e Branding */}
           <AnimateIn className="mb-12">
-            <SectionEyebrow>{t('performance_eyebrow')}</SectionEyebrow>
-            <h2 className="text-[clamp(26px,3.5vw,42px)] text-white tracking-tight mt-2 mb-3">{t('performance_title')}</h2>
-            <p className="text-white/55 text-[15px] max-w-[460px]">{t('performance_desc')}</p>
+            <SectionEyebrow>{t('design_eyebrow')}</SectionEyebrow>
+            <h2 className="text-[clamp(26px,3.5vw,42px)] text-white tracking-tight mt-2 mb-3">{t('design_title')}</h2>
+            <p className="text-white/55 text-[15px] max-w-[560px] leading-[1.7]">{t('design_desc')}</p>
           </AnimateIn>
-          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16 items-stretch">
-            {performanceTeam.map((member, i) => (
+          <AnimateStagger className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-16 items-stretch">
+            {designPartners.map((member, i) => (
               <MemberCard key={i} member={member} dark />
             ))}
           </AnimateStagger>

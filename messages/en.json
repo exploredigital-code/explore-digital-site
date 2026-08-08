@@ -3,8 +3,8 @@
     "home": "Home",
     "portfolio": "Portfolio",
     "services": "Services",
-    "marketplace": "Plans",
-    "about": "About",
+    "marketplace": "Solutions",
+    "about": "About us",
     "contact": "Contact",
     "cta": "Get in Touch",
     "work": "Work With Us",
@@ -40,8 +40,8 @@
     "v3_desc": "You know what's being done, why, and what results it's generating — always, no asterisks.",
     "tab_story": "Our Story",
     "tab_team": "The Team",
-    "team_eyebrow": "The people behind Explore",
-    "team_title": "A small team. A big impact.",
+    "team_eyebrow": "The team",
+    "team_title": "The people who do the work.",
     "team_sub": "Each client has a dedicated team that understands the business and thinks strategically about growth.",
     "team_cta": "Work with us",
     "our_history": "Our History",
@@ -50,31 +50,31 @@
     "stat_countries": "Countries",
     "stat_focus": "Focus",
     "values_title": "What drives us every day.",
-    "founders_eyebrow": "The Founders",
-    "founders_title": "The people behind Explore.",
-    "founders_desc": "Explore Digital was founded by people who came from within the industry and truly understand what hospitality, experience and real estate brands need.",
-    "creative_eyebrow": "Creative Team",
-    "creative_title": "The creators behind the brands.",
-    "creative_desc": "Design, content and visual storytelling that turn brands into references.",
-    "performance_eyebrow": "Performance Team",
-    "performance_title": "Measurable results. Always.",
-    "performance_desc": "Paid traffic specialists who understand the language of your sector.",
     "join_eyebrow": "Join the team",
     "join_title": "We're looking for passionate professionals.",
     "join_desc": "We have open positions in design, social media, paid traffic, sales and more.",
     "join_button": "See open positions →",
     "f1_role": "Co-founder · Creative Director",
-    "f1_bio": "Creative leadership of Explore Digital's content team. Specialist in strategy, digital positioning and building digital brands.",
+    "f1_bio": "Leads creation and positioning for the brands we work with.",
     "f2_role": "Co-founder · Sales Director",
-    "f2_bio": "Responsible for commercial growth and client relationships at Explore Digital. Specialist in business strategy, market expansion and long-term partnership building.",
+    "f2_bio": "Handles commercial growth and client relationships.",
     "ct1_role": "Content & Storytelling",
     "ct1_bio": "Strategic content creation, storytelling and visual production for the brands we serve.",
     "ct2_role": "Capture & Editing",
     "ct2_bio": "Video capture, editing and visual storytelling. Specialist in content for social media.",
-    "ct3_role": "Design & Branding",
-    "ct3_bio": "Branding and graphic design specialist with over a decade of experience, helping businesses transform real value into brands perceived with clarity, authority, and desire.",
-    "pt1_role": "Performance & Traffic",
-    "pt1_bio": "Paid traffic management on Google and Meta. Focused on ROI and qualified lead generation."
+    "ct3_role": "Co-founder · Refinanza Studio",
+    "ct3_bio": "Design partner. Over a decade in branding and visual identity.",
+    "pt1_role": "Co-founder · Wees",
+    "pt1_bio": "Paid traffic management on Google and Meta, focused on ROI and qualified lead generation.",
+    "team_desc": "Strategy, creation, production and sales at the same table. Everyone talks to clients, everyone ships.",
+    "pt2_role": "Founder · RAMP.UP",
+    "pt2_bio": "Traffic manager specialised in e-commerce, Meta Ads and Google Ads.",
+    "partners_eyebrow": "Performance partners",
+    "partners_title": "Paid traffic run by people who live on it.",
+    "partners_desc": "For paid media we work with specialists who run their own operations. You get the depth of people doing this all day, without losing the Explore team as your single point of contact.",
+    "design_eyebrow": "Design and branding partners",
+    "design_title": "Brand work by people who have done it for a decade.",
+    "design_desc": "For branding and visual identity we work with a partner studio. Same model as performance: a specialist running their own operation, with Explore as your single point of contact."
   },
   "marketplace_page": {
     "eyebrow": "Services Catalog",
@@ -896,6 +896,12 @@
         "desc": "An analysis of your digital business, on us."
       },
       {
+        "key": "reserva",
+        "title": "{month} schedule",
+        "desc": "Secure your spot on this month's schedule",
+        "badge": "Last spots"
+      },
+      {
         "key": "whatsapp",
         "title": "Talk to us on WhatsApp",
         "desc": "Support in Spanish, English and Portuguese"
@@ -912,6 +918,53 @@
       }
     ],
     "wa_message": "Hi! I came from the Instagram bio link.",
+    "wa_message_reserva": "Hi! I'd like to book an Explore service for {month}. Could you share your availability?",
     "rights": "All rights reserved"
+  },
+  "solucoes": {
+    "meta_title": "Solutions — Explore Digital",
+    "meta_description": "Branding, web, social media, paid traffic and systems for hospitality, tourism and real estate. Thirteen solutions, each with a defined scope and outcome.",
+    "nav_label": "Solutions",
+    "eyebrow": "What we do",
+    "title": "Each front solves a specific problem.",
+    "sub": "We don’t sell closed packages. You hire the solution your moment calls for — on its own or combined with others.",
+    "count": "{n} solutions · {p} fronts",
+    "rail_label": "Fronts",
+    "includes": "What’s included",
+    "for_whom": "Best for",
+    "result": "Outcome",
+    "details": "See details",
+    "solutions_count": "{n} solutions",
+    "extras_title": "One-offs",
+    "extras_tagline": "Single deliveries, no monthly fee.",
+    "extras_desc": "For when you need one specific piece rather than a whole front. You hire it, you get it, done.",
+    "extras_items": [
+      {
+        "name": "Video editing",
+        "desc": "Cutting, pacing, captions and soundtrack for reels and Shorts."
+      },
+      {
+        "name": "Design",
+        "desc": "A single piece for feed, stories, menus or print."
+      },
+      {
+        "name": "Video shooting",
+        "desc": "A filming day at your property, directed on set."
+      },
+      {
+        "name": "Photography",
+        "desc": "Rooms, food and experience shots for your image bank."
+      },
+      {
+        "name": "Drone",
+        "desc": "Aerial footage of the property and its surroundings — what sells location."
+      }
+    ],
+    "cta_eyebrow": "Not sure where to start",
+    "cta_title": "We’ll tell you which front solves your problem.",
+    "cta_desc": "In 45 minutes we analyse your digital presence and point out what to prioritise. No cost, no strings.",
+    "cta_button": "Book free consulting",
+    "cta_secondary": "Chat on WhatsApp",
+    "wa_message": "Hi! I came from the solutions page and would like to talk."
   }
 }

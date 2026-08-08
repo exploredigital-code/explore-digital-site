@@ -87,3 +87,7 @@ h3 { font-family: 'Quanta', system-ui, sans-serif; font-weight: 600; }
 
 /* ── Page hero (inner pages) ── */
 .page-hero { background: linear-gradient(160deg, #1B3025 60%, #243D2D 100%); }
+
+/* ── Scroll horizontal sem barra visível (trilho de Soluções no mobile) ── */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

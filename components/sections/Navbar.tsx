@@ -44,13 +44,12 @@ export function Navbar() {
   const isHome = pathname === `/${localePrefix}` || pathname === `/${localePrefix}/`
   const homeHref = (anchor: string) => isHome ? anchor : `/${localePrefix}${anchor}`
 
+  // O logo já leva para a home e "Trabalhe conosco" vive no rodapé.
   const navLinks = [
-    { href: `/${localePrefix}`,             label: t('home') },
     { href: homeHref('#portfolio'),         label: t('portfolio') },
-    { href: `/${localePrefix}/marketplace`, label: t('marketplace') },
+    { href: `/${localePrefix}/solucoes`,    label: t('marketplace') },
     { href: `/${localePrefix}/sobre`,       label: t('about') },
     { href: `/${localePrefix}/blog`,        label: t('blog') },
-    { href: `/${localePrefix}/vagas`,       label: t('work') },
     { href: homeHref('#contact'),           label: t('contact') },
   ]
 

@@ -3,8 +3,8 @@
     "home": "Início",
     "portfolio": "Portfólio",
     "services": "Serviços",
-    "marketplace": "Planos",
-    "about": "Sobre",
+    "marketplace": "Soluções",
+    "about": "Sobre nós",
     "contact": "Contato",
     "cta": "Fale Conosco",
     "work": "Trabalhe Conosco",
@@ -40,8 +40,8 @@
     "v3_desc": "Você sabe o que está sendo feito, por quê e quais resultados está gerando. Sempre, sem asteriscos.",
     "tab_story": "Nossa História",
     "tab_team": "A Equipe",
-    "team_eyebrow": "As pessoas por trás da Explore",
-    "team_title": "Um time pequeno. Um impacto grande.",
+    "team_eyebrow": "O time",
+    "team_title": "Quem faz o trabalho acontecer.",
     "team_sub": "Cada cliente tem um time dedicado que entende o negócio e pensa estrategicamente no crescimento.",
     "team_cta": "Trabalhe com a gente",
     "our_history": "Nossa História",
@@ -50,31 +50,31 @@
     "stat_countries": "Países",
     "stat_focus": "Foco",
     "values_title": "O que nos move todos os dias.",
-    "founders_eyebrow": "Os Fundadores",
-    "founders_title": "Quem está por trás da Explore.",
-    "founders_desc": "A Explore Digital foi fundada por pessoas que vieram do setor e entendem, de dentro, o que marcas de hotelaria, experiências e real estate precisam.",
-    "creative_eyebrow": "Time Criativo",
-    "creative_title": "Os criadores por trás das marcas.",
-    "creative_desc": "Design, conteúdo e storytelling visual que transformam marcas em referências.",
-    "performance_eyebrow": "Time de Performance",
-    "performance_title": "Resultados mensuráveis. Sempre.",
-    "performance_desc": "Especialistas em tráfego pago que entendem a linguagem do seu setor.",
     "join_eyebrow": "Faça parte do time",
     "join_title": "Buscamos profissionais apaixonados pelo que fazem.",
     "join_desc": "Temos vagas abertas para design, social media, tráfego pago, vendas e mais.",
     "join_button": "Ver vagas abertas →",
     "f1_role": "Co-fundador · Diretor Criativo",
-    "f1_bio": "Liderança criativa da equipe de conteúdo da Explore Digital. Especialista em estratégia, posicionamento digital e construção de marcas digitais.",
+    "f1_bio": "Lidera a criação e o posicionamento das marcas que atendemos.",
     "f2_role": "Co-fundador · Diretor de Vendas",
-    "f2_bio": "Responsável pelo crescimento comercial e pelo relacionamento com os clientes da Explore Digital. Especialista em estratégia de negócios, expansão de mercado e construção de parcerias de longo prazo.",
+    "f2_bio": "Cuida do crescimento comercial e do relacionamento com os clientes.",
     "ct1_role": "Conteúdo & Storytelling",
     "ct1_bio": "Criação de conteúdo estratégico, storytelling e produção visual para as marcas que atendemos.",
     "ct2_role": "Captação & Edição",
     "ct2_bio": "Captação, edição e storytelling visual. Especialista em conteúdo para redes sociais.",
-    "ct3_role": "Design & Branding",
-    "ct3_bio": "Especialista em branding e design gráfico, com mais de uma década de atuação, ajuda empresas a transformarem valor real em marcas percebidas com clareza, autoridade e desejo.",
-    "pt1_role": "Performance & Tráfego",
-    "pt1_bio": "Gestão de tráfego pago no Google e Meta. Focado em ROI e geração de leads qualificados."
+    "ct3_role": "Co-fundador · Refinanza Studio",
+    "ct3_bio": "Parceiro especialista em design. Mais de uma década em branding e identidade visual.",
+    "pt1_role": "Co-fundador · Wees",
+    "pt1_bio": "Gestão de tráfego pago no Google e no Meta, com foco em ROI e geração de leads qualificados.",
+    "team_desc": "Estratégia, criação, captação e vendas na mesma mesa. Todo mundo fala com cliente, todo mundo põe a mão na entrega.",
+    "pt2_role": "Fundadora · RAMP.UP",
+    "pt2_bio": "Gestora de tráfego especialista em e-commerce, Meta Ads e Google Ads.",
+    "partners_eyebrow": "Parceiros de Performance",
+    "partners_title": "Tráfego pago com quem vive disso.",
+    "partners_desc": "Para mídia paga trabalhamos com especialistas que tocam as próprias operações. Você ganha profundidade de quem faz isso o dia inteiro, sem perder o time da Explore como ponto único de contato.",
+    "design_eyebrow": "Parceiros de Design e Branding",
+    "design_title": "Marca construída por quem faz isso há uma década.",
+    "design_desc": "Para branding e identidade visual trabalhamos com estúdio parceiro. Mesmo modelo da performance: especialista que toca a própria operação, com a Explore como ponto único de contato."
   },
   "marketplace_page": {
     "eyebrow": "Catálogo de Serviços",
@@ -896,6 +896,12 @@
         "desc": "Análise do seu negócio digital, por nossa conta."
       },
       {
+        "key": "reserva",
+        "title": "Agenda de {month}",
+        "desc": "Garanta seu lugar na agenda deste mês",
+        "badge": "Últimas vagas"
+      },
+      {
         "key": "whatsapp",
         "title": "Fale conosco no WhatsApp",
         "desc": "Atendimento em Espanhol, Inglês e Português"
@@ -912,6 +918,53 @@
       }
     ],
     "wa_message": "Olá! Vim pelo link da bio do Instagram.",
+    "wa_message_reserva": "Olá! Quero reservar um serviço da Explore para {month}. Podem me passar a disponibilidade da agenda?",
     "rights": "Todos os direitos reservados"
+  },
+  "solucoes": {
+    "meta_title": "Soluções — Explore Digital",
+    "meta_description": "Branding, web, social media, tráfego pago e sistemas para hotelaria, turismo e real estate. Treze soluções, cada uma com escopo e resultado definidos.",
+    "nav_label": "Soluções",
+    "eyebrow": "O que fazemos",
+    "title": "Cada frente resolve um problema específico.",
+    "sub": "Não vendemos pacote fechado. Você contrata a solução que o seu momento pede — sozinha ou combinada com outras.",
+    "count": "{n} soluções · {p} frentes",
+    "rail_label": "Frentes",
+    "includes": "O que inclui",
+    "for_whom": "Indicado para",
+    "result": "Resultado",
+    "details": "Ver detalhes",
+    "solutions_count": "{n} soluções",
+    "extras_title": "Avulsos",
+    "extras_tagline": "Entregas pontuais, sem mensalidade.",
+    "extras_desc": "Quando você precisa de uma peça específica e não de uma frente inteira. Contrata, recebe e pronto.",
+    "extras_items": [
+      {
+        "name": "Edição de Vídeo",
+        "desc": "Corte, ritmo, legenda e trilha para reels e YouTube Shorts."
+      },
+      {
+        "name": "Design",
+        "desc": "Peça avulsa para feed, story, cardápio ou material impresso."
+      },
+      {
+        "name": "Captação de Vídeo",
+        "desc": "Diária de filmagem na sua operação, com direção no set."
+      },
+      {
+        "name": "Fotografia",
+        "desc": "Ensaio de ambientes, gastronomia e experiência para o seu banco de imagens."
+      },
+      {
+        "name": "Drone",
+        "desc": "Imagem aérea da propriedade e do entorno — o que vende localização."
+      }
+    ],
+    "cta_eyebrow": "Não sabe por onde começar",
+    "cta_title": "A gente diz qual frente resolve o seu problema.",
+    "cta_desc": "Em 45 minutos analisamos o seu digital e apontamos o que priorizar. Sem custo e sem compromisso.",
+    "cta_button": "Agendar consultoria gratuita",
+    "cta_secondary": "Falar no WhatsApp",
+    "wa_message": "Olá! Vim pela página de soluções do site e gostaria de conversar."
   }
 }

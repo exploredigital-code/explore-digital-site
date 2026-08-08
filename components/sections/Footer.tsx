@@ -1,6 +1,7 @@
 ﻿'use client'
 
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
+import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 
 export function Footer() {
@@ -8,16 +9,24 @@ export function Footer() {
   const nav = useTranslations('nav')
   const currentYear = new Date().getFullYear()
 
-  const localePrefix = typeof window !== 'undefined'
-    ? (window.location.pathname.split('/')[1] || 'pt')
-    : 'pt'
+  // useLocale devolve o mesmo valor no servidor e no cliente. Ler o locale de
+  // window.location quebrava a hidratação e deixava o link do blog apontando
+  // para /pt para quem navegava em inglês ou espanhol.
+  const localePrefix = useLocale()
+  const pathname = usePathname()
+
+  // Âncoras só existem na home: fora dela precisam do caminho completo,
+  // senão o clique não leva a lugar nenhum.
+  const isHome = pathname === `/${localePrefix}` || pathname === `/${localePrefix}/`
+  const homeHref = (anchor: string) => (isHome ? anchor : `/${localePrefix}${anchor}`)
 
   const links = [
-    { href: '#portfolio',          label: nav('portfolio') },
-    { href: '#services',           label: nav('services') },
-    { href: '#about',              label: nav('about') },
+    { href: homeHref('#portfolio'),       label: nav('portfolio') },
+    { href: `/${localePrefix}/solucoes`,  label: nav('marketplace') },
+    { href: `/${localePrefix}/sobre`,     label: nav('about') },
     { href: `/${localePrefix}/blog`,      label: 'Blog' },
-    { href: '#contact',            label: nav('contact') },
+    { href: `/${localePrefix}/vagas`,     label: nav('work') },
+    { href: homeHref('#contact'),         label: nav('contact') },
   ]
 
   return (
