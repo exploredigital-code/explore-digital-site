@@ -10,6 +10,7 @@ import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer }  from '@/components/sections/Footer'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
+import { SlotMidia, GradeMidia } from '@/components/ui/SlotMidia'
 
 const WHATSAPP = 'https://wa.me/+5585991043067'
 
@@ -137,18 +138,63 @@ export function SobreView() {
                     "+30 marcas · 3 países · 5+ anos · 100%" saiu porque não é
                     auditável se um cliente pedir a fonte. */}
                 <div className="relative z-10">
-                  <div className="text-[clamp(56px,8vw,80px)] font-semibold text-g-light leading-none mb-2">+100%</div>
-                  <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-g-light/35 leading-[1.5]">{t('years_expertise')}</div>
+                  <div className="text-[clamp(56px,8vw,80px)] font-semibold text-verde-luz leading-none mb-2">+100%</div>
+                  <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-verde-luz/35 leading-[1.5]">{t('years_expertise')}</div>
                   <div className="mt-8 grid grid-cols-3 gap-4">
                     {[['40 mil', t('stat_brands')], ['3', t('stat_countries')], ['CE · RN', t('stat_focus')]].map(([v, l]) => (
                       <div key={l}>
-                        <div className="text-[22px] font-semibold text-white">{v}</div>
-                        <div className="text-[10px] text-white/45 tracking-widest uppercase mt-0.5">{l}</div>
+                        <div className="text-[22px] font-semibold text-menta">{v}</div>
+                        <div className="text-[10px] text-menta-fraca tracking-widest uppercase mt-0.5">{l}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Ano de fundação e clientes ativos ficam marcados como a
+                      confirmar. Dava para estimar a partir do "5+ anos" que
+                      estava no site antes, mas aquele número era justamente um
+                      dos não auditáveis que tiramos. */}
+                  <div className="mt-7 pt-6 border-t border-verde-linha grid grid-cols-2 gap-4">
+                    {[t('dado_fundacao'), t('dado_clientes')].map(rotulo => (
+                      <div key={rotulo}>
+                        <div className="inline-flex items-center gap-1.5 text-[12px] font-medium text-verde-luz/45 border border-dashed border-verde-borda/50 rounded-full px-2.5 py-1">
+                          {t('dados_pendente')}
+                        </div>
+                        <div className="text-[10px] text-menta-fraca tracking-widest uppercase mt-1.5">{rotulo}</div>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
+            </AnimateIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ DE ONDE VIEMOS ══
+          O mesmo argumento da home, e não por repetição: /sobre é onde quem
+          está avaliando vem confirmar o que leu lá. Ter gerido hostel, pousada
+          e escola de kite antes de virar agência é a única coisa que um
+          concorrente de marketing hoteleiro não consegue copiar. */}
+      <section className="bg-verde py-20 lg:py-28">
+        <div className="max-w-conteudo mx-auto px-6 sm:px-10 lg:px-16">
+          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-16 items-start">
+            <AnimateIn>
+              <SectionEyebrow>{t('estudio_eyebrow')}</SectionEyebrow>
+              <h2 className="text-[clamp(28px,4.2vw,50px)] leading-[1.05] tracking-[-0.03em] text-menta mt-2 mb-7">
+                {t('estudio_title')}{' '}
+                <span className="text-verde-luz">{t('estudio_destaque')}</span>{' '}
+                {t('estudio_fim')}
+              </h2>
+              <p className="text-menta-fraca text-[16px] leading-[1.8] max-w-[560px] mb-5">{t('estudio_p1')}</p>
+              <p className="text-menta-fraca text-[16px] leading-[1.8] max-w-[560px]">{t('estudio_p2')}</p>
+            </AnimateIn>
+
+            <AnimateIn delay={0.1}>
+              <GradeMidia variante="verticais" rotuloTrilho={t('estudio_eyebrow')}>
+                <SlotMidia proporcao="v45" rotulo="Operação antiga: hostel ou pousada" />
+                <SlotMidia proporcao="v45" rotulo="Escola de kite em aula" />
+                <SlotMidia proporcao="v45" rotulo="Time em captação no destino" />
+              </GradeMidia>
             </AnimateIn>
           </div>
         </div>
