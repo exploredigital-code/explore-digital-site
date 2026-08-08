@@ -107,7 +107,7 @@ export default function ConsultoriaObrigadoPage() {
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white font-bold px-7 py-4 rounded-full hover:bg-[#1FAD54] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200"
+                className="inline-flex items-center justify-center gap-3 bg-sol text-verde font-bold px-7 py-4 rounded-full hover:bg-sol-forte hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200"
               >
                 <WhatsAppIcon />
                 {t('ty_wa_button')}

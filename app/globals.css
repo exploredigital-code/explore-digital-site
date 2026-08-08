@@ -2,14 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Quanta Grotesk Pro (Titulos) ── */
-@font-face { font-family: 'Quanta'; src: url('/fonts/QuantaGroteskPro-Light.otf') format('opentype'); font-weight: 300; font-display: swap; }
-@font-face { font-family: 'Quanta'; src: url('/fonts/QuantaGroteskPro-Regular.otf') format('opentype'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'Quanta'; src: url('/fonts/QuantaGroteskPro-SemiBold.otf') format('opentype'); font-weight: 600; font-display: swap; }
-@font-face { font-family: 'Quanta'; src: url('/fonts/QuantaGroteskPro-Bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
-@font-face { font-family: 'Quanta'; src: url('/fonts/QuantaGroteskPro-ExtraBold.otf') format('opentype'); font-weight: 800; font-display: swap; }
+/* Quanta agora é carregada por next/font/local em lib/fonts.ts, em WOFF2 e
+   com preload. Os .otf antigos ficam em public/fonts sem uso e podem ser
+   apagados junto com a limpeza do Kohinoor. */
 
-/* ── Kohinoor Latin (Corpo) ── */
+/* ── Kohinoor Latin (Corpo) — sai no commit do Satoshi ── */
 @font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Light.otf') format('opentype'); font-weight: 300; font-display: swap; }
 @font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Book.otf') format('opentype'); font-weight: 400; font-display: swap; }
 @font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Medium.otf') format('opentype'); font-weight: 500; font-display: swap; }
@@ -21,8 +18,14 @@
 html { scroll-behavior: smooth; }
 * { box-sizing: border-box; }
 
+:root {
+  /* Uma indireção só para a fonte de corpo, para que a troca de Kohinoor por
+     Satoshi seja um commit de um arquivo e possa ser revertida sozinha. */
+  --font-body: 'Kohinoor', 'Segoe UI', system-ui, sans-serif;
+}
+
 body {
-  font-family: 'Kohinoor', system-ui, sans-serif;
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #1B3025;
@@ -31,9 +34,9 @@ body {
 }
 
 /* ── H1/H2/H3 — Quanta Grotesk ── */
-h1 { font-family: 'Quanta', system-ui, sans-serif; font-weight: 700; }
-h2 { font-family: 'Quanta', system-ui, sans-serif; font-weight: 600; }
-h3 { font-family: 'Quanta', system-ui, sans-serif; font-weight: 600; }
+h1 { font-family: var(--font-quanta), system-ui, sans-serif; font-weight: 700; }
+h2 { font-family: var(--font-quanta), system-ui, sans-serif; font-weight: 600; }
+h3 { font-family: var(--font-quanta), system-ui, sans-serif; font-weight: 600; }
 
 /* ── Contrast tokens ─────────────────────────────────
    RULE: dark bg (#1B3025, #0D1A12, #4E7D57) → white text

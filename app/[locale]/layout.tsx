@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations } from 'next-intl/server'
 import { WhatsAppFloat } from '@/components/ui/WhatsAppFloat'
 import { SITE_URL } from '@/lib/site'
+import { quanta } from '@/lib/fonts'
 import '../globals.css'
 
 interface Props {
@@ -39,7 +40,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages()
 
   return (
-    <html lang={locale} className="scroll-smooth">
+    <html lang={locale} className={`${quanta.variable} scroll-smooth`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

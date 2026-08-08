@@ -493,7 +493,7 @@ function ConsultForm() {
           className={cn(
             'flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-[15px] font-bold transition-all duration-200',
             step === 3
-              ? 'bg-[#25D366] text-white hover:bg-[#1FAD54] hover:shadow-[0_8px_24px_rgba(37,211,102,0.3)]'
+              ? 'bg-sol text-verde hover:bg-sol-forte hover:shadow-[0_8px_24px_rgba(226,118,47,0.3)]'
               : 'bg-g-dark text-g-pale hover:bg-s2 hover:shadow-[0_8px_28px_rgba(27,48,37,0.18)]',
             'hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0'
           )}
@@ -1024,7 +1024,7 @@ export function ConsultoriaView() {
               href={WA_BASE + encodeURIComponent(t('nav_cta'))}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 min-h-[44px] hover:text-[#25D366] transition-colors"
+              className="inline-flex items-center gap-1.5 min-h-[44px] hover:text-sol transition-colors"
             >
               <WhatsAppIcon size={14} />
               WhatsApp

@@ -307,7 +307,7 @@ export function SolucoesView() {
                             href={waFor(copy.name)}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold px-5 py-2.5 rounded-full text-[13.5px] hover:bg-[#1FAD54] hover:-translate-y-0.5 transition-all duration-200"
+                            className="inline-flex items-center justify-center gap-2 bg-sol text-verde font-bold px-5 py-2.5 rounded-full text-[13.5px] hover:bg-sol-forte hover:-translate-y-0.5 transition-all duration-200"
                           >
                             <WhatsAppIcon />
                             {t('od_cta')}
