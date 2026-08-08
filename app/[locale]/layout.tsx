@@ -48,11 +48,10 @@ export default async function LocaleLayout({ children, params }: Props) {
           href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
           rel="stylesheet"
         />
-        {/* Vimeo preconnect — reduz latência inicial do player */}
-        <link rel="preconnect" href="https://player.vimeo.com" />
-        <link rel="preconnect" href="https://f.vimeocdn.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://i.vimeocdn.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://vimeo.com" />
+        {/* Os preconnect do Vimeo saíram. O hero passou a servir mp4 local e
+            nenhuma página abre o player no carregamento: o iframe só nasce
+            quando o visitante clica no lightbox. Manter o preconnect custava
+            DNS e handshake em toda página, inclusive nas que nunca usam vídeo. */}
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>

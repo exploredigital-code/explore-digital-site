@@ -11,6 +11,9 @@ import { cn } from '@/lib/utils'
 const WHATSAPP_BASE = 'https://wa.me/+5585991043067?text='
 const FORMSPREE = 'https://formspree.io/f/mlgkrjng'
 
+/** Mesma chave que a página /obrigado lê para reabrir o WhatsApp se o popup cair. */
+const WA_STORAGE_KEY = 'explore_wa_pending'
+
 
 const inputClass = cn(
   'w-full px-4 py-3.5 rounded-xl',
@@ -46,6 +49,7 @@ export function Contact() {
     name: '',
     email: '',
     phone: '',
+    instagram: '',
     businessType: '',
     service: '',
     message: '',
@@ -55,24 +59,62 @@ export function Contact() {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  /** Mesmo formato do wizard da consultoria, para o time ler as duas do mesmo jeito. */
+  const buildWaMessage = () => {
+    const linhas = [
+      t('whatsapp_greeting'),
+      '',
+      `*${t('wa_field_name')}:* ${form.name}`,
+      `*${t('wa_field_email')}:* ${form.email}`,
+      form.phone && `*${t('form_phone')}:* ${form.phone}`,
+      `*Instagram:* instagram.com/${form.instagram.replace(/^@/, '')}`,
+      form.businessType && `*${t('wa_field_business')}:* ${form.businessType}`,
+      form.service && `*${t('wa_field_service')}:* ${form.service}`,
+      form.message && `*${t('wa_field_message')}:* ${form.message}`,
+    ].filter(Boolean)
+    return linhas.join('\n')
+  }
+
+  /**
+   * A copy sempre prometeu que a mensagem chega por e-mail e WhatsApp ao mesmo
+   * tempo, e a /obrigado dizia que o WhatsApp já tinha sido aberto. Nada disso
+   * acontecia: o formulário só postava no Formspree. Agora faz o mesmo que o
+   * wizard da consultoria.
+   */
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    if (status === 'sending') return
     setStatus('sending')
 
+    const waMessage = buildWaMessage()
+    const waUrl = WHATSAPP_BASE + encodeURIComponent(waMessage)
+
+    // 1. abre o WhatsApp ainda dentro do gesto do usuário. Depois de um await
+    //    o navegador trata como popup e bloqueia.
+    const waTab = window.open(waUrl, '_blank')
+    if (waTab) waTab.opener = null
+
+    // 2. guarda para a /obrigado reabrir caso o popup tenha sido barrado
     try {
-      const res = await fetch(FORMSPREE, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...form, _subject: `Novo contato — ${form.name} · ${form.businessType}` }),
-      })
-      if (res.ok) {
-        router.push(`/${locale}/obrigado`)
-      } else {
-        setStatus('error')
-      }
+      sessionStorage.setItem(WA_STORAGE_KEY, JSON.stringify({ url: waUrl, message: waMessage, blocked: !waTab }))
     } catch {
-      setStatus('error')
+      /* modo privado ou storage indisponível */
     }
+
+    // 3. registra o lead por e-mail. keepalive sobrevive à navegação seguinte.
+    fetch(FORMSPREE, {
+      method: 'POST',
+      keepalive: true,
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        ...form,
+        _subject: `Novo contato · ${form.name} · ${form.businessType || 'sem tipo'}`,
+      }),
+    }).catch(() => {
+      /* o lead já seguiu pelo WhatsApp */
+    })
+
+    router.push(`/${locale}/obrigado`)
   }
 
   return (
@@ -151,6 +193,24 @@ export function Contact() {
                   <input type="text" name="name" placeholder={t('form_name') + ' *'} required value={form.name} onChange={handleChange} className={inputClass} />
                   <input type="email" name="email" placeholder={t('form_email') + ' *'} required value={form.email} onChange={handleChange} className={inputClass} />
                   <input type="tel" name="phone" placeholder={t('form_phone')} value={form.phone} onChange={handleChange} className={inputClass} />
+
+                  {/* O @ do negócio é o campo que permite auditar o perfil
+                      antes da conversa. Obrigatório, como na consultoria. */}
+                  <div className="relative">
+                    <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[15px] text-white/40">@</span>
+                    <input
+                      type="text"
+                      name="instagram"
+                      inputMode="text"
+                      autoCapitalize="none"
+                      autoCorrect="off"
+                      placeholder={t('form_instagram') + ' *'}
+                      required
+                      value={form.instagram}
+                      onChange={handleChange}
+                      className={cn(inputClass, 'pl-9')}
+                    />
+                  </div>
 
                   <div className="relative">
                     <select name="businessType" value={form.businessType} onChange={handleChange}

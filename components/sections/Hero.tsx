@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/Button'
 
 const WHATSAPP = 'https://wa.me/+5585991043067'
-const VIMEO_ID = '1197034435'
 
 const wordVariant = {
   hidden: { y: '105%', opacity: 0 },
@@ -34,27 +33,29 @@ export function Hero() {
       {/* ── Mobile: gradient ── */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_60%_-10%,#2D5238,#0D1A12)] lg:hidden" />
 
-      {/* ── Desktop: thumbnail instantâneo + Vimeo iframe ── */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block">
-        {/* Primeiro frame — carrega instantaneamente do servidor */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/hero-poster.jpg"
-          alt=""
+      {/* ── Desktop: vídeo local ──
+          Era um iframe do Vimeo: DNS, handshake TLS e o player inteiro antes do
+          primeiro frame, tudo no caminho crítico da página mais visitada.
+          Agora é um mp4 local em H.264 (2,6 MB, faststart, sem áudio), com o
+          poster como primeiro frame. O HEVC de 16 MB que estava em public/
+          nunca chegou a ser usado e não tocava de forma confiável em Firefox
+          nem em parte dos Chrome. */}
+      <div className="hero-media absolute inset-0 pointer-events-none overflow-hidden hidden lg:block">
+        <video
+          className="hero-video absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full object-cover"
+          poster="/images/hero-poster.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover"
-          fetchPriority="high"
-        />
-        {/* iframe carrega por cima: quando o vídeo inicia, cobre a thumbnail */}
-        <iframe
-          src={`https://player.vimeo.com/video/${VIMEO_ID}?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&autopause=0`}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{ width: 'max(100%, 177.78vh)', height: 'max(100%, 56.25vw)' }}
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-        />
-        {/* Overlay 30% */}
-        <div className="absolute inset-0 bg-black/30" />
+          tabIndex={-1}
+        >
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
+        {/* Véu sobre o vídeo. Verde, não preto: nenhuma seção usa preto puro. */}
+        <div className="absolute inset-0 bg-verde/45" />
       </div>
 
       {/* ── Noise texture ── */}

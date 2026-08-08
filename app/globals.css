@@ -48,6 +48,24 @@ h3 { font-family: var(--font-quanta), system-ui, sans-serif; font-weight: 600; }
 .light-section { color: #1B3025; }
 .light-section p, .light-section span, .light-section li { color: rgba(27,48,37,0.72); }
 
+/* ── Hero ──
+   O poster também é fundo do contêiner: quando o vídeo é escondido em
+   prefers-reduced-motion, o `poster` do <video> some junto, e sem isso o hero
+   ficaria sem imagem. Mesma URL do atributo poster, então é uma requisição só. */
+.hero-media {
+  background: url('/images/hero-poster.jpg') center / cover no-repeat;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ── Custom selection ── */
 ::selection { background: #4E7D57; color: #E3F3E6; }
 

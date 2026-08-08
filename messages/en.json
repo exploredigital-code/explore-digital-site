@@ -295,7 +295,8 @@
     "wa_field_business": "Business type",
     "wa_field_service": "Service of interest",
     "wa_field_message": "Message",
-    "service_inquiry": "Hi! I saw the *{service}* service on your website and would like to know more."
+    "service_inquiry": "Hi! I saw the *{service}* service on your website and would like to know more.",
+    "form_instagram": "Business Instagram handle"
   },
   "obrigado": {
     "eyebrow": "Message received",
@@ -308,7 +309,8 @@
     "step2_label": "Review within 24h",
     "step2_desc": "We'll review your profile and needs.",
     "step3_label": "First contact",
-    "step3_desc": "Our team will reach out to align the next steps."
+    "step3_desc": "Our team will reach out to align the next steps.",
+    "wa_blocked": "Your browser blocked the WhatsApp window. Tap the button below to open it with your details already filled in."
   },
   "blog": {
     "eyebrow": "Blog & Insights",

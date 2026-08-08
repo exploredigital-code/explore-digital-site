@@ -295,7 +295,8 @@
     "wa_field_business": "Tipo de negocio",
     "wa_field_service": "Servicio de interés",
     "wa_field_message": "Mensaje",
-    "service_inquiry": "¡Hola! Vi el servicio *{service}* en su sitio web y me gustaría saber más."
+    "service_inquiry": "¡Hola! Vi el servicio *{service}* en su sitio web y me gustaría saber más.",
+    "form_instagram": "@ de Instagram del negocio"
   },
   "obrigado": {
     "eyebrow": "Mensaje recibido",
@@ -308,7 +309,8 @@
     "step2_label": "Revisión en 24h",
     "step2_desc": "Revisaremos tu perfil y necesidades.",
     "step3_label": "Primer contacto",
-    "step3_desc": "Nuestro equipo se pondrá en contacto para alinear los próximos pasos."
+    "step3_desc": "Nuestro equipo se pondrá en contacto para alinear los próximos pasos.",
+    "wa_blocked": "El navegador bloqueó la ventana de WhatsApp. Toca el botón de abajo para abrirla con tus datos ya rellenados."
   },
   "blog": {
     "eyebrow": "Blog & Insights",
