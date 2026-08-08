@@ -18,7 +18,7 @@ html { scroll-behavior: smooth; }
 :root {
   /* Uma indireção só para a fonte de corpo, para que a troca possa ser
      revertida sozinha. */
-  --font-body: 'Satoshi', 'Segoe UI', system-ui, sans-serif;
+  --font-body: var(--font-satoshi), 'Segoe UI', system-ui, sans-serif;
 }
 
 body {

@@ -101,7 +101,7 @@ function ProjectCard({ project, seeCase, locale, getSector, getTagline }: {
       {/* Bottom info */}
       <div className="p-5">
         <div className="font-bold text-[16px] text-white">{project.client}</div>
-        <div className="text-[11px] text-white/50 mt-0.5 tracking-wide uppercase">{getSector(project.sector)} · {project.location}</div>
+        <div className="text-[11px] text-white/65 mt-0.5 tracking-wide uppercase">{getSector(project.sector)} · {project.location}</div>
         <div className="mt-2 text-[12px] text-g-mid/70 font-medium line-clamp-1 md:hidden">{tagline}</div>
       </div>
     </Link>

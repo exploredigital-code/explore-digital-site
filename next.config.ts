@@ -34,6 +34,20 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  /**
+   * Quem recebe a metadata dentro do <head>, de forma bloqueante.
+   *
+   * O Next 15 transmite title, description e canonical DEPOIS do shell, para
+   * o TTFB não esperar por eles, e só entrega bloqueante para os robôs que
+   * não executam JavaScript. O Googlebot não está nessa lista por padrão,
+   * porque ele executa.
+   *
+   * Aqui ele entra. Depois do canonical de layout que deindexou o site
+   * inteiro por meses, custo de alguns milissegundos no TTFB do robô é preço
+   * baixo por não depender de renderização para o Google ler o título.
+   */
+  htmlLimitedBots: /Googlebot|bingbot|Applebot|DuckDuckBot|Twitterbot|facebookexternalhit|LinkedInBot|Slackbot|WhatsApp|Discordbot|TelegramBot/i,
+
   async redirects() {
     return MOVED.flatMap(([from, to]) => [
       {

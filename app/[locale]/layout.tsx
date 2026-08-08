@@ -3,7 +3,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations } from 'next-intl/server'
 import { WhatsAppFloat } from '@/components/ui/WhatsAppFloat'
 import { SITE_URL } from '@/lib/site'
-import { quanta } from '@/lib/fonts'
+import { quanta, satoshi } from '@/lib/fonts'
 import '../globals.css'
 
 interface Props {
@@ -39,20 +39,16 @@ export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params
   const messages = await getMessages()
 
+  // Sem <head> escrito à mão.
+  //
+  // Um <head> literal faz o Next parar de gerenciar o próprio: title,
+  // description e canonical iam parar no <body>, onde o Lighthouse e boa parte
+  // dos rastreadores simplesmente não olham. Era por isso que o SEO travava em
+  // 92 com "documento sem meta description", mesmo com a tag presente no DOM.
+  //
+  // Fonte, preconnect e o resto entram por next/font e pela metadata.
   return (
-    <html lang={locale} className={`${quanta.variable} scroll-smooth`}>
-      <head>
-        {/* Satoshi (corpo) pela Fontshare. Quanta é local, via next/font. */}
-        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
-          rel="stylesheet"
-        />
-        {/* Os preconnect do Vimeo saíram. O hero passou a servir mp4 local e
-            nenhuma página abre o player no carregamento: o iframe só nasce
-            quando o visitante clica no lightbox. Manter o preconnect custava
-            DNS e handshake em toda página, inclusive nas que nunca usam vídeo. */}
-      </head>
+    <html lang={locale} className={`${quanta.variable} ${satoshi.variable} scroll-smooth`}>
       <body>
         <NextIntlClientProvider messages={messages}>
           {children}

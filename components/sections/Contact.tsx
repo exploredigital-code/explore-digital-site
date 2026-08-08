@@ -213,7 +213,7 @@ export function Contact() {
                   </div>
 
                   <div className="relative">
-                    <select name="businessType" value={form.businessType} onChange={handleChange}
+                    <select name="businessType" aria-label={t('form_business')} value={form.businessType} onChange={handleChange}
                       className={cn(selectClass, !form.businessType && 'text-white/40')}>
                       <option value="" disabled>{t('form_business')}</option>
                       {BUSINESS_TYPES.map(b => <option key={b} value={b} className="text-g-dark bg-white">{b}</option>)}
@@ -222,7 +222,7 @@ export function Contact() {
                   </div>
 
                   <div className="relative">
-                    <select name="service" value={form.service} onChange={handleChange}
+                    <select name="service" aria-label={t('form_service')} value={form.service} onChange={handleChange}
                       className={cn(selectClass, !form.service && 'text-white/40')}>
                       <option value="" disabled>{t('form_service')}</option>
                       {SERVICES.map(s => <option key={s} value={s} className="text-g-dark bg-white">{s}</option>)}
