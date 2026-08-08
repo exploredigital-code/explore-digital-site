@@ -831,7 +831,6 @@
     "od_eyebrow": "On demand",
     "od_title": "One-off deliverables, with a price and a deadline.",
     "od_sub": "For when you need one specific piece rather than a whole track. You order, you receive, done.",
-    "od_from": "From",
     "od_delivery": "Delivered in",
     "od_days": "working days",
     "od_days_to": "to",
@@ -917,6 +916,8 @@
         ]
       }
     ],
-    "doors_home_title": "Two ways to work with Explore."
+    "doors_home_title": "Two ways to work with Explore.",
+    "od_orcamento": "Request a quote",
+    "od_count": "{n} deliverables"
   }
 }

@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 import { servicesData } from '@/data/services'
-import { onDemandItems, formatPrice } from '@/data/on-demand'
+import { onDemandItems } from '@/data/on-demand'
 
 type OnDemandCopy = { slug: string; name: string }
 
@@ -31,7 +31,6 @@ export function TwoDoors() {
   const locale = useLocale()
 
   const copy = t.raw('on_demand_items') as OnDemandCopy[]
-  const minPrice = Math.min(...onDemandItems.map(i => i.priceFrom))
 
   const portas = [
     {
@@ -41,7 +40,8 @@ export function TwoDoors() {
       desc: t('door1_desc'),
       cta: t('door1_cta'),
       href: `/${locale}/solucoes#sob-demanda`,
-      note: `${t('od_from')} ${formatPrice(minPrice)}`,
+      // Onde havia "a partir de R$ X" agora vai a contagem de entregas.
+      note: t('od_count', { n: onDemandItems.length }),
       chips: onDemandItems.map(i => copy.find(c => c.slug === i.slug)?.name).filter(Boolean) as string[],
       destaque: true,
     },

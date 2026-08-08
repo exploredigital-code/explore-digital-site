@@ -831,7 +831,6 @@
     "od_eyebrow": "Sob demanda",
     "od_title": "Entregas pontuais, com preço e prazo.",
     "od_sub": "Quando você precisa de uma peça específica e não de uma frente inteira. Contrata, recebe e pronto.",
-    "od_from": "A partir de",
     "od_delivery": "Entrega em",
     "od_days": "dias úteis",
     "od_days_to": "a",
@@ -917,6 +916,8 @@
         ]
       }
     ],
-    "doors_home_title": "Duas formas de trabalhar com a Explore."
+    "doors_home_title": "Duas formas de trabalhar com a Explore.",
+    "od_orcamento": "Pedir orçamento",
+    "od_count": "{n} entregas"
   }
 }

@@ -11,39 +11,27 @@
 
 export interface OnDemandItem {
   slug: string
-  /** Piso do preço em BRL. O site sempre exibe como "a partir de". */
-  priceFrom: number
   /** Prazo de entrega em dias úteis, contado a partir da captação ou do briefing. */
   deliveryDays: number | [number, number]
-  /** Exige deslocamento até a propriedade — entra na agenda de captação por destino. */
+  /** Exige deslocamento até a propriedade, entra na agenda de captação por destino. */
   onSite?: boolean
   /** Rota de detalhe, quando o item também existe como sub-serviço. */
   detailSlug?: string
 }
 
-export const onDemandItems: OnDemandItem[] = [
-  { slug: 'fotografia',   priceFrom: 800,  deliveryDays: 7,        onSite: true },
-  { slug: 'video',        priceFrom: 800,  deliveryDays: 7,        onSite: true, detailSlug: 'captacoes' },
-  { slug: 'drone',        priceFrom: 1000, deliveryDays: 5,        onSite: true },
-  { slug: 'edicao-video', priceFrom: 300,  deliveryDays: 3 },
-  { slug: 'design',       priceFrom: 100,  deliveryDays: 2 },
-  { slug: 'landing-page', priceFrom: 2000, deliveryDays: [10, 15], detailSlug: 'landing-page' },
-]
-
 /**
- * "R$ 800" · "R$ 1.000" — sem centavos, que só poluem um preço-piso.
- *
- * Sempre em pt-BR, independente do idioma da interface: o preço é em real e
- * mudar o formato por idioma quebrava a marca. Formatando pelo locale, o
- * inglês virava "R$1,000" e o espanhol chegava a esconder o símbolo.
+ * Nenhum item exibe valor. O preço saiu do site inteiro: escopo e prazo
+ * qualificam, e o valor é fechado no diagnóstico. Onde havia preço agora há
+ * CTA para a consultoria.
  */
-export function formatPrice(value: number) {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-    maximumFractionDigits: 0,
-  }).format(value)
-}
+export const onDemandItems: OnDemandItem[] = [
+  { slug: 'fotografia',   deliveryDays: 7,        onSite: true },
+  { slug: 'video',        deliveryDays: 7,        onSite: true, detailSlug: 'captacoes' },
+  { slug: 'drone',        deliveryDays: 5,        onSite: true },
+  { slug: 'edicao-video', deliveryDays: 3 },
+  { slug: 'design',       deliveryDays: 2 },
+  { slug: 'landing-page', deliveryDays: [10, 15], detailSlug: 'landing-page' },
+]
 
 /** "7" ou "10 a 15", já com o conector traduzido. */
 export function formatDays(days: OnDemandItem['deliveryDays'], to: string) {

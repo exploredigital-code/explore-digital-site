@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/sections/Navbar'
 import { Footer } from '@/components/sections/Footer'
 import { servicesData } from '@/data/services'
-import { onDemandItems, formatPrice, formatDays } from '@/data/on-demand'
+import { onDemandItems, formatDays } from '@/data/on-demand'
 
 const WA_BASE = 'https://wa.me/+5585991043067?text='
 const ON_DEMAND_ID = 'sob-demanda'
@@ -270,18 +270,14 @@ export function SolucoesView() {
                         </h3>
                         <p className="text-[14px] leading-[1.6] text-g-dark/55 mb-5">{copy.tagline}</p>
 
-                        {/* preço e prazo lado a lado — é o que decide a compra */}
-                        <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2 pb-5 mb-5 border-b border-g-dark/10">
+                        {/* Onde havia preço agora há prazo. O valor é fechado
+                            no diagnóstico, nunca exibido no site. */}
+                        <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2 pb-5 mb-5 border-b border-tinta-16">
                           <div>
-                            <div className="text-[9.5px] font-bold tracking-[0.16em] uppercase text-g-dark/35 mb-0.5">{t('od_from')}</div>
-                            <div className="text-[22px] font-bold text-g-dark tabular-nums leading-none">
-                              {formatPrice(item.priceFrom)}
-                            </div>
-                          </div>
-                          <div>
-                            <div className="text-[9.5px] font-bold tracking-[0.16em] uppercase text-g-dark/35 mb-0.5">{t('od_delivery')}</div>
-                            <div className="text-[15px] font-semibold text-g-mid leading-none pt-1.5">
-                              {formatDays(item.deliveryDays, t('od_days_to'))} {t('od_days')}
+                            <div className="text-[9.5px] font-bold tracking-[0.16em] uppercase text-tinta-50 mb-0.5">{t('od_delivery')}</div>
+                            <div className="text-[22px] font-bold text-verde tabular-nums leading-none">
+                              {formatDays(item.deliveryDays, t('od_days_to'))}{' '}
+                              <span className="text-[15px] font-semibold text-verde-medio">{t('od_days')}</span>
                             </div>
                           </div>
                         </div>
@@ -312,10 +308,17 @@ export function SolucoesView() {
                             <WhatsAppIcon />
                             {t('od_cta')}
                           </a>
+                          {/* Onde havia preço, agora leva ao diagnóstico. */}
+                          <Link
+                            href={`/${locale}/consultoria`}
+                            className="text-[13px] font-medium text-tinta-70 border-b border-tinta-16 pb-0.5 hover:text-verde-medio hover:border-verde-medio transition-colors duration-200"
+                          >
+                            {t('od_orcamento')}
+                          </Link>
                           {item.detailSlug && (
                             <Link
                               href={`/${locale}/servicos/${item.detailSlug}`}
-                              className="text-[13px] font-bold text-g-dark/60 border-b border-g-dark/20 pb-0.5 hover:text-g-mid hover:border-g-mid transition-colors duration-200"
+                              className="text-[13px] font-medium text-tinta-50 hover:text-verde-medio transition-colors duration-200"
                             >
                               {t('od_details')}
                             </Link>
