@@ -284,7 +284,9 @@
     "cta_title": "Quer um projeto assim para a sua marca?",
     "cta_button": "Falar com a Explore",
     "video_label": "Vídeo",
-    "videos_subtitle": "6 vídeos · 9:16"
+    "videos_subtitle": "6 vídeos · 9:16",
+    "quote_label": "Depoimento",
+    "quote_placeholder": "Espaço para depoimento real do cliente, com nome, cargo e negócio. Curto e específico, falando do que mudou na operação."
   },
   "blog": {
     "eyebrow": "Blog & Insights",

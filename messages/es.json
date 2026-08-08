@@ -410,7 +410,10 @@
     "cta_title": "¿Quieres un proyecto así para tu marca?",
     "cta_button": "Hablar con Explore",
     "video_label": "Video",
-    "videos_subtitle": "6 videos · 9:16"
+    "videos_subtitle": "6 videos · 9:16",
+    "quote_label": "Testimonio",
+    "quote_placeholder": "Espaço para depoimento real do cliente, com nome, cargo e negócio. Curto e específico, falando do que mudou na operação.",
+    "_todo": "TODO tradução ES: rótulo e placeholder do depoimento."
   },
   "footer": {
     "tagline": "Marketing para hotelería en el litoral de Ceará y Rio Grande do Norte. Reservas directas, no dependencia de las OTA.",

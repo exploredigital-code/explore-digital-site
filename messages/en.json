@@ -410,7 +410,10 @@
     "cta_title": "Want a project like this for your brand?",
     "cta_button": "Talk to Explore",
     "video_label": "Video",
-    "videos_subtitle": "6 videos · 9:16"
+    "videos_subtitle": "6 videos · 9:16",
+    "quote_label": "Testimonial",
+    "quote_placeholder": "Espaço para depoimento real do cliente, com nome, cargo e negócio. Curto e específico, falando do que mudou na operação.",
+    "_todo": "TODO tradução EN: rótulo e placeholder do depoimento."
   },
   "footer": {
     "tagline": "Hospitality marketing on the coast of Ceará and Rio Grande do Norte. Direct bookings, not dependence on OTAs.",
