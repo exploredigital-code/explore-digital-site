@@ -129,11 +129,14 @@ export function SobreView() {
               <div className="relative rounded-3xl overflow-hidden bg-g-dark p-10 h-full min-h-[300px] flex flex-col justify-end">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_50%_-20%,#2D5238,transparent)]" />
                 <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E\")", backgroundSize: '200px' }} />
+                {/* Número atribuído a um cliente, não agregado.
+                    "+30 marcas · 3 países · 5+ anos · 100%" saiu porque não é
+                    auditável se um cliente pedir a fonte. */}
                 <div className="relative z-10">
-                  <div className="text-[clamp(56px,8vw,80px)] font-semibold text-g-light leading-none mb-2">5+</div>
-                  <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-g-light/35">{t('years_expertise')}</div>
+                  <div className="text-[clamp(56px,8vw,80px)] font-semibold text-g-light leading-none mb-2">+100%</div>
+                  <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-g-light/35 leading-[1.5]">{t('years_expertise')}</div>
                   <div className="mt-8 grid grid-cols-3 gap-4">
-                    {[['+30', t('stat_brands')], ['3', t('stat_countries')], ['100%', t('stat_focus')]].map(([v, l]) => (
+                    {[['40 mil', t('stat_brands')], ['3', t('stat_countries')], ['CE · RN', t('stat_focus')]].map(([v, l]) => (
                       <div key={l}>
                         <div className="text-[22px] font-semibold text-white">{v}</div>
                         <div className="text-[10px] text-white/45 tracking-widest uppercase mt-0.5">{l}</div>

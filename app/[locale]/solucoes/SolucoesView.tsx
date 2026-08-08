@@ -275,7 +275,7 @@ export function SolucoesView() {
                           <div>
                             <div className="text-[9.5px] font-bold tracking-[0.16em] uppercase text-g-dark/35 mb-0.5">{t('od_from')}</div>
                             <div className="text-[22px] font-bold text-g-dark tabular-nums leading-none">
-                              {formatPrice(item.priceFrom, locale)}
+                              {formatPrice(item.priceFrom)}
                             </div>
                           </div>
                           <div>

@@ -30,10 +30,10 @@
     "title": "Uma agência feita para marcas que vendem desejo.",
     "sub": "Nascemos do setor. Crescemos com ele.",
     "story": "A Explore Digital nasceu da convicção de que marcas de hotelaria, experiências e real estate merecem uma agência que realmente entende o setor. Não apenas aplica templates genéricos. Construímos nossa expertise dentro do universo que mais exige identidade, emoção e desejo.",
-    "story2": "Atendemos marcas no Brasil e mercados internacionais. Nossa equipe atua 100% online mas com disponibilidade para viajar e transmitir a experiência de nossos clientes.",
+    "story2": "Atuamos no litoral do Ceará e do Rio Grande do Norte — Preá, Ilha do Guajirú e Pipa — e atendemos em português, inglês e espanhol, porque boa parte do hóspede e do proprietário dessa costa vem de fora.",
     "values_eyebrow": "Nossos valores",
     "v1_title": "Foco gera excelência",
-    "v1_desc": "Só trabalhamos com hotelaria, experiências e real estate. Isso nos torna melhores naquilo que mais importa para você.",
+    "v1_desc": "Só trabalhamos com hotelaria no litoral do Ceará e do Rio Grande do Norte. Isso nos torna melhores naquilo que mais importa para você.",
     "v2_title": "Resultado é obrigação",
     "v2_desc": "Não vendemos impressões. Vendemos reservas diretas, leads qualificados e crescimento real e mensurável.",
     "v3_title": "Transparência total",
@@ -45,10 +45,10 @@
     "team_sub": "Cada cliente tem um time dedicado que entende o negócio e pensa estrategicamente no crescimento.",
     "team_cta": "Trabalhe com a gente",
     "our_history": "Nossa História",
-    "years_expertise": "Anos de expertise",
-    "stat_brands": "Marcas",
-    "stat_countries": "Países",
-    "stat_focus": "Foco",
+    "years_expertise": "de crescimento no Instagram do Cabaré du Vento em 1 ano",
+    "stat_brands": "Seguidores",
+    "stat_countries": "Destinos",
+    "stat_focus": "Litoral",
     "values_title": "O que nos move todos os dias.",
     "join_eyebrow": "Faça parte do time",
     "join_title": "Buscamos profissionais apaixonados pelo que fazem.",
@@ -84,10 +84,10 @@
     "meta_description": "Agência especializada em hotelaria no litoral do Ceará e do Rio Grande do Norte. Conheça a história, os valores e o time por trás dos projetos."
   },
   "hero": {
-    "eyebrow": "Agência de Marketing para Hotéis · Pousadas · Real Estate",
+    "eyebrow": "Marketing para hotelaria · Litoral do Ceará e Rio Grande do Norte",
     "line1": "Criamos marcas",
     "line2": "que geram desejo.",
-    "sub": "Hotéis, pousadas e experiências que nos contratam param de depender das OTAs. Construímos a presença digital que faz o hóspede reservar direto com você.",
+    "sub": "Pousadas, hostels e beach clubs que nos contratam param de depender das OTAs. Construímos a presença digital que faz o hóspede reservar direto com você.",
     "cta_primary": "Ver Portfólio",
     "cta_secondary": "Fale Conosco"
   },
@@ -98,23 +98,15 @@
   },
   "stats": {
     "eyebrow": "Números que falam",
-    "s1_value": "+30",
-    "s1_label": "marcas em 3 países",
-    "s2_value": "5+",
-    "s2_label": "anos só no setor",
-    "s3_value": "+100%",
-    "s3_label": "crescimento médio nas redes",
-    "s4_value": "3",
-    "s4_label": "Setores: Hotel · Exp · RE",
-    "nichos_eyebrow": "Nichos que atuamos",
-    "nichos_title1": "Mais que uma agência de marketing.",
-    "nichos_title2": "Uma parceira para seu negócio.",
-    "n1_title": "Hotelaria",
-    "n1_desc": "Reduzimos a dependência de OTAs e construímos audiências que reservam direto.",
-    "n2_title": "Experiências & Esportes",
-    "n2_desc": "Você vende um estilo de vida. O conteúdo e o anúncio precisam transmitir isso antes da matrícula.",
-    "n3_title": "Real Estate",
-    "n3_desc": "Imóveis de alto padrão vendem experiência antes de metros quadrados. Fazemos isso."
+    "nichos_eyebrow": "Onde atuamos",
+    "nichos_title1": "Especialistas em um litoral,",
+    "nichos_title2": "não em todo mercado.",
+    "n1_title": "Hotéis, pousadas e hostels",
+    "n1_desc": "Reduzimos a dependência de OTAs e construímos audiências que reservam direto com você.",
+    "n2_title": "Beach clubs e gastronomia",
+    "n2_desc": "Casa cheia no fim de semana e silêncio no resto é problema de demanda, não de produto.",
+    "n3_title": "Casas de temporada e experiências",
+    "n3_desc": "Você vende um estilo de vida no litoral. O conteúdo precisa transmitir isso antes da reserva."
   },
   "portfolio": {
     "eyebrow": "Nosso Trabalho",
@@ -220,12 +212,12 @@
     "title": "Especialistas no que mais exige identidade.",
     "description": "Hotelaria, experiências e real estate são setores onde a marca é o produto. Entendemos isso. Construímos marcas no nível dessa responsabilidade.",
     "d1_title": "Especialistas no seu setor",
-    "d1_desc": "Não trabalhamos com e-commerce, startups ou varejo. Só hotéis, pousadas, imobiliárias e experiências. Isso faz de nós os melhores no que você precisa. Não os mais baratos do mercado.",
+    "d1_desc": "Não trabalhamos com e-commerce, startups ou varejo. Só hotéis, pousadas, hostels, beach clubs e casas de temporada no litoral do Ceará e do Rio Grande do Norte. Isso faz de nós os melhores no que você precisa. Não os mais baratos do mercado.",
     "d2_title": "Reservas diretas, não métricas vazias",
     "d2_desc": "Seguidores que não reservam não pagam as contas. Cada campanha, post e landing page que entregamos é medido por uma métrica: crescimento real do seu faturamento.",
     "d3_title": "Time dedicado, não revezamento",
     "d3_desc": "Você não fala com estagiário. Tem um time fixo que conhece a sua marca, a sua temporada e o seu cliente ideal, pensando estrategicamente no crescimento ao longo do ano.",
-    "markets": "Trabalhamos com marcas no Brasil e na Espanha, em português, inglês e espanhol.",
+    "markets": "Atuamos no litoral do Ceará e do Rio Grande do Norte, atendendo em português, inglês e espanhol.",
     "where_eyebrow": "Onde atuamos"
   },
   "testimonials": {
@@ -452,17 +444,17 @@
     "meta_description": "Vagas abertas em design, social media, tráfego pago e vendas na Explore Digital, agência de marketing para hotelaria."
   },
   "footer": {
-    "tagline": "Agência de marketing digital para hotéis, pousadas e real estate. Reservas diretas, não dependência de OTAs.",
+    "tagline": "Marketing para hotelaria no litoral do Ceará e do Rio Grande do Norte. Reservas diretas, não dependência de OTAs.",
     "nav_title": "Navegação",
     "social_title": "Redes Sociais",
     "contact_title": "Contato",
     "copyright": "Todos os direitos reservados."
   },
   "meta": {
-    "site_title": "Explore Digital — Agência de Marketing para Hotéis, Pousadas e Real Estate",
-    "description": "Agência de marketing digital especializada em hotelaria e turismo. Reservas diretas, gestão de redes sociais, tráfego pago e branding para hotéis, pousadas e real estate. Menos OTA, mais lucro.",
-    "og_title": "Explore Digital — Agência de Marketing para Hotéis e Pousadas",
-    "og_description": "Especialistas em marketing digital para hotelaria, experiências e real estate. Reduzimos a dependência de OTAs e construímos audiências que reservam direto."
+    "site_title": "Explore Digital — Marketing para hotelaria no Ceará e Rio Grande do Norte",
+    "description": "Agência de marketing especializada em hotelaria no litoral do Ceará e do Rio Grande do Norte. Reservas diretas, redes sociais, tráfego pago e branding para pousadas, hostels e beach clubs.",
+    "og_title": "Explore Digital — Marketing para hotelaria no litoral do CE e RN",
+    "og_description": "Especialistas em pousadas, hostels e beach clubs do litoral cearense e potiguar. Menos OTA, mais reserva direta."
   },
   "consultoria": {
     "meta_title": "Consultoria Gratuita para Hotéis, Pousadas e Real Estate | Explore Digital",
@@ -483,16 +475,16 @@
     "hero_scroll": "Entenda como funciona",
     "cred_items": [
       {
-        "value": "+30",
-        "label": "marcas atendidas em 3 países"
-      },
-      {
-        "value": "5+",
-        "label": "anos dedicados só ao setor"
+        "value": "CE · RN",
+        "label": "o litoral em que somos especialistas"
       },
       {
         "value": "+100%",
-        "label": "crescimento médio nas redes"
+        "label": "de crescimento em 1 ano no Cabaré du Vento"
+      },
+      {
+        "value": "40 mil",
+        "label": "seguidores construídos para um cliente"
       },
       {
         "value": "45min",

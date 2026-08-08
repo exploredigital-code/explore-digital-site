@@ -30,9 +30,15 @@ export const onDemandItems: OnDemandItem[] = [
   { slug: 'landing-page', priceFrom: 2000, deliveryDays: [10, 15], detailSlug: 'landing-page' },
 ]
 
-/** "R$ 800" · "R$ 1.000" — sem centavos, que só poluem um preço-piso. */
-export function formatPrice(value: number, locale: string) {
-  return new Intl.NumberFormat(locale === 'pt' ? 'pt-BR' : locale, {
+/**
+ * "R$ 800" · "R$ 1.000" — sem centavos, que só poluem um preço-piso.
+ *
+ * Sempre em pt-BR, independente do idioma da interface: o preço é em real e
+ * mudar o formato por idioma quebrava a marca. Formatando pelo locale, o
+ * inglês virava "R$1,000" e o espanhol chegava a esconder o símbolo.
+ */
+export function formatPrice(value: number) {
+  return new Intl.NumberFormat('pt-BR', {
     style: 'currency',
     currency: 'BRL',
     maximumFractionDigits: 0,

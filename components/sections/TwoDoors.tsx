@@ -41,7 +41,7 @@ export function TwoDoors() {
       desc: t('door1_desc'),
       cta: t('door1_cta'),
       href: `/${locale}/solucoes#sob-demanda`,
-      note: `${t('od_from')} ${formatPrice(minPrice, locale)}`,
+      note: `${t('od_from')} ${formatPrice(minPrice)}`,
       chips: onDemandItems.map(i => copy.find(c => c.slug === i.slug)?.name).filter(Boolean) as string[],
       destaque: true,
     },

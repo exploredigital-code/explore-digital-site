@@ -30,10 +30,10 @@
     "title": "An agency built for brands that sell desire.",
     "sub": "Born from the industry. Grown with it.",
     "story": "Explore Digital was born from the conviction that hospitality, experience, and real estate brands deserve an agency that truly understands the industry — not one that just applies generic templates. We built our expertise within the universe that demands identity, emotion, and desire.",
-    "story2": "We serve brands in Brazil, Portugal, and international Portuguese-speaking markets. Our team is small by choice — we prefer to be strategic partners to few rather than suppliers to many.",
+    "story2": "We work along the coast of Ceará and Rio Grande do Norte — Preá, Ilha do Guajirú and Pipa — in Portuguese, English and Spanish, because much of the guest and owner base on this coast comes from abroad.",
     "values_eyebrow": "Our values",
     "v1_title": "Focus breeds excellence",
-    "v1_desc": "We only work with hospitality, experiences, and real estate. That makes us better at what matters most to you.",
+    "v1_desc": "We only work with hospitality on the coast of Ceará and Rio Grande do Norte. That makes us better at what matters most to you.",
     "v2_title": "Results are mandatory",
     "v2_desc": "We don't sell impressions. We sell direct bookings, qualified leads, and real measurable growth.",
     "v3_title": "Total transparency",
@@ -45,10 +45,10 @@
     "team_sub": "Each client has a dedicated team that understands the business and thinks strategically about growth.",
     "team_cta": "Work with us",
     "our_history": "Our History",
-    "years_expertise": "Years of expertise",
-    "stat_brands": "Brands",
-    "stat_countries": "Countries",
-    "stat_focus": "Focus",
+    "years_expertise": "Instagram growth for Cabaré du Vento in one year",
+    "stat_brands": "Followers",
+    "stat_countries": "Destinations",
+    "stat_focus": "Coastline",
     "values_title": "What drives us every day.",
     "join_eyebrow": "Join the team",
     "join_title": "We're looking for passionate professionals.",
@@ -84,10 +84,10 @@
     "meta_description": "An agency specialised in hospitality on the coast of Ceará and Rio Grande do Norte, Brazil. Our story, our values and the team behind the work."
   },
   "hero": {
-    "eyebrow": "Creative Agency · Hospitality · Experiences · Real Estate",
+    "eyebrow": "Hospitality marketing · Ceará and Rio Grande do Norte coast",
     "line1": "Brands that create",
     "line2": "desire.",
-    "sub": "We transform hospitality, experience, and real estate brands into digital references. From branding to digital — all focused on real results.",
+    "sub": "The guesthouses, hostels and beach clubs that hire us stop depending on OTAs. We build the digital presence that gets guests booking directly with you.",
     "cta_primary": "View Portfolio",
     "cta_secondary": "Get in Touch"
   },
@@ -98,23 +98,15 @@
   },
   "stats": {
     "eyebrow": "Numbers that speak",
-    "s1_value": "+30",
-    "s1_label": "brands in 3 countries",
-    "s2_value": "5+",
-    "s2_label": "years solely in the sector",
-    "s3_value": "+100%",
-    "s3_label": "average social media growth",
-    "s4_value": "3",
-    "s4_label": "Sectors: Hotel · Exp · RE",
-    "nichos_eyebrow": "Our niches",
-    "nichos_title1": "More than a marketing agency.",
-    "nichos_title2": "A partner for your business.",
-    "n1_title": "Hospitality",
-    "n1_desc": "We reduce OTA dependency and build audiences that book direct.",
-    "n2_title": "Experiences & Sports",
-    "n2_desc": "You sell a lifestyle. Content and ads must convey that before enrollment.",
-    "n3_title": "Real Estate",
-    "n3_desc": "Premium properties sell experience before square footage. We do exactly that."
+    "nichos_eyebrow": "Where we work",
+    "nichos_title1": "Specialists in one coastline,",
+    "nichos_title2": "not in every market.",
+    "n1_title": "Hotels, guesthouses and hostels",
+    "n1_desc": "We cut your dependence on OTAs and build audiences that book directly with you.",
+    "n2_title": "Beach clubs and restaurants",
+    "n2_desc": "Packed at the weekend and silent the rest of the week is a demand problem, not a product one.",
+    "n3_title": "Holiday rentals and experiences",
+    "n3_desc": "You sell a coastal lifestyle. The content has to convey that before the booking."
   },
   "portfolio": {
     "eyebrow": "Our Work",
@@ -220,12 +212,12 @@
     "title": "Specialists in what demands identity the most.",
     "description": "Hospitality, experiences, and real estate are sectors where the brand is the product. We understand this — and we build brands equal to that responsibility.",
     "d1_title": "Specialists in your sector",
-    "d1_desc": "We don't work with e-commerce, startups or retail. Only hotels, guesthouses, real estate and experiences. That makes us the best at what you need. Not the cheapest on the market.",
+    "d1_desc": "We do not work with e-commerce, startups or retail. Only hotels, guesthouses, hostels, beach clubs and holiday rentals on the coast of Ceará and Rio Grande do Norte. That makes us the best at what you need. Not the cheapest on the market.",
     "d2_title": "Direct bookings, not vanity metrics",
     "d2_desc": "Followers who don't book don't pay the bills. Every campaign, post and landing page we deliver is measured by one metric: real growth of your revenue.",
     "d3_title": "Dedicated team, not a rotation",
     "d3_desc": "You don't talk to an intern. You have a fixed team that knows your brand, your season and your ideal client, thinking strategically about growth throughout the year.",
-    "markets": "We work with brands in Brazil and Spain, in Portuguese, English and Spanish.",
+    "markets": "We work along the coast of Ceará and Rio Grande do Norte, in Portuguese, English and Spanish.",
     "where_eyebrow": "Where we operate"
   },
   "testimonials": {
@@ -452,17 +444,17 @@
     "videos_subtitle": "6 videos · 9:16"
   },
   "footer": {
-    "tagline": "Digital marketing agency for hotels, guesthouses and real estate. Direct bookings, not OTA dependence.",
+    "tagline": "Hospitality marketing on the coast of Ceará and Rio Grande do Norte. Direct bookings, not dependence on OTAs.",
     "nav_title": "Navigation",
     "social_title": "Social Media",
     "contact_title": "Contact",
     "copyright": "All rights reserved."
   },
   "meta": {
-    "site_title": "Explore Digital — Digital Marketing Agency for Hotels, Guesthouses & Real Estate",
-    "description": "Digital marketing agency specializing in hospitality and real estate. Direct bookings, social media management, paid ads and branding for hotels, guesthouses and real estate.",
-    "og_title": "Explore Digital — Marketing Agency for Hotels & Guesthouses",
-    "og_description": "Specialists in digital marketing for hospitality, experiences and real estate. We reduce OTA dependency and build audiences that book direct."
+    "site_title": "Explore Digital — Hospitality marketing in Ceará and Rio Grande do Norte",
+    "description": "A marketing agency specialised in hospitality on the coast of Ceará and Rio Grande do Norte, Brazil. Direct bookings, social media, paid traffic and branding for guesthouses, hostels and beach clubs.",
+    "og_title": "Explore Digital — Hospitality marketing on the CE and RN coast",
+    "og_description": "Specialists in guesthouses, hostels and beach clubs on the Ceará and Rio Grande do Norte coast. Fewer OTAs, more direct bookings."
   },
   "consultoria": {
     "meta_title": "Free Consulting for Hotels, Inns and Real Estate | Explore Digital",
@@ -483,20 +475,20 @@
     "hero_scroll": "See how it works",
     "cred_items": [
       {
-        "value": "+30",
-        "label": "brands served across 3 countries"
-      },
-      {
-        "value": "5+",
-        "label": "years focused on this sector alone"
+        "value": "CE · RN",
+        "label": "the coastline we specialise in"
       },
       {
         "value": "+100%",
-        "label": "average social media growth"
+        "label": "growth in one year for Cabaré du Vento"
+      },
+      {
+        "value": "40k",
+        "label": "followers built for a single client"
       },
       {
         "value": "45min",
-        "label": "is all the session takes"
+        "label": "is all the consultation takes"
       }
     ],
     "audience_eyebrow": "Who it's for",

@@ -9,10 +9,17 @@ interface Props {
   params: Promise<{ slug: string; locale: string }>
 }
 
-/** "01 Jan 2026" → "2026-01-01". Devolve undefined se a data não for legível. */
+// Os meses dos posts estão abreviados em português: `new Date('07 Ago 2026')`
+// devolve Invalid Date, e o publishedTime saía vazio em 8 dos 12 meses.
+const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
+
+/** "07 Ago 2026" → "2026-08-07T00:00:00.000Z". undefined se não for legível. */
 function toIso(date: string): string | undefined {
-  const parsed = new Date(date)
-  return Number.isNaN(parsed.getTime()) ? undefined : parsed.toISOString()
+  const m = /^(\d{1,2})\s+(\p{L}{3})\p{L}*\s+(\d{4})$/u.exec(date.trim())
+  if (!m) return undefined
+  const month = MESES.indexOf(m[2].toLowerCase())
+  if (month < 0) return undefined
+  return new Date(Date.UTC(+m[3], month, +m[1])).toISOString()
 }
 
 /**
