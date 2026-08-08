@@ -884,5 +884,82 @@
     "od_orcamento": "Pedir presupuesto",
     "od_count": "{n} entregas",
     "proj_ver_disciplina": "Ver disciplina"
+  },
+  "home": {
+    "gargalos_eyebrow": "Onde a gente entra",
+    "gargalos_title": "Três gargalos que ouvimos toda semana.",
+    "gargalos_cta": "Ver como resolvemos",
+    "gargalos_items": [
+      {
+        "num": "01",
+        "title": "Dependo demais de Booking e Airbnb",
+        "desc": "A comissão come a margem e a plataforma fica com o relacionamento. Construímos o canal direto para você parar de alugar audiência.",
+        "slug": "web-design"
+      },
+      {
+        "num": "02",
+        "title": "Meu Instagram cresce mas não vira reserva",
+        "desc": "Seguidor que não reserva não paga conta. Conteúdo, oferta e funil trabalhando juntos, não três coisas separadas.",
+        "slug": "social-media"
+      },
+      {
+        "num": "03",
+        "title": "Minha operação vive no improviso",
+        "desc": "Reserva no caderno, atendimento perdido no WhatsApp e ninguém sabe de onde veio o hóspede. A gente automatiza isso.",
+        "slug": "automatizacoes"
+      }
+    ],
+    "disc_eyebrow": "O que fazemos",
+    "disc_title": "Seis disciplinas, um objetivo.",
+    "disc_sub": "Da marca ao sistema que sustenta a operação. Cada disciplina foi desenvolvida dentro de hotelaria e experiências.",
+    "disc_cta": "Ver todos os serviços",
+    "disc_items": [
+      {
+        "slug": "social-media",
+        "label": "Social media",
+        "title": "Conteúdo que vira reserva",
+        "desc": "Produção mensal, captação no destino e setup completo do perfil."
+      },
+      {
+        "slug": "performance-ads",
+        "label": "Performance",
+        "title": "Verba medida em reserva",
+        "desc": "Meta e Google operados por quem toca a própria operação de tráfego."
+      },
+      {
+        "slug": "web-design",
+        "label": "Web design",
+        "title": "Canal direto que converte",
+        "desc": "Site e landing page feitos para tirar a reserva da OTA."
+      },
+      {
+        "slug": "motion",
+        "label": "Motion",
+        "title": "Consistência sem esforço",
+        "desc": "Vinheta, assinatura animada e conteúdo gerado automaticamente."
+      },
+      {
+        "slug": "automatizacoes",
+        "label": "Automatizações",
+        "title": "Operação sem improviso",
+        "desc": "Gestão do negócio, redes sociais e CRM rodando sozinhos."
+      },
+      {
+        "slug": "branding",
+        "label": "Branding",
+        "title": "Marca que sustenta preço",
+        "desc": "Identidade visual e posicionamento aplicados em todos os pontos."
+      }
+    ],
+    "agora_eyebrow": "Agora",
+    "agora_title": "O que saiu do estúdio nas últimas semanas.",
+    "estudio_eyebrow": "O estúdio",
+    "estudio_title": "A gente não aprendeu turismo em curso.",
+    "estudio_destaque": "Geriu hostel, pousada e escola de kite",
+    "estudio_titulo_fim": "antes de virar agência.",
+    "estudio_desc": "Estratégia, criação, captação e vendas na mesma mesa. Todo mundo fala com cliente, todo mundo põe a mão na entrega. Atuamos 100% online, com disponibilidade para viajar e captar a experiência dos nossos clientes.",
+    "estudio_cta": "Conhecer o estúdio",
+    "estudio_cta2": "Trabalhe com a gente",
+    "_todo": "TODO tradução ES: corpo novo da home, ainda em português."
   }
 }
