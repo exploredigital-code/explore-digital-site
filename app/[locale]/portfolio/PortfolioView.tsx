@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { projects, type Category } from '@/data/portfolio'
+import { projects, filtroAjuda, type Category } from '@/data/portfolio'
 import { getLocalizedProject } from '@/data/portfolio-content'
 import { Navbar } from '@/components/sections/Navbar'
 import { Footer } from '@/components/sections/Footer'
@@ -113,7 +113,8 @@ export function PortfolioView() {
   const [expanded, setExpanded] = useState(false)
 
   const visible = projects.filter(p => !p.hidden)
-  const filters = usableFilters(visible)
+  // Filtro só entra quando ajuda a navegar. Ver filtroAjuda em data/portfolio.
+  const filters = filtroAjuda(visible) ? usableFilters(visible) : []
   const featured = visible.find(p => p.featured)
   const filtered = active === 'all'
     ? visible.filter(p => !p.featured)
@@ -167,6 +168,7 @@ export function PortfolioView() {
         )}
 
         {/* Filter tabs */}
+        {filters.length > 1 && (
         <div className="sticky top-[68px] z-30 bg-white border-b border-g-dark/8">
           <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 overflow-x-auto">
             <div className="flex gap-0 min-w-max">
@@ -187,6 +189,7 @@ export function PortfolioView() {
             </div>
           </div>
         </div>
+        )}
 
         {/* Projects grid */}
         <section className="py-16 lg:py-24 min-h-[400px]">
@@ -268,7 +271,9 @@ function FeaturedProjectCard({ project }: { project: (typeof projects)[0] }) {
   const getSector = (s: string) => { const k = SECTOR_KEY[s]; return k ? t(k as Parameters<typeof t>[0]) : s }
   const localized = getLocalizedProject(locale, project.slug)
   const tagline = localized?.tagline ?? project.tagline
-  const result = localized?.result ?? project.result
+  // Métrica só entra se confirmada pelo cliente. Sem ela o card fica com
+  // setor, nome e ano, e a linha some inteira em vez de virar espaço vazio.
+  const result = project.resultConfirmado ? (localized?.result ?? project.result) : null
   return (
     <Link
       href={`/${locale}/portfolio/${project.slug}`}
@@ -305,7 +310,7 @@ function FeaturedProjectCard({ project }: { project: (typeof projects)[0] }) {
               {project.client}
             </h2>
             <p className="text-[15px] text-white/45 leading-[1.75] mb-4">{tagline}</p>
-            <div className="text-[13px] font-bold text-g-mid/70">{result}</div>
+            {result && <div className="text-[13px] font-bold text-g-mid/70">{result}</div>}
           </div>
           <div className="mt-8 inline-flex items-center gap-2 text-[13px] font-bold text-g-light/50 group-hover:text-g-light transition-colors">
             {t('view_full_case')}

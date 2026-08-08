@@ -8,7 +8,7 @@ import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn } from '@/components/ui/AnimateIn'
-import { projects, type Category } from '@/data/portfolio'
+import { projects, filtroAjuda, type Category } from '@/data/portfolio'
 import { getLocalizedProject } from '@/data/portfolio-content'
 
 type Filter = 'all' | Category
@@ -122,7 +122,7 @@ export function Portfolio() {
     getLocalizedProject(locale, slug)?.tagline ?? fallback
 
   const visible = projects.filter(p => !p.hidden)
-  const filters = usableFilters(visible)
+  const filters = filtroAjuda(visible) ? usableFilters(visible) : []
   const filtered = active === 'all' ? visible : visible.filter(p => p.categories.includes(active as Category))
   const displayed = filtered.slice(0, 6)
   const remaining = filtered.length - displayed.length
@@ -147,6 +147,7 @@ export function Portfolio() {
         </div>
 
         {/* Filter buttons — rectangular, uppercase, decisive */}
+        {filters.length > 1 && (
         <AnimateIn delay={0.12} className="flex flex-wrap gap-2 mb-12">
           {filters.map(f => (
             <button
@@ -163,6 +164,7 @@ export function Portfolio() {
             </button>
           ))}
         </AnimateIn>
+        )}
 
         {/* Grid */}
         <AnimatePresence mode="wait">

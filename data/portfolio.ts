@@ -9,6 +9,8 @@ export interface Project {
   sector: Sector
   categories: Category[]
   result: string
+  /** false = metrica ainda nao confirmada pelo cliente. O card entra sem ela. */
+  resultConfirmado?: boolean
   year: string
   gradient: string
   imageUrl: string
@@ -20,6 +22,28 @@ export interface Project {
   videoIds: string[]
 }
 
+/** Quantos cases publicados justificam existir filtro. */
+const MINIMO_PARA_FILTRAR = 6
+
+/**
+ * O filtro de categoria só aparece quando ajuda a navegar.
+ *
+ * Com quatro cases publicados, "social" e "performance" mostram os quatro,
+ * ou seja, o mesmo que "todos". Filtro que sempre devolve quase tudo é ruído
+ * disfarçado de navegação: ocupa uma faixa da tela e não muda nada.
+ *
+ * A regra é auto-corretiva. Quando o portfólio crescer e pelo menos duas
+ * categorias passarem a recortar de verdade, o filtro volta sozinho.
+ */
+export function filtroAjuda(visiveis: Project[]): boolean {
+  if (visiveis.length < MINIMO_PARA_FILTRAR) return false
+  const categorias = new Set(visiveis.flatMap(p => p.categories))
+  const recortam = [...categorias].filter(
+    c => visiveis.filter(p => p.categories.includes(c)).length < visiveis.length
+  )
+  return recortam.length >= 2
+}
+
 export const projects: Project[] = [
   {
     id: 1,
@@ -29,6 +53,7 @@ export const projects: Project[] = [
     sector: 'Beach Club',
     categories: ['social', 'performance'],
     result: '40 mil seguidores · 100% de crescimento em 1 ano',
+    resultConfirmado: true,
     year: '2025',
     gradient: 'from-[#1B3025] via-[#2D5238] to-[#3D7A4E]',
     imageUrl: '/images/portfolio/cabare.jpg',
@@ -98,6 +123,7 @@ export const projects: Project[] = [
     sector: 'Hotelaria',
     categories: ['social'],
     result: 'Instagram +400% em 2 anos: de 27 mil para 110 mil seguidores',
+    resultConfirmado: true,
     year: '2023',
     gradient: 'from-[#0F2018] via-[#1B3025] to-[#2D5238]',
     imageUrl: '/images/portfolio/maresiasdoleme.jpg',

@@ -10,11 +10,18 @@ import { agora } from '@/data/agora'
  * Feed "Agora", no lugar da fileira de logos.
  *
  * Fato datado prova mais que logo enfileirado: diz o que foi feito, para quem
- * e quando. Ver `data/agora.ts` para o campo `confirmado`, que marca os itens
- * que ainda aguardam aval do cliente.
+ * e quando.
+ *
+ * Renderiza SÓ o que tem `confirmado: true`. Três dos quatro itens que vieram
+ * do HTML de referência eram exemplos plausíveis de como o feed funcionaria, e
+ * atravessaram a conversa até virar código. Um fato verdadeiro vale mais que
+ * quatro plausíveis, e data errada em feed público é o que o cliente corrige
+ * na sua frente numa reunião.
  */
 export function Agora() {
   const t = useTranslations('home')
+  const itens = agora.filter(i => i.confirmado)
+  if (itens.length === 0) return null
 
   return (
     <section id="agora" className="bg-white py-20 lg:py-28">
@@ -27,7 +34,7 @@ export function Agora() {
         </AnimateIn>
 
         <ol className="divide-y divide-tinta-16 border-y border-tinta-16">
-          {agora.map((item, i) => (
+          {itens.map((item, i) => (
             <motion.li
               key={item.cliente + item.data}
               initial={{ opacity: 0, y: 10 }}
