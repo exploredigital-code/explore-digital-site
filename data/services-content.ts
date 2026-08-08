@@ -101,8 +101,8 @@ const content: Record<string, LocaleContent> = {
         ],
         deliverables: ['Configuração completa de campanhas', 'Criativos (imagens e vídeos)', 'Otimização diária', 'Relatório mensal unificado', 'Análise de concorrência', 'Dashboard de acompanhamento'],
       },
-      sistemas: {
-        title: 'Sistemas',
+      automatizacoes: {
+        title: 'Automatizações',
         tagline: 'Tecnologia que automatiza e escala o seu negócio.',
         description: 'Desenvolvemos sistemas internos e automações que eliminam processos manuais, reduzem erros e liberam sua equipe para o que realmente importa.',
         what: 'Sistemas e automações bem implementados são o diferencial que permite escalar sem aumentar proporcionalmente a equipe. Desde CRMs personalizados até integrações automáticas entre plataformas. Construímos a infraestrutura tecnológica do seu negócio.',
@@ -119,6 +119,25 @@ const content: Record<string, LocaleContent> = {
           'Times que dependem de planilhas e processos manuais',
         ],
         deliverables: ['Sistema ou automação configurada', 'Documentação técnica', 'Treinamento da equipe', 'Suporte pós-implantação'],
+      },
+      motion: {
+        title: 'Motion',
+        tagline: 'Consistência sem esforço recorrente.',
+        description: 'Peças animadas e conteúdo gerado em série para a marca aparecer sempre igual, sem o time refazer arte toda semana.',
+        what: 'Motion não é enfeite. É o que faz a marca aparecer do mesmo jeito toda vez sem custar uma hora de alguém toda semana. Vinheta, selo e assinatura em movimento dão acabamento; o conteúdo gerado em série resolve a peça repetitiva que hoje alguém refaz na mão, no improviso, quase sempre em cima da hora.',
+        how: [
+          { title: 'Inventário do repetitivo', desc: 'Mapeamos o que a sua operação refaz toda semana: maré, programação, vento, line-up.' },
+          { title: 'Sistema visual em movimento', desc: 'Definimos vinheta, selo, assinatura e o padrão das peças de série dentro da sua identidade.' },
+          { title: 'Animação e automação', desc: 'Animamos as peças e ligamos as de série à fonte de dados, para saírem sozinhas no horário certo.' },
+          { title: 'Entrega e handoff', desc: 'Entregamos nos formatos que o seu editor abre e documentamos como usar cada peça.' },
+        ],
+        whoFor: [
+          'Pousadas e beach clubs que publicam a mesma informação toda semana',
+          'Escolas de kite e wingfoil que dependem de maré e vento',
+          'Marcas que já têm identidade e querem acabamento em movimento',
+          'Times pequenos que perdem hora com peça repetitiva',
+        ],
+        deliverables: ['Vinheta de abertura', 'Selo e assinatura animados', 'Lower third para reels', 'Peças de série no padrão da marca', 'Criativo animado para anúncio', 'Arquivos em ProRes 4444 e WebM VP9 com alpha'],
       },
     },
     subServices: {
@@ -218,6 +237,30 @@ const content: Record<string, LocaleContent> = {
         features: ['Escolha e configuração do CRM ideal', 'Migração de dados existentes', 'Criação de pipelines e etapas de venda', 'Automações de follow-up', 'Treinamento da equipe', 'Integrações com WhatsApp, e-mail e formulários'],
         result: 'Pipeline de vendas organizado e follow-up nunca esquecido',
       },
+      'pecas-animadas': {
+        name: 'Peças animadas',
+        tagline: 'Vinheta, selo e assinatura em movimento.',
+        description: 'O kit de movimento da marca: abertura, selo, assinatura e lower third para reels. É o que dá acabamento ao conteúdo que você já produz, sem depender de quem edita.',
+        forWhom: ['Marcas com identidade pronta e conteúdo sem acabamento', 'Quem publica reels toda semana', 'Operações que trocam de editor e perdem o padrão'],
+        features: ['Vinheta de abertura', 'Selo e assinatura em movimento', 'Lower third para reels', 'Entrega principal em ProRes 4444', 'Entrega secundária em WebM VP9 com alpha', 'Versão com fundo chapado para quem edita no CapCut'],
+        result: 'Conteúdo com acabamento de marca, independente de quem edita',
+      },
+      'conteudo-serie': {
+        name: 'Conteúdo gerado em série',
+        tagline: 'A peça repetitiva sai sozinha, no horário certo.',
+        description: 'Tábua de maré, programação da semana, previsão de vento e line-up. O sistema gera as peças no padrão da marca e elas saem no horário, sem ninguém refazer arte toda semana.',
+        forWhom: ['Pousadas e beach clubs com programação semanal', 'Escolas de kite e wingfoil que publicam maré e vento', 'Times que hoje refazem a mesma arte na mão'],
+        features: ['Padrão visual das peças dentro da identidade', 'Ligação com a fonte de dados (maré, vento, agenda)', 'Geração automática no formato de story', 'Publicação no horário definido', 'Ajuste do padrão sempre que a marca mudar'],
+        result: '56 stories de maré entregues para o No Worries, cobrindo agosto e setembro',
+      },
+      'motion-anuncio': {
+        name: 'Motion para anúncio',
+        tagline: 'Criativo animado feito para testar.',
+        description: 'Criativo animado para Meta e Google, em variações de formato e de gancho. Feito para teste A/B: o mesmo conteúdo em versões que disputam entre si até uma ganhar.',
+        forWhom: ['Quem já investe em tráfego e cansou do criativo estático', 'Campanhas de temporada', 'Contas que precisam renovar criativo sem refazer captação'],
+        features: ['Variações de gancho para teste A/B', 'Formatos para feed, story e reels', 'Versões legendadas para reprodução sem som', 'Arquivos prontos para Meta e Google'],
+        result: 'Criativo animado em variações prontas para disputar entre si',
+      },
     },
   },
 
@@ -299,8 +342,8 @@ const content: Record<string, LocaleContent> = {
         ],
         deliverables: ['Complete campaign setup', 'Creatives (images and videos)', 'Daily optimization', 'Unified monthly report', 'Competitive analysis', 'Tracking dashboard'],
       },
-      sistemas: {
-        title: 'Systems',
+      automatizacoes: {
+        title: 'Automations',
         tagline: 'Technology that automates and scales your business.',
         description: 'We develop internal systems and automations that eliminate manual processes, reduce errors, and free your team to focus on what truly matters.',
         what: 'Well-implemented systems and automations are the differentiator that allows you to scale without proportionally growing your team. From custom CRMs to automatic integrations between platforms. We build the technological infrastructure of your business.',
@@ -317,6 +360,26 @@ const content: Record<string, LocaleContent> = {
           'Teams depending on spreadsheets and manual processes',
         ],
         deliverables: ['System or automation configured', 'Technical documentation', 'Team training', 'Post-deployment support'],
+      },
+      // TODO tradução EN: conteúdo novo de Motion, ainda em português.
+      motion: {
+        title: 'Motion',
+        tagline: 'Consistência sem esforço recorrente.',
+        description: 'Peças animadas e conteúdo gerado em série para a marca aparecer sempre igual, sem o time refazer arte toda semana.',
+        what: 'Motion não é enfeite. É o que faz a marca aparecer do mesmo jeito toda vez sem custar uma hora de alguém toda semana. Vinheta, selo e assinatura em movimento dão acabamento; o conteúdo gerado em série resolve a peça repetitiva que hoje alguém refaz na mão, no improviso, quase sempre em cima da hora.',
+        how: [
+          { title: 'Inventário do repetitivo', desc: 'Mapeamos o que a sua operação refaz toda semana: maré, programação, vento, line-up.' },
+          { title: 'Sistema visual em movimento', desc: 'Definimos vinheta, selo, assinatura e o padrão das peças de série dentro da sua identidade.' },
+          { title: 'Animação e automação', desc: 'Animamos as peças e ligamos as de série à fonte de dados, para saírem sozinhas no horário certo.' },
+          { title: 'Entrega e handoff', desc: 'Entregamos nos formatos que o seu editor abre e documentamos como usar cada peça.' },
+        ],
+        whoFor: [
+          'Pousadas e beach clubs que publicam a mesma informação toda semana',
+          'Escolas de kite e wingfoil que dependem de maré e vento',
+          'Marcas que já têm identidade e querem acabamento em movimento',
+          'Times pequenos que perdem hora com peça repetitiva',
+        ],
+        deliverables: ['Vinheta de abertura', 'Selo e assinatura animados', 'Lower third para reels', 'Peças de série no padrão da marca', 'Criativo animado para anúncio', 'Arquivos em ProRes 4444 e WebM VP9 com alpha'],
       },
     },
     subServices: {
@@ -416,6 +479,31 @@ const content: Record<string, LocaleContent> = {
         features: ['Selection and configuration of the ideal CRM', 'Migration of existing data', 'Pipeline and sales stage creation', 'Follow-up automations', 'Team training', 'WhatsApp, email, and form integrations'],
         result: 'Organized sales pipeline and follow-up never forgotten',
       },
+      // TODO tradução EN: conteúdo novo de Motion, ainda em português.
+      'pecas-animadas': {
+        name: 'Peças animadas',
+        tagline: 'Vinheta, selo e assinatura em movimento.',
+        description: 'O kit de movimento da marca: abertura, selo, assinatura e lower third para reels. É o que dá acabamento ao conteúdo que você já produz, sem depender de quem edita.',
+        forWhom: ['Marcas com identidade pronta e conteúdo sem acabamento', 'Quem publica reels toda semana', 'Operações que trocam de editor e perdem o padrão'],
+        features: ['Vinheta de abertura', 'Selo e assinatura em movimento', 'Lower third para reels', 'Entrega principal em ProRes 4444', 'Entrega secundária em WebM VP9 com alpha', 'Versão com fundo chapado para quem edita no CapCut'],
+        result: 'Conteúdo com acabamento de marca, independente de quem edita',
+      },
+      'conteudo-serie': {
+        name: 'Conteúdo gerado em série',
+        tagline: 'A peça repetitiva sai sozinha, no horário certo.',
+        description: 'Tábua de maré, programação da semana, previsão de vento e line-up. O sistema gera as peças no padrão da marca e elas saem no horário, sem ninguém refazer arte toda semana.',
+        forWhom: ['Pousadas e beach clubs com programação semanal', 'Escolas de kite e wingfoil que publicam maré e vento', 'Times que hoje refazem a mesma arte na mão'],
+        features: ['Padrão visual das peças dentro da identidade', 'Ligação com a fonte de dados (maré, vento, agenda)', 'Geração automática no formato de story', 'Publicação no horário definido', 'Ajuste do padrão sempre que a marca mudar'],
+        result: '56 stories de maré entregues para o No Worries, cobrindo agosto e setembro',
+      },
+      'motion-anuncio': {
+        name: 'Motion para anúncio',
+        tagline: 'Criativo animado feito para testar.',
+        description: 'Criativo animado para Meta e Google, em variações de formato e de gancho. Feito para teste A/B: o mesmo conteúdo em versões que disputam entre si até uma ganhar.',
+        forWhom: ['Quem já investe em tráfego e cansou do criativo estático', 'Campanhas de temporada', 'Contas que precisam renovar criativo sem refazer captação'],
+        features: ['Variações de gancho para teste A/B', 'Formatos para feed, story e reels', 'Versões legendadas para reprodução sem som', 'Arquivos prontos para Meta e Google'],
+        result: 'Criativo animado em variações prontas para disputar entre si',
+      },
     },
   },
 
@@ -497,8 +585,8 @@ const content: Record<string, LocaleContent> = {
         ],
         deliverables: ['Configuración completa de campañas', 'Creativos (imágenes y videos)', 'Optimización diaria', 'Informe mensual unificado', 'Análisis de competencia', 'Dashboard de seguimiento'],
       },
-      sistemas: {
-        title: 'Sistemas',
+      automatizacoes: {
+        title: 'Automatizaciones',
         tagline: 'Tecnología que automatiza y escala tu negocio.',
         description: 'Desarrollamos sistemas internos y automatizaciones que eliminan procesos manuales, reducen errores y liberan a tu equipo para lo que realmente importa.',
         what: 'Los sistemas y automatizaciones bien implementados son el diferencial que permite escalar sin aumentar proporcionalmente el equipo. Desde CRMs personalizados hasta integraciones automáticas entre plataformas. Construimos la infraestructura tecnológica de tu negocio.',
@@ -515,6 +603,26 @@ const content: Record<string, LocaleContent> = {
           'Equipos que dependen de planillas y procesos manuales',
         ],
         deliverables: ['Sistema o automatización configurada', 'Documentación técnica', 'Entrenamiento del equipo', 'Soporte post-implementación'],
+      },
+      // TODO tradução ES: conteúdo novo de Motion, ainda em português.
+      motion: {
+        title: 'Motion',
+        tagline: 'Consistência sem esforço recorrente.',
+        description: 'Peças animadas e conteúdo gerado em série para a marca aparecer sempre igual, sem o time refazer arte toda semana.',
+        what: 'Motion não é enfeite. É o que faz a marca aparecer do mesmo jeito toda vez sem custar uma hora de alguém toda semana. Vinheta, selo e assinatura em movimento dão acabamento; o conteúdo gerado em série resolve a peça repetitiva que hoje alguém refaz na mão, no improviso, quase sempre em cima da hora.',
+        how: [
+          { title: 'Inventário do repetitivo', desc: 'Mapeamos o que a sua operação refaz toda semana: maré, programação, vento, line-up.' },
+          { title: 'Sistema visual em movimento', desc: 'Definimos vinheta, selo, assinatura e o padrão das peças de série dentro da sua identidade.' },
+          { title: 'Animação e automação', desc: 'Animamos as peças e ligamos as de série à fonte de dados, para saírem sozinhas no horário certo.' },
+          { title: 'Entrega e handoff', desc: 'Entregamos nos formatos que o seu editor abre e documentamos como usar cada peça.' },
+        ],
+        whoFor: [
+          'Pousadas e beach clubs que publicam a mesma informação toda semana',
+          'Escolas de kite e wingfoil que dependem de maré e vento',
+          'Marcas que já têm identidade e querem acabamento em movimento',
+          'Times pequenos que perdem hora com peça repetitiva',
+        ],
+        deliverables: ['Vinheta de abertura', 'Selo e assinatura animados', 'Lower third para reels', 'Peças de série no padrão da marca', 'Criativo animado para anúncio', 'Arquivos em ProRes 4444 e WebM VP9 com alpha'],
       },
     },
     subServices: {
@@ -613,6 +721,31 @@ const content: Record<string, LocaleContent> = {
         forWhom: ['Equipos de ventas que dependen de planillas', 'Agencias y prestadores de servicios con múltiples clientes', 'Hoteles y operadoras con alto volumen de leads'],
         features: ['Selección y configuración del CRM ideal', 'Migración de datos existentes', 'Creación de pipelines y etapas de venta', 'Automatizaciones de follow-up', 'Entrenamiento del equipo', 'Integraciones con WhatsApp, email y formularios'],
         result: 'Pipeline de ventas organizado y follow-up nunca olvidado',
+      },
+      // TODO tradução ES: conteúdo novo de Motion, ainda em português.
+      'pecas-animadas': {
+        name: 'Peças animadas',
+        tagline: 'Vinheta, selo e assinatura em movimento.',
+        description: 'O kit de movimento da marca: abertura, selo, assinatura e lower third para reels. É o que dá acabamento ao conteúdo que você já produz, sem depender de quem edita.',
+        forWhom: ['Marcas com identidade pronta e conteúdo sem acabamento', 'Quem publica reels toda semana', 'Operações que trocam de editor e perdem o padrão'],
+        features: ['Vinheta de abertura', 'Selo e assinatura em movimento', 'Lower third para reels', 'Entrega principal em ProRes 4444', 'Entrega secundária em WebM VP9 com alpha', 'Versão com fundo chapado para quem edita no CapCut'],
+        result: 'Conteúdo com acabamento de marca, independente de quem edita',
+      },
+      'conteudo-serie': {
+        name: 'Conteúdo gerado em série',
+        tagline: 'A peça repetitiva sai sozinha, no horário certo.',
+        description: 'Tábua de maré, programação da semana, previsão de vento e line-up. O sistema gera as peças no padrão da marca e elas saem no horário, sem ninguém refazer arte toda semana.',
+        forWhom: ['Pousadas e beach clubs com programação semanal', 'Escolas de kite e wingfoil que publicam maré e vento', 'Times que hoje refazem a mesma arte na mão'],
+        features: ['Padrão visual das peças dentro da identidade', 'Ligação com a fonte de dados (maré, vento, agenda)', 'Geração automática no formato de story', 'Publicação no horário definido', 'Ajuste do padrão sempre que a marca mudar'],
+        result: '56 stories de maré entregues para o No Worries, cobrindo agosto e setembro',
+      },
+      'motion-anuncio': {
+        name: 'Motion para anúncio',
+        tagline: 'Criativo animado feito para testar.',
+        description: 'Criativo animado para Meta e Google, em variações de formato e de gancho. Feito para teste A/B: o mesmo conteúdo em versões que disputam entre si até uma ganhar.',
+        forWhom: ['Quem já investe em tráfego e cansou do criativo estático', 'Campanhas de temporada', 'Contas que precisam renovar criativo sem refazer captação'],
+        features: ['Variações de gancho para teste A/B', 'Formatos para feed, story e reels', 'Versões legendadas para reprodução sem som', 'Arquivos prontos para Meta e Google'],
+        result: 'Criativo animado em variações prontas para disputar entre si',
       },
     },
   },

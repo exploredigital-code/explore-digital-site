@@ -1,4 +1,4 @@
-﻿export type ServicePillar = 'branding' | 'web' | 'social' | 'performance' | 'sistemas'
+﻿export type ServicePillar = 'branding' | 'web' | 'social' | 'performance' | 'automatizacoes' | 'motion'
 
 export interface ServiceStep { number: string; title: string; desc: string }
 
@@ -27,7 +27,7 @@ export interface ServiceData {
   whoFor: string[]
   deliverables: string[]
   subServices: SubService[]
-  portfolioCategory: 'branding' | 'web' | 'social' | 'performance' | 'sistemas'
+  portfolioCategory: 'branding' | 'web' | 'social' | 'performance' | 'automatizacoes' | 'motion'
 }
 
 export const servicesData: ServiceData[] = [
@@ -48,7 +48,7 @@ export const servicesData: ServiceData[] = [
     whoFor: [
       'Pousadas e hotéis que querem se posicionar como referência premium',
       'Beach clubs em fase de lançamento ou que precisam de rebrand',
-      'Beach clubs e restaurantes de frente para o mar',
+      'Restaurantes de frente para o mar que cobram mais que o vizinho',
       'Operadoras de experiências que querem comunicar diferenciação',
     ],
     deliverables: ['Logotipo principal e variações', 'Paleta de cores oficial', 'Tipografia da marca', 'Elementos gráficos', 'Mockups de aplicação', 'Manual de identidade visual (PDF)'],
@@ -295,8 +295,8 @@ export const servicesData: ServiceData[] = [
   },
   {
     slug: 'automatizacoes',
-    pillar: 'sistemas',
-    title: 'Sistemas',
+    pillar: 'automatizacoes',
+    title: 'Automatizações',
     tagline: 'Tecnologia que automatiza e escala o seu negócio.',
     description: 'Desenvolvemos sistemas internos e automações que eliminam processos manuais, reduzem erros e liberam sua equipe para o que realmente importa.',
     gradient: 'from-[#0F2018] via-[#162B20] to-[#1B3025]',
@@ -314,11 +314,11 @@ export const servicesData: ServiceData[] = [
       'Times que dependem de planilhas e processos manuais',
     ],
     deliverables: ['Sistema ou automação configurada', 'Documentação técnica', 'Treinamento da equipe', 'Suporte pós-implantação'],
-    portfolioCategory: 'sistemas',
+    portfolioCategory: 'automatizacoes',
     subServices: [
       {
         slug: 'sistemas-internos',
-        pillar: 'sistemas',
+        pillar: 'automatizacoes',
         name: 'Sistemas Internos',
         period: 'once',
         tagline: 'Sistemas personalizados para a sua operação.',
@@ -335,7 +335,7 @@ export const servicesData: ServiceData[] = [
       },
       {
         slug: 'automacoes',
-        pillar: 'sistemas',
+        pillar: 'automatizacoes',
         name: 'Automações',
         period: 'once',
         tagline: 'Processe mais fazendo menos com fluxos automáticos.',
@@ -352,7 +352,7 @@ export const servicesData: ServiceData[] = [
       },
       {
         slug: 'crm',
-        pillar: 'sistemas',
+        pillar: 'automatizacoes',
         name: 'CRM',
         period: 'once',
         tagline: 'Gestão de clientes e pipeline de vendas centralizado.',
@@ -371,6 +371,111 @@ export const servicesData: ServiceData[] = [
     ],
   },
 ]
+
+servicesData.push({
+  slug: 'motion',
+  pillar: 'motion',
+  title: 'Motion',
+  tagline: 'Consistência sem esforço recorrente.',
+  description: 'Peças animadas e conteúdo gerado em série para a marca aparecer sempre igual, sem o time refazer arte toda semana.',
+  gradient: 'from-[#162B20] via-[#2D5238] to-[#0F2018]',
+  what: 'Motion não é enfeite. É o que faz a marca aparecer do mesmo jeito toda vez sem custar uma hora de alguém toda semana. Vinheta, selo e assinatura em movimento dão acabamento; o conteúdo gerado em série resolve a peça repetitiva que hoje alguém refaz na mão, no improviso, quase sempre em cima da hora.',
+  how: [
+    { number: '01', title: 'Inventário do repetitivo', desc: 'Mapeamos o que a sua operação refaz toda semana: maré, programação, vento, line-up.' },
+    { number: '02', title: 'Sistema visual em movimento', desc: 'Definimos vinheta, selo, assinatura e o padrão das peças de série dentro da sua identidade.' },
+    { number: '03', title: 'Animação e automação', desc: 'Animamos as peças e ligamos as de série à fonte de dados, para saírem sozinhas no horário certo.' },
+    { number: '04', title: 'Entrega e handoff', desc: 'Entregamos nos formatos que o seu editor abre e documentamos como usar cada peça.' },
+  ],
+  whoFor: [
+    'Pousadas e beach clubs que publicam a mesma informação toda semana',
+    'Escolas de kite e wingfoil que dependem de maré e vento',
+    'Marcas que já têm identidade e querem acabamento em movimento',
+    'Times pequenos que perdem hora com peça repetitiva',
+  ],
+  deliverables: ['Vinheta de abertura', 'Selo e assinatura animados', 'Lower third para reels', 'Peças de série no padrão da marca', 'Criativo animado para anúncio', 'Arquivos em ProRes 4444 e WebM VP9 com alpha'],
+  portfolioCategory: 'motion',
+  subServices: [
+    {
+      slug: 'pecas-animadas',
+      pillar: 'motion',
+      name: 'Peças animadas',
+      period: 'once',
+      tagline: 'Vinheta, selo e assinatura em movimento.',
+      description: 'O kit de movimento da marca: abertura, selo, assinatura e lower third para reels. É o que dá acabamento ao conteúdo que você já produz, sem depender de quem edita.',
+      forWhom: ['Marcas com identidade pronta e conteúdo sem acabamento', 'Quem publica reels toda semana', 'Operações que trocam de editor e perdem o padrão'],
+      features: [
+        'Vinheta de abertura',
+        'Selo e assinatura em movimento',
+        'Lower third para reels',
+        'Entrega principal em ProRes 4444',
+        'Entrega secundária em WebM VP9 com alpha',
+        // O CapCut não lê alpha de forma confiável. Sem esta versão, o editor
+        // do cliente recebe um arquivo que simplesmente não abre direito.
+        'Versão com fundo chapado para quem edita no CapCut',
+      ],
+      result: 'Conteúdo com acabamento de marca, independente de quem edita',
+    },
+    {
+      slug: 'conteudo-serie',
+      pillar: 'motion',
+      name: 'Conteúdo gerado em série',
+      period: 'monthly',
+      tagline: 'A peça repetitiva sai sozinha, no horário certo.',
+      description: 'Tábua de maré, programação da semana, previsão de vento e line-up. O sistema gera as peças no padrão da marca e elas saem no horário, sem ninguém refazer arte toda semana.',
+      forWhom: ['Pousadas e beach clubs com programação semanal', 'Escolas de kite e wingfoil que publicam maré e vento', 'Times que hoje refazem a mesma arte na mão'],
+      features: [
+        'Padrão visual das peças dentro da identidade',
+        'Ligação com a fonte de dados (maré, vento, agenda)',
+        'Geração automática no formato de story',
+        'Publicação no horário definido',
+        'Ajuste do padrão sempre que a marca mudar',
+      ],
+      result: '56 stories de maré entregues para o No Worries, cobrindo agosto e setembro',
+    },
+    {
+      slug: 'motion-anuncio',
+      pillar: 'motion',
+      name: 'Motion para anúncio',
+      period: 'once',
+      tagline: 'Criativo animado feito para testar.',
+      description: 'Criativo animado para Meta e Google, em variações de formato e de gancho. Feito para teste A/B: o mesmo conteúdo em versões que disputam entre si até uma ganhar.',
+      forWhom: ['Quem já investe em tráfego e cansou do criativo estático', 'Campanhas de temporada', 'Contas que precisam renovar criativo sem refazer captação'],
+      features: [
+        'Variações de gancho para teste A/B',
+        'Formatos para feed, story e reels',
+        'Versões legendadas para reprodução sem som',
+        'Arquivos prontos para Meta e Google',
+      ],
+      result: 'Criativo animado em variações prontas para disputar entre si',
+    },
+  ],
+})
+
+/**
+ * Ordem de exibição das disciplinas.
+ *
+ * O array acima está na ordem em que as frentes foram criadas. Reordenar os
+ * blocos moveria centenas de linhas e poluiria o diff sem ganho nenhum, então
+ * a ordem de tela é declarada aqui, num lugar só.
+ */
+export const DISCIPLINE_ORDER: string[] = [
+  'social-media',
+  'performance-ads',
+  'web-design',
+  'motion',
+  'automatizacoes',
+  'branding',
+]
+
+/** As disciplinas na ordem em que aparecem no site. */
+export const disciplines: ServiceData[] = DISCIPLINE_ORDER
+  .map(slug => servicesData.find(s => s.slug === slug))
+  .filter((s): s is ServiceData => Boolean(s))
+
+/** Uma disciplina pelo slug. `/servicos/[slug]` resolve disciplina antes de sub-serviço. */
+export function findDiscipline(slug: string): ServiceData | undefined {
+  return servicesData.find(s => s.slug === slug)
+}
 
 export function findSubService(slug: string): SubService | undefined {
   for (const service of servicesData) {
