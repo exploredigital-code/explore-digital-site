@@ -286,101 +286,100 @@
     "meta_description": "Practical content on direct bookings, paid traffic, social media and branding for guesthouses, hostels and beach clubs on the coast of Ceará and Rio Grande do Norte, Brazil."
   },
   "carreiras": {
-    "meta_title": "Carreiras · Explore Digital",
-    "meta_description": "Vagas e candidatura espontânea na Explore Digital, agência de marketing para hotelaria no litoral do Ceará e do Rio Grande do Norte.",
-    "eyebrow": "Carreiras",
-    "title": "Mostra o trabalho, não o currículo.",
-    "sub": "Time enxuto, cliente real e devolutiva sempre. Se fizer sentido, a gente responde em até cinco dias úteis.",
-    "work_eyebrow": "Como trabalhamos",
-    "work_title": "Três coisas que a gente entrega de verdade.",
+    "meta_title": "Careers · Explore Digital",
+    "meta_description": "Openings and open applications at Explore Digital, a hospitality marketing agency on the coast of Ceará and Rio Grande do Norte, Brazil.",
+    "eyebrow": "Careers",
+    "title": "Show the work, not the CV.",
+    "sub": "A small team, real clients and an answer either way. If it makes sense, we get back to you within five working days.",
+    "work_eyebrow": "How we work",
+    "work_title": "Three things we actually deliver.",
     "work_items": [
       {
-        "title": "Autonomia com contexto",
-        "desc": "Você recebe o problema do cliente, não a tarefa mastigada. E recebe junto o contexto para decidir."
+        "title": "Autonomy with context",
+        "desc": "You get the client problem, not the pre-chewed task. And you get the context to decide with it."
       },
       {
-        "title": "Portfólio que existe",
-        "desc": "O trabalho vai para o ar com o nome de quem fez. Nada fica preso em apresentação interna."
+        "title": "A portfolio that exists",
+        "desc": "The work goes live with the name of whoever made it. Nothing stays locked in an internal deck."
       },
       {
-        "title": "Ferramenta de verdade",
-        "desc": "Licença paga, equipamento que aguenta e tempo de aprendizado dentro do expediente."
+        "title": "Real tools",
+        "desc": "Paid licences, hardware that keeps up, and learning time inside working hours."
       }
     ],
-    "process_eyebrow": "Processo seletivo",
-    "process_title": "Quatro etapas, sem enrolação.",
+    "process_eyebrow": "Hiring process",
+    "process_title": "Four steps, no runaround.",
     "process_items": [
       {
         "num": "01",
-        "title": "Inscrição",
-        "desc": "Formulário curto com portfólio ou amostra de trabalho. Sem carta de apresentação e sem currículo formatado."
+        "title": "Application",
+        "desc": "A short form with your portfolio or a work sample. No cover letter and no formatted CV."
       },
       {
         "num": "02",
-        "title": "Conversa de 30 minutos",
-        "desc": "Com quem vai trabalhar direto com você. A gente conta o problema real que precisa resolver."
+        "title": "A 30 minute call",
+        "desc": "With whoever will work directly with you. We tell you the real problem we need solved."
       },
       {
         "num": "03",
-        "title": "Desafio pago",
-        "desc": "Um exercício pequeno, no contexto de um cliente real. Se você gastar tempo com a gente, a gente paga por ele."
+        "title": "Paid challenge",
+        "desc": "A small exercise, in the context of a real client. If you spend time with us, we pay for it."
       },
       {
         "num": "04",
-        "title": "Proposta",
-        "desc": "Resposta em até cinco dias, independente do resultado, com devolutiva do que pesou na decisão."
+        "title": "Offer",
+        "desc": "An answer within five days either way, with feedback on what weighed in the decision."
       }
     ],
-    "jobs_eyebrow": "Vagas",
-    "jobs_title": "Quem estamos procurando agora.",
-    "jobs_empty_title": "Nenhuma vaga aberta no momento.",
-    "jobs_empty_desc": "Não temos posição aberta agora. A candidatura espontânea continua valendo: quando abrir algo na sua área, a gente procura quem já se apresentou.",
-    "jobs_apply": "Candidatar",
-    "form_eyebrow": "Candidatura",
-    "form_title": "Três perguntas e o link do seu portfólio.",
-    "form_sub": "Se fizer sentido, a gente responde em até cinco dias úteis.",
+    "jobs_eyebrow": "Openings",
+    "jobs_title": "Who we are looking for right now.",
+    "jobs_empty_title": "No openings at the moment.",
+    "jobs_empty_desc": "We have no position open right now. Open applications still count: when something comes up in your area, we look first at whoever already introduced themselves.",
+    "jobs_apply": "Apply",
+    "form_eyebrow": "Application",
+    "form_title": "Three questions and a link to your portfolio.",
+    "form_sub": "If it makes sense, we get back to you within five working days.",
     "form_badges": [
-      "Resposta em até 5 dias",
-      "Desafio pago",
-      "Devolutiva sempre"
+      "Answer within 5 days",
+      "Paid challenge",
+      "Feedback either way"
     ],
-    "form_step_of": "Etapa {current} de {total}",
-    "f_area": "Para qual área você está se candidatando?",
+    "form_step_of": "Step {current} of {total}",
+    "f_area": "Which area are you applying for?",
     "areas": [
-      "Design de social media",
-      "Vídeo e motion",
-      "Social media estratégia",
-      "Captação de imagem",
-      "Tráfego pago",
-      "Outra área"
+      "Social media design",
+      "Video and motion",
+      "Social media strategy",
+      "Photo and video shooting",
+      "Paid traffic",
+      "Another area"
     ],
-    "f_experiencia": "Quanto tempo de experiência na área?",
+    "f_experiencia": "How long have you worked in the area?",
     "experiencias": [
-      "Menos de 1 ano",
-      "1 a 3 anos",
-      "3 a 6 anos",
-      "Mais de 6 anos"
+      "Less than 1 year",
+      "1 to 3 years",
+      "3 to 6 years",
+      "More than 6 years"
     ],
-    "f_nome": "Nome completo",
-    "f_nome_ph": "Como prefere ser chamado",
-    "f_email": "E-mail",
-    "f_email_ph": "seu@email.com",
+    "f_nome": "Full name",
+    "f_nome_ph": "How you prefer to be called",
+    "f_email": "Email",
+    "f_email_ph": "you@email.com",
     "f_whatsapp": "WhatsApp",
-    "f_whatsapp_ph": "DDD + número",
-    "f_portfolio": "Link do portfólio",
-    "f_portfolio_ph": "Site, Behance, Drive ou perfil do Instagram",
-    "f_portfolio_note": "Pode ser qualquer lugar onde o seu trabalho esteja. O que importa é dar para ver.",
-    "btn_next": "Continuar",
-    "btn_back": "Voltar",
-    "btn_submit": "Enviar candidatura",
-    "btn_sending": "Enviando...",
-    "err_choose": "Escolha uma opção para continuar.",
-    "err_required": "Preencha os campos obrigatórios.",
-    "err_email": "Confira o e-mail digitado.",
-    "ok_title": "Candidatura recebida.",
-    "ok_desc": "Respondemos em até cinco dias úteis, independente do resultado. Se você não tiver notícia até lá, escreve para a gente.",
-    "ok_home": "Voltar ao início",
-    "_todo": "// TODO tradução EN: conteúdo de /carreiras ainda em português."
+    "f_whatsapp_ph": "Country code + number",
+    "f_portfolio": "Portfolio link",
+    "f_portfolio_ph": "Website, Behance, Drive or Instagram profile",
+    "f_portfolio_note": "Anywhere your work lives works. What matters is that we can see it.",
+    "btn_next": "Continue",
+    "btn_back": "Back",
+    "btn_submit": "Send application",
+    "btn_sending": "Sending...",
+    "err_choose": "Pick an option to continue.",
+    "err_required": "Fill in the required fields.",
+    "err_email": "Check the email you typed.",
+    "ok_title": "Application received.",
+    "ok_desc": "We answer within five working days either way. If you have not heard from us by then, write to us.",
+    "ok_home": "Back to home"
   },
   "service_detail": {
     "back": "Back",
@@ -422,8 +421,7 @@
     "video_label": "Video",
     "videos_subtitle": "6 videos · 9:16",
     "quote_label": "Testimonial",
-    "quote_placeholder": "Espaço para depoimento real do cliente, com nome, cargo e negócio. Curto e específico, falando do que mudou na operação.",
-    "_todo": "TODO tradução EN: rótulo e placeholder do depoimento."
+    "quote_placeholder": "Space for a real client testimonial, with name, role and business. Short and specific, about what changed in the operation."
   },
   "footer": {
     "tagline": "Hospitality marketing on the coast of Ceará and Rio Grande do Norte. Direct bookings, not dependence on OTAs.",
@@ -898,80 +896,79 @@
     "trilho_label": "Pieces from {disciplina}"
   },
   "home": {
-    "gargalos_eyebrow": "Onde a gente entra",
-    "gargalos_title": "Três gargalos que ouvimos toda semana.",
-    "gargalos_cta": "Ver como resolvemos",
+    "gargalos_eyebrow": "Where we come in",
+    "gargalos_title": "Three bottlenecks we hear every week.",
+    "gargalos_cta": "See how we solve it",
     "gargalos_items": [
       {
         "num": "01",
-        "title": "Dependo demais de Booking e Airbnb",
-        "desc": "A comissão come a margem e a plataforma fica com o relacionamento. Construímos o canal direto para você parar de alugar audiência.",
+        "title": "I depend too much on Booking and Airbnb",
+        "desc": "Commission eats the margin and the platform keeps the relationship. We build the direct channel so you stop renting your own audience.",
         "slug": "web-design"
       },
       {
         "num": "02",
-        "title": "Meu Instagram cresce mas não vira reserva",
-        "desc": "Seguidor que não reserva não paga conta. Conteúdo, oferta e funil trabalhando juntos, não três coisas separadas.",
+        "title": "My Instagram grows but does not turn into bookings",
+        "desc": "Followers who never book do not pay the bills. Content, offer and funnel working together, not as three separate things.",
         "slug": "social-media"
       },
       {
         "num": "03",
-        "title": "Minha operação vive no improviso",
-        "desc": "Reserva no caderno, atendimento perdido no WhatsApp e ninguém sabe de onde veio o hóspede. A gente automatiza isso.",
+        "title": "My operation runs on improvisation",
+        "desc": "Bookings in a notebook, enquiries lost in WhatsApp and nobody knows where the guest came from. We automate that.",
         "slug": "automatizacoes"
       }
     ],
-    "disc_eyebrow": "O que fazemos",
-    "disc_title": "Seis disciplinas, um objetivo.",
-    "disc_sub": "Seis disciplinas que se sustentam sozinhas e conversam entre si. Quatro nasceram atendendo hotelaria e experiências. Duas nasceram da nossa própria operação, quando precisamos resolver por dentro o que hoje resolvemos para o cliente.",
-    "disc_cta": "Ver todos os serviços",
+    "disc_eyebrow": "What we do",
+    "disc_title": "Six disciplines, one goal.",
+    "disc_sub": "Six disciplines that stand on their own and talk to each other. Four were born serving hospitality and experiences. Two were born inside our own operation, when we had to solve for ourselves what we now solve for the client.",
+    "disc_cta": "See all services",
     "disc_items": [
       {
         "slug": "social-media",
         "label": "Social media",
-        "title": "Conteúdo que vira reserva",
-        "desc": "Produção mensal, captação no destino e setup completo do perfil."
+        "title": "Content that turns into bookings",
+        "desc": "Monthly production, shooting on location and a full profile setup."
       },
       {
         "slug": "performance-ads",
         "label": "Performance",
-        "title": "Verba medida em reserva",
-        "desc": "Meta e Google operados por quem toca a própria operação de tráfego."
+        "title": "Budget measured in bookings",
+        "desc": "Meta and Google run by people who run their own traffic operation."
       },
       {
         "slug": "web-design",
         "label": "Web design",
-        "title": "Canal direto que converte",
-        "desc": "Site e landing page feitos para tirar a reserva da OTA."
+        "title": "A direct channel that converts",
+        "desc": "Website and landing page built to take the booking away from the OTA."
       },
       {
         "slug": "motion",
         "label": "Motion",
-        "title": "Consistência sem esforço",
-        "desc": "Vinheta, assinatura animada e conteúdo gerado automaticamente."
+        "title": "Consistency without the effort",
+        "desc": "Opening titles, animated signature and content generated automatically."
       },
       {
         "slug": "automatizacoes",
-        "label": "Automatizações",
-        "title": "Operação sem improviso",
-        "desc": "Gestão do negócio, redes sociais e CRM rodando sozinhos."
+        "label": "Automations",
+        "title": "An operation without improvisation",
+        "desc": "Business management, social media and CRM running on their own."
       },
       {
         "slug": "branding",
         "label": "Branding",
-        "title": "Marca que sustenta preço",
-        "desc": "Identidade visual e posicionamento aplicados em todos os pontos."
+        "title": "A brand that holds the rate",
+        "desc": "Visual identity and positioning applied at every touchpoint."
       }
     ],
-    "agora_eyebrow": "Agora",
-    "agora_title": "O que saiu do estúdio nas últimas semanas.",
-    "estudio_eyebrow": "O estúdio",
-    "estudio_title": "A gente não aprendeu turismo em curso.",
-    "estudio_destaque": "Geriu hostel, pousada e escola de kite",
-    "estudio_titulo_fim": "antes de virar agência.",
-    "estudio_desc": "Estratégia, criação, captação e vendas na mesma mesa. Todo mundo fala com cliente, todo mundo põe a mão na entrega. Atuamos 100% online, com disponibilidade para viajar e captar a experiência dos nossos clientes.",
-    "estudio_cta": "Conhecer o estúdio",
-    "estudio_cta2": "Trabalhe com a gente",
-    "_todo": "TODO tradução EN: corpo novo da home, ainda em português."
+    "agora_eyebrow": "Now",
+    "agora_title": "What came out of the studio in the last few weeks.",
+    "estudio_eyebrow": "The studio",
+    "estudio_title": "We did not learn tourism in a classroom.",
+    "estudio_destaque": "We ran a hostel, a guesthouse and a kite school",
+    "estudio_titulo_fim": "before becoming an agency.",
+    "estudio_desc": "Strategy, creative, shooting and sales at the same table. Everyone talks to clients, everyone has a hand in the delivery. We work fully online, and we travel to capture what our clients actually offer.",
+    "estudio_cta": "Meet the studio",
+    "estudio_cta2": "Work with us"
   }
 }
