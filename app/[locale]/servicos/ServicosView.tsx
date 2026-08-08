@@ -127,7 +127,7 @@ export function ServicosView() {
     window.scrollTo({ top: y, behavior: 'smooth' })
   }
 
-  const waFor = (nome: string) => WA_BASE + encodeURIComponent(t('wa_item').replace('{item}', nome))
+  const waFor = (nome: string) => WA_BASE + encodeURIComponent(t('wa_item', { item: nome }))
 
   // Trilho em dois grupos, espelhando as duas portas.
   const grupos = [
@@ -230,7 +230,7 @@ export function ServicosView() {
               <div className="sticky top-[120px] py-20">
                 {grupos.map((grupo, gi) => (
                   <div key={grupo.label} className={cn(gi > 0 && 'mt-8')}>
-                    <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-g-dark/30 mb-4">
+                    <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-tinta-70 mb-4">
                       {grupo.label}
                     </div>
                     <nav className="flex flex-col">
@@ -242,7 +242,7 @@ export function ServicosView() {
                             onClick={() => irPara(f.id)}
                             className="group flex items-baseline gap-3 py-2.5 text-left"
                           >
-                            <span className={cn('text-[10.5px] font-bold tabular-nums transition-colors duration-200', on ? 'text-g-mid' : 'text-g-dark/25')}>
+                            <span className={cn('text-[10.5px] font-bold tabular-nums transition-colors duration-200', on ? 'text-g-mid' : 'text-tinta-70')}>
                               {f.num}
                             </span>
                             <span className={cn(
@@ -251,7 +251,7 @@ export function ServicosView() {
                             )}>
                               {f.label}
                             </span>
-                            <span className={cn('ml-auto text-[11px] tabular-nums transition-colors duration-200', on ? 'text-g-mid' : 'text-g-dark/20')}>
+                            <span className={cn('ml-auto text-[11px] tabular-nums transition-colors duration-200', on ? 'text-g-mid' : 'text-tinta-70')}>
                               {f.count}
                             </span>
                           </button>
@@ -342,7 +342,7 @@ export function ServicosView() {
                           </div>
                         </div>
 
-                        <div className="text-[9.5px] font-bold tracking-[0.16em] uppercase text-g-dark/35 mb-3">
+                        <div className="text-[9.5px] font-bold tracking-[0.16em] uppercase text-tinta-70 mb-3">
                           {t('od_includes')}
                         </div>
                         <ul className="flex flex-col gap-2 mb-6 flex-1">
@@ -411,7 +411,7 @@ export function ServicosView() {
                     {t('proj_title')}
                   </h2>
                   <p className="text-[15px] leading-[1.75] text-g-dark/50 max-w-[620px] mb-2">{t('proj_sub')}</p>
-                  <span className="text-[12px] font-bold tracking-[0.18em] uppercase text-g-dark/30">
+                  <span className="text-[12px] font-bold tracking-[0.18em] uppercase text-tinta-70">
                     {t('count', { n: totalProjetos, p: disciplines.length })}
                   </span>
                 </motion.header>
@@ -541,7 +541,7 @@ export function ServicosView() {
                                 cabo a rabo antes de decidir. <details> nativo:
                                 teclado e leitor de tela de graça, sem JS. */}
                             <details className="colapso-features mb-6">
-                              <summary className="flex items-center justify-between gap-3 min-h-[44px] py-2 text-[10.5px] font-bold tracking-[0.18em] uppercase text-g-dark/35 md:mb-3.5 hover:text-g-mid transition-colors">
+                              <summary className="flex items-center justify-between gap-3 min-h-[44px] py-2 text-[10.5px] font-bold tracking-[0.18em] uppercase text-tinta-70 md:mb-3.5 hover:text-g-mid transition-colors">
                                 <span>{t('includes')} ({sol.features.length})</span>
                                 <svg className="shrink-0 transition-transform duration-200 [details[open]_&]:rotate-180" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
                                   <path d="M3 5l4 4 4-4" />

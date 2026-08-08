@@ -136,7 +136,7 @@ const inputClass = cn(
   'transition-all duration-200'
 )
 
-const labelClass = 'block text-[11px] font-bold tracking-[0.12em] uppercase text-g-dark/45 mb-2'
+const labelClass = 'block text-[11px] font-bold tracking-[0.12em] uppercase text-tinta-70 mb-2'
 
 const emptyForm = {
   type: '',
@@ -295,7 +295,7 @@ function ConsultForm() {
       <div className="mb-6">
         <div className="flex items-center justify-between mb-2.5">
           <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-g-mid">{stepLabel}</span>
-          <span className="text-[11px] text-g-dark/35">{step === 3 ? '~30s' : '~2min'}</span>
+          <span className="text-[11px] text-tinta-70">{step === 3 ? '~30s' : '~2min'}</span>
         </div>
         <div className="flex gap-1.5">
           {[1, 2, 3].map(i => (
@@ -322,7 +322,7 @@ function ConsultForm() {
         >
           <div>
             <h3 className="text-[20px] font-bold text-g-dark leading-tight">{t(`s${step}_title`)}</h3>
-            <p className="text-[13px] text-g-dark/50 mt-1">{t(`s${step}_sub`)}</p>
+            <p className="text-[13px] text-tinta-70 mt-1">{t(`s${step}_sub`)}</p>
           </div>
 
           {step === 1 && (
@@ -350,7 +350,7 @@ function ConsultForm() {
                   <option value="">{t('f_select')}</option>
                   {SIZES.map(s => <option key={s} value={s} className="text-g-dark">{s}</option>)}
                 </select>
-                <p className="text-[11px] text-g-dark/45 leading-relaxed mt-1.5">{t('f_size_note')}</p>
+                <p className="text-[11px] text-tinta-70 leading-relaxed mt-1.5">{t('f_size_note')}</p>
               </div>
             </>
           )}
@@ -368,7 +368,7 @@ function ConsultForm() {
               <div>
                 <label className={labelClass} htmlFor="instagram">{t('f_instagram')} *</label>
                 <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[15px] font-medium text-g-dark/45 pointer-events-none select-none">@</span>
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[15px] font-medium text-tinta-70 pointer-events-none select-none">@</span>
                   <input
                     id="instagram"
                     name="instagram"
@@ -395,7 +395,7 @@ function ConsultForm() {
                   autoCorrect="off"
                   spellCheck={false}
                 />
-                <p className="text-[11px] text-g-dark/45 leading-relaxed mt-1.5">{t('f_site_note')}</p>
+                <p className="text-[11px] text-tinta-70 leading-relaxed mt-1.5">{t('f_site_note')}</p>
               </div>
             </>
           )}
@@ -474,7 +474,7 @@ function ConsultForm() {
         </button>
       </div>
 
-      <p className="text-[11px] text-g-dark/35 leading-relaxed mt-4 text-center">{t('form_disclaimer')}</p>
+      <p className="text-[11px] text-tinta-70 leading-relaxed mt-4 text-center">{t('form_disclaimer')}</p>
     </form>
   )
 }

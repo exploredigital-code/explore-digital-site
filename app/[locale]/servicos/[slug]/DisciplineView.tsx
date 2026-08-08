@@ -69,7 +69,7 @@ export function DisciplineView({ discipline }: { discipline: ServiceData }) {
   const entregas = loc?.deliverables ?? discipline.deliverables
   const midia = MIDIA[discipline.slug]
 
-  const wa = WA_BASE + encodeURIComponent(tServicos('wa_item').replace('{item}', titulo))
+  const wa = WA_BASE + encodeURIComponent(tServicos('wa_item', { item: titulo }))
 
   return (
     <>
