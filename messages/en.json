@@ -29,7 +29,7 @@
     "eyebrow": "Our story",
     "title": "An agency built for brands that sell desire.",
     "sub": "Born from the industry. Grown with it.",
-    "story": "Explore Digital was born from the conviction that hospitality, experience, and real estate brands deserve an agency that truly understands the industry, not one that just applies generic templates. We built our expertise within the universe that demands identity, emotion, and desire.",
+    "story": "Explore Digital was born from the conviction that hospitality and experience brands deserve an agency that truly understands the industry, not one that just applies generic templates. We built our expertise within the universe that demands identity, emotion, and desire.",
     "story2": "We work along the coast of Ceará and Rio Grande do Norte: Preá, Ilha do Guajirú and Pipa. We work in Portuguese, English and Spanish, because much of the guest and owner base on this coast comes from abroad.",
     "values_eyebrow": "Our values",
     "v1_title": "Focus breeds excellence",
@@ -133,7 +133,6 @@
     "sector_hotelaria": "Hospitality",
     "sector_turismo": "Tourism",
     "sector_esporte": "Sport & Experience",
-    "sector_real_estate": "Real Estate",
     "sector_gastronomia": "Gastronomy",
     "empty_state": "New projects in this category coming soon.",
     "cta_eyebrow": "Next in line",
@@ -143,74 +142,10 @@
     "page_meta_title": "Case portfolio · Explore Digital",
     "page_meta_description": "Marketing projects for guesthouses, hostels and beach clubs on the coast of Ceará and Rio Grande do Norte. Real results in social media, paid traffic and web."
   },
-  "services": {
-    "eyebrow": "What we do",
-    "see_more": "See details",
-    "recommended": "Recommended",
-    "title": "Everything your brand needs to sell before the first contact",
-    "subtitle": "From branding to paid traffic, every service was designed for hotels, guesthouses and experiences that want to grow without depending on intermediaries.",
-    "items": [
-      {
-        "number": "01",
-        "title": "Social Media",
-        "description": "Content that makes guests dream about their stay before opening Booking. Full social media management focused on qualified engagement and direct bookings.",
-        "tags": [
-          "Social Management",
-          "Content Creation",
-          "Photography",
-          "Reels"
-        ]
-      },
-      {
-        "number": "02",
-        "title": "Performance Ads",
-        "description": "When someone searches 'guesthouse in [city]', you appear first. And we convert that click into a booking, with measurable ROI on every dollar invested.",
-        "tags": [
-          "Google Ads",
-          "Meta Ads",
-          "Remarketing",
-          "Analytics & Reports"
-        ]
-      },
-      {
-        "number": "03",
-        "title": "Web Design",
-        "description": "Does your site generate more direct bookings than the commission you pay Booking.com today? Ours does. Sites and landing pages that convert visits into guests.",
-        "tags": [
-          "Hotel Website",
-          "Landing Page",
-          "UX/UI",
-          "SEO Optimization"
-        ]
-      },
-      {
-        "number": "04",
-        "title": "Systems",
-        "description": "Automate follow-ups, check-ins and billing. Your team focuses on the guest, not the spreadsheet. Custom systems and integrations for your operation.",
-        "tags": [
-          "Internal Systems",
-          "Automations",
-          "Integrations",
-          "Make · n8n · Zapier"
-        ]
-      },
-      {
-        "number": "05",
-        "title": "Branding",
-        "description": "Your brand defines the price you can charge. Premium identities justify premium rates, from naming to the complete visual identity.",
-        "tags": [
-          "Visual Identity",
-          "Logo",
-          "Brand Guidelines",
-          "Naming"
-        ]
-      }
-    ]
-  },
   "about": {
     "eyebrow": "Why Explore",
     "title": "Specialists in what demands identity the most.",
-    "description": "Hospitality, experiences, and real estate are sectors where the brand is the product. We understand this, and we build brands equal to that responsibility.",
+    "description": "Hospitality and experiences are two sectors where the brand is the product. We understand this, and we build brands equal to that responsibility.",
     "d1_title": "Specialists in your sector",
     "d1_desc": "We do not work with e-commerce, startups or retail. Only hotels, guesthouses, hostels, beach clubs and holiday rentals on the coast of Ceará and Rio Grande do Norte. That makes us the best at what you need. Not the cheapest on the market.",
     "d2_title": "Direct bookings, not vanity metrics",
@@ -273,7 +208,6 @@
       "Beach Club",
       "Sports School (kite, surf...)",
       "Experience Operator",
-      "Real Estate / Developer",
       "Restaurant / Gastronomy",
       "Other"
     ],
@@ -315,14 +249,14 @@
   "blog": {
     "eyebrow": "Blog & Insights",
     "title": "Content for brands that create desire.",
-    "subtitle": "Digital marketing for hospitality, experiences and real estate, straight to the point.",
+    "subtitle": "Digital marketing for hospitality and experiences, straight to the point.",
     "read_time": "read",
     "read_article": "Read article",
     "view_post": "View post",
     "cat_all": "All",
     "empty_state_prefix": "Coming soon, content about",
     "cta_eyebrow": "Get it first",
-    "cta_title": "Marketing insights for hospitality, experiences and real estate.",
+    "cta_title": "Marketing insights for hospitality and experiences.",
     "cta_button": "I want to receive →",
     "prev_page": "Previous page",
     "next_page": "Next page",
@@ -370,7 +304,7 @@
     "positions": [
       {
         "area": "Sales",
-        "descricao": "Prospecting and relationship building with new clients. Focus on hospitality, experiences and real estate.",
+        "descricao": "Prospecting and relationship building with new clients. Focus on hospitality and experiences.",
         "tipo": "Commission"
       },
       {
@@ -459,9 +393,9 @@
     "og_description": "Specialists in guesthouses, hostels and beach clubs on the Ceará and Rio Grande do Norte coast. Fewer OTAs, more direct bookings."
   },
   "consultoria": {
-    "meta_title": "Free Consulting for Hotels, Inns and Real Estate | Explore Digital",
-    "meta_description": "45 minutes with an agency that works exclusively with tourism, hospitality and real estate. A full X-ray of your digital presence: website, Instagram, Google Business Profile, reputation and positioning, in writing within 24h. No cost, no strings.",
-    "og_title": "Free consulting for tourism, hospitality and real estate brands",
+    "meta_title": "Free consultation for hotels, guesthouses and beach clubs · Explore Digital",
+    "meta_description": "45 minutes with an agency that works exclusively with hospitality and experiences on the coast of Ceará and Rio Grande do Norte. A full X-ray of your digital presence: website, Instagram, Google Business Profile, reputation and positioning, in writing within 24h. No cost, no strings.",
+    "og_title": "Free consultation for hospitality and experience brands",
     "og_description": "An X-ray of your digital presence: website, Instagram, Google Business Profile, reputation and positioning. 45 minutes, report in 24h, at no cost.",
     "nav_cta": "Book my session",
     "nav_site": "Go to the site",
@@ -512,10 +446,6 @@
       {
         "title": "Sports schools and experiences",
         "desc": "Kite, surf, diving, tours. You sell a lifestyle, and the content has to convey it before anyone signs up."
-      },
-      {
-        "title": "Real estate and developers",
-        "desc": "High-end sells experience before square footage. That's where qualified leads come from."
       }
     ],
     "notfor_title": "It's probably not for you if…",
@@ -662,7 +592,6 @@
       "Beach Club",
       "Sports school",
       "Experiences and tours",
-      "Real Estate",
       "Restaurant / Bar",
       "Other"
     ],
@@ -753,7 +682,7 @@
         "desc": "We'll reach out within 24h to schedule the 45 minutes."
       }
     ],
-    "f_size_note": "Rooms or suites in hospitality · units or developments in real estate · spots per group for experiences.",
+    "f_size_note": "Rooms or suites in hospitality · spots per group for experiences.",
     "f_instagram": "Business Instagram",
     "f_instagram_ph": "yourhandle",
     "f_site": "Website",
@@ -766,9 +695,9 @@
   },
   "bio": {
     "meta_title": "Explore Digital · Links",
-    "meta_description": "Free consulting, website, plans and support from Explore Digital. Marketing agency for hospitality, tourism and real estate.",
+    "meta_description": "Free consulting, website, plans and support from Explore Digital. Marketing agency for hospitality and experiences.",
     "handle": "@somosexplore",
-    "tagline": "Marketing for hospitality, tourism and real estate.",
+    "tagline": "Marketing for hospitality and experiences.",
     "items": [
       {
         "key": "consultoria",

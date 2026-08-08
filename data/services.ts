@@ -48,30 +48,12 @@ export const servicesData: ServiceData[] = [
     whoFor: [
       'Pousadas e hotéis que querem se posicionar como referência premium',
       'Beach clubs em fase de lançamento ou que precisam de rebrand',
-      'Empreendimentos de real estate que precisam transmitir exclusividade',
+      'Beach clubs e restaurantes de frente para o mar',
       'Operadoras de experiências que querem comunicar diferenciação',
     ],
     deliverables: ['Logotipo principal e variações', 'Paleta de cores oficial', 'Tipografia da marca', 'Elementos gráficos', 'Mockups de aplicação', 'Manual de identidade visual (PDF)'],
     portfolioCategory: 'branding',
     subServices: [
-      {
-        slug: 'naming',
-        pillar: 'branding',
-        name: 'Naming',
-        period: 'once',
-        tagline: 'O nome que define tudo.',
-        description: 'O nome é o primeiro ativo da sua marca. Também o mais permanente. Criamos nomes únicos, memoráveis e estratégicos que comunicam o DNA do seu negócio e funcionam tanto no Brasil quanto internacionalmente.',
-        forWhom: ['Novos negócios em busca do nome certo', 'Marcas em processo de rebranding', 'Empreendedores que querem um nome com estratégia por trás'],
-        features: [
-          'Briefing estratégico aprofundado',
-          'Pesquisa de mercado e análise da concorrência',
-          'Geração de 10+ opções de nomes',
-          'Análise de disponibilidade de domínio e redes sociais',
-          'Verificação de registro de marca (orientação)',
-          'Apresentação com justificativa criativa para cada opção',
-        ],
-        result: 'Nome único e disponível, com estratégia por trás',
-      },
       {
         slug: 'identidade-visual',
         pillar: 'branding',
@@ -98,7 +80,7 @@ export const servicesData: ServiceData[] = [
         tagline: 'Do posicionamento até a identidade visual.',
         recommended: true,
         description: 'Do zero ao completo. Construímos sua marca de dentro para fora: do propósito e posicionamento até a identidade visual aplicada. Para marcas que querem ser referência no setor. Não apenas mais uma opção no mercado.',
-        forWhom: ['Novos negócios que querem começar com tudo definido', 'Marcas em processo de reinvenção estratégica', 'Hotéis, experiências e real estate de alto padrão'],
+        forWhom: ['Novos negócios que querem começar com tudo definido', 'Marcas em processo de reinvenção estratégica', 'Hotéis, pousadas e experiências de alto padrão'],
         features: [
           'Definição de propósito, missão, visão e valores',
           'Arquitetura de marca e posicionamento competitivo',
@@ -129,7 +111,7 @@ export const servicesData: ServiceData[] = [
     whoFor: [
       'Hotéis e pousadas que dependem de reservas diretas (sem OTA)',
       'Beach clubs com presença digital no nível da experiência física',
-      'Imobiliárias e incorporadoras que vendem imóveis de alto padrão',
+      'Operadoras de experiências que vendem passeio e aula',
       'Marcas que nunca tiveram um site profissional',
     ],
     deliverables: ['Site institucional completo', 'Design responsivo (mobile + desktop)', 'Configuração de SEO', 'Integração com WhatsApp e formulários', 'Domínio e hospedagem configurados', 'Painel de edição simples'],
@@ -160,7 +142,7 @@ export const servicesData: ServiceData[] = [
         period: 'once',
         tagline: 'Presença digital completa da sua marca.',
         description: 'Seu site é o único ativo digital que você realmente controla. Construímos sites que representam a experiência que o cliente vai ter: rápidos, bonitos e otimizados para gerar reservas diretas sem depender de OTAs.',
-        forWhom: ['Hotéis, pousadas e resorts', 'Experiências e destinos turísticos', 'Empresas de real estate e construtoras'],
+        forWhom: ['Hotéis, pousadas e resorts', 'Experiências e destinos turísticos', 'Beach clubs, restaurantes e operadoras de experiência'],
         features: [
           'Design personalizado com identidade visual',
           'Páginas institucionais (home, sobre, serviços, contato)',
@@ -180,7 +162,7 @@ export const servicesData: ServiceData[] = [
     tagline: 'Conteúdo que transforma seguidores em clientes pagantes.',
     description: 'Gerenciamos as redes sociais da sua marca com estratégia, consistência e criatividade, construindo audiência qualificada e gerando resultados mensuráveis.',
     gradient: 'from-[#162B20] via-[#243D2D] to-[#345E3F]',
-    what: 'Social media para hotelaria, experiências e real estate não é sobre postar fotos bonitas. É sobre contar histórias que geram desejo, construir comunidade que confia na marca e criar conteúdo que direciona o cliente para a compra.',
+    what: 'Social media para hotelaria e experiências não é sobre postar fotos bonitas. É sobre contar histórias que geram desejo, construir comunidade que confia na marca e criar conteúdo que direciona o cliente para a compra.',
     how: [
       { number: '01', title: 'Diagnóstico & Planejamento', desc: 'Auditamos as redes existentes, analisamos o mercado e criamos um plano editorial estratégico.' },
       { number: '02', title: 'Produção de Conteúdo', desc: 'Criamos reels, artes, stories e legendas que comunicam o valor da marca com consistência.' },
@@ -191,7 +173,7 @@ export const servicesData: ServiceData[] = [
       'Pousadas e resorts que querem atrair hóspedes diretos pelas redes',
       'Beach clubs com eventos e experiências para divulgar',
       'Escolas de esporte que vendem um estilo de vida',
-      'Empreendimentos de real estate em fase de lançamento',
+      'Beach clubs com evento e programação para divulgar',
     ],
     deliverables: ['Calendário editorial mensal', 'Reels e vídeos verticais', 'Artes para feed e stories', 'Gestão da comunidade', 'Relatório mensal de performance', 'Grupo exclusivo de acompanhamento'],
     portfolioCategory: 'social',
@@ -238,7 +220,7 @@ export const servicesData: ServiceData[] = [
         period: 'once',
         tagline: 'Configuração completa das redes do zero ao profissional.',
         description: 'Estruturamos do zero as suas redes sociais: bio, destaques, grid inicial, links e tudo que é necessário para sua presença digital começar com o pé direito.',
-        forWhom: ['Novos negócios lançando presença digital', 'Marcas que precisam de uma reforma completa', 'Empreendimentos que nunca investiram no digital'],
+        forWhom: ['Novos negócios lançando presença digital', 'Marcas que precisam de uma reforma completa', 'Negócios que nunca investiram no digital'],
         features: [
           'Criação e otimização de perfis',
           'Destaques com identidade visual',
@@ -267,7 +249,7 @@ export const servicesData: ServiceData[] = [
     whoFor: [
       'Hotéis e pousadas que querem reduzir dependência das OTAs',
       'Operadoras que precisam gerar leads qualificados em volume',
-      'Imobiliárias com empreendimentos para vender',
+      'Escolas de esporte que precisam encher turma',
       'Negócios que já investem em tráfego mas não veem resultado',
     ],
     deliverables: ['Configuração completa de campanhas', 'Criativos (imagens e vídeos)', 'Otimização diária', 'Relatório mensal unificado', 'Análise de concorrência', 'Dashboard de acompanhamento'],
@@ -298,7 +280,7 @@ export const servicesData: ServiceData[] = [
         period: 'monthly',
         tagline: 'Apareça no momento certo no Google.',
         description: 'Quando alguém busca o que você oferece, sua marca aparece primeiro. Campanhas no Google com foco em intenção de compra. O tráfego mais qualificado que existe.',
-        forWhom: ['Hotéis que querem reduzir dependência das OTAs', 'Experiências e destinos turísticos', 'Real estate com imóveis para vender ou alugar'],
+        forWhom: ['Hotéis que querem reduzir dependência das OTAs', 'Experiências e destinos turísticos', 'Beach clubs e restaurantes com alta e baixa temporada'],
         features: [
           'Criação e gestão de campanhas no Google Ads',
           'Pesquisa e seleção de palavras-chave estratégicas',

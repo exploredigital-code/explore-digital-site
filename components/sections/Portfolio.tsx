@@ -39,7 +39,6 @@ const SECTOR_KEY: Record<string, string> = {
   'Hotelaria': 'sector_hotelaria',
   'Turismo': 'sector_turismo',
   'Esporte & Experiência': 'sector_esporte',
-  'Real Estate': 'sector_real_estate',
   'Gastronomia': 'sector_gastronomia',
 }
 

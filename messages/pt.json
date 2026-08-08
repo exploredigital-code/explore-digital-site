@@ -29,7 +29,7 @@
     "eyebrow": "Nossa história",
     "title": "Uma agência feita para marcas que vendem desejo.",
     "sub": "Nascemos do setor. Crescemos com ele.",
-    "story": "A Explore Digital nasceu da convicção de que marcas de hotelaria, experiências e real estate merecem uma agência que realmente entende o setor. Não apenas aplica templates genéricos. Construímos nossa expertise dentro do universo que mais exige identidade, emoção e desejo.",
+    "story": "A Explore Digital nasceu da convicção de que marcas de hotelaria e experiências merecem uma agência que realmente entende o setor. Não apenas aplica templates genéricos. Construímos nossa expertise dentro do universo que mais exige identidade, emoção e desejo.",
     "story2": "Atuamos no litoral do Ceará e do Rio Grande do Norte: Preá, Ilha do Guajirú e Pipa. Atendemos em português, inglês e espanhol, porque boa parte do hóspede e do proprietário dessa costa vem de fora.",
     "values_eyebrow": "Nossos valores",
     "v1_title": "Foco gera excelência",
@@ -133,7 +133,6 @@
     "sector_hotelaria": "Hotelaria",
     "sector_turismo": "Turismo",
     "sector_esporte": "Esporte & Experiência",
-    "sector_real_estate": "Real Estate",
     "sector_gastronomia": "Gastronomia",
     "empty_state": "Em breve, novos projetos nessa categoria.",
     "cta_eyebrow": "Próximo na fila",
@@ -143,74 +142,10 @@
     "page_meta_title": "Portfólio de cases · Explore Digital",
     "page_meta_description": "Projetos de marketing para pousadas, hostels e beach clubs no litoral do Ceará e do Rio Grande do Norte. Resultados reais em redes sociais, tráfego pago e web."
   },
-  "services": {
-    "eyebrow": "O que fazemos",
-    "see_more": "Ver detalhes",
-    "recommended": "Recomendado",
-    "title": "Tudo que sua marca precisa para vender antes do primeiro contato",
-    "subtitle": "Do branding ao tráfego pago, cada serviço foi desenhado para hotéis, pousadas e experiências que querem crescer sem depender de intermediários.",
-    "items": [
-      {
-        "number": "01",
-        "title": "Social Media",
-        "description": "Conteúdo que faz o hóspede sonhar com a estadia antes de abrir o Booking. Gestão completa de redes sociais com foco em engajamento qualificado e reservas diretas.",
-        "tags": [
-          "Gestão de Redes",
-          "Criação de Conteúdo",
-          "Fotografia",
-          "Reels"
-        ]
-      },
-      {
-        "number": "02",
-        "title": "Performance Ads",
-        "description": "Quando alguém busca 'pousada em [cidade]', você aparece primeiro. E convertemos esse clique em reserva, com ROI mensurável em cada real investido.",
-        "tags": [
-          "Google Ads",
-          "Meta Ads",
-          "Remarketing",
-          "Analytics & Relatórios"
-        ]
-      },
-      {
-        "number": "03",
-        "title": "Web Design",
-        "description": "Seu site vende mais reservas diretas do que a comissão que você paga ao Booking hoje? O nosso sim. Sites e landing pages que convertem visitas em hóspedes.",
-        "tags": [
-          "Site para Pousada",
-          "Landing Page",
-          "UX/UI",
-          "Otimização SEO"
-        ]
-      },
-      {
-        "number": "04",
-        "title": "Sistemas",
-        "description": "Automatize follow-ups, check-ins e cobranças. Sua equipe foca no hóspede, não na planilha. Sistemas e integrações sob medida para a operação do seu negócio.",
-        "tags": [
-          "Sistemas Internos",
-          "Automações",
-          "Integrações",
-          "Make · n8n · Zapier"
-        ]
-      },
-      {
-        "number": "05",
-        "title": "Branding",
-        "description": "Sua marca define o preço que você consegue cobrar. Identidades premium justificam diárias premium, do naming até a identidade visual completa.",
-        "tags": [
-          "Identidade Visual",
-          "Logotipo",
-          "Manual de Marca",
-          "Naming"
-        ]
-      }
-    ]
-  },
   "about": {
     "eyebrow": "Por que a Explore",
     "title": "Especialistas no que mais exige identidade.",
-    "description": "Hotelaria, experiências e real estate são setores onde a marca é o produto. Entendemos isso. Construímos marcas no nível dessa responsabilidade.",
+    "description": "Hotelaria e experiências são dois setores onde a marca é o produto. Entendemos isso. Construímos marcas no nível dessa responsabilidade.",
     "d1_title": "Especialistas no seu setor",
     "d1_desc": "Não trabalhamos com e-commerce, startups ou varejo. Só hotéis, pousadas, hostels, beach clubs e casas de temporada no litoral do Ceará e do Rio Grande do Norte. Isso faz de nós os melhores no que você precisa. Não os mais baratos do mercado.",
     "d2_title": "Reservas diretas, não métricas vazias",
@@ -273,7 +208,6 @@
       "Beach Club",
       "Escola de Esporte (kite, surf...)",
       "Operadora de Experiências",
-      "Real Estate / Incorporadora",
       "Gastronomia / Restaurante",
       "Outro"
     ],
@@ -348,14 +282,14 @@
   "blog": {
     "eyebrow": "Blog & Insights",
     "title": "Conteúdo para marcas que geram desejo.",
-    "subtitle": "Marketing digital para hotelaria, experiências e real estate, sem enrolação.",
+    "subtitle": "Marketing digital para hotelaria e experiências, sem enrolação.",
     "read_time": "de leitura",
     "read_article": "Ler artigo",
     "view_post": "Ver post",
     "cat_all": "Todos",
     "empty_state_prefix": "Em breve, conteúdo sobre",
     "cta_eyebrow": "Receba antes de todo mundo",
-    "cta_title": "Insights de marketing para hotelaria, experiências e real estate.",
+    "cta_title": "Insights de marketing para hotelaria e experiências.",
     "cta_button": "Quero receber →",
     "prev_page": "Página anterior",
     "next_page": "Próxima página",
@@ -403,7 +337,7 @@
     "positions": [
       {
         "area": "Vendas",
-        "descricao": "Prospecção e relacionamento com novos clientes. Foco em hotelaria, experiências e real estate.",
+        "descricao": "Prospecção e relacionamento com novos clientes. Foco em hotelaria e experiências.",
         "tipo": "Comissional"
       },
       {
@@ -459,9 +393,9 @@
     "og_description": "Especialistas em pousadas, hostels e beach clubs do litoral cearense e potiguar. Menos OTA, mais reserva direta."
   },
   "consultoria": {
-    "meta_title": "Consultoria Gratuita para Hotéis, Pousadas e Real Estate | Explore Digital",
-    "meta_description": "45 minutos com uma agência que só trabalha com turismo, hotelaria e real estate. Um raio-X completo da sua presença digital: site, Instagram, Google do Negócio, reputação e posicionamento, por escrito em até 24h. Sem custo e sem compromisso.",
-    "og_title": "Consultoria gratuita para negócios de turismo, hotelaria e real estate",
+    "meta_title": "Consultoria gratuita para hotéis, pousadas e beach clubs · Explore Digital",
+    "meta_description": "45 minutos com uma agência que só trabalha com hotelaria e experiências no litoral do Ceará e do Rio Grande do Norte. Um raio-X completo da sua presença digital: site, Instagram, Google do Negócio, reputação e posicionamento, por escrito em até 24h. Sem custo e sem compromisso.",
+    "og_title": "Consultoria gratuita para negócios de hotelaria e experiências",
     "og_description": "Raio-X da sua presença digital: site, Instagram, Google do Negócio, reputação e posicionamento. 45 minutos, relatório em 24h, sem custo.",
     "nav_cta": "Quero minha consultoria",
     "nav_site": "Ir para o site",
@@ -512,10 +446,6 @@
       {
         "title": "Escolas de esporte e experiências",
         "desc": "Kite, surf, mergulho, passeios. Você vende estilo de vida, e o conteúdo precisa transmitir isso antes da matrícula."
-      },
-      {
-        "title": "Real Estate e incorporadoras",
-        "desc": "Alto padrão vende experiência antes de metro quadrado. O lead qualificado vem daí."
       }
     ],
     "notfor_title": "Provavelmente não é para você se…",
@@ -662,7 +592,6 @@
       "Beach Club",
       "Escola de esporte",
       "Experiências e passeios",
-      "Real Estate",
       "Gastronomia",
       "Outro"
     ],
@@ -753,7 +682,7 @@
         "desc": "Entramos em contato em até 24h para marcar os 45 minutos."
       }
     ],
-    "f_size_note": "Quartos ou suítes na hotelaria · unidades ou empreendimentos no real estate · vagas por turma nas experiências.",
+    "f_size_note": "Quartos ou suítes na hotelaria · vagas por turma nas experiências.",
     "f_instagram": "Instagram do negócio",
     "f_instagram_ph": "seuperfil",
     "f_site": "Site",
@@ -766,9 +695,9 @@
   },
   "bio": {
     "meta_title": "Explore Digital · Links",
-    "meta_description": "Consultoria gratuita, site, planos e atendimento da Explore Digital. Agência de marketing para hotelaria, turismo e real estate.",
+    "meta_description": "Consultoria gratuita, site, planos e atendimento da Explore Digital. Agência de marketing para hotelaria e experiências.",
     "handle": "@somosexplore",
-    "tagline": "Marketing para hotelaria, turismo e real estate.",
+    "tagline": "Marketing para hotelaria e experiências.",
     "items": [
       {
         "key": "consultoria",
