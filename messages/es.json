@@ -3,15 +3,15 @@
     "home": "Inicio",
     "portfolio": "Portfolio",
     "services": "Servicios",
-    "marketplace": "Soluciones",
     "about": "Sobre nosotros",
     "contact": "Contacto",
     "cta": "Hablemos",
-    "work": "Trabaja Con Nosotros",
+    "work": "Carreras",
     "blog": "Blog",
     "menu_open": "Abrir menú",
     "menu_close": "Cerrar menú",
-    "consultoria": "Consultoría Gratuita"
+    "consultoria": "Consultoría Gratuita",
+    "servicos": "Servicios"
   },
   "process": {
     "eyebrow": "Cómo funciona",
@@ -801,7 +801,7 @@
     "wa_message_reserva": "¡Hola! Quiero reservar un servicio de Explore para {month}. ¿Me pueden pasar la disponibilidad de la agenda?",
     "rights": "Todos los derechos reservados"
   },
-  "solucoes": {
+  "servicos": {
     "meta_title": "Soluciones · Explore Digital",
     "meta_description": "Entregas puntuales con precio y plazo (foto, vídeo, drone, edición, diseño, landing page) o proyectos completos de branding, web, social, tráfico pago y sistemas para hotelería.",
     "nav_label": "Soluciones",

@@ -24,7 +24,7 @@ const inputClass = cn(
 )
 const textareaClass = cn(inputClass, 'resize-none')
 
-export function VagasView() {
+export function CarreirasView() {
   const t = useTranslations('vagas')
   const locale = useLocale()
   const router = useRouter()

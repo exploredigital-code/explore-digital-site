@@ -312,7 +312,7 @@ export const servicesData: ServiceData[] = [
     ],
   },
   {
-    slug: 'sistemas',
+    slug: 'automatizacoes',
     pillar: 'sistemas',
     title: 'Sistemas',
     tagline: 'Tecnologia que automatiza e escala o seu negócio.',

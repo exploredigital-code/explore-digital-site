@@ -27,7 +27,7 @@ function ArrowIcon() {
  * quem tem um problema para diagnosticar vai para projetos.
  */
 export function TwoDoors() {
-  const t = useTranslations('solucoes')
+  const t = useTranslations('servicos')
   const locale = useLocale()
 
   const copy = t.raw('on_demand_items') as OnDemandCopy[]
@@ -39,7 +39,7 @@ export function TwoDoors() {
       title: t('door1_title'),
       desc: t('door1_desc'),
       cta: t('door1_cta'),
-      href: `/${locale}/solucoes#sob-demanda`,
+      href: `/${locale}/servicos#sob-demanda`,
       // Onde havia "a partir de R$ X" agora vai a contagem de entregas.
       note: t('od_count', { n: onDemandItems.length }),
       chips: onDemandItems.map(i => copy.find(c => c.slug === i.slug)?.name).filter(Boolean) as string[],
@@ -51,7 +51,7 @@ export function TwoDoors() {
       title: t('door2_title'),
       desc: t('door2_desc'),
       cta: t('door2_cta'),
-      href: `/${locale}/solucoes#projetos`,
+      href: `/${locale}/servicos#projetos`,
       note: t('count', { n: servicesData.reduce((n, s) => n + s.subServices.length, 0), p: servicesData.length }),
       chips: servicesData.map(s => s.title),
       destaque: false,

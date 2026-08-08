@@ -31,8 +31,8 @@ function WhatsAppIcon() {
   )
 }
 
-export function SolucoesView() {
-  const t = useTranslations('solucoes')
+export function ServicosView() {
+  const t = useTranslations('servicos')
   const locale = useLocale()
 
   const onDemandCopy = t.raw('on_demand_items') as OnDemandCopy[]

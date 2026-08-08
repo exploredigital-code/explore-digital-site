@@ -3,15 +3,15 @@
     "home": "Home",
     "portfolio": "Portfolio",
     "services": "Services",
-    "marketplace": "Solutions",
     "about": "About us",
     "contact": "Contact",
     "cta": "Get in Touch",
-    "work": "Work With Us",
+    "work": "Careers",
     "blog": "Blog",
     "menu_open": "Open menu",
     "menu_close": "Close menu",
-    "consultoria": "Free Consulting"
+    "consultoria": "Free Consulting",
+    "servicos": "Services"
   },
   "process": {
     "eyebrow": "How it works",
@@ -801,7 +801,7 @@
     "wa_message_reserva": "Hi! I'd like to book an Explore service for {month}. Could you share your availability?",
     "rights": "All rights reserved"
   },
-  "solucoes": {
+  "servicos": {
     "meta_title": "Solutions · Explore Digital",
     "meta_description": "One-off deliverables with a price and a deadline (photo, video, drone, editing, design, landing page) or full projects in branding, web, social, paid traffic and systems for hospitality.",
     "nav_label": "Solutions",

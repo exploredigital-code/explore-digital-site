@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
-import { SolucoesView } from './SolucoesView'
+import { canonical, languageAlternates } from '@/lib/site'
+import { ServicosView } from './ServicosView'
 
 interface Props {
   params: Promise<{ locale: string }>
@@ -8,7 +9,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'solucoes' })
+  const t = await getTranslations({ locale, namespace: 'servicos' })
 
   return {
     title: t('meta_title'),
@@ -20,10 +21,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: 'Explore Digital',
       type: 'website',
     },
-    alternates: { canonical: `https://somosexplore.com/${locale}/solucoes` },
+    alternates: { canonical: canonical(locale, '/servicos'),
+      languages: languageAlternates('/servicos') },
   }
 }
 
-export default function SolucoesPage() {
-  return <SolucoesView />
+export default function ServicosPage() {
+  return <ServicosView />
 }

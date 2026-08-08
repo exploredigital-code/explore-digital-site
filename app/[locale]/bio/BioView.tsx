@@ -100,7 +100,7 @@ export function BioView() {
       case 'reserva': return WA_BASE + encodeURIComponent(t('wa_message_reserva', { month }))
       case 'whatsapp': return WA_BASE + encodeURIComponent(t('wa_message'))
       case 'site': return `/${locale}`
-      case 'vagas': return `/${locale}/vagas`
+      case 'vagas': return `/${locale}/carreiras`
       default: return `/${locale}`
     }
   }

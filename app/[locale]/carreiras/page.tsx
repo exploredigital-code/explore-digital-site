@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { canonical, languageAlternates } from '@/lib/site'
-import { VagasView } from './VagasView'
+import { CarreirasView } from './CarreirasView'
 
 interface Props {
   params: Promise<{ locale: string }>
@@ -17,13 +17,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: {
-      canonical: canonical(locale, '/vagas'),
-      languages: languageAlternates('/vagas'),
+      canonical: canonical(locale, '/carreiras'),
+      languages: languageAlternates('/carreiras'),
     },
     openGraph: { title, description, type: 'website' },
   }
 }
 
-export default function VagasPage() {
-  return <VagasView />
+export default function CarreirasPage() {
+  return <CarreirasView />
 }

@@ -22,10 +22,10 @@ export function Footer() {
 
   const links = [
     { href: `/${localePrefix}/portfolio`, label: nav('portfolio') },
-    { href: `/${localePrefix}/solucoes`,  label: nav('marketplace') },
+    { href: `/${localePrefix}/servicos`,  label: nav('servicos') },
     { href: `/${localePrefix}/sobre`,     label: nav('about') },
     { href: `/${localePrefix}/blog`,      label: 'Blog' },
-    { href: `/${localePrefix}/vagas`,     label: nav('work') },
+    { href: `/${localePrefix}/carreiras`,     label: nav('work') },
     { href: homeHref('#contact'),         label: nav('contact') },
   ]
 

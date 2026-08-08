@@ -272,7 +272,7 @@ export function SobreView() {
               </div>
               <div className="relative z-10 flex flex-col sm:flex-row gap-3 shrink-0">
                 <Link
-                  href={`/${locale}/vagas`}
+                  href={`/${locale}/carreiras`}
                   className="inline-flex items-center gap-2 bg-g-light text-g-dark font-bold px-7 py-3.5 rounded-full hover:bg-g-pale hover:-translate-y-0.5 transition-all duration-200 text-[14px]"
                 >
                   {t('join_button')}

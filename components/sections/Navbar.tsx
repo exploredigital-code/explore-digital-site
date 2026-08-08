@@ -49,7 +49,7 @@ export function Navbar() {
   // completa tem card de destaque, filtro por setor e CTA próprio.
   const navLinks = [
     { href: `/${localePrefix}/portfolio`,    label: t('portfolio') },
-    { href: `/${localePrefix}/solucoes`,    label: t('marketplace') },
+    { href: `/${localePrefix}/servicos`,    label: t('servicos') },
     { href: `/${localePrefix}/sobre`,       label: t('about') },
     { href: `/${localePrefix}/blog`,        label: t('blog') },
     { href: homeHref('#contact'),           label: t('contact') },

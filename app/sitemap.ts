@@ -12,6 +12,16 @@ import { blogPosts } from '@/data/blog-posts'
  * duplicado e desperdiça orçamento de rastreio.
  */
 
+/**
+ * Caminhos que respondem 301 (ver next.config.ts). Um sitemap que anuncia URL
+ * redirecionada gasta orçamento de rastreio e contradiz o próprio redirect.
+ * A lista é uma rede de segurança: nenhuma rota daqui entra no mapa, mesmo que
+ * o dado que a gera ainda exista.
+ */
+const REDIRECIONADAS = new Set([
+  '/solucoes', '/vagas', '/marketplace', '/servicos/naming', '/servicos/sistemas',
+])
+
 type Entry = {
   path: string
   priority: number
@@ -26,11 +36,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: Entry[] = [
     { path: '',            priority: 1.0,  changeFrequency: 'weekly'  },
     { path: '/consultoria', priority: 0.9, changeFrequency: 'monthly' },
-    { path: '/solucoes',   priority: 0.9,  changeFrequency: 'monthly' },
+    { path: '/servicos',   priority: 0.9,  changeFrequency: 'monthly' },
     { path: '/portfolio',  priority: 0.8,  changeFrequency: 'monthly' },
     { path: '/sobre',      priority: 0.6,  changeFrequency: 'yearly'  },
     { path: '/blog',       priority: 0.7,  changeFrequency: 'weekly', ptOnly: true },
-    { path: '/vagas',      priority: 0.4,  changeFrequency: 'monthly' },
+    { path: '/carreiras',  priority: 0.4,  changeFrequency: 'monthly' },
   ]
 
   // Cases ocultos (`hidden`) devolvem 404 — não podem entrar no mapa.
@@ -50,6 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const all = [...staticPages, ...projectPages, ...servicePages, ...blogPages]
+    .filter(e => !REDIRECIONADAS.has(e.path))
 
   return all.flatMap(entry =>
     LOCALES
