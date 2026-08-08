@@ -275,76 +275,102 @@
     "meta_title": "Hospitality marketing blog · Explore Digital",
     "meta_description": "Practical content on direct bookings, paid traffic, social media and branding for guesthouses, hostels and beach clubs on the coast of Ceará and Rio Grande do Norte, Brazil."
   },
-  "vagas": {
-    "eyebrow": "Careers",
-    "title": "Join our team.",
-    "subtitle": "We're looking for passionate people who understand the industry and want to grow with Explore Digital.",
-    "positions_eyebrow": "Open positions",
-    "positions_title": "Available now.",
-    "apply": "Apply",
-    "form_eyebrow": "Application form",
-    "form_title": "Tell us who you are.",
-    "form_desc": "Fill in the form carefully. We value clarity, personality and evidence of your work.",
-    "form_name": "Full name *",
-    "form_email": "Email *",
-    "form_phone": "WhatsApp / Phone *",
-    "form_position": "Position of interest *",
-    "form_portfolio": "Portfolio link (Behance, Drive, website...)",
-    "form_intro_label": "Personal introduction *",
-    "form_intro_placeholder": "Who you are, your experience and what you do best.",
-    "form_why_label": "Why Explore Digital? *",
-    "form_why_placeholder": "What motivated you to apply.",
-    "form_submit": "Submit application →",
-    "form_sending": "Sending...",
-    "form_success_title": "Application sent!",
-    "form_success_desc": "We received your application by email and WhatsApp was opened with your details. We'll be in touch soon.",
-    "form_error": "Error submitting the form. Try contacting us directly on WhatsApp.",
-    "form_note": "When you submit, your application will be sent by email and WhatsApp simultaneously.",
-    "wa_apply": "Hi! I'm applying for the *{vaga}* position at Explore Digital.\n\n*Name:* {name}\n*Email:* {email}\n*Portfolio:* {portfolio}\n\n*Introduction:*\n{apresentacao}\n\n*Why I want to work at Explore:*\n{motivo}",
-    "positions": [
+  "carreiras": {
+    "meta_title": "Carreiras · Explore Digital",
+    "meta_description": "Vagas e candidatura espontânea na Explore Digital, agência de marketing para hotelaria no litoral do Ceará e do Rio Grande do Norte.",
+    "eyebrow": "Carreiras",
+    "title": "Mostra o trabalho, não o currículo.",
+    "sub": "Time enxuto, cliente real e devolutiva sempre. Se fizer sentido, a gente responde em até cinco dias úteis.",
+    "work_eyebrow": "Como trabalhamos",
+    "work_title": "Três coisas que a gente entrega de verdade.",
+    "work_items": [
       {
-        "area": "Sales",
-        "descricao": "Prospecting and relationship building with new clients. Focus on hospitality and experiences.",
-        "tipo": "Commission"
+        "title": "Autonomia com contexto",
+        "desc": "Você recebe o problema do cliente, não a tarefa mastigada. E recebe junto o contexto para decidir."
       },
       {
-        "area": "Design",
-        "descricao": "Creation of visual identities, social media graphics and brand materials.",
-        "tipo": "Full-time / Freelance"
+        "title": "Portfólio que existe",
+        "desc": "O trabalho vai para o ar com o nome de quem fez. Nada fica preso em apresentação interna."
       },
       {
-        "area": "Traffic Manager",
-        "descricao": "Campaign management on Google Ads and Meta Ads focused on ROI and lead generation.",
-        "tipo": "Full-time / Freelance"
-      },
-      {
-        "area": "Drone Pilot",
-        "descricao": "Professional aerial capture with certification for projects across Brazil.",
-        "tipo": "Freelance"
-      },
-      {
-        "area": "AI Developer",
-        "descricao": "Implementation of artificial intelligence solutions applied to marketing and internal processes.",
-        "tipo": "Freelance"
-      },
-      {
-        "area": "Social Media",
-        "descricao": "Planning and creation of strategic content for social media in the tourism and hospitality sector.",
-        "tipo": "Full-time / Freelance"
-      },
-      {
-        "area": "Video Editor",
-        "descricao": "Editing of reels, institutional videos and vertical content for social media.",
-        "tipo": "Full-time / Freelance"
-      },
-      {
-        "area": "Project Manager",
-        "descricao": "Coordination of internal projects and delivery monitoring with clients.",
-        "tipo": "Full-time"
+        "title": "Ferramenta de verdade",
+        "desc": "Licença paga, equipamento que aguenta e tempo de aprendizado dentro do expediente."
       }
     ],
-    "meta_title": "Work with us · Explore Digital",
-    "meta_description": "Open roles in design, social media, paid traffic and sales at Explore Digital, a hospitality marketing agency."
+    "process_eyebrow": "Processo seletivo",
+    "process_title": "Quatro etapas, sem enrolação.",
+    "process_items": [
+      {
+        "num": "01",
+        "title": "Inscrição",
+        "desc": "Formulário curto com portfólio ou amostra de trabalho. Sem carta de apresentação e sem currículo formatado."
+      },
+      {
+        "num": "02",
+        "title": "Conversa de 30 minutos",
+        "desc": "Com quem vai trabalhar direto com você. A gente conta o problema real que precisa resolver."
+      },
+      {
+        "num": "03",
+        "title": "Desafio pago",
+        "desc": "Um exercício pequeno, no contexto de um cliente real. Se você gastar tempo com a gente, a gente paga por ele."
+      },
+      {
+        "num": "04",
+        "title": "Proposta",
+        "desc": "Resposta em até cinco dias, independente do resultado, com devolutiva do que pesou na decisão."
+      }
+    ],
+    "jobs_eyebrow": "Vagas",
+    "jobs_title": "Quem estamos procurando agora.",
+    "jobs_empty_title": "Nenhuma vaga aberta no momento.",
+    "jobs_empty_desc": "Não temos posição aberta agora. A candidatura espontânea continua valendo: quando abrir algo na sua área, a gente procura quem já se apresentou.",
+    "jobs_apply": "Candidatar",
+    "form_eyebrow": "Candidatura",
+    "form_title": "Três perguntas e o link do seu portfólio.",
+    "form_sub": "Se fizer sentido, a gente responde em até cinco dias úteis.",
+    "form_badges": [
+      "Resposta em até 5 dias",
+      "Desafio pago",
+      "Devolutiva sempre"
+    ],
+    "form_step_of": "Etapa {current} de {total}",
+    "f_area": "Para qual área você está se candidatando?",
+    "areas": [
+      "Design de social media",
+      "Vídeo e motion",
+      "Social media estratégia",
+      "Captação de imagem",
+      "Tráfego pago",
+      "Outra área"
+    ],
+    "f_experiencia": "Quanto tempo de experiência na área?",
+    "experiencias": [
+      "Menos de 1 ano",
+      "1 a 3 anos",
+      "3 a 6 anos",
+      "Mais de 6 anos"
+    ],
+    "f_nome": "Nome completo",
+    "f_nome_ph": "Como prefere ser chamado",
+    "f_email": "E-mail",
+    "f_email_ph": "seu@email.com",
+    "f_whatsapp": "WhatsApp",
+    "f_whatsapp_ph": "DDD + número",
+    "f_portfolio": "Link do portfólio",
+    "f_portfolio_ph": "Site, Behance, Drive ou perfil do Instagram",
+    "f_portfolio_note": "Pode ser qualquer lugar onde o seu trabalho esteja. O que importa é dar para ver.",
+    "btn_next": "Continuar",
+    "btn_back": "Voltar",
+    "btn_submit": "Enviar candidatura",
+    "btn_sending": "Enviando...",
+    "err_choose": "Escolha uma opção para continuar.",
+    "err_required": "Preencha os campos obrigatórios.",
+    "err_email": "Confira o e-mail digitado.",
+    "ok_title": "Candidatura recebida.",
+    "ok_desc": "Respondemos em até cinco dias úteis, independente do resultado. Se você não tiver notícia até lá, escreve para a gente.",
+    "ok_home": "Voltar ao início",
+    "_todo": "// TODO tradução EN: conteúdo de /carreiras ainda em português."
   },
   "service_detail": {
     "back": "Back",

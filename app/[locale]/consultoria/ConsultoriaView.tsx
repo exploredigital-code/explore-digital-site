@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { useTranslations, useLocale } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { OptionGroup } from '@/components/ui/OptionGroup'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 
 const WA_BASE = 'https://wa.me/+5585991043067?text='
@@ -136,39 +137,6 @@ const inputClass = cn(
 )
 
 const labelClass = 'block text-[11px] font-bold tracking-[0.12em] uppercase text-g-dark/45 mb-2'
-
-function ChipGroup({
-  options,
-  value,
-  onSelect,
-  columns = 2,
-}: {
-  options: string[]
-  value: string
-  onSelect: (v: string) => void
-  columns?: number
-}) {
-  return (
-    <div className={cn('grid gap-2', columns === 1 ? 'grid-cols-1' : 'grid-cols-2')}>
-      {options.map(opt => (
-        <button
-          key={opt}
-          type="button"
-          onClick={() => onSelect(opt)}
-          aria-pressed={value === opt}
-          className={cn(
-            'text-left px-3.5 py-3 rounded-xl border text-[13px] leading-snug transition-all duration-200',
-            value === opt
-              ? 'bg-g-dark border-g-dark text-white font-semibold'
-              : 'bg-white border-g-dark/12 text-g-dark/70 hover:border-g-mid/50 hover:bg-g-pale/40'
-          )}
-        >
-          {opt}
-        </button>
-      ))}
-    </div>
-  )
-}
 
 const emptyForm = {
   type: '',
@@ -361,7 +329,7 @@ function ConsultForm() {
             <>
               <div>
                 <label className={labelClass}>{t('f_type')} *</label>
-                <ChipGroup options={BUSINESS_TYPES} value={form.type} onSelect={v => set('type', v)} />
+                <OptionGroup name="tipo" label={t('f_type')} options={BUSINESS_TYPES} value={form.type} onSelect={v => set('type', v)} />
               </div>
               <div>
                 <label className={labelClass} htmlFor="business">{t('f_business')} *</label>
@@ -391,11 +359,11 @@ function ConsultForm() {
             <>
               <div>
                 <label className={labelClass}>{t('f_challenge')} *</label>
-                <ChipGroup options={CHALLENGES} value={form.challenge} onSelect={v => set('challenge', v)} columns={1} />
+                <OptionGroup name="desafio" label={t('f_challenge')} options={CHALLENGES} value={form.challenge} onSelect={v => set('challenge', v)} columns={1} />
               </div>
               <div>
                 <label className={labelClass}>{t('f_adspend')}</label>
-                <ChipGroup options={ADSPEND} value={form.adspend} onSelect={v => set('adspend', v)} />
+                <OptionGroup name="verba" label={t('f_adspend')} options={ADSPEND} value={form.adspend} onSelect={v => set('adspend', v)} />
               </div>
               <div>
                 <label className={labelClass} htmlFor="instagram">{t('f_instagram')} *</label>
