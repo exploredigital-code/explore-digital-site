@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 import { projects, filtroAjuda, type Category } from '@/data/portfolio'
 import { getLocalizedProject } from '@/data/portfolio-content'
 import { Navbar } from '@/components/sections/Navbar'
+import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer } from '@/components/sections/Footer'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
@@ -133,6 +134,7 @@ export function PortfolioView() {
 
   return (
     <>
+      <SkipLink />
       <Navbar />
 
       {/* Hero */}
@@ -151,7 +153,7 @@ export function PortfolioView() {
         </div>
       </section>
 
-      <main className="bg-g-pale">
+      <main id="conteudo" className="bg-g-pale">
 
         {/* Featured project */}
         {featured && (
@@ -176,6 +178,7 @@ export function PortfolioView() {
                 <button
                   key={f.key}
                   onClick={() => handleFilter(f.key)}
+                  aria-pressed={active === f.key}
                   className={cn(
                     'px-5 py-4 text-[13px] font-bold whitespace-nowrap transition-colors duration-200 border-b-2 -mb-px',
                     active === f.key

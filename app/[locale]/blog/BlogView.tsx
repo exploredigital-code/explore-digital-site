@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/sections/Navbar'
+import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer } from '@/components/sections/Footer'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
@@ -201,6 +202,7 @@ export function BlogView() {
 
   return (
     <>
+      <SkipLink />
       <Navbar />
 
       <section className="page-hero pt-36 pb-20 relative overflow-hidden">
@@ -218,7 +220,7 @@ export function BlogView() {
         </div>
       </section>
 
-      <main className="bg-g-pale">
+      <main id="conteudo" className="bg-g-pale">
         {featured && (
           <section className="py-16 lg:py-20 border-b border-g-dark/8">
             <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
@@ -235,6 +237,7 @@ export function BlogView() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
+                  aria-pressed={activeCategory === cat}
                   className={cn(
                     'px-5 py-4 text-[13px] font-bold whitespace-nowrap transition-colors duration-200 border-b-2 -mb-px',
                     activeCategory === cat

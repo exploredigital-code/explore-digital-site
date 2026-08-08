@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/sections/Navbar'
+import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer } from '@/components/sections/Footer'
 import { disciplines } from '@/data/services'
 import { SlotMidia, GradeMidia, type Proporcao } from '@/components/ui/SlotMidia'
@@ -144,6 +145,7 @@ export function ServicosView() {
 
   return (
     <>
+      <SkipLink />
       <Navbar />
 
       {/* ───────────────────────── ABERTURA ───────────────────────── */}
@@ -200,7 +202,7 @@ export function ServicosView() {
       </section>
 
       {/* ───────────────────── TRILHO + CONTEÚDO ───────────────────── */}
-      <main className="bg-white">
+      <main id="conteudo" className="bg-white">
         {/* trilho horizontal no mobile */}
         <div className="lg:hidden sticky top-[68px] z-30 bg-white/95 backdrop-blur-md border-b border-g-dark/10">
           <div className="flex gap-1 overflow-x-auto px-5 py-3 no-scrollbar">

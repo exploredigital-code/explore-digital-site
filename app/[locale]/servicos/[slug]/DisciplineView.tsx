@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/sections/Navbar'
+import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer } from '@/components/sections/Footer'
 import { SlotMidia, GradeMidia, type Proporcao } from '@/components/ui/SlotMidia'
 import type { ServiceData } from '@/data/services'
@@ -72,6 +73,7 @@ export function DisciplineView({ discipline }: { discipline: ServiceData }) {
 
   return (
     <>
+      <SkipLink />
       <Navbar />
 
       {/* ── Abertura ── */}
@@ -90,7 +92,7 @@ export function DisciplineView({ discipline }: { discipline: ServiceData }) {
         </div>
       </section>
 
-      <main className="bg-white">
+      <main id="conteudo" className="bg-white">
         <div className="max-w-conteudo mx-auto px-6 sm:px-10 lg:px-16 py-16 lg:py-24">
 
           {/* ── O que é + para quem ── */}

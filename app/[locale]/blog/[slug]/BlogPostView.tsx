@@ -6,6 +6,7 @@ import { useParams } from 'next/navigation'
 import { notFound } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import { Navbar } from '@/components/sections/Navbar'
+import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer } from '@/components/sections/Footer'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 import { blogContent } from '@/data/blog-content'
@@ -39,6 +40,7 @@ export function BlogPostView() {
 
   return (
     <>
+      <SkipLink />
       <Navbar />
 
       {/* Hero: foto real com overlay escuro */}
@@ -71,7 +73,7 @@ export function BlogPostView() {
       </div>
 
       {/* Corpo do artigo */}
-      <main className="bg-white">
+      <main id="conteudo" className="bg-white">
         <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 py-16 lg:py-24 grid lg:grid-cols-[1fr_320px] gap-16 items-start">
 
           {/* Coluna principal */}

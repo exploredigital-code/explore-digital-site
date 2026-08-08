@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import type { SubService, ServiceData } from '@/data/services'
 import { getLocalizedSubService, getLocalizedService } from '@/data/services-content'
 import { Navbar } from '@/components/sections/Navbar'
+import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer } from '@/components/sections/Footer'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 
@@ -40,7 +41,10 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
 
   return (
     <>
+      <SkipLink />
       <Navbar />
+
+      <main id="conteudo">
 
       {/* HERO */}
       <section className={cn('relative min-h-[60vh] flex flex-col justify-end overflow-hidden', 'bg-gradient-to-br', parentService.gradient)}>
@@ -153,6 +157,8 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
           </AnimateIn>
         </div>
       </section>
+      </main>
+
 
       <Footer />
     </>

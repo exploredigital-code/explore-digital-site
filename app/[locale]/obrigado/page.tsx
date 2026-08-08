@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { Navbar } from '@/components/sections/Navbar'
+import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer } from '@/components/sections/Footer'
 
 const WHATSAPP = 'https://wa.me/+5585991043067'
@@ -45,9 +46,10 @@ export default function ObrigadoPage() {
 
   return (
     <>
+      <SkipLink />
       <Navbar />
 
-      <main className="min-h-[calc(100vh-80px)] bg-g-dark flex items-center relative overflow-hidden">
+      <main id="conteudo" className="min-h-[calc(100vh-80px)] bg-g-dark flex items-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_40%,#2D5238,transparent_65%)] opacity-45 pointer-events-none" />
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: NOISE_BG, backgroundSize: '200px' }} />
 

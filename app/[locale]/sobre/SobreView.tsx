@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Navbar }  from '@/components/sections/Navbar'
+import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer }  from '@/components/sections/Footer'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
@@ -97,7 +98,10 @@ export function SobreView() {
 
   return (
     <>
+      <SkipLink />
       <Navbar />
+
+      <main id="conteudo">
 
       {/* ══ HERO ══ */}
       <section className="page-hero pt-36 pb-24 relative overflow-hidden">
@@ -282,6 +286,8 @@ export function SobreView() {
           </AnimateIn>
         </div>
       </section>
+      </main>
+
 
       <Footer />
     </>

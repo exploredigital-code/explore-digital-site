@@ -153,6 +153,7 @@ export function Portfolio() {
             <button
               key={f.key}
               onClick={() => setActive(f.key)}
+              aria-pressed={active === f.key}
               className={cn(
                 'px-5 py-2.5 text-[11px] font-bold tracking-[0.1em] uppercase transition-all duration-200 rounded-sm',
                 active === f.key

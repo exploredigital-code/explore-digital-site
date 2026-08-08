@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/sections/Navbar'
+import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer } from '@/components/sections/Footer'
 import { OptionGroup } from '@/components/ui/OptionGroup'
 import { useStepForm } from '@/lib/use-step-form'
@@ -177,6 +178,7 @@ export function CarreirasView() {
 
   return (
     <>
+      <SkipLink />
       <Navbar />
 
       {/* ── Manifesto ── */}
@@ -196,7 +198,7 @@ export function CarreirasView() {
         </div>
       </section>
 
-      <main className="bg-white">
+      <main id="conteudo" className="bg-white">
         {/* ── Como trabalhamos ── */}
         <section className="max-w-conteudo mx-auto px-6 sm:px-10 lg:px-16 py-16 lg:py-24">
           <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-verde-medio mb-3">{t('work_eyebrow')}</div>

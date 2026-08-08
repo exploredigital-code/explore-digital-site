@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 import type { Project } from '@/data/portfolio'
 import { getLocalizedProject } from '@/data/portfolio-content'
 import { Navbar }  from '@/components/sections/Navbar'
+import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer }  from '@/components/sections/Footer'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 import { VideoLightbox } from '@/components/ui/VideoLightbox'
@@ -92,7 +93,10 @@ export function ProjectView({ project, next, prev }: Props) {
       {/* Reading progress bar */}
       <motion.div className="fixed top-0 left-0 h-[2px] bg-g-light z-[60]" style={{ width: progressWidth }} />
 
+      <SkipLink />
       <Navbar />
+
+      <main id="conteudo">
 
       {/* ══ HERO ══ */}
       <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
@@ -315,6 +319,8 @@ export function ProjectView({ project, next, prev }: Props) {
           </AnimateIn>
         </div>
       </section>
+      </main>
+
 
       <Footer />
     </>
