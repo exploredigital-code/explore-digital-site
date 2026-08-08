@@ -508,7 +508,14 @@ export function ServicosView() {
                             <p className="text-[15px] leading-[1.55] text-g-mid font-medium mb-4">{sol.tagline}</p>
                             <p className="text-[14.5px] leading-[1.75] text-g-dark/55 mb-6">{sol.description}</p>
 
-                            <div className="flex flex-wrap gap-1.5 mb-6">
+                            {/* Chips de "indicado para": 1.457px no celular,
+                                três blocos empilhados repetindo o que a
+                                descrição logo acima já disse. No desktop ficam,
+                                porque ali são varredura rápida em linha.
+                                Escondidos por CSS e não por renderização
+                                condicional, para o servidor e o cliente
+                                produzirem o mesmo HTML. */}
+                            <div className="hidden md:flex flex-wrap gap-1.5 mb-6">
                               {sol.forWhom.slice(0, 3).map(q => (
                                 <span key={q} className="text-[11.5px] leading-snug text-g-dark/50 bg-g-pale/70 rounded-full px-3 py-1.5">
                                   {q}
