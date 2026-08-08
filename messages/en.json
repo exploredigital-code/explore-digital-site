@@ -356,7 +356,14 @@
     "you_receive": "Everything you get.",
     "expected_result": "Expected result",
     "want_service": "I want this service",
-    "see_all_plans": "See all plans"
+    "see_all_services": "See all services",
+    "media_label": "How it shows up",
+    "how_label": "How we work",
+    "see_details": "See details",
+    "cta_title": "Want {discipline} in your operation?",
+    "cta_desc": "In 45 minutes we review your digital presence and show you what to prioritise. No cost, no commitment.",
+    "cta_button": "Book your free consultation",
+    "cta_secondary": "Chat on WhatsApp"
   },
   "portfolio_detail": {
     "client": "Client",
@@ -732,11 +739,11 @@
   },
   "servicos": {
     "meta_title": "Solutions · Explore Digital",
-    "meta_description": "One-off deliverables with a price and a deadline (photo, video, drone, editing, design, landing page) or full projects in branding, web, social, paid traffic and systems for hospitality.",
+    "meta_description": "One-off deliverables with a scope and a deadline (photo, video, drone, editing, design, landing page) or full projects in branding, web, social, paid traffic and systems for hospitality.",
     "nav_label": "Solutions",
     "eyebrow": "What we do",
     "title": "One-off deliverables or a full project.",
-    "sub": "You hire what your moment calls for: a specific piece with a price and a deadline, or a whole track that starts with a diagnosis.",
+    "sub": "You hire what your moment calls for: a specific piece with a scope and a deadline, or a whole track that starts with a diagnosis.",
     "count": "{n} solutions · {p} fronts",
     "rail_label": "Fronts",
     "includes": "What’s included",
@@ -754,13 +761,13 @@
     "door1_label": "On demand",
     "door1_title": "You know what you need.",
     "door1_desc": "Fixed scope, fixed deadline. You ask, we deliver. No retainer, no contract.",
-    "door1_cta": "See deliverables and prices",
+    "door1_cta": "See deliverables and lead times",
     "door2_label": "Projects",
     "door2_title": "You know the problem, not the solution.",
     "door2_desc": "We start with a diagnosis, define the scope and execute. Then, if it makes sense, we run it for you every month.",
     "door2_cta": "See the project tracks",
     "od_eyebrow": "On demand",
-    "od_title": "One-off deliverables, with a price and a deadline.",
+    "od_title": "One-off deliverables, with a scope and a deadline.",
     "od_sub": "For when you need one specific piece rather than a whole track. You order, you receive, done.",
     "od_delivery": "Delivered in",
     "od_days": "working days",
@@ -777,7 +784,7 @@
     "proj_title": "Five tracks, five different problems.",
     "proj_sub": "We do not sell closed packages. You hire the track your moment calls for, on its own or combined with others.",
     "rail_ondemand": "On demand",
-    "rail_projects": "Projects",
+    "rail_projects": "Disciplines",
     "wa_item": "Hi! I came from the website and I would like to book: {item}.",
     "on_demand_items": [
       {
@@ -849,6 +856,7 @@
     ],
     "doors_home_title": "Two ways to work with Explore.",
     "od_orcamento": "Request a quote",
-    "od_count": "{n} deliverables"
+    "od_count": "{n} deliverables",
+    "proj_ver_disciplina": "See discipline"
   }
 }

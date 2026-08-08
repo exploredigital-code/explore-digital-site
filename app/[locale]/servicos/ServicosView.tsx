@@ -7,11 +7,68 @@ import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/sections/Navbar'
 import { Footer } from '@/components/sections/Footer'
-import { servicesData } from '@/data/services'
+import { disciplines } from '@/data/services'
+import { SlotMidia, GradeMidia, type Proporcao } from '@/components/ui/SlotMidia'
 import { onDemandItems, formatDays } from '@/data/on-demand'
 
 const WA_BASE = 'https://wa.me/+5585991043067?text='
 const ON_DEMAND_ID = 'sob-demanda'
+
+/**
+ * Plano de mídia por disciplina, seguindo o SPEC seção 6.
+ *
+ * Vertical é o padrão porque o acervo é vertical. 16:9 só onde o material é
+ * horizontal de verdade: painel de resultado e site em desktop.
+ */
+const MIDIA: Record<string, { variante: 'reels' | 'verticais' | 'destaque'; slots: { p: Proporcao; rotulo: string }[] }> = {
+  'social-media': {
+    variante: 'reels',
+    slots: [
+      { p: 'v916', rotulo: 'Reel de pousada, hóspede em cena' },
+      { p: 'v916', rotulo: 'Reel de beach club no fim de tarde' },
+      { p: 'v916', rotulo: 'Story de bastidor da operação' },
+      { p: 'v916', rotulo: 'Reel de café da manhã' },
+    ],
+  },
+  'performance-ads': {
+    variante: 'destaque',
+    slots: [
+      { p: 'v916', rotulo: 'Criativo vertical de campanha' },
+      { p: 'h169', rotulo: 'Painel de resultado do gerenciador' },
+    ],
+  },
+  'web-design': {
+    variante: 'destaque',
+    slots: [
+      { p: 'v916', rotulo: 'Site aberto no celular' },
+      { p: 'h169', rotulo: 'Site em desktop, dobra inicial' },
+    ],
+  },
+  motion: {
+    variante: 'reels',
+    slots: [
+      { p: 'v916', rotulo: 'Vinheta de abertura' },
+      { p: 'v916', rotulo: 'Story de maré gerado em série' },
+      { p: 'v916', rotulo: 'Lower third aplicado em reel' },
+      { p: 'v916', rotulo: 'Criativo animado de anúncio' },
+    ],
+  },
+  automatizacoes: {
+    variante: 'destaque',
+    slots: [
+      { p: 'v916', rotulo: 'Resposta automática no WhatsApp' },
+      { p: 'h169', rotulo: 'Painel de reserva e ocupação' },
+    ],
+  },
+  branding: {
+    variante: 'verticais',
+    slots: [
+      { p: 'v45', rotulo: 'Aplicação de marca em papelaria' },
+      { p: 'v45', rotulo: 'Paleta e tipografia' },
+      { p: 'v45', rotulo: 'Fachada ou sinalização' },
+    ],
+  },
+}
 
 type OnDemandCopy = { slug: string; name: string; tagline: string; includes: string[] }
 
@@ -36,10 +93,10 @@ export function ServicosView() {
   const locale = useLocale()
 
   const onDemandCopy = t.raw('on_demand_items') as OnDemandCopy[]
-  const totalProjetos = servicesData.reduce((n, s) => n + s.subServices.length, 0)
+  const totalProjetos = disciplines.reduce((n, s) => n + s.subServices.length, 0)
 
   // Porta 1 primeiro: converte rápido e tem preço. Projetos vêm depois.
-  const secoes = [ON_DEMAND_ID, ...servicesData.map(s => s.slug)]
+  const secoes = [ON_DEMAND_ID, ...disciplines.map(s => s.slug)]
   const [ativo, setAtivo] = useState(secoes[0])
   const refs = useRef<Record<string, HTMLElement | null>>({})
 
@@ -75,7 +132,7 @@ export function ServicosView() {
     { label: t('rail_ondemand'), itens: [{ id: ON_DEMAND_ID, num: '01', label: t('od_eyebrow'), count: onDemandItems.length }] },
     {
       label: t('rail_projects'),
-      itens: servicesData.map((s, i) => ({
+      itens: disciplines.map((s, i) => ({
         id: s.slug,
         num: String(i + 2).padStart(2, '0'),
         label: s.title,
@@ -111,7 +168,7 @@ export function ServicosView() {
             <div className="grid md:grid-cols-2 gap-4 max-w-[900px]">
               {[
                 { label: t('door1_label'), title: t('door1_title'), desc: t('door1_desc'), cta: t('door1_cta'), onClick: () => irPara(ON_DEMAND_ID), destaque: true },
-                { label: t('door2_label'), title: t('door2_title'), desc: t('door2_desc'), cta: t('door2_cta'), onClick: () => irPara(servicesData[0].slug), destaque: false },
+                { label: t('door2_label'), title: t('door2_title'), desc: t('door2_desc'), cta: t('door2_cta'), onClick: () => irPara(disciplines[0].slug), destaque: false },
               ].map(porta => (
                 <button
                   key={porta.label}
@@ -352,11 +409,45 @@ export function ServicosView() {
                   </h2>
                   <p className="text-[15px] leading-[1.75] text-g-dark/50 max-w-[620px] mb-2">{t('proj_sub')}</p>
                   <span className="text-[12px] font-bold tracking-[0.18em] uppercase text-g-dark/30">
-                    {t('count', { n: totalProjetos, p: servicesData.length })}
+                    {t('count', { n: totalProjetos, p: disciplines.length })}
                   </span>
                 </motion.header>
 
-                {servicesData.map((frente, fi) => (
+                {/* Índice das seis disciplinas.
+                    Três colunas fecham duas linhas exatas: com cinco sobrava
+                    uma órfã na segunda linha. */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-8">
+                  {disciplines.map((d, i) => (
+                    <motion.div
+                      key={d.slug}
+                      initial={{ opacity: 0, y: 14 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: '-60px 0px' }}
+                      transition={{ duration: 0.4, delay: i * 0.05 }}
+                    >
+                      <Link
+                        href={`/${locale}/servicos/${d.slug}`}
+                        className="group h-full flex flex-col p-6 rounded-2xl border border-tinta-16 bg-white hover:border-verde-medio/45 hover:shadow-md transition-all duration-300"
+                      >
+                        <div className="flex items-baseline gap-3 mb-2.5">
+                          <span className="text-[10.5px] font-bold tabular-nums text-verde-medio">
+                            {String(i + 1).padStart(2, '0')}
+                          </span>
+                          <h3 className="text-[19px] leading-tight tracking-[-0.015em] text-verde font-bold">
+                            {d.title}
+                          </h3>
+                        </div>
+                        <p className="text-[13.5px] leading-[1.6] text-tinta-70 mb-5 flex-1">{d.tagline}</p>
+                        <span className="inline-flex items-center gap-2 text-[12.5px] font-bold text-verde-medio transition-all duration-200 group-hover:gap-2.5">
+                          {t('proj_ver_disciplina')}
+                          <ArrowIcon />
+                        </span>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {disciplines.map((frente, fi) => (
                   <section
                     key={frente.slug}
                     id={frente.slug}
@@ -379,9 +470,25 @@ export function ServicosView() {
                       <p className="text-[clamp(16px,1.9vw,21px)] leading-[1.45] text-g-dark/70 max-w-[620px] mb-4">
                         {frente.tagline}
                       </p>
-                      <p className="text-[15px] leading-[1.75] text-g-dark/50 max-w-[620px]">
+                      <p className="text-[15px] leading-[1.75] text-g-dark/50 max-w-[620px] mb-7">
                         {frente.description}
                       </p>
+
+                      {/* Grade de mídia. Placeholder marcado até o acervo
+                          chegar: o rótulo diz o que entra em cada slot. */}
+                      <GradeMidia variante={MIDIA[frente.slug].variante}>
+                        {MIDIA[frente.slug].slots.map((slot, i) => (
+                          <SlotMidia key={i} proporcao={slot.p} rotulo={slot.rotulo} />
+                        ))}
+                      </GradeMidia>
+
+                      <Link
+                        href={`/${locale}/servicos/${frente.slug}`}
+                        className="inline-flex items-center gap-2 mt-7 text-[13.5px] font-bold text-verde border-b border-tinta-16 pb-0.5 hover:text-verde-medio hover:border-verde-medio transition-colors duration-200"
+                      >
+                        {t('proj_ver_disciplina')}
+                        <ArrowIcon />
+                      </Link>
                     </motion.header>
 
                     <div className="divide-y divide-g-dark/10">

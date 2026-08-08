@@ -48,6 +48,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter(p => !p.hidden)
     .map(p => ({ path: `/portfolio/${p.slug}`, priority: 0.7, changeFrequency: 'monthly' }))
 
+  // As seis disciplinas. São as páginas que a busca por "agência de social
+  // media para pousada" tem chance de encontrar, então entram com prioridade
+  // acima dos sub-serviços.
+  const disciplinePages: Entry[] = servicesData.map(d => ({
+    path: `/servicos/${d.slug}`,
+    priority: 0.85,
+    changeFrequency: 'monthly',
+  }))
+
   const servicePages: Entry[] = servicesData
     .flatMap(s => s.subServices)
     .map(s => ({ path: `/servicos/${s.slug}`, priority: 0.8, changeFrequency: 'monthly' }))
@@ -59,7 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ptOnly: true,
   }))
 
-  const all = [...staticPages, ...projectPages, ...servicePages, ...blogPages]
+  const all = [...staticPages, ...projectPages, ...disciplinePages, ...servicePages, ...blogPages]
     .filter(e => !REDIRECIONADAS.has(e.path))
 
   return all.flatMap(entry =>

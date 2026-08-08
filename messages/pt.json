@@ -256,7 +256,14 @@
     "you_receive": "Tudo que você recebe.",
     "expected_result": "Resultado esperado",
     "want_service": "Quero este serviço",
-    "see_all_plans": "Ver todos os planos"
+    "see_all_services": "Ver todos os serviços",
+    "media_label": "Como isso aparece",
+    "how_label": "Como fazemos",
+    "see_details": "Ver detalhes",
+    "cta_title": "Quer {discipline} na sua operação?",
+    "cta_desc": "Em 45 minutos analisamos o seu digital e apontamos o que priorizar. Sem custo e sem compromisso.",
+    "cta_button": "Agendar consultoria gratuita",
+    "cta_secondary": "Falar no WhatsApp"
   },
   "portfolio_detail": {
     "client": "Cliente",
@@ -732,11 +739,11 @@
   },
   "servicos": {
     "meta_title": "Soluções · Explore Digital",
-    "meta_description": "Entregas pontuais com preço e prazo (foto, vídeo, drone, edição, design, landing page) ou projetos completos de branding, web, social, tráfego pago e sistemas para hotelaria.",
+    "meta_description": "Entregas pontuais com escopo e prazo (foto, vídeo, drone, edição, design, landing page) ou projetos completos de branding, web, social, tráfego pago e sistemas para hotelaria.",
     "nav_label": "Soluções",
     "eyebrow": "O que fazemos",
     "title": "Entregas pontuais ou projeto completo.",
-    "sub": "Você contrata o que o seu momento pede: uma peça específica com preço e prazo, ou uma frente inteira que começa por um diagnóstico.",
+    "sub": "Você contrata o que o seu momento pede: uma peça específica com escopo e prazo, ou uma frente inteira que começa por um diagnóstico.",
     "count": "{n} soluções · {p} frentes",
     "rail_label": "Frentes",
     "includes": "O que inclui",
@@ -754,13 +761,13 @@
     "door1_label": "Sob demanda",
     "door1_title": "Você sabe o que precisa.",
     "door1_desc": "Escopo e prazo fechados. Você pede, a gente entrega. Sem mensalidade e sem contrato.",
-    "door1_cta": "Ver entregas e preços",
+    "door1_cta": "Ver entregas e prazos",
     "door2_label": "Projetos",
     "door2_title": "Você sabe o problema, não a solução.",
     "door2_desc": "Começa por um diagnóstico, define o escopo e a gente executa. Depois, se fizer sentido, cuidamos da operação todo mês.",
     "door2_cta": "Ver as frentes de projeto",
     "od_eyebrow": "Sob demanda",
-    "od_title": "Entregas pontuais, com preço e prazo.",
+    "od_title": "Entregas pontuais, com escopo e prazo.",
     "od_sub": "Quando você precisa de uma peça específica e não de uma frente inteira. Contrata, recebe e pronto.",
     "od_delivery": "Entrega em",
     "od_days": "dias úteis",
@@ -777,7 +784,7 @@
     "proj_title": "Cinco frentes, cinco problemas diferentes.",
     "proj_sub": "Não vendemos pacote fechado. Você contrata a frente que o seu momento pede, sozinha ou combinada com outras.",
     "rail_ondemand": "Sob demanda",
-    "rail_projects": "Projetos",
+    "rail_projects": "Disciplinas",
     "wa_item": "Olá! Vim pelo site e quero contratar: {item}.",
     "on_demand_items": [
       {
@@ -849,6 +856,7 @@
     ],
     "doors_home_title": "Duas formas de trabalhar com a Explore.",
     "od_orcamento": "Pedir orçamento",
-    "od_count": "{n} entregas"
+    "od_count": "{n} entregas",
+    "proj_ver_disciplina": "Ver disciplina"
   }
 }

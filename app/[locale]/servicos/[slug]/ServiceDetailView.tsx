@@ -147,7 +147,7 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
               </a>
               <Link href={`/${locale}/servicos`}
                 className="inline-flex items-center gap-2 border border-white/20 text-white/60 hover:text-white hover:border-white/40 font-bold px-8 py-4 rounded-full transition-all duration-200 text-[15px]">
-                {t('see_all_plans')}
+                {t('see_all_services')}
               </Link>
             </div>
           </AnimateIn>

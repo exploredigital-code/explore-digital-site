@@ -20,12 +20,11 @@ const MOVED: [from: string, to: string][] = [
   // /marketplace era a aba de Planos e já apontava para /solucoes. Encadear
   // deixaria dois saltos, então vai direto ao destino final.
   ['/marketplace',         '/servicos'],
-  // Naming saiu de Branding e Sistemas virou Automatizações. Enquanto a fase 5
-  // não cria as páginas de disciplina, o destino é a âncora da disciplina no
-  // hub: um salto só e sem 404. Quando /servicos/branding existir, é só tirar
-  // o `#`.
-  ['/servicos/naming',     '/servicos#branding'],
-  ['/servicos/sistemas',   '/servicos#automatizacoes'],
+  // Naming saiu de Branding e Sistemas virou Automatizações. Os destinos são
+  // as páginas de disciplina, criadas na fase 5. Até elas existirem o destino
+  // era a âncora no hub, para não trocar 301 por 404.
+  ['/servicos/naming',     '/servicos/branding'],
+  ['/servicos/sistemas',   '/servicos/automatizacoes'],
 ]
 
 const nextConfig: NextConfig = {
