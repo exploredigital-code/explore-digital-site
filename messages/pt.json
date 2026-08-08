@@ -79,7 +79,9 @@
     "cta_title": "Quer a Explore cuidando da sua marca?",
     "cta_desc": "Em 45 minutos passamos um raio-X no seu site, Instagram, Google e reputação — e apontamos o que priorizar. Sem custo e sem compromisso.",
     "cta_button": "Agendar consultoria gratuita",
-    "cta_secondary": "Falar no WhatsApp"
+    "cta_secondary": "Falar no WhatsApp",
+    "meta_title": "Sobre a Explore Digital — marketing para hotelaria",
+    "meta_description": "Agência especializada em hotelaria no litoral do Ceará e do Rio Grande do Norte. Conheça a história, os valores e o time por trás dos projetos."
   },
   "hero": {
     "eyebrow": "Agência de Marketing para Hotéis · Pousadas · Real Estate",
@@ -145,7 +147,9 @@
     "cta_eyebrow": "Próximo na fila",
     "cta_title": "Quer que a sua marca seja o próximo case?",
     "cta_button": "Falar com a Explore →",
-    "view_full_case": "Ver case completo"
+    "view_full_case": "Ver case completo",
+    "page_meta_title": "Portfólio de cases — Explore Digital",
+    "page_meta_description": "Projetos de marketing para pousadas, hostels e beach clubs no litoral do Ceará e do Rio Grande do Norte. Resultados reais em redes sociais, tráfego pago e web."
   },
   "services": {
     "eyebrow": "O que fazemos",
@@ -372,7 +376,9 @@
     "cat_branding": "Branding",
     "cat_kitesurf": "Kitesurf & Wingfoil",
     "cat_captacoes": "Captações",
-    "cat_sistemas": "Sistemas"
+    "cat_sistemas": "Sistemas",
+    "meta_title": "Blog de marketing para hotelaria — Explore Digital",
+    "meta_description": "Conteúdo prático sobre reservas diretas, tráfego pago, redes sociais e branding para pousadas, hostels e beach clubs do litoral do Ceará e do Rio Grande do Norte."
   },
   "vagas": {
     "eyebrow": "Carreiras",
@@ -441,7 +447,9 @@
         "descricao": "Coordenação de projetos internos e acompanhamento de entregas junto aos clientes.",
         "tipo": "CLT"
       }
-    ]
+    ],
+    "meta_title": "Trabalhe conosco — Explore Digital",
+    "meta_description": "Vagas abertas em design, social media, tráfego pago e vendas na Explore Digital, agência de marketing para hotelaria."
   },
   "footer": {
     "tagline": "Agência de marketing digital para hotéis, pousadas e real estate. Reservas diretas, não dependência de OTAs.",

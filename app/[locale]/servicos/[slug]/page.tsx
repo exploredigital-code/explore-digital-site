@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { servicesData, findSubService } from '@/data/services'
+import { canonical, languageAlternates } from '@/lib/site'
 import { ServiceDetailView } from './ServiceDetailView'
 
 interface Props {
@@ -8,12 +9,16 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params
+  const { slug, locale } = await params
   const sub = findSubService(slug)
   if (!sub) return { title: 'Serviço não encontrado' }
   return {
     title: `${sub.name} — Explore Digital`,
     description: sub.tagline,
+    alternates: {
+      canonical: canonical(locale, `/servicos/${slug}`),
+      languages: languageAlternates(`/servicos/${slug}`),
+    },
     openGraph: { title: `${sub.name} — Explore Digital`, description: sub.tagline, type: 'website' },
   }
 }

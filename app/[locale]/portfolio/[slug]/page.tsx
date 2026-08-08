@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound }    from 'next/navigation'
 import { projects }    from '@/data/portfolio'
+import { canonical, languageAlternates } from '@/lib/site'
 import { ProjectView } from './ProjectView'
 
 interface Props {
@@ -8,17 +9,22 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params
+  const { slug, locale } = await params
   const project = projects.find(p => p.slug === slug)
   if (!project || project.hidden) return { title: 'Projeto não encontrado' }
 
   return {
     title: `${project.client} — Explore Digital`,
     description: project.tagline,
+    alternates: {
+      canonical: canonical(locale, `/portfolio/${slug}`),
+      languages: languageAlternates(`/portfolio/${slug}`),
+    },
     openGraph: {
       title: `${project.client} — Explore Digital`,
       description: project.tagline,
       type: 'article',
+      images: [project.imageUrl],
     },
     twitter: { card: 'summary_large_image' },
   }

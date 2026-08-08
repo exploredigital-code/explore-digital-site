@@ -79,7 +79,9 @@
     "cta_title": "¿Quieres a Explore cuidando de tu marca?",
     "cta_desc": "En 45 minutos hacemos una radiografía de tu web, Instagram, Google y reputación — y te decimos qué priorizar. Sin coste y sin compromiso.",
     "cta_button": "Agendar consultoría gratuita",
-    "cta_secondary": "Hablar por WhatsApp"
+    "cta_secondary": "Hablar por WhatsApp",
+    "meta_title": "Sobre Explore Digital — marketing para hotelería",
+    "meta_description": "Agencia especializada en hotelería en el litoral de Ceará y Rio Grande do Norte, Brasil. Nuestra historia, nuestros valores y el equipo detrás del trabajo."
   },
   "hero": {
     "eyebrow": "Agencia Creativa · Hotelería · Experiencias · Real Estate",
@@ -145,7 +147,9 @@
     "cta_eyebrow": "El siguiente en la fila",
     "cta_title": "¿Quieres que tu marca sea el próximo case?",
     "cta_button": "Hablar con Explore →",
-    "view_full_case": "Ver case completo"
+    "view_full_case": "Ver case completo",
+    "page_meta_title": "Portafolio de casos — Explore Digital",
+    "page_meta_description": "Proyectos de marketing para posadas, hostels y beach clubs en el litoral de Ceará y Rio Grande do Norte. Resultados reales en redes sociales, tráfico pago y web."
   },
   "services": {
     "eyebrow": "Lo que hacemos",
@@ -339,7 +343,9 @@
     "cat_branding": "Branding",
     "cat_kitesurf": "Kitesurf & Wingfoil",
     "cat_captacoes": "Fotografía & Video",
-    "cat_sistemas": "Sistemas"
+    "cat_sistemas": "Sistemas",
+    "meta_title": "Blog de marketing para hotelería — Explore Digital",
+    "meta_description": "Contenido práctico sobre reservas directas, tráfico pago, redes sociales y branding para posadas, hostels y beach clubs del litoral de Ceará y Rio Grande do Norte."
   },
   "vagas": {
     "eyebrow": "Carreras",
@@ -408,7 +414,9 @@
         "descricao": "Coordinación de proyectos internos y seguimiento de entregas con los clientes.",
         "tipo": "Full-time"
       }
-    ]
+    ],
+    "meta_title": "Trabaja con nosotros — Explore Digital",
+    "meta_description": "Vacantes abiertas en diseño, social media, tráfico pago y ventas en Explore Digital, agencia de marketing para hotelería."
   },
   "service_detail": {
     "back": "Volver",

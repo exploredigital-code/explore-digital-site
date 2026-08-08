@@ -79,7 +79,9 @@
     "cta_title": "Want Explore looking after your brand?",
     "cta_desc": "In 45 minutes we X-ray your website, Instagram, Google listing and reputation — and show you what to prioritise. No cost, no commitment.",
     "cta_button": "Book your free consultation",
-    "cta_secondary": "Chat on WhatsApp"
+    "cta_secondary": "Chat on WhatsApp",
+    "meta_title": "About Explore Digital — hospitality marketing",
+    "meta_description": "An agency specialised in hospitality on the coast of Ceará and Rio Grande do Norte, Brazil. Our story, our values and the team behind the work."
   },
   "hero": {
     "eyebrow": "Creative Agency · Hospitality · Experiences · Real Estate",
@@ -145,7 +147,9 @@
     "cta_eyebrow": "Next in line",
     "cta_title": "Want your brand to be the next case study?",
     "cta_button": "Talk to Explore →",
-    "view_full_case": "View full case"
+    "view_full_case": "View full case",
+    "page_meta_title": "Case portfolio — Explore Digital",
+    "page_meta_description": "Marketing projects for guesthouses, hostels and beach clubs on the coast of Ceará and Rio Grande do Norte. Real results in social media, paid traffic and web."
   },
   "services": {
     "eyebrow": "What we do",
@@ -339,7 +343,9 @@
     "cat_branding": "Branding",
     "cat_kitesurf": "Kitesurf & Wingfoil",
     "cat_captacoes": "Photo & Video",
-    "cat_sistemas": "Systems"
+    "cat_sistemas": "Systems",
+    "meta_title": "Hospitality marketing blog — Explore Digital",
+    "meta_description": "Practical content on direct bookings, paid traffic, social media and branding for guesthouses, hostels and beach clubs on the coast of Ceará and Rio Grande do Norte, Brazil."
   },
   "vagas": {
     "eyebrow": "Careers",
@@ -408,7 +414,9 @@
         "descricao": "Coordination of internal projects and delivery monitoring with clients.",
         "tipo": "Full-time"
       }
-    ]
+    ],
+    "meta_title": "Work with us — Explore Digital",
+    "meta_description": "Open roles in design, social media, paid traffic and sales at Explore Digital, a hospitality marketing agency."
   },
   "service_detail": {
     "back": "Back",
