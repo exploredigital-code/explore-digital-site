@@ -89,6 +89,9 @@ export const projects: Project[] = [
   },
   {
     id: 5,
+    // Ex-cliente e fora do recorte CE/RN. Mantido no arquivo para não perder o
+    // histórico — basta remover `hidden` para republicar.
+    hidden: true,
     slug: 'maresias-do-leme',
     client: 'Maresias do Leme',
     location: 'Rio de Janeiro — RJ',
@@ -138,6 +141,8 @@ export const projects: Project[] = [
   },
   {
     id: 8,
+    // Ex-cliente e real estate, fora do foco em hotelaria.
+    hidden: true,
     slug: 'terra-ventos',
     client: 'Terra Ventos',
     location: 'Preá — CE',

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations } from 'next-intl/server'
 import { WhatsAppFloat } from '@/components/ui/WhatsAppFloat'
+import { SITE_URL } from '@/lib/site'
 import '../globals.css'
 
 interface Props {
@@ -13,6 +14,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'meta' })
   return {
+    // metadataBase resolve as URLs relativas de OG/canonical das páginas filhas.
+    metadataBase: new URL(SITE_URL),
     title: t('site_title'),
     description: t('description'),
     openGraph: {
@@ -20,9 +23,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: t('og_description'),
       images: ['/images/logo.png'],
       siteName: 'Explore Digital',
+      locale,
     },
     twitter: { card: 'summary_large_image' },
-    alternates: { canonical: 'https://somosexplore.com' },
+    // ATENÇÃO: não declarar `alternates.canonical` aqui. Metadata de layout é
+    // herdada por toda página filha que não sobrescreve — um canonical fixo
+    // fazia os 60 posts do blog, os 13 serviços e os cases se declararem
+    // duplicatas da home, pedindo ao Google que não os indexasse.
+    // Cada página define o seu próprio; quem não define, se auto-canonicaliza.
   }
 }
 

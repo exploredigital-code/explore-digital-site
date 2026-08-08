@@ -217,6 +217,43 @@ export default function SobrePage() {
             ))}
           </AnimateStagger>
 
+          {/* CTA comercial — precisa vir antes do de vagas.
+              Até aqui a única saída da página era "ver vagas abertas": quem
+              chegava ao fim de /sobre avaliando contratar a agência só era
+              convidado a se candidatar a uma vaga. */}
+          <AnimateIn>
+            <div className="rounded-2xl bg-g-mid/[0.09] border border-g-mid/25 p-10 lg:p-14 mb-6 relative overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_80%_at_100%_0%,#2D5238,transparent_65%)] opacity-45 pointer-events-none" />
+              <div className="relative z-10 max-w-[620px]">
+                <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-light/55 mb-4">
+                  {t('cta_eyebrow')}
+                </div>
+                <h3 className="text-[clamp(24px,3.5vw,40px)] leading-[1.05] tracking-[-0.025em] text-white mb-4">
+                  {t('cta_title')}
+                </h3>
+                <p className="text-white/55 text-[15.5px] leading-[1.75] mb-8">
+                  {t('cta_desc')}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link
+                    href={`/${locale}/consultoria`}
+                    className="inline-flex items-center justify-center gap-2 bg-g-light text-g-dark font-bold px-7 py-3.5 rounded-full text-[14px] hover:bg-g-pale hover:-translate-y-0.5 transition-all duration-200"
+                  >
+                    {t('cta_button')}
+                  </Link>
+                  <a
+                    href={WHATSAPP}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/80 font-semibold px-7 py-3.5 rounded-full text-[14px] hover:border-white/40 hover:text-white hover:-translate-y-0.5 transition-all duration-200"
+                  >
+                    {t('cta_secondary')}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </AnimateIn>
+
           {/* CTA vagas */}
           <AnimateIn>
             <div className="rounded-2xl bg-[#0D1A12] border border-white/[0.06] p-10 lg:p-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 relative overflow-hidden">

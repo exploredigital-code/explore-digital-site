@@ -21,7 +21,7 @@ export function Footer() {
   const homeHref = (anchor: string) => (isHome ? anchor : `/${localePrefix}${anchor}`)
 
   const links = [
-    { href: homeHref('#portfolio'),       label: nav('portfolio') },
+    { href: `/${localePrefix}/portfolio`, label: nav('portfolio') },
     { href: `/${localePrefix}/solucoes`,  label: nav('marketplace') },
     { href: `/${localePrefix}/sobre`,     label: nav('about') },
     { href: `/${localePrefix}/blog`,      label: 'Blog' },

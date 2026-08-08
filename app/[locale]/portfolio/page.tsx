@@ -30,6 +30,16 @@ const FILTER_KEYS: { key: Category | 'all'; labelKey: string }[] = [
   { key: 'performance', labelKey: 'filter_performance' },
 ]
 
+/**
+ * Só mostra o filtro de uma categoria que tenha projeto publicado. Um filtro
+ * vazio leva ao "em breve, novos projetos" — que anuncia a lacuna em vez de
+ * esconder. Volta sozinho quando um case daquela categoria for publicado.
+ */
+function usableFilters(pool: typeof projects) {
+  const present = new Set(pool.flatMap(p => p.categories))
+  return FILTER_KEYS.filter(f => f.key === 'all' || present.has(f.key as Category))
+}
+
 function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const locale = useLocale()
   const t = useTranslations('portfolio')
@@ -104,6 +114,7 @@ export default function PortfolioPage() {
   const [expanded, setExpanded] = useState(false)
 
   const visible = projects.filter(p => !p.hidden)
+  const filters = usableFilters(visible)
   const featured = visible.find(p => p.featured)
   const filtered = active === 'all'
     ? visible.filter(p => !p.featured)
@@ -160,7 +171,7 @@ export default function PortfolioPage() {
         <div className="sticky top-[68px] z-30 bg-white border-b border-g-dark/8">
           <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 overflow-x-auto">
             <div className="flex gap-0 min-w-max">
-              {FILTER_KEYS.map(f => (
+              {filters.map(f => (
                 <button
                   key={f.key}
                   onClick={() => handleFilter(f.key)}

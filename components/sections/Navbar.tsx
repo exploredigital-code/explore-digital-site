@@ -45,8 +45,10 @@ export function Navbar() {
   const homeHref = (anchor: string) => isHome ? anchor : `/${localePrefix}${anchor}`
 
   // O logo já leva para a home e "Trabalhe conosco" vive no rodapé.
+  // "Portfólio" aponta para a página, não para a âncora da home: a listagem
+  // completa tem card de destaque, filtro por setor e CTA próprio.
   const navLinks = [
-    { href: homeHref('#portfolio'),         label: t('portfolio') },
+    { href: `/${localePrefix}/portfolio`,    label: t('portfolio') },
     { href: `/${localePrefix}/solucoes`,    label: t('marketplace') },
     { href: `/${localePrefix}/sobre`,       label: t('about') },
     { href: `/${localePrefix}/blog`,        label: t('blog') },

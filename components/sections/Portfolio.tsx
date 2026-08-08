@@ -15,10 +15,17 @@ type Filter = 'all' | Category
 
 const FILTERS: { key: Filter; labelKey: string }[] = [
   { key: 'all',         labelKey: 'filter_all' },
-  { key: 'web',        labelKey: 'filter_web' },
-  { key: 'social',     labelKey: 'filter_social' },
-  { key: 'performance',labelKey: 'filter_performance' },
+  { key: 'branding',    labelKey: 'filter_branding' },
+  { key: 'web',         labelKey: 'filter_web' },
+  { key: 'social',      labelKey: 'filter_social' },
+  { key: 'performance', labelKey: 'filter_performance' },
 ]
+
+/** Só entra no filtro a categoria que tem projeto publicado — ver /portfolio. */
+function usableFilters(pool: typeof projects) {
+  const present = new Set(pool.flatMap(p => p.categories))
+  return FILTERS.filter(f => f.key === 'all' || present.has(f.key as Category))
+}
 
 const CATEGORY_LABELS: Record<Category, string> = {
   branding:    'Branding',
@@ -116,6 +123,7 @@ export function Portfolio() {
     getLocalizedProject(locale, slug)?.tagline ?? fallback
 
   const visible = projects.filter(p => !p.hidden)
+  const filters = usableFilters(visible)
   const filtered = active === 'all' ? visible : visible.filter(p => p.categories.includes(active as Category))
   const displayed = filtered.slice(0, 6)
   const remaining = filtered.length - displayed.length
@@ -141,7 +149,7 @@ export function Portfolio() {
 
         {/* Filter buttons — rectangular, uppercase, decisive */}
         <AnimateIn delay={0.12} className="flex flex-wrap gap-2 mb-12">
-          {FILTERS.map(f => (
+          {filters.map(f => (
             <button
               key={f.key}
               onClick={() => setActive(f.key)}
@@ -181,20 +189,23 @@ export function Portfolio() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Ver mais */}
-        {remaining > 0 && (
-          <AnimateIn className="mt-10 text-center">
-            <Link
-              href={`/${locale}/portfolio`}
-              className="inline-flex items-center gap-2 border border-g-dark/20 hover:border-g-mid/50 text-g-dark/70 hover:text-g-dark font-bold text-[14px] px-8 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5"
-            >
-              {t('see_more')} {remaining} {remaining === 1 ? t('project_singular') : t('project_plural')}
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <path d="M2 7h10M8 3l4 4-4 4" />
-              </svg>
-            </Link>
-          </AnimateIn>
-        )}
+        {/* Ver mais — sempre visível.
+            Antes só renderizava com `remaining > 0`. Como a home mostra 6 cards
+            e há exatamente 6 projetos publicados, o botão nunca aparecia e a
+            página /portfolio ficava sem nenhuma porta de entrada no site. */}
+        <AnimateIn className="mt-10 text-center">
+          <Link
+            href={`/${locale}/portfolio`}
+            className="inline-flex items-center gap-2 border border-g-dark/20 hover:border-g-mid/50 text-g-dark/70 hover:text-g-dark font-bold text-[14px] px-8 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5"
+          >
+            {remaining > 0
+              ? `${t('see_more')} ${remaining} ${remaining === 1 ? t('project_singular') : t('project_plural')}`
+              : t('cta')}
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <path d="M2 7h10M8 3l4 4-4 4" />
+            </svg>
+          </Link>
+        </AnimateIn>
       </div>
     </section>
   )
