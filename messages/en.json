@@ -808,11 +808,11 @@
   },
   "solucoes": {
     "meta_title": "Solutions — Explore Digital",
-    "meta_description": "Branding, web, social media, paid traffic and systems for hospitality, tourism and real estate. Thirteen solutions, each with a defined scope and outcome.",
+    "meta_description": "One-off deliverables with a price and a deadline (photo, video, drone, editing, design, landing page) or full projects in branding, web, social, paid traffic and systems for hospitality.",
     "nav_label": "Solutions",
     "eyebrow": "What we do",
-    "title": "Each front solves a specific problem.",
-    "sub": "We don’t sell closed packages. You hire the solution your moment calls for — on its own or combined with others.",
+    "title": "One-off deliverables or a full project.",
+    "sub": "You hire what your moment calls for — a specific piece with a price and a deadline, or a whole track that starts with a diagnosis.",
     "count": "{n} solutions · {p} fronts",
     "rail_label": "Fronts",
     "includes": "What’s included",
@@ -820,36 +820,110 @@
     "result": "Outcome",
     "details": "See details",
     "solutions_count": "{n} solutions",
-    "extras_title": "One-offs",
-    "extras_tagline": "Single deliveries, no monthly fee.",
-    "extras_desc": "For when you need one specific piece rather than a whole front. You hire it, you get it, done.",
-    "extras_items": [
-      {
-        "name": "Video editing",
-        "desc": "Cutting, pacing, captions and soundtrack for reels and Shorts."
-      },
-      {
-        "name": "Design",
-        "desc": "A single piece for feed, stories, menus or print."
-      },
-      {
-        "name": "Video shooting",
-        "desc": "A filming day at your property, directed on set."
-      },
-      {
-        "name": "Photography",
-        "desc": "Rooms, food and experience shots for your image bank."
-      },
-      {
-        "name": "Drone",
-        "desc": "Aerial footage of the property and its surroundings — what sells location."
-      }
-    ],
     "cta_eyebrow": "Not sure where to start",
-    "cta_title": "We’ll tell you which front solves your problem.",
-    "cta_desc": "In 45 minutes we analyse your digital presence and point out what to prioritise. No cost, no strings.",
+    "cta_title": "Not sure which of the two doors is yours?",
+    "cta_desc": "In 45 minutes we review your digital presence and show you what to prioritise. No cost, no commitment.",
     "cta_button": "Book free consulting",
     "cta_secondary": "Chat on WhatsApp",
-    "wa_message": "Hi! I came from the solutions page and would like to talk."
+    "wa_message": "Hi! I came from the solutions page and would like to talk.",
+    "doors_eyebrow": "Two ways to work with us",
+    "door1_label": "On demand",
+    "door1_title": "You know what you need.",
+    "door1_desc": "Fixed scope, fixed deadline. You ask, we deliver. No retainer, no contract.",
+    "door1_cta": "See deliverables and prices",
+    "door2_label": "Projects",
+    "door2_title": "You know the problem, not the solution.",
+    "door2_desc": "We start with a diagnosis, define the scope and execute. Then, if it makes sense, we run it for you every month.",
+    "door2_cta": "See the project tracks",
+    "od_eyebrow": "On demand",
+    "od_title": "One-off deliverables, with a price and a deadline.",
+    "od_sub": "For when you need one specific piece rather than a whole track. You order, you receive, done.",
+    "od_from": "From",
+    "od_delivery": "Delivered in",
+    "od_days": "working days",
+    "od_days_to": "to",
+    "od_includes": "What is included",
+    "od_cta": "Order on WhatsApp",
+    "od_details": "See details",
+    "od_onsite": "Requires an on-site shoot",
+    "od_season_badge": "High season · August to December",
+    "od_season_title": "Your property only looks like this from August to December.",
+    "od_season_desc": "A full house, good wind and the right light happen once a year. Shoot now what you will publish all year round — you cannot photograph high season in February.",
+    "od_season_note": "Shooting slots fill up in high season: book at least 10 days ahead.",
+    "proj_eyebrow": "Projects",
+    "proj_title": "Five tracks, five different problems.",
+    "proj_sub": "We do not sell closed packages. You hire the track your moment calls for — on its own or combined with others.",
+    "rail_ondemand": "On demand",
+    "rail_projects": "Projects",
+    "wa_item": "Hi! I came from the website and I would like to book: {item}.",
+    "on_demand_items": [
+      {
+        "slug": "fotografia",
+        "name": "Photography",
+        "tagline": "Rooms, breakfast and common areas — ready for Booking and for the feed.",
+        "includes": [
+          "On-site shoot with creative direction",
+          "Professional image retouching",
+          "High-resolution delivery",
+          "Crops ready for feed, stories and OTAs"
+        ]
+      },
+      {
+        "slug": "video",
+        "name": "Video shoot",
+        "tagline": "A full day of filming at your property, with direction on set.",
+        "includes": [
+          "One shooting day on site",
+          "Creative direction on set",
+          "Edited, organised raw footage",
+          "3 vertical cuts ready for reels"
+        ]
+      },
+      {
+        "slug": "drone",
+        "name": "Drone",
+        "tagline": "The aerial that sells location — your property and its surroundings from above.",
+        "includes": [
+          "Flight over the property and surroundings",
+          "Beach, lagoon or dune footage",
+          "Colour grading",
+          "Horizontal and vertical versions"
+        ]
+      },
+      {
+        "slug": "edicao-video",
+        "name": "Video editing",
+        "tagline": "Finished reels from the footage already on your phone.",
+        "includes": [
+          "Cut and pacing",
+          "Burned-in captions",
+          "Soundtrack and colour grading",
+          "One round of revisions included"
+        ]
+      },
+      {
+        "slug": "design",
+        "name": "Design",
+        "tagline": "A one-off piece for feed, stories, menu or rate sheet.",
+        "includes": [
+          "Artwork in the format you need",
+          "Aligned with your visual identity",
+          "Source and export files",
+          "One round of revisions included"
+        ]
+      },
+      {
+        "slug": "landing-page",
+        "name": "Landing page",
+        "tagline": "A package or season page, built to convert.",
+        "includes": [
+          "Conversion-focused design and copy",
+          "WhatsApp integration",
+          "Mobile optimised",
+          "Basic SEO configured"
+        ]
+      }
+    ],
+    "doors_home_title": "Two ways to work with Explore."
   }
 }

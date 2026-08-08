@@ -808,11 +808,11 @@
   },
   "solucoes": {
     "meta_title": "Soluciones — Explore Digital",
-    "meta_description": "Branding, web, social media, tráfico pagado y sistemas para hotelería, turismo y real estate. Trece soluciones, cada una con alcance y resultado definidos.",
+    "meta_description": "Entregas puntuales con precio y plazo (foto, vídeo, drone, edición, diseño, landing page) o proyectos completos de branding, web, social, tráfico pago y sistemas para hotelería.",
     "nav_label": "Soluciones",
     "eyebrow": "Qué hacemos",
-    "title": "Cada frente resuelve un problema concreto.",
-    "sub": "No vendemos paquetes cerrados. Contratas la solución que pide tu momento — sola o combinada con otras.",
+    "title": "Entregas puntuales o proyecto completo.",
+    "sub": "Contratas lo que tu momento pide — una pieza específica con precio y plazo, o un frente entero que empieza por un diagnóstico.",
     "count": "{n} soluciones · {p} frentes",
     "rail_label": "Frentes",
     "includes": "Qué incluye",
@@ -820,36 +820,110 @@
     "result": "Resultado",
     "details": "Ver detalles",
     "solutions_count": "{n} soluciones",
-    "extras_title": "Sueltos",
-    "extras_tagline": "Entregas puntuales, sin mensualidad.",
-    "extras_desc": "Para cuando necesitas una pieza concreta y no un frente entero. Lo contratas, lo recibes y listo.",
-    "extras_items": [
-      {
-        "name": "Edición de vídeo",
-        "desc": "Corte, ritmo, subtítulos y música para reels y Shorts."
-      },
-      {
-        "name": "Diseño",
-        "desc": "Pieza suelta para feed, stories, carta o material impreso."
-      },
-      {
-        "name": "Rodaje de vídeo",
-        "desc": "Jornada de grabación en tu operación, con dirección en el set."
-      },
-      {
-        "name": "Fotografía",
-        "desc": "Espacios, gastronomía y experiencia para tu banco de imágenes."
-      },
-      {
-        "name": "Dron",
-        "desc": "Imagen aérea de la propiedad y su entorno — lo que vende la ubicación."
-      }
-    ],
     "cta_eyebrow": "No sabes por dónde empezar",
-    "cta_title": "Te decimos qué frente resuelve tu problema.",
-    "cta_desc": "En 45 minutos analizamos tu digital y señalamos qué priorizar. Sin coste y sin compromiso.",
+    "cta_title": "¿No sabes cuál de las dos puertas es la tuya?",
+    "cta_desc": "En 45 minutos analizamos tu presencia digital y te decimos qué priorizar. Sin coste y sin compromiso.",
     "cta_button": "Agendar consultoría gratuita",
     "cta_secondary": "Hablar por WhatsApp",
-    "wa_message": "¡Hola! Vengo de la página de soluciones y me gustaría hablar."
+    "wa_message": "¡Hola! Vengo de la página de soluciones y me gustaría hablar.",
+    "doors_eyebrow": "Dos formas de trabajar con nosotros",
+    "door1_label": "Bajo demanda",
+    "door1_title": "Sabes lo que necesitas.",
+    "door1_desc": "Alcance y plazo cerrados. Tú pides, nosotros entregamos. Sin mensualidad y sin contrato.",
+    "door1_cta": "Ver entregas y precios",
+    "door2_label": "Proyectos",
+    "door2_title": "Sabes el problema, no la solución.",
+    "door2_desc": "Empezamos por un diagnóstico, definimos el alcance y ejecutamos. Después, si tiene sentido, gestionamos la operación cada mes.",
+    "door2_cta": "Ver los frentes de proyecto",
+    "od_eyebrow": "Bajo demanda",
+    "od_title": "Entregas puntuales, con precio y plazo.",
+    "od_sub": "Cuando necesitas una pieza específica y no un frente entero. Contratas, recibes y listo.",
+    "od_from": "Desde",
+    "od_delivery": "Entrega en",
+    "od_days": "días hábiles",
+    "od_days_to": "a",
+    "od_includes": "Qué incluye",
+    "od_cta": "Pedir por WhatsApp",
+    "od_details": "Ver detalles",
+    "od_onsite": "Requiere grabación en el lugar",
+    "od_season_badge": "Temporada alta · agosto a diciembre",
+    "od_season_title": "Tu posada solo se ve así de agosto a diciembre.",
+    "od_season_desc": "Casa llena, buen viento y la luz correcta ocurren una vez al año. Graba ahora el material que vas a publicar todo el año — en febrero no se puede fotografiar la temporada alta.",
+    "od_season_note": "En temporada alta la agenda se llena: reserva con 10 días de antelación.",
+    "proj_eyebrow": "Proyectos",
+    "proj_title": "Cinco frentes, cinco problemas distintos.",
+    "proj_sub": "No vendemos paquetes cerrados. Contratas el frente que tu momento pide — solo o combinado con otros.",
+    "rail_ondemand": "Bajo demanda",
+    "rail_projects": "Proyectos",
+    "wa_item": "Hola! Vengo desde la web y quiero contratar: {item}.",
+    "on_demand_items": [
+      {
+        "slug": "fotografia",
+        "name": "Fotografía",
+        "tagline": "Habitaciones, desayuno y áreas comunes — listos para Booking y para el feed.",
+        "includes": [
+          "Sesión en el lugar, con dirección",
+          "Retoque profesional de las imágenes",
+          "Entrega en alta resolución",
+          "Recortes listos para feed, stories y OTA"
+        ]
+      },
+      {
+        "slug": "video",
+        "name": "Grabación de vídeo",
+        "tagline": "Una jornada de rodaje en tu operación, con dirección en el set.",
+        "includes": [
+          "Jornada de rodaje en la propiedad",
+          "Dirección creativa en el set",
+          "Bruto tratado y organizado",
+          "3 cortes verticales listos para reels"
+        ]
+      },
+      {
+        "slug": "drone",
+        "name": "Drone",
+        "tagline": "La toma aérea que vende ubicación — la propiedad y su entorno desde arriba.",
+        "includes": [
+          "Vuelo sobre la propiedad y el entorno",
+          "Imagen de la playa, la laguna o las dunas",
+          "Tratamiento de color",
+          "Versiones horizontal y vertical"
+        ]
+      },
+      {
+        "slug": "edicao-video",
+        "name": "Edición de vídeo",
+        "tagline": "Reels listos a partir del material que ya tienes en el móvil.",
+        "includes": [
+          "Corte y ritmo",
+          "Subtítulos incrustados",
+          "Música y tratamiento de color",
+          "Una ronda de ajustes incluida"
+        ]
+      },
+      {
+        "slug": "design",
+        "name": "Diseño",
+        "tagline": "Pieza suelta para feed, story, carta o tarifario.",
+        "includes": [
+          "Pieza en el formato que necesites",
+          "Alineada con tu identidad visual",
+          "Archivo abierto y cerrado",
+          "Una ronda de ajustes incluida"
+        ]
+      },
+      {
+        "slug": "landing-page",
+        "name": "Landing page",
+        "tagline": "Página de paquete o de temporada, hecha para convertir.",
+        "includes": [
+          "Diseño y copy enfocados en conversión",
+          "Integración con WhatsApp",
+          "Optimizada para móvil",
+          "SEO básico configurado"
+        ]
+      }
+    ],
+    "doors_home_title": "Dos formas de trabajar con Explore."
   }
 }

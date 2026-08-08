@@ -1,9 +1,8 @@
 import { Navbar }       from '@/components/sections/Navbar'
 import { Hero }         from '@/components/sections/Hero'
-import { Marquee }      from '@/components/sections/Marquee'
+import { TwoDoors }     from '@/components/sections/TwoDoors'
 import { Stats }        from '@/components/sections/Stats'
 import { Portfolio }    from '@/components/sections/Portfolio'
-import { Services }     from '@/components/sections/Services'
 import { Process }      from '@/components/sections/Process'
 import { About }        from '@/components/sections/About'
 import { Testimonials } from '@/components/sections/Testimonials'
@@ -30,12 +29,14 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      {/* Marquee de texto e o accordion de Serviços saíram: o primeiro não
+          provava nada e o segundo repetia na home o catálogo inteiro de
+          /solucoes. TwoDoors ocupa o lugar dos dois — só roteia. */}
       <main>
         <Hero />
-        <Marquee />
+        <TwoDoors />
         <Stats />
         <Portfolio />
-        <Services />
         <Process />
         <About />
         <Testimonials />
