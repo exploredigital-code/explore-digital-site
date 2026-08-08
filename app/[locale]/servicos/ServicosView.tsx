@@ -526,17 +526,26 @@ export function ServicosView() {
                           </div>
 
                           <div className="md:pt-1">
-                            <div className="text-[10.5px] font-bold tracking-[0.18em] uppercase text-g-dark/35 mb-3.5">
-                              {t('includes')}
-                            </div>
-                            <ul className="flex flex-col gap-2 mb-6">
-                              {sol.features.map(f => (
-                                <li key={f} className="flex items-start gap-2.5 text-[14px] leading-[1.6] text-g-dark/60">
-                                  <span className="mt-[9px] w-1 h-1 rounded-full bg-g-mid/60 shrink-0" />
-                                  {f}
-                                </li>
-                              ))}
-                            </ul>
+                            {/* As 84 features dos 15 cards custavam 2.567px no
+                                celular, uma coluna empilhada que ninguém lê de
+                                cabo a rabo antes de decidir. <details> nativo:
+                                teclado e leitor de tela de graça, sem JS. */}
+                            <details className="colapso-features mb-6">
+                              <summary className="flex items-center justify-between gap-3 min-h-[44px] py-2 text-[10.5px] font-bold tracking-[0.18em] uppercase text-g-dark/35 md:mb-3.5 hover:text-g-mid transition-colors">
+                                <span>{t('includes')} ({sol.features.length})</span>
+                                <svg className="shrink-0 transition-transform duration-200 [details[open]_&]:rotate-180" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+                                  <path d="M3 5l4 4 4-4" />
+                                </svg>
+                              </summary>
+                              <ul className="flex flex-col gap-2 pt-1">
+                                {sol.features.map(f => (
+                                  <li key={f} className="flex items-start gap-2.5 text-[14px] leading-[1.6] text-g-dark/60">
+                                    <span className="mt-[9px] w-1 h-1 rounded-full bg-g-mid/60 shrink-0" />
+                                    {f}
+                                  </li>
+                                ))}
+                              </ul>
+                            </details>
 
                             <div className="flex items-start gap-3 pt-4 border-t border-g-dark/8">
                               <span className="text-[10.5px] font-bold tracking-[0.18em] uppercase text-g-mid shrink-0 mt-[3px]">

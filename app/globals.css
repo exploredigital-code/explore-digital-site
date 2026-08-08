@@ -66,6 +66,29 @@ h3 { font-family: var(--font-quanta), system-ui, sans-serif; font-weight: 600; }
   }
 }
 
+/* ── Colapso das features do card de sub-serviço ──
+   Fechado no celular, aberto no desktop, e o estado inicial vem daqui e não
+   de JavaScript no mount, para não piscar na primeira pintura.
+
+   O <details> nasce fechado, que é o estado do mobile. No desktop o resumo
+   some e o conteúdo é revelado por CSS. São duas regras porque os motores
+   escondem o conteúdo fechado de formas diferentes: os novos usam o pseudo
+   ::details-content com content-visibility, os antigos respondem a display. */
+.colapso-features > summary {
+  list-style: none;
+  cursor: pointer;
+}
+.colapso-features > summary::-webkit-details-marker { display: none; }
+
+@media (min-width: 768px) {
+  .colapso-features > summary { display: none; }
+  .colapso-features::details-content {
+    content-visibility: visible;
+    block-size: auto;
+  }
+  .colapso-features > ul { display: flex !important; }
+}
+
 /* ── Custom selection ── */
 ::selection { background: #4E7D57; color: #E3F3E6; }
 
