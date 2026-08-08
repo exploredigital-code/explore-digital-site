@@ -6,22 +6,19 @@
    com preload. Os .otf antigos ficam em public/fonts sem uso e podem ser
    apagados junto com a limpeza do Kohinoor. */
 
-/* ── Kohinoor Latin (Corpo) — sai no commit do Satoshi ── */
-@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Light.otf') format('opentype'); font-weight: 300; font-display: swap; }
-@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Book.otf') format('opentype'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Medium.otf') format('opentype'); font-weight: 500; font-display: swap; }
-@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Demi.otf') format('opentype'); font-weight: 600; font-display: swap; }
-@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
-@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Black.otf') format('opentype'); font-weight: 900; font-display: swap; }
+/* Kohinoor saiu. Kohinoor Latin é a companheira latina de uma família
+   devanágari: aberturas fechadas e 382 glifos, desenhada para acompanhar
+   outro script, não para texto corrido em tela. Satoshi entra pela Fontshare,
+   carregada no <head> do layout. */
 
 /* ── Base ── */
 html { scroll-behavior: smooth; }
 * { box-sizing: border-box; }
 
 :root {
-  /* Uma indireção só para a fonte de corpo, para que a troca de Kohinoor por
-     Satoshi seja um commit de um arquivo e possa ser revertida sozinha. */
-  --font-body: 'Kohinoor', 'Segoe UI', system-ui, sans-serif;
+  /* Uma indireção só para a fonte de corpo, para que a troca possa ser
+     revertida sozinha. */
+  --font-body: 'Satoshi', 'Segoe UI', system-ui, sans-serif;
 }
 
 body {

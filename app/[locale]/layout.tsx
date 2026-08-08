@@ -42,8 +42,12 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} className={`${quanta.variable} scroll-smooth`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Satoshi (corpo) pela Fontshare. Quanta é local, via next/font. */}
+        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+          rel="stylesheet"
+        />
         {/* Vimeo preconnect — reduz latência inicial do player */}
         <link rel="preconnect" href="https://player.vimeo.com" />
         <link rel="preconnect" href="https://f.vimeocdn.com" crossOrigin="anonymous" />
