@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { Navbar }  from '@/components/sections/Navbar'
 import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer }  from '@/components/sections/Footer'
+import { Agora }   from '@/components/sections/Agora'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 import { GradeDoRegistro } from '@/components/ui/SlotMidia'
@@ -200,6 +201,13 @@ export function SobreView() {
           </div>
         </div>
       </section>
+
+      {/* ══ AGORA ══
+          Veio da home. Prova de atividade recente é argumento de quem já está
+          avaliando, e é aqui que essa pessoa está. A regra do `confirmado`
+          veio junto: só renderiza o que o cliente confirmou, então a seção
+          some sozinha se um dia sobrar zero item. */}
+      <Agora />
 
       {/* ══ VALORES — g-pale ══ */}
       <section className="bg-g-pale py-24 lg:py-28">

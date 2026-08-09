@@ -12,14 +12,19 @@ import { agora } from '@/data/agora'
  * Fato datado prova mais que logo enfileirado: diz o que foi feito, para quem
  * e quando.
  *
- * Renderiza SÓ o que tem `confirmado: true`. Três dos quatro itens que vieram
- * do HTML de referência eram exemplos plausíveis de como o feed funcionaria, e
- * atravessaram a conversa até virar código. Um fato verdadeiro vale mais que
- * quatro plausíveis, e data errada em feed público é o que o cliente corrige
- * na sua frente numa reunião.
+ * Mora em /sobre, e não na home. Prova de atividade recente é argumento de
+ * quem já está avaliando a agência, e esse é o público de /sobre. Na home a
+ * dobra ficou com os destinos, que respondem a pergunta anterior: "vocês
+ * conhecem a minha praia?".
+ *
+ * Renderiza SÓ o que tem `confirmado: true`, e a regra viajou junto com a
+ * seção. Três dos quatro itens que vieram do HTML de referência eram exemplos
+ * plausíveis de como o feed funcionaria, e atravessaram a conversa até virar
+ * código. Um fato verdadeiro vale mais que quatro plausíveis, e data errada em
+ * feed público é o que o cliente corrige na sua frente numa reunião.
  */
 export function Agora() {
-  const t = useTranslations('home')
+  const t = useTranslations('about_page')
   const itens = agora.filter(i => i.confirmado)
   if (itens.length === 0) return null
 

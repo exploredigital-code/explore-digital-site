@@ -4,7 +4,7 @@ import { Hero }         from '@/components/sections/Hero'
 import { TwoDoors }     from '@/components/sections/TwoDoors'
 import { Portfolio }    from '@/components/sections/Portfolio'
 import { Gargalos }     from '@/components/sections/Gargalos'
-import { Agora }        from '@/components/sections/Agora'
+import { Destinos }     from '@/components/sections/Destinos'
 import { Estudio }      from '@/components/sections/Estudio'
 import { Contact }      from '@/components/sections/Contact'
 import { Footer }       from '@/components/sections/Footer'
@@ -40,7 +40,8 @@ export default function Home() {
         <TwoDoors />
         <Portfolio />
         <Gargalos />
-        <Agora />
+        {/* Destinos entrou no lugar do Agora, que migrou para /sobre. */}
+        <Destinos />
         <Estudio />
         <Contact />
       </main>

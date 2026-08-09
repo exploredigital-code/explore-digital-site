@@ -57,6 +57,21 @@ const home: Slot[] = [
   { id: 'home-estudio-time-foto',     arquivo: '', rotulo: 'Foto do time',                formato: 'v45' },
 ]
 
+/* ──────────────────────────── DESTINOS ───────────────────────────
+   Um slot por destino da seção da home. O rótulo diz o que procurar no
+   acervo: paisagem que identifique a praia de longe, não foto de hóspede
+   nem peça de cliente. Vazio, cada card mostra o placeholder tracejado
+   com essa frase, que é exatamente o briefing de quem vai captar.       */
+const destinos: Slot[] = [
+  { id: 'destino-joao-pessoa',     arquivo: '', rotulo: 'João Pessoa: orla da capital, hotel de frente para o mar',       formato: 'h169' },
+  { id: 'destino-pipa',            arquivo: '', rotulo: 'Pipa: falésia, vila ou praia cheia em dia de sol',               formato: 'h169' },
+  { id: 'destino-cumbuco',         arquivo: '', rotulo: 'Cumbuco: kite na água ou lagoa em dia de vento',                 formato: 'h169' },
+  { id: 'destino-taiba',           arquivo: '', rotulo: 'Taíba: duna, vento e casa de temporada',                         formato: 'h169' },
+  { id: 'destino-prea',            arquivo: '', rotulo: 'Preá: praia em alta temporada, com kite no fundo',               formato: 'h169' },
+  { id: 'destino-jericoacoara',    arquivo: '', rotulo: 'Jericoacoara: duna do pôr do sol ou rua de areia',               formato: 'h169' },
+  { id: 'destino-ilha-do-guajiru', arquivo: '', rotulo: 'Ilha do Guajirú: água rasa, escola de kite ou pousada',          formato: 'h169' },
+]
+
 /* ───────────────────────────── SOBRE ────────────────────────────── */
 const sobre: Slot[] = [
   { id: 'sobre-origem-hostel',       arquivo: '', rotulo: 'Operação antiga: hostel ou pousada', formato: 'v45' },
@@ -204,7 +219,7 @@ const blog: Slot[] = [
 ]
 
 /** Tudo junto, que é o que os componentes consultam. */
-export const slots: Slot[] = [...home, ...sobre, ...produtos, ...cases, ...blog]
+export const slots: Slot[] = [...home, ...destinos, ...sobre, ...produtos, ...cases, ...blog]
 
 /**
  * Quais slots pertencem a cada grade, na ordem de exibição.
