@@ -49,7 +49,7 @@ export default function ObrigadoPage() {
       <SkipLink />
       <Navbar />
 
-      <main id="conteudo" className="min-h-[calc(100vh-80px)] bg-g-dark flex items-center relative overflow-hidden">
+      <main id="conteudo" className="min-h-[calc(100vh-80px)] bg-verde flex items-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_40%,#2D5238,transparent_65%)] opacity-45 pointer-events-none" />
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: NOISE_BG, backgroundSize: '200px' }} />
 
@@ -61,21 +61,21 @@ export default function ObrigadoPage() {
             className="flex flex-col items-center text-center"
           >
             {/* Check icon */}
-            <div className="w-20 h-20 rounded-full bg-g-mid/20 border border-g-mid/30 flex items-center justify-center mb-8">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C1D5BD" strokeWidth="2.5" strokeLinecap="round">
+            <div className="w-20 h-20 rounded-full bg-verde-luz/15 border border-verde-luz/30 flex items-center justify-center mb-8">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#A9CDB2" strokeWidth="2.5" strokeLinecap="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
 
-            <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-light/40 mb-4">
+            <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-luz/75 mb-4">
               {t('eyebrow')}
             </div>
 
-            <h1 className="text-[clamp(36px,5vw,64px)] font-bold leading-[1.0] tracking-[-0.03em] text-white mb-6 max-w-[580px]">
+            <h1 className="text-[clamp(36px,5vw,64px)] font-bold leading-[1.0] tracking-[-0.03em] text-menta mb-6 max-w-[580px]">
               {t('title')}
             </h1>
 
-            <p className="text-white/50 text-[17px] leading-[1.75] max-w-[480px] mb-12">
+            <p className="text-menta-fraca text-[17px] leading-[1.75] max-w-[480px] mb-12">
               {t('desc')}
             </p>
 
@@ -98,7 +98,7 @@ export default function ObrigadoPage() {
               </a>
               <Link
                 href={`/${locale}`}
-                className="inline-flex items-center gap-2 text-white/60 hover:text-white font-medium px-7 py-4 rounded-full border border-white/15 hover:border-white/30 transition-all duration-200"
+                className="inline-flex items-center gap-2 text-menta-fraca hover:text-menta font-medium px-7 py-4 rounded-full border border-verde-borda hover:border-menta transition-all duration-200"
               >
                 ← {t('home_button')}
               </Link>
@@ -114,9 +114,9 @@ export default function ObrigadoPage() {
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
                   className="flex flex-col gap-2 p-5 rounded-2xl bg-white/[0.04] border border-white/[0.07] text-left"
                 >
-                  <span className="text-[11px] font-bold tracking-[0.15em] text-g-mid/60">{step.num}</span>
-                  <span className="text-[14px] font-bold text-white">{step.label}</span>
-                  <span className="text-[13px] text-white/40 leading-[1.6]">{step.desc}</span>
+                  <span className="text-[11px] font-bold tracking-[0.15em] text-verde-luz/80">{step.num}</span>
+                  <span className="text-[14px] font-bold text-menta">{step.label}</span>
+                  <span className="text-[13px] text-menta-fraca leading-[1.6]">{step.desc}</span>
                 </motion.div>
               ))}
             </div>

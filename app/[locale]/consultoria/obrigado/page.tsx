@@ -63,7 +63,7 @@ export default function ConsultoriaObrigadoPage() {
   }, [t])
 
   return (
-    <main className="min-h-screen bg-g-dark flex flex-col relative overflow-hidden">
+    <div className="min-h-screen bg-verde flex flex-col relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_25%,#2D5238,transparent_65%)] opacity-50 pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: NOISE_BG, backgroundSize: '200px' }} />
 
@@ -73,7 +73,11 @@ export default function ConsultoriaObrigadoPage() {
         </Link>
       </header>
 
-      <div className="relative z-10 flex-1 flex items-center">
+      {/* O <main> comeca aqui e nao na raiz. Antes ele embrulhava tambem o
+          cabecalho e o rodape, e um <header>/<footer> dentro de <main> perde a
+          condicao de landmark: o leitor de tela ficava sem banner e sem
+          contentinfo nesta tela. */}
+      <main id="conteudo" className="relative z-10 flex-1 flex items-center">
         <div className="w-full max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 py-12 sm:py-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -81,22 +85,22 @@ export default function ConsultoriaObrigadoPage() {
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col items-center text-center max-w-[720px] mx-auto"
           >
-            <div className="w-[72px] h-[72px] rounded-full bg-g-mid/25 border border-g-mid/40 flex items-center justify-center mb-7">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#E3F3E6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <div className="w-[72px] h-[72px] rounded-full bg-verde-luz/15 border border-verde-luz/30 flex items-center justify-center mb-7">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#A9CDB2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
 
-            <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-light/70 mb-4">{t('ty_eyebrow')}</div>
+            <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-luz/75 mb-4">{t('ty_eyebrow')}</div>
 
-            <h1 className="text-[clamp(30px,4.5vw,54px)] leading-[1.05] tracking-[-0.03em] text-white mb-5">
+            <h1 className="text-[clamp(30px,4.5vw,54px)] leading-[1.05] tracking-[-0.03em] text-menta mb-5">
               {t('ty_title')}
             </h1>
 
-            <p className="text-white/70 text-[15.5px] sm:text-[16px] leading-[1.75] mb-8">{t('ty_desc')}</p>
+            <p className="text-menta-fraca text-[15.5px] sm:text-[16px] leading-[1.75] mb-8">{t('ty_desc')}</p>
 
             {blocked && (
-              <p className="text-[13px] text-g-pale bg-g-mid/25 border border-g-mid/40 rounded-2xl px-5 py-3 mb-8 leading-relaxed">
+              <p className="text-[13px] text-menta-clara bg-verde-card border border-verde-linha rounded-2xl px-5 py-3 mb-8 leading-relaxed">
                 {t('ty_wa_fallback')}
               </p>
             )}
@@ -114,14 +118,14 @@ export default function ConsultoriaObrigadoPage() {
               </a>
               <a
                 href={mailUrl}
-                className="inline-flex items-center justify-center gap-2.5 bg-white/[0.07] border border-white/20 text-white font-semibold px-7 py-4 rounded-full hover:bg-white/[0.12] hover:border-white/35 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2.5 bg-white/[0.07] border border-verde-borda text-menta font-semibold px-7 py-4 rounded-full hover:bg-white/[0.12] hover:border-white/35 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200"
               >
                 <MailIcon />
                 {t('ty_email_button')}
               </a>
             </div>
 
-            <p className="text-[13px] text-white/45 mt-5">{t('ty_channels_note')}</p>
+            <p className="text-[13px] text-menta-fraca mt-5">{t('ty_channels_note')}</p>
 
             <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 w-full">
               {steps.map((step, i) => (
@@ -132,26 +136,26 @@ export default function ConsultoriaObrigadoPage() {
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
                   className="flex flex-col gap-2 p-5 rounded-2xl bg-white/[0.06] border border-white/[0.1] text-left"
                 >
-                  <span className="text-[11px] font-bold tracking-[0.15em] text-g-light/70">0{i + 1}</span>
-                  <span className="text-[14px] font-bold text-white leading-snug">{step.label}</span>
-                  <span className="text-[13px] text-white/55 leading-[1.6]">{step.desc}</span>
+                  <span className="text-[11px] font-bold tracking-[0.15em] text-verde-luz/80">0{i + 1}</span>
+                  <span className="text-[14px] font-bold text-menta leading-snug">{step.label}</span>
+                  <span className="text-[13px] text-menta-fraca leading-[1.6]">{step.desc}</span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         </div>
-      </div>
+      </main>
 
       <footer className="relative z-10 border-t border-white/[0.08] py-6">
         <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <Link href={`/${locale}`} className="inline-flex items-center min-h-[44px] text-[13px] text-white/50 hover:text-white transition-colors">
+          <Link href={`/${locale}`} className="inline-flex items-center min-h-[44px] text-[13px] text-menta-fraca hover:text-menta transition-colors">
             ← {t('ty_home')}
           </Link>
-          <a href={`mailto:${EMAIL}`} className="inline-flex items-center min-h-[44px] text-[13px] text-white/40 hover:text-white/75 transition-colors">
+          <a href={`mailto:${EMAIL}`} className="inline-flex items-center min-h-[44px] text-[13px] text-menta-fraca hover:text-menta transition-colors">
             {EMAIL}
           </a>
         </div>
       </footer>
-    </main>
+    </div>
   )
 }

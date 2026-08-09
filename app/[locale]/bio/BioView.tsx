@@ -127,9 +127,9 @@ export function BioView() {
   ]
 
   return (
-    <main className="min-h-[100dvh] bg-g-dark relative overflow-hidden flex flex-col">
+    <main className="min-h-[100dvh] bg-verde relative overflow-hidden flex flex-col">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_50%_at_50%_0%,#2D5238,transparent_65%)] opacity-60 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_50%_100%,#243D2D,transparent_70%)] opacity-50 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_50%_100%,#2A4233,transparent_70%)] opacity-50 pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: NOISE_BG, backgroundSize: '200px' }} />
 
       <div className="relative z-10 flex-1 flex flex-col justify-center w-full max-w-[480px] mx-auto px-5 py-7 sm:py-12">
@@ -149,8 +149,8 @@ export function BioView() {
             priority
             className="h-[46px] w-auto mb-4"
           />
-          <span className="text-[13px] font-semibold tracking-wide text-g-light/60">{t('handle')}</span>
-          <p className="text-[14.5px] leading-[1.55] text-white/60 mt-2.5 max-w-[300px]">{t('tagline')}</p>
+          <span className="text-[13px] font-semibold tracking-wide text-verde-luz">{t('handle')}</span>
+          <p className="text-[14.5px] leading-[1.55] text-menta-fraca mt-2.5 max-w-[300px]">{t('tagline')}</p>
         </motion.div>
 
         {/* ── links ── */}
@@ -166,19 +166,22 @@ export function BioView() {
                 <span
                   className={cn(
                     'w-10 h-10 shrink-0 rounded-xl flex items-center justify-center transition-colors duration-200',
-                    destaque && 'bg-g-dark/10 text-g-dark',
-                    acento && 'bg-g-light/15 text-g-light group-hover:bg-g-light/25',
-                    !destaque && !acento && 'bg-g-mid/20 text-g-light group-hover:bg-g-mid/30'
+                    destaque && 'bg-verde/15 text-verde',
+                    acento && 'bg-verde-luz/15 text-verde-luz group-hover:bg-verde-luz/25',
+                    !destaque && !acento && 'bg-verde-luz/12 text-verde-luz group-hover:bg-verde-luz/20'
                   )}
                 >
                   {icons[item.key]}
                 </span>
 
                 <span className="flex-1 min-w-0 text-left">
-                  <span className={cn('flex items-center gap-2 text-[15.5px] font-bold leading-tight', destaque ? 'text-g-dark' : 'text-white')}>
-                    <span className="truncate">{withMonth(item.title)}</span>
+                  <span className={cn('flex items-center gap-2 text-[15.5px] font-bold leading-tight', destaque ? 'text-verde' : 'text-menta')}>
+                    {/* min-w-0 em vez de truncate: com o selo ao lado, "Agenda de agosto"
+                        virava "Agenda de ago..." e o mes era justamente o dado do card.
+                        Assim o titulo quebra em duas linhas em vez de cortar. */}
+                    <span className="min-w-0">{withMonth(item.title)}</span>
                     {item.badge && (
-                      <span className="shrink-0 rounded-full bg-g-light/20 px-2 py-[3px] text-[9.5px] font-semibold uppercase tracking-[0.06em] text-g-light">
+                      <span className="shrink-0 rounded-full bg-verde/50 px-2 py-[3px] text-[9.5px] font-semibold uppercase tracking-[0.06em] text-verde-luz">
                         {item.badge}
                       </span>
                     )}
@@ -186,7 +189,7 @@ export function BioView() {
                   <span
                     className={cn(
                       'block text-[12.5px] leading-snug mt-0.5',
-                      destaque ? 'text-g-dark/60' : acento ? 'text-g-light/65' : 'text-white/45'
+                      destaque ? 'text-verde' : acento ? 'text-verde-luz/80' : 'text-menta-fraca'
                     )}
                   >
                     {item.desc}
@@ -196,7 +199,7 @@ export function BioView() {
                 <span
                   className={cn(
                     'shrink-0 transition-transform duration-200 group-hover:translate-x-1',
-                    destaque ? 'text-g-dark/50' : acento ? 'text-g-light/60' : 'text-white/30'
+                    destaque ? 'text-verde/70' : acento ? 'text-verde-luz/70' : 'text-white/45'
                   )}
                 >
                   <ArrowIcon />
@@ -207,8 +210,8 @@ export function BioView() {
             const classe = cn(
               'group flex items-center gap-3.5 w-full rounded-2xl px-4 py-3.5 min-h-[68px]',
               'border transition-all duration-200 active:scale-[0.985]',
-              destaque && 'bg-g-light border-g-light hover:bg-g-pale shadow-[0_6px_24px_rgba(193,213,189,0.16)]',
-              acento && 'bg-g-mid/[0.18] border-g-light/40 hover:bg-g-mid/25 hover:border-g-light/60',
+              destaque && 'bg-sol border-sol hover:bg-sol-forte shadow-[0_6px_24px_rgba(226,118,47,0.22)]',
+              acento && 'bg-verde-card border-verde-luz/40 hover:bg-verde-linha hover:border-verde-luz/60',
               !destaque && !acento && 'bg-white/[0.05] border-white/[0.1] hover:bg-white/[0.09] hover:border-white/25'
             )
 
@@ -248,13 +251,13 @@ export function BioView() {
                 target={s.href.startsWith('http') ? '_blank' : undefined}
                 rel={s.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 aria-label={s.label}
-                className="w-11 h-11 rounded-full bg-white/[0.05] border border-white/[0.1] flex items-center justify-center text-white/50 hover:text-white hover:bg-white/[0.1] hover:border-white/25 active:scale-95 transition-all duration-200"
+                className="w-11 h-11 rounded-full bg-white/[0.05] border border-white/[0.1] flex items-center justify-center text-menta-fraca hover:text-menta hover:bg-white/[0.1] hover:border-white/25 active:scale-95 transition-all duration-200"
               >
                 {s.icon}
               </a>
             ))}
           </div>
-          <p className="text-[11.5px] text-white/25 tracking-wide text-center">
+          <p className="text-[11.5px] text-menta-fraca tracking-wide text-center">
             © {new Date().getFullYear()} Explore Digital · {t('rights')}
           </p>
         </motion.div>
