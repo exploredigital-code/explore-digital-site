@@ -62,6 +62,9 @@ export function ObrigadoView() {
   const t = useTranslations('consultoria')
   const locale = useLocale()
   const steps = t.raw('ty_steps') as Step[]
+  // Os mesmos cinco itens da auditoria. Dizer O QUE a pessoa vai receber da
+  // peso concreto sem criar promessa de tempo, que foi o que saiu do site.
+  const relatorio = t.raw('relatorio_items') as { num: string; title: string; desc: string }[]
 
   const fallbackMessage = t('ty_email_subject')
   const [waUrl, setWaUrl] = useState(WA_BASE + encodeURIComponent(fallbackMessage))
@@ -173,6 +176,33 @@ export function ObrigadoView() {
                 </motion.div>
               ))}
             </div>
+
+            {/* O que vem no relatorio. Cinco leituras, as mesmas da
+                auditoria. Dizer O QUE a pessoa vai receber da peso concreto
+                sem criar promessa de tempo, que foi o que saiu do site. */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="mt-12 w-full text-left"
+            >
+              <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-verde-luz/75 mb-2">
+                {t('ty_lista_eyebrow')}
+              </div>
+              <h2 className="text-[17px] font-bold text-menta leading-snug mb-5">{t('ty_lista_title')}</h2>
+
+              <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3.5">
+                {relatorio.map(item => (
+                  <li key={item.title} className="flex items-start gap-3">
+                    <span className="shrink-0 text-[11px] font-bold tabular-nums text-verde-luz/75 mt-[3px]">{item.num}</span>
+                    <span className="min-w-0">
+                      <span className="block text-[14.5px] font-bold text-menta leading-snug">{item.title}</span>
+                      <span className="block text-[13px] leading-[1.6] text-menta-fraca mt-0.5">{item.desc}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
 
             {/* Enquanto o relatório não sai. Sem oferta: a consultoria paga só
                 entra depois, por WhatsApp, quando o relatório for entregue.
