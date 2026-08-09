@@ -92,7 +92,8 @@
     "dados_eyebrow": "Em números",
     "dados_pendente": "A confirmar",
     "dado_fundacao": "Ano de fundação",
-    "dado_clientes": "Clientes ativos"
+    "dado_clientes": "Clientes ativos",
+    "stat_seguidores": "41 mil · o dobro em 1 ano"
   },
   "hero": {
     "eyebrow": "Marketing para hotelaria · Litoral do Ceará e Rio Grande do Norte",
@@ -463,8 +464,8 @@
         "label": "de crescimento em 1 ano no Cabaré du Vento"
       },
       {
-        "value": "40 mil",
-        "label": "seguidores construídos para um cliente"
+        "value": "41 mil",
+        "label": "seguidores, o dobro em 1 ano"
       },
       {
         "value": "45min",

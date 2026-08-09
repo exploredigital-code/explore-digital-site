@@ -92,7 +92,8 @@
     "dados_eyebrow": "In numbers",
     "dados_pendente": "To confirm",
     "dado_fundacao": "Founded in",
-    "dado_clientes": "Active clients"
+    "dado_clientes": "Active clients",
+    "stat_seguidores": "41k · double in one year"
   },
   "hero": {
     "eyebrow": "Hospitality marketing · Ceará and Rio Grande do Norte coast",
@@ -463,8 +464,8 @@
         "label": "growth in one year for Cabaré du Vento"
       },
       {
-        "value": "40k",
-        "label": "followers built for a single client"
+        "value": "41k",
+        "label": "followers, double in one year"
       },
       {
         "value": "45min",

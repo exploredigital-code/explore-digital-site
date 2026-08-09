@@ -52,7 +52,7 @@ export const projects: Project[] = [
     location: 'Preá, Cruz · CE',
     sector: 'Beach Club',
     categories: ['social', 'performance'],
-    result: '40 mil seguidores · 100% de crescimento em 1 ano',
+    result: 'De 20 mil a 41 mil seguidores em 1 ano',
     resultConfirmado: true,
     year: '2025',
     gradient: 'from-[#1B3025] via-[#2D5238] to-[#3D7A4E]',

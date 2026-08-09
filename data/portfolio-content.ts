@@ -10,7 +10,7 @@ const content: Record<string, Record<string, ProjectContent>> = {
     'cabare-du-vento': {
       tagline: 'Três empresas em uma: Pousada, Beach Club e Restaurante à beira-mar no Preá.',
       description: 'Cabaré du Vento é um beach club beira-mar diretamente na Praia do Preá, Cruz (CE), um dos melhores spots de kitesurf do mundo, com ventos de até 40 nós. Com Pousada de frente para o mar, drinks autorais, música ao vivo todos os fins de semana e gastronomia regional e internacional, o espaço se tornou o destino mais desejado da região. Desenvolvemos a estratégia de Social Media e as campanhas de Meta Ads que ampliaram o alcance para o público nacional e internacional.',
-      result: '40 mil seguidores · 100% de crescimento em 1 ano',
+      result: 'De 20 mil a 41 mil seguidores em 1 ano',
       services: ['Social Media', 'Meta Ads', 'Gestão de Conteúdo', 'Tráfego Pago'],
     },
     'villa-conduru': {
@@ -67,7 +67,7 @@ const content: Record<string, Record<string, ProjectContent>> = {
     'cabare-du-vento': {
       tagline: 'Three in one: Guesthouse, Beach Club and Restaurant on the beachfront at Preá.',
       description: 'Cabaré du Vento is a beachfront beach club on Praia do Preá, Cruz (CE), one of the world\'s best kitesurfing spots with winds up to 40 knots. With an ocean-view guesthouse, signature cocktails, live music every weekend and regional and international gastronomy, the space became the most coveted destination in the region. We developed the Social Media strategy and Meta Ads campaigns that expanded reach to national and international audiences.',
-      result: '40k followers · 100% growth in 1 year',
+      result: 'From 20k to 41k followers in one year',
       services: ['Social Media', 'Meta Ads', 'Content Management', 'Paid Traffic'],
     },
     'villa-conduru': {
@@ -124,7 +124,7 @@ const content: Record<string, Record<string, ProjectContent>> = {
     'cabare-du-vento': {
       tagline: 'Tres en uno: Posada, Beach Club y Restaurante frente al mar en Preá.',
       description: 'Cabaré du Vento es un beach club frente al mar en la Playa del Preá, Cruz (CE), uno de los mejores spots de kitesurf del mundo con vientos de hasta 40 nudos. Con posada de frente al mar, cócteles de autor, música en vivo todos los fines de semana y gastronomía regional e internacional, el espacio se convirtió en el destino más deseado de la región. Desarrollamos la estrategia de Social Media y las campañas de Meta Ads que ampliaron el alcance al público nacional e internacional.',
-      result: '40k seguidores · 100% de crecimiento en 1 año',
+      result: 'De 20 mil a 41 mil seguidores en 1 año',
       services: ['Social Media', 'Meta Ads', 'Gestión de Contenido', 'Tráfico Pago'],
     },
     'villa-conduru': {

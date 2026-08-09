@@ -141,7 +141,7 @@ export function SobreView() {
                   <div className="text-[clamp(56px,8vw,80px)] font-semibold text-verde-luz leading-none mb-2">+100%</div>
                   <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-verde-luz/35 leading-[1.5]">{t('years_expertise')}</div>
                   <div className="mt-8 grid grid-cols-3 gap-4">
-                    {[['40 mil', t('stat_brands')], ['3', t('stat_countries')], ['CE · RN', t('stat_focus')]].map(([v, l]) => (
+                    {[[t('stat_seguidores'), t('stat_brands')], ['3', t('stat_countries')], ['CE · RN', t('stat_focus')]].map(([v, l]) => (
                       <div key={l}>
                         <div className="text-[22px] font-semibold text-menta">{v}</div>
                         <div className="text-[10px] text-menta-fraca tracking-widest uppercase mt-0.5">{l}</div>
