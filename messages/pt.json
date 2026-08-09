@@ -349,6 +349,126 @@
       }
     }
   },
+  "web": {
+    "prazo_label": "Prazo",
+    "entrega_eyebrow": "O que entra",
+    "entrega_title": "O que está incluso no projeto.",
+    "inicio_eyebrow": "Como começa",
+    "inicio_title": "Antes de desenhar, a gente estuda o negócio.",
+    "inicio_sub": "Nenhuma tela é aberta antes destas três coisas acontecerem.",
+    "inicio_etapas": [
+      {
+        "title": "Briefing e conversa",
+        "desc": "Uma conversa para entender o que a casa vende, quem é o hóspede que você quer receber e o que hoje trava a reserva."
+      },
+      {
+        "title": "Coleta de dados",
+        "desc": "Quartos, serviços, diferenciais, política da casa, canais de venda que já existem e para onde a reserva precisa cair no fim."
+      },
+      {
+        "title": "Materiais da marca",
+        "desc": "Logo, fotos, vídeos e o que mais existir. Se não existir, o bloco abaixo resolve."
+      }
+    ],
+    "material_eyebrow": "Se você não tiver material",
+    "material_title": "O projeto anda sem você mandar nada.",
+    "material_p1": "Esse é o caso mais comum, e quase nunca é falta de vontade: é falta de tempo. Quem toca uma pousada não tem uma tarde livre para caçar o arquivo original da logo.",
+    "material_p2": "Então a Explore recolhe o que já existe na internet sobre a sua casa e trabalha a partir disso. Se não houver sistema visual definido, a gente monta o mínimo necessário para o site se sustentar. Você não vira o gargalo do próprio projeto.",
+    "troca_eyebrow": "Não é o que você procura?",
+    "manutencao_eyebrow": "Depois dos 30 dias grátis",
+    "manutencao_title": "A manutenção, e o que ela cobre.",
+    "manutencao_preco_nota": "Estes valores são a manutenção mensal. O valor do projeto não está aqui, porque depende do diagnóstico.",
+    "manutencao_mes": "/mês",
+    "recomendado": "Recomendado",
+    "conta_label": "Conta como alteração",
+    "conta_itens": [
+      "Trocar uma foto",
+      "Trocar um preço",
+      "Trocar um texto",
+      "Adicionar um item ou uma promoção"
+    ],
+    "naoconta_label": "Não conta",
+    "naoconta_itens": [
+      "Página nova",
+      "Mudança de layout",
+      "Funcionalidade nova"
+    ],
+    "conta_nota": "Está escrito aqui para não virar atrito depois. O que não conta continua sendo possível, só vira orçamento à parte.",
+    "sem_ecommerce": "A manutenção não se aplica a e-commerce.",
+    "dominio_eyebrow": "O domínio",
+    "dominio_title": "De quem é o endereço, dito sem rodeio.",
+    "dominio_p1": "O domínio fica registrado e mantido na conta da Explore enquanto durar o suporte. Se você preferir assumir, ele é transferido para o seu nome.",
+    "dominio_p2": "Se você não continuar com a manutenção depois do primeiro ano, o domínio passa a ser responsabilidade sua para o site seguir no ar. Está escrito aqui, e não na hora da renovação.",
+    "produtos": {
+      "website-institucional": {
+        "hero_prazo": "15 dias",
+        "troca_title": "Precisa de uma página só para uma campanha?",
+        "troca_desc": "Se é uma oferta, uma temporada ou uma data, a landing page resolve mais rápido e custa menos.",
+        "troca_cta": "Ver landing page",
+        "bonus": {
+          "eyebrow": "Vem junto",
+          "title": "Só tem a logo? O sistema visual vem junto.",
+          "desc": "Não é brinde, é pré-requisito. Sem sistema visual não existe site com sistema, existe página com cores escolhidas na hora. Quem chega só com a logo recebe o mínimo para o site parar de pé:",
+          "itens": [
+            "Paleta de cores",
+            "Tipografia",
+            "Regras de uso da logo",
+            "Resumo de aplicação digital"
+          ]
+        },
+        "reserva": {
+          "eyebrow": "O caminho da reserva",
+          "title": "Site que não leva à reserva não tira você da OTA.",
+          "desc": "Bonito e sem caminho de compra é folder. O site é entregue com o caminho até onde a reserva acontece de verdade, e esse caminho faz parte do produto.",
+          "credibilidade": "Já trabalhamos com HQBeds, Cloudbeds e outros sistemas de hospedagem. Seu site leva o hóspede direto pro seu motor de reserva ou pro WhatsApp, sem OTA no meio e sem você mudar de operação."
+        },
+        "blog": {
+          "eyebrow": "Por que o blog",
+          "title": "Site sozinho para de subir no Google.",
+          "desc": "Um site entregue e parado perde posição com o tempo, porque o Google premia quem publica. O blog é o que faz ele continuar aparecendo, e o texto ainda vira matéria-prima para as redes."
+        },
+        "planos": [
+          {
+            "nome": "Manutenção",
+            "preco": "R$ 99,90",
+            "itens": [
+              "Domínio",
+              "Hospedagem",
+              "Segurança",
+              "Duas alterações de conteúdo por mês"
+            ]
+          },
+          {
+            "nome": "Manutenção e conteúdo",
+            "preco": "R$ 149,90",
+            "recomendado": true,
+            "itens": [
+              "Tudo da manutenção",
+              "Um post de blog por mês"
+            ]
+          }
+        ]
+      },
+      "landing-page": {
+        "hero_prazo": "10 a 15 dias",
+        "troca_title": "Procurando presença permanente?",
+        "troca_desc": "Landing é peça de campanha, feita para uma oferta por vez. Se o que você quer é a casa da marca na internet, com páginas de quartos, serviços e contato, o produto é o outro.",
+        "troca_cta": "Ver website institucional",
+        "planos": [
+          {
+            "nome": "Manutenção",
+            "preco": "R$ 49,90",
+            "itens": [
+              "Domínio",
+              "Hospedagem",
+              "Segurança",
+              "Duas alterações de conteúdo por mês"
+            ]
+          }
+        ]
+      }
+    }
+  },
   "service_detail": {
     "recommended": "Recomendado",
     "hire_whatsapp": "Contratar via WhatsApp",

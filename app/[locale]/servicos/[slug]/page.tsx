@@ -4,6 +4,7 @@ import { servicesData, findSubService } from '@/data/services'
 import { canonical, languageAlternates } from '@/lib/site'
 import { ServiceDetailView } from './ServiceDetailView'
 import { RecorrenteDetailView } from './RecorrenteDetailView'
+import { WebDetailView } from './WebDetailView'
 
 interface Props {
   params: Promise<{ slug: string; locale: string }>
@@ -60,6 +61,21 @@ export default async function ServicoPage({ params }: Props) {
   // na página certa só por nascer com `period: 'monthly'` em `services.ts`.
   if (sub.period === 'monthly') {
     return <RecorrenteDetailView sub={sub} parentService={parentService} locale={locale} />
+  }
+
+  // Website institucional e landing page também têm view própria.
+  //
+  // São os dois produtos que os sócios executam do começo ao fim, e quem
+  // compra chega com perguntas que a página genérica não responde: quando
+  // começa, o que preciso mandar, o que acontece se eu não mandar nada, quanto
+  // custa manter depois e de quem é o domínio no fim. Metade da página não tem
+  // equivalente nas irmãs.
+  //
+  // O pilar decide, no mesmo espírito do `period` acima: um terceiro produto
+  // de web cai na página certa só por nascer com `pillar: 'web'`. O `setup` é
+  // `social` e continua na view genérica, apesar de dividir o grupo Presença.
+  if (sub.pillar === 'web') {
+    return <WebDetailView sub={sub} parentService={parentService} locale={locale} />
   }
 
   return <ServiceDetailView sub={sub} parentService={parentService} locale={locale} />

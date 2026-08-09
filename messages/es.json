@@ -473,6 +473,126 @@
       }
     }
   },
+  "web": {
+    "prazo_label": "Plazo",
+    "entrega_eyebrow": "Qué incluye",
+    "entrega_title": "Lo que entra en el proyecto.",
+    "inicio_eyebrow": "Cómo empieza",
+    "inicio_title": "Antes de diseñar, estudiamos el negocio.",
+    "inicio_sub": "No se abre ninguna pantalla antes de que pasen estas tres cosas.",
+    "inicio_etapas": [
+      {
+        "title": "Briefing y conversación",
+        "desc": "Una conversación para entender qué vende la casa, quién es el huésped que quieres recibir y qué traba hoy la reserva."
+      },
+      {
+        "title": "Recolección de datos",
+        "desc": "Habitaciones, servicios, diferenciales, política de la casa, canales de venta que ya existen y dónde tiene que caer la reserva al final."
+      },
+      {
+        "title": "Materiales de la marca",
+        "desc": "Logo, fotos, videos y lo que exista. Si no existe, el bloque de abajo lo resuelve."
+      }
+    ],
+    "material_eyebrow": "Si no tienes material",
+    "material_title": "El proyecto avanza sin que envíes nada.",
+    "material_p1": "Es el caso más común, y casi nunca es falta de ganas: es falta de tiempo. Quien lleva una posada no tiene una tarde libre para buscar el archivo original del logo.",
+    "material_p2": "Entonces Explore recoge lo que ya existe en internet sobre tu casa y trabaja a partir de ahí. Si no hay sistema visual definido, armamos el mínimo necesario para que el sitio se sostenga. No te conviertes en el cuello de botella de tu propio proyecto.",
+    "troca_eyebrow": "¿No es lo que buscas?",
+    "manutencao_eyebrow": "Después de los 30 días gratis",
+    "manutencao_title": "El mantenimiento, y qué cubre.",
+    "manutencao_preco_nota": "Estos valores son el mantenimiento mensual. El valor del proyecto no está acá, porque depende del diagnóstico.",
+    "manutencao_mes": "/mes",
+    "recomendado": "Recomendado",
+    "conta_label": "Cuenta como cambio",
+    "conta_itens": [
+      "Cambiar una foto",
+      "Cambiar un precio",
+      "Cambiar un texto",
+      "Agregar un ítem o una promoción"
+    ],
+    "naoconta_label": "No cuenta",
+    "naoconta_itens": [
+      "Página nueva",
+      "Cambio de layout",
+      "Funcionalidad nueva"
+    ],
+    "conta_nota": "Está escrito acá para que no se vuelva fricción después. Lo que no cuenta sigue siendo posible, solo pasa a ser presupuesto aparte.",
+    "sem_ecommerce": "El mantenimiento no se aplica a e-commerce.",
+    "dominio_eyebrow": "El dominio",
+    "dominio_title": "De quién es la dirección, dicho sin rodeos.",
+    "dominio_p1": "El dominio queda registrado y mantenido en la cuenta de Explore mientras dure el soporte. Si prefieres asumirlo, se transfiere a tu nombre.",
+    "dominio_p2": "Si no continúas con el mantenimiento después del primer año, el dominio pasa a ser responsabilidad tuya para que el sitio siga en el aire. Está escrito acá, y no en el momento de la renovación.",
+    "produtos": {
+      "website-institucional": {
+        "hero_prazo": "15 días",
+        "troca_title": "¿Necesitas una página solo para una campaña?",
+        "troca_desc": "Si es una oferta, una temporada o una fecha, la landing page lo resuelve más rápido y cuesta menos.",
+        "troca_cta": "Ver landing page",
+        "bonus": {
+          "eyebrow": "Viene junto",
+          "title": "¿Solo tienes el logo? El sistema visual viene junto.",
+          "desc": "No es un regalo, es un prerrequisito. Sin sistema visual no existe sitio con sistema, existe una página con colores elegidos sobre la marcha. Quien llega solo con el logo recibe el mínimo para que el sitio se sostenga:",
+          "itens": [
+            "Paleta de colores",
+            "Tipografía",
+            "Reglas de uso del logo",
+            "Resumen de aplicación digital"
+          ]
+        },
+        "reserva": {
+          "eyebrow": "El camino de la reserva",
+          "title": "Un sitio que no lleva a la reserva no te saca de la OTA.",
+          "desc": "Bonito y sin camino de compra es un folleto. El sitio se entrega con el camino hasta donde la reserva ocurre de verdad, y ese camino es parte del producto.",
+          "credibilidade": "Ya trabajamos con HQBeds, Cloudbeds y otros sistemas de hospedaje. Tu sitio lleva al huésped directo a tu motor de reserva o a tu WhatsApp, sin OTA en el medio y sin que cambies de operación."
+        },
+        "blog": {
+          "eyebrow": "Por qué el blog",
+          "title": "Un sitio solo deja de subir en Google.",
+          "desc": "Un sitio entregado y quieto pierde posición con el tiempo, porque Google premia a quien publica. El blog es lo que lo mantiene apareciendo, y el texto además sirve de materia prima para las redes."
+        },
+        "planos": [
+          {
+            "nome": "Mantenimiento",
+            "preco": "R$ 99,90",
+            "itens": [
+              "Dominio",
+              "Hosting",
+              "Seguridad",
+              "Dos cambios de contenido por mes"
+            ]
+          },
+          {
+            "nome": "Mantenimiento y contenido",
+            "preco": "R$ 149,90",
+            "recomendado": true,
+            "itens": [
+              "Todo lo del mantenimiento",
+              "Un post de blog por mes"
+            ]
+          }
+        ]
+      },
+      "landing-page": {
+        "hero_prazo": "10 a 15 días",
+        "troca_title": "¿Buscas presencia permanente?",
+        "troca_desc": "La landing es una pieza de campaña, hecha para una oferta por vez. Si lo que quieres es la casa de la marca en internet, con páginas de habitaciones, servicios y contacto, el producto es el otro.",
+        "troca_cta": "Ver sitio institucional",
+        "planos": [
+          {
+            "nome": "Mantenimiento",
+            "preco": "R$ 49,90",
+            "itens": [
+              "Dominio",
+              "Hosting",
+              "Seguridad",
+              "Dos cambios de contenido por mes"
+            ]
+          }
+        ]
+      }
+    }
+  },
   "service_detail": {
     "recommended": "Recomendado",
     "hire_whatsapp": "Contratar por WhatsApp",
