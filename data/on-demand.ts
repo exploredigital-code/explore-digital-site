@@ -9,6 +9,17 @@
  * `solucoes.on_demand_items`, casadas por slug.
  */
 
+/*
+ * ATENCAO: este arquivo perdeu a razao de existir.
+ *
+ * Fotografia, captacao e edicao viraram produtos de verdade em services.ts,
+ * com rota, conteudo traduzido e prazo. Drone saiu por ser tecnica dentro de
+ * captacao, design saiu por ser vago demais para vender e landing-page era
+ * duplicata do sub-servico de mesmo slug.
+ *
+ * O que sobra aqui alimenta so a /servicos/sob-demanda, que morre junto com a
+ * reorganizacao do hub. Quando ela sair, o arquivo sai junto.
+ */
 export interface OnDemandItem {
   slug: string
   /** Prazo de entrega em dias úteis, contado a partir da captação ou do briefing. */
@@ -25,12 +36,9 @@ export interface OnDemandItem {
  * CTA para a consultoria.
  */
 export const onDemandItems: OnDemandItem[] = [
-  { slug: 'fotografia',   deliveryDays: 7,        onSite: true },
-  { slug: 'video',        deliveryDays: 7,        onSite: true, detailSlug: 'captacoes' },
-  { slug: 'drone',        deliveryDays: 5,        onSite: true },
-  { slug: 'edicao-video', deliveryDays: 3 },
-  { slug: 'design',       deliveryDays: 2 },
-  { slug: 'landing-page', deliveryDays: [10, 15], detailSlug: 'landing-page' },
+  { slug: 'fotografia',   deliveryDays: 7, onSite: true, detailSlug: 'fotografia' },
+  { slug: 'video',        deliveryDays: 7, onSite: true, detailSlug: 'captacao-video' },
+  { slug: 'edicao-video', deliveryDays: 3,               detailSlug: 'edicao-video' },
 ]
 
 /** "7" ou "10 a 15", já com o conector traduzido. */
