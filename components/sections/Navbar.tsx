@@ -117,9 +117,14 @@ export function Navbar() {
         {/* Right: lang switcher + CTA */}
         <div className="hidden lg:flex items-center gap-4">
           <div className="relative">
+            {/* `menta-fraca` e nao `white/45`. O branco a 45% dava 4,08:1
+                sobre o verde do topo, e o minimo do texto corrido e 4,5.
+                Nao era so o caret: a cor esta no BOTAO, entao a sigla do
+                idioma reprovava junto, em toda pagina do site. O token vetado
+                do projeto da 6,35 e ja e o branco fraco padrao. */}
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1.5 text-[12px] font-bold tracking-widest text-white/45 hover:text-white transition-colors uppercase"
+              className="flex items-center gap-1.5 text-[12px] font-bold tracking-widest text-menta-fraca hover:text-menta transition-colors uppercase"
             >
               {currentLocale}
               <span className={cn('text-[10px] transition-transform duration-200', langOpen && 'rotate-180')}>▾</span>
@@ -223,7 +228,10 @@ export function Navbar() {
                   onClick={() => { switchLocale(loc); setMenuOpen(false) }}
                   className={cn(
                     'text-[13px] font-bold tracking-widest uppercase transition-colors',
-                    currentLocale === loc ? 'text-g-light' : 'text-white/45 hover:text-white/70'
+                    // Mesmo 45% do seletor de desktop, aqui no menu do
+                    // celular. Reprovava igual, e o relatorio anterior disse
+                    // "so no desktop" porque a ferramenta nao media `button`.
+                    currentLocale === loc ? 'text-g-light' : 'text-menta-fraca hover:text-menta'
                   )}
                 >
                   {loc}

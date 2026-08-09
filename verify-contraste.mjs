@@ -61,21 +61,41 @@ for (const rota of rotas) {
         const a = fg.length === 4 ? fg[3] : 1
         return [0, 1, 2].map(i => fg[i] * a + bg[i] * (1 - a))
       }
-      // Sobe ate achar um fundo opaco de verdade. Parar no primeiro
-      // `backgroundColor` que nao seja transparente daria o fundo do cartao
-      // semitransparente e mediria contra a cor errada.
+      // Sobe COMPONDO as camadas, e nao pulando as semitransparentes.
+      //
+      // Pular era o comportamento anterior e produzia falso positivo grave: a
+      // etiqueta de categoria do blog tem fundo `verde/60`, alfa abaixo do
+      // corte, entao a camada era ignorada e o branco do texto era medido
+      // contra o branco da pagina. Dava 1:1, "texto invisivel", numa etiqueta
+      // que na tela esta perfeitamente legivel.
+      //
+      // Agora cada camada semitransparente entra na conta na ordem certa, de
+      // dentro para fora, ate encontrar a primeira opaca.
       const fundoDe = el => {
+        const camadas = []
         let n = el
         while (n && n !== document.documentElement) {
           const bg = parse(getComputedStyle(n).backgroundColor)
-          if (bg.length >= 3 && (bg.length === 3 || bg[3] > 0.95)) return bg.slice(0, 3)
+          const a = bg.length === 4 ? bg[3] : (bg.length === 3 ? 1 : 0)
+          if (a > 0.001) {
+            camadas.push(bg.slice(0, 3).concat(a))
+            if (a > 0.99) break
+          }
           n = n.parentElement
         }
-        return [255, 255, 255]
+        // Da camada mais externa para a mais interna, empilhando.
+        let acc = [255, 255, 255]
+        for (const c of camadas.reverse()) acc = [0, 1, 2].map(i => c[i] * c[3] + acc[i] * (1 - c[3]))
+        return acc
       }
 
       const out = []
-      for (const el of document.querySelectorAll('p, span, h1, h2, h3, li, a, div')) {
+      // `button` faltava, e a falta escondeu metade de um defeito real: a cor
+      // fraca do seletor de idioma esta no botao, entao so o caret, que mora
+      // num span filho, era medido. A sigla do idioma reprovava junto e a
+      // varredura dizia que estava tudo bem. `label`, `strong`, `em`, `td` e
+      // `th` entram pelo mesmo motivo: texto que ninguem estava olhando.
+      for (const el of document.querySelectorAll('p, span, h1, h2, h3, h4, li, a, div, button, label, strong, em, td, th, summary, figcaption')) {
         // So o texto proprio do elemento. Sem isso o contêiner herda o texto
         // dos filhos e a mesma frase e medida em cada nivel da arvore.
         const txt = [...el.childNodes].filter(n => n.nodeType === 3).map(n => n.textContent.trim()).join('')
