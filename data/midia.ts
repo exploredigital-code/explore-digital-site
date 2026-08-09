@@ -66,7 +66,6 @@ const destinos: Slot[] = [
   { id: 'destino-jericoacoara',       arquivo: '', rotulo: 'Jericoacoara: duna do pôr do sol ou rua de areia',      formato: 'h169' },
   { id: 'destino-prea',               arquivo: '', rotulo: 'Preá: praia em alta temporada, com kite no fundo',      formato: 'h169' },
   { id: 'destino-ilha-do-guajiru',    arquivo: '', rotulo: 'Ilha do Guajirú: água rasa, escola de kite ou pousada', formato: 'h169' },
-  { id: 'destino-icarai-de-amontada', arquivo: '', rotulo: 'Icaraí de Amontada: vila, vento e kite na praia',       formato: 'h169' },
   { id: 'destino-taiba',              arquivo: '', rotulo: 'Taíba: duna, vento e casa de temporada',                formato: 'h169' },
   { id: 'destino-cumbuco',            arquivo: '', rotulo: 'Cumbuco: kite na água ou lagoa em dia de vento',        formato: 'h169' },
   { id: 'destino-natal',              arquivo: '', rotulo: 'Natal: orla de Ponta Negra ou o Morro do Careca',       formato: 'h169' },

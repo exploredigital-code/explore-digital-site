@@ -159,6 +159,54 @@ h3 { font-family: var(--font-quanta), system-ui, sans-serif; font-weight: 600; }
    correto é a rolagem, não uma moldura em volta de meia página. */
 #conteudo:focus { outline: none; }
 
+/* ── Rolagem dos destinos ──
+   O trilho carrega a lista DUAS vezes e anda até -50%, que é exatamente o
+   comprimento de uma cópia. Quando a animação reinicia, o quadro é idêntico ao
+   inicial, então a emenda não aparece. É por isso que a segunda cópia existe, e
+   é por isso que ela é `aria-hidden`: para o leitor de tela, a lista tem oito
+   destinos, não dezesseis.
+
+   `translateX` e não `scrollLeft`: a animação roda no compositor, sem
+   recalcular layout a cada quadro, e não briga com a rolagem vertical da
+   página no celular. */
+@keyframes destinos-rolagem {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.destinos-janela {
+  overflow: hidden;
+  /* Some nas bordas em vez de cortar seco, para a faixa parecer contínua e
+     não uma caixa com cartões entrando e saindo. */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 4rem, #000 calc(100% - 4rem), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 4rem, #000 calc(100% - 4rem), transparent);
+}
+
+.destinos-trilho {
+  width: max-content;
+  animation: destinos-rolagem var(--destinos-duracao, 64s) linear infinite;
+}
+
+/* Pausa em três situações: mouse em cima, foco de teclado dentro, e o botão
+   de pausar. O botão é o que atende de fato a exigência de poder parar
+   conteúdo em movimento, porque `:hover` não existe no toque e `:focus-within`
+   não vale para quem só está lendo. */
+.destinos-janela:hover .destinos-trilho,
+.destinos-janela:focus-within .destinos-trilho,
+.destinos-trilho[data-pausado='true'] {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* A regra global de motion reduzido zera a DURAÇÃO de toda animação, o que
+     aqui deixaria o trilho parado no fim do percurso, mostrando a cópia. Então
+     a animação é desligada pelo nome, a segunda cópia sai da tela e a faixa
+     vira uma lista que se arrasta com o dedo. */
+  .destinos-trilho { animation: none !important; }
+  .destinos-janela { overflow-x: auto; }
+  .destinos-trilho [data-duplicata] { display: none; }
+}
+
 /* ── Custom selection ── */
 ::selection { background: #4E7D57; color: #E3F3E6; }
 
