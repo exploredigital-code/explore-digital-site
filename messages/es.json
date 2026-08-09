@@ -894,7 +894,9 @@
     "od_orcamento": "Pedir presupuesto",
     "od_count": "{n} entregas",
     "proj_ver_disciplina": "Ver disciplina",
-    "trilho_label": "Piezas de {disciplina}"
+    "trilho_label": "Piezas de {disciplina}",
+    "od_meta_title": "Bajo demanda · Explore Digital",
+    "od_meta_description": "Fotografía, vídeo, drone, edición, diseño y landing page con alcance y plazo cerrados, para hotelería en el litoral de Ceará y Rio Grande do Norte. Tú pides, nosotros entregamos."
   },
   "home": {
     "gargalos_eyebrow": "Dónde entramos",

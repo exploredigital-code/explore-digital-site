@@ -39,7 +39,7 @@ export function TwoDoors() {
       title: t('door1_title'),
       desc: t('door1_desc'),
       cta: t('door1_cta'),
-      href: `/${locale}/servicos#sob-demanda`,
+      href: `/${locale}/servicos/sob-demanda`,
       // Onde havia "a partir de R$ X" agora vai a contagem de entregas.
       note: t('od_count', { n: onDemandItems.length }),
       chips: onDemandItems.map(i => copy.find(c => c.slug === i.slug)?.name).filter(Boolean) as string[],

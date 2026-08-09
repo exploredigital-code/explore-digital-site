@@ -235,6 +235,25 @@ export function SobreView() {
               <MemberCard key={i} member={member} dark={false} />
             ))}
           </AnimateStagger>
+
+          {/* Convite para carreiras.
+              Estava no fim da página, disputando a última dobra com o CTA
+              comercial. Aqui, logo depois dos rostos, ele é uma linha e faz
+              sentido narrativo: acabou de ver quem é o time. O fim da página
+              fica só para a conversa comercial. */}
+          <AnimateIn className="mt-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-6 border-t border-tinta-16">
+              <p className="text-[14.5px] leading-[1.6] text-tinta-70 max-w-[520px]">
+                {t('join_title')}
+              </p>
+              <Link
+                href={`/${locale}/carreiras`}
+                className="inline-flex items-center gap-2 shrink-0 text-[13.5px] font-bold text-verde border-b border-tinta-16 pb-0.5 hover:text-verde-medio hover:border-verde-medio transition-colors duration-200"
+              >
+                {t('join_button')}
+              </Link>
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
@@ -303,29 +322,6 @@ export function SobreView() {
             </div>
           </AnimateIn>
 
-          {/* CTA vagas */}
-          <AnimateIn>
-            <div className="rounded-2xl bg-[#0D1A12] border border-white/[0.06] p-10 lg:p-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_0%_50%,#2D5238,transparent)] opacity-35" />
-              <div className="relative z-10">
-                <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-g-light/45 mb-3">{t('join_eyebrow')}</div>
-                <h3 className="text-[clamp(20px,2.5vw,30px)] text-white leading-tight max-w-[440px]">
-                  {t('join_title')}
-                </h3>
-                <p className="text-white/45 text-[14px] mt-3 max-w-[400px]">
-                  {t('join_desc')}
-                </p>
-              </div>
-              <div className="relative z-10 flex flex-col sm:flex-row gap-3 shrink-0">
-                <Link
-                  href={`/${locale}/carreiras`}
-                  className="inline-flex items-center gap-2 bg-g-light text-g-dark font-bold px-7 py-3.5 rounded-full hover:bg-g-pale hover:-translate-y-0.5 transition-all duration-200 text-[14px]"
-                >
-                  {t('join_button')}
-                </Link>
-              </div>
-            </div>
-          </AnimateIn>
         </div>
       </section>
       </main>

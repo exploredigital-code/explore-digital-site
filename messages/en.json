@@ -894,7 +894,9 @@
     "od_orcamento": "Request a quote",
     "od_count": "{n} deliverables",
     "proj_ver_disciplina": "See discipline",
-    "trilho_label": "Pieces from {disciplina}"
+    "trilho_label": "Pieces from {disciplina}",
+    "od_meta_title": "On demand · Explore Digital",
+    "od_meta_description": "Photography, video, drone, editing, design and landing page with a fixed scope and deadline, for hospitality on the coast of Ceará and Rio Grande do Norte. You ask, we deliver."
   },
   "home": {
     "gargalos_eyebrow": "Where we come in",
