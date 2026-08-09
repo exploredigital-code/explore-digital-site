@@ -259,8 +259,83 @@ export function ServicosView() {
                       <h3 className="text-[17px] font-bold text-verde tracking-[-0.01em]">{t(`grupo_${g.grupo}`)}</h3>
                       <span className="text-[11px] font-bold tabular-nums text-tinta-70">{String(g.itens.length).padStart(2, '0')}</span>
                     </div>
-                    <p className="text-[13.5px] leading-[1.6] text-tinta-70 mb-5 max-w-[520px]">{t(`grupo_${g.grupo}_sub`)}</p>
+                    {/* O `_sub` do mensal dizia a mesma coisa que a abertura,
+                        na linha de cima. Uma frase por grupo. */}
+                    {g.grupo !== 'mensal' && (
+                      <p className="text-[13.5px] leading-[1.6] text-tinta-70 mb-5 max-w-[520px]">{t(`grupo_${g.grupo}_sub`)}</p>
+                    )}
 
+                    {/* ───────── OS RECORRENTES ─────────
+                        Os dois mensais saem da grade compacta e ganham cartão
+                        próprio. O compacto tem nome, chamada e link, e isso
+                        basta para escolher entre uma fotografia e uma edição
+                        de vídeo. Não basta para decidir uma mensalidade: aí a
+                        pergunta é o que chega todo mês e se é para você.
+
+                        A superfície é `menta-clara` com borda `verde-medio`,
+                        as mesmas dos placeholders e das faixas claras. Nenhum
+                        token novo: o destaque vem de tamanho, fundo e do que o
+                        cartão diz, não de uma cor inventada para ele. */}
+                    {g.grupo === 'mensal' ? (
+                      <>
+                        <p className="text-[15px] leading-[1.7] text-verde font-bold mb-5 max-w-[560px] mt-2">
+                          {t('mensal_abertura')}
+                        </p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          {g.itens.map((p, i) => {
+                            const c = getLocalizedSubService(locale, p.slug)
+                            const entrega = (c?.features ?? p.features).slice(0, 4)
+                            const paraQuem = (c?.forWhom ?? p.forWhom)[0]
+                            return (
+                              <motion.div
+                                key={p.slug}
+                                initial={{ opacity: 0, y: 14 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: '-50px 0px' }}
+                                transition={{ duration: 0.4, delay: i * 0.06 }}
+                              >
+                                <Link
+                                  href={`/${locale}/servicos/${p.slug}`}
+                                  className="group h-full flex flex-col p-6 lg:p-7 rounded-2xl border border-verde-medio/30 bg-menta-clara hover:border-verde-medio/60 hover:shadow-md transition-all duration-300"
+                                >
+                                  <div className="flex items-start justify-between gap-3 mb-2">
+                                    <h4 className="text-[20px] leading-tight tracking-[-0.015em] text-verde font-bold">
+                                      {nomeDe(p)}
+                                    </h4>
+                                    <span className="shrink-0 rounded-full border border-verde-medio/40 px-2.5 py-[3px] text-[9.5px] font-bold uppercase tracking-[0.08em] text-verde-medio">
+                                      {t('etiqueta_mensal')}
+                                    </span>
+                                  </div>
+                                  <p className="text-[13.5px] leading-[1.6] text-tinta-70 mb-4">{taglineDe(p)}</p>
+
+                                  <div className="text-[10.5px] font-bold tracking-[0.16em] uppercase text-verde-medio mb-2">
+                                    {t('mensal_entrega')}
+                                  </div>
+                                  <ul className="flex flex-col gap-1.5 mb-4">
+                                    {entrega.map(f => (
+                                      <li key={f} className="flex items-start gap-2 text-[13px] leading-[1.5] text-tinta-70">
+                                        <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-verde-medio" aria-hidden />
+                                        {f}
+                                      </li>
+                                    ))}
+                                  </ul>
+
+                                  <div className="text-[10.5px] font-bold tracking-[0.16em] uppercase text-verde-medio mb-1.5">
+                                    {t('mensal_para_quem')}
+                                  </div>
+                                  <p className="text-[13px] leading-[1.55] text-tinta-70 mb-5 flex-1">{paraQuem}</p>
+
+                                  <span className="inline-flex items-center gap-2 text-[13px] font-bold text-verde-medio transition-all duration-200 group-hover:gap-2.5">
+                                    {t('ver_produto')}
+                                    <ArrowIcon />
+                                  </span>
+                                </Link>
+                              </motion.div>
+                            )
+                          })}
+                        </div>
+                      </>
+                    ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                       {g.itens.map((p, i) => (
                         <motion.div
@@ -292,6 +367,7 @@ export function ServicosView() {
                         </motion.div>
                       ))}
                     </div>
+                    )}
                   </section>
                 ))}
               </section>

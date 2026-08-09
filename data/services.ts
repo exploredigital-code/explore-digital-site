@@ -496,8 +496,17 @@ export function findSubService(slug: string): SubService | undefined {
 
    ────────────────────────────────────────────────────────────────────────── */
 
-/** Ordem dos grupos do pontual na tela. */
-export const GRUPO_ORDER: Grupo[] = ['marca', 'presenca', 'producao', 'operacao', 'mensal']
+/**
+ * Ordem dos grupos na tela.
+ *
+ * `mensal` foi para o começo. Ele estava por último, depois de doze cartões
+ * compactos iguais, e é justamente o único grupo que não é temático: os dois
+ * produtos dele não têm nada em comum além de não terminarem, e é essa a
+ * informação que muda a decisão de quem chega. Recorrente também é a receita
+ * que sustenta a operação, então enterrá-lo no fim da rolagem era o oposto do
+ * que a página precisa fazer.
+ */
+export const GRUPO_ORDER: Grupo[] = ['mensal', 'marca', 'presenca', 'producao', 'operacao']
 
 /**
  * Ordem dos produtos dentro de cada grupo, e do bloco recorrente.

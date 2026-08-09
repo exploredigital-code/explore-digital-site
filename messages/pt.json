@@ -694,6 +694,9 @@
     "grupo_mensal_sub": "Dois produtos que não terminam: rodam enquanto a temporada acontece.",
     "etiqueta_pontual": "Pontual",
     "etiqueta_mensal": "Mensal",
+    "mensal_abertura": "Seu projeto precisa de continuidade? Estes dois não terminam na entrega: eles rodam mês a mês, enquanto a temporada acontece.",
+    "mensal_entrega": "O que chega todo mês",
+    "mensal_para_quem": "Para quem é",
     "catalogo_eyebrow": "O que a gente faz",
     "catalogo_title": "Todos os produtos, agrupados pelo problema que resolvem.",
     "catalogo_sub": "Cada um tem escopo próprio. A etiqueta diz se você paga uma vez ou todo mês."

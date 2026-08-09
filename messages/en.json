@@ -694,6 +694,9 @@
     "grupo_mensal_sub": "Two products that do not end: they run while the season happens.",
     "etiqueta_pontual": "One off",
     "etiqueta_mensal": "Monthly",
+    "mensal_abertura": "Does your project need continuity? These two do not end on delivery: they run month after month, while the season happens.",
+    "mensal_entrega": "What arrives every month",
+    "mensal_para_quem": "Who it is for",
     "catalogo_eyebrow": "What we do",
     "catalogo_title": "Every product, grouped by the problem it solves.",
     "catalogo_sub": "Each has its own scope. The tag tells you whether you pay once or every month."
