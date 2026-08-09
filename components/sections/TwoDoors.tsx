@@ -30,30 +30,32 @@ export function TwoDoors() {
   const t = useTranslations('servicos')
   const locale = useLocale()
 
-  const nomeDe = (p: SubService) => getLocalizedSubService(locale, p.slug)?.name ?? p.name
-  const pontuais = pontualPorGrupo.flatMap(g => g.itens)
-
+  /**
+   * As portas nao listam produto nem grupo.
+   *
+   * A home ja mostra o trabalho logo acima, na secao de projetos. Listar treze
+   * produtos numa bifurcacao obriga a pessoa a processar treze opcoes para
+   * tomar uma decisao binaria, que e justamente a decisao que esta secao
+   * existe para facilitar. O hub e quem responde "qual deles e o meu".
+   *
+   * Sem chip e sem contagem, os dois cartoes ficam com altura parecida
+   * sozinhos, e some o desequilibrio de onze contra dois.
+   */
   const portas = [
     {
-      key: 'on-demand',
-      label: t('door1_label'),
+      key: 'pontual',
       title: t('door1_title'),
       desc: t('door1_desc'),
       cta: t('door1_cta'),
       href: `/${locale}/servicos#pontual`,
-      note: t('pontual_sub'),
-      chips: pontuais.map(nomeDe),
       destaque: true,
     },
     {
-      key: 'projects',
-      label: t('door2_label'),
+      key: 'recorrente',
       title: t('door2_title'),
       desc: t('door2_desc'),
       cta: t('door2_cta'),
       href: `/${locale}/servicos#recorrente`,
-      note: t('recorrente_sub'),
-      chips: recorrentes.map(nomeDe),
       destaque: false,
     },
   ]
@@ -62,59 +64,32 @@ export function TwoDoors() {
     <section id="como-trabalhamos" className="bg-g-dark py-24 lg:py-32 border-b border-white/[0.07]">
       <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
 
-        <AnimateIn className="mb-12 lg:mb-14 max-w-[720px]">
-          <SectionEyebrow>{t('doors_eyebrow')}</SectionEyebrow>
+        <AnimateIn className="mb-10 lg:mb-12 max-w-[720px]">
           <h2 className="text-[clamp(30px,4.5vw,52px)] font-bold leading-[1.05] tracking-[-0.025em] text-white mt-2">
             {t('doors_home_title')}
           </h2>
         </AnimateIn>
 
-        <div className="grid md:grid-cols-2 gap-4 items-stretch">
+        <div className="grid md:grid-cols-2 gap-4 items-start">
           {portas.map((porta, i) => (
-            <AnimateIn key={porta.key} delay={i * 0.1} className="h-full">
-              <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }} className="h-full">
+            <AnimateIn key={porta.key} delay={i * 0.1}>
+              <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
                 <Link
                   href={porta.href}
                   className={cn(
-                    'group h-full flex flex-col p-8 lg:p-10 rounded-2xl border transition-colors duration-300',
+                    'group flex flex-col p-7 lg:p-9 rounded-2xl border transition-colors duration-300',
                     porta.destaque
-                      ? 'bg-g-light/[0.09] border-g-light/25 hover:border-g-light/50'
-                      : 'bg-white/[0.03] border-white/[0.08] hover:border-white/20'
+                      // Distincao por superficie: o pontual em verde-card,
+                      // que e o token de cartao sobre escuro, e o recorrente
+                      // com borda de acento. Nenhum token novo.
+                      ? 'bg-verde-card border-verde-linha hover:border-verde-borda'
+                      : 'bg-transparent border-sol/40 hover:border-sol'
                   )}
                 >
-                  <div className="flex items-baseline justify-between gap-4 mb-5">
-                    <span className={cn(
-                      'text-[10.5px] font-bold tracking-[0.2em] uppercase',
-                      porta.destaque ? 'text-g-light' : 'text-white/40'
-                    )}>
-                      {porta.label}
-                    </span>
-                    <span className={cn(
-                      'text-[11px] font-bold tabular-nums tracking-wide shrink-0',
-                      porta.destaque ? 'text-g-light/70' : 'text-white/30'
-                    )}>
-                      {porta.note}
-                    </span>
-                  </div>
-
                   <h3 className="text-[clamp(20px,2.6vw,28px)] leading-[1.15] tracking-[-0.02em] text-white font-bold mb-3">
                     {porta.title}
                   </h3>
-                  <p className="text-[15px] leading-[1.75] text-white/50 mb-7">{porta.desc}</p>
-
-                  <div className="flex flex-wrap gap-1.5 mb-8">
-                    {porta.chips.map(chip => (
-                      <span
-                        key={chip}
-                        className={cn(
-                          'text-[11.5px] leading-snug rounded-full px-3 py-1.5',
-                          porta.destaque ? 'bg-g-light/10 text-g-light/80' : 'bg-white/[0.05] text-white/45'
-                        )}
-                      >
-                        {chip}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="text-[15px] leading-[1.75] text-menta-fraca mb-8">{porta.desc}</p>
 
                   <span className={cn(
                     'inline-flex items-center gap-2 text-[14px] font-bold mt-auto transition-all duration-200 group-hover:gap-3',
