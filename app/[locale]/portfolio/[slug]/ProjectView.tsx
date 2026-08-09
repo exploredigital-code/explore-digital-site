@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 import type { Project } from '@/data/portfolio'
 import { getLocalizedProject } from '@/data/portfolio-content'
 import { Navbar }  from '@/components/sections/Navbar'
+import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer }  from '@/components/sections/Footer'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 import { VideoLightbox } from '@/components/ui/VideoLightbox'
@@ -20,7 +21,6 @@ const SECTOR_KEY: Record<string, string> = {
   'Hotelaria': 'sector_hotelaria',
   'Turismo': 'sector_turismo',
   'Esporte & Experiência': 'sector_esporte',
-  'Real Estate': 'sector_real_estate',
   'Gastronomia': 'sector_gastronomia',
 }
 
@@ -83,7 +83,9 @@ export function ProjectView({ project, next, prev }: Props) {
   const localized = getLocalizedProject(locale, project.slug)
   const tagline = localized?.tagline ?? project.tagline
   const description = localized?.description ?? project.description
-  const result = localized?.result ?? project.result
+  // Métrica só quando confirmada pelo cliente. Sem isso a manchete cai para a
+  // tagline e o painel de resultado some, em vez de mostrar campo vazio.
+  const result = project.resultConfirmado ? (localized?.result ?? project.result) : null
   const services = localized?.services ?? project.services
 
   return (
@@ -91,7 +93,10 @@ export function ProjectView({ project, next, prev }: Props) {
       {/* Reading progress bar */}
       <motion.div className="fixed top-0 left-0 h-[2px] bg-g-light z-[60]" style={{ width: progressWidth }} />
 
+      <SkipLink />
       <Navbar />
+
+      <main id="conteudo">
 
       {/* ══ HERO ══ */}
       <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
@@ -137,7 +142,7 @@ export function ProjectView({ project, next, prev }: Props) {
               { label: t('client'),    value: project.client },
               { label: t('sector'),     value: project.sector },
               { label: t('year'),       value: project.year },
-              { label: t('result'), value: result },
+              ...(result ? [{ label: t('result'), value: result }] : []),
             ].map((item, i) => (
               <AnimateIn key={i} delay={i * 0.07}>
                 <div className="py-8 px-6 lg:px-10">
@@ -213,13 +218,33 @@ export function ProjectView({ project, next, prev }: Props) {
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
               <div>
                 <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-g-light/45 mb-3">{t('main_result')}</div>
-                <div className="text-[clamp(32px,5vw,64px)] font-semibold text-g-light leading-none tracking-tight">{result}</div>
+                <div className="text-[clamp(32px,5vw,64px)] font-semibold text-g-light leading-none tracking-tight">{result ?? tagline}</div>
               </div>
               <a href={waUrl} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-g-light text-g-dark font-bold px-8 py-4 rounded-full hover:bg-g-pale hover:-translate-y-0.5 transition-all duration-200 shrink-0 self-start lg:self-auto">
                 {t('want_result')}
               </a>
             </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ══ DEPOIMENTO ══
+          Vazio de propósito. Depoimento sem sobrenome, negócio e foto lê como
+          fictício e derruba a confiança exatamente onde ela deveria subir,
+          que foi o motivo de os três antigos saírem da home. O slot só é
+          preenchido com depoimento real. */}
+      <section className="bg-white py-16 lg:py-20">
+        <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
+          <AnimateIn>
+            <figure className="max-w-[720px] mx-auto rounded-2xl border border-dashed border-tinta-16 bg-menta-clara/30 p-8 lg:p-10 text-center">
+              <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-tinta-50 mb-4">
+                {t('quote_label')}
+              </div>
+              <figcaption className="text-[14px] leading-[1.7] text-tinta-50">
+                {t('quote_placeholder')}
+              </figcaption>
+            </figure>
           </AnimateIn>
         </div>
       </section>
@@ -294,6 +319,8 @@ export function ProjectView({ project, next, prev }: Props) {
           </AnimateIn>
         </div>
       </section>
+      </main>
+
 
       <Footer />
     </>

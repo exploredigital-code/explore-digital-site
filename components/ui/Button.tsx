@@ -1,6 +1,20 @@
 import { cn } from '@/lib/utils'
 
-type Variant = 'primary' | 'outline' | 'ghost' | 'whatsapp'
+/**
+ * Variantes conforme o SPEC seção 2.
+ *
+ * `primary` é o botão cheio de seção ESCURA (laranja com texto verde).
+ * `solid-light` é o botão cheio de seção CLARA (verde com texto branco).
+ * `outline` e `outline-light` são os secundários de cada fundo.
+ *
+ * Um botão cheio por dobra. Os demais são de linha. A exceção legítima é uma
+ * lista de ações equivalentes, como a lista de vagas.
+ *
+ * `whatsapp` deixou de ser uma cor: virou só o ícone. O #25D366 saiu do site
+ * porque, com o laranja como acento, ele virava o segundo elemento mais
+ * saturado da tela e disputava atenção com o CTA principal.
+ */
+type Variant = 'primary' | 'solid-light' | 'outline' | 'outline-light' | 'ghost' | 'whatsapp'
 type Size = 'sm' | 'md' | 'lg'
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,26 +27,42 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variants: Record<Variant, string> = {
+  // Cheio sobre fundo escuro. Texto verde, não branco: branco sobre #E2762F
+  // dá 2,87 de contraste e reprova. Verde escuro dá 4,59.
   primary: cn(
-    'bg-g-light text-g-dark font-bold',
-    'hover:bg-g-pale hover:-translate-y-0.5',
-    'hover:shadow-[0_8px_28px_rgba(193,213,189,0.25)]',
-    'active:translate-y-0 active:shadow-none'
+    'bg-sol text-verde font-medium',
+    // o hover CLAREIA — como o texto é escuro, escurecer o fundo derrubaria
+    // o contraste em vez de reforçá-lo
+    'hover:bg-sol-forte hover:-translate-y-0.5',
+    'active:translate-y-0'
+  ),
+  // Cheio sobre fundo claro.
+  'solid-light': cn(
+    'bg-verde text-menta font-medium',
+    'hover:bg-[#254032] hover:-translate-y-0.5',
+    'active:translate-y-0'
   ),
   outline: cn(
-    'bg-transparent text-white font-bold',
-    'border border-white/35',
-    'hover:border-white hover:bg-white/5 hover:-translate-y-0.5',
+    'bg-transparent text-menta font-medium',
+    'border border-verde-borda',
+    'hover:border-menta hover:-translate-y-0.5',
+    'active:translate-y-0'
+  ),
+  'outline-light': cn(
+    'bg-transparent text-verde font-medium',
+    'border border-tinta-16',
+    'hover:border-verde hover:-translate-y-0.5',
     'active:translate-y-0'
   ),
   ghost: cn(
-    'bg-transparent text-white/60 font-semibold',
-    'hover:text-white hover:bg-white/[0.06]'
+    'bg-transparent text-menta-fraca font-medium',
+    'hover:text-menta hover:bg-white/[0.06]'
   ),
+  // O WhatsApp é reconhecido pela FORMA do ícone, não pela cor. Usa o acento
+  // como qualquer outra ação.
   whatsapp: cn(
-    'bg-[#25D366] text-white font-bold',
-    'hover:bg-[#1FAD54] hover:-translate-y-0.5',
-    'hover:shadow-[0_8px_24px_rgba(37,211,102,0.3)]',
+    'bg-sol text-verde font-medium',
+    'hover:bg-sol-forte hover:-translate-y-0.5',
     'active:translate-y-0'
   ),
 }
@@ -47,7 +77,11 @@ export function Button({ variant = 'primary', size = 'md', className, href, targ
   const base = cn(
     'inline-flex items-center justify-center gap-2',
     'transition-all duration-200 cursor-pointer select-none',
-    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-g-mid',
+    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sol',
+    // O estado desabilitado morava no <button> de cada tela. Sobe para cá
+    // porque é comportamento do componente, não decisão de página, e o
+    // `translate-y-0` cancela o `-translate-y-0.5` do hover das variantes.
+    'disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0',
     variants[variant],
     sizes[size],
     className

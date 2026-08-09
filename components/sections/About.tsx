@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn } from '@/components/ui/AnimateIn'
@@ -17,12 +17,35 @@ const MARKETS = [
 export function About() {
   const t = useTranslations('about')
   const [thumbnail, setThumbnail] = useState<string | undefined>(undefined)
+  const videoRef = useRef<HTMLDivElement | null>(null)
 
+  // A capa vem de uma chamada ao oembed do Vimeo. Ela rodava no mount, ou seja,
+  // toda visita à home batia em vimeo.com antes mesmo de o visitante chegar
+  // nesta seção, que fica lá embaixo. Agora só dispara quando a seção se
+  // aproxima da viewport: quem não rola até aqui nunca toca no terceiro.
   useEffect(() => {
-    fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${ABOUT_VIDEO_ID}&width=640`)
-      .then(r => r.json())
-      .then(d => setThumbnail(d.thumbnail_url))
-      .catch(() => {})
+    const el = videoRef.current
+    if (!el) return
+
+    let cancelado = false
+    const buscar = () => {
+      fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${ABOUT_VIDEO_ID}&width=640`)
+        .then(r => r.json())
+        .then(d => { if (!cancelado) setThumbnail(d.thumbnail_url) })
+        .catch(() => {})
+    }
+
+    const observer = new IntersectionObserver(
+      entradas => {
+        if (entradas.some(e => e.isIntersecting)) {
+          observer.disconnect()
+          buscar()
+        }
+      },
+      { rootMargin: '400px 0px' }
+    )
+    observer.observe(el)
+    return () => { cancelado = true; observer.disconnect() }
   }, [])
 
   const differentials = [
@@ -52,7 +75,7 @@ export function About() {
 
             {/* Coluna esquerda: vídeo vertical */}
             <AnimateIn className="flex justify-center">
-              <div className="w-full max-w-[280px] shadow-2xl shadow-g-dark/20 rounded-2xl overflow-hidden">
+              <div ref={videoRef} className="w-full max-w-[280px] shadow-2xl shadow-g-dark/20 rounded-2xl overflow-hidden">
                 <VideoLightbox
                   src={`https://player.vimeo.com/video/${ABOUT_VIDEO_ID}?autoplay=1&title=0&byline=0&portrait=0`}
                   thumbnail={thumbnail}

@@ -1,28 +1,49 @@
 import { Navbar }       from '@/components/sections/Navbar'
+import { SkipLink } from '@/components/ui/SkipLink'
 import { Hero }         from '@/components/sections/Hero'
-import { Marquee }      from '@/components/sections/Marquee'
-import { Stats }        from '@/components/sections/Stats'
+import { TwoDoors }     from '@/components/sections/TwoDoors'
 import { Portfolio }    from '@/components/sections/Portfolio'
-import { Services }     from '@/components/sections/Services'
-import { Process }      from '@/components/sections/Process'
-import { About }        from '@/components/sections/About'
-import { Testimonials } from '@/components/sections/Testimonials'
+import { Gargalos }     from '@/components/sections/Gargalos'
+import { Disciplinas }  from '@/components/sections/Disciplinas'
+import { Agora }        from '@/components/sections/Agora'
+import { Estudio }      from '@/components/sections/Estudio'
 import { Contact }      from '@/components/sections/Contact'
 import { Footer }       from '@/components/sections/Footer'
+import { canonical, languageAlternates } from '@/lib/site'
+import type { Metadata } from 'next'
+
+interface Props { params: Promise<{ locale: string }> }
+
+// A home precisa declarar o próprio canonical: o layout deixou de fazer isso
+// porque um canonical de layout vaza para todas as páginas filhas.
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  return {
+    alternates: {
+      canonical: canonical(locale),
+      languages: languageAlternates(),
+    },
+  }
+}
 
 export default function Home() {
   return (
     <>
+      <SkipLink />
       <Navbar />
-      <main>
+      {/* Corpo novo, seguindo a referência.
+          Saíram Stats, Process, About e Testimonials: os nichos e o "por que a
+          Explore" viraram Gargalos e Estúdio, que dizem a mesma coisa pela
+          boca do cliente; os depoimentos saíram porque, sem sobrenome, empresa
+          nem foto, derrubavam confiança em vez de construir. */}
+      <main id="conteudo">
         <Hero />
-        <Marquee />
-        <Stats />
+        <TwoDoors />
         <Portfolio />
-        <Services />
-        <Process />
-        <About />
-        <Testimonials />
+        <Gargalos />
+        <Disciplinas />
+        <Agora />
+        <Estudio />
         <Contact />
       </main>
       <Footer />

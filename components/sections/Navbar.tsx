@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
@@ -27,6 +27,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
+  const botaoRef = useRef<HTMLButtonElement | null>(null)
   const currentLocale = getLocaleFromPath(pathname)
   const localePrefix = getLocalePrefix(pathname)
 
@@ -41,16 +42,32 @@ export function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
+  // Escape fecha o painel e devolve o foco para o hambúrguer, senão quem
+  // navega por teclado fecha o menu e fica com o foco solto no fim do
+  // documento, sem referência de onde estava.
+  useEffect(() => {
+    if (!menuOpen) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMenuOpen(false)
+        botaoRef.current?.focus()
+      }
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [menuOpen])
+
   const isHome = pathname === `/${localePrefix}` || pathname === `/${localePrefix}/`
   const homeHref = (anchor: string) => isHome ? anchor : `/${localePrefix}${anchor}`
 
+  // O logo já leva para a home e "Trabalhe conosco" vive no rodapé.
+  // "Portfólio" aponta para a página, não para a âncora da home: a listagem
+  // completa tem card de destaque, filtro por setor e CTA próprio.
   const navLinks = [
-    { href: `/${localePrefix}`,             label: t('home') },
-    { href: homeHref('#portfolio'),         label: t('portfolio') },
-    { href: `/${localePrefix}/marketplace`, label: t('marketplace') },
+    { href: `/${localePrefix}/portfolio`,    label: t('portfolio') },
+    { href: `/${localePrefix}/servicos`,    label: t('servicos') },
     { href: `/${localePrefix}/sobre`,       label: t('about') },
     { href: `/${localePrefix}/blog`,        label: t('blog') },
-    { href: `/${localePrefix}/vagas`,       label: t('work') },
     { href: homeHref('#contact'),           label: t('contact') },
   ]
 
@@ -137,9 +154,12 @@ export function Navbar() {
 
         {/* Mobile hamburger */}
         <button
+          ref={botaoRef}
           onClick={() => setMenuOpen(!menuOpen)}
           className="lg:hidden flex flex-col gap-[5px] p-2 -mr-1"
           aria-label={menuOpen ? t('menu_close') : t('menu_open')}
+          aria-expanded={menuOpen}
+          aria-controls="menu-mobile"
         >
           <span className={cn('w-6 h-0.5 bg-white transition-all duration-300', menuOpen && 'rotate-45 translate-y-[7px]')} />
           <span className={cn('w-6 h-0.5 bg-white transition-all duration-300', menuOpen && 'opacity-0')} />
@@ -155,6 +175,14 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
+            id="menu-mobile"
+            // O painel é montado e desmontado pelo AnimatePresence, então o
+            // atributo hidden nunca entra em disputa com o display:flex. Se um
+            // dia isso virar CSS, a regra que esconde precisa ser explícita:
+            // display:flex vence hidden e o menu nasceria aberto.
+            role="dialog"
+            aria-modal="true"
+            aria-label={t('menu_open')}
             className="fixed inset-0 z-40 bg-[#0D1A12] flex flex-col items-center justify-center gap-2 lg:hidden"
           >
             {navLinks.map((link, i) => (

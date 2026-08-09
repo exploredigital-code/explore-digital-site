@@ -13,7 +13,7 @@ const LINKEDIN = 'https://linkedin.com/company/explore-digital'
 
 const NOISE_BG = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")`
 
-type BioItem = { key: string; title: string; desc: string }
+type BioItem = { key: string; title: string; desc: string; badge?: string }
 
 /* ────────────────────────────── ícones ────────────────────────────── */
 
@@ -38,6 +38,14 @@ const icons: Record<string, React.ReactNode> = {
       <circle cx="10.5" cy="10.5" r="6.75" />
       <path d="M15.4 15.4L20.5 20.5" />
       <path d="M8.2 12.3v-1.6M10.5 12.3V9.2M12.8 12.3V7.9" />
+    </svg>
+  ),
+  // calendário com check = reserva na agenda
+  reserva: (
+    <svg {...strokeProps}>
+      <rect x="3.2" y="5.2" width="17.6" height="15.6" rx="2.6" />
+      <path d="M3.2 9.8h17.6M8.2 3.4v3.4M15.8 3.4v3.4" />
+      <path d="M9 15.1l2.1 2.1 4-4.2" />
     </svg>
   ),
   // balão de conversa com as ondas do telefone
@@ -80,12 +88,19 @@ export function BioView() {
   const locale = useLocale()
   const items = t.raw('items') as BioItem[]
 
+  // Mês corrente no idioma do visitante — o card de reserva se atualiza sozinho
+  // todo mês, sem precisar mexer nos arquivos de tradução.
+  const month = new Intl.DateTimeFormat(locale, { month: 'long' }).format(new Date())
+  // `items` vem de t.raw(), que não passa por ICU — a troca aqui é na mão.
+  const withMonth = (s: string) => s.replace('{month}', month)
+
   const hrefFor = (key: string) => {
     switch (key) {
       case 'consultoria': return `/${locale}/consultoria`
+      case 'reserva': return WA_BASE + encodeURIComponent(t('wa_message_reserva', { month }))
       case 'whatsapp': return WA_BASE + encodeURIComponent(t('wa_message'))
       case 'site': return `/${locale}`
-      case 'vagas': return `/${locale}/vagas`
+      case 'vagas': return `/${locale}/carreiras`
       default: return `/${locale}`
     }
   }
@@ -112,9 +127,9 @@ export function BioView() {
   ]
 
   return (
-    <main className="min-h-[100dvh] bg-g-dark relative overflow-hidden flex flex-col">
+    <main className="min-h-[100dvh] bg-verde relative overflow-hidden flex flex-col">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_50%_at_50%_0%,#2D5238,transparent_65%)] opacity-60 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_50%_100%,#243D2D,transparent_70%)] opacity-50 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_50%_100%,#2A4233,transparent_70%)] opacity-50 pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: NOISE_BG, backgroundSize: '200px' }} />
 
       <div className="relative z-10 flex-1 flex flex-col justify-center w-full max-w-[480px] mx-auto px-5 py-7 sm:py-12">
@@ -134,14 +149,15 @@ export function BioView() {
             priority
             className="h-[46px] w-auto mb-4"
           />
-          <span className="text-[13px] font-semibold tracking-wide text-g-light/60">{t('handle')}</span>
-          <p className="text-[14.5px] leading-[1.55] text-white/60 mt-2.5 max-w-[300px]">{t('tagline')}</p>
+          <span className="text-[13px] font-semibold tracking-wide text-verde-luz">{t('handle')}</span>
+          <p className="text-[14.5px] leading-[1.55] text-menta-fraca mt-2.5 max-w-[300px]">{t('tagline')}</p>
         </motion.div>
 
         {/* ── links ── */}
         <nav className="flex flex-col gap-2">
           {items.map((item, i) => {
             const destaque = item.key === 'consultoria'
+            const acento = item.key === 'reserva'
             const href = hrefFor(item.key)
             const externo = href.startsWith('http')
 
@@ -150,24 +166,42 @@ export function BioView() {
                 <span
                   className={cn(
                     'w-10 h-10 shrink-0 rounded-xl flex items-center justify-center transition-colors duration-200',
-                    destaque
-                      ? 'bg-g-dark/10 text-g-dark'
-                      : 'bg-g-mid/20 text-g-light group-hover:bg-g-mid/30'
+                    destaque && 'bg-verde/15 text-verde',
+                    acento && 'bg-verde-luz/15 text-verde-luz group-hover:bg-verde-luz/25',
+                    !destaque && !acento && 'bg-verde-luz/12 text-verde-luz group-hover:bg-verde-luz/20'
                   )}
                 >
                   {icons[item.key]}
                 </span>
 
                 <span className="flex-1 min-w-0 text-left">
-                  <span className={cn('block text-[15.5px] font-bold leading-tight', destaque ? 'text-g-dark' : 'text-white')}>
-                    {item.title}
+                  <span className={cn('flex items-center gap-2 text-[15.5px] font-bold leading-tight', destaque ? 'text-verde' : 'text-menta')}>
+                    {/* min-w-0 em vez de truncate: com o selo ao lado, "Agenda de agosto"
+                        virava "Agenda de ago..." e o mes era justamente o dado do card.
+                        Assim o titulo quebra em duas linhas em vez de cortar. */}
+                    <span className="min-w-0">{withMonth(item.title)}</span>
+                    {item.badge && (
+                      <span className="shrink-0 rounded-full bg-verde/50 px-2 py-[3px] text-[9.5px] font-semibold uppercase tracking-[0.06em] text-verde-luz">
+                        {item.badge}
+                      </span>
+                    )}
                   </span>
-                  <span className={cn('block text-[12.5px] leading-snug mt-0.5', destaque ? 'text-g-dark/60' : 'text-white/45')}>
+                  <span
+                    className={cn(
+                      'block text-[12.5px] leading-snug mt-0.5',
+                      destaque ? 'text-verde' : acento ? 'text-verde-luz/80' : 'text-menta-fraca'
+                    )}
+                  >
                     {item.desc}
                   </span>
                 </span>
 
-                <span className={cn('shrink-0 transition-transform duration-200 group-hover:translate-x-1', destaque ? 'text-g-dark/50' : 'text-white/30')}>
+                <span
+                  className={cn(
+                    'shrink-0 transition-transform duration-200 group-hover:translate-x-1',
+                    destaque ? 'text-verde/70' : acento ? 'text-verde-luz/70' : 'text-white/45'
+                  )}
+                >
                   <ArrowIcon />
                 </span>
               </>
@@ -176,9 +210,9 @@ export function BioView() {
             const classe = cn(
               'group flex items-center gap-3.5 w-full rounded-2xl px-4 py-3.5 min-h-[68px]',
               'border transition-all duration-200 active:scale-[0.985]',
-              destaque
-                ? 'bg-g-light border-g-light hover:bg-g-pale shadow-[0_6px_24px_rgba(193,213,189,0.16)]'
-                : 'bg-white/[0.05] border-white/[0.1] hover:bg-white/[0.09] hover:border-white/25'
+              destaque && 'bg-sol border-sol hover:bg-sol-forte shadow-[0_6px_24px_rgba(226,118,47,0.22)]',
+              acento && 'bg-verde-card border-verde-luz/40 hover:bg-verde-linha hover:border-verde-luz/60',
+              !destaque && !acento && 'bg-white/[0.05] border-white/[0.1] hover:bg-white/[0.09] hover:border-white/25'
             )
 
             return (
@@ -217,13 +251,13 @@ export function BioView() {
                 target={s.href.startsWith('http') ? '_blank' : undefined}
                 rel={s.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 aria-label={s.label}
-                className="w-11 h-11 rounded-full bg-white/[0.05] border border-white/[0.1] flex items-center justify-center text-white/50 hover:text-white hover:bg-white/[0.1] hover:border-white/25 active:scale-95 transition-all duration-200"
+                className="w-11 h-11 rounded-full bg-white/[0.05] border border-white/[0.1] flex items-center justify-center text-menta-fraca hover:text-menta hover:bg-white/[0.1] hover:border-white/25 active:scale-95 transition-all duration-200"
               >
                 {s.icon}
               </a>
             ))}
           </div>
-          <p className="text-[11.5px] text-white/25 tracking-wide text-center">
+          <p className="text-[11.5px] text-menta-fraca tracking-wide text-center">
             © {new Date().getFullYear()} Explore Digital · {t('rights')}
           </p>
         </motion.div>

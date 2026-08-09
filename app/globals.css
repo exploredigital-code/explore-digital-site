@@ -2,27 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Quanta Grotesk Pro (Titulos) ── */
-@font-face { font-family: 'Quanta'; src: url('/fonts/QuantaGroteskPro-Light.otf') format('opentype'); font-weight: 300; font-display: swap; }
-@font-face { font-family: 'Quanta'; src: url('/fonts/QuantaGroteskPro-Regular.otf') format('opentype'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'Quanta'; src: url('/fonts/QuantaGroteskPro-SemiBold.otf') format('opentype'); font-weight: 600; font-display: swap; }
-@font-face { font-family: 'Quanta'; src: url('/fonts/QuantaGroteskPro-Bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
-@font-face { font-family: 'Quanta'; src: url('/fonts/QuantaGroteskPro-ExtraBold.otf') format('opentype'); font-weight: 800; font-display: swap; }
+/* Quanta agora é carregada por next/font/local em lib/fonts.ts, em WOFF2 e
+   com preload. Os .otf antigos ficam em public/fonts sem uso e podem ser
+   apagados junto com a limpeza do Kohinoor. */
 
-/* ── Kohinoor Latin (Corpo) ── */
-@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Light.otf') format('opentype'); font-weight: 300; font-display: swap; }
-@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Book.otf') format('opentype'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Medium.otf') format('opentype'); font-weight: 500; font-display: swap; }
-@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Demi.otf') format('opentype'); font-weight: 600; font-display: swap; }
-@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
-@font-face { font-family: 'Kohinoor'; src: url('/fonts/KohinoorLatin-Black.otf') format('opentype'); font-weight: 900; font-display: swap; }
+/* Kohinoor saiu. Kohinoor Latin é a companheira latina de uma família
+   devanágari: aberturas fechadas e 382 glifos, desenhada para acompanhar
+   outro script, não para texto corrido em tela. Satoshi entra pela Fontshare,
+   carregada no <head> do layout. */
 
 /* ── Base ── */
 html { scroll-behavior: smooth; }
 * { box-sizing: border-box; }
 
+:root {
+  /* Uma indireção só para a fonte de corpo, para que a troca possa ser
+     revertida sozinha. */
+  --font-body: var(--font-satoshi), 'Segoe UI', system-ui, sans-serif;
+}
+
 body {
-  font-family: 'Kohinoor', system-ui, sans-serif;
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #1B3025;
@@ -31,9 +31,9 @@ body {
 }
 
 /* ── H1/H2/H3 — Quanta Grotesk ── */
-h1 { font-family: 'Quanta', system-ui, sans-serif; font-weight: 700; }
-h2 { font-family: 'Quanta', system-ui, sans-serif; font-weight: 600; }
-h3 { font-family: 'Quanta', system-ui, sans-serif; font-weight: 600; }
+h1 { font-family: var(--font-quanta), system-ui, sans-serif; font-weight: 700; }
+h2 { font-family: var(--font-quanta), system-ui, sans-serif; font-weight: 600; }
+h3 { font-family: var(--font-quanta), system-ui, sans-serif; font-weight: 600; }
 
 /* ── Contrast tokens ─────────────────────────────────
    RULE: dark bg (#1B3025, #0D1A12, #4E7D57) → white text
@@ -48,6 +48,72 @@ h3 { font-family: 'Quanta', system-ui, sans-serif; font-weight: 600; }
 .light-section { color: #1B3025; }
 .light-section p, .light-section span, .light-section li { color: rgba(27,48,37,0.72); }
 
+/* ── Hero ──
+   O poster também é fundo do contêiner: quando o vídeo é escondido em
+   prefers-reduced-motion, o `poster` do <video> some junto, e sem isso o hero
+   ficaria sem imagem. Mesma URL do atributo poster, então é uma requisição só. */
+.hero-media {
+  background: url('/images/hero-poster.jpg') center / cover no-repeat;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Colapso das features do card de sub-serviço ──
+   Fechado no celular, aberto no desktop, e o estado inicial vem daqui e não
+   de JavaScript no mount, para não piscar na primeira pintura.
+
+   O <details> nasce fechado, que é o estado do mobile. No desktop o resumo
+   some e o conteúdo é revelado por CSS. São duas regras porque os motores
+   escondem o conteúdo fechado de formas diferentes: os novos usam o pseudo
+   ::details-content com content-visibility, os antigos respondem a display. */
+.colapso-features > summary {
+  list-style: none;
+  cursor: pointer;
+}
+.colapso-features > summary::-webkit-details-marker { display: none; }
+
+@media (min-width: 768px) {
+  .colapso-features > summary { display: none; }
+  .colapso-features::details-content {
+    content-visibility: visible;
+    block-size: auto;
+  }
+  .colapso-features > ul { display: flex !important; }
+}
+
+/* ── Skip link ──
+   O estado escondido é `style` inline, para valer antes de a folha carregar.
+   Inline vence regra de folha, então o retorno ao foco precisa de !important.
+   Só aqui, e por esse motivo. */
+.skip-link:focus {
+  position: fixed !important;
+  top: 12px !important;
+  left: 12px !important;
+  z-index: 100 !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 12px 20px !important;
+  overflow: visible !important;
+  clip: auto !important;
+  clip-path: none !important;
+  border-radius: 100px !important;
+  background: #E2762F !important;
+  color: #1B3025 !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  outline: 2px solid #FFFFFF !important;
+  outline-offset: 2px !important;
+}
+
 /* ── Custom selection ── */
 ::selection { background: #4E7D57; color: #E3F3E6; }
 
@@ -60,10 +126,7 @@ h3 { font-family: 'Quanta', system-ui, sans-serif; font-weight: 600; }
 /* ── Fade-in ── */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* ── Marquee ── */
-.marquee-track { display: flex; width: max-content; animation: marquee-scroll 56s linear infinite; }
-.marquee-track:hover { animation-play-state: paused; }
-@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
 
 /* ── Word reveal ── */
 .word-clip { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.15em; margin-bottom: -0.15em; }
@@ -87,3 +150,7 @@ h3 { font-family: 'Quanta', system-ui, sans-serif; font-weight: 600; }
 
 /* ── Page hero (inner pages) ── */
 .page-hero { background: linear-gradient(160deg, #1B3025 60%, #243D2D 100%); }
+
+/* ── Scroll horizontal sem barra visível (trilho de Soluções no mobile) ── */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

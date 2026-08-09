@@ -11,6 +11,9 @@ import { cn } from '@/lib/utils'
 const WHATSAPP_BASE = 'https://wa.me/+5585991043067?text='
 const FORMSPREE = 'https://formspree.io/f/mlgkrjng'
 
+/** Mesma chave que a página /obrigado lê para reabrir o WhatsApp se o popup cair. */
+const WA_STORAGE_KEY = 'explore_wa_pending'
+
 
 const inputClass = cn(
   'w-full px-4 py-3.5 rounded-xl',
@@ -46,6 +49,7 @@ export function Contact() {
     name: '',
     email: '',
     phone: '',
+    instagram: '',
     businessType: '',
     service: '',
     message: '',
@@ -55,24 +59,62 @@ export function Contact() {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  /** Mesmo formato do wizard da consultoria, para o time ler as duas do mesmo jeito. */
+  const buildWaMessage = () => {
+    const linhas = [
+      t('whatsapp_greeting'),
+      '',
+      `*${t('wa_field_name')}:* ${form.name}`,
+      `*${t('wa_field_email')}:* ${form.email}`,
+      form.phone && `*${t('form_phone')}:* ${form.phone}`,
+      `*Instagram:* instagram.com/${form.instagram.replace(/^@/, '')}`,
+      form.businessType && `*${t('wa_field_business')}:* ${form.businessType}`,
+      form.service && `*${t('wa_field_service')}:* ${form.service}`,
+      form.message && `*${t('wa_field_message')}:* ${form.message}`,
+    ].filter(Boolean)
+    return linhas.join('\n')
+  }
+
+  /**
+   * A copy sempre prometeu que a mensagem chega por e-mail e WhatsApp ao mesmo
+   * tempo, e a /obrigado dizia que o WhatsApp já tinha sido aberto. Nada disso
+   * acontecia: o formulário só postava no Formspree. Agora faz o mesmo que o
+   * wizard da consultoria.
+   */
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    if (status === 'sending') return
     setStatus('sending')
 
+    const waMessage = buildWaMessage()
+    const waUrl = WHATSAPP_BASE + encodeURIComponent(waMessage)
+
+    // 1. abre o WhatsApp ainda dentro do gesto do usuário. Depois de um await
+    //    o navegador trata como popup e bloqueia.
+    const waTab = window.open(waUrl, '_blank')
+    if (waTab) waTab.opener = null
+
+    // 2. guarda para a /obrigado reabrir caso o popup tenha sido barrado
     try {
-      const res = await fetch(FORMSPREE, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...form, _subject: `Novo contato — ${form.name} · ${form.businessType}` }),
-      })
-      if (res.ok) {
-        router.push(`/${locale}/obrigado`)
-      } else {
-        setStatus('error')
-      }
+      sessionStorage.setItem(WA_STORAGE_KEY, JSON.stringify({ url: waUrl, message: waMessage, blocked: !waTab }))
     } catch {
-      setStatus('error')
+      /* modo privado ou storage indisponível */
     }
+
+    // 3. registra o lead por e-mail. keepalive sobrevive à navegação seguinte.
+    fetch(FORMSPREE, {
+      method: 'POST',
+      keepalive: true,
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        ...form,
+        _subject: `Novo contato · ${form.name} · ${form.businessType || 'sem tipo'}`,
+      }),
+    }).catch(() => {
+      /* o lead já seguiu pelo WhatsApp */
+    })
+
+    router.push(`/${locale}/obrigado`)
   }
 
   return (
@@ -98,7 +140,7 @@ export function Contact() {
                 href={WHATSAPP_BASE + encodeURIComponent(t('whatsapp_intro'))}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#25D366] text-white font-bold px-7 py-4 rounded-full hover:bg-[#20ba5a] hover:-translate-y-0.5 transition-all duration-200 w-full sm:w-auto justify-center sm:justify-start"
+                className="inline-flex items-center gap-3 bg-sol text-verde font-bold px-7 py-4 rounded-full hover:bg-[#20ba5a] hover:-translate-y-0.5 transition-all duration-200 w-full sm:w-auto justify-center sm:justify-start"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -152,8 +194,26 @@ export function Contact() {
                   <input type="email" name="email" placeholder={t('form_email') + ' *'} required value={form.email} onChange={handleChange} className={inputClass} />
                   <input type="tel" name="phone" placeholder={t('form_phone')} value={form.phone} onChange={handleChange} className={inputClass} />
 
+                  {/* O @ do negócio é o campo que permite auditar o perfil
+                      antes da conversa. Obrigatório, como na consultoria. */}
                   <div className="relative">
-                    <select name="businessType" value={form.businessType} onChange={handleChange}
+                    <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[15px] text-white/40">@</span>
+                    <input
+                      type="text"
+                      name="instagram"
+                      inputMode="text"
+                      autoCapitalize="none"
+                      autoCorrect="off"
+                      placeholder={t('form_instagram') + ' *'}
+                      required
+                      value={form.instagram}
+                      onChange={handleChange}
+                      className={cn(inputClass, 'pl-9')}
+                    />
+                  </div>
+
+                  <div className="relative">
+                    <select name="businessType" aria-label={t('form_business')} value={form.businessType} onChange={handleChange}
                       className={cn(selectClass, !form.businessType && 'text-white/40')}>
                       <option value="" disabled>{t('form_business')}</option>
                       {BUSINESS_TYPES.map(b => <option key={b} value={b} className="text-g-dark bg-white">{b}</option>)}
@@ -162,7 +222,7 @@ export function Contact() {
                   </div>
 
                   <div className="relative">
-                    <select name="service" value={form.service} onChange={handleChange}
+                    <select name="service" aria-label={t('form_service')} value={form.service} onChange={handleChange}
                       className={cn(selectClass, !form.service && 'text-white/40')}>
                       <option value="" disabled>{t('form_service')}</option>
                       {SERVICES.map(s => <option key={s} value={s} className="text-g-dark bg-white">{s}</option>)}

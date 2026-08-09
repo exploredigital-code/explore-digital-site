@@ -1,4 +1,4 @@
-﻿export type ServicePillar = 'branding' | 'web' | 'social' | 'performance' | 'sistemas'
+﻿export type ServicePillar = 'branding' | 'web' | 'social' | 'performance' | 'automatizacoes' | 'motion'
 
 export interface ServiceStep { number: string; title: string; desc: string }
 
@@ -6,7 +6,6 @@ export interface SubService {
   slug: string
   pillar: ServicePillar
   name: string
-  price: string
   period: 'once' | 'monthly'
   tagline: string
   description: string
@@ -28,7 +27,7 @@ export interface ServiceData {
   whoFor: string[]
   deliverables: string[]
   subServices: SubService[]
-  portfolioCategory: 'branding' | 'web' | 'social' | 'performance' | 'sistemas'
+  portfolioCategory: 'branding' | 'web' | 'social' | 'performance' | 'automatizacoes' | 'motion'
 }
 
 export const servicesData: ServiceData[] = [
@@ -49,36 +48,16 @@ export const servicesData: ServiceData[] = [
     whoFor: [
       'Pousadas e hotéis que querem se posicionar como referência premium',
       'Beach clubs em fase de lançamento ou que precisam de rebrand',
-      'Empreendimentos de real estate que precisam transmitir exclusividade',
+      'Restaurantes de frente para o mar que cobram mais que o vizinho',
       'Operadoras de experiências que querem comunicar diferenciação',
     ],
     deliverables: ['Logotipo principal e variações', 'Paleta de cores oficial', 'Tipografia da marca', 'Elementos gráficos', 'Mockups de aplicação', 'Manual de identidade visual (PDF)'],
     portfolioCategory: 'branding',
     subServices: [
       {
-        slug: 'naming',
-        pillar: 'branding',
-        name: 'Naming',
-        price: 'R$ 1.900',
-        period: 'once',
-        tagline: 'O nome que define tudo.',
-        description: 'O nome é o primeiro ativo da sua marca. Também o mais permanente. Criamos nomes únicos, memoráveis e estratégicos que comunicam o DNA do seu negócio e funcionam tanto no Brasil quanto internacionalmente.',
-        forWhom: ['Novos negócios em busca do nome certo', 'Marcas em processo de rebranding', 'Empreendedores que querem um nome com estratégia por trás'],
-        features: [
-          'Briefing estratégico aprofundado',
-          'Pesquisa de mercado e análise da concorrência',
-          'Geração de 10+ opções de nomes',
-          'Análise de disponibilidade de domínio e redes sociais',
-          'Verificação de registro de marca (orientação)',
-          'Apresentação com justificativa criativa para cada opção',
-        ],
-        result: 'Nome único e disponível, com estratégia por trás',
-      },
-      {
         slug: 'identidade-visual',
         pillar: 'branding',
         name: 'Identidade Visual',
-        price: 'R$ 2.800',
         period: 'once',
         tagline: 'Logo, cores e elementos que geram reconhecimento.',
         description: 'Sua marca visualmente representada: um sistema coeso de logo, cores, tipografia e elementos gráficos que criam reconhecimento imediato e geram desejo antes mesmo do primeiro contato.',
@@ -97,12 +76,11 @@ export const servicesData: ServiceData[] = [
         slug: 'branding-completo',
         pillar: 'branding',
         name: 'Branding Completo',
-        price: 'R$ 7.000',
         period: 'once',
         tagline: 'Do posicionamento até a identidade visual.',
         recommended: true,
         description: 'Do zero ao completo. Construímos sua marca de dentro para fora: do propósito e posicionamento até a identidade visual aplicada. Para marcas que querem ser referência no setor. Não apenas mais uma opção no mercado.',
-        forWhom: ['Novos negócios que querem começar com tudo definido', 'Marcas em processo de reinvenção estratégica', 'Hotéis, experiências e real estate de alto padrão'],
+        forWhom: ['Novos negócios que querem começar com tudo definido', 'Marcas em processo de reinvenção estratégica', 'Hotéis, pousadas e experiências de alto padrão'],
         features: [
           'Definição de propósito, missão, visão e valores',
           'Arquitetura de marca e posicionamento competitivo',
@@ -133,7 +111,7 @@ export const servicesData: ServiceData[] = [
     whoFor: [
       'Hotéis e pousadas que dependem de reservas diretas (sem OTA)',
       'Beach clubs com presença digital no nível da experiência física',
-      'Imobiliárias e incorporadoras que vendem imóveis de alto padrão',
+      'Operadoras de experiências que vendem passeio e aula',
       'Marcas que nunca tiveram um site profissional',
     ],
     deliverables: ['Site institucional completo', 'Design responsivo (mobile + desktop)', 'Configuração de SEO', 'Integração com WhatsApp e formulários', 'Domínio e hospedagem configurados', 'Painel de edição simples'],
@@ -143,7 +121,6 @@ export const servicesData: ServiceData[] = [
         slug: 'landing-page',
         pillar: 'web',
         name: 'Landing Page',
-        price: 'R$ 2.000',
         period: 'once',
         tagline: 'Focada em converter visitantes em clientes.',
         description: 'Uma página criada com um único objetivo: converter. Seja para gerar leads, vender uma experiência ou capturar reservas diretas. O design e o copy trabalham juntos para guiar o visitante até a ação.',
@@ -162,11 +139,10 @@ export const servicesData: ServiceData[] = [
         slug: 'website-institucional',
         pillar: 'web',
         name: 'Website Institucional',
-        price: 'R$ 3.500',
         period: 'once',
         tagline: 'Presença digital completa da sua marca.',
         description: 'Seu site é o único ativo digital que você realmente controla. Construímos sites que representam a experiência que o cliente vai ter: rápidos, bonitos e otimizados para gerar reservas diretas sem depender de OTAs.',
-        forWhom: ['Hotéis, pousadas e resorts', 'Experiências e destinos turísticos', 'Empresas de real estate e construtoras'],
+        forWhom: ['Hotéis, pousadas e resorts', 'Experiências e destinos turísticos', 'Beach clubs, restaurantes e operadoras de experiência'],
         features: [
           'Design personalizado com identidade visual',
           'Páginas institucionais (home, sobre, serviços, contato)',
@@ -186,7 +162,7 @@ export const servicesData: ServiceData[] = [
     tagline: 'Conteúdo que transforma seguidores em clientes pagantes.',
     description: 'Gerenciamos as redes sociais da sua marca com estratégia, consistência e criatividade, construindo audiência qualificada e gerando resultados mensuráveis.',
     gradient: 'from-[#162B20] via-[#243D2D] to-[#345E3F]',
-    what: 'Social media para hotelaria, experiências e real estate não é sobre postar fotos bonitas. É sobre contar histórias que geram desejo, construir comunidade que confia na marca e criar conteúdo que direciona o cliente para a compra.',
+    what: 'Social media para hotelaria e experiências não é sobre postar fotos bonitas. É sobre contar histórias que geram desejo, construir comunidade que confia na marca e criar conteúdo que direciona o cliente para a compra.',
     how: [
       { number: '01', title: 'Diagnóstico & Planejamento', desc: 'Auditamos as redes existentes, analisamos o mercado e criamos um plano editorial estratégico.' },
       { number: '02', title: 'Produção de Conteúdo', desc: 'Criamos reels, artes, stories e legendas que comunicam o valor da marca com consistência.' },
@@ -197,7 +173,7 @@ export const servicesData: ServiceData[] = [
       'Pousadas e resorts que querem atrair hóspedes diretos pelas redes',
       'Beach clubs com eventos e experiências para divulgar',
       'Escolas de esporte que vendem um estilo de vida',
-      'Empreendimentos de real estate em fase de lançamento',
+      'Beach clubs com evento e programação para divulgar',
     ],
     deliverables: ['Calendário editorial mensal', 'Reels e vídeos verticais', 'Artes para feed e stories', 'Gestão da comunidade', 'Relatório mensal de performance', 'Grupo exclusivo de acompanhamento'],
     portfolioCategory: 'social',
@@ -206,7 +182,6 @@ export const servicesData: ServiceData[] = [
         slug: 'producao-conteudo',
         pillar: 'social',
         name: 'Produção de Conteúdo',
-        price: 'R$ 1.700',
         period: 'monthly',
         tagline: 'Reels, artes e stories com estratégia e identidade visual.',
         description: 'Produção completa de conteúdo para redes sociais: reels, design, stories e calendário editorial. Tudo alinhado com a identidade visual e os objetivos da sua marca.',
@@ -225,7 +200,6 @@ export const servicesData: ServiceData[] = [
         slug: 'captacoes',
         pillar: 'social',
         name: 'Captações',
-        price: 'R$ 800',
         period: 'once',
         tagline: 'Fotografia e vídeo profissional para redes sociais e identidade de marca.',
         description: 'Captação profissional de fotografia e vídeo para alimentar suas redes sociais, site e materiais de marca. Imagens e vídeos que comunicam o padrão e a personalidade do seu negócio.',
@@ -243,11 +217,10 @@ export const servicesData: ServiceData[] = [
         slug: 'setup',
         pillar: 'social',
         name: 'Setup',
-        price: 'R$ 4.500',
         period: 'once',
         tagline: 'Configuração completa das redes do zero ao profissional.',
         description: 'Estruturamos do zero as suas redes sociais: bio, destaques, grid inicial, links e tudo que é necessário para sua presença digital começar com o pé direito.',
-        forWhom: ['Novos negócios lançando presença digital', 'Marcas que precisam de uma reforma completa', 'Empreendimentos que nunca investiram no digital'],
+        forWhom: ['Novos negócios lançando presença digital', 'Marcas que precisam de uma reforma completa', 'Negócios que nunca investiram no digital'],
         features: [
           'Criação e otimização de perfis',
           'Destaques com identidade visual',
@@ -276,7 +249,7 @@ export const servicesData: ServiceData[] = [
     whoFor: [
       'Hotéis e pousadas que querem reduzir dependência das OTAs',
       'Operadoras que precisam gerar leads qualificados em volume',
-      'Imobiliárias com empreendimentos para vender',
+      'Escolas de esporte que precisam encher turma',
       'Negócios que já investem em tráfego mas não veem resultado',
     ],
     deliverables: ['Configuração completa de campanhas', 'Criativos (imagens e vídeos)', 'Otimização diária', 'Relatório mensal unificado', 'Análise de concorrência', 'Dashboard de acompanhamento'],
@@ -286,7 +259,6 @@ export const servicesData: ServiceData[] = [
         slug: 'meta-ads',
         pillar: 'performance',
         name: 'Meta Ads',
-        price: 'R$ 1.200',
         period: 'monthly',
         tagline: 'Campanhas no Instagram e Facebook.',
         description: 'Anúncios no Instagram e Facebook com segmentação precisa para o público certo, no momento certo. Cada real investido é monitorado e otimizado para maximizar leads e reservas.',
@@ -305,11 +277,10 @@ export const servicesData: ServiceData[] = [
         slug: 'google-ads',
         pillar: 'performance',
         name: 'Google Ads',
-        price: 'R$ 1.200',
         period: 'monthly',
         tagline: 'Apareça no momento certo no Google.',
         description: 'Quando alguém busca o que você oferece, sua marca aparece primeiro. Campanhas no Google com foco em intenção de compra. O tráfego mais qualificado que existe.',
-        forWhom: ['Hotéis que querem reduzir dependência das OTAs', 'Experiências e destinos turísticos', 'Real estate com imóveis para vender ou alugar'],
+        forWhom: ['Hotéis que querem reduzir dependência das OTAs', 'Experiências e destinos turísticos', 'Beach clubs e restaurantes com alta e baixa temporada'],
         features: [
           'Criação e gestão de campanhas no Google Ads',
           'Pesquisa e seleção de palavras-chave estratégicas',
@@ -323,9 +294,9 @@ export const servicesData: ServiceData[] = [
     ],
   },
   {
-    slug: 'sistemas',
-    pillar: 'sistemas',
-    title: 'Sistemas',
+    slug: 'automatizacoes',
+    pillar: 'automatizacoes',
+    title: 'Automatizações',
     tagline: 'Tecnologia que automatiza e escala o seu negócio.',
     description: 'Desenvolvemos sistemas internos e automações que eliminam processos manuais, reduzem erros e liberam sua equipe para o que realmente importa.',
     gradient: 'from-[#0F2018] via-[#162B20] to-[#1B3025]',
@@ -343,13 +314,12 @@ export const servicesData: ServiceData[] = [
       'Times que dependem de planilhas e processos manuais',
     ],
     deliverables: ['Sistema ou automação configurada', 'Documentação técnica', 'Treinamento da equipe', 'Suporte pós-implantação'],
-    portfolioCategory: 'sistemas',
+    portfolioCategory: 'automatizacoes',
     subServices: [
       {
         slug: 'sistemas-internos',
-        pillar: 'sistemas',
+        pillar: 'automatizacoes',
         name: 'Sistemas Internos',
-        price: 'Sob consulta',
         period: 'once',
         tagline: 'Sistemas personalizados para a sua operação.',
         description: 'Desenvolvemos sistemas internos sob medida: CRMs, dashboards, gestão de projetos, portais de cliente e qualquer solução que organize e escale a sua operação.',
@@ -365,9 +335,8 @@ export const servicesData: ServiceData[] = [
       },
       {
         slug: 'automacoes',
-        pillar: 'sistemas',
+        pillar: 'automatizacoes',
         name: 'Automações',
-        price: 'Sob consulta',
         period: 'once',
         tagline: 'Processe mais fazendo menos com fluxos automáticos.',
         description: 'Criamos automações que conectam suas ferramentas e eliminam trabalho manual: desde follow-ups automáticos até integrações entre CRM, e-mail, WhatsApp e planilhas.',
@@ -383,9 +352,8 @@ export const servicesData: ServiceData[] = [
       },
       {
         slug: 'crm',
-        pillar: 'sistemas',
+        pillar: 'automatizacoes',
         name: 'CRM',
-        price: 'Sob consulta',
         period: 'once',
         tagline: 'Gestão de clientes e pipeline de vendas centralizado.',
         description: 'Implementamos e configuramos o CRM ideal para o seu negócio, organizando leads, histórico de atendimento, follow-ups e pipeline de vendas em um único lugar.',
@@ -403,6 +371,111 @@ export const servicesData: ServiceData[] = [
     ],
   },
 ]
+
+servicesData.push({
+  slug: 'motion',
+  pillar: 'motion',
+  title: 'Motion',
+  tagline: 'Consistência sem esforço recorrente.',
+  description: 'Peças animadas e conteúdo gerado em série para a marca aparecer sempre igual, sem o time refazer arte toda semana.',
+  gradient: 'from-[#162B20] via-[#2D5238] to-[#0F2018]',
+  what: 'Motion não é enfeite. É o que faz a marca aparecer do mesmo jeito toda vez sem custar uma hora de alguém toda semana. Vinheta, selo e assinatura em movimento dão acabamento; o conteúdo gerado em série resolve a peça repetitiva que hoje alguém refaz na mão, no improviso, quase sempre em cima da hora.',
+  how: [
+    { number: '01', title: 'Inventário do repetitivo', desc: 'Mapeamos o que a sua operação refaz toda semana: maré, programação, vento, line-up.' },
+    { number: '02', title: 'Sistema visual em movimento', desc: 'Definimos vinheta, selo, assinatura e o padrão das peças de série dentro da sua identidade.' },
+    { number: '03', title: 'Animação e automação', desc: 'Animamos as peças e ligamos as de série à fonte de dados, para saírem sozinhas no horário certo.' },
+    { number: '04', title: 'Entrega e handoff', desc: 'Entregamos nos formatos que o seu editor abre e documentamos como usar cada peça.' },
+  ],
+  whoFor: [
+    'Pousadas e beach clubs que publicam a mesma informação toda semana',
+    'Escolas de kite e wingfoil que dependem de maré e vento',
+    'Marcas que já têm identidade e querem acabamento em movimento',
+    'Times pequenos que perdem hora com peça repetitiva',
+  ],
+  deliverables: ['Vinheta de abertura', 'Selo e assinatura animados', 'Lower third para reels', 'Peças de série no padrão da marca', 'Criativo animado para anúncio', 'Arquivos em ProRes 4444 e WebM VP9 com alpha'],
+  portfolioCategory: 'motion',
+  subServices: [
+    {
+      slug: 'pecas-animadas',
+      pillar: 'motion',
+      name: 'Peças animadas',
+      period: 'once',
+      tagline: 'Vinheta, selo e assinatura em movimento.',
+      description: 'O kit de movimento da marca: abertura, selo, assinatura e lower third para reels. É o que dá acabamento ao conteúdo que você já produz, sem depender de quem edita.',
+      forWhom: ['Marcas com identidade pronta e conteúdo sem acabamento', 'Quem publica reels toda semana', 'Operações que trocam de editor e perdem o padrão'],
+      features: [
+        'Vinheta de abertura',
+        'Selo e assinatura em movimento',
+        'Lower third para reels',
+        'Entrega principal em ProRes 4444',
+        'Entrega secundária em WebM VP9 com alpha',
+        // O CapCut não lê alpha de forma confiável. Sem esta versão, o editor
+        // do cliente recebe um arquivo que simplesmente não abre direito.
+        'Versão com fundo chapado para quem edita no CapCut',
+      ],
+      result: 'Conteúdo com acabamento de marca, independente de quem edita',
+    },
+    {
+      slug: 'conteudo-serie',
+      pillar: 'motion',
+      name: 'Conteúdo gerado em série',
+      period: 'monthly',
+      tagline: 'A peça repetitiva sai sozinha, no horário certo.',
+      description: 'Tábua de maré, programação da semana, previsão de vento e line-up. O sistema gera as peças no padrão da marca e elas saem no horário, sem ninguém refazer arte toda semana.',
+      forWhom: ['Pousadas e beach clubs com programação semanal', 'Escolas de kite e wingfoil que publicam maré e vento', 'Times que hoje refazem a mesma arte na mão'],
+      features: [
+        'Padrão visual das peças dentro da identidade',
+        'Ligação com a fonte de dados (maré, vento, agenda)',
+        'Geração automática no formato de story',
+        'Publicação no horário definido',
+        'Ajuste do padrão sempre que a marca mudar',
+      ],
+      result: '56 stories de maré entregues para o No Worries, cobrindo agosto e setembro',
+    },
+    {
+      slug: 'motion-anuncio',
+      pillar: 'motion',
+      name: 'Motion para anúncio',
+      period: 'once',
+      tagline: 'Criativo animado feito para testar.',
+      description: 'Criativo animado para Meta e Google, em variações de formato e de gancho. Feito para teste A/B: o mesmo conteúdo em versões que disputam entre si até uma ganhar.',
+      forWhom: ['Quem já investe em tráfego e cansou do criativo estático', 'Campanhas de temporada', 'Contas que precisam renovar criativo sem refazer captação'],
+      features: [
+        'Variações de gancho para teste A/B',
+        'Formatos para feed, story e reels',
+        'Versões legendadas para reprodução sem som',
+        'Arquivos prontos para Meta e Google',
+      ],
+      result: 'Criativo animado em variações prontas para disputar entre si',
+    },
+  ],
+})
+
+/**
+ * Ordem de exibição das disciplinas.
+ *
+ * O array acima está na ordem em que as frentes foram criadas. Reordenar os
+ * blocos moveria centenas de linhas e poluiria o diff sem ganho nenhum, então
+ * a ordem de tela é declarada aqui, num lugar só.
+ */
+export const DISCIPLINE_ORDER: string[] = [
+  'social-media',
+  'performance-ads',
+  'web-design',
+  'motion',
+  'automatizacoes',
+  'branding',
+]
+
+/** As disciplinas na ordem em que aparecem no site. */
+export const disciplines: ServiceData[] = DISCIPLINE_ORDER
+  .map(slug => servicesData.find(s => s.slug === slug))
+  .filter((s): s is ServiceData => Boolean(s))
+
+/** Uma disciplina pelo slug. `/servicos/[slug]` resolve disciplina antes de sub-serviço. */
+export function findDiscipline(slug: string): ServiceData | undefined {
+  return servicesData.find(s => s.slug === slug)
+}
 
 export function findSubService(slug: string): SubService | undefined {
   for (const service of servicesData) {

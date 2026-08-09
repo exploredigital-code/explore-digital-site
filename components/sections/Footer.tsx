@@ -1,6 +1,7 @@
 ﻿'use client'
 
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
+import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 
 export function Footer() {
@@ -8,16 +9,24 @@ export function Footer() {
   const nav = useTranslations('nav')
   const currentYear = new Date().getFullYear()
 
-  const localePrefix = typeof window !== 'undefined'
-    ? (window.location.pathname.split('/')[1] || 'pt')
-    : 'pt'
+  // useLocale devolve o mesmo valor no servidor e no cliente. Ler o locale de
+  // window.location quebrava a hidratação e deixava o link do blog apontando
+  // para /pt para quem navegava em inglês ou espanhol.
+  const localePrefix = useLocale()
+  const pathname = usePathname()
+
+  // Âncoras só existem na home: fora dela precisam do caminho completo,
+  // senão o clique não leva a lugar nenhum.
+  const isHome = pathname === `/${localePrefix}` || pathname === `/${localePrefix}/`
+  const homeHref = (anchor: string) => (isHome ? anchor : `/${localePrefix}${anchor}`)
 
   const links = [
-    { href: '#portfolio',          label: nav('portfolio') },
-    { href: '#services',           label: nav('services') },
-    { href: '#about',              label: nav('about') },
+    { href: `/${localePrefix}/portfolio`, label: nav('portfolio') },
+    { href: `/${localePrefix}/servicos`,  label: nav('servicos') },
+    { href: `/${localePrefix}/sobre`,     label: nav('about') },
     { href: `/${localePrefix}/blog`,      label: 'Blog' },
-    { href: '#contact',            label: nav('contact') },
+    { href: `/${localePrefix}/carreiras`,     label: nav('work') },
+    { href: homeHref('#contact'),         label: nav('contact') },
   ]
 
   return (
@@ -41,7 +50,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/40 mb-5">
+            <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-menta-fraca mb-5">
               {t('nav_title')}
             </div>
             <ul className="flex flex-col gap-3">
@@ -49,7 +58,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-[14px] text-white/40 hover:text-white/80 transition-colors duration-200"
+                    className="text-[14px] text-menta-fraca hover:text-white/80 transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -60,7 +69,7 @@ export function Footer() {
 
           {/* Social + Contact */}
           <div>
-            <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/40 mb-5">
+            <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-menta-fraca mb-5">
               {t('social_title')}
             </div>
             <div className="flex flex-col gap-3">
@@ -104,7 +113,7 @@ export function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[14px] text-white/40 hover:text-white/80 transition-colors duration-200 flex items-center gap-2.5 group"
+                  className="text-[14px] text-menta-fraca hover:text-white/80 transition-colors duration-200 flex items-center gap-2.5 group"
                 >
                   <span className="text-white/35 group-hover:text-white/75 transition-colors shrink-0">
                     {s.icon}
