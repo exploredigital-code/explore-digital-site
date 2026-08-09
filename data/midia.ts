@@ -63,13 +63,15 @@ const home: Slot[] = [
    nem peça de cliente. Vazio, cada card mostra o placeholder tracejado
    com essa frase, que é exatamente o briefing de quem vai captar.       */
 const destinos: Slot[] = [
-  { id: 'destino-joao-pessoa',     arquivo: '', rotulo: 'João Pessoa: orla da capital, hotel de frente para o mar',       formato: 'h169' },
-  { id: 'destino-pipa',            arquivo: '', rotulo: 'Pipa: falésia, vila ou praia cheia em dia de sol',               formato: 'h169' },
-  { id: 'destino-cumbuco',         arquivo: '', rotulo: 'Cumbuco: kite na água ou lagoa em dia de vento',                 formato: 'h169' },
-  { id: 'destino-taiba',           arquivo: '', rotulo: 'Taíba: duna, vento e casa de temporada',                         formato: 'h169' },
-  { id: 'destino-prea',            arquivo: '', rotulo: 'Preá: praia em alta temporada, com kite no fundo',               formato: 'h169' },
-  { id: 'destino-jericoacoara',    arquivo: '', rotulo: 'Jericoacoara: duna do pôr do sol ou rua de areia',               formato: 'h169' },
-  { id: 'destino-ilha-do-guajiru', arquivo: '', rotulo: 'Ilha do Guajirú: água rasa, escola de kite ou pousada',          formato: 'h169' },
+  { id: 'destino-jericoacoara',       arquivo: '', rotulo: 'Jericoacoara: duna do pôr do sol ou rua de areia',      formato: 'h169' },
+  { id: 'destino-prea',               arquivo: '', rotulo: 'Preá: praia em alta temporada, com kite no fundo',      formato: 'h169' },
+  { id: 'destino-ilha-do-guajiru',    arquivo: '', rotulo: 'Ilha do Guajirú: água rasa, escola de kite ou pousada', formato: 'h169' },
+  { id: 'destino-icarai-de-amontada', arquivo: '', rotulo: 'Icaraí de Amontada: vila, vento e kite na praia',       formato: 'h169' },
+  { id: 'destino-taiba',              arquivo: '', rotulo: 'Taíba: duna, vento e casa de temporada',                formato: 'h169' },
+  { id: 'destino-cumbuco',            arquivo: '', rotulo: 'Cumbuco: kite na água ou lagoa em dia de vento',        formato: 'h169' },
+  { id: 'destino-natal',              arquivo: '', rotulo: 'Natal: orla de Ponta Negra ou o Morro do Careca',       formato: 'h169' },
+  { id: 'destino-pipa',               arquivo: '', rotulo: 'Pipa: falésia, vila ou praia cheia em dia de sol',      formato: 'h169' },
+  { id: 'destino-joao-pessoa',        arquivo: '', rotulo: 'João Pessoa: orla da capital, hotel de frente para o mar', formato: 'h169' },
 ]
 
 /* ───────────────────────────── SOBRE ────────────────────────────── */

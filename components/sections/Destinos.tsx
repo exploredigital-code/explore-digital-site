@@ -19,17 +19,19 @@ const WA_BASE = 'https://wa.me/+5585991043067?text='
  * dobra depois dos gargalos, o que responde a próxima pergunta do visitante é
  * geografia: "vocês conhecem a minha praia?".
  *
- * A mensagem do WhatsApp de cada card leva o destino por PLACEHOLDER ICU, com
- * `t('destinos_wa', { destino })`. Não é `.replace()`: o padrão já falhou duas
- * vezes neste código, sempre que a string vinha de `t.raw()` e não passava
- * pelo ICU. Aqui a chave é lida por `t()`, então a interpolação é do next-intl.
+ * A seção é INFORMATIVA. Os cards não levam a lugar nenhum: nove links para o
+ * mesmo WhatsApp, mudando só uma palavra na mensagem, davam nove saídas para a
+ * mesma conversa e faziam a seção parecer um menu de contratação por praia,
+ * que não é o que ela é. A única saída é a chamada do rodapé.
+ *
+ * Toda string sai de `t()`, nunca de `t.raw()` com `.replace()` por cima. O
+ * `.replace()` já falhou duas vezes neste código, sempre que a string vinha
+ * fora do ICU. As descrições vêm de `t.raw` porque são um mapa por slug, mas
+ * nenhuma delas tem placeholder, então não passam perto do problema.
  */
 export function Destinos() {
   const t = useTranslations('home')
   const itens = t.raw('destinos_itens') as Record<string, string>
-
-  const waDoDestino = (nome: string) =>
-    WA_BASE + encodeURIComponent(t('destinos_wa', { destino: nome }))
 
   return (
     <section id="destinos" className="bg-white py-20 lg:py-28">
@@ -57,13 +59,7 @@ export function Destinos() {
               viewport={{ once: true, margin: '-60px 0px' }}
               transition={{ duration: 0.38, delay: Math.min(i, 5) * 0.05 }}
             >
-              <a
-                href={waDoDestino(d.nome)}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={t('destinos_falar', { destino: d.nome })}
-                className="group h-full flex flex-col rounded-2xl border border-tinta-16 bg-white overflow-hidden hover:border-verde-medio/45 hover:shadow-md transition-all duration-300"
-              >
+              <div className="h-full flex flex-col rounded-2xl border border-tinta-16 bg-white overflow-hidden">
                 {/* Horizontal, e não o 4:5 do resto do acervo. Sete slots
                     verticais vazios enfileirados viravam uma parede tracejada
                     que engolia a dobra inteira. Paisagem de praia também é
@@ -88,13 +84,14 @@ export function Destinos() {
                     {itens[d.slug]}
                   </p>
                 </div>
-              </a>
+              </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Quem não está na lista.
-            Sete cards fechados diriam, sem querer, "só atendemos aqui". */}
+        {/* A única saída da seção, e um pedido direto no lugar do convite
+            genérico que estava aqui. Nove cards fechados diriam, sem querer,
+            "só atendemos aqui". */}
         <AnimateIn className="mt-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 rounded-2xl border border-tinta-16 bg-menta-clara px-6 py-6">
             <div className="max-w-[560px]">

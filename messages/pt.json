@@ -296,7 +296,7 @@
           },
           {
             "title": "O canal também sai do diagnóstico.",
-            "desc": "Instagram, LinkedIn ou blog. Uma pousada em Jeri provavelmente é só Instagram, porque é lá que o hóspede procura. Um empreendimento maior pode pedir LinkedIn. Blog entra quando a busca no Google já é uma porta de entrada real."
+            "desc": "Instagram, LinkedIn ou blog. Uma pousada em Jericoacoara provavelmente é só Instagram, porque é lá que o hóspede procura. Um empreendimento maior pode pedir LinkedIn. Blog entra quando a busca no Google já é uma porta de entrada real."
           },
           {
             "title": "Os primeiros 90 dias são diferentes do resto.",
@@ -851,22 +851,22 @@
     ],
     "destinos_eyebrow": "Destinos",
     "destinos_title": "O litoral que a gente conhece",
-    "destinos_sub": "Sete pontos, de Jericoacoara a João Pessoa. Conhecer a praia muda o briefing: a alta temporada, o tipo de hóspede e o que dá para captar não são os mesmos em duas delas.",
+    "destinos_sub": "De Jericoacoara a João Pessoa, no litoral do Ceará, do Rio Grande do Norte e da Paraíba. Conhecer a praia muda o briefing: a alta temporada, o tipo de hóspede e o que dá para captar não são os mesmos em duas delas.",
     "destinos_itens": {
-      "joao-pessoa": "Hotelaria de orla na capital, com hóspede de cidade e de praia no mesmo lugar.",
-      "pipa": "Vila de pousada pequena e hostel, com temporada longa e muito hóspede de fora.",
-      "cumbuco": "Kite e day use a menos de uma hora de Fortaleza.",
-      "taiba": "Vento constante e ocupação puxada por casa de temporada.",
-      "prea": "Alta temporada de agosto a dezembro. É a janela em que dá para captar com a casa cheia.",
       "jericoacoara": "Destino de marca forte, onde o hóspede chega comparando antes de reservar.",
-      "ilha-do-guajiru": "Escola de kite e pousada dividindo o mesmo hóspede."
+      "prea": "Alta temporada de agosto a dezembro. É a janela em que dá para captar com a casa cheia.",
+      "ilha-do-guajiru": "Escola de kite e pousada dividindo o mesmo hóspede.",
+      "icarai-de-amontada": "Vila pequena com vento forte, e hóspede de kite que fica semanas em vez de dias.",
+      "taiba": "Vento constante e ocupação puxada por casa de temporada.",
+      "cumbuco": "Kite e day use a menos de uma hora de Fortaleza.",
+      "natal": "Capital com rede e resort na orla, e o hóspede que desembarca no aeroporto que serve todo o estado.",
+      "pipa": "Vila de pousada pequena e hostel, com temporada longa e muito hóspede de fora.",
+      "joao-pessoa": "Hotelaria de orla na capital, com hóspede de cidade e de praia no mesmo lugar."
     },
-    "destinos_falar": "Falar sobre {destino} no WhatsApp",
-    "destinos_wa": "Olá! Vim pelo site e queria falar sobre {destino}.",
-    "destinos_outro_title": "Sua praia não está nessa lista?",
-    "destinos_outro_desc": "A lista é onde a gente já roda com frequência, não o limite do mapa. Diga de onde você fala e a gente responde direto se conhece ou se vai conhecer.",
-    "destinos_outro_cta": "Falar sobre a minha praia",
-    "destinos_wa_outro": "Olá! Vim pelo site. Minha praia não está na lista de destinos. Eu fico em:",
+    "destinos_outro_title": "Sua cidade não está aqui?",
+    "destinos_outro_desc": "Fala com a gente e a gente monta um projeto para o seu destino.",
+    "destinos_outro_cta": "Falar sobre o meu destino",
+    "destinos_wa_outro": "Olá! Vim pelo site. Minha cidade não está na lista de destinos. Eu fico em:",
     "estudio_eyebrow": "O estúdio",
     "estudio_title": "Antes de fazer marketing para hospedagem, a gente tocou hospedagem.",
     "estudio_desc": "Hostel e escola de surf, com a mão na operação. Estratégia, criação, captação e vendas na mesma mesa.",
