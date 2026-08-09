@@ -1,16 +1,13 @@
 {
   "nav": {
-    "home": "Home",
     "portfolio": "Portfolio",
-    "services": "Services",
     "about": "About us",
     "contact": "Contact",
-    "cta": "Get in Touch",
     "work": "Careers",
     "blog": "Blog",
     "menu_open": "Open menu",
     "menu_close": "Close menu",
-    "consultoria": "Free Consulting",
+    "consultoria": "Free Audit",
     "servicos": "Services",
     "skip": "Skip to content"
   },
@@ -18,10 +15,10 @@
     "eyebrow": "How it works",
     "title": "From first contact to first booking.",
     "subtitle": "In three steps you understand what we will do and when it starts showing in the result.",
-    "cta": "Free consultation →",
+    "cta": "Free audit →",
     "s1_title": "Choose your service",
-    "s1_desc": "Look at the six disciplines and spot the one that fits your moment.",
-    "s2_title": "Free consultation",
+    "s1_desc": "Look at the catalogue grouped by problem and find the product that fits your moment.",
+    "s2_title": "Free audit",
     "s2_desc": "Reach out for a no-commitment conversation. We'll understand your business and align the details.",
     "s3_title": "Results in the first 90 days",
     "s3_desc": "We define tracking metrics. You see the progress week by week in the exclusive group with your dedicated team."
@@ -39,21 +36,15 @@
     "v2_desc": "We don't sell impressions. We sell direct bookings, qualified leads, and real measurable growth.",
     "v3_title": "Total transparency",
     "v3_desc": "You know what's being done, why, and what results it's generating. Always, no asterisks.",
-    "tab_story": "Our Story",
-    "tab_team": "The Team",
     "team_eyebrow": "The team",
     "team_title": "The people who do the work.",
-    "team_sub": "Each client has a dedicated team that understands the business and thinks strategically about growth.",
-    "team_cta": "Work with us",
     "our_history": "Our History",
     "years_expertise": "Instagram growth for Cabaré du Vento in one year",
     "stat_brands": "Followers",
     "stat_countries": "Destinations",
     "stat_focus": "Coastline",
     "values_title": "What drives us every day.",
-    "join_eyebrow": "Join the team",
     "join_title": "Want to work with us?",
-    "join_desc": "We have open positions in design, social media, paid traffic, sales and more.",
     "join_button": "See open positions →",
     "f1_role": "Co-founder · Creative Director",
     "f1_bio": "Leads creation and positioning for the brands we work with.",
@@ -78,37 +69,31 @@
     "design_desc": "For branding and visual identity we work with a partner studio. Same model as performance: a specialist running their own operation, with Explore as your single point of contact.",
     "cta_eyebrow": "Next step",
     "cta_title": "Want Explore looking after your brand?",
-    "cta_desc": "In 45 minutes we X-ray your website, Instagram, Google listing and reputation, and show you what to prioritise. No cost, no commitment.",
-    "cta_button": "Book your free consultation",
+    "cta_desc": "The audit reads what is already public about your business, on Google, on your website, on Instagram and in your reviews, and gives you back a picture of where you stand. No meeting and no cost.",
+    "cta_button": "Get my audit",
     "cta_secondary": "Chat on WhatsApp",
     "meta_title": "About Explore Digital · hospitality marketing",
     "meta_description": "An agency specialised in hospitality on the coast of Ceará and Rio Grande do Norte, Brazil. Our story, our values and the team behind the work.",
+    "agora_eyebrow": "Now",
+    "agora_title": "What came out of the studio in the last few weeks.",
     "estudio_eyebrow": "Where we come from",
-    "estudio_title": "We did not learn tourism in a classroom.",
-    "estudio_destaque": "We ran a hostel, a guesthouse and a kite school",
-    "estudio_fim": "before becoming an agency.",
-    "estudio_p1": "Before Explore Digital existed, this team had already dealt with empty rooms in the low season, a guest complaining about breakfast, and an OTA taking a quarter of every booking. We did not study the problem, we lived in it.",
-    "estudio_p2": "That is why the conversation starts with occupancy and direct bookings, not reach and engagement. Anyone who has run the operation knows which number pays the bills.",
-    "dados_eyebrow": "In numbers",
+    "estudio_title": "Before we did marketing for hospitality, we ran hospitality.",
+    "estudio_p1": "Empty rooms in the low season, OTA commission eating the margin, a guest complaining about breakfast. We know because we solved it from the other side of the front desk.",
+    "estudio_p2": "A hostel and a surf school, hands on the operation. That is why the conversation starts with occupancy and direct bookings, not reach and engagement. Anyone who has run the operation knows which number pays the bills.",
     "dados_pendente": "To confirm",
     "dado_fundacao": "Founded in",
     "dado_clientes": "Active clients",
-    "stat_seguidores": "41k · double in one year"
+    "stat_seguidores": "41k · double in one year",
+    "estudio_p3": "We work fully online, and we travel when a client needs the experience captured on location."
   },
   "hero": {
-    "eyebrow": "Hospitality marketing · Ceará and Rio Grande do Norte coast",
     "line1": "Brands that create",
     "line2": "desire.",
     "sub": "The guesthouses, hostels and beach clubs that hire us stop depending on OTAs. We build the digital presence that gets guests booking directly with you.",
     "cta_primary": "View Portfolio",
     "cta_secondary": "Get in Touch"
   },
-  "marquee_items": {
-    "hospitality": "Hospitality",
-    "experiences": "Experiences"
-  },
   "stats": {
-    "eyebrow": "Numbers that speak",
     "nichos_eyebrow": "Where we work",
     "nichos_title1": "Specialists in one coastline,",
     "nichos_title2": "not in every market.",
@@ -129,7 +114,6 @@
     "filter_social": "Social Media",
     "filter_performance": "Performance",
     "see_case": "View project →",
-    "result_label": "Result",
     "cta": "View all projects",
     "page_eyebrow": "Portfolio",
     "page_hero_title": "Strategic projects, real results.",
@@ -207,8 +191,8 @@
     "form_sending": "Sending...",
     "form_success": "Message sent! We'll be in touch soon.",
     "form_error": "Error sending. Try WhatsApp instead.",
-    "trust_1": "Response within 24h",
-    "trust_2": "Free consultation",
+    "trust_1": "No meeting to book",
+    "trust_2": "Audit at no cost",
     "trust_3": "Data protected",
     "trust_4": "BR · ES · International",
     "form_disclaimer": "When you submit, your message reaches us by email and WhatsApp simultaneously.",
@@ -222,15 +206,7 @@
       "Restaurant / Gastronomy",
       "Other"
     ],
-    "services_list": [
-      "Branding",
-      "Web Design",
-      "Social Media",
-      "Performance Ads (Google/Meta)",
-      "Initial Setup",
-      "One-off Service",
-      "Not sure yet, I want a consultation"
-    ],
+    "services_unsure": "Not sure yet, I want the audit",
     "whatsapp_greeting": "Hi! I found you through the Explore Digital website.",
     "whatsapp_intro": "Hi! I found you through the website and would like to know more about Explore Digital's services.",
     "whatsapp_tooltip": "Chat with us 👋",
@@ -263,7 +239,6 @@
     "subtitle": "Digital marketing for hospitality and experiences, straight to the point.",
     "read_time": "read",
     "read_article": "Read article",
-    "view_post": "View post",
     "cat_all": "All",
     "empty_state_prefix": "Coming soon, content about",
     "cta_eyebrow": "Get it first",
@@ -382,8 +357,123 @@
     "ok_desc": "We answer within five working days either way. If you have not heard from us by then, write to us.",
     "ok_home": "Back to home"
   },
+  "recorrente": {
+    "etiqueta": "Monthly",
+    "hero_prazo": "6 to 12 month contract",
+    "prazo_eyebrow": "The term",
+    "prazo_title": "Six months of contract, and up to twelve.",
+    "prazo_p1": "Brand and organic content take 90 to 180 days to turn into bookings consistently. A shorter contract measures nothing and wastes your money.",
+    "prazo_p2": "That is why the minimum is six months, and not because we want to lock anyone in. It is the time it takes to tell what worked from what was a coincidence. Contracts of up to twelve months exist for whoever wants to cross a whole season with the same team.",
+    "prazo_p3": "You are reading this here and not in the proposal on purpose. A term that only shows up at signing time reads like a trap.",
+    "grupo_eyebrow": "Day to day",
+    "grupo_title": "A WhatsApp group with the people doing the work, not with an account manager.",
+    "grupo_desc": "The most common objection in this industry is \"I hired an agency once and it did nothing\". The story is almost always the same: they disappeared. The group is the answer to that. You talk to the people with their hands on it, the same day, with no ticket to open and no alignment meeting to wait for.",
+    "grupo_itens": [
+      "The social media person on your project, who produces and publishes",
+      "The paid traffic manager, who touches the campaign",
+      "The day to day: a promo that came up, a room that opened, an event that landed on the calendar"
+    ],
+    "resultado_eyebrow": "How the result is read",
+    "resultado_title": "One part is measured. The other you notice in your rate.",
+    "medido_label": "What we measure",
+    "medido_itens": [
+      "Direct bookings",
+      "Conversations started",
+      "Cost per lead"
+    ],
+    "percebido_label": "What does not fit in a report",
+    "percebido_desc": "The brand starts holding your price. It does not turn into a chart, but it shows up in the nightly rate you can charge and in the guest who stops asking for a discount.",
+    "sem_vaidade": "Follower growth does not count as a result. It is a symptom, and Explore does not sell vanity metrics.",
+    "ritmo_eyebrow": "Rhythm and process",
+    "diagnostico_nota": "Defined in the diagnosis, before any contract.",
+    "produtos": {
+      "producao-conteudo": {
+        "ritmo_title": "What happens across the month.",
+        "ritmo_sub": "Recurring content is not one big drop at month end. It is a routine, and this is the routine.",
+        "etapas": [
+          {
+            "quando": "Start of the month",
+            "title": "Calendar on the table",
+            "desc": "The month's plan arrives ready, with theme, format and date for each piece. You approve it or ask for a change right there, in the group."
+          },
+          {
+            "quando": "Across the month",
+            "title": "Production and publishing",
+            "desc": "Pieces come for approval before going live, instead of piling up into the last week. Anything urgent goes in outside the calendar, through the group."
+          },
+          {
+            "quando": "When things change",
+            "title": "Mid course adjustment",
+            "desc": "A promo that came up, a room that opened, an event that landed on the calendar. That does not wait for next month."
+          },
+          {
+            "quando": "End of the month",
+            "title": "Reading and next plan",
+            "desc": "What worked and what did not, and the next calendar comes out of that reading."
+          }
+        ],
+        "blocos": [
+          {
+            "title": "No fixed number of pieces.",
+            "desc": "The volume comes out of the diagnosis, not out of a price table. A ten room pousada and a beach club with a weekly event do not need the same number of posts, and selling both the same package means over delivering to one and under delivering to the other. The number goes into the proposal, after the diagnosis, and does not change mid contract without your word."
+          },
+          {
+            "title": "The channel comes out of the diagnosis too.",
+            "desc": "Instagram, LinkedIn or a blog. A pousada in Jericoacoara is probably Instagram only, because that is where the guest looks. A larger development may call for LinkedIn. A blog comes in when Google search is already a real front door."
+          },
+          {
+            "title": "The first 90 days are different from the rest.",
+            "desc": "Early on it is testing: format, timing, tone, type of piece. A lot goes live to find out what your audience answers to. After that the calendar gets more predictable and the effort moves from testing to doing more of what already works."
+          }
+        ]
+      },
+      "gestao-de-trafego": {
+        "ritmo_title": "What happens across the month.",
+        "ritmo_sub": "A campaign is not built once and left running. It is read and adjusted, and this is the cycle.",
+        "etapas": [
+          {
+            "quando": "Start",
+            "title": "Structure and creatives live",
+            "desc": "Channel, audience and budget set in the diagnosis. The first campaigns go up with more than one creative, so there is something to compare."
+          },
+          {
+            "quando": "First weeks",
+            "title": "Learning phase",
+            "desc": "The platform needs a volume of data before it delivers well. This is when cost per lead still swings, and when touching too much makes it worse."
+          },
+          {
+            "quando": "Across the month",
+            "title": "Creative and hook testing",
+            "desc": "Creatives wear out. New ones go in and the ones that dropped come out, with the decision coming from the data and not from taste."
+          },
+          {
+            "quando": "End of the month",
+            "title": "Reading and reallocation",
+            "desc": "Where next month's budget goes, and why. Whatever did not convert loses budget."
+          }
+        ],
+        "blocos": [
+          {
+            "title": "The media budget is yours, paid straight to the platforms.",
+            "desc": "The card is yours, the ad account is yours, and the ad money never passes through Explore. That is not paperwork detail: it means the account stays yours, with all of its history, if we ever stop working together. What Explore charges for the work is a separate thing, and it is not this budget."
+          },
+          {
+            "title": "Minimum of R$ 2,000 a month in media.",
+            "desc": "Below that the data does not add up and the campaign never leaves the learning phase. It is not worth starting, and we would rather say it here than on a call. This amount is your ad budget, paid to the platforms. It is not the price of Explore's work."
+          },
+          {
+            "title": "Raising the budget is a mid contract conversation.",
+            "desc": "Once the project is running and the data shows which campaign brings bookings, raising the investment is the move that pays the most, because you are putting money behind something already proven. That is not a first month decision, and we will not ask for it before we have something to show."
+          },
+          {
+            "title": "Meta, Google or both.",
+            "desc": "It comes out of the diagnosis. Meta finds people who were not looking yet; Google serves people who already are. Plenty of hospitality operations need both, but starting with both on a short budget is the fastest way to learn nothing about either."
+          }
+        ]
+      }
+    }
+  },
   "service_detail": {
-    "back": "Back",
     "recommended": "Recommended",
     "hire_whatsapp": "Hire via WhatsApp",
     "about_service": "About this service",
@@ -393,13 +483,7 @@
     "expected_result": "Expected result",
     "want_service": "I want this service",
     "see_all_services": "See all services",
-    "media_label": "How it shows up",
-    "how_label": "How we work",
-    "see_details": "See details",
-    "cta_title": "Want {discipline} in your operation?",
-    "cta_desc": "In 45 minutes we review your digital presence and show you what to prioritise. No cost, no commitment.",
-    "cta_button": "Book your free consultation",
-    "cta_secondary": "Chat on WhatsApp"
+    "media_label": "How it shows up"
   },
   "portfolio_detail": {
     "client": "Client",
@@ -419,7 +503,6 @@
     "work_together": "Let's work together",
     "cta_title": "Want a project like this for your brand?",
     "cta_button": "Talk to Explore",
-    "video_label": "Video",
     "videos_subtitle": "6 videos · 9:16",
     "quote_label": "Testimonial",
     "quote_placeholder": "Space for a real client testimonial, with name, role and business. Short and specific, about what changed in the operation."
@@ -428,7 +511,6 @@
     "tagline": "Hospitality marketing on the coast of Ceará and Rio Grande do Norte. Direct bookings, not dependence on OTAs.",
     "nav_title": "Navigation",
     "social_title": "Social Media",
-    "contact_title": "Contact",
     "copyright": "All rights reserved."
   },
   "meta": {
@@ -438,183 +520,22 @@
     "og_description": "Specialists in guesthouses, hostels and beach clubs on the Ceará and Rio Grande do Norte coast. Fewer OTAs, more direct bookings."
   },
   "consultoria": {
-    "meta_title": "Free consultation for hotels, guesthouses and beach clubs · Explore Digital",
-    "meta_description": "45 minutes with an agency that works exclusively with hospitality and experiences on the coast of Ceará and Rio Grande do Norte. A full X-ray of your digital presence: website, Instagram, Google Business Profile, reputation and positioning, in writing within 24h. No cost, no strings.",
-    "og_title": "Free consultation for hospitality and experience brands",
-    "og_description": "An X-ray of your digital presence: website, Instagram, Google Business Profile, reputation and positioning. 45 minutes, report in 24h, at no cost.",
-    "nav_cta": "Book my session",
+    "meta_title": "Free digital audit for guesthouses and beach clubs · Explore Digital",
+    "meta_description": "A read on your digital positioning built from what is already public: Google, OTA dependency, website, Instagram and reputation. No meeting to book and no strings.",
+    "og_title": "Free digital audit for hospitality and experiences",
+    "og_description": "Google, OTA dependency, website, Instagram and reputation. No meeting and no strings: you fill it in and you get it.",
+    "nav_cta": "Get my audit",
     "nav_site": "Go to the site",
-    "hero_badge": "Free consulting · Limited slots per month",
-    "hero_title": "Guests find you.",
-    "hero_title_accent": "Then book on Booking.",
-    "hero_sub": "In 45 minutes we run an X-ray on your website, Instagram, Google and reputation, and show you where you are losing guests to the OTAs.",
+    "hero_badge": "Free audit · No meeting",
+    "hero_title": "The guest finds you.",
+    "hero_title_accent": "And books through Booking.",
+    "hero_sub": "The audit reads what is already public about your business and gives you back a picture of where you stand today: on Google, on OTA dependency, on your website, on Instagram and on your reputation.",
     "hero_bullets": [
-      "X-ray done before we talk",
-      "Written report within 24h",
-      "No cost and no commitment"
+      "No meeting to book and no discovery call",
+      "Built from what any guest can already see",
+      "No cost, no card and no strings"
     ],
-    "hero_scroll": "See how it works",
-    "cred_items": [
-      {
-        "value": "CE · RN",
-        "label": "the coastline we specialise in"
-      },
-      {
-        "value": "+100%",
-        "label": "growth in one year for Cabaré du Vento"
-      },
-      {
-        "value": "41k",
-        "label": "followers, double in one year"
-      },
-      {
-        "value": "45min",
-        "label": "is all the consultation takes"
-      }
-    ],
-    "audience_eyebrow": "Who it's for",
-    "audience_title": "Built for businesses that live on occupancy and bookings.",
-    "audience_sub": "We don’t work with everyone. Over five years focused on one specific set of businesses.",
-    "audience_items": [
-      {
-        "title": "Hotels and resorts",
-        "desc": "Watching 15% to 25% of every booking disappear into commission, ready to build a real direct channel."
-      },
-      {
-        "title": "Inns and hostels",
-        "desc": "Depending on one high season to close the year and needing to fill the quiet months."
-      },
-      {
-        "title": "Beach clubs and restaurants",
-        "desc": "Packed on weekends, silent the rest of the week. Demand lacks consistency."
-      },
-      {
-        "title": "Sports schools and experiences",
-        "desc": "Kite, surf, diving, tours. You sell a lifestyle, and the content has to convey it before anyone signs up."
-      }
-    ],
-    "notfor_title": "It's probably not for you if…",
-    "notfor_items": [
-      "You expect results within seven days.",
-      "You want someone to just post, with no strategy behind it.",
-      "You have no willingness to change what you do today."
-    ],
-    "notfor_note": "We’d rather say this now than take 45 minutes of your time for nothing.",
-    "pain_eyebrow": "The diagnosis",
-    "pain_title": "The problem is almost never your product.",
-    "pain_sub": "The room is good and the location is good. What’s blocking things is usually in one of these three places.",
-    "pain_items": [
-      {
-        "title": "The OTA takes a quarter of every booking",
-        "desc": "You pay commission to sell your own room, and the guest never becomes yours."
-      },
-      {
-        "title": "A beautiful Instagram that doesn’t book",
-        "desc": "Flawless feed, empty inbox. The bridge from charm to booking is missing."
-      },
-      {
-        "title": "Ads running in the dark",
-        "desc": "Budget goes out every month and nobody knows which campaign brought a guest."
-      }
-    ],
-    "deliver_eyebrow": "What you get",
-    "deliver_title": "A full X-ray of your digital presence.",
-    "deliver_sub": "We review every point before the call and send it in writing within 24 hours, whether you hire Explore or not.",
-    "deliver_items": [
-      {
-        "num": "01",
-        "title": "Your website",
-        "desc": "Whether it loads fast, says what it needs to, and how many clicks stand between guest and booking."
-      },
-      {
-        "num": "02",
-        "title": "Your Instagram",
-        "desc": "Bio, highlights, consistency and the path from a post to a conversation in the inbox."
-      },
-      {
-        "num": "03",
-        "title": "Google Business",
-        "desc": "Listing, photos and how you show up when someone searches for a stay in your area."
-      },
-      {
-        "num": "04",
-        "title": "Your reputation",
-        "desc": "What keeps repeating in your Google, Booking and TripAdvisor reviews."
-      },
-      {
-        "num": "05",
-        "title": "Your positioning",
-        "desc": "What the brand says it is versus what people understand. When they clash, only price is left."
-      },
-      {
-        "num": "06",
-        "title": "Your competition",
-        "desc": "How you look next to whoever wants the same guest, and which space is still open."
-      }
-    ],
-    "how_eyebrow": "How it works",
-    "how_title": "Three steps. No wasted meetings.",
-    "how_items": [
-      {
-        "num": "01",
-        "title": "You fill in the form",
-        "desc": "Two minutes. The questions we need to understand where your business stands."
-      },
-      {
-        "num": "02",
-        "title": "We analyse before the call",
-        "desc": "You won’t spend the meeting explaining the basics. We arrive with your data in hand."
-      },
-      {
-        "num": "03",
-        "title": "45 minutes, X-ray by email",
-        "desc": "Video call or WhatsApp, at the time you choose. The report arrives within 24 hours."
-      }
-    ],
-    "free_eyebrow": "The question everyone asks",
-    "free_title": "Why do we do this for free?",
-    "free_body": "Because that’s how most of our clients started. We’d rather show you how we think before charging anything.",
-    "free_body_2": "If it makes sense to go beyond the X-ray, we present a proposal at the end of the call. If it doesn’t, the diagnosis is yours anyway.",
-    "free_badges": [
-      "No credit card",
-      "No contract, no lock-in",
-      "The X-ray is yours either way"
-    ],
-    "proof_eyebrow": "Who's been through this",
-    "proof_quote": "Working with Explore Digital was a game-changer for our business. They understood our audience from day one and created content that actually converts. The growth we've seen in six months exceeded every expectation.",
-    "proof_author": "James K.",
-    "proof_role": "Hospitality · Spain",
-    "faq_eyebrow": "FAQ",
-    "faq_title": "What people ask before booking a session.",
-    "faq_items": [
-      {
-        "q": "Is it really free? Where’s the catch?",
-        "a": "There isn’t one. We don’t ask for a card and we don’t charge afterwards. Some of the people we meet become clients, the rest refer us. Both are worth it."
-      },
-      {
-        "q": "How long does it take?",
-        "a": "45 minutes, by video call or WhatsApp, on the day and time you choose."
-      },
-      {
-        "q": "Do I need an ad budget already?",
-        "a": "No. The X-ray points to positioning, content and conversion fixes that don’t depend on paid media."
-      },
-      {
-        "q": "My inn is small. Is it worth it?",
-        "a": "Yes, and usually more so. The smaller the operation, the more each direct booking weighs. We’ve worked with everything from eight-room inns to resorts."
-      },
-      {
-        "q": "Do you work outside Brazil?",
-        "a": "Yes. We’ve worked with brands in three countries, in Portuguese, English and Spanish."
-      },
-      {
-        "q": "What if I don’t want to hire anyone?",
-        "a": "Nothing happens. The X-ray is yours and you run it in-house or with another partner."
-      }
-    ],
-    "form_eyebrow": "Book yours",
-    "form_title": "Start with your business.",
-    "form_sub": "Three quick steps. On submit, your answers go straight to our team's WhatsApp.",
+    "hero_scroll": "Takes under two minutes",
     "form_step_of": "Step {current} of {total}",
     "s1_title": "About your business",
     "s1_sub": "So we know who we're talking to.",
@@ -675,24 +596,24 @@
     ],
     "btn_next": "Continue",
     "btn_back": "Back",
-    "btn_submit": "Send and open WhatsApp",
+    "btn_submit": "Generate my audit",
     "btn_sending": "Sending...",
     "err_required": "Please fill in the required fields to continue.",
     "err_email": "Please check the email address.",
     "form_disclaimer": "On submit, your details go to Explore Digital's WhatsApp and a copy reaches our inbox. We never share your information.",
     "trust": [
-      "Reply within 24h",
-      "Consulting at no cost",
-      "Your data is protected",
-      "BR · ES · International"
+      "No meeting to book",
+      "Audit at no cost",
+      "Data protected",
+      "Ceará and Rio Grande do Norte"
     ],
     "final_title": "Your next season is being decided right now.",
-    "final_sub": "Slots are limited because every session requires analysis beforehand.",
-    "final_cta": "Book my free consulting session",
-    "final_note": "45 minutes · no cost · no commitment",
-    "sticky_cta": "Book free consulting",
-    "wa_header": "NEW FREE CONSULTING REQUEST",
-    "wa_footer": "Sent from the consulting landing page",
+    "final_sub": "The audit is free and the report is yours, whether you hire Explore or not.",
+    "final_cta": "Get my free audit",
+    "final_note": "No meeting · no cost · no strings",
+    "sticky_cta": "Get my audit",
+    "wa_header": "NEW FREE AUDIT REQUEST",
+    "wa_footer": "Sent from the audit page",
     "wa_labels": {
       "name": "Name",
       "phone": "WhatsApp",
@@ -707,24 +628,24 @@
       "instagram": "Instagram",
       "site": "Website"
     },
-    "ty_eyebrow": "Request received",
-    "ty_title": "Done. Your session is in the queue.",
-    "ty_desc": "We opened WhatsApp with your details already filled in. If the window didn’t open, choose below how you’d rather reach us. Both routes send our team the same information.",
+    "ty_eyebrow": "Audit running",
+    "ty_title": "Your audit is already running.",
+    "ty_desc": "We are reading what is public about your business: Google, your website, Instagram and your reviews. The report lands on your WhatsApp, and the person replying on the other side is one of the two partners.",
     "ty_wa_button": "Continue on WhatsApp",
-    "ty_wa_fallback": "Your browser blocked the WhatsApp window. Tap the button to send it.",
+    "ty_wa_fallback": "Your browser blocked the WhatsApp window. Tap the button to send.",
     "ty_home": "Back to the site",
     "ty_steps": [
       {
-        "label": "We got your details",
-        "desc": "Your form reached our team."
+        "label": "We have your details",
+        "desc": "The form came through and the reading started."
       },
       {
-        "label": "We analyse your digital",
-        "desc": "We study your site, social and reputation before we talk."
+        "label": "Reading the public sources",
+        "desc": "Google, your website, Instagram and what people write about you."
       },
       {
-        "label": "We confirm the time",
-        "desc": "We'll reach out within 24h to schedule the 45 minutes."
+        "label": "Report on WhatsApp",
+        "desc": "It arrives at the number you gave us."
       }
     ],
     "f_size_note": "Rooms or suites in hospitality · spots per group for experiences.",
@@ -734,44 +655,72 @@
     "f_site_ph": "yoursite.com",
     "f_site_note": "Optional. If you don't have a website yet, leave it blank. That's already part of the diagnosis.",
     "ty_email_button": "I’d rather use email",
-    "ty_email_subject": "Free consulting request",
-    "ty_channels_note": "We reply within 24 hours, Monday to Friday.",
-    "f_select": "Select"
+    "ty_email_subject": "Free audit request",
+    "ty_channels_note": "If you would rather have it by email, use the second button. The content is the same.",
+    "f_select": "Select",
+    "relatorio_eyebrow": "What the report shows",
+    "relatorio_title": "Where your business stands right now.",
+    "relatorio_sub": "Five readings, all from public information. The report shows you the picture; what to do about it is a conversation we have afterwards.",
+    "relatorio_items": [
+      {
+        "num": "01",
+        "title": "Google",
+        "desc": "Whether the business shows up when someone searches for it by name, and whether it shows up in searches for the destination."
+      },
+      {
+        "num": "02",
+        "title": "OTA dependency",
+        "desc": "Whether Booking ranks above your own website when a guest is looking for you."
+      },
+      {
+        "num": "03",
+        "title": "Website",
+        "desc": "Whether it exists, whether it loads on a phone and whether a guest can book directly without leaving it."
+      },
+      {
+        "num": "04",
+        "title": "Instagram",
+        "desc": "Posting rhythm, what the bio resolves and whether the content shows the experience."
+      },
+      {
+        "num": "05",
+        "title": "Reputation",
+        "desc": "Rating, review volume and whether anyone replies to what people write about you."
+      }
+    ],
+    "ty_espera_eyebrow": "While the report runs",
+    "ty_espera_desc": "It takes less time than the audit and shows how we work.",
+    "ty_espera_cta": "See the case",
+    "ty_espera_todos": "See every case",
+    "atrito_eyebrow": "How it works",
+    "atrito_title": "You fill it in and you get it.",
+    "atrito_body": "There is no calendar to fit into, no discovery call to sit through and no pitch to hear first. The reading is built from public sources and the report goes straight to your WhatsApp.",
+    "atrito_body_2": "If you want to talk about what it found, you reply right there. If you do not, the report is yours all the same.",
+    "ty_lista_eyebrow": "What the report covers",
+    "ty_lista_title": "Five readings, all from what is already public."
   },
   "bio": {
     "meta_title": "Explore Digital · Links",
-    "meta_description": "Free consultation, website and support from Explore Digital. Marketing agency for hospitality and experiences on the coast of Ceará and Rio Grande do Norte.",
+    "meta_description": "Free audit, portfolio and support from Explore Digital. Marketing agency for hospitality and experiences on the coast of Ceará and Rio Grande do Norte.",
     "handle": "@somosexplore",
     "tagline": "Marketing for hospitality and experiences.",
     "items": [
       {
-        "key": "consultoria",
-        "title": "Free consulting",
-        "desc": "An analysis of your digital business, on us."
+        "key": "auditoria",
+        "title": "Free audit",
+        "desc": "No meeting. You fill it in and get it."
       },
       {
-        "key": "reserva",
-        "title": "{month} schedule",
-        "desc": "Secure your spot on this month's schedule",
-        "badge": "Last spots"
+        "key": "portfolio",
+        "title": "What we have delivered",
+        "desc": "Brands, websites and content for clients in Ceará and Rio Grande do Norte"
       },
       {
         "key": "whatsapp",
-        "title": "Talk to us on WhatsApp",
-        "desc": "Support in Spanish, English and Portuguese"
-      },
-      {
-        "key": "site",
-        "title": "Explore website",
-        "desc": "Who we are and what we do"
-      },
-      {
-        "key": "vagas",
-        "title": "Work with us",
-        "desc": "Open roles on the team"
+        "title": "Talk to us",
+        "badge": "{month} schedule"
       }
     ],
-    "wa_message": "Hi! I came from the Instagram bio link.",
     "wa_message_reserva": "Hi! I'd like to book an Explore service for {month}. Could you share your availability?",
     "rights": "All rights reserved"
   },
@@ -780,123 +729,43 @@
     "meta_description": "Branding, web design, social media, performance ads, motion and automations for hospitality and experiences on the coast of Ceará and Rio Grande do Norte. One-off deliverables with a scope and a deadline, or a full project.",
     "eyebrow": "What we do",
     "title": "One-off deliverables or a full project.",
-    "sub": "You hire what your moment calls for: a specific piece with a scope and a deadline, or a whole track that starts with a diagnosis.",
-    "count": "{n} sub-services · {p} disciplines",
-    "rail_label": "Fronts",
-    "includes": "What’s included",
     "for_whom": "Best for",
-    "result": "Outcome",
-    "details": "See details",
     "cta_eyebrow": "Not sure where to start",
     "cta_title": "Not sure which of the two doors is yours?",
-    "cta_desc": "In 45 minutes we review your digital presence and show you what to prioritise. No cost, no commitment.",
-    "cta_button": "Book free consulting",
+    "cta_desc": "The audit reads your digital presence from what is already public and gives you back a picture of where you stand. No meeting to book, no cost and no strings.",
+    "cta_button": "Get my audit",
     "cta_secondary": "Chat on WhatsApp",
     "wa_message": "Hi! I came from the services page and would like to talk.",
-    "doors_eyebrow": "Two ways to work with us",
-    "door1_label": "On demand",
-    "door1_title": "You know what you need.",
-    "door1_desc": "Fixed scope, fixed deadline. You ask, we deliver. No retainer, no contract.",
-    "door1_cta": "See deliverables and lead times",
-    "door2_label": "Projects",
-    "door2_title": "You know the problem, not the solution.",
-    "door2_desc": "We start with a diagnosis, define the scope and execute. Then, if it makes sense, we run it for you every month.",
-    "door2_cta": "See the project tracks",
-    "od_eyebrow": "On demand",
-    "od_title": "One-off deliverables, with a scope and a deadline.",
-    "od_sub": "For when you need one specific piece rather than a whole track. You order, you receive, done.",
-    "od_delivery": "Delivered in",
-    "od_days": "working days",
-    "od_days_to": "to",
-    "od_includes": "What is included",
-    "od_cta": "Order on WhatsApp",
-    "od_details": "See details",
-    "od_onsite": "Requires an on-site shoot",
-    "od_season_badge": "High season · August to December",
-    "od_season_title": "Your property only looks like this from August to December.",
-    "od_season_desc": "A full house, good wind and the right light happen once a year. Shoot now what you will publish all year round. You cannot photograph high season in February.",
-    "od_season_note": "Shooting slots fill up in high season: book at least 10 days ahead.",
-    "proj_eyebrow": "Projects",
-    "proj_title": "Six disciplines, six different problems.",
-    "proj_sub": "We do not sell closed packages. You hire the track your moment calls for, on its own or combined with others.",
-    "rail_ondemand": "On demand",
-    "rail_projects": "Disciplines",
-    "wa_item": "Hi! I came from the website and I would like to book: {item}.",
-    "on_demand_items": [
-      {
-        "slug": "fotografia",
-        "name": "Photography",
-        "tagline": "Rooms, breakfast and common areas, ready for Booking and for the feed.",
-        "includes": [
-          "On-site shoot with creative direction",
-          "Professional image retouching",
-          "High-resolution delivery",
-          "Crops ready for feed, stories and OTAs"
-        ]
-      },
-      {
-        "slug": "video",
-        "name": "Video shoot",
-        "tagline": "A full day of filming at your property, with direction on set.",
-        "includes": [
-          "One shooting day on site",
-          "Creative direction on set",
-          "Edited, organised raw footage",
-          "3 vertical cuts ready for reels"
-        ]
-      },
-      {
-        "slug": "drone",
-        "name": "Drone",
-        "tagline": "The aerial that sells location: your property and its surroundings from above.",
-        "includes": [
-          "Flight over the property and surroundings",
-          "Beach, lagoon or dune footage",
-          "Colour grading",
-          "Horizontal and vertical versions"
-        ]
-      },
-      {
-        "slug": "edicao-video",
-        "name": "Video editing",
-        "tagline": "Finished reels from the footage already on your phone.",
-        "includes": [
-          "Cut and pacing",
-          "Burned-in captions",
-          "Soundtrack and colour grading",
-          "One round of revisions included"
-        ]
-      },
-      {
-        "slug": "design",
-        "name": "Design",
-        "tagline": "A one-off piece for feed, stories, menu or rate sheet.",
-        "includes": [
-          "Artwork in the format you need",
-          "Aligned with your visual identity",
-          "Source and export files",
-          "One round of revisions included"
-        ]
-      },
-      {
-        "slug": "landing-page",
-        "name": "Landing page",
-        "tagline": "A package or season page, built to convert.",
-        "includes": [
-          "Conversion-focused design and copy",
-          "WhatsApp integration",
-          "Mobile optimised",
-          "Basic SEO configured"
-        ]
-      }
-    ],
-    "doors_home_title": "Two ways to work with Explore.",
-    "od_orcamento": "Request a quote",
-    "od_count": "{n} deliverables",
-    "proj_ver_disciplina": "See discipline",
-    "trilho_label": "Pieces from {disciplina}",
-    "od_meta_title": "On demand · Explore Digital",
-    "od_meta_description": "Photography, video, drone, editing, design and landing page with a fixed scope and deadline, for hospitality on the coast of Ceará and Rio Grande do Norte. You ask, we deliver."
+    "door1_title": "I want to fix one thing now.",
+    "door1_desc": "Fixed scope and deadline, no monthly fee.",
+    "door1_cta": "See what we deliver",
+    "door2_title": "I want a team on it every month.",
+    "door2_desc": "Content and paid traffic running while the season happens.",
+    "door2_cta": "See how the monthly work runs",
+    "doors_home_title": "Two ways of working with us.",
+    "trilho_label": "Pieces from {produto}",
+    "grupo_presenca": "Presence",
+    "grupo_presenca_sub": "Where the guest finds you and books.",
+    "grupo_marca": "Brand",
+    "grupo_marca_sub": "What your property says before anyone talks to you.",
+    "grupo_producao": "Production",
+    "grupo_producao_sub": "The photography and video that feed all of it.",
+    "grupo_operacao": "Operations",
+    "grupo_operacao_sub": "What runs on its own and what keeps contacts from getting lost.",
+    "ver_produto": "See details",
+    "doors_eyebrow": "Where to start",
+    "door1_label": "One off",
+    "door2_label": "Monthly",
+    "grupo_mensal": "Every month",
+    "grupo_mensal_sub": "Two products that do not end: they run while the season happens.",
+    "etiqueta_pontual": "One off",
+    "etiqueta_mensal": "Monthly",
+    "mensal_abertura": "Does your project need continuity? These two do not end on delivery: they run month after month, while the season happens.",
+    "mensal_entrega": "What arrives every month",
+    "mensal_para_quem": "Who it is for",
+    "catalogo_eyebrow": "What we do",
+    "catalogo_title": "Every product, grouped by the problem it solves.",
+    "catalogo_sub": "Each has its own scope. The tag tells you whether you pay once or every month."
   },
   "home": {
     "gargalos_eyebrow": "Where we come in",
@@ -907,71 +776,164 @@
         "num": "01",
         "title": "I depend too much on Booking and Airbnb",
         "desc": "Commission eats the margin and the platform keeps the relationship. We build the direct channel so you stop renting your own audience.",
-        "slug": "web-design"
+        "slug": "website-institucional"
       },
       {
         "num": "02",
         "title": "My Instagram grows but does not turn into bookings",
         "desc": "Followers who never book do not pay the bills. Content, offer and funnel working together, not as three separate things.",
-        "slug": "social-media"
+        "slug": "producao-conteudo"
       },
       {
         "num": "03",
         "title": "My operation runs on improvisation",
         "desc": "Bookings in a notebook, enquiries lost in WhatsApp and nobody knows where the guest came from. We automate that.",
-        "slug": "automatizacoes"
+        "slug": "automacoes"
       }
     ],
-    "disc_eyebrow": "What we do",
-    "disc_title": "Six disciplines, one goal.",
-    "disc_sub": "Six disciplines that stand on their own and talk to each other. Four were born serving hospitality and experiences. Two were born inside our own operation, when we had to solve for ourselves what we now solve for the client.",
-    "disc_cta": "See all services",
-    "disc_items": [
-      {
-        "slug": "social-media",
-        "label": "Social media",
-        "title": "Content that turns into bookings",
-        "desc": "Monthly production, shooting on location and a full profile setup."
-      },
-      {
-        "slug": "performance-ads",
-        "label": "Performance",
-        "title": "Budget measured in bookings",
-        "desc": "Meta and Google run by people who run their own traffic operation."
-      },
-      {
-        "slug": "web-design",
-        "label": "Web design",
-        "title": "A direct channel that converts",
-        "desc": "Website and landing page built to take the booking away from the OTA."
-      },
-      {
-        "slug": "motion",
-        "label": "Motion",
-        "title": "Consistency without the effort",
-        "desc": "Opening titles, animated signature and content generated automatically."
-      },
-      {
-        "slug": "automatizacoes",
-        "label": "Automations",
-        "title": "An operation without improvisation",
-        "desc": "Business management, social media and CRM running on their own."
-      },
-      {
-        "slug": "branding",
-        "label": "Branding",
-        "title": "A brand that holds the rate",
-        "desc": "Visual identity and positioning applied at every touchpoint."
-      }
-    ],
-    "agora_eyebrow": "Now",
-    "agora_title": "What came out of the studio in the last few weeks.",
+    "destinos_eyebrow": "Destinations",
+    "destinos_title": "The coastline we know",
+    "destinos_sub": "From Jericoacoara to João Pessoa, along the coast of Ceará, Rio Grande do Norte and Paraíba. Knowing the beach changes the brief: the high season, the kind of guest and what you can shoot are never the same in any two of them.",
+    "destinos_itens": {
+      "jericoacoara": "A destination with a strong brand, where the guest arrives comparing before booking.",
+      "prea": "High season runs from August to December. It is the window where you can shoot with a full house.",
+      "ilha-do-guajiru": "Kitesurf schools and pousadas sharing the same guest.",
+      "taiba": "Steady wind, and occupancy driven by holiday homes.",
+      "cumbuco": "Kitesurf and day use, less than an hour from Fortaleza.",
+      "natal": "A capital with chains and resorts on the seafront, and the guest who lands at the airport serving the whole state.",
+      "pipa": "A village of small pousadas and hostels, long season and plenty of guests from abroad.",
+      "joao-pessoa": "Seafront hotels in the state capital, with city guests and beach guests in the same place."
+    },
+    "destinos_outro_title": "Your city is not here?",
+    "destinos_outro_desc": "Talk to us and we will put together a project for your destination.",
+    "destinos_outro_cta": "Talk about my destination",
+    "destinos_wa_outro": "Hi! I came from the website. My city is not on the list of destinations. I am in:",
     "estudio_eyebrow": "The studio",
-    "estudio_title": "We did not learn tourism in a classroom.",
-    "estudio_destaque": "We ran a hostel, a guesthouse and a kite school",
-    "estudio_titulo_fim": "before becoming an agency.",
-    "estudio_desc": "Strategy, creative, shooting and sales at the same table. Everyone talks to clients, everyone has a hand in the delivery. We work fully online, and we travel to capture what our clients actually offer.",
+    "estudio_title": "Before we did marketing for hospitality, we ran hospitality.",
+    "estudio_desc": "Empty rooms in the low season, OTA commission eating the margin, a guest complaining about breakfast. We know because we solved it from the other side of the front desk.",
     "estudio_cta": "Meet the studio",
     "estudio_cta2": "Work with us"
+  },
+  "plano": {
+    "meta_title": "Action plan for guesthouses, hotels and beach clubs · Explore Digital",
+    "meta_description": "Three weeks, three sessions and one document with the priorities for the next 90 days: what to do, in what order, and what to ignore. Three slots a month, because the two partners do the work themselves.",
+    "og_title": "Action plan for hospitality and experiences",
+    "og_description": "Three weeks, three sessions and a 90 day plan that stays with you. Three slots a month.",
+    "hero_badge": "Three slots a month",
+    "hero_title": "You know where you stand.",
+    "hero_title_accent": "What is missing is where to start.",
+    "hero_sub": "The audit shows you the picture. The action plan tells you what to do with it: the priorities for the next 90 days, in order, with what can wait kept separate from what cannot.",
+    "hero_bullets": [
+      "Three weeks, three sessions",
+      "A document that stays with you",
+      "Credited against your first monthly fee if you sign within 30 days"
+    ],
+    "hero_cta": "I want one of the three slots",
+    "preco_de": "from R$ 1,497",
+    "preco_por": "R$ 997",
+    "preco_nota": "One off payment. The full amount is credited against your first monthly fee if you hire Explore within 30 days.",
+    "problema_eyebrow": "Why this exists",
+    "problema_title": "There is no shortage of things to do. There is a shortage of order.",
+    "problema_sub": "Every guesthouse owner has been told they need a new website, reels, ads, review replies and a way off Booking. All at once, with nobody saying what comes first.",
+    "problema_items": [
+      {
+        "num": "01",
+        "title": "Money spread thin",
+        "desc": "A budget split across five fronts at once moves none of them."
+      },
+      {
+        "num": "02",
+        "title": "Commission that never drops",
+        "desc": "The OTA keeps taking the same cut because the direct booking path was never built."
+      },
+      {
+        "num": "03",
+        "title": "Low season by surprise",
+        "desc": "By the time occupancy drops it is late to start building demand."
+      }
+    ],
+    "semanas_eyebrow": "How it works",
+    "semanas_title": "Three weeks, three sessions.",
+    "semanas_items": [
+      {
+        "num": "Week 1",
+        "title": "Diagnosis",
+        "desc": "A one hour interview with you, a full sweep of your digital presence and a read on three direct competitors in your destination. Without that the plan is guesswork."
+      },
+      {
+        "num": "Week 2",
+        "title": "The plan",
+        "desc": "The document is delivered and we spend an hour walking you through it. The priorities for the next 90 days: what to do, in what order, and what to ignore."
+      },
+      {
+        "num": "Week 6",
+        "title": "Course correction",
+        "desc": "An hour reviewing what actually ran and fixing what needs fixing. If little got off the page, the conversation is about unblocking it, not about scolding."
+      }
+    ],
+    "ignorar_eyebrow": "The part nobody delivers",
+    "ignorar_title": "What to ignore over the next 90 days.",
+    "ignorar_body": "You are bombarded with things to do, and almost every list that reaches you only adds. This plan also subtracts: what can wait, what does not apply at your size and what would only make sense after something else happens first.",
+    "ignorar_body_2": "That is usually the part that saves more money than the list of things to do.",
+    "entrega_eyebrow": "What stays with you",
+    "entrega_title": "A document, not a presentation.",
+    "entrega_body": "The plan is written to be used after we leave the call. It is yours, and it works whether Explore executes it or you hand it to someone else.",
+    "entrega_items": [
+      "The priorities for the next 90 days, in order",
+      "What to ignore, with the reason for each",
+      "The read on three direct competitors in your destination",
+      "What changes in the direct booking path",
+      "What has to be ready before high season"
+    ],
+    "quem_eyebrow": "Who it is for",
+    "quem_title": "Not every business needs this right now.",
+    "quem_items": [
+      {
+        "title": "Already trading and tired of improvising",
+        "desc": "You have guests, you have revenue, and marketing decisions today are made on impulse."
+      },
+      {
+        "title": "Too dependent on OTAs",
+        "desc": "The commission hurts and direct booking was never built on purpose."
+      },
+      {
+        "title": "Limited budget that has to land",
+        "desc": "You cannot test five fronts at once and see which one sticks."
+      }
+    ],
+    "quem_nao_title": "It is not for you if",
+    "quem_nao_items": [
+      "The business has not opened yet and there is no operation to diagnose",
+      "You already know exactly what you want and only need execution",
+      "You expect someone to execute the plan within the three weeks"
+    ],
+    "quem_nao_note": "We would rather say this now than take one of the three monthly slots for nothing.",
+    "vagas_eyebrow": "The calendar",
+    "vagas_title": "Three a month, and the reason is simple.",
+    "vagas_body": "The diagnosis, the writing and the presentation are done by the two partners. This is not marketing scarcity: it is what fits in a month without the quality dropping.",
+    "faq_title": "Before you decide",
+    "faq_items": [
+      {
+        "q": "Do I need the free audit first?",
+        "a": "No. It helps, because part of the picture arrives ready, but the diagnosis behind the plan goes deeper and is done from scratch either way."
+      },
+      {
+        "q": "Do you execute the plan?",
+        "a": "We can, and that is where the credit comes in. But the plan is yours and it works in anyone’s hands: some of our clients run it with their own team."
+      },
+      {
+        "q": "What if nothing got done by week 6?",
+        "a": "The third session still stands. We review what blocked it and adjust the plan to what your operation can realistically do."
+      },
+      {
+        "q": "How does the credit work?",
+        "a": "If you hire any recurring Explore service within 30 days of the plan being delivered, the R$ 997 is credited in full against your first monthly fee."
+      }
+    ],
+    "final_title": "Your next season is being decided right now.",
+    "final_sub": "There are three slots a month. If this month is already taken, we will tell you straight away.",
+    "final_cta": "Talk about the action plan",
+    "final_note": "One off payment · credited against your first monthly fee within 30 days",
+    "wa_message": "Hi! I would like to know about the 90 day Action Plan."
   }
 }

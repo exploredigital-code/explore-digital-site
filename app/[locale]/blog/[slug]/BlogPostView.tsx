@@ -67,7 +67,7 @@ export function BlogPostView() {
       </div>
 
       {/* Corpo do artigo */}
-      <main id="conteudo" className="bg-white">
+      <main id="conteudo" tabIndex={-1} className="bg-white">
         <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 py-16 lg:py-24 grid lg:grid-cols-[1fr_320px] gap-16 items-start">
 
           {/* Coluna principal */}

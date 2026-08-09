@@ -39,12 +39,11 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
     title: parentService.title,
   }
 
-  // A grade vem da disciplina, nao do sub-servico. O registro tem uma grade por
-  // disciplina e criar mais quinze significaria mais setenta linhas para
-  // preencher a mao, sem ganho: as pecas de uma landing page sao as mesmas que
-  // ilustram Web Design. `grade()` devolve undefined se a chave nao existir, e
-  // ai a secao inteira nao renderiza.
-  const temGrade = Boolean(grade(parentService.slug))
+  // A grade vem do PRODUTO. Antes vinha da disciplina-pai, e enquanto foi
+  // assim a pagina de Fotografia herdava quatro reels de Social Media, que e
+  // o oposto do que ela vende. Produto sem chave no registro nao renderiza
+  // secao de midia nenhuma.
+  const temGrade = Boolean(grade(sub.slug))
 
   // `{service}` e placeholder ICU. Com `.replace()` o next-intl ja avaliou a
   // mensagem sem o argumento e lancou FORMATTING_ERROR antes da troca
@@ -57,7 +56,7 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
       <SkipLink />
       <Navbar />
 
-      <main id="conteudo">
+      <main id="conteudo" tabIndex={-1}>
 
       {/* HERO */}
       <section className={cn('relative min-h-[60vh] flex flex-col justify-end overflow-hidden', 'bg-gradient-to-br', parentService.gradient)}>
@@ -67,13 +66,23 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
 
         <div className="relative z-10 max-w-screen-xl mx-auto w-full px-6 sm:px-10 lg:px-16 pt-36 pb-16">
           <motion.div initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="mb-10">
-            {/* Apontava para `/#services`, ancora que nao existe em pagina
-                nenhuma desde o redesign: o link levava ao topo da home. O nome
-                exibido sempre foi o da disciplina, entao o destino certo e a
-                pagina dela, que passou a existir na fase 5. */}
-            <Link href={`/${locale}/servicos/${parentService.slug}`} className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-menta-fraca hover:text-menta transition-colors">
+            {/* Sobe para o GRUPO no hub, não para a disciplina.
+
+                Este link já foi corrigido três vezes: apontava para
+                `/#services`, âncora que nunca existiu em página nenhuma;
+                virou a página da disciplina na frente 3; e agora a disciplina
+                também deixou de existir. O grupo do catálogo é o único nível
+                acima que sobrou, e ele não vai a lugar nenhum. */}
+            {/* O `?? 'recorrente'` saiu daqui. `grupo` é obrigatório em
+                `SubService` e os catorze produtos têm o seu, então o fallback
+                nunca rodava; ele só mantinha vivas duas chaves de tradução que
+                nenhuma tela renderizava. */}
+            <Link
+              href={`/${locale}/servicos#${sub.grupo}`}
+              className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-menta-fraca hover:text-menta transition-colors"
+            >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 7H2M6 3L2 7l4 4"/></svg>
-              {localizedService.title}
+              {tServicos(`grupo_${sub.grupo}`)}
             </Link>
           </motion.div>
           {sub.recommended && (
@@ -133,7 +142,7 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
           <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
             <div className="border-t border-tinta-16 pt-14">
               <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-tinta-50 mb-6">{t('media_label')}</div>
-              <GradeDoRegistro chave={parentService.slug} rotulo={tServicos('trilho_label', { disciplina: localizedService.title })} />
+              <GradeDoRegistro chave={sub.slug} rotulo={tServicos('trilho_label', { produto: localizedSub.name })} />
             </div>
           </div>
         </section>

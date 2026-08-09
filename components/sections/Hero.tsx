@@ -1,5 +1,6 @@
 ﻿'use client'
 
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/Button'
@@ -24,25 +25,64 @@ export function Hero() {
   const t = useTranslations('hero')
   const line1 = t('line1').split(' ')
   const line2 = t('line2').split(' ')
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+
+  /* O autoplay declarativo continua sendo o caminho principal, e sem JS o
+     vídeo toca do mesmo jeito. Isto aqui cobre os dois casos em que o Safari
+     do iPhone não honra o atributo:
+
+     · modo de baixo consumo, que bloqueia autoplay mesmo mudo — a promessa de
+       play() é rejeitada, ficamos no poster, e tentamos de novo no primeiro
+       toque, que é o gesto que libera a reprodução;
+     · reduced-motion, onde o CSS esconde o vídeo mas o autoplay seguia
+       decodificando atrás do display:none. Agora pausa de verdade. */
+  useEffect(() => {
+    const el = videoRef.current
+    if (!el) return
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      el.pause()
+      return
+    }
+
+    const tentar = () => {
+      const p = el.play()
+      if (p) p.catch(() => {})
+    }
+
+    tentar()
+    document.addEventListener('touchstart', tentar, { once: true, passive: true })
+    return () => document.removeEventListener('touchstart', tentar)
+  }, [])
 
   return (
     <section
       id="home"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-g-dark"
     >
-      {/* ── Mobile: gradient ── */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_60%_-10%,#2D5238,#0D1A12)] lg:hidden" />
+      {/* ── Base: gradient ──
+          Pinta antes de qualquer byte de mídia chegar, em toda largura. Fica
+          por baixo do poster e do vídeo, então é o que se vê no primeiro
+          frame e o que sobra se a rede engasgar. */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_60%_-10%,#2D5238,#0D1A12)]" />
 
-      {/* ── Desktop: vídeo local ──
+      {/* ── Vídeo local ──
           Era um iframe do Vimeo: DNS, handshake TLS e o player inteiro antes do
           primeiro frame, tudo no caminho crítico da página mais visitada.
           Agora é um mp4 local em H.264 (2,6 MB, faststart, sem áudio), com o
           poster como primeiro frame. O HEVC de 16 MB que estava em public/
           nunca chegou a ser usado e não tocava de forma confiável em Firefox
-          nem em parte dos Chrome. */}
-      <div className="hero-media absolute inset-0 pointer-events-none overflow-hidden hidden lg:block">
+          nem em parte dos Chrome.
+
+          O contêiner era `hidden lg:block`, herdado da época do HEVC de 16 MB,
+          e por isso o vídeo nunca existiu abaixo de 1024px: no iPhone não era
+          autoplay bloqueado, era display:none. O arquivo atual já atende o que
+          o Safari exige (playsinline + muted + autoplay, H.264 High@4.0 yuv420p,
+          moov na frente do mdat), então basta deixar de escondê-lo. */}
+      <div className="hero-media absolute inset-0 pointer-events-none overflow-hidden">
         <video
-          className="hero-video absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full object-cover"
+          ref={videoRef}
+          className="hero-video absolute inset-0 h-full w-full object-cover"
           poster="/images/hero-poster.jpg"
           autoPlay
           muted

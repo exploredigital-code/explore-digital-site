@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { Navbar }  from '@/components/sections/Navbar'
 import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer }  from '@/components/sections/Footer'
+import { Agora }   from '@/components/sections/Agora'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 import { GradeDoRegistro } from '@/components/ui/SlotMidia'
@@ -102,7 +103,7 @@ export function SobreView() {
       <SkipLink />
       <Navbar />
 
-      <main id="conteudo">
+      <main id="conteudo" tabIndex={-1}>
 
       {/* ══ HERO ══ */}
       <section className="page-hero pt-36 pb-24 relative overflow-hidden">
@@ -139,7 +140,8 @@ export function SobreView() {
                     auditável se um cliente pedir a fonte. */}
                 <div className="relative z-10">
                   <div className="text-[clamp(56px,8vw,80px)] font-semibold text-verde-luz leading-none mb-2">+100%</div>
-                  <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-verde-luz/35 leading-[1.5]">{t('years_expertise')}</div>
+                  {/* `verde-luz/35` dava 2,3:1 sobre o card escuro. */}
+                  <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-menta-fraca leading-[1.5]">{t('years_expertise')}</div>
                   <div className="mt-8 grid grid-cols-3 gap-4">
                     {[[t('stat_seguidores'), t('stat_brands')], ['3', t('stat_countries')], ['CE · RN', t('stat_focus')]].map(([v, l]) => (
                       <div key={l}>
@@ -156,7 +158,9 @@ export function SobreView() {
                   <div className="mt-7 pt-6 border-t border-verde-linha grid grid-cols-2 gap-4">
                     {[t('dado_fundacao'), t('dado_clientes')].map(rotulo => (
                       <div key={rotulo}>
-                        <div className="inline-flex items-center gap-1.5 text-[12px] font-medium text-verde-luz/45 border border-dashed border-verde-borda/50 rounded-full px-2.5 py-1">
+                        {/* Placeholder ilegivel e pior que placeholder visivel:
+                            o chip dava 2,8:1 no texto e 2,4:1 na borda. */}
+                        <div className="inline-flex items-center gap-1.5 text-[12px] font-medium text-verde-luz border border-dashed border-verde-luz/60 rounded-full px-2.5 py-1">
                           {t('dados_pendente')}
                         </div>
                         <div className="text-[10px] text-menta-fraca tracking-widest uppercase mt-1.5">{rotulo}</div>
@@ -181,20 +185,33 @@ export function SobreView() {
             <AnimateIn>
               <SectionEyebrow>{t('estudio_eyebrow')}</SectionEyebrow>
               <h2 className="text-[clamp(28px,4.2vw,50px)] leading-[1.05] tracking-[-0.03em] text-menta mt-2 mb-7">
-                {t('estudio_title')}{' '}
-                <span className="text-verde-luz">{t('estudio_destaque')}</span>{' '}
-                {t('estudio_fim')}
+                {t('estudio_title')}
               </h2>
               <p className="text-menta-fraca text-[16px] leading-[1.8] max-w-[560px] mb-5">{t('estudio_p1')}</p>
-              <p className="text-menta-fraca text-[16px] leading-[1.8] max-w-[560px]">{t('estudio_p2')}</p>
+              <p className="text-menta-fraca text-[16px] leading-[1.8] max-w-[560px] mb-5">{t('estudio_p2')}</p>
+              {/* Migrado da home: o "100% online com disponibilidade para
+                  viajar" e informacao de quem ja esta avaliando, nao de quem
+                  acabou de chegar. */}
+              <p className="text-menta-fraca text-[16px] leading-[1.8] max-w-[560px]">{t('estudio_p3')}</p>
             </AnimateIn>
 
-            <AnimateIn delay={0.1}>
+            {/* `min-w-0`: item de grade nasce com `min-width: auto` e se recusa a
+                encolher abaixo do conteudo. Sem isto a faixa de midia empurrava a
+                pagina para 773px no celular. A regra ja estava no GradeMidia, um
+                nivel abaixo, onde nao adianta. */}
+            <AnimateIn delay={0.1} className="min-w-0">
               <GradeDoRegistro chave="sobre-origem" rotulo={t('estudio_eyebrow')} />
             </AnimateIn>
           </div>
         </div>
       </section>
+
+      {/* ══ AGORA ══
+          Veio da home. Prova de atividade recente é argumento de quem já está
+          avaliando, e é aqui que essa pessoa está. A regra do `confirmado`
+          veio junto: só renderiza o que o cliente confirmou, então a seção
+          some sozinha se um dia sobrar zero item. */}
+      <Agora />
 
       {/* ══ VALORES — g-pale ══ */}
       <section className="bg-g-pale py-24 lg:py-28">
@@ -211,7 +228,7 @@ export function SobreView() {
                   <div className="w-3 h-3 rounded-full bg-g-mid" />
                 </div>
                 <h3 className="text-[17px] text-g-dark mb-3">{v.title}</h3>
-                <p className="text-[14px] text-g-dark/50 leading-[1.7]">{v.desc}</p>
+                <p className="text-[14px] text-tinta-70 leading-[1.7]">{v.desc}</p>
               </motion.div>
             ))}
           </AnimateStagger>

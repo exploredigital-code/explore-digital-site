@@ -49,7 +49,7 @@ export default function ObrigadoPage() {
       <SkipLink />
       <Navbar />
 
-      <main id="conteudo" className="min-h-[calc(100vh-80px)] bg-verde flex items-center relative overflow-hidden">
+      <main id="conteudo" tabIndex={-1} className="min-h-[calc(100vh-80px)] bg-verde flex items-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_40%,#2D5238,transparent_65%)] opacity-45 pointer-events-none" />
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: NOISE_BG, backgroundSize: '200px' }} />
 

@@ -479,7 +479,7 @@ export const contentB: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'O nome de uma escola de wingfoil é o ativo mais barato de criar e o mais difícil de mudar depois. Vale a pena acertar na primeira vez.',
-    cta: { heading: 'Crie um nome memorável e internacional para sua escola de wingfoil.', label: 'Quero criar meu naming', href: '/servicos/naming' },
+    cta: { heading: 'Crie um nome memorável e internacional para sua escola de wingfoil.', label: 'Quero criar meu naming', href: '/servicos/branding-completo' },
   },
 
   'branding-beach-club-cumbuco-referencia': {
@@ -819,7 +819,7 @@ export const contentB: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'Um voo de drone de 1 hora sobre Cumbuco gera conteúdo para 6 semanas de posts — com qualidade visual que nenhuma foto de celular consegue replicar.',
-    cta: { heading: 'Produza imagens aéreas que transformam o marketing da sua escola de kite.', label: 'Quero captação profissional', href: '/servicos/captacoes' },
+    cta: { heading: 'Produza imagens aéreas que transformam o marketing da sua escola de kite.', label: 'Quero captação profissional', href: '/servicos/captacao-video' },
   },
 
   'fotografia-profissional-pousadas-reservas': {
@@ -847,7 +847,7 @@ export const contentB: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'Fotos profissionais não são um gasto com estética — são uma ferramenta de vendas que se paga nas primeiras semanas.',
-    cta: { heading: 'Atraia hóspedes de alto valor com fotografia profissional para sua pousada.', label: 'Quero captação fotográfica', href: '/servicos/captacoes' },
+    cta: { heading: 'Atraia hóspedes de alto valor com fotografia profissional para sua pousada.', label: 'Quero captação fotográfica', href: '/servicos/fotografia' },
   },
 
   'video-kite-wingfoil-gera-leads': {
@@ -875,7 +875,7 @@ export const contentB: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'Um vídeo de aluno real em progressão real converte mais do que qualquer copy de anúncio — porque prova o que o anúncio apenas afirma.',
-    cta: { heading: 'Produza vídeos autênticos que transformam visualizações em matrículas.', label: 'Quero captação de vídeo', href: '/servicos/captacoes' },
+    cta: { heading: 'Produza vídeos autênticos que transformam visualizações em matrículas.', label: 'Quero captação de vídeo', href: '/servicos/captacao-video' },
   },
 
   'o-que-filmar-escola-esporte-redes': {
@@ -903,7 +903,7 @@ export const contentB: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'O conteúdo estratégico não mostra o que é bonito — mostra o que faz o espectador querer estar lá e aprender.',
-    cta: { heading: 'Quer um plano de captação e conteúdo para sua escola de kite?', label: 'Quero captação profissional', href: '/servicos/captacoes' },
+    cta: { heading: 'Quer um plano de captação e conteúdo para sua escola de kite?', label: 'Quero captação profissional', href: '/servicos/captacao-video' },
   },
 
   'captacao-profissional-roi-pousada-jeri': {
@@ -931,7 +931,7 @@ export const contentB: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'Uma captação profissional de 1 dia em Jericoacoara gera material de marketing para 6 meses — e o ROI aparece nas primeiras semanas.',
-    cta: { heading: 'Invista em captação profissional que gera reservas e não precisa de orçamento mensal.', label: 'Quero captação para minha pousada', href: '/servicos/captacoes' },
+    cta: { heading: 'Invista em captação profissional que gera reservas e não precisa de orçamento mensal.', label: 'Quero captação para minha pousada', href: '/servicos/captacao-video' },
   },
 
   'bastidores-escola-kite-conteudo-autentico': {
@@ -959,7 +959,7 @@ export const contentB: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'O bastidor autêntico cria a conexão que transforma um seguidor em aluno — porque mostra o que o anúncio apenas promete.',
-    cta: { heading: 'Quer captação de bastidores autênticos que convertem seguidores em alunos?', label: 'Quero captação de conteúdo', href: '/servicos/captacoes' },
+    cta: { heading: 'Quer captação de bastidores autênticos que convertem seguidores em alunos?', label: 'Quero captação de conteúdo', href: '/servicos/captacao-video' },
   },
 
   /* ── SISTEMAS ── */
@@ -1045,7 +1045,7 @@ export const contentB: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'Um sistema interno bem configurado libera o instrutor para ensinar — e o gestor para crescer — em vez de gastar energia resolvendo caos operacional.',
-    cta: { heading: 'Organize a operação da sua escola de kite com um sistema interno eficiente.', label: 'Quero um sistema interno', href: '/servicos/sistemas-internos' },
+    cta: { heading: 'Organize a operação da sua escola de kite com um sistema interno eficiente.', label: 'Quero um sistema interno', href: '/servicos/automacoes' },
   },
 
   'crm-relacionamento-hospedes-hotel': {

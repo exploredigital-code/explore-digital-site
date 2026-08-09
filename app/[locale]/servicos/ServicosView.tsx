@@ -10,8 +10,8 @@ import { Navbar } from '@/components/sections/Navbar'
 import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer } from '@/components/sections/Footer'
 import { Process } from '@/components/sections/Process'
-import { disciplines } from '@/data/services'
-import { GradeDoRegistro } from '@/components/ui/SlotMidia'
+import { gruposDoCatalogo, type SubService } from '@/data/services'
+import { getLocalizedSubService } from '@/data/services-content'
 
 const WA_BASE = 'https://wa.me/+5585991043067?text='
 
@@ -28,10 +28,13 @@ export function ServicosView() {
   const locale = useLocale()
   const router = useRouter()
 
-  const totalProjetos = disciplines.reduce((n, s) => n + s.subServices.length, 0)
+  // Nome e chamada saem do conteudo localizado; o dado em services.ts e o
+  // fallback em portugues.
+  const nomeDe = (p: SubService) => getLocalizedSubService(locale, p.slug)?.name ?? p.name
+  const taglineDe = (p: SubService) => getLocalizedSubService(locale, p.slug)?.tagline ?? p.tagline
 
   // Só as disciplinas: sob demanda tem rota própria.
-  const secoes = disciplines.map(s => s.slug)
+  const secoes = gruposDoCatalogo.map(g => g.grupo)
   const [ativo, setAtivo] = useState(secoes[0])
   const refs = useRef<Record<string, HTMLElement | null>>({})
 
@@ -41,7 +44,7 @@ export function ServicosView() {
         const visivel = entradas
           .filter(e => e.isIntersecting)
           .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0]
-        if (visivel) setAtivo(visivel.target.id)
+        if (visivel) setAtivo(visivel.target.id as typeof secoes[number])
       },
       { rootMargin: '-140px 0px -55% 0px', threshold: 0 }
     )
@@ -73,14 +76,15 @@ export function ServicosView() {
 
 
   // O trilho lista só as disciplinas: sob demanda virou rota própria.
+  // O trilho lateral acompanha os cinco grupos do catalogo.
   const grupos = [
     {
-      label: t('rail_projects'),
-      itens: disciplines.map((s, i) => ({
-        id: s.slug,
+      label: t('catalogo_eyebrow'),
+      itens: gruposDoCatalogo.map((g, i) => ({
+        id: g.grupo,
         num: String(i + 1).padStart(2, '0'),
-        label: s.title,
-        count: s.subServices.length,
+        label: t(`grupo_${g.grupo}`),
+        count: g.itens.length,
       })),
     },
   ]
@@ -116,14 +120,19 @@ export function ServicosView() {
                 fazer pelo visitante. */}
             <div className="grid md:grid-cols-2 gap-4 max-w-[900px]">
               {[
-                { label: t('door1_label'), title: t('door1_title'), desc: t('door1_desc'), cta: t('door1_cta'), href: `/${locale}/servicos/sob-demanda`, destaque: true },
-                { label: t('door2_label'), title: t('door2_title'), desc: t('door2_desc'), cta: t('door2_cta'), href: `#${disciplines[0].slug}`, destaque: false },
+                // As duas portas agora sao os dois eixos do catalogo, e nao duas
+                // rotas: /servicos/sob-demanda deixou de existir e o eixo
+                // antigo dividia por 'sabe o que precisa' contra 'sabe o
+                // problema', misturando projeto com mensalidade dentro da
+                // mesma porta.
+                { label: t('door1_label'), title: t('door1_title'), desc: t('door1_desc'), cta: t('door1_cta'), href: '#marca', destaque: true },
+                { label: t('door2_label'), title: t('door2_title'), desc: t('door2_desc'), cta: t('door2_cta'), href: '#mensal', destaque: false },
               ].map(porta => (
                 <Link
                   key={porta.label}
                   href={porta.href}
                   scroll={porta.href.startsWith('#') ? false : undefined}
-                  onClick={porta.href.startsWith('#') ? e => { e.preventDefault(); irPara(disciplines[0].slug) } : undefined}
+                  onClick={porta.href.startsWith('#') ? e => { e.preventDefault(); irPara(porta.href.slice(1)) } : undefined}
                   className={cn(
                     'group block text-left p-7 rounded-2xl border transition-all duration-300 hover:-translate-y-1',
                     porta.destaque
@@ -151,8 +160,12 @@ export function ServicosView() {
       </section>
 
       {/* ───────────────────── TRILHO + CONTEÚDO ───────────────────── */}
-      <main id="conteudo" className="bg-white">
-        {/* trilho horizontal no mobile */}
+      <main id="conteudo" tabIndex={-1} className="bg-white">
+        {/* trilho horizontal no mobile.
+            O chip inativo era `bg-g-pale/70 text-g-dark/60`: 3,8:1, reprovado.
+            O Lighthouse dava 100 nesta pagina porque o preset desktop nunca
+            renderiza este controle. `menta-clara` cheia com `tinta-70` da
+            4,65:1 sem inventar token. */}
         <div className="lg:hidden sticky top-[68px] z-30 bg-white/95 backdrop-blur-md border-b border-g-dark/10">
           <div className="flex gap-1 overflow-x-auto px-5 py-3 no-scrollbar">
             {trilhoFlat.map(f => (
@@ -161,7 +174,7 @@ export function ServicosView() {
                 onClick={() => irPara(f.id)}
                 className={cn(
                   'shrink-0 px-4 py-2 rounded-full text-[13px] font-semibold whitespace-nowrap transition-colors duration-200',
-                  ativo === f.id ? 'bg-g-dark text-g-pale' : 'bg-g-pale/70 text-g-dark/60'
+                  ativo === f.id ? 'bg-g-dark text-g-pale' : 'bg-menta-clara text-tinta-70'
                 )}
               >
                 {f.label}
@@ -215,177 +228,152 @@ export function ServicosView() {
             <div className="min-w-0 py-14 lg:py-20">
 
               {/* ═══════ PORTA 2 — PROJETOS ═══════ */}
-              <section id="projetos" className="scroll-mt-32 mt-24 lg:mt-32">
+              {/* ───────── OS TREZE PRODUTOS ─────────
+                  Cinco grupos por problema que resolvem, nao por modalidade
+                  de contrato. Pontual e mensal viraram etiqueta dentro do
+                  cartao: a informacao continua na hora de decidir, mas para
+                  de organizar a leitura da pagina.
+
+                  Cartao compacto: nome, chamada, etiqueta e link. Prazo e o
+                  que inclui sao resposta da pagina do produto. */}
+              <section id="catalogo" className="scroll-mt-32 mt-24 lg:mt-32">
                 <motion.header
                   initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-90px 0px' }}
                   transition={{ duration: 0.5 }}
-                  className="pb-2"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-6 h-px bg-g-mid" />
-                    <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-mid">{t('proj_eyebrow')}</span>
+                    <div className="w-6 h-px bg-verde-medio" />
+                    <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-medio">{t('catalogo_eyebrow')}</span>
                   </div>
-                  <h2 className="text-[clamp(26px,4vw,44px)] leading-[1.05] tracking-[-0.03em] text-g-dark max-w-[620px] mb-4">
-                    {t('proj_title')}
+                  <h2 className="text-[clamp(26px,4vw,44px)] leading-[1.05] tracking-[-0.03em] text-verde max-w-[620px] mb-4">
+                    {t('catalogo_title')}
                   </h2>
-                  <p className="text-[15px] leading-[1.75] text-g-dark/50 max-w-[620px] mb-2">{t('proj_sub')}</p>
-                  <span className="text-[12px] font-bold tracking-[0.18em] uppercase text-tinta-70">
-                    {t('count', { n: totalProjetos, p: disciplines.length })}
-                  </span>
+                  <p className="text-[15px] leading-[1.75] text-tinta-70 max-w-[620px]">{t('catalogo_sub')}</p>
                 </motion.header>
 
-                {/* Índice das seis disciplinas.
-                    Três colunas fecham duas linhas exatas: com cinco sobrava
-                    uma órfã na segunda linha. */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-8">
-                  {disciplines.map((d, i) => (
-                    <motion.div
-                      key={d.slug}
-                      initial={{ opacity: 0, y: 14 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: '-60px 0px' }}
-                      transition={{ duration: 0.4, delay: i * 0.05 }}
-                    >
-                      <Link
-                        href={`/${locale}/servicos/${d.slug}`}
-                        className="group h-full flex flex-col p-6 rounded-2xl border border-tinta-16 bg-white hover:border-verde-medio/45 hover:shadow-md transition-all duration-300"
-                      >
-                        <div className="flex items-baseline gap-3 mb-2.5">
-                          <span className="text-[10.5px] font-bold tabular-nums text-verde-medio">
-                            {String(i + 1).padStart(2, '0')}
-                          </span>
-                          <h3 className="text-[19px] leading-tight tracking-[-0.015em] text-verde font-bold">
-                            {d.title}
-                          </h3>
+                {gruposDoCatalogo.map(g => (
+                  <section key={g.grupo} id={g.grupo} className="scroll-mt-32 mt-12 lg:mt-14 first:mt-10">
+                    <div className="flex items-baseline gap-3 mb-1.5">
+                      <h3 className="text-[17px] font-bold text-verde tracking-[-0.01em]">{t(`grupo_${g.grupo}`)}</h3>
+                      <span className="text-[11px] font-bold tabular-nums text-tinta-70">{String(g.itens.length).padStart(2, '0')}</span>
+                    </div>
+                    {/* O `_sub` do mensal dizia a mesma coisa que a abertura,
+                        na linha de cima. Uma frase por grupo. */}
+                    {g.grupo !== 'mensal' && (
+                      <p className="text-[13.5px] leading-[1.6] text-tinta-70 mb-5 max-w-[520px]">{t(`grupo_${g.grupo}_sub`)}</p>
+                    )}
+
+                    {/* ───────── OS RECORRENTES ─────────
+                        Os dois mensais saem da grade compacta e ganham cartão
+                        próprio. O compacto tem nome, chamada e link, e isso
+                        basta para escolher entre uma fotografia e uma edição
+                        de vídeo. Não basta para decidir uma mensalidade: aí a
+                        pergunta é o que chega todo mês e se é para você.
+
+                        A superfície é `menta-clara` com borda `verde-medio`,
+                        as mesmas dos placeholders e das faixas claras. Nenhum
+                        token novo: o destaque vem de tamanho, fundo e do que o
+                        cartão diz, não de uma cor inventada para ele. */}
+                    {g.grupo === 'mensal' ? (
+                      <>
+                        <p className="text-[15px] leading-[1.7] text-verde font-bold mb-5 max-w-[560px] mt-2">
+                          {t('mensal_abertura')}
+                        </p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          {g.itens.map((p, i) => {
+                            const c = getLocalizedSubService(locale, p.slug)
+                            const entrega = (c?.features ?? p.features).slice(0, 4)
+                            const paraQuem = (c?.forWhom ?? p.forWhom)[0]
+                            return (
+                              <motion.div
+                                key={p.slug}
+                                initial={{ opacity: 0, y: 14 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: '-50px 0px' }}
+                                transition={{ duration: 0.4, delay: i * 0.06 }}
+                              >
+                                <Link
+                                  href={`/${locale}/servicos/${p.slug}`}
+                                  className="group h-full flex flex-col p-6 lg:p-7 rounded-2xl border border-verde-medio/30 bg-menta-clara hover:border-verde-medio/60 hover:shadow-md transition-all duration-300"
+                                >
+                                  <div className="flex items-start justify-between gap-3 mb-2">
+                                    <h4 className="text-[20px] leading-tight tracking-[-0.015em] text-verde font-bold">
+                                      {nomeDe(p)}
+                                    </h4>
+                                    <span className="shrink-0 rounded-full border border-verde-medio/40 px-2.5 py-[3px] text-[9.5px] font-bold uppercase tracking-[0.08em] text-verde-medio">
+                                      {t('etiqueta_mensal')}
+                                    </span>
+                                  </div>
+                                  <p className="text-[13.5px] leading-[1.6] text-tinta-70 mb-4">{taglineDe(p)}</p>
+
+                                  <div className="text-[10.5px] font-bold tracking-[0.16em] uppercase text-verde-medio mb-2">
+                                    {t('mensal_entrega')}
+                                  </div>
+                                  <ul className="flex flex-col gap-1.5 mb-4">
+                                    {entrega.map(f => (
+                                      <li key={f} className="flex items-start gap-2 text-[13px] leading-[1.5] text-tinta-70">
+                                        <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-verde-medio" aria-hidden />
+                                        {f}
+                                      </li>
+                                    ))}
+                                  </ul>
+
+                                  <div className="text-[10.5px] font-bold tracking-[0.16em] uppercase text-verde-medio mb-1.5">
+                                    {t('mensal_para_quem')}
+                                  </div>
+                                  <p className="text-[13px] leading-[1.55] text-tinta-70 mb-5 flex-1">{paraQuem}</p>
+
+                                  <span className="inline-flex items-center gap-2 text-[13px] font-bold text-verde-medio transition-all duration-200 group-hover:gap-2.5">
+                                    {t('ver_produto')}
+                                    <ArrowIcon />
+                                  </span>
+                                </Link>
+                              </motion.div>
+                            )
+                          })}
                         </div>
-                        <p className="text-[13.5px] leading-[1.6] text-tinta-70 mb-5 flex-1">{d.tagline}</p>
-                        <span className="inline-flex items-center gap-2 text-[12.5px] font-bold text-verde-medio transition-all duration-200 group-hover:gap-2.5">
-                          {t('proj_ver_disciplina')}
-                          <ArrowIcon />
-                        </span>
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {disciplines.map((frente, fi) => (
-                  <section
-                    key={frente.slug}
-                    id={frente.slug}
-                    ref={el => { refs.current[frente.slug] = el }}
-                    className="scroll-mt-32 mt-16 lg:mt-20"
-                  >
-                    <motion.header
-                      initial={{ opacity: 0, y: 18 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: '-90px 0px' }}
-                      transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
-                      className="pb-8 border-b border-g-dark/12"
-                    >
-                      <div className="flex items-baseline gap-4 mb-4">
-                        <span className="text-[11px] font-bold tabular-nums text-g-mid">{String(fi + 2).padStart(2, '0')}</span>
-                        <h3 className="text-[clamp(26px,4vw,44px)] leading-[1] tracking-[-0.03em] text-g-dark">
-                          {frente.title}
-                        </h3>
-                      </div>
-                      <p className="text-[clamp(16px,1.9vw,21px)] leading-[1.45] text-g-dark/70 max-w-[620px] mb-4">
-                        {frente.tagline}
-                      </p>
-                      <p className="text-[15px] leading-[1.75] text-g-dark/50 max-w-[620px] mb-7">
-                        {frente.description}
-                      </p>
-
-                      {/* Grade de mídia. Placeholder marcado até o acervo
-                          chegar: o rótulo diz o que entra em cada slot. */}
-                      <GradeDoRegistro chave={frente.slug} rotulo={t('trilho_label', { disciplina: frente.title })} />
-
-                      <Link
-                        href={`/${locale}/servicos/${frente.slug}`}
-                        className="inline-flex items-center gap-2 mt-7 text-[13.5px] font-bold text-verde border-b border-tinta-16 pb-0.5 hover:text-verde-medio hover:border-verde-medio transition-colors duration-200"
-                      >
-                        {t('proj_ver_disciplina')}
-                        <ArrowIcon />
-                      </Link>
-                    </motion.header>
-
-                    <div className="divide-y divide-g-dark/10">
-                      {frente.subServices.map((sol, si) => (
-                        <motion.article
-                          key={sol.slug}
-                          initial={{ opacity: 0, y: 16 }}
+                      </>
+                    ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                      {g.itens.map((p, i) => (
+                        <motion.div
+                          key={p.slug}
+                          initial={{ opacity: 0, y: 12 }}
                           whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true, margin: '-70px 0px' }}
-                          transition={{ duration: 0.45, delay: si * 0.06, ease: [0.21, 0.47, 0.32, 0.98] }}
-                          className="group grid md:grid-cols-[1fr_1fr] gap-6 md:gap-12 py-9 lg:py-11"
+                          viewport={{ once: true, margin: '-50px 0px' }}
+                          transition={{ duration: 0.35, delay: Math.min(i, 4) * 0.04 }}
                         >
-                          <div>
-                            <h4 className="text-[22px] lg:text-[26px] leading-tight tracking-[-0.015em] text-g-dark font-bold mb-2">
-                              {sol.name}
-                            </h4>
-                            <p className="text-[15px] leading-[1.55] text-g-mid font-medium mb-4">{sol.tagline}</p>
-                            <p className="text-[14.5px] leading-[1.75] text-g-dark/55 mb-6">{sol.description}</p>
-
-                            {/* Chips de "indicado para": 1.457px no celular,
-                                três blocos empilhados repetindo o que a
-                                descrição logo acima já disse. No desktop ficam,
-                                porque ali são varredura rápida em linha.
-                                Escondidos por CSS e não por renderização
-                                condicional, para o servidor e o cliente
-                                produzirem o mesmo HTML. */}
-                            <div className="hidden md:flex flex-wrap gap-1.5 mb-6">
-                              {sol.forWhom.slice(0, 3).map(q => (
-                                <span key={q} className="text-[11.5px] leading-snug text-g-dark/50 bg-g-pale/70 rounded-full px-3 py-1.5">
-                                  {q}
-                                </span>
-                              ))}
-                            </div>
-
-                            <Link
-                              href={`/${locale}/servicos/${sol.slug}`}
-                              className="inline-flex items-center gap-2 text-[13.5px] font-bold text-g-dark border-b border-g-dark/25 pb-0.5 hover:border-g-mid hover:text-g-mid transition-colors duration-200"
-                            >
-                              {t('details')}
-                              <ArrowIcon className="transition-transform duration-200 group-hover:translate-x-0.5" />
-                            </Link>
-                          </div>
-
-                          <div className="md:pt-1">
-                            {/* As 84 features dos 15 cards custavam 2.567px no
-                                celular, uma coluna empilhada que ninguém lê de
-                                cabo a rabo antes de decidir. <details> nativo:
-                                teclado e leitor de tela de graça, sem JS. */}
-                            <details className="colapso-features mb-6">
-                              <summary className="flex items-center justify-between gap-3 min-h-[44px] py-2 text-[10.5px] font-bold tracking-[0.18em] uppercase text-tinta-70 md:mb-3.5 hover:text-g-mid transition-colors">
-                                <span>{t('includes')} ({sol.features.length})</span>
-                                <svg className="shrink-0 transition-transform duration-200 [details[open]_&]:rotate-180" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
-                                  <path d="M3 5l4 4 4-4" />
-                                </svg>
-                              </summary>
-                              <ul className="flex flex-col gap-2 pt-1">
-                                {sol.features.map(f => (
-                                  <li key={f} className="flex items-start gap-2.5 text-[14px] leading-[1.6] text-g-dark/60">
-                                    <span className="mt-[9px] w-1 h-1 rounded-full bg-g-mid/60 shrink-0" />
-                                    {f}
-                                  </li>
-                                ))}
-                              </ul>
-                            </details>
-
-                            <div className="flex items-start gap-3 pt-4 border-t border-g-dark/8">
-                              <span className="text-[10.5px] font-bold tracking-[0.18em] uppercase text-g-mid shrink-0 mt-[3px]">
-                                {t('result')}
+                          <Link
+                            href={`/${locale}/servicos/${p.slug}`}
+                            className="group h-full flex flex-col p-5 rounded-2xl border border-tinta-16 bg-white hover:border-verde-medio/45 hover:shadow-md transition-all duration-300"
+                          >
+                            <div className="flex items-start justify-between gap-3 mb-2">
+                              <h4 className="text-[16.5px] leading-tight tracking-[-0.01em] text-verde font-bold">
+                                {nomeDe(p)}
+                              </h4>
+                              {/* A etiqueta, nao mais a divisao da pagina */}
+                              <span className="shrink-0 rounded-full border border-tinta-16 px-2 py-[2px] text-[9.5px] font-bold uppercase tracking-[0.08em] text-tinta-70">
+                                {p.period === 'monthly' ? t('etiqueta_mensal') : t('etiqueta_pontual')}
                               </span>
-                              <span className="text-[14px] leading-[1.6] text-g-dark font-medium">{sol.result}</span>
                             </div>
-                          </div>
-                        </motion.article>
+                            <p className="text-[13px] leading-[1.55] text-tinta-70 mb-4 flex-1">{taglineDe(p)}</p>
+                            <span className="inline-flex items-center gap-2 text-[12px] font-bold text-verde-medio transition-all duration-200 group-hover:gap-2.5">
+                              {t('ver_produto')}
+                              <ArrowIcon />
+                            </span>
+                          </Link>
+                        </motion.div>
                       ))}
                     </div>
+                    )}
                   </section>
                 ))}
               </section>
+
+
+
             </div>
           </div>
         </div>

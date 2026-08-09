@@ -33,10 +33,10 @@ function toIso(date: string): string | undefined {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params
   const post = getBlogPost(slug)
-  if (!post) return { title: 'Post não encontrado — Explore Digital' }
+  if (!post) return { title: 'Post não encontrado · Explore Digital' }
 
   const capa = slot(`blog-${slug}`)
-  const title = `${post.title} — Explore Digital`
+  const title = `${post.title} · Explore Digital`
   const isPt = locale === 'pt'
 
   return {

@@ -4,8 +4,7 @@ import { Hero }         from '@/components/sections/Hero'
 import { TwoDoors }     from '@/components/sections/TwoDoors'
 import { Portfolio }    from '@/components/sections/Portfolio'
 import { Gargalos }     from '@/components/sections/Gargalos'
-import { Disciplinas }  from '@/components/sections/Disciplinas'
-import { Agora }        from '@/components/sections/Agora'
+import { Destinos }     from '@/components/sections/Destinos'
 import { Estudio }      from '@/components/sections/Estudio'
 import { Contact }      from '@/components/sections/Contact'
 import { Footer }       from '@/components/sections/Footer'
@@ -36,13 +35,13 @@ export default function Home() {
           Explore" viraram Gargalos e Estúdio, que dizem a mesma coisa pela
           boca do cliente; os depoimentos saíram porque, sem sobrenome, empresa
           nem foto, derrubavam confiança em vez de construir. */}
-      <main id="conteudo">
+      <main id="conteudo" tabIndex={-1}>
         <Hero />
         <TwoDoors />
         <Portfolio />
         <Gargalos />
-        <Disciplinas />
-        <Agora />
+        {/* Destinos entrou no lugar do Agora, que migrou para /sobre. */}
+        <Destinos />
         <Estudio />
         <Contact />
       </main>

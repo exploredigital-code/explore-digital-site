@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useLocale, useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { SkipLink } from '@/components/ui/SkipLink'
 
 const WA_BASE = 'https://wa.me/+5585991043067?text='
 const EMAIL = 'agencia.exploredigital@gmail.com'
@@ -14,72 +15,6 @@ const LINKEDIN = 'https://linkedin.com/company/explore-digital'
 const NOISE_BG = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")`
 
 type BioItem = { key: string; title: string; desc: string; badge?: string }
-
-/* ────────────────────────────── ícones ────────────────────────────── */
-
-// Todos com o mesmo peso de traço e enquadramento, herdando a cor do contêiner
-// (paleta Explore) — nenhum usa cor de marca externa.
-const strokeProps = {
-  width: 21,
-  height: 21,
-  viewBox: '0 0 24 24',
-  fill: 'none',
-  stroke: 'currentColor',
-  strokeWidth: 1.7,
-  strokeLinecap: 'round' as const,
-  strokeLinejoin: 'round' as const,
-  'aria-hidden': true,
-}
-
-const icons: Record<string, React.ReactNode> = {
-  // lupa com mini gráfico dentro = diagnóstico
-  consultoria: (
-    <svg {...strokeProps}>
-      <circle cx="10.5" cy="10.5" r="6.75" />
-      <path d="M15.4 15.4L20.5 20.5" />
-      <path d="M8.2 12.3v-1.6M10.5 12.3V9.2M12.8 12.3V7.9" />
-    </svg>
-  ),
-  // calendário com check = reserva na agenda
-  reserva: (
-    <svg {...strokeProps}>
-      <rect x="3.2" y="5.2" width="17.6" height="15.6" rx="2.6" />
-      <path d="M3.2 9.8h17.6M8.2 3.4v3.4M15.8 3.4v3.4" />
-      <path d="M9 15.1l2.1 2.1 4-4.2" />
-    </svg>
-  ),
-  // balão de conversa com as ondas do telefone
-  whatsapp: (
-    <svg {...strokeProps}>
-      <path d="M3.4 20.6l1.3-4a8.4 8.4 0 113.1 3.1l-4.4.9z" />
-      <path d="M9.2 9.1c-.3.9.05 1.9.75 2.75.7.85 1.65 1.4 2.6 1.5.5.05.9-.25 1.15-.7l1.4.85c-.3.75-1 1.3-1.85 1.35-2.1.15-4.6-2.05-5.15-4.1-.2-.8.15-1.6.8-2.05l.9 1.4z" />
-    </svg>
-  ),
-  // globo
-  site: (
-    <svg {...strokeProps}>
-      <circle cx="12" cy="12" r="8.5" />
-      <path d="M3.5 12h17" />
-      <path d="M12 3.5c2.15 2.4 3.35 5.35 3.35 8.5S14.15 18.1 12 20.5C9.85 18.1 8.65 15.15 8.65 12S9.85 5.9 12 3.5z" />
-    </svg>
-  ),
-  // maleta
-  vagas: (
-    <svg {...strokeProps}>
-      <rect x="3" y="7.4" width="18" height="12.6" rx="2.4" />
-      <path d="M8.6 7.4V6a2.4 2.4 0 012.4-2.4h2a2.4 2.4 0 012.4 2.4v1.4" />
-      <path d="M3 12.6h18" />
-    </svg>
-  ),
-}
-
-function ArrowIcon() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M2 7h10M8 3l4 4-4 4" />
-    </svg>
-  )
-}
 
 /* ─────────────────────────────── página ─────────────────────────────── */
 
@@ -94,14 +29,25 @@ export function BioView() {
   // `items` vem de t.raw(), que não passa por ICU — a troca aqui é na mão.
   const withMonth = (s: string) => s.replace('{month}', month)
 
+  /**
+   * Link interno já sai marcado com a origem.
+   *
+   * Não há analytics instalado ainda, e o parâmetro não muda comportamento
+   * nenhum: existe para que, quando entrar, o tráfego do link da bio do
+   * Instagram já esteja separado do resto sem precisar mexer nesta página.
+   *
+   * O WhatsApp fica de fora de propósito. O `wa.me` só aceita `text`, e
+   * pendurar um marcador ali sujaria a mensagem que a pessoa envia. A origem
+   * já é identificável de outro jeito: a mensagem da agenda é exclusiva daqui.
+   */
+  const comOrigem = (caminho: string) => `${caminho}?origem=bio`
+
   const hrefFor = (key: string) => {
     switch (key) {
-      case 'consultoria': return `/${locale}/consultoria`
-      case 'reserva': return WA_BASE + encodeURIComponent(t('wa_message_reserva', { month }))
-      case 'whatsapp': return WA_BASE + encodeURIComponent(t('wa_message'))
-      case 'site': return `/${locale}`
-      case 'vagas': return `/${locale}/carreiras`
-      default: return `/${locale}`
+      case 'auditoria': return comOrigem(`/${locale}/consultoria`)
+      case 'portfolio': return comOrigem(`/${locale}/portfolio`)
+      case 'whatsapp': return WA_BASE + encodeURIComponent(t('wa_message_reserva', { month }))
+      default: return comOrigem(`/${locale}`)
     }
   }
 
@@ -127,6 +73,8 @@ export function BioView() {
   ]
 
   return (
+    <>
+    <SkipLink />
     <main className="min-h-[100dvh] bg-verde relative overflow-hidden flex flex-col">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_50%_at_50%_0%,#2D5238,transparent_65%)] opacity-60 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_50%_100%,#2A4233,transparent_70%)] opacity-50 pointer-events-none" />
@@ -141,86 +89,82 @@ export function BioView() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col items-center text-center mb-7"
         >
-          <Image
-            src="/images/logo.png"
-            alt="Explore Digital"
-            width={220}
-            height={56}
-            priority
-            className="h-[46px] w-auto mb-4"
-          />
+          {/* O logo sempre foi o título desta página, só não estava marcado
+              como tal: a página inteira não tinha <h1> nenhum.
+
+              O texto do título é o `<span>` escondido, não o `alt` da imagem.
+              Um <h1> cujo único conteúdo é uma imagem tem texto vazio para
+              qualquer auditoria que leia o DOM, e o `alt` some se a imagem
+              carregar mas o CSS não. Com o texto no span, a imagem passa a ser
+              decorativa (`alt=""`) e o nome acessível não sai duplicado.
+
+              Nada muda na tela, então a página continua cabendo sem rolagem
+              em 390x844. */}
+          <h1 className="mb-4">
+            <Image
+              src="/images/logo.png"
+              alt=""
+              width={220}
+              height={56}
+              priority
+              className="h-[46px] w-auto"
+            />
+            <span className="sr-only">Explore Digital</span>
+          </h1>
           <span className="text-[13px] font-semibold tracking-wide text-verde-luz">{t('handle')}</span>
           <p className="text-[14.5px] leading-[1.55] text-menta-fraca mt-2.5 max-w-[300px]">{t('tagline')}</p>
         </motion.div>
 
-        {/* ── links ── */}
-        <nav className="flex flex-col gap-2">
+        {/* ── links ──
+            Lista simples, não cards de site em miniatura. Sem ícone: lupa,
+            quadradinho e calendário são genéricos, não distinguem um item do
+            outro e comem largura numa tela de 390px.
+
+            O primeiro tem destaque, mas por borda e não por preenchimento
+            laranja: cheio, ele pesava tanto que os outros dois pareciam
+            desativados. Os três precisam parecer clicáveis. */}
+        <nav id="conteudo" tabIndex={-1} className="flex flex-col gap-2.5">
           {items.map((item, i) => {
-            const destaque = item.key === 'consultoria'
-            const acento = item.key === 'reserva'
+            const destaque = item.key === 'auditoria'
             const href = hrefFor(item.key)
             const externo = href.startsWith('http')
 
             const conteudo = (
               <>
-                <span
-                  className={cn(
-                    'w-10 h-10 shrink-0 rounded-xl flex items-center justify-center transition-colors duration-200',
-                    destaque && 'bg-verde/15 text-verde',
-                    acento && 'bg-verde-luz/15 text-verde-luz group-hover:bg-verde-luz/25',
-                    !destaque && !acento && 'bg-verde-luz/12 text-verde-luz group-hover:bg-verde-luz/20'
-                  )}
-                >
-                  {icons[item.key]}
-                </span>
-
-                <span className="flex-1 min-w-0 text-left">
-                  <span className={cn('flex items-center gap-2 text-[15.5px] font-bold leading-tight', destaque ? 'text-verde' : 'text-menta')}>
-                    {/* min-w-0 em vez de truncate: com o selo ao lado, "Agenda de agosto"
-                        virava "Agenda de ago..." e o mes era justamente o dado do card.
-                        Assim o titulo quebra em duas linhas em vez de cortar. */}
-                    <span className="min-w-0">{withMonth(item.title)}</span>
+                <span className="flex-1 min-w-0">
+                  <span className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
+                    <span className="text-[16px] font-bold leading-tight text-menta">
+                      {withMonth(item.title)}
+                    </span>
                     {item.badge && (
-                      <span className="shrink-0 rounded-full bg-verde/50 px-2 py-[3px] text-[9.5px] font-semibold uppercase tracking-[0.06em] text-verde-luz">
-                        {item.badge}
+                      <span className="shrink-0 rounded-full bg-verde/60 px-2.5 py-[3px] text-[10px] font-semibold uppercase tracking-[0.06em] text-verde-luz">
+                        {withMonth(item.badge)}
                       </span>
                     )}
                   </span>
-                  <span
-                    className={cn(
-                      'block text-[12.5px] leading-snug mt-0.5',
-                      destaque ? 'text-verde' : acento ? 'text-verde-luz/80' : 'text-menta-fraca'
-                    )}
-                  >
-                    {item.desc}
-                  </span>
-                </span>
-
-                <span
-                  className={cn(
-                    'shrink-0 transition-transform duration-200 group-hover:translate-x-1',
-                    destaque ? 'text-verde/70' : acento ? 'text-verde-luz/70' : 'text-white/45'
+                  {item.desc && (
+                    <span className="block text-[13px] leading-snug text-menta-fraca mt-1">
+                      {item.desc}
+                    </span>
                   )}
-                >
-                  <ArrowIcon />
                 </span>
               </>
             )
 
             const classe = cn(
-              'group flex items-center gap-3.5 w-full rounded-2xl px-4 py-3.5 min-h-[68px]',
+              'group flex items-center w-full rounded-2xl px-5 py-4 min-h-[64px]',
               'border transition-all duration-200 active:scale-[0.985]',
-              destaque && 'bg-sol border-sol hover:bg-sol-forte shadow-[0_6px_24px_rgba(226,118,47,0.22)]',
-              acento && 'bg-verde-card border-verde-luz/40 hover:bg-verde-linha hover:border-verde-luz/60',
-              !destaque && !acento && 'bg-white/[0.05] border-white/[0.1] hover:bg-white/[0.09] hover:border-white/25'
+              destaque
+                ? 'bg-sol/[0.14] border-sol/55 hover:bg-sol/20 hover:border-sol'
+                : 'bg-white/[0.06] border-white/[0.14] hover:bg-white/[0.11] hover:border-white/30'
             )
 
             return (
               <motion.div
                 key={item.key}
-                initial={{ opacity: 0, y: 14 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.42, delay: 0.12 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.4, delay: 0.12 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
               >
                 {externo ? (
                   <a href={href} target="_blank" rel="noopener noreferrer" className={classe}>
@@ -263,5 +207,6 @@ export function BioView() {
         </motion.div>
       </div>
     </main>
+    </>
   )
 }

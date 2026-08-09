@@ -198,7 +198,7 @@ export function CarreirasView() {
         </div>
       </section>
 
-      <main id="conteudo" className="bg-white">
+      <main id="conteudo" tabIndex={-1} className="bg-white">
         {/* ── Como trabalhamos ── */}
         <section className="max-w-conteudo mx-auto px-6 sm:px-10 lg:px-16 py-16 lg:py-24">
           <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-verde-medio mb-3">{t('work_eyebrow')}</div>

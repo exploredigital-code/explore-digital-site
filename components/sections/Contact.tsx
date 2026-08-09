@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 import { cn } from '@/lib/utils'
+import { gruposDoCatalogo } from '@/data/services'
+import { getLocalizedSubService } from '@/data/services-content'
 
 const WHATSAPP_BASE = 'https://wa.me/+5585991043067?text='
 const FORMSPREE = 'https://formspree.io/f/mlgkrjng'
@@ -15,10 +17,14 @@ const FORMSPREE = 'https://formspree.io/f/mlgkrjng'
 const WA_STORAGE_KEY = 'explore_wa_pending'
 
 
+/**
+ * O campo nao tem rotulo visivel: o placeholder *e* o rotulo, e a `white/40`
+ * dava 3,5:1 sobre o fundo do input. `menta-fraca` da 5,7:1 e ja existe.
+ */
 const inputClass = cn(
   'w-full px-4 py-3.5 rounded-xl',
   'bg-white/[0.05] border border-white/10',
-  'text-[15px] text-white placeholder:text-white/40',
+  'text-[15px] text-white placeholder:text-menta-fraca',
   'focus:outline-none focus:border-g-mid/70 focus:bg-white/[0.08]',
   'transition-all duration-200'
 )
@@ -30,7 +36,7 @@ const selectClass = cn(
 
 function SelectArrow() {
   return (
-    <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-white/40">
+    <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-menta-fraca">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
         <path d="M3 5l4 4 4-4" />
       </svg>
@@ -40,10 +46,24 @@ function SelectArrow() {
 
 export function Contact() {
   const t = useTranslations('contact')
+  const tServicos = useTranslations('servicos')
   const locale = useLocale()
   const router = useRouter()
   const BUSINESS_TYPES = t.raw('business_types') as string[]
-  const SERVICES = t.raw('services_list') as string[]
+
+  /**
+   * O seletor oferecia Web Design, Social Media, Performance Ads e Setup:
+   * quatro nomes do catálogo antigo, nenhum deles à venda. A pessoa escolhia
+   * o que a Explore não vende e o lead chegava pedindo catálogo morto.
+   *
+   * A lista sai do próprio catálogo, agrupada como no hub, e não de uma
+   * cópia em `messages`. Produto novo entra aqui sozinho, e o nome é sempre
+   * o mesmo que a pessoa acabou de ler na outra página.
+   */
+  const GRUPOS = gruposDoCatalogo.map(g => ({
+    label: tServicos(`grupo_${g.grupo}`),
+    itens: g.itens.map(p => getLocalizedSubService(locale, p.slug)?.name ?? p.name),
+  }))
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [form, setForm] = useState({
     name: '',
@@ -148,7 +168,7 @@ export function Contact() {
                 {t('whatsapp')}
               </a>
 
-              <div className="mt-6 flex items-center gap-3 text-white/45">
+              <div className="mt-6 flex items-center gap-3 text-menta-fraca">
                 <div className="flex-1 h-px bg-white/10" />
                 <span className="text-[12px] tracking-widest">{t('email_label')}</span>
                 <div className="flex-1 h-px bg-white/10" />
@@ -165,7 +185,7 @@ export function Contact() {
                   { icon: '🔒', label: t('trust_3') },
                   { icon: '🌎', label: t('trust_4') },
                 ].map((s, i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-[12px] text-white/40">
+                  <div key={i} className="flex items-center gap-2.5 text-[12px] text-menta-fraca">
                     <span>{s.icon}</span>
                     <span>{s.label}</span>
                   </div>
@@ -186,7 +206,7 @@ export function Contact() {
                     </svg>
                   </div>
                   <h3 className="text-[22px] font-bold text-white mb-2">{t('form_success')}</h3>
-                  <p className="text-white/45 text-[15px]">{t('success_sub')}</p>
+                  <p className="text-menta-fraca text-[15px]">{t('success_sub')}</p>
                 </motion.div>
               ) : (
                 <motion.form key="form" onSubmit={handleSubmit} className="flex flex-col gap-3" noValidate>
@@ -197,7 +217,7 @@ export function Contact() {
                   {/* O @ do negócio é o campo que permite auditar o perfil
                       antes da conversa. Obrigatório, como na consultoria. */}
                   <div className="relative">
-                    <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[15px] text-white/40">@</span>
+                    <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[15px] text-menta-fraca">@</span>
                     <input
                       type="text"
                       name="instagram"
@@ -214,7 +234,7 @@ export function Contact() {
 
                   <div className="relative">
                     <select name="businessType" aria-label={t('form_business')} value={form.businessType} onChange={handleChange}
-                      className={cn(selectClass, !form.businessType && 'text-white/40')}>
+                      className={cn(selectClass, !form.businessType && 'text-menta-fraca')}>
                       <option value="" disabled>{t('form_business')}</option>
                       {BUSINESS_TYPES.map(b => <option key={b} value={b} className="text-g-dark bg-white">{b}</option>)}
                     </select>
@@ -223,9 +243,14 @@ export function Contact() {
 
                   <div className="relative">
                     <select name="service" aria-label={t('form_service')} value={form.service} onChange={handleChange}
-                      className={cn(selectClass, !form.service && 'text-white/40')}>
+                      className={cn(selectClass, !form.service && 'text-menta-fraca')}>
                       <option value="" disabled>{t('form_service')}</option>
-                      {SERVICES.map(s => <option key={s} value={s} className="text-g-dark bg-white">{s}</option>)}
+                      {GRUPOS.map(g => (
+                        <optgroup key={g.label} label={g.label} className="text-g-dark bg-white">
+                          {g.itens.map(s => <option key={s} value={s} className="text-g-dark bg-white">{s}</option>)}
+                        </optgroup>
+                      ))}
+                      <option value={t('services_unsure')} className="text-g-dark bg-white">{t('services_unsure')}</option>
                     </select>
                     <SelectArrow />
                   </div>
@@ -246,7 +271,7 @@ export function Contact() {
                     )}>
                     {status === 'sending' ? t('form_sending') : t('form_submit')}
                   </button>
-                  <p className="text-[11px] text-white/30 text-center">
+                  <p className="text-[11px] text-menta-fraca text-center">
                     {t('form_disclaimer')}
                   </p>
                 </motion.form>

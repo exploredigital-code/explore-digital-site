@@ -14,14 +14,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project || project.hidden) return { title: 'Projeto não encontrado' }
 
   return {
-    title: `${project.client} — Explore Digital`,
+    title: `${project.client} · Explore Digital`,
     description: project.tagline,
     alternates: {
       canonical: canonical(locale, `/portfolio/${slug}`),
       languages: languageAlternates(`/portfolio/${slug}`),
     },
     openGraph: {
-      title: `${project.client} — Explore Digital`,
+      title: `${project.client} · Explore Digital`,
       description: project.tagline,
       type: 'article',
       images: [project.imageUrl],

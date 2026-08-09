@@ -2,11 +2,25 @@
 
 export interface ServiceStep { number: string; title: string; desc: string }
 
+/**
+ * Agrupamento visual do hub, por problema que o produto resolve e não por
+ * quem executa. Só o pontual agrupa: o recorrente tem dois itens e vive em
+ * bloco próprio.
+ */
+export type Grupo = 'marca' | 'presenca' | 'producao' | 'operacao' | 'mensal'
+
 export interface SubService {
   slug: string
   pillar: ServicePillar
   name: string
+  /** `once` é pontual, `monthly` é recorrente. O eixo do catálogo sai daqui. */
   period: 'once' | 'monthly'
+  /** Todo produto tem grupo, inclusive os dois mensais. */
+  grupo: Grupo
+  /** Prazo em dias úteis, herdado do antigo `on-demand.ts`. */
+  prazoDias?: number | [number, number]
+  /** Exige deslocamento até a propriedade. */
+  onSite?: boolean
   tagline: string
   description: string
   forWhom: string[]
@@ -59,6 +73,7 @@ export const servicesData: ServiceData[] = [
         pillar: 'branding',
         name: 'Identidade Visual',
         period: 'once',
+        grupo: 'marca',
         tagline: 'Logo, cores e elementos que geram reconhecimento.',
         description: 'Sua marca visualmente representada: um sistema coeso de logo, cores, tipografia e elementos gráficos que criam reconhecimento imediato e geram desejo antes mesmo do primeiro contato.',
         forWhom: ['Marcas sem identidade visual definida', 'Negócios que querem profissionalizar a imagem', 'Hotéis, pousadas e espaços que querem transmitir o nível certo'],
@@ -77,6 +92,7 @@ export const servicesData: ServiceData[] = [
         pillar: 'branding',
         name: 'Branding Completo',
         period: 'once',
+        grupo: 'marca',
         tagline: 'Do posicionamento até a identidade visual.',
         recommended: true,
         description: 'Do zero ao completo. Construímos sua marca de dentro para fora: do propósito e posicionamento até a identidade visual aplicada. Para marcas que querem ser referência no setor. Não apenas mais uma opção no mercado.',
@@ -122,6 +138,8 @@ export const servicesData: ServiceData[] = [
         pillar: 'web',
         name: 'Landing Page',
         period: 'once',
+        grupo: 'presenca',
+        prazoDias: [10, 15],
         tagline: 'Focada em converter visitantes em clientes.',
         description: 'Uma página criada com um único objetivo: converter. Seja para gerar leads, vender uma experiência ou capturar reservas diretas. O design e o copy trabalham juntos para guiar o visitante até a ação.',
         forWhom: ['Lançamentos de produtos ou serviços', 'Campanhas de tráfego pago', 'Negócios que precisam de uma página rápida e eficiente'],
@@ -140,6 +158,7 @@ export const servicesData: ServiceData[] = [
         pillar: 'web',
         name: 'Website Institucional',
         period: 'once',
+        grupo: 'presenca',
         tagline: 'Presença digital completa da sua marca.',
         description: 'Seu site é o único ativo digital que você realmente controla. Construímos sites que representam a experiência que o cliente vai ter: rápidos, bonitos e otimizados para gerar reservas diretas sem depender de OTAs.',
         forWhom: ['Hotéis, pousadas e resorts', 'Experiências e destinos turísticos', 'Beach clubs, restaurantes e operadoras de experiência'],
@@ -183,6 +202,7 @@ export const servicesData: ServiceData[] = [
         pillar: 'social',
         name: 'Produção de Conteúdo',
         period: 'monthly',
+        grupo: 'mensal',
         tagline: 'Reels, artes e stories com estratégia e identidade visual.',
         description: 'Produção completa de conteúdo para redes sociais: reels, design, stories e calendário editorial. Tudo alinhado com a identidade visual e os objetivos da sua marca.',
         forWhom: ['Marcas que querem presença ativa nas redes', 'Negócios que precisam de conteúdo consistente', 'Hotéis e pousadas que querem atrair hóspedes diretos'],
@@ -197,38 +217,127 @@ export const servicesData: ServiceData[] = [
         result: 'Conteúdo profissional e consistente todo mês',
       },
       {
-        slug: 'captacoes',
+        slug: 'fotografia',
         pillar: 'social',
-        name: 'Captações',
+        name: 'Fotografia',
         period: 'once',
-        tagline: 'Fotografia e vídeo profissional para redes sociais e identidade de marca.',
-        description: 'Captação profissional de fotografia e vídeo para alimentar suas redes sociais, site e materiais de marca. Imagens e vídeos que comunicam o padrão e a personalidade do seu negócio.',
-        forWhom: ['Hotéis, pousadas e beach clubs', 'Restaurantes e experiências gastronômicas', 'Marcas que precisam de banco de imagens e vídeos profissional'],
+        grupo: 'producao',
+        prazoDias: 7,
+        onSite: true,
+        tagline: 'Imagem parada que mostra o padrão da casa.',
+        description: 'Ensaio no local para alimentar site, redes e material de venda. A foto é o que o hóspede vê antes de decidir, e ela precisa dizer o nível da casa sem que ninguém explique.',
+        forWhom: ['Pousadas e hotéis que ainda usam foto de celular', 'Beach clubs e restaurantes de frente para o mar', 'Quem vai lançar site ou perfil e não tem banco de imagem'],
         features: [
-          'Ensaio fotográfico no local',
-          'Captação de vídeos para reels e conteúdo',
-          'Edição profissional de fotos e vídeos',
-          'Entrega em alta resolução e formatos para redes',
-          'Direção criativa alinhada com a identidade da marca',
+          'Ensaio no local, com direção de cena',
+          'Quartos, áreas comuns, fachada e gastronomia',
+          'Tratamento de cor e luz em todas as selecionadas',
+          'Entrega em alta resolução e em corte para redes',
+          'Direção alinhada com a identidade da marca',
         ],
-        result: 'Banco de fotos e vídeos profissionais prontos para usar',
+        result: 'Banco de fotos próprio, pronto para site, redes e OTA',
       },
       {
+        slug: 'captacao-video',
+        pillar: 'social',
+        name: 'Captação de vídeo',
+        period: 'once',
+        grupo: 'producao',
+        prazoDias: 7,
+        onSite: true,
+        tagline: 'Movimento, som e drone no destino.',
+        description: 'Diária de captação na propriedade para gerar material de vídeo em quantidade. Sai daqui o bruto que alimenta reels, anúncio e site pelos meses seguintes.',
+        forWhom: ['Quem precisa de volume de vídeo para manter constância', 'Operações com vista, piscina ou orla que a foto não entrega', 'Escolas e experiências onde a ação é o produto'],
+        features: [
+          'Diária de captação com direção no local',
+          'Tomada aérea com drone quando o lugar pede',
+          'Áudio ambiente e depoimento, quando houver',
+          'Bruto organizado e entregue por pasta',
+          'Roteiro de cenas definido antes da diária',
+        ],
+        result: 'Material bruto suficiente para meses de conteúdo',
+      },
+      {
+        // Veio da disciplina Motion, que deixou de existir. Continua como
+        // produto pontual e ao mesmo tempo entra no pacote de Produção de
+        // conteúdo, que é recorrente.
+        slug: 'pecas-animadas',
+        pillar: 'social',
+        name: 'Peças animadas',
+        period: 'once',
+        grupo: 'producao',
+        tagline: 'Vinheta, selo e assinatura em movimento.',
+        description: 'O kit de movimento da marca: abertura, selo, assinatura e lower third para reels. É o que dá acabamento ao conteúdo que você já produz, sem depender de quem edita.',
+        forWhom: ['Marcas com identidade pronta e conteúdo sem acabamento', 'Quem publica reels toda semana', 'Operações que trocam de editor e perdem o padrão'],
+        features: [
+          'Vinheta de abertura',
+          'Selo e assinatura em movimento',
+          'Lower third para reels',
+          'Entrega principal em ProRes 4444',
+          'Entrega secundária em WebM VP9 com alpha',
+          // O CapCut não lê alpha de forma confiável. Sem esta versão, o editor
+          // do cliente recebe um arquivo que simplesmente não abre direito.
+          'Versão com fundo chapado para quem edita no CapCut',
+        ],
+        result: 'Conteúdo com acabamento de marca, independente de quem edita',
+      },
+      {
+        slug: 'cobertura-de-evento',
+        pillar: 'social',
+        name: 'Cobertura de evento',
+        period: 'once',
+        grupo: 'producao',
+        onSite: true,
+        tagline: 'A entrega acontece enquanto o evento acontece.',
+        description: 'Equipe no local durante o evento, publicando no seu perfil em tempo real. Quem está lá vê o story acontecendo e fica mais tempo; quem não está vê e quer estar na próxima. É a próxima edição sendo vendida durante a atual.',
+        forWhom: ['Beach clubs e pousadas com réveillon, festival ou temporada de eventos', 'Produtores de evento que precisam de material durante e não depois', 'Casamento em resort e lançamento que dependem de repercussão no mesmo dia'],
+        features: [
+          'Equipe no local pelos dias combinados',
+          'Fotografia do evento, com seleção entregue no mesmo dia',
+          'Vídeo vertical e horizontal, para redes e para registro',
+          'Storymaker publicando no seu perfil durante o evento',
+          'Edição final entregue depois, com o melhor do material bruto',
+        ],
+        result: 'O evento repercutindo enquanto ele ainda está acontecendo',
+      },
+      {
+        slug: 'edicao-video',
+        pillar: 'social',
+        name: 'Edição de vídeo',
+        period: 'once',
+        grupo: 'producao',
+        prazoDias: 3,
+        tagline: 'O bruto vira peça pronta para publicar.',
+        description: 'Montagem, corte, cor, legenda e trilha a partir de material que já existe. Serve tanto para o que a gente captou quanto para o que você já tem parado no celular.',
+        forWhom: ['Quem tem material captado e nunca publicou', 'Operações que gravam sozinhas e precisam de acabamento', 'Quem vai anunciar e precisa de corte por formato'],
+        features: [
+          'Montagem e corte a partir do seu material',
+          'Correção de cor e tratamento de áudio',
+          'Legenda queimada, para quem assiste sem som',
+          'Trilha licenciada',
+          'Entrega em vertical, quadrado e horizontal',
+        ],
+        result: 'Peças finalizadas e prontas para publicar',
+      },
+      {
+        // O slug segue `setup`. A rota tem histórico e o nome exibido é o que
+        // a pessoa lê, então renomear custaria 301 e quatro CTAs de artigo por
+        // ganho nenhum. Mesma decisão que valeu para a /consultoria.
         slug: 'setup',
         pillar: 'social',
-        name: 'Setup',
+        name: 'Construção de perfil',
         period: 'once',
-        tagline: 'Configuração completa das redes do zero ao profissional.',
-        description: 'Estruturamos do zero as suas redes sociais: bio, destaques, grid inicial, links e tudo que é necessário para sua presença digital começar com o pé direito.',
-        forWhom: ['Novos negócios lançando presença digital', 'Marcas que precisam de uma reforma completa', 'Negócios que nunca investiram no digital'],
+        grupo: 'presenca',
+        tagline: 'O perfil sai do zero já parecendo profissional.',
+        description: 'Montagem completa do perfil antes de começar a publicar: bio, destaques, links e os doze primeiros conteúdos. Quem chega no perfil vazio vai embora, e a primeira impressão só acontece uma vez.',
+        forWhom: ['Negócios abrindo agora, antes da primeira temporada', 'Perfis parados que precisam recomeçar', 'Quem nunca teve identidade aplicada nas redes'],
         features: [
-          'Criação e otimização de perfis',
-          'Destaques com identidade visual',
-          'Bio estratégica + links',
-          'Grid inicial com conteúdos de lançamento',
-          'Orientação sobre boas práticas',
+          'Doze conteúdos iniciais, publicados no perfil',
+          'Capas de destaque no padrão da marca',
+          'Bio escrita para converter, não para descrever',
+          'Link na bio com os caminhos de reserva e contato',
+          'Perfil configurado como conta comercial',
         ],
-        result: 'Redes sociais prontas para crescer',
+        result: 'Perfil pronto para receber visita e converter',
       },
     ],
   },
@@ -255,41 +364,27 @@ export const servicesData: ServiceData[] = [
     deliverables: ['Configuração completa de campanhas', 'Criativos (imagens e vídeos)', 'Otimização diária', 'Relatório mensal unificado', 'Análise de concorrência', 'Dashboard de acompanhamento'],
     portfolioCategory: 'performance',
     subServices: [
+      // Meta e Google eram dois produtos. Vender separado obriga o cliente a
+      // escolher canal antes do diagnóstico, e escolher canal é parte do que
+      // a Explore entrega.
       {
-        slug: 'meta-ads',
+        slug: 'gestao-de-trafego',
         pillar: 'performance',
-        name: 'Meta Ads',
+        name: 'Gestão de tráfego',
         period: 'monthly',
-        tagline: 'Campanhas no Instagram e Facebook.',
-        description: 'Anúncios no Instagram e Facebook com segmentação precisa para o público certo, no momento certo. Cada real investido é monitorado e otimizado para maximizar leads e reservas.',
-        forWhom: ['Marcas que querem aumentar visibilidade', 'Hotéis e pousadas que buscam reservas diretas', 'Experiências que querem alcançar novos públicos'],
+        grupo: 'mensal',
+        tagline: 'Meta, Google ou os dois, decidido no diagnóstico.',
+        description: 'Campanha pensada pela pergunta que o hóspede faz, não pela plataforma. Quem já sabe onde quer ficar procura no Google; quem ainda não decidiu o destino descobre no Instagram. O canal sai do diagnóstico, e muda quando a temporada muda.',
+        forWhom: ['Pousadas e hotéis que querem reduzir dependência de OTA', 'Beach clubs e restaurantes com alta e baixa temporada bem marcadas', 'Escolas e experiências que precisam encher agenda em janela curta'],
         features: [
-          'Criação de campanhas no Instagram e Facebook',
-          'Segmentação de público por interesse e comportamento',
-          'Análise e otimização diária das campanhas',
-          'Testes A/B de criativos',
-          'Relatório mensal de métricas e performance',
-          'Grupo de WhatsApp exclusivo',
+          'Definição de canal e verba a partir do diagnóstico',
+          'Campanhas no Meta, no Google ou nos dois',
+          'Segmentação por intenção e por origem do hóspede',
+          'Teste de criativo e de gancho ao longo do mês',
+          'Acompanhamento e ajuste durante a temporada',
+          'Relatório mensal e grupo de WhatsApp direto com quem opera',
         ],
-        result: 'Mais leads e reservas com custo por aquisição controlado',
-      },
-      {
-        slug: 'google-ads',
-        pillar: 'performance',
-        name: 'Google Ads',
-        period: 'monthly',
-        tagline: 'Apareça no momento certo no Google.',
-        description: 'Quando alguém busca o que você oferece, sua marca aparece primeiro. Campanhas no Google com foco em intenção de compra. O tráfego mais qualificado que existe.',
-        forWhom: ['Hotéis que querem reduzir dependência das OTAs', 'Experiências e destinos turísticos', 'Beach clubs e restaurantes com alta e baixa temporada'],
-        features: [
-          'Criação e gestão de campanhas no Google Ads',
-          'Pesquisa e seleção de palavras-chave estratégicas',
-          'Segmentação para públicos específicos',
-          'Otimização diária das campanhas',
-          'Relatório mensal de performance',
-          'Grupo de WhatsApp exclusivo',
-        ],
-        result: 'Tráfego qualificado com alta intenção de compra',
+        result: 'Reserva direta entrando por canal escolhido com critério',
       },
     ],
   },
@@ -317,45 +412,30 @@ export const servicesData: ServiceData[] = [
     portfolioCategory: 'automatizacoes',
     subServices: [
       {
-        slug: 'sistemas-internos',
-        pillar: 'automatizacoes',
-        name: 'Sistemas Internos',
-        period: 'once',
-        tagline: 'Sistemas personalizados para a sua operação.',
-        description: 'Desenvolvemos sistemas internos sob medida: CRMs, dashboards, gestão de projetos, portais de cliente e qualquer solução que organize e escale a sua operação.',
-        forWhom: ['Agências e prestadores de serviço', 'Hotéis e operadoras turísticas', 'Empresas com fluxos complexos de atendimento'],
-        features: [
-          'Levantamento de requisitos',
-          'Design e desenvolvimento do sistema',
-          'Integração com ferramentas existentes',
-          'Painel administrativo',
-          'Documentação e treinamento',
-        ],
-        result: 'Operação organizada, centralizada e escalável',
-      },
-      {
         slug: 'automacoes',
         pillar: 'automatizacoes',
         name: 'Automações',
         period: 'once',
-        tagline: 'Processe mais fazendo menos com fluxos automáticos.',
-        description: 'Criamos automações que conectam suas ferramentas e eliminam trabalho manual: desde follow-ups automáticos até integrações entre CRM, e-mail, WhatsApp e planilhas.',
-        forWhom: ['Times de marketing e vendas', 'Negócios com alto volume de atendimento', 'Empresas que querem reduzir erros operacionais'],
+        grupo: 'operacao',
+        tagline: 'Resolve esforço: o que a operação refaz toda semana passa a sair sozinho.',
+        description: 'Automações cuidam do trabalho repetitivo da operação: fluxo de atendimento, publicação no horário e peça que se repete toda semana, como tábua de maré e programação. Se o que você procura é não perder contato de quem pediu orçamento, o produto é CRM, não este.',
+        forWhom: ['Operações que refazem a mesma arte ou a mesma planilha toda semana', 'Times pequenos que perdem hora com tarefa manual', 'Negócios com alto volume de atendimento repetitivo'],
         features: [
-          'Mapeamento de processos automatizáveis',
-          'Criação de fluxos no Make, n8n ou Zapier',
-          'Integração entre plataformas (CRM, e-mail, WhatsApp)',
-          'Testes e validação',
-          'Documentação dos fluxos',
+          'Mapeamento do que a operação repete',
+          'Fluxos no Make, n8n ou Zapier',
+          'Peça de série ligada à fonte de dados, publicada no horário',
+          'Integração entre as ferramentas que você já usa',
+          'Documentação dos fluxos, para não depender de quem montou',
         ],
-        result: 'Processos automáticos que trabalham enquanto você dorme',
+        result: 'Menos hora gasta em tarefa que não precisa de gente',
       },
       {
         slug: 'crm',
         pillar: 'automatizacoes',
         name: 'CRM',
         period: 'once',
-        tagline: 'Gestão de clientes e pipeline de vendas centralizado.',
+        grupo: 'operacao',
+        tagline: 'Resolve receita: nenhum contato se perde no caminho.',
         description: 'Implementamos e configuramos o CRM ideal para o seu negócio, organizando leads, histórico de atendimento, follow-ups e pipeline de vendas em um único lugar.',
         forWhom: ['Times de vendas que dependem de planilhas', 'Agências e prestadores de serviço com múltiplos clientes', 'Hotéis e operadoras com alto volume de leads'],
         features: [
@@ -372,85 +452,6 @@ export const servicesData: ServiceData[] = [
   },
 ]
 
-servicesData.push({
-  slug: 'motion',
-  pillar: 'motion',
-  title: 'Motion',
-  tagline: 'Consistência sem esforço recorrente.',
-  description: 'Peças animadas e conteúdo gerado em série para a marca aparecer sempre igual, sem o time refazer arte toda semana.',
-  gradient: 'from-[#162B20] via-[#2D5238] to-[#0F2018]',
-  what: 'Motion não é enfeite. É o que faz a marca aparecer do mesmo jeito toda vez sem custar uma hora de alguém toda semana. Vinheta, selo e assinatura em movimento dão acabamento; o conteúdo gerado em série resolve a peça repetitiva que hoje alguém refaz na mão, no improviso, quase sempre em cima da hora.',
-  how: [
-    { number: '01', title: 'Inventário do repetitivo', desc: 'Mapeamos o que a sua operação refaz toda semana: maré, programação, vento, line-up.' },
-    { number: '02', title: 'Sistema visual em movimento', desc: 'Definimos vinheta, selo, assinatura e o padrão das peças de série dentro da sua identidade.' },
-    { number: '03', title: 'Animação e automação', desc: 'Animamos as peças e ligamos as de série à fonte de dados, para saírem sozinhas no horário certo.' },
-    { number: '04', title: 'Entrega e handoff', desc: 'Entregamos nos formatos que o seu editor abre e documentamos como usar cada peça.' },
-  ],
-  whoFor: [
-    'Pousadas e beach clubs que publicam a mesma informação toda semana',
-    'Escolas de kite e wingfoil que dependem de maré e vento',
-    'Marcas que já têm identidade e querem acabamento em movimento',
-    'Times pequenos que perdem hora com peça repetitiva',
-  ],
-  deliverables: ['Vinheta de abertura', 'Selo e assinatura animados', 'Lower third para reels', 'Peças de série no padrão da marca', 'Criativo animado para anúncio', 'Arquivos em ProRes 4444 e WebM VP9 com alpha'],
-  portfolioCategory: 'motion',
-  subServices: [
-    {
-      slug: 'pecas-animadas',
-      pillar: 'motion',
-      name: 'Peças animadas',
-      period: 'once',
-      tagline: 'Vinheta, selo e assinatura em movimento.',
-      description: 'O kit de movimento da marca: abertura, selo, assinatura e lower third para reels. É o que dá acabamento ao conteúdo que você já produz, sem depender de quem edita.',
-      forWhom: ['Marcas com identidade pronta e conteúdo sem acabamento', 'Quem publica reels toda semana', 'Operações que trocam de editor e perdem o padrão'],
-      features: [
-        'Vinheta de abertura',
-        'Selo e assinatura em movimento',
-        'Lower third para reels',
-        'Entrega principal em ProRes 4444',
-        'Entrega secundária em WebM VP9 com alpha',
-        // O CapCut não lê alpha de forma confiável. Sem esta versão, o editor
-        // do cliente recebe um arquivo que simplesmente não abre direito.
-        'Versão com fundo chapado para quem edita no CapCut',
-      ],
-      result: 'Conteúdo com acabamento de marca, independente de quem edita',
-    },
-    {
-      slug: 'conteudo-serie',
-      pillar: 'motion',
-      name: 'Conteúdo gerado em série',
-      period: 'monthly',
-      tagline: 'A peça repetitiva sai sozinha, no horário certo.',
-      description: 'Tábua de maré, programação da semana, previsão de vento e line-up. O sistema gera as peças no padrão da marca e elas saem no horário, sem ninguém refazer arte toda semana.',
-      forWhom: ['Pousadas e beach clubs com programação semanal', 'Escolas de kite e wingfoil que publicam maré e vento', 'Times que hoje refazem a mesma arte na mão'],
-      features: [
-        'Padrão visual das peças dentro da identidade',
-        'Ligação com a fonte de dados (maré, vento, agenda)',
-        'Geração automática no formato de story',
-        'Publicação no horário definido',
-        'Ajuste do padrão sempre que a marca mudar',
-      ],
-      result: '56 stories de maré entregues para o No Worries, cobrindo agosto e setembro',
-    },
-    {
-      slug: 'motion-anuncio',
-      pillar: 'motion',
-      name: 'Motion para anúncio',
-      period: 'once',
-      tagline: 'Criativo animado feito para testar.',
-      description: 'Criativo animado para Meta e Google, em variações de formato e de gancho. Feito para teste A/B: o mesmo conteúdo em versões que disputam entre si até uma ganhar.',
-      forWhom: ['Quem já investe em tráfego e cansou do criativo estático', 'Campanhas de temporada', 'Contas que precisam renovar criativo sem refazer captação'],
-      features: [
-        'Variações de gancho para teste A/B',
-        'Formatos para feed, story e reels',
-        'Versões legendadas para reprodução sem som',
-        'Arquivos prontos para Meta e Google',
-      ],
-      result: 'Criativo animado em variações prontas para disputar entre si',
-    },
-  ],
-})
-
 /**
  * Ordem de exibição das disciplinas.
  *
@@ -462,7 +463,6 @@ export const DISCIPLINE_ORDER: string[] = [
   'social-media',
   'performance-ads',
   'web-design',
-  'motion',
   'automatizacoes',
   'branding',
 ]
@@ -483,4 +483,79 @@ export function findSubService(slug: string): SubService | undefined {
     if (sub) return sub
   }
   return undefined
+}
+
+/* ────────────────────────── o catálogo de produtos ─────────────────────────
+
+   A partir daqui o site deixa de vender disciplina e passa a vender produto.
+   O eixo é como o cliente pensa em dinheiro: gasto uma vez ou gasto todo mês.
+
+   `servicesData` continua existindo porque carrega gradiente, conteúdo
+   traduzido e a categoria de portfólio de cada produto. Ela virou estrutura
+   interna: nenhuma disciplina tem rota própria.
+
+   ────────────────────────────────────────────────────────────────────────── */
+
+/**
+ * Ordem dos grupos na tela.
+ *
+ * `mensal` foi para o começo. Ele estava por último, depois de doze cartões
+ * compactos iguais, e é justamente o único grupo que não é temático: os dois
+ * produtos dele não têm nada em comum além de não terminarem, e é essa a
+ * informação que muda a decisão de quem chega. Recorrente também é a receita
+ * que sustenta a operação, então enterrá-lo no fim da rolagem era o oposto do
+ * que a página precisa fazer.
+ */
+export const GRUPO_ORDER: Grupo[] = ['mensal', 'marca', 'presenca', 'producao', 'operacao']
+
+/**
+ * Ordem dos produtos dentro de cada grupo, e do bloco recorrente.
+ *
+ * Declarada aqui pelo mesmo motivo de `DISCIPLINE_ORDER`: os produtos moram
+ * espalhados por `servicesData` na ordem em que as frentes nasceram, e
+ * reordenar os blocos moveria centenas de linhas sem ganho.
+ */
+export const PRODUTO_ORDER: string[] = [
+  // pontual · presença
+  'website-institucional', 'landing-page', 'setup',
+  // pontual · marca
+  'identidade-visual', 'branding-completo',
+  // pontual · produção
+  'fotografia', 'captacao-video', 'edicao-video', 'cobertura-de-evento', 'pecas-animadas',
+  // pontual · operação
+  'crm', 'automacoes',
+  // recorrente
+  'producao-conteudo', 'gestao-de-trafego',
+]
+
+const todosOsProdutos: SubService[] = servicesData.flatMap(d => d.subServices)
+
+/** Os treze produtos, na ordem de tela. */
+export const produtos: SubService[] = PRODUTO_ORDER
+  .map(slug => todosOsProdutos.find(p => p.slug === slug))
+  .filter((p): p is SubService => Boolean(p))
+
+/**
+ * Os treze produtos em cinco grupos, por problema que resolvem.
+ *
+ * Pontual e mensal deixaram de dividir a pagina e viraram etiqueta dentro do
+ * cartao: a informacao continua na hora de decidir, mas para de organizar a
+ * leitura.
+ *
+ *  e o unico grupo que nao e tematico, e de proposito: e o unico onde
+ * a modalidade e a caracteristica principal. Producao de conteudo e gestao de
+ * trafego nao tem nada em comum alem de serem continuos, e e isso que o
+ * cliente precisa entender.
+ */
+export const gruposDoCatalogo: { grupo: Grupo; itens: SubService[] }[] = GRUPO_ORDER
+  .map(grupo => ({ grupo, itens: produtos.filter(p => p.grupo === grupo) }))
+  .filter(g => g.itens.length > 0)
+
+/** Compatibilidade: ainda consumido pelo trilho lateral do hub. */
+export const pontualPorGrupo = gruposDoCatalogo.filter(g => g.grupo !== 'mensal')
+export const recorrentes: SubService[] = produtos.filter(p => p.period === 'monthly')
+
+/** A disciplina que carrega o conteúdo de um produto (gradiente, portfólio). */
+export function disciplinaDoProduto(slug: string): ServiceData | undefined {
+  return servicesData.find(d => d.subServices.some(s => s.slug === slug))
 }

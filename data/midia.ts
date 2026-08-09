@@ -10,8 +10,8 @@
  *   2. Ache a linha do slot aqui embaixo pelo rótulo
  *   3. Escreva o nome do arquivo no campo `arquivo`
  *
- *      antes:  { id: 'home-estudio-1', arquivo: '',                rotulo: 'Time em captação' }
- *      depois: { id: 'home-estudio-1', arquivo: 'time-captacao.jpg', rotulo: 'Time em captação' }
+ *      antes:  { id: 'fotografia-quarto', arquivo: '',              rotulo: 'Quarto ou área comum em luz natural' }
+ *      depois: { id: 'fotografia-quarto', arquivo: 'quarto-101.jpg', rotulo: 'Quarto ou área comum em luz natural' }
  *
  *   Só isso. Não precisa mexer em componente nenhum.
  *
@@ -52,44 +52,97 @@ export const PASTA = '/midia/'
 
 /* ────────────────────────────── HOME ────────────────────────────── */
 const home: Slot[] = [
-  { id: 'home-estudio-1', arquivo: '', rotulo: 'Time em captação no destino', formato: 'v45' },
-  { id: 'home-estudio-2', arquivo: '', rotulo: 'Bastidor de gravação',        formato: 'v45' },
-  { id: 'home-estudio-3', arquivo: '', rotulo: 'Foto do time',                formato: 'v45' },
+  { id: 'home-estudio-time-captacao', arquivo: '', rotulo: 'Time em captação no destino', formato: 'v45' },
+  { id: 'home-estudio-bastidor',      arquivo: '', rotulo: 'Bastidor de gravação',        formato: 'v45' },
+  { id: 'home-estudio-time-foto',     arquivo: '', rotulo: 'Foto do time',                formato: 'v45' },
+]
+
+/* ──────────────────────────── DESTINOS ───────────────────────────
+   Um slot por destino da seção da home. O rótulo diz o que procurar no
+   acervo: paisagem que identifique a praia de longe, não foto de hóspede
+   nem peça de cliente. Vazio, cada card mostra o placeholder tracejado
+   com essa frase, que é exatamente o briefing de quem vai captar.       */
+const destinos: Slot[] = [
+  { id: 'destino-jericoacoara',       arquivo: '', rotulo: 'Jericoacoara: duna do pôr do sol ou rua de areia',      formato: 'h169' },
+  { id: 'destino-prea',               arquivo: '', rotulo: 'Preá: praia em alta temporada, com kite no fundo',      formato: 'h169' },
+  { id: 'destino-ilha-do-guajiru',    arquivo: '', rotulo: 'Ilha do Guajirú: água rasa, escola de kite ou pousada', formato: 'h169' },
+  { id: 'destino-taiba',              arquivo: '', rotulo: 'Taíba: duna, vento e casa de temporada',                formato: 'h169' },
+  { id: 'destino-cumbuco',            arquivo: '', rotulo: 'Cumbuco: kite na água ou lagoa em dia de vento',        formato: 'h169' },
+  { id: 'destino-natal',              arquivo: '', rotulo: 'Natal: orla de Ponta Negra ou o Morro do Careca',       formato: 'h169' },
+  { id: 'destino-pipa',               arquivo: '', rotulo: 'Pipa: falésia, vila ou praia cheia em dia de sol',      formato: 'h169' },
+  { id: 'destino-joao-pessoa',        arquivo: '', rotulo: 'João Pessoa: orla da capital, hotel de frente para o mar', formato: 'h169' },
 ]
 
 /* ───────────────────────────── SOBRE ────────────────────────────── */
 const sobre: Slot[] = [
-  { id: 'sobre-origem-1', arquivo: '', rotulo: 'Operação antiga: hostel ou pousada', formato: 'v45' },
-  { id: 'sobre-origem-2', arquivo: '', rotulo: 'Escola de kite em aula',             formato: 'v45' },
-  { id: 'sobre-origem-3', arquivo: '', rotulo: 'Time em captação no destino',        formato: 'v45' },
+  { id: 'sobre-origem-hostel',       arquivo: '', rotulo: 'Operação antiga: hostel ou pousada', formato: 'v45' },
+  { id: 'sobre-origem-escola-kite',  arquivo: '', rotulo: 'Escola de kite em aula',             formato: 'v45' },
+  { id: 'sobre-origem-captacao',     arquivo: '', rotulo: 'Time em captação no destino',        formato: 'v45' },
 ]
 
 /* ─────────────── DISCIPLINAS (hub e página de disciplina) ────────────────
    Os mesmos slots servem os dois lugares. Antes a lista estava duplicada
    em dois componentes e saía do lugar quando um dos dois era editado.      */
-const disciplinas: Slot[] = [
-  { id: 'social-media-1',    arquivo: '', rotulo: 'Reel de pousada, hóspede em cena',    formato: 'v916' },
-  { id: 'social-media-2',    arquivo: '', rotulo: 'Reel de beach club no fim de tarde',  formato: 'v916' },
-  { id: 'social-media-3',    arquivo: '', rotulo: 'Story de bastidor da operação',       formato: 'v916' },
-  { id: 'social-media-4',    arquivo: '', rotulo: 'Reel de café da manhã',               formato: 'v916' },
+/**
+ * Um grupo por PRODUTO, não mais por disciplina.
+ *
+ * As disciplinas deixaram de existir como conceito de tela, e enquanto a
+ * chave era a disciplina-pai a página de Fotografia herdava quatro reels de
+ * Social Media, que é o oposto do que ela vende.
+ *
+ * O id diz o produto e o que entra, nesta ordem, para dar para achar o slot
+ * por varredura visual sem abrir o site.
+ */
+const produtos: Slot[] = [
+  // Produção de conteúdo (recorrente) — vinha de social-media-1 a -4
+  { id: 'producao-conteudo-reel-pousada',     arquivo: '', rotulo: 'Reel de pousada, hóspede em cena',   formato: 'v916' },
+  { id: 'producao-conteudo-reel-beach-club',  arquivo: '', rotulo: 'Reel de beach club no fim de tarde', formato: 'v916' },
+  { id: 'producao-conteudo-story-bastidor',   arquivo: '', rotulo: 'Story de bastidor da operação',      formato: 'v916' },
+  { id: 'producao-conteudo-reel-cafe',        arquivo: '', rotulo: 'Reel de café da manhã',              formato: 'v916' },
 
-  { id: 'performance-ads-1', arquivo: '', rotulo: 'Criativo vertical de campanha',       formato: 'v916' },
-  { id: 'performance-ads-2', arquivo: '', rotulo: 'Painel de resultado do gerenciador',  formato: 'h169' },
+  // Gestão de tráfego (recorrente) — vinha de performance-ads-1, -2 e motion-4
+  { id: 'gestao-de-trafego-criativo-vertical', arquivo: '', rotulo: 'Criativo vertical de campanha',      formato: 'v916' },
+  { id: 'gestao-de-trafego-painel-resultado',  arquivo: '', rotulo: 'Painel de resultado do gerenciador', formato: 'h169' },
+  { id: 'gestao-de-trafego-criativo-animado',  arquivo: '', rotulo: 'Criativo animado de anúncio',        formato: 'v916' },
 
-  { id: 'web-design-1',      arquivo: '', rotulo: 'Site aberto no celular',              formato: 'v916' },
-  { id: 'web-design-2',      arquivo: '', rotulo: 'Site em desktop, dobra inicial',      formato: 'h169' },
+  // Website institucional — vinha de web-design-1 e -2
+  { id: 'website-institucional-celular', arquivo: '', rotulo: 'Site aberto no celular',        formato: 'v916' },
+  { id: 'website-institucional-desktop', arquivo: '', rotulo: 'Site em desktop, dobra inicial', formato: 'h169' },
 
-  { id: 'motion-1',          arquivo: '', rotulo: 'Vinheta de abertura',                 formato: 'v916' },
-  { id: 'motion-2',          arquivo: '', rotulo: 'Story de maré gerado em série',       formato: 'v916' },
-  { id: 'motion-3',          arquivo: '', rotulo: 'Lower third aplicado em reel',        formato: 'v916' },
-  { id: 'motion-4',          arquivo: '', rotulo: 'Criativo animado de anúncio',         formato: 'v916' },
+  // Identidade visual — vinha de branding-1 a -3
+  { id: 'identidade-visual-papelaria', arquivo: '', rotulo: 'Aplicação de marca em papelaria', formato: 'v45' },
+  { id: 'identidade-visual-paleta',    arquivo: '', rotulo: 'Paleta e tipografia',             formato: 'v45' },
+  { id: 'identidade-visual-fachada',   arquivo: '', rotulo: 'Fachada ou sinalização',          formato: 'v45' },
 
-  { id: 'automatizacoes-1',  arquivo: '', rotulo: 'Resposta automática no WhatsApp',     formato: 'v916' },
-  { id: 'automatizacoes-2',  arquivo: '', rotulo: 'Painel de reserva e ocupação',        formato: 'h169' },
+  // Peças animadas — vinha de motion-1 e -3
+  { id: 'pecas-animadas-vinheta',     arquivo: '', rotulo: 'Vinheta de abertura',         formato: 'v916' },
+  { id: 'pecas-animadas-lower-third', arquivo: '', rotulo: 'Lower third aplicado em reel', formato: 'v916' },
 
-  { id: 'branding-1',        arquivo: '', rotulo: 'Aplicação de marca em papelaria',     formato: 'v45' },
-  { id: 'branding-2',        arquivo: '', rotulo: 'Paleta e tipografia',                 formato: 'v45' },
-  { id: 'branding-3',        arquivo: '', rotulo: 'Fachada ou sinalização',              formato: 'v45' },
+  // Automações — vinha de motion-2 (peça em série) e automatizacoes-2 (painel)
+  { id: 'automacoes-story-mare',     arquivo: '', rotulo: 'Story de maré gerado em série', formato: 'v916' },
+  { id: 'automacoes-painel-reserva', arquivo: '', rotulo: 'Painel de reserva e ocupação',  formato: 'h169' },
+
+  // CRM — vinha de automatizacoes-1. A resposta automática de WhatsApp mora
+  // aqui e não em Automações: o valor dela é não perder o contato.
+  { id: 'crm-resposta-whatsapp', arquivo: '', rotulo: 'Resposta automática no WhatsApp', formato: 'v916' },
+
+  // Fotografia — slots novos. Sem eles a página herdava reel de terceiro.
+  { id: 'fotografia-quarto',       arquivo: '', rotulo: 'Quarto ou área comum em luz natural',   formato: 'v45' },
+  { id: 'fotografia-fachada',      arquivo: '', rotulo: 'Fachada ou piscina no fim de tarde',    formato: 'v45' },
+  { id: 'fotografia-gastronomia',  arquivo: '', rotulo: 'Prato ou detalhe do café da manhã',     formato: 'v45' },
+
+  // Captação de vídeo — slots novos
+  { id: 'captacao-video-bastidor', arquivo: '', rotulo: 'Bastidor de captação, câmera em uso',   formato: 'v916' },
+  { id: 'captacao-video-drone',    arquivo: '', rotulo: 'Take de drone sobre a propriedade',     formato: 'v916' },
+  { id: 'captacao-video-hospede',  arquivo: '', rotulo: 'Hóspede em cena, movimento de câmera',  formato: 'v916' },
+
+  // Edição de vídeo — slots novos
+  { id: 'edicao-video-antes-depois', arquivo: '', rotulo: 'Antes e depois de correção de cor',   formato: 'v916' },
+  { id: 'edicao-video-reel-final',   arquivo: '', rotulo: 'Reel finalizado com legenda e trilha', formato: 'v916' },
+  // Cobertura de evento
+  { id: 'cobertura-de-evento-story',  arquivo: '', rotulo: 'Story publicado durante o evento, tela do celular', formato: 'v916' },
+  { id: 'cobertura-de-evento-pista',  arquivo: '', rotulo: 'Pista ou público em movimento, fim de noite',       formato: 'v916' },
+  { id: 'cobertura-de-evento-palco',  arquivo: '', rotulo: 'Palco ou line-up visto de longe',                   formato: 'h169' },
 ]
 
 /* ─────────────────────────── CASE / PORTFÓLIO ───────────────────── */
@@ -167,18 +220,30 @@ const blog: Slot[] = [
 ]
 
 /** Tudo junto, que é o que os componentes consultam. */
-export const slots: Slot[] = [...home, ...sobre, ...disciplinas, ...cases, ...blog]
+export const slots: Slot[] = [...home, ...destinos, ...sobre, ...produtos, ...cases, ...blog]
 
-/** Quais slots pertencem a cada grade, na ordem de exibição. */
+/**
+ * Quais slots pertencem a cada grade, na ordem de exibição.
+ *
+ * A chave é o slug do PRODUTO, igual ao da rota. Produto sem chave aqui não
+ * renderiza seção de mídia nenhuma, que é o comportamento certo enquanto o
+ * acervo não chega.
+ */
 export const GRADES: Record<string, { variante: 'reels' | 'verticais' | 'destaque'; ids: string[] }> = {
-  'home-estudio':    { variante: 'verticais', ids: ['home-estudio-1', 'home-estudio-2', 'home-estudio-3'] },
-  'sobre-origem':    { variante: 'verticais', ids: ['sobre-origem-1', 'sobre-origem-2', 'sobre-origem-3'] },
-  'social-media':    { variante: 'reels',     ids: ['social-media-1', 'social-media-2', 'social-media-3', 'social-media-4'] },
-  'performance-ads': { variante: 'destaque',  ids: ['performance-ads-1', 'performance-ads-2'] },
-  'web-design':      { variante: 'destaque',  ids: ['web-design-1', 'web-design-2'] },
-  'motion':          { variante: 'reels',     ids: ['motion-1', 'motion-2', 'motion-3', 'motion-4'] },
-  'automatizacoes':  { variante: 'destaque',  ids: ['automatizacoes-1', 'automatizacoes-2'] },
-  'branding':        { variante: 'verticais', ids: ['branding-1', 'branding-2', 'branding-3'] },
+  'home-estudio':          { variante: 'verticais', ids: ['home-estudio-time-captacao', 'home-estudio-bastidor', 'home-estudio-time-foto'] },
+  'sobre-origem':          { variante: 'verticais', ids: ['sobre-origem-hostel', 'sobre-origem-escola-kite', 'sobre-origem-captacao'] },
+
+  'producao-conteudo':     { variante: 'reels',     ids: ['producao-conteudo-reel-pousada', 'producao-conteudo-reel-beach-club', 'producao-conteudo-story-bastidor', 'producao-conteudo-reel-cafe'] },
+  'gestao-de-trafego':     { variante: 'verticais', ids: ['gestao-de-trafego-criativo-vertical', 'gestao-de-trafego-painel-resultado', 'gestao-de-trafego-criativo-animado'] },
+  'website-institucional': { variante: 'destaque',  ids: ['website-institucional-celular', 'website-institucional-desktop'] },
+  'identidade-visual':     { variante: 'verticais', ids: ['identidade-visual-papelaria', 'identidade-visual-paleta', 'identidade-visual-fachada'] },
+  'pecas-animadas':        { variante: 'verticais', ids: ['pecas-animadas-vinheta', 'pecas-animadas-lower-third'] },
+  'automacoes':            { variante: 'destaque',  ids: ['automacoes-story-mare', 'automacoes-painel-reserva'] },
+  'crm':                   { variante: 'verticais', ids: ['crm-resposta-whatsapp'] },
+  'fotografia':            { variante: 'verticais', ids: ['fotografia-quarto', 'fotografia-fachada', 'fotografia-gastronomia'] },
+  'captacao-video':        { variante: 'verticais', ids: ['captacao-video-bastidor', 'captacao-video-drone', 'captacao-video-hospede'] },
+  'cobertura-de-evento':   { variante: 'verticais', ids: ['cobertura-de-evento-story', 'cobertura-de-evento-pista', 'cobertura-de-evento-palco'] },
+  'edicao-video':          { variante: 'verticais', ids: ['edicao-video-antes-depois', 'edicao-video-reel-final'] },
 }
 
 const porId = new Map(slots.map(s => [s.id, s]))

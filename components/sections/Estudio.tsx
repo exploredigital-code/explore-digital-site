@@ -26,9 +26,11 @@ export function Estudio() {
           <AnimateIn>
             <SectionEyebrow>{t('estudio_eyebrow')}</SectionEyebrow>
             <h2 className="text-[clamp(28px,4.2vw,50px)] leading-[1.05] tracking-[-0.03em] text-menta mt-2 mb-6">
-              {t('estudio_title')}{' '}
-              <span className="text-verde-luz">{t('estudio_destaque')}</span>{' '}
-              {t('estudio_titulo_fim')}
+              {/* Sem o destaque em verde. Com a manchete em duas linhas, ele
+                  deixou de guiar a leitura e virou ruido: guiava porque a
+                  frase antiga tinha sete linhas e o argumento forte ficava no
+                  meio dela. */}
+              {t('estudio_title')}
             </h2>
             <p className="text-menta-fraca text-[15.5px] leading-[1.8] max-w-[560px] mb-9">
               {t('estudio_desc')}
@@ -49,7 +51,11 @@ export function Estudio() {
             </div>
           </AnimateIn>
 
-          <AnimateIn delay={0.1}>
+          {/* `min-w-0`: item de grade nasce com `min-width: auto` e se recusa a
+                encolher abaixo do conteudo. Sem isto a faixa de midia empurrava a
+                pagina para 773px no celular. A regra ja estava no GradeMidia, um
+                nivel abaixo, onde nao adianta. */}
+            <AnimateIn delay={0.1} className="min-w-0">
             <GradeDoRegistro chave="home-estudio" rotulo={t('estudio_eyebrow')} />
           </AnimateIn>
         </div>
