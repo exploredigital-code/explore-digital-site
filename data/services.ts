@@ -7,7 +7,7 @@ export interface ServiceStep { number: string; title: string; desc: string }
  * quem executa. Só o pontual agrupa: o recorrente tem dois itens e vive em
  * bloco próprio.
  */
-export type Grupo = 'marca' | 'presenca' | 'producao' | 'operacao'
+export type Grupo = 'marca' | 'presenca' | 'producao' | 'operacao' | 'mensal'
 
 export interface SubService {
   slug: string
@@ -15,8 +15,8 @@ export interface SubService {
   name: string
   /** `once` é pontual, `monthly` é recorrente. O eixo do catálogo sai daqui. */
   period: 'once' | 'monthly'
-  /** Ausente no recorrente, que não agrupa. */
-  grupo?: Grupo
+  /** Todo produto tem grupo, inclusive os dois mensais. */
+  grupo: Grupo
   /** Prazo em dias úteis, herdado do antigo `on-demand.ts`. */
   prazoDias?: number | [number, number]
   /** Exige deslocamento até a propriedade. */
@@ -202,6 +202,7 @@ export const servicesData: ServiceData[] = [
         pillar: 'social',
         name: 'Produção de Conteúdo',
         period: 'monthly',
+        grupo: 'mensal',
         tagline: 'Reels, artes e stories com estratégia e identidade visual.',
         description: 'Produção completa de conteúdo para redes sociais: reels, design, stories e calendário editorial. Tudo alinhado com a identidade visual e os objetivos da sua marca.',
         forWhom: ['Marcas que querem presença ativa nas redes', 'Negócios que precisam de conteúdo consistente', 'Hotéis e pousadas que querem atrair hóspedes diretos'],
@@ -352,6 +353,7 @@ export const servicesData: ServiceData[] = [
         pillar: 'performance',
         name: 'Gestão de tráfego',
         period: 'monthly',
+        grupo: 'mensal',
         tagline: 'Meta, Google ou os dois, decidido no diagnóstico.',
         description: 'Campanha pensada pela pergunta que o hóspede faz, não pela plataforma. Quem já sabe onde quer ficar procura no Google; quem ainda não decidiu o destino descobre no Instagram. O canal sai do diagnóstico, e muda quando a temporada muda.',
         forWhom: ['Pousadas e hotéis que querem reduzir dependência de OTA', 'Beach clubs e restaurantes com alta e baixa temporada bem marcadas', 'Escolas e experiências que precisam encher agenda em janela curta'],
@@ -476,7 +478,7 @@ export function findSubService(slug: string): SubService | undefined {
    ────────────────────────────────────────────────────────────────────────── */
 
 /** Ordem dos grupos do pontual na tela. */
-export const GRUPO_ORDER: Grupo[] = ['presenca', 'marca', 'producao', 'operacao']
+export const GRUPO_ORDER: Grupo[] = ['marca', 'presenca', 'producao', 'operacao', 'mensal']
 
 /**
  * Ordem dos produtos dentro de cada grupo, e do bloco recorrente.
@@ -505,12 +507,24 @@ export const produtos: SubService[] = PRODUTO_ORDER
   .map(slug => todosOsProdutos.find(p => p.slug === slug))
   .filter((p): p is SubService => Boolean(p))
 
-/** Os onze pontuais, agrupados por problema que resolvem. */
-export const pontualPorGrupo: { grupo: Grupo; itens: SubService[] }[] = GRUPO_ORDER
-  .map(grupo => ({ grupo, itens: produtos.filter(p => p.period === 'once' && p.grupo === grupo) }))
+/**
+ * Os treze produtos em cinco grupos, por problema que resolvem.
+ *
+ * Pontual e mensal deixaram de dividir a pagina e viraram etiqueta dentro do
+ * cartao: a informacao continua na hora de decidir, mas para de organizar a
+ * leitura.
+ *
+ *  e o unico grupo que nao e tematico, e de proposito: e o unico onde
+ * a modalidade e a caracteristica principal. Producao de conteudo e gestao de
+ * trafego nao tem nada em comum alem de serem continuos, e e isso que o
+ * cliente precisa entender.
+ */
+export const gruposDoCatalogo: { grupo: Grupo; itens: SubService[] }[] = GRUPO_ORDER
+  .map(grupo => ({ grupo, itens: produtos.filter(p => p.grupo === grupo) }))
   .filter(g => g.itens.length > 0)
 
-/** Os dois recorrentes. Não agrupam: são dois. */
+/** Compatibilidade: ainda consumido pelo trilho lateral do hub. */
+export const pontualPorGrupo = gruposDoCatalogo.filter(g => g.grupo !== 'mensal')
 export const recorrentes: SubService[] = produtos.filter(p => p.period === 'monthly')
 
 /** A disciplina que carrega o conteúdo de um produto (gradiente, portfólio). */

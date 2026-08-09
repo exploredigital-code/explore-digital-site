@@ -697,7 +697,14 @@
     "ver_produto": "Ver detalhes",
     "doors_eyebrow": "Por onde começar",
     "door1_label": "Pontual",
-    "door2_label": "Mensal"
+    "door2_label": "Mensal",
+    "grupo_mensal": "Todo mês",
+    "grupo_mensal_sub": "Dois produtos que não terminam: rodam enquanto a temporada acontece.",
+    "etiqueta_pontual": "Pontual",
+    "etiqueta_mensal": "Mensal",
+    "catalogo_eyebrow": "O que a gente faz",
+    "catalogo_title": "Treze produtos, agrupados pelo problema que resolvem.",
+    "catalogo_sub": "Cada um tem escopo próprio. A etiqueta diz se você paga uma vez ou todo mês."
   },
   "home": {
     "gargalos_eyebrow": "Onde a gente entra",

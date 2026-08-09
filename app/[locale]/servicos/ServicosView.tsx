@@ -10,7 +10,7 @@ import { Navbar } from '@/components/sections/Navbar'
 import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer } from '@/components/sections/Footer'
 import { Process } from '@/components/sections/Process'
-import { pontualPorGrupo, recorrentes, type SubService } from '@/data/services'
+import { gruposDoCatalogo, type SubService } from '@/data/services'
 import { getLocalizedSubService } from '@/data/services-content'
 
 const WA_BASE = 'https://wa.me/+5585991043067?text='
@@ -34,7 +34,7 @@ export function ServicosView() {
   const taglineDe = (p: SubService) => getLocalizedSubService(locale, p.slug)?.tagline ?? p.tagline
 
   // Só as disciplinas: sob demanda tem rota própria.
-  const secoes = [...pontualPorGrupo.map(g => g.grupo), 'recorrente']
+  const secoes = gruposDoCatalogo.map(g => g.grupo)
   const [ativo, setAtivo] = useState(secoes[0])
   const refs = useRef<Record<string, HTMLElement | null>>({})
 
@@ -44,7 +44,7 @@ export function ServicosView() {
         const visivel = entradas
           .filter(e => e.isIntersecting)
           .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0]
-        if (visivel) setAtivo(visivel.target.id)
+        if (visivel) setAtivo(visivel.target.id as typeof secoes[number])
       },
       { rootMargin: '-140px 0px -55% 0px', threshold: 0 }
     )
@@ -76,20 +76,16 @@ export function ServicosView() {
 
 
   // O trilho lista só as disciplinas: sob demanda virou rota própria.
-  // O trilho lateral acompanha os cinco grupos, nao mais as seis disciplinas.
+  // O trilho lateral acompanha os cinco grupos do catalogo.
   const grupos = [
     {
-      label: t('pontual_eyebrow'),
-      itens: pontualPorGrupo.map((g, i) => ({
+      label: t('catalogo_eyebrow'),
+      itens: gruposDoCatalogo.map((g, i) => ({
         id: g.grupo,
         num: String(i + 1).padStart(2, '0'),
         label: t(`grupo_${g.grupo}`),
         count: g.itens.length,
       })),
-    },
-    {
-      label: t('recorrente_eyebrow'),
-      itens: [{ id: 'recorrente', num: '05', label: t('grupo_recorrente'), count: recorrentes.length }],
     },
   ]
   const trilhoFlat = grupos.flatMap(g => g.itens)
@@ -129,8 +125,8 @@ export function ServicosView() {
                 // antigo dividia por 'sabe o que precisa' contra 'sabe o
                 // problema', misturando projeto com mensalidade dentro da
                 // mesma porta.
-                { label: t('door1_label'), title: t('door1_title'), desc: t('door1_desc'), cta: t('door1_cta'), href: '#pontual', destaque: true },
-                { label: t('door2_label'), title: t('door2_title'), desc: t('door2_desc'), cta: t('door2_cta'), href: '#recorrente', destaque: false },
+                { label: t('door1_label'), title: t('door1_title'), desc: t('door1_desc'), cta: t('door1_cta'), href: '#marca', destaque: true },
+                { label: t('door2_label'), title: t('door2_title'), desc: t('door2_desc'), cta: t('door2_cta'), href: '#mensal', destaque: false },
               ].map(porta => (
                 <Link
                   key={porta.label}
@@ -229,13 +225,14 @@ export function ServicosView() {
 
               {/* ═══════ PORTA 2 — PROJETOS ═══════ */}
               {/* ───────── OS TREZE PRODUTOS ─────────
-                  Cartão compacto: nome, chamada e link, nada mais. O hub
-                  responde "quais produtos existem e qual é o meu"; prazo, o
-                  que inclui e CTA são resposta da página do produto.
+                  Cinco grupos por problema que resolvem, nao por modalidade
+                  de contrato. Pontual e mensal viraram etiqueta dentro do
+                  cartao: a informacao continua na hora de decidir, mas para
+                  de organizar a leitura da pagina.
 
-                  Sem grade de mídia. A prova visual pertence à página do
-                  produto, onde a pessoa já demonstrou interesse. */}
-              <section id="pontual" className="scroll-mt-32 mt-24 lg:mt-32">
+                  Cartao compacto: nome, chamada, etiqueta e link. Prazo e o
+                  que inclui sao resposta da pagina do produto. */}
+              <section id="catalogo" className="scroll-mt-32 mt-24 lg:mt-32">
                 <motion.header
                   initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -244,15 +241,15 @@ export function ServicosView() {
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-6 h-px bg-verde-medio" />
-                    <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-medio">{t('pontual_eyebrow')}</span>
+                    <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-medio">{t('catalogo_eyebrow')}</span>
                   </div>
                   <h2 className="text-[clamp(26px,4vw,44px)] leading-[1.05] tracking-[-0.03em] text-verde max-w-[620px] mb-4">
-                    {t('pontual_title')}
+                    {t('catalogo_title')}
                   </h2>
-                  <p className="text-[15px] leading-[1.75] text-tinta-70 max-w-[620px]">{t('pontual_sub')}</p>
+                  <p className="text-[15px] leading-[1.75] text-tinta-70 max-w-[620px]">{t('catalogo_sub')}</p>
                 </motion.header>
 
-                {pontualPorGrupo.map((g, gi) => (
+                {gruposDoCatalogo.map(g => (
                   <section key={g.grupo} id={g.grupo} className="scroll-mt-32 mt-12 lg:mt-14 first:mt-10">
                     <div className="flex items-baseline gap-3 mb-1.5">
                       <h3 className="text-[17px] font-bold text-verde tracking-[-0.01em]">{t(`grupo_${g.grupo}`)}</h3>
@@ -273,9 +270,15 @@ export function ServicosView() {
                             href={`/${locale}/servicos/${p.slug}`}
                             className="group h-full flex flex-col p-5 rounded-2xl border border-tinta-16 bg-white hover:border-verde-medio/45 hover:shadow-md transition-all duration-300"
                           >
-                            <h4 className="text-[16.5px] leading-tight tracking-[-0.01em] text-verde font-bold mb-2">
-                              {nomeDe(p)}
-                            </h4>
+                            <div className="flex items-start justify-between gap-3 mb-2">
+                              <h4 className="text-[16.5px] leading-tight tracking-[-0.01em] text-verde font-bold">
+                                {nomeDe(p)}
+                              </h4>
+                              {/* A etiqueta, nao mais a divisao da pagina */}
+                              <span className="shrink-0 rounded-full border border-tinta-16 px-2 py-[2px] text-[9.5px] font-bold uppercase tracking-[0.08em] text-tinta-70">
+                                {p.period === 'monthly' ? t('etiqueta_mensal') : t('etiqueta_pontual')}
+                              </span>
+                            </div>
                             <p className="text-[13px] leading-[1.55] text-tinta-70 mb-4 flex-1">{taglineDe(p)}</p>
                             <span className="inline-flex items-center gap-2 text-[12px] font-bold text-verde-medio transition-all duration-200 group-hover:gap-2.5">
                               {t('ver_produto')}
@@ -289,53 +292,6 @@ export function ServicosView() {
                 ))}
               </section>
 
-              {/* ───────── OS DOIS RECORRENTES ─────────
-                  Depois do pontual, e não antes: recorrente é a decisão maior,
-                  e quem leu onze avulsos entende o "todo mês" sem rótulo. */}
-              <section id="recorrente" className="scroll-mt-32 mt-20 lg:mt-24">
-                <motion.header
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-90px 0px' }}
-                  transition={{ duration: 0.5 }}
-                  className="mb-8"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-6 h-px bg-sol" />
-                    <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-medio">{t('recorrente_eyebrow')}</span>
-                  </div>
-                  <h2 className="text-[clamp(24px,3.4vw,38px)] leading-[1.08] tracking-[-0.025em] text-verde max-w-[620px] mb-4">
-                    {t('recorrente_title')}
-                  </h2>
-                  <p className="text-[15px] leading-[1.75] text-tinta-70 max-w-[620px]">{t('recorrente_sub')}</p>
-                </motion.header>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {recorrentes.map((p, i) => (
-                    <motion.div
-                      key={p.slug}
-                      initial={{ opacity: 0, y: 12 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: '-50px 0px' }}
-                      transition={{ duration: 0.35, delay: i * 0.05 }}
-                    >
-                      <Link
-                        href={`/${locale}/servicos/${p.slug}`}
-                        className="group h-full flex flex-col p-6 rounded-2xl border border-verde-medio/30 bg-menta-clara/60 hover:border-verde-medio hover:shadow-md transition-all duration-300"
-                      >
-                        <h3 className="text-[18px] leading-tight tracking-[-0.01em] text-verde font-bold mb-2">
-                          {nomeDe(p)}
-                        </h3>
-                        <p className="text-[13.5px] leading-[1.6] text-tinta-70 mb-5 flex-1">{taglineDe(p)}</p>
-                        <span className="inline-flex items-center gap-2 text-[12.5px] font-bold text-verde-medio transition-all duration-200 group-hover:gap-2.5">
-                          {t('ver_produto')}
-                          <ArrowIcon />
-                        </span>
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div>
-              </section>
 
 
             </div>

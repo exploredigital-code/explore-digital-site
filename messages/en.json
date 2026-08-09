@@ -697,7 +697,14 @@
     "ver_produto": "See details",
     "doors_eyebrow": "Where to start",
     "door1_label": "One off",
-    "door2_label": "Monthly"
+    "door2_label": "Monthly",
+    "grupo_mensal": "Every month",
+    "grupo_mensal_sub": "Two products that do not end: they run while the season happens.",
+    "etiqueta_pontual": "One off",
+    "etiqueta_mensal": "Monthly",
+    "catalogo_eyebrow": "What we do",
+    "catalogo_title": "Thirteen products, grouped by the problem they solve.",
+    "catalogo_sub": "Each has its own scope. The tag tells you whether you pay once or every month."
   },
   "home": {
     "gargalos_eyebrow": "Where we come in",
