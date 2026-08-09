@@ -375,6 +375,90 @@
     "ok_desc": "Contestamos en un plazo de cinco días laborables, sea cual sea el resultado. Si no tienes noticias para entonces, escríbenos.",
     "ok_home": "Volver al inicio"
   },
+  "recorrente": {
+    "etiqueta": "Mensual",
+    "hero_prazo": "Contrato de 6 a 12 meses",
+    "prazo_eyebrow": "El plazo",
+    "prazo_title": "Seis meses de contrato, y hasta doce.",
+    "prazo_p1": "La marca y el contenido orgánico tardan de 90 a 180 días en convertirse en reservas de forma consistente. Un contrato más corto no mide nada y desperdicia tu dinero.",
+    "prazo_p2": "Por eso el mínimo son seis meses, y no porque queramos atar a nadie. Es el tiempo que hace falta para separar lo que funcionó de lo que fue casualidad. Los contratos de hasta doce meses existen para quien quiere atravesar la temporada entera con el mismo equipo.",
+    "prazo_p3": "Estás leyendo esto aquí y no en la propuesta a propósito. Un plazo que aparece solo a la hora de firmar parece una trampa.",
+    "grupo_eyebrow": "El día a día",
+    "grupo_title": "Un grupo de WhatsApp con quien ejecuta, no con quien atiende.",
+    "grupo_desc": "La objeción más común del sector es \"ya contraté una agencia y no dio resultado\". Casi siempre la historia es la misma: desaparecieron. El grupo es la respuesta a eso. Hablas con quien pone la mano, el mismo día, sin abrir un ticket y sin esperar una reunión de alineación.",
+    "grupo_itens": [
+      "El social media de tu proyecto, que produce y publica",
+      "El gestor de tráfico, que toca la campaña",
+      "El día a día: la promo que salió, la habitación que se liberó, el evento que entró en la agenda"
+    ],
+    "resultado_eyebrow": "Cómo se lee el resultado",
+    "resultado_title": "Una parte se mide. La otra la notas en la tarifa.",
+    "medido_label": "Lo que medimos",
+    "medido_itens": [
+      "Reserva directa",
+      "Conversación iniciada",
+      "Coste por lead"
+    ],
+    "percebido_label": "Lo que no cabe en un informe",
+    "percebido_desc": "La marca pasa a sostener el precio. No se convierte en gráfico, pero aparece en la tarifa que puedes cobrar y en el huésped que deja de pedir descuento.",
+    "sem_vaidade": "El crecimiento de seguidores no entra como resultado. Es un síntoma, y Explore no vende métrica de vanidad.",
+    "ritmo_eyebrow": "Ritmo y proceso",
+    "diagnostico_nota": "Definido en el diagnóstico, antes de cualquier contrato.",
+    "produtos": {
+      "producao-conteudo": {
+        "ritmo_title": "Lo que pasa a lo largo del mes.",
+        "ritmo_sub": "El contenido recurrente no es una entrega en bloque a fin de mes. Es una rutina, y esta es la rutina.",
+        "etapas": [
+          { "quando": "Inicio del mes", "title": "Calendario sobre la mesa", "desc": "El plan del mes llega listo, con tema, formato y fecha de cada pieza. Lo apruebas o pides un cambio ahí mismo, en el grupo." },
+          { "quando": "A lo largo del mes", "title": "Producción y publicación", "desc": "Las piezas llegan para aprobación antes de salir, en vez de acumularse en la última semana. Lo urgente entra fuera del calendario, por el grupo." },
+          { "quando": "Cuando cambia", "title": "Ajuste sobre la marcha", "desc": "La promo que salió, la habitación que se liberó, el evento que entró en la agenda. Eso no espera al mes siguiente." },
+          { "quando": "Fin del mes", "title": "Lectura y próximo plan", "desc": "Qué rindió y qué no, y el calendario siguiente sale de esa lectura." }
+        ],
+        "blocos": [
+          {
+            "title": "Sin cantidad fija de piezas.",
+            "desc": "El volumen sale del diagnóstico, y no de una tabla. Una posada de diez habitaciones y un beach club con evento cada semana no necesitan el mismo número de publicaciones, y venderles el mismo paquete significa entregar de más a uno y de menos al otro. El número entra en la propuesta, después del diagnóstico, y no cambia a mitad de contrato sin tu palabra."
+          },
+          {
+            "title": "El canal también sale del diagnóstico.",
+            "desc": "Instagram, LinkedIn o blog. Una posada en Jericoacoara probablemente sea solo Instagram, porque es donde busca el huésped. Un proyecto mayor puede pedir LinkedIn. El blog entra cuando la búsqueda en Google ya es una puerta de entrada real."
+          },
+          {
+            "title": "Los primeros 90 días son distintos del resto.",
+            "desc": "Al principio se prueba: formato, horario, tono, tipo de pieza. Sale mucho al aire para descubrir a qué responde tu audiencia. Después de ese periodo el calendario se vuelve más previsible y el esfuerzo pasa de la prueba al volumen de lo que ya funciona."
+          }
+        ]
+      },
+      "gestao-de-trafego": {
+        "ritmo_title": "Lo que pasa a lo largo del mes.",
+        "ritmo_sub": "Una campaña no se hace una vez y se deja corriendo. Se lee y se toca, y este es el ciclo.",
+        "etapas": [
+          { "quando": "Inicio", "title": "Estructura y creativos al aire", "desc": "Canal, público y presupuesto definidos en el diagnóstico. Las primeras campañas suben con más de un creativo, para que haya con qué comparar." },
+          { "quando": "Primeras semanas", "title": "Fase de aprendizaje", "desc": "La plataforma necesita volumen de datos antes de entregar bien. Es el periodo en que el coste por lead todavía oscila y en que tocar de más estorba." },
+          { "quando": "A lo largo del mes", "title": "Prueba de creativo y de gancho", "desc": "El creativo se cansa. Entran nuevos y salen los que cayeron, con la decisión saliendo del dato y no del gusto." },
+          { "quando": "Fin del mes", "title": "Lectura y reasignación", "desc": "A dónde va el presupuesto del mes siguiente, y por qué. Lo que no convirtió pierde inversión." }
+        ],
+        "blocos": [
+          {
+            "title": "El presupuesto de medios es tuyo, y lo pagas directo a las plataformas.",
+            "desc": "La tarjeta es tuya, la cuenta de anuncios es tuya y el dinero del anuncio nunca pasa por Explore. Eso no es un detalle burocrático: significa que la cuenta sigue siendo tuya, con todo su histórico, si algún día dejamos de trabajar juntos. Lo que Explore cobra por el trabajo es otra cosa, y no es ese presupuesto."
+          },
+          {
+            "title": "Mínimo de R$ 2.000 al mes en medios.",
+            "desc": "Por debajo de eso el dato no cierra y la campaña no sale de la fase de aprendizaje. No vale la pena empezar, y preferimos decirlo aquí y no en la llamada. Este importe es tu presupuesto de anuncios, pagado a las plataformas. No es el precio del trabajo de Explore."
+          },
+          {
+            "title": "Subir el presupuesto es conversación de mitad de contrato.",
+            "desc": "Cuando el proyecto ya está rodando y el dato muestra qué campaña trae reservas, subir la inversión es el movimiento que más rinde, porque pones dinero encima de lo que ya está probado. Eso no es decisión del primer mes, y no te lo vamos a pedir antes de tener algo que mostrar."
+          },
+          {
+            "title": "Meta, Google o los dos.",
+            "desc": "Sale del diagnóstico. Meta encuentra a quien todavía no estaba buscando; Google atiende a quien ya lo está. Muchas operaciones de hospedaje necesitan las dos, pero empezar por las dos con presupuesto corto es la forma más rápida de no aprender nada de ninguna."
+          }
+        ]
+      }
+    }
+  },
   "service_detail": {
     "back": "Volver",
     "recommended": "Recomendado",

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { servicesData, findSubService } from '@/data/services'
 import { canonical, languageAlternates } from '@/lib/site'
 import { ServiceDetailView } from './ServiceDetailView'
+import { RecorrenteDetailView } from './RecorrenteDetailView'
 
 interface Props {
   params: Promise<{ slug: string; locale: string }>
@@ -23,7 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const alvo = sub
   const nome = sub.name
-  const title = `${nome} — Explore Digital`
+  // Separador de barra, e não travessão: o em-dash está fora em todo o site,
+  // e este era o último que sobrava, escondido dentro do title.
+  const title = `${nome} · Explore Digital`
 
   return {
     title,
@@ -45,5 +48,19 @@ export default async function ServicoPage({ params }: Props) {
   if (!sub) notFound()
 
   const parentService = servicesData.find(s => s.pillar === sub.pillar)!
+
+  // Os dois recorrentes têm view própria.
+  //
+  // Os outros doze vendem uma entrega, com começo e fim: a página responde o
+  // que a pessoa recebe. Estes dois vendem uma relação que se repete todo mês,
+  // e antes de assinar a pergunta é outra (por quanto tempo, com quem eu falo,
+  // como a gente sabe se funcionou). É outra estrutura, não outro texto.
+  //
+  // O `period` decide, e não uma lista de slugs: um terceiro recorrente entra
+  // na página certa só por nascer com `period: 'monthly'` em `services.ts`.
+  if (sub.period === 'monthly') {
+    return <RecorrenteDetailView sub={sub} parentService={parentService} locale={locale} />
+  }
+
   return <ServiceDetailView sub={sub} parentService={parentService} locale={locale} />
 }

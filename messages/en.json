@@ -375,6 +375,90 @@
     "ok_desc": "We answer within five working days either way. If you have not heard from us by then, write to us.",
     "ok_home": "Back to home"
   },
+  "recorrente": {
+    "etiqueta": "Monthly",
+    "hero_prazo": "6 to 12 month contract",
+    "prazo_eyebrow": "The term",
+    "prazo_title": "Six months of contract, and up to twelve.",
+    "prazo_p1": "Brand and organic content take 90 to 180 days to turn into bookings consistently. A shorter contract measures nothing and wastes your money.",
+    "prazo_p2": "That is why the minimum is six months, and not because we want to lock anyone in. It is the time it takes to tell what worked from what was a coincidence. Contracts of up to twelve months exist for whoever wants to cross a whole season with the same team.",
+    "prazo_p3": "You are reading this here and not in the proposal on purpose. A term that only shows up at signing time reads like a trap.",
+    "grupo_eyebrow": "Day to day",
+    "grupo_title": "A WhatsApp group with the people doing the work, not with an account manager.",
+    "grupo_desc": "The most common objection in this industry is \"I hired an agency once and it did nothing\". The story is almost always the same: they disappeared. The group is the answer to that. You talk to the people with their hands on it, the same day, with no ticket to open and no alignment meeting to wait for.",
+    "grupo_itens": [
+      "The social media person on your project, who produces and publishes",
+      "The paid traffic manager, who touches the campaign",
+      "The day to day: a promo that came up, a room that opened, an event that landed on the calendar"
+    ],
+    "resultado_eyebrow": "How the result is read",
+    "resultado_title": "One part is measured. The other you notice in your rate.",
+    "medido_label": "What we measure",
+    "medido_itens": [
+      "Direct bookings",
+      "Conversations started",
+      "Cost per lead"
+    ],
+    "percebido_label": "What does not fit in a report",
+    "percebido_desc": "The brand starts holding your price. It does not turn into a chart, but it shows up in the nightly rate you can charge and in the guest who stops asking for a discount.",
+    "sem_vaidade": "Follower growth does not count as a result. It is a symptom, and Explore does not sell vanity metrics.",
+    "ritmo_eyebrow": "Rhythm and process",
+    "diagnostico_nota": "Defined in the diagnosis, before any contract.",
+    "produtos": {
+      "producao-conteudo": {
+        "ritmo_title": "What happens across the month.",
+        "ritmo_sub": "Recurring content is not one big drop at month end. It is a routine, and this is the routine.",
+        "etapas": [
+          { "quando": "Start of the month", "title": "Calendar on the table", "desc": "The month's plan arrives ready, with theme, format and date for each piece. You approve it or ask for a change right there, in the group." },
+          { "quando": "Across the month", "title": "Production and publishing", "desc": "Pieces come for approval before going live, instead of piling up into the last week. Anything urgent goes in outside the calendar, through the group." },
+          { "quando": "When things change", "title": "Mid course adjustment", "desc": "A promo that came up, a room that opened, an event that landed on the calendar. That does not wait for next month." },
+          { "quando": "End of the month", "title": "Reading and next plan", "desc": "What worked and what did not, and the next calendar comes out of that reading." }
+        ],
+        "blocos": [
+          {
+            "title": "No fixed number of pieces.",
+            "desc": "The volume comes out of the diagnosis, not out of a price table. A ten room pousada and a beach club with a weekly event do not need the same number of posts, and selling both the same package means over delivering to one and under delivering to the other. The number goes into the proposal, after the diagnosis, and does not change mid contract without your word."
+          },
+          {
+            "title": "The channel comes out of the diagnosis too.",
+            "desc": "Instagram, LinkedIn or a blog. A pousada in Jericoacoara is probably Instagram only, because that is where the guest looks. A larger development may call for LinkedIn. A blog comes in when Google search is already a real front door."
+          },
+          {
+            "title": "The first 90 days are different from the rest.",
+            "desc": "Early on it is testing: format, timing, tone, type of piece. A lot goes live to find out what your audience answers to. After that the calendar gets more predictable and the effort moves from testing to doing more of what already works."
+          }
+        ]
+      },
+      "gestao-de-trafego": {
+        "ritmo_title": "What happens across the month.",
+        "ritmo_sub": "A campaign is not built once and left running. It is read and adjusted, and this is the cycle.",
+        "etapas": [
+          { "quando": "Start", "title": "Structure and creatives live", "desc": "Channel, audience and budget set in the diagnosis. The first campaigns go up with more than one creative, so there is something to compare." },
+          { "quando": "First weeks", "title": "Learning phase", "desc": "The platform needs a volume of data before it delivers well. This is when cost per lead still swings, and when touching too much makes it worse." },
+          { "quando": "Across the month", "title": "Creative and hook testing", "desc": "Creatives wear out. New ones go in and the ones that dropped come out, with the decision coming from the data and not from taste." },
+          { "quando": "End of the month", "title": "Reading and reallocation", "desc": "Where next month's budget goes, and why. Whatever did not convert loses budget." }
+        ],
+        "blocos": [
+          {
+            "title": "The media budget is yours, paid straight to the platforms.",
+            "desc": "The card is yours, the ad account is yours, and the ad money never passes through Explore. That is not paperwork detail: it means the account stays yours, with all of its history, if we ever stop working together. What Explore charges for the work is a separate thing, and it is not this budget."
+          },
+          {
+            "title": "Minimum of R$ 2,000 a month in media.",
+            "desc": "Below that the data does not add up and the campaign never leaves the learning phase. It is not worth starting, and we would rather say it here than on a call. This amount is your ad budget, paid to the platforms. It is not the price of Explore's work."
+          },
+          {
+            "title": "Raising the budget is a mid contract conversation.",
+            "desc": "Once the project is running and the data shows which campaign brings bookings, raising the investment is the move that pays the most, because you are putting money behind something already proven. That is not a first month decision, and we will not ask for it before we have something to show."
+          },
+          {
+            "title": "Meta, Google or both.",
+            "desc": "It comes out of the diagnosis. Meta finds people who were not looking yet; Google serves people who already are. Plenty of hospitality operations need both, but starting with both on a short budget is the fastest way to learn nothing about either."
+          }
+        ]
+      }
+    }
+  },
   "service_detail": {
     "back": "Back",
     "recommended": "Recommended",
