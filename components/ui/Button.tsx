@@ -77,7 +77,11 @@ export function Button({ variant = 'primary', size = 'md', className, href, targ
   const base = cn(
     'inline-flex items-center justify-center gap-2',
     'transition-all duration-200 cursor-pointer select-none',
-    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-g-mid',
+    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sol',
+    // O estado desabilitado morava no <button> de cada tela. Sobe para cá
+    // porque é comportamento do componente, não decisão de página, e o
+    // `translate-y-0` cancela o `-translate-y-0.5` do hover das variantes.
+    'disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0',
     variants[variant],
     sizes[size],
     className
