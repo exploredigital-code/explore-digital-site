@@ -740,35 +740,25 @@
   },
   "bio": {
     "meta_title": "Explore Digital · Links",
-    "meta_description": "Free consultation, website and support from Explore Digital. Marketing agency for hospitality and experiences on the coast of Ceará and Rio Grande do Norte.",
+    "meta_description": "Free audit, portfolio and support from Explore Digital. Marketing agency for hospitality and experiences on the coast of Ceará and Rio Grande do Norte.",
     "handle": "@somosexplore",
     "tagline": "Marketing for hospitality and experiences.",
     "items": [
       {
-        "key": "consultoria",
-        "title": "Free consulting",
-        "desc": "An analysis of your digital business, on us."
+        "key": "auditoria",
+        "title": "Free audit",
+        "desc": "Get a read on your digital positioning in minutes."
       },
       {
-        "key": "reserva",
-        "title": "{month} schedule",
-        "desc": "Secure your spot on this month's schedule",
-        "badge": "Last spots"
+        "key": "portfolio",
+        "title": "What we have delivered",
+        "desc": "Brands, websites and content for clients in Ceará and Rio Grande do Norte"
       },
       {
         "key": "whatsapp",
-        "title": "Talk to us on WhatsApp",
-        "desc": "Support in Spanish, English and Portuguese"
-      },
-      {
-        "key": "site",
-        "title": "Explore website",
-        "desc": "Who we are and what we do"
-      },
-      {
-        "key": "vagas",
-        "title": "Work with us",
-        "desc": "Open roles on the team"
+        "title": "{month} schedule",
+        "desc": "Secure your spot on this month's schedule",
+        "badge": "Last spots"
       }
     ],
     "wa_message": "Hi! I came from the Instagram bio link.",

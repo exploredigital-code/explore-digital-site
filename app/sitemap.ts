@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { LOCALES, SITE_URL, languageAlternates } from '@/lib/site'
 import { projects } from '@/data/portfolio'
-import { servicesData } from '@/data/services'
+import { produtos } from '@/data/services'
 import { blogPosts } from '@/data/blog-posts'
 
 /**
@@ -20,6 +20,10 @@ import { blogPosts } from '@/data/blog-posts'
  */
 const REDIRECIONADAS = new Set([
   '/solucoes', '/vagas', '/marketplace', '/servicos/naming', '/servicos/sistemas',
+  // Catálogo de 2026: sete rotas de serviço saíram do catálogo e respondem 301.
+  '/servicos/captacoes', '/servicos/meta-ads', '/servicos/google-ads',
+  '/servicos/sistemas-internos', '/servicos/conteudo-serie',
+  '/servicos/motion-anuncio', '/servicos/motion',
 ])
 
 type Entry = {
@@ -49,18 +53,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter(p => !p.hidden)
     .map(p => ({ path: `/portfolio/${p.slug}`, priority: 0.7, changeFrequency: 'monthly' }))
 
-  // As seis disciplinas. São as páginas que a busca por "agência de social
-  // media para pousada" tem chance de encontrar, então entram com prioridade
-  // acima dos sub-serviços.
-  const disciplinePages: Entry[] = servicesData.map(d => ({
-    path: `/servicos/${d.slug}`,
-    priority: 0.85,
+  // As disciplinas continuam existindo como estrutura interna de `services.ts`,
+  // mas deixaram de ter rota. Quem entra no mapa agora é o produto, que é o
+  // que a pessoa procura e o que ela compra.
+  //
+  // O recorrente entra com prioridade acima do pontual: são dois produtos e
+  // representam a receita que se repete.
+  const servicePages: Entry[] = produtos.map(p => ({
+    path: `/servicos/${p.slug}`,
+    priority: p.period === 'monthly' ? 0.85 : 0.8,
     changeFrequency: 'monthly',
   }))
-
-  const servicePages: Entry[] = servicesData
-    .flatMap(s => s.subServices)
-    .map(s => ({ path: `/servicos/${s.slug}`, priority: 0.8, changeFrequency: 'monthly' }))
 
   const blogPages: Entry[] = blogPosts.map(p => ({
     path: `/blog/${p.slug}`,
@@ -69,7 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ptOnly: true,
   }))
 
-  const all = [...staticPages, ...projectPages, ...disciplinePages, ...servicePages, ...blogPages]
+  const all = [...staticPages, ...projectPages, ...servicePages, ...blogPages]
     .filter(e => !REDIRECIONADAS.has(e.path))
 
   return all.flatMap(entry =>

@@ -740,35 +740,25 @@
   },
   "bio": {
     "meta_title": "Explore Digital · Links",
-    "meta_description": "Consultoria gratuita, site e atendimento da Explore Digital. Agência de marketing para hotelaria e experiências no litoral do Ceará e do Rio Grande do Norte.",
+    "meta_description": "Auditoria gratuita, portfólio e atendimento da Explore Digital. Agência de marketing para hotelaria e experiências no litoral do Ceará e do Rio Grande do Norte.",
     "handle": "@somosexplore",
     "tagline": "Marketing para hotelaria e experiências.",
     "items": [
       {
-        "key": "consultoria",
-        "title": "Consultoria gratuita",
-        "desc": "Análise do seu negócio digital, por nossa conta."
+        "key": "auditoria",
+        "title": "Auditoria gratuita",
+        "desc": "Receba em minutos uma análise do seu posicionamento digital."
       },
       {
-        "key": "reserva",
-        "title": "Agenda de {month}",
-        "desc": "Garanta seu lugar na agenda deste mês",
-        "badge": "Últimas vagas"
+        "key": "portfolio",
+        "title": "O que a gente já entregou",
+        "desc": "Marcas, sites e conteúdo de clientes no CE e no RN"
       },
       {
         "key": "whatsapp",
-        "title": "Fale conosco no WhatsApp",
-        "desc": "Atendimento em Espanhol, Inglês e Português"
-      },
-      {
-        "key": "site",
-        "title": "Site da Explore",
-        "desc": "Quem somos e o que fazemos"
-      },
-      {
-        "key": "vagas",
-        "title": "Trabalhe conosco",
-        "desc": "Vagas abertas no time"
+        "title": "Agenda de {month}",
+        "desc": "Garanta seu lugar na agenda deste mês",
+        "badge": "Últimas vagas"
       }
     ],
     "wa_message": "Olá! Vim pelo link da bio do Instagram.",

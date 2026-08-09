@@ -20,11 +20,38 @@ const MOVED: [from: string, to: string][] = [
   // /marketplace era a aba de Planos e já apontava para /solucoes. Encadear
   // deixaria dois saltos, então vai direto ao destino final.
   ['/marketplace',         '/servicos'],
-  // Naming saiu de Branding e Sistemas virou Automatizações. Os destinos são
-  // as páginas de disciplina, criadas na fase 5. Até elas existirem o destino
-  // era a âncora no hub, para não trocar 301 por 404.
-  ['/servicos/naming',     '/servicos/branding'],
-  ['/servicos/sistemas',   '/servicos/automatizacoes'],
+
+  // Estes dois apontavam para páginas de disciplina, que estão saindo do
+  // catálogo. Repontados agora para o destino FINAL: se ficassem como estavam,
+  // o redirect da disciplina viraria um segundo salto em cima do primeiro.
+  // Naming é entrega de estratégia de marca, então o destino é Branding
+  // Completo e não Identidade Visual.
+  ['/servicos/naming',     '/servicos/branding-completo'],
+  ['/servicos/sistemas',   '/servicos/automacoes'],
+
+  /* ── Catálogo de 2026: seis disciplinas viraram treze produtos ──────────
+     Cada rota morta aponta para o produto que herdou o assunto dela, nunca
+     para o hub: mandar tudo para /servicos jogaria fora o histórico de cada
+     página e devolveria ao visitante uma lista em vez de uma resposta.     */
+
+  // Captações se dividiu em três produtos. O `detailSlug` do antigo item de
+  // vídeo já apontava para cá, o que prova que esta rota sempre foi captação
+  // de vídeo; fotografia e edição são desmembramentos novos.
+  ['/servicos/captacoes',         '/servicos/captacao-video'],
+
+  // Meta e Google viraram um produto só.
+  ['/servicos/meta-ads',          '/servicos/gestao-de-trafego'],
+  ['/servicos/google-ads',        '/servicos/gestao-de-trafego'],
+
+  // Sistemas internos e conteúdo em série saíram. Os dois eram operação, que
+  // é o que Automações resolve.
+  ['/servicos/sistemas-internos', '/servicos/automacoes'],
+  ['/servicos/conteudo-serie',    '/servicos/automacoes'],
+
+  // Motion deixou de ser disciplina. Peças animadas é o único produto de
+  // motion que sobreviveu, e a disciplina inteira foi absorvida por Produção.
+  ['/servicos/motion-anuncio',    '/servicos/pecas-animadas'],
+  ['/servicos/motion',            '/servicos/producao-conteudo'],
 ]
 
 const nextConfig: NextConfig = {

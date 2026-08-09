@@ -315,7 +315,7 @@ export const contentA: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'Quem pesquisa "aula de kitesurf no Ceará" já decidiu aprender — o Google Ads garante que é a sua escola que aparece.',
-    cta: { heading: 'Apareça no Google quando o aluno está procurando pela sua escola.', label: 'Quero anunciar no Google Ads', href: '/servicos/google-ads' },
+    cta: { heading: 'Apareça no Google quando o aluno está procurando pela sua escola.', label: 'Quero anunciar no Google Ads', href: '/servicos/gestao-de-trafego' },
   },
 
   'meta-ads-pousadas-jericoacoara': {
@@ -343,7 +343,7 @@ export const contentA: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'O Meta Ads não captura demanda existente — ele cria o desejo de ir a Jericoacoara em quem ainda não sabe que quer ir.',
-    cta: { heading: 'Atraia turistas nacionais e internacionais para sua pousada em Jericoacoara.', label: 'Quero anunciar no Meta Ads', href: '/servicos/meta-ads' },
+    cta: { heading: 'Atraia turistas nacionais e internacionais para sua pousada em Jericoacoara.', label: 'Quero anunciar no Meta Ads', href: '/servicos/gestao-de-trafego' },
   },
 
   'anuncios-instagram-beach-club-cumbuco': {
@@ -371,7 +371,7 @@ export const contentA: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'Com a segmentação certa no Instagram Ads, Cumbuco deixa de ser "destino para quem conhece" e vira destino de fim de semana para toda Fortaleza.',
-    cta: { heading: 'Lote seu beach club em Cumbuco com campanhas no Instagram.', label: 'Quero anunciar no Meta Ads', href: '/servicos/meta-ads' },
+    cta: { heading: 'Lote seu beach club em Cumbuco com campanhas no Instagram.', label: 'Quero anunciar no Meta Ads', href: '/servicos/gestao-de-trafego' },
   },
 
   'trafego-pago-wingfoil-ceara': {
@@ -399,7 +399,7 @@ export const contentA: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'O wingfoil tem o menor custo por clique e o maior potencial de crescimento do litoral cearense — e o momento de agir é agora.',
-    cta: { heading: 'Capture alunos de wingfoil com tráfego pago antes que a concorrência chegue.', label: 'Quero anunciar para wingfoil', href: '/servicos/meta-ads' },
+    cta: { heading: 'Capture alunos de wingfoil com tráfego pago antes que a concorrência chegue.', label: 'Quero anunciar para wingfoil', href: '/servicos/gestao-de-trafego' },
   },
 
   'google-ads-pousadas-canoa-quebrada': {
@@ -427,7 +427,7 @@ export const contentA: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'Em Canoa Quebrada, o Google Ads é a ferramenta que separa quem aparece na frente das OTAs de quem paga comissão o ano todo.',
-    cta: { heading: 'Gere reservas diretas para sua pousada em Canoa Quebrada sem pagar comissão.', label: 'Quero anunciar no Google Ads', href: '/servicos/google-ads' },
+    cta: { heading: 'Gere reservas diretas para sua pousada em Canoa Quebrada sem pagar comissão.', label: 'Quero anunciar no Google Ads', href: '/servicos/gestao-de-trafego' },
   },
 
   'reduzir-ota-trafego-pago-ceara': {
@@ -455,7 +455,7 @@ export const contentA: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'Cada reserva direta capturada é uma comissão que ficou na margem do negócio — e o tráfego pago é o motor que faz isso acontecer.',
-    cta: { heading: 'Reduza a dependência do Booking e aumente sua margem com tráfego pago.', label: 'Quero uma estratégia de tráfego pago', href: '/servicos/meta-ads' },
+    cta: { heading: 'Reduza a dependência do Booking e aumente sua margem com tráfego pago.', label: 'Quero uma estratégia de tráfego pago', href: '/servicos/gestao-de-trafego' },
   },
 
   'meta-ads-kite-wingfoil-segmentacao': {
@@ -483,7 +483,7 @@ export const contentA: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'Anunciar para todo mundo é o caminho mais caro para matrículas. A segmentação certa é o que separa campanhas eficientes de orçamento desperdiçado.',
-    cta: { heading: 'Atraia o aluno certo de kite e wingfoil sem desperdiçar verba de anúncios.', label: 'Quero uma estratégia de Meta Ads', href: '/servicos/meta-ads' },
+    cta: { heading: 'Atraia o aluno certo de kite e wingfoil sem desperdiçar verba de anúncios.', label: 'Quero uma estratégia de Meta Ads', href: '/servicos/gestao-de-trafego' },
   },
 
   'remarketing-escola-kitesurf': {
@@ -511,7 +511,7 @@ export const contentA: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'O remarketing recupera os 98% que foram embora sem matricular — e é o investimento mais eficiente que uma escola de kite pode fazer.',
-    cta: { heading: 'Recupere os visitantes que saíram sem matricular e converta mais com o mesmo tráfego.', label: 'Quero uma estratégia de remarketing', href: '/servicos/meta-ads' },
+    cta: { heading: 'Recupere os visitantes que saíram sem matricular e converta mais com o mesmo tráfego.', label: 'Quero uma estratégia de remarketing', href: '/servicos/gestao-de-trafego' },
   },
 
   'campanhas-alta-temporada-kite-ceara': {
@@ -539,7 +539,7 @@ export const contentA: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'Escolas que preparam as campanhas com 90 dias de antecedência chegam na temporada com agenda cheia — as outras brigam por sobras.',
-    cta: { heading: 'Prepare sua escola para dominar a alta temporada de kite no Ceará.', label: 'Quero planejar minha campanha de temporada', href: '/servicos/google-ads' },
+    cta: { heading: 'Prepare sua escola para dominar a alta temporada de kite no Ceará.', label: 'Quero planejar minha campanha de temporada', href: '/servicos/gestao-de-trafego' },
   },
 
   'google-ads-meta-ads-pousadas-litoral': {
@@ -567,7 +567,7 @@ export const contentA: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'Google captura quem já quer ir. Meta cria o desejo de ir. Para lotação o ano todo, você precisa dos dois.',
-    cta: { heading: 'Monte uma estratégia completa de tráfego pago para sua pousada.', label: 'Quero uma estratégia integrada de anúncios', href: '/servicos/meta-ads' },
+    cta: { heading: 'Monte uma estratégia completa de tráfego pago para sua pousada.', label: 'Quero uma estratégia integrada de anúncios', href: '/servicos/gestao-de-trafego' },
   },
 
   'trafego-pago-pipa-turistas-rio-sp': {
@@ -595,6 +595,6 @@ export const contentA: Record<string, PostContent> = {
       },
     ],
     pullQuote: 'O turista do Rio e de São Paulo quer Pipa — e o Meta Ads é o canal mais eficiente para lembrá-lo disso antes que ele escolha outro destino.',
-    cta: { heading: 'Atraia turistas do Rio e de São Paulo para sua pousada em Pipa.', label: 'Quero anunciar no Meta Ads', href: '/servicos/meta-ads' },
+    cta: { heading: 'Atraia turistas do Rio e de São Paulo para sua pousada em Pipa.', label: 'Quero anunciar no Meta Ads', href: '/servicos/gestao-de-trafego' },
   },
 }

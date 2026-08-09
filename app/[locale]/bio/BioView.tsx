@@ -32,43 +32,30 @@ const strokeProps = {
 }
 
 const icons: Record<string, React.ReactNode> = {
-  // lupa com mini gráfico dentro = diagnóstico
-  consultoria: (
+  // lupa com mini gráfico dentro = a leitura do posicionamento
+  auditoria: (
     <svg {...strokeProps}>
       <circle cx="10.5" cy="10.5" r="6.75" />
       <path d="M15.4 15.4L20.5 20.5" />
       <path d="M8.2 12.3v-1.6M10.5 12.3V9.2M12.8 12.3V7.9" />
     </svg>
   ),
-  // calendário com check = reserva na agenda
-  reserva: (
+  // grade de peças = portfólio
+  portfolio: (
+    <svg {...strokeProps}>
+      <rect x="3.2" y="3.2" width="7.4" height="7.4" rx="1.8" />
+      <rect x="13.4" y="3.2" width="7.4" height="7.4" rx="1.8" />
+      <rect x="3.2" y="13.4" width="7.4" height="7.4" rx="1.8" />
+      <rect x="13.4" y="13.4" width="7.4" height="7.4" rx="1.8" />
+    </svg>
+  ),
+  // calendário com check: o item abre o WhatsApp, mas o que ele promete é a
+  // agenda do mês, e é a agenda que o ícone precisa dizer
+  whatsapp: (
     <svg {...strokeProps}>
       <rect x="3.2" y="5.2" width="17.6" height="15.6" rx="2.6" />
       <path d="M3.2 9.8h17.6M8.2 3.4v3.4M15.8 3.4v3.4" />
       <path d="M9 15.1l2.1 2.1 4-4.2" />
-    </svg>
-  ),
-  // balão de conversa com as ondas do telefone
-  whatsapp: (
-    <svg {...strokeProps}>
-      <path d="M3.4 20.6l1.3-4a8.4 8.4 0 113.1 3.1l-4.4.9z" />
-      <path d="M9.2 9.1c-.3.9.05 1.9.75 2.75.7.85 1.65 1.4 2.6 1.5.5.05.9-.25 1.15-.7l1.4.85c-.3.75-1 1.3-1.85 1.35-2.1.15-4.6-2.05-5.15-4.1-.2-.8.15-1.6.8-2.05l.9 1.4z" />
-    </svg>
-  ),
-  // globo
-  site: (
-    <svg {...strokeProps}>
-      <circle cx="12" cy="12" r="8.5" />
-      <path d="M3.5 12h17" />
-      <path d="M12 3.5c2.15 2.4 3.35 5.35 3.35 8.5S14.15 18.1 12 20.5C9.85 18.1 8.65 15.15 8.65 12S9.85 5.9 12 3.5z" />
-    </svg>
-  ),
-  // maleta
-  vagas: (
-    <svg {...strokeProps}>
-      <rect x="3" y="7.4" width="18" height="12.6" rx="2.4" />
-      <path d="M8.6 7.4V6a2.4 2.4 0 012.4-2.4h2a2.4 2.4 0 012.4 2.4v1.4" />
-      <path d="M3 12.6h18" />
     </svg>
   ),
 }
@@ -94,14 +81,25 @@ export function BioView() {
   // `items` vem de t.raw(), que não passa por ICU — a troca aqui é na mão.
   const withMonth = (s: string) => s.replace('{month}', month)
 
+  /**
+   * Link interno já sai marcado com a origem.
+   *
+   * Não há analytics instalado ainda, e o parâmetro não muda comportamento
+   * nenhum: existe para que, quando entrar, o tráfego do link da bio do
+   * Instagram já esteja separado do resto sem precisar mexer nesta página.
+   *
+   * O WhatsApp fica de fora de propósito. O `wa.me` só aceita `text`, e
+   * pendurar um marcador ali sujaria a mensagem que a pessoa envia. A origem
+   * já é identificável de outro jeito: a mensagem da agenda é exclusiva daqui.
+   */
+  const comOrigem = (caminho: string) => `${caminho}?origem=bio`
+
   const hrefFor = (key: string) => {
     switch (key) {
-      case 'consultoria': return `/${locale}/consultoria`
-      case 'reserva': return WA_BASE + encodeURIComponent(t('wa_message_reserva', { month }))
-      case 'whatsapp': return WA_BASE + encodeURIComponent(t('wa_message'))
-      case 'site': return `/${locale}`
-      case 'vagas': return `/${locale}/carreiras`
-      default: return `/${locale}`
+      case 'auditoria': return comOrigem(`/${locale}/consultoria`)
+      case 'portfolio': return comOrigem(`/${locale}/portfolio`)
+      case 'whatsapp': return WA_BASE + encodeURIComponent(t('wa_message_reserva', { month }))
+      default: return comOrigem(`/${locale}`)
     }
   }
 
@@ -156,8 +154,8 @@ export function BioView() {
         {/* ── links ── */}
         <nav className="flex flex-col gap-2">
           {items.map((item, i) => {
-            const destaque = item.key === 'consultoria'
-            const acento = item.key === 'reserva'
+            const destaque = item.key === 'auditoria'
+            const acento = item.key === 'whatsapp'
             const href = hrefFor(item.key)
             const externo = href.startsWith('http')
 
