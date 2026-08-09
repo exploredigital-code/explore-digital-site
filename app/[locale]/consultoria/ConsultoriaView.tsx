@@ -8,6 +8,7 @@ import { useTranslations, useLocale } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { OptionGroup } from '@/components/ui/OptionGroup'
+import { SkipLink } from '@/components/ui/SkipLink'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
 
 const WA_BASE = 'https://wa.me/+5585991043067?text='
@@ -321,7 +322,11 @@ function ConsultForm() {
           className="flex flex-col gap-5"
         >
           <div>
-            <h3 className="text-[20px] font-bold text-g-dark leading-tight">{t(`s${step}_title`)}</h3>
+            {/* h2, não h3. O formulário fica dentro do herói, logo depois do
+                h1, e um h3 ali criava o salto que o Lighthouse apontava. Como
+                a classe carrega a aparência inteira, trocar a tag não muda um
+                pixel. */}
+            <h2 className="text-[20px] font-bold text-g-dark leading-tight">{t(`s${step}_title`)}</h2>
             <p className="text-[13px] text-tinta-70 mt-1">{t(`s${step}_sub`)}</p>
           </div>
 
@@ -650,8 +655,14 @@ export function ConsultoriaView() {
 
   return (
     <>
+      <SkipLink />
       <LpHeader />
       <StickyBar />
+
+      {/* O <main> abre no herói e fecha antes do rodapé. É o alvo do skip link
+          e o marco que faltava: sem ele o leitor de tela não tinha como saltar
+          o cabeçalho fixo e a barra de CTA. */}
+      <main id="conteudo">
 
       {/* ───────── HERO + FORMULÁRIO ───────── */}
       <section id="formulario" className="page-hero relative overflow-hidden pt-28 lg:pt-32 pb-16 lg:pb-24">
@@ -978,6 +989,8 @@ export function ConsultoriaView() {
           </AnimateIn>
         </div>
       </section>
+
+      </main>
 
       {/* ───────── RODAPÉ MÍNIMO ───────── */}
       <footer className="bg-[#0D1A12] py-10 pb-24 lg:pb-10">
