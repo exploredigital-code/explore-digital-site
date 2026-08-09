@@ -27,13 +27,6 @@ function usableFilters(pool: typeof projects) {
   return FILTERS.filter(f => f.key === 'all' || present.has(f.key as Category))
 }
 
-const CATEGORY_LABELS: Record<Category, string> = {
-  branding:    'Branding',
-  web:         'Web Design',
-  social:      'Social Media',
-  performance: 'Performance',
-}
-
 const SECTOR_KEY: Record<string, string> = {
   'Beach Club': 'sector_beach_club',
   'Hotelaria': 'sector_hotelaria',
@@ -74,15 +67,6 @@ function ProjectCard({ project, seeCase, locale, getSector, getTagline }: {
           {project.year}
         </div>
 
-        {/* Category tags */}
-        <div className="absolute bottom-4 left-4 flex flex-wrap gap-1.5">
-          {project.categories.map(cat => (
-            <span key={cat}
-              className="text-[9px] font-bold tracking-[0.14em] uppercase text-g-light/70 border border-g-light/25 px-2 py-0.5 rounded-sm backdrop-blur-sm">
-              {CATEGORY_LABELS[cat]}
-            </span>
-          ))}
-        </div>
       </div>
 
       {/* Hover overlay */}
@@ -124,7 +108,9 @@ export function Portfolio() {
   const visible = projects.filter(p => !p.hidden)
   const filters = filtroAjuda(visible) ? usableFilters(visible) : []
   const filtered = active === 'all' ? visible : visible.filter(p => p.categories.includes(active as Category))
-  const displayed = filtered.slice(0, 6)
+  // Home e vitrine, nao catalogo: quatro cases em 2x2. A grade completa
+  // fica no /portfolio, onde quem chegou ja quer ver tudo.
+  const displayed = filtered.slice(0, 4)
   const remaining = filtered.length - displayed.length
 
   return (
@@ -175,7 +161,7 @@ export function Portfolio() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
           >
             {displayed.map((project, i) => (
               <motion.div
