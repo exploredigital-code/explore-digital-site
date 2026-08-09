@@ -39,12 +39,11 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
     title: parentService.title,
   }
 
-  // A grade vem da disciplina, nao do sub-servico. O registro tem uma grade por
-  // disciplina e criar mais quinze significaria mais setenta linhas para
-  // preencher a mao, sem ganho: as pecas de uma landing page sao as mesmas que
-  // ilustram Web Design. `grade()` devolve undefined se a chave nao existir, e
-  // ai a secao inteira nao renderiza.
-  const temGrade = Boolean(grade(parentService.slug))
+  // A grade vem do PRODUTO. Antes vinha da disciplina-pai, e enquanto foi
+  // assim a pagina de Fotografia herdava quatro reels de Social Media, que e
+  // o oposto do que ela vende. Produto sem chave no registro nao renderiza
+  // secao de midia nenhuma.
+  const temGrade = Boolean(grade(sub.slug))
 
   // `{service}` e placeholder ICU. Com `.replace()` o next-intl ja avaliou a
   // mensagem sem o argumento e lancou FORMATTING_ERROR antes da troca
@@ -133,7 +132,7 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
           <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
             <div className="border-t border-tinta-16 pt-14">
               <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-tinta-50 mb-6">{t('media_label')}</div>
-              <GradeDoRegistro chave={parentService.slug} rotulo={tServicos('trilho_label', { disciplina: localizedService.title })} />
+              <GradeDoRegistro chave={sub.slug} rotulo={tServicos('trilho_label', { disciplina: localizedSub.name })} />
             </div>
           </div>
         </section>
