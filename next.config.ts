@@ -80,6 +80,23 @@ const nextConfig: NextConfig = {
    * inteiro por meses, custo de alguns milissegundos no TTFB do robô é preço
    * baixo por não depender de renderização para o Google ler o título.
    */
+  /*
+   * NÃO PERSEGUIR o SEO 92 do Lighthouse por causa disto.
+   *
+   * O Lighthouse acusa "documento sem meta description" em toda rota, e é
+   * falso. Ele emula um celular e recebe a versão transmitida, onde title,
+   * description e canonical saem no fim do corpo; o navegador iça para o
+   * head ao interpretar, mas a auditoria estática do Lighthouse olha antes.
+   *
+   * Medido, requisitando a mesma rota com UA diferente:
+   *   Googlebot  -> title e description no <head>
+   *   navegador  -> no corpo
+   *   Lighthouse -> no corpo
+   *
+   * Quem decide indexação está na lista e recebe no head. Tentar consertar a
+   * medição incluindo `Chrome-Lighthouse` aqui não funciona, porque a UA
+   * emulada não carrega esse nome.
+   */
   htmlLimitedBots: /Googlebot|bingbot|Applebot|DuckDuckBot|Twitterbot|facebookexternalhit|LinkedInBot|Slackbot|WhatsApp|Discordbot|TelegramBot/i,
 
   async redirects() {
