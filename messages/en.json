@@ -707,24 +707,24 @@
       "instagram": "Instagram",
       "site": "Website"
     },
-    "ty_eyebrow": "Request received",
-    "ty_title": "Done. Your session is in the queue.",
-    "ty_desc": "We opened WhatsApp with your details already filled in. If the window didn’t open, choose below how you’d rather reach us. Both routes send our team the same information.",
+    "ty_eyebrow": "Audit running",
+    "ty_title": "Your audit is already running.",
+    "ty_desc": "We are reading what is public about your business right now: Google, your website, Instagram and your reviews. The report lands on your WhatsApp within a few minutes, and the person replying on the other side is one of the two partners.",
     "ty_wa_button": "Continue on WhatsApp",
-    "ty_wa_fallback": "Your browser blocked the WhatsApp window. Tap the button to send it.",
+    "ty_wa_fallback": "Your browser blocked the WhatsApp window. Tap the button to send.",
     "ty_home": "Back to the site",
     "ty_steps": [
       {
-        "label": "We got your details",
-        "desc": "Your form reached our team."
+        "label": "We have your details",
+        "desc": "The form came through and the reading started."
       },
       {
-        "label": "We analyse your digital",
-        "desc": "We study your site, social and reputation before we talk."
+        "label": "Reading the public sources",
+        "desc": "Google, your website, Instagram and what people write about you."
       },
       {
-        "label": "We confirm the time",
-        "desc": "We'll reach out within 24h to schedule the 45 minutes."
+        "label": "Report on WhatsApp",
+        "desc": "It arrives in minutes, at the number you gave us."
       }
     ],
     "f_size_note": "Rooms or suites in hospitality · spots per group for experiences.",
@@ -734,8 +734,8 @@
     "f_site_ph": "yoursite.com",
     "f_site_note": "Optional. If you don't have a website yet, leave it blank. That's already part of the diagnosis.",
     "ty_email_button": "I’d rather use email",
-    "ty_email_subject": "Free consulting request",
-    "ty_channels_note": "We reply within 24 hours, Monday to Friday.",
+    "ty_email_subject": "Free audit request",
+    "ty_channels_note": "If you would rather have it by email, use the second button. The content is the same.",
     "f_select": "Select",
     "relatorio_eyebrow": "What the report shows",
     "relatorio_title": "Where your business stands right now.",
@@ -770,7 +770,12 @@
     "prazo_eyebrow": "The timing",
     "prazo_title": "Minutes, because it is a system and not a queue.",
     "prazo_body": "The reading runs automatically from public sources as soon as the form arrives. It does not go through anyone’s calendar, so the report is ready while you are still holding your phone.",
-    "prazo_body_2": "It arrives on WhatsApp, at the number you give us. If you want to talk about what it found, you can just reply there."
+    "prazo_body_2": "It arrives on WhatsApp, at the number you give us. If you want to talk about what it found, you can just reply there.",
+    "ty_espera_eyebrow": "While the report runs",
+    "ty_espera_title": "A case from your segment.",
+    "ty_espera_desc": "It takes less time than the audit and shows how we work.",
+    "ty_espera_cta": "See the case",
+    "ty_espera_todos": "See every case"
   },
   "bio": {
     "meta_title": "Explore Digital · Links",

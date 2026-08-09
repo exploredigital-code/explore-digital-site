@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useLocale, useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
+import { projects } from '@/data/portfolio'
 
 const WHATSAPP_NUMBER = '+5585991043067'
 const WA_BASE = `https://wa.me/${WHATSAPP_NUMBER}?text=`
@@ -14,6 +15,31 @@ const WA_STORAGE_KEY = 'ed_consultoria_wa'
 const NOISE_BG = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")`
 
 type Step = { label: string; desc: string }
+
+/**
+ * Tipo de negócio do formulário para setor do portfólio.
+ *
+ * O formulário grava `tipo` no sessionStorage; aqui ele vira um case do mesmo
+ * segmento para a pessoa ver enquanto o relatório não sai. Sem upsell: é um
+ * case, não uma oferta.
+ *
+ * Duas opções ficam de fora de propósito. Gastronomia só tem case oculto, e
+ * "Outro" não tem segmento. Nos dois a seção cai para o link do portfólio
+ * inteiro em vez de mostrar um case de segmento errado.
+ */
+const SETOR_POR_TIPO: Record<string, string> = {
+  'Hotel / Resort': 'Hotelaria',
+  'Pousada / Hostel': 'Hotelaria',
+  'Beach Club': 'Beach Club',
+  'Escola de esporte': 'Esporte & Experiência',
+  'Experiências e passeios': 'Esporte & Experiência',
+}
+
+function caseDoSegmento(tipo: string | undefined) {
+  const setor = tipo ? SETOR_POR_TIPO[tipo] : undefined
+  if (!setor) return undefined
+  return projects.find(p => !p.hidden && p.sector === setor)
+}
 
 function WhatsAppIcon() {
   return (
@@ -43,14 +69,19 @@ export default function ConsultoriaObrigadoPage() {
     `mailto:${EMAIL}?subject=${encodeURIComponent(t('ty_email_subject'))}`
   )
   const [blocked, setBlocked] = useState(false)
+  const [tipo, setTipo] = useState<string | undefined>()
+
+  // O case sai do tipo de negocio que a pessoa marcou no passo 1 do formulario.
+  const destaque = caseDoSegmento(tipo)
 
   // O formulário grava link + texto puro antes de redirecionar para cá.
   useEffect(() => {
     try {
       const raw = sessionStorage.getItem(WA_STORAGE_KEY)
       if (!raw) return
-      const saved = JSON.parse(raw) as { url?: string; message?: string; blocked?: boolean }
+      const saved = JSON.parse(raw) as { url?: string; message?: string; blocked?: boolean; tipo?: string }
       if (saved.url) setWaUrl(saved.url)
+      if (saved.tipo) setTipo(saved.tipo)
       if (saved.message) {
         // o mesmo conteúdo do WhatsApp, sem os asteriscos de negrito
         const body = saved.message.replace(/\*/g, '').replace(/_/g, '')
@@ -142,6 +173,51 @@ export default function ConsultoriaObrigadoPage() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Enquanto o relatório não sai. Sem oferta: a consultoria paga só
+                entra depois, por WhatsApp, quando o relatório for entregue.
+                Vender antes de entregar faz a auditoria parecer isca. */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="mt-12 w-full text-left"
+            >
+              <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-verde-luz/75 mb-4">
+                {t('ty_espera_eyebrow')}
+              </div>
+
+              {destaque ? (
+                <Link
+                  href={`/${locale}/portfolio/${destaque.slug}`}
+                  className="group flex flex-col sm:flex-row sm:items-center gap-4 p-6 rounded-2xl bg-white/[0.06] border border-white/[0.1] hover:bg-white/[0.09] hover:border-verde-borda transition-all duration-200"
+                >
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[11px] text-verde-luz/75 mb-1.5">{destaque.sector} · {destaque.location}</div>
+                    <div className="text-[17px] font-bold text-menta leading-snug mb-1">{destaque.client}</div>
+                    <p className="text-[13.5px] text-menta-fraca leading-[1.6]">{t('ty_espera_desc')}</p>
+                  </div>
+                  <span className="shrink-0 inline-flex items-center gap-2 text-[13px] font-bold text-verde-luz group-hover:text-menta transition-colors">
+                    {t('ty_espera_cta')}
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <path d="M2 7h10M8 3l4 4-4 4" />
+                    </svg>
+                  </span>
+                </Link>
+              ) : (
+                /* Sem segmento casado, o portfólio inteiro é melhor resposta
+                   que um case do setor errado. */
+                <Link
+                  href={`/${locale}/portfolio`}
+                  className="inline-flex items-center gap-2 text-[14px] font-bold text-verde-luz hover:text-menta border-b border-verde-borda hover:border-menta pb-0.5 transition-colors"
+                >
+                  {t('ty_espera_todos')}
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <path d="M2 7h10M8 3l4 4-4 4" />
+                  </svg>
+                </Link>
+              )}
+            </motion.div>
           </motion.div>
         </div>
       </main>

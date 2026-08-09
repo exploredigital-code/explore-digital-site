@@ -263,9 +263,14 @@ function ConsultForm() {
     if (waTab) waTab.opener = null
 
     // 2. guarda link e texto puro — a página de obrigado reabre o WhatsApp se foi
-    //    bloqueado e monta o mesmo conteúdo em e-mail para quem preferir
+    //    bloqueado e monta o mesmo conteúdo em e-mail para quem preferir.
+    //
+    //    `tipo` entrou para a tela de obrigado poder oferecer um case do mesmo
+    //    segmento enquanto o relatório não sai. A alternativa era ela garimpar
+    //    o segmento de dentro do texto da mensagem, que quebraria na primeira
+    //    vez que alguém mexesse na copy do WhatsApp.
     try {
-      sessionStorage.setItem(WA_STORAGE_KEY, JSON.stringify({ url: waUrl, message: waMessage, blocked: !waTab }))
+      sessionStorage.setItem(WA_STORAGE_KEY, JSON.stringify({ url: waUrl, message: waMessage, blocked: !waTab, tipo: form.type }))
     } catch {
       /* modo privado / storage indisponível */
     }

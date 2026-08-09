@@ -707,24 +707,24 @@
       "instagram": "Instagram",
       "site": "Web"
     },
-    "ty_eyebrow": "Solicitud recibida",
-    "ty_title": "Listo. Tu consultoría está en la cola.",
-    "ty_desc": "Abrimos WhatsApp con tus datos ya rellenados. Si la ventana no se abrió, elige abajo por dónde prefieres hablar con nosotros. Los dos caminos llevan la misma información a nuestro equipo.",
+    "ty_eyebrow": "Auditoría en marcha",
+    "ty_title": "Tu auditoría ya se está generando.",
+    "ty_desc": "Estamos leyendo lo que es público sobre tu negocio ahora mismo: Google, la web, Instagram y las reseñas. El informe llega a tu WhatsApp en unos minutos, y quien responde al otro lado es uno de los dos socios.",
     "ty_wa_button": "Continuar en WhatsApp",
-    "ty_wa_fallback": "El navegador bloqueó la ventana de WhatsApp. Toca el botón para enviarlo.",
+    "ty_wa_fallback": "El navegador bloqueó la ventana de WhatsApp. Toca el botón para enviar.",
     "ty_home": "Volver al sitio",
     "ty_steps": [
       {
         "label": "Recibimos tus datos",
-        "desc": "Tu formulario llegó a nuestro equipo."
+        "desc": "El formulario llegó y la lectura ha empezado."
       },
       {
-        "label": "Analizamos tu digital",
-        "desc": "Estudiamos web, redes y reputación antes de hablar."
+        "label": "Leyendo las fuentes públicas",
+        "desc": "Google, la web, Instagram y lo que escriben sobre ti."
       },
       {
-        "label": "Confirmamos el horario",
-        "desc": "Te contactamos en 24h para agendar los 45 minutos."
+        "label": "Informe por WhatsApp",
+        "desc": "Llega en minutos, al número que nos has dado."
       }
     ],
     "f_size_note": "Habitaciones o suites en hotelería · plazas por grupo en experiencias.",
@@ -734,8 +734,8 @@
     "f_site_ph": "tusitio.com",
     "f_site_note": "Opcional. Si todavía no tienes web, déjalo en blanco. Eso ya forma parte del diagnóstico.",
     "ty_email_button": "Prefiero por correo",
-    "ty_email_subject": "Solicitud de consultoría gratuita",
-    "ty_channels_note": "Respondemos en 24 horas, de lunes a viernes.",
+    "ty_email_subject": "Solicitud de auditoría gratuita",
+    "ty_channels_note": "Si prefieres recibirlo por correo, usa el segundo botón. El contenido es el mismo.",
     "f_select": "Selecciona",
     "relatorio_eyebrow": "Lo que muestra el informe",
     "relatorio_title": "Dónde está tu negocio ahora mismo.",
@@ -770,7 +770,12 @@
     "prazo_eyebrow": "El plazo",
     "prazo_title": "Minutos, porque es sistema y no cola.",
     "prazo_body": "La lectura se hace automáticamente a partir de fuentes públicas en cuanto llega el formulario. No pasa por la agenda de nadie, así que el informe sale mientras todavía tienes el móvil en la mano.",
-    "prazo_body_2": "Llega por WhatsApp, al número que nos indiques. Si quieres hablar de lo que ha aparecido, basta con responder ahí mismo."
+    "prazo_body_2": "Llega por WhatsApp, al número que nos indiques. Si quieres hablar de lo que ha aparecido, basta con responder ahí mismo.",
+    "ty_espera_eyebrow": "Mientras sale el informe",
+    "ty_espera_title": "Un caso de tu segmento.",
+    "ty_espera_desc": "Lleva menos tiempo que la auditoría y enseña cómo trabajamos.",
+    "ty_espera_cta": "Ver el caso",
+    "ty_espera_todos": "Ver todos los casos"
   },
   "bio": {
     "meta_title": "Explore Digital · Enlaces",
