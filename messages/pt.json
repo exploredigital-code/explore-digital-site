@@ -78,7 +78,7 @@
     "design_desc": "Para branding e identidade visual trabalhamos com estúdio parceiro. Mesmo modelo da performance: especialista que toca a própria operação, com a Explore como ponto único de contato.",
     "cta_eyebrow": "Próximo passo",
     "cta_title": "Quer a Explore cuidando da sua marca?",
-    "cta_desc": "A auditoria lê o que já é público sobre o seu negócio, no Google, no site, no Instagram e na reputação, e devolve um retrato de onde você está. O relatório chega em minutos, sem custo.",
+    "cta_desc": "A auditoria lê o que já é público sobre o seu negócio, no Google, no site, no Instagram e na reputação, e devolve um retrato de onde você está. Sem reunião e sem custo.",
     "cta_button": "Quero minha auditoria",
     "cta_secondary": "Falar no WhatsApp",
     "meta_title": "Sobre a Explore Digital · marketing para hotelaria",
@@ -207,7 +207,7 @@
     "form_sending": "Enviando...",
     "form_success": "Mensagem enviada! Retornaremos em breve.",
     "form_error": "Erro ao enviar. Tente pelo WhatsApp.",
-    "trust_1": "Relatório em minutos",
+    "trust_1": "Sem reunião marcada",
     "trust_2": "Auditoria sem custo",
     "trust_3": "Dados protegidos",
     "trust_4": "BR · ES · Internacional",
@@ -272,7 +272,7 @@
     "how_label": "Como fazemos",
     "see_details": "Ver detalhes",
     "cta_title": "Quer {discipline} na sua operação?",
-    "cta_desc": "A auditoria lê o seu digital a partir do que já é público e devolve um retrato de onde você está. O relatório chega em minutos, sem custo e sem compromisso.",
+    "cta_desc": "A auditoria lê o seu digital a partir do que já é público e devolve um retrato de onde você está. Sem reunião marcada, sem custo e sem compromisso.",
     "cta_button": "Quero minha auditoria",
     "cta_secondary": "Falar no WhatsApp"
   },
@@ -439,182 +439,24 @@
   },
   "consultoria": {
     "meta_title": "Auditoria digital gratuita para pousadas e beach clubs · Explore Digital",
-    "meta_description": "Uma leitura do seu posicionamento digital feita a partir do que já é público: Google, dependência de OTA, site, Instagram e reputação. O relatório chega em minutos, sem custo e sem compromisso.",
+    "meta_description": "Uma leitura do seu posicionamento digital feita a partir do que já é público: Google, dependência de OTA, site, Instagram e reputação. Sem reunião marcada e sem compromisso.",
     "og_title": "Auditoria digital gratuita para hotelaria e experiências",
-    "og_description": "Google, dependência de OTA, site, Instagram e reputação. O relatório chega em minutos, a partir do que já é público.",
+    "og_description": "Google, dependência de OTA, site, Instagram e reputação. Sem reunião e sem compromisso: você preenche e recebe.",
     "nav_cta": "Quero minha auditoria",
     "nav_site": "Ir para o site",
-    "hero_badge": "Auditoria gratuita · Relatório em minutos",
+    "hero_badge": "Auditoria gratuita · Sem reunião",
     "hero_title": "O hóspede te encontra.",
     "hero_title_accent": "E reserva pela Booking.",
     "hero_sub": "A auditoria lê o que já é público sobre o seu negócio e devolve um retrato de onde você está hoje: no Google, na dependência de OTA, no site, no Instagram e na reputação.",
     "hero_bullets": [
-      "O relatório chega em minutos, não em dias",
+      "Sem reunião marcada e sem call de descoberta",
       "Feito a partir do que qualquer hóspede já consegue ver",
       "Sem custo, sem cartão e sem compromisso"
     ],
     "hero_scroll": "Leva menos de dois minutos",
-    "cred_items": [
-      {
-        "value": "CE · RN",
-        "label": "o litoral em que somos especialistas"
-      },
-      {
-        "value": "+100%",
-        "label": "de crescimento em 1 ano no Cabaré du Vento"
-      },
-      {
-        "value": "41 mil",
-        "label": "seguidores, o dobro em 1 ano"
-      },
-      {
-        "value": "45min",
-        "label": "é tudo que a consultoria leva"
-      }
-    ],
-    "audience_eyebrow": "Para quem é",
-    "audience_title": "Feita para quem vive de ocupação, temporada e reserva.",
-    "audience_sub": "Não atendemos todo mundo. São mais de cinco anos dedicados a um recorte específico de negócios.",
-    "audience_items": [
-      {
-        "title": "Hotéis e resorts",
-        "desc": "Que veem 15% a 25% de cada reserva ir embora em comissão e querem construir canal direto de verdade."
-      },
-      {
-        "title": "Pousadas e hostels",
-        "desc": "Que dependem de uma alta temporada para fechar o ano e precisam encher a baixa."
-      },
-      {
-        "title": "Beach clubs e gastronomia",
-        "desc": "Casa cheia no fim de semana, silêncio no resto. Falta constância na demanda."
-      },
-      {
-        "title": "Escolas de esporte e experiências",
-        "desc": "Kite, surf, mergulho, passeios. Você vende estilo de vida, e o conteúdo precisa transmitir isso antes da matrícula."
-      }
-    ],
-    "notfor_title": "Provavelmente não é para você se…",
-    "notfor_items": [
-      "Você espera resultado em sete dias.",
-      "Você quer alguém só para postar, sem estratégia por trás.",
-      "Você não tem nenhuma disposição de mudar o que faz hoje."
-    ],
-    "notfor_note": "Preferimos dizer isso agora do que ocupar 45 minutos da sua agenda à toa.",
-    "pain_eyebrow": "O diagnóstico",
-    "pain_title": "O problema quase nunca é o seu produto.",
-    "pain_sub": "O quarto é bom e a localização é boa. O que trava costuma estar em um destes três lugares.",
-    "pain_items": [
-      {
-        "title": "A OTA fica com um quarto de cada reserva",
-        "desc": "Você paga comissão para vender o próprio quarto, e o hóspede nunca chega a ser seu."
-      },
-      {
-        "title": "Instagram bonito que não vira reserva",
-        "desc": "Feed impecável, direct vazio. Falta a ponte entre encantar e reservar."
-      },
-      {
-        "title": "Anúncio rodando no escuro",
-        "desc": "A verba sai todo mês e ninguém sabe qual campanha trouxe hóspede."
-      }
-    ],
-    "deliver_eyebrow": "O que você recebe",
-    "deliver_title": "Um raio-X completo da sua presença digital.",
-    "deliver_sub": "Analisamos cada ponto antes da call e devolvemos por escrito em até 24 horas, contratando a Explore ou não.",
-    "deliver_items": [
-      {
-        "num": "01",
-        "title": "Seu site",
-        "desc": "Se carrega rápido, se comunica o que precisa e quantos cliques separam o hóspede da reserva."
-      },
-      {
-        "num": "02",
-        "title": "Seu Instagram",
-        "desc": "Bio, destaques, constância e o caminho entre o post e a conversa no direct."
-      },
-      {
-        "num": "03",
-        "title": "Google do Negócio",
-        "desc": "Ficha, fotos e como você aparece quando alguém pesquisa hospedagem na sua região."
-      },
-      {
-        "num": "04",
-        "title": "Sua reputação",
-        "desc": "O que se repete nas avaliações do Google, da Booking e do TripAdvisor."
-      },
-      {
-        "num": "05",
-        "title": "Seu posicionamento",
-        "desc": "O que a marca diz que é e o que o público entende. Quando não bate, sobra só o preço."
-      },
-      {
-        "num": "06",
-        "title": "Sua concorrência",
-        "desc": "Como você aparece ao lado de quem disputa o mesmo hóspede, e o espaço que está livre."
-      }
-    ],
-    "how_eyebrow": "Como funciona",
-    "how_title": "Três passos. Nenhuma reunião perdida.",
-    "how_items": [
-      {
-        "num": "01",
-        "title": "Você preenche o formulário",
-        "desc": "Dois minutos. São as perguntas que precisamos para entender o momento do seu negócio."
-      },
-      {
-        "num": "02",
-        "title": "Analisamos antes da call",
-        "desc": "Você não gasta a reunião explicando o básico. Chegamos com os seus dados na mão."
-      },
-      {
-        "num": "03",
-        "title": "45 minutos e o raio-X no e-mail",
-        "desc": "Videochamada ou WhatsApp, no horário que você escolher. O relatório chega em até 24 horas."
-      }
-    ],
-    "free_eyebrow": "A pergunta que todo mundo faz",
-    "free_title": "Por que a gente faz isso de graça?",
-    "free_body": "Porque foi assim que a maioria dos nossos clientes começou. Preferimos mostrar como pensamos antes de cobrar qualquer coisa.",
-    "free_body_2": "Se fizer sentido ir além do raio-X, apresentamos uma proposta no fim da conversa. Se não fizer, o diagnóstico é seu do mesmo jeito.",
-    "free_badges": [
-      "Sem cartão de crédito",
-      "Sem contrato nem fidelidade",
-      "O raio-X é seu de qualquer forma"
-    ],
-    "proof_eyebrow": "Quem já passou por aqui",
-    "proof_quote": "A Explore Digital transformou a forma como comunicamos o nosso negócio. Em poucos meses o engajamento triplicou e as reservas diretas cresceram de forma expressiva. É a agência que entende o nosso mercado de verdade.",
-    "proof_author": "Rafael M.",
-    "proof_role": "Gerente Geral · Pousada · Brasil",
-    "faq_eyebrow": "Perguntas frequentes",
-    "faq_title": "O que costumam perguntar antes de marcar.",
-    "faq_items": [
-      {
-        "q": "É gratuita mesmo? Onde está a pegadinha?",
-        "a": "Não tem. Não pedimos cartão e não cobramos nada depois. Parte de quem atendemos vira cliente, a outra parte indica a gente. Os dois cenários valem a pena."
-      },
-      {
-        "q": "Quanto tempo dura?",
-        "a": "45 minutos, por videochamada ou WhatsApp, no dia e horário que você escolher."
-      },
-      {
-        "q": "Preciso já ter verba para anúncios?",
-        "a": "Não. O raio-X aponta ajustes de posicionamento, conteúdo e conversão que não dependem de mídia paga."
-      },
-      {
-        "q": "Minha pousada é pequena. Vale a pena?",
-        "a": "Vale, e normalmente vale mais. Quanto menor a operação, mais peso tem cada reserva direta. Já atendemos de pousadas com oito quartos a resorts."
-      },
-      {
-        "q": "Vocês atendem fora do Brasil?",
-        "a": "Sim. Já trabalhamos com marcas em três países e atendemos em português, inglês e espanhol."
-      },
-      {
-        "q": "E se eu não quiser contratar nada depois?",
-        "a": "Nada acontece. O raio-X é seu e você executa internamente ou com outro parceiro."
-      }
-    ],
     "form_eyebrow": "Gere a sua",
     "form_title": "Comece pelo seu negócio.",
-    "form_sub": "Três etapas rápidas. Ao enviar, a auditoria começa a ser gerada e o relatório chega no seu WhatsApp.",
+    "form_sub": "Três etapas rápidas. Ao enviar, o relatório é gerado e chega no seu WhatsApp.",
     "form_step_of": "Etapa {current} de {total}",
     "s1_title": "Sobre o seu negócio",
     "s1_sub": "Para saber com quem estamos falando.",
@@ -681,7 +523,7 @@
     "err_email": "Confira o e-mail digitado.",
     "form_disclaimer": "Ao enviar, seus dados vão para o WhatsApp da Explore Digital e uma cópia chega no nosso e-mail. Não compartilhamos suas informações com ninguém.",
     "trust": [
-      "Relatório em minutos",
+      "Sem reunião marcada",
       "Auditoria sem custo",
       "Dados protegidos",
       "CE e RN"
@@ -689,7 +531,7 @@
     "final_title": "Sua próxima temporada começa a ser decidida agora.",
     "final_sub": "A auditoria é gratuita e o relatório é seu, contratando a Explore ou não.",
     "final_cta": "Quero minha auditoria gratuita",
-    "final_note": "Relatório em minutos · sem custo · sem compromisso",
+    "final_note": "Sem reunião · sem custo · sem compromisso",
     "sticky_cta": "Receber minha auditoria",
     "wa_header": "NOVA SOLICITAÇÃO DE AUDITORIA GRATUITA",
     "wa_footer": "Enviado pela página de auditoria",
@@ -709,7 +551,7 @@
     },
     "ty_eyebrow": "Auditoria em geração",
     "ty_title": "Sua auditoria já está rodando.",
-    "ty_desc": "Estamos lendo o que é público sobre o seu negócio agora: Google, site, Instagram e avaliações. O relatório chega no seu WhatsApp em alguns minutos, e quem responde do outro lado é um dos dois sócios.",
+    "ty_desc": "Estamos lendo o que é público sobre o seu negócio: Google, site, Instagram e avaliações. O relatório chega no seu WhatsApp, e quem responde do outro lado é um dos dois sócios.",
     "ty_wa_button": "Continuar no WhatsApp",
     "ty_wa_fallback": "A janela do WhatsApp foi bloqueada pelo navegador. Toque no botão para enviar.",
     "ty_home": "Voltar ao site",
@@ -724,7 +566,7 @@
       },
       {
         "label": "Relatório no WhatsApp",
-        "desc": "Chega em minutos, no número que você informou."
+        "desc": "Chega no número que você informou."
       }
     ],
     "f_size_note": "Quartos ou suítes na hotelaria · vagas por turma nas experiências.",
@@ -767,15 +609,15 @@
         "desc": "Nota, volume de avaliações e se alguém responde o que escrevem sobre você."
       }
     ],
-    "prazo_eyebrow": "O prazo",
-    "prazo_title": "Minutos, porque é sistema e não fila.",
-    "prazo_body": "A leitura é feita automaticamente a partir de fontes públicas assim que o formulário chega. Não passa por agenda de ninguém, então o relatório sai enquanto você ainda está com o celular na mão.",
-    "prazo_body_2": "Ele chega pelo WhatsApp, no número que você informar. Se quiser conversar sobre o que apareceu, é só responder ali mesmo.",
     "ty_espera_eyebrow": "Enquanto o relatório sai",
     "ty_espera_title": "Um case do seu segmento.",
     "ty_espera_desc": "Leva menos tempo que a auditoria e mostra como a gente trabalha.",
     "ty_espera_cta": "Ver o case",
-    "ty_espera_todos": "Ver todos os cases"
+    "ty_espera_todos": "Ver todos os cases",
+    "atrito_eyebrow": "Como funciona",
+    "atrito_title": "Você preenche e recebe.",
+    "atrito_body": "Não tem agenda para encaixar, call de descoberta para ouvir nem proposta para escutar antes. A leitura é feita a partir de fonte pública, e o relatório vai direto para o seu WhatsApp.",
+    "atrito_body_2": "Se você quiser conversar sobre o que apareceu, responde ali mesmo. Se não quiser, o relatório é seu do mesmo jeito."
   },
   "bio": {
     "meta_title": "Explore Digital · Links",
@@ -786,7 +628,7 @@
       {
         "key": "auditoria",
         "title": "Auditoria gratuita",
-        "desc": "Receba em minutos uma análise do seu posicionamento digital."
+        "desc": "Sem reunião. Você preenche e recebe."
       },
       {
         "key": "portfolio",
@@ -795,9 +637,8 @@
       },
       {
         "key": "whatsapp",
-        "title": "Agenda de {month}",
-        "desc": "Garanta seu lugar na agenda deste mês",
-        "badge": "Últimas vagas"
+        "title": "Falar com a gente",
+        "badge": "Agenda de {month}"
       }
     ],
     "wa_message": "Olá! Vim pelo link da bio do Instagram.",
@@ -810,7 +651,6 @@
     "eyebrow": "O que fazemos",
     "title": "Entregas pontuais ou projeto completo.",
     "sub": "Você contrata o que o seu momento pede: uma peça específica com escopo e prazo, ou uma frente inteira que começa por um diagnóstico.",
-    "count": "{n} sub-serviços · {p} disciplinas",
     "rail_label": "Frentes",
     "includes": "O que inclui",
     "for_whom": "Indicado para",
@@ -818,7 +658,7 @@
     "details": "Ver detalhes",
     "cta_eyebrow": "Não sabe por onde começar",
     "cta_title": "Não sabe qual das duas portas é a sua?",
-    "cta_desc": "A auditoria lê o seu digital a partir do que já é público e devolve um retrato de onde você está. O relatório chega em minutos, sem custo e sem compromisso.",
+    "cta_desc": "A auditoria lê o seu digital a partir do que já é público e devolve um retrato de onde você está. Sem reunião marcada, sem custo e sem compromisso.",
     "cta_button": "Quero minha auditoria",
     "cta_secondary": "Falar no WhatsApp",
     "wa_message": "Olá! Vim pela página de serviços do site e gostaria de conversar.",
@@ -831,101 +671,14 @@
     "door2_title": "Quero um time cuidando todo mês.",
     "door2_desc": "Conteúdo e tráfego rodando enquanto a temporada acontece.",
     "door2_cta": "Ver os dois recorrentes",
-    "od_eyebrow": "Sob demanda",
-    "od_title": "Entregas pontuais, com escopo e prazo.",
-    "od_sub": "Quando você precisa de uma peça específica e não de uma frente inteira. Contrata, recebe e pronto.",
-    "od_delivery": "Entrega em",
-    "od_days": "dias úteis",
-    "od_days_to": "a",
-    "od_includes": "O que inclui",
-    "od_cta": "Pedir no WhatsApp",
-    "od_details": "Ver detalhes",
-    "od_onsite": "Exige captação no local",
-    "od_season_badge": "Alta temporada · agosto a dezembro",
-    "od_season_title": "Sua pousada só fica assim de agosto a dezembro.",
-    "od_season_desc": "Casa cheia, vento bom e luz certa acontecem uma vez por ano. Capte agora o material que você vai publicar o ano inteiro. Em fevereiro não dá para fotografar alta temporada.",
-    "od_season_note": "Em alta temporada a agenda de captação enche: reserve com 10 dias de antecedência.",
     "proj_eyebrow": "Projetos",
     "proj_title": "Seis disciplinas, seis problemas diferentes.",
     "proj_sub": "Não vendemos pacote fechado. Você contrata a frente que o seu momento pede, sozinha ou combinada com outras.",
     "rail_ondemand": "Sob demanda",
-    "rail_projects": "Disciplinas",
     "wa_item": "Olá! Vim pelo site e quero contratar: {item}.",
-    "on_demand_items": [
-      {
-        "slug": "fotografia",
-        "name": "Fotografia",
-        "tagline": "Quartos, café da manhã e área comum, prontos para o Booking e para o feed.",
-        "includes": [
-          "Ensaio no local, com direção",
-          "Tratamento profissional das imagens",
-          "Entrega em alta resolução",
-          "Cortes prontos para feed, story e OTA"
-        ]
-      },
-      {
-        "slug": "video",
-        "name": "Captação de vídeo",
-        "tagline": "Uma diária de filmagem na sua operação, com direção no set.",
-        "includes": [
-          "Diária de captação na propriedade",
-          "Direção criativa no set",
-          "Bruto tratado e organizado",
-          "3 cortes verticais prontos para reels"
-        ]
-      },
-      {
-        "slug": "drone",
-        "name": "Drone",
-        "tagline": "O aéreo que vende localização: a propriedade e o entorno vistos de cima.",
-        "includes": [
-          "Voo sobre a propriedade e o entorno",
-          "Imagem da praia, da lagoa ou das dunas",
-          "Tratamento de cor",
-          "Versões horizontal e vertical"
-        ]
-      },
-      {
-        "slug": "edicao-video",
-        "name": "Edição de vídeo",
-        "tagline": "Reels prontos a partir do material que você já tem no celular.",
-        "includes": [
-          "Corte e ritmo",
-          "Legenda queimada",
-          "Trilha e tratamento de cor",
-          "Uma rodada de ajuste incluída"
-        ]
-      },
-      {
-        "slug": "design",
-        "name": "Design",
-        "tagline": "Peça avulsa para feed, story, cardápio ou tarifário.",
-        "includes": [
-          "Peça no formato que você precisar",
-          "Alinhada à sua identidade visual",
-          "Arquivo aberto e fechado",
-          "Uma rodada de ajuste incluída"
-        ]
-      },
-      {
-        "slug": "landing-page",
-        "name": "Landing Page",
-        "tagline": "Página de pacote ou de temporada, feita para converter.",
-        "includes": [
-          "Design e copy focados em conversão",
-          "Integração com WhatsApp",
-          "Otimizada para celular",
-          "SEO básico configurado"
-        ]
-      }
-    ],
     "doors_home_title": "Duas formas de trabalhar com a Explore.",
-    "od_orcamento": "Pedir orçamento",
-    "od_count": "{n} entregas",
     "proj_ver_disciplina": "Ver disciplina",
     "trilho_label": "Peças de {disciplina}",
-    "od_meta_title": "Sob demanda · Explore Digital",
-    "od_meta_description": "Fotografia, vídeo, drone, edição, design e landing page com escopo e prazo fechados, para hotelaria no litoral do Ceará e do Rio Grande do Norte. Você pede, a gente entrega.",
     "grupo_presenca": "Presença",
     "grupo_presenca_sub": "Onde o hóspede te encontra e reserva.",
     "grupo_marca": "Marca",

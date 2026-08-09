@@ -15,59 +15,6 @@ const NOISE_BG = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 type BioItem = { key: string; title: string; desc: string; badge?: string }
 
-/* ────────────────────────────── ícones ────────────────────────────── */
-
-// Todos com o mesmo peso de traço e enquadramento, herdando a cor do contêiner
-// (paleta Explore) — nenhum usa cor de marca externa.
-const strokeProps = {
-  width: 21,
-  height: 21,
-  viewBox: '0 0 24 24',
-  fill: 'none',
-  stroke: 'currentColor',
-  strokeWidth: 1.7,
-  strokeLinecap: 'round' as const,
-  strokeLinejoin: 'round' as const,
-  'aria-hidden': true,
-}
-
-const icons: Record<string, React.ReactNode> = {
-  // lupa com mini gráfico dentro = a leitura do posicionamento
-  auditoria: (
-    <svg {...strokeProps}>
-      <circle cx="10.5" cy="10.5" r="6.75" />
-      <path d="M15.4 15.4L20.5 20.5" />
-      <path d="M8.2 12.3v-1.6M10.5 12.3V9.2M12.8 12.3V7.9" />
-    </svg>
-  ),
-  // grade de peças = portfólio
-  portfolio: (
-    <svg {...strokeProps}>
-      <rect x="3.2" y="3.2" width="7.4" height="7.4" rx="1.8" />
-      <rect x="13.4" y="3.2" width="7.4" height="7.4" rx="1.8" />
-      <rect x="3.2" y="13.4" width="7.4" height="7.4" rx="1.8" />
-      <rect x="13.4" y="13.4" width="7.4" height="7.4" rx="1.8" />
-    </svg>
-  ),
-  // calendário com check: o item abre o WhatsApp, mas o que ele promete é a
-  // agenda do mês, e é a agenda que o ícone precisa dizer
-  whatsapp: (
-    <svg {...strokeProps}>
-      <rect x="3.2" y="5.2" width="17.6" height="15.6" rx="2.6" />
-      <path d="M3.2 9.8h17.6M8.2 3.4v3.4M15.8 3.4v3.4" />
-      <path d="M9 15.1l2.1 2.1 4-4.2" />
-    </svg>
-  ),
-}
-
-function ArrowIcon() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M2 7h10M8 3l4 4-4 4" />
-    </svg>
-  )
-}
-
 /* ─────────────────────────────── página ─────────────────────────────── */
 
 export function BioView() {
@@ -151,74 +98,56 @@ export function BioView() {
           <p className="text-[14.5px] leading-[1.55] text-menta-fraca mt-2.5 max-w-[300px]">{t('tagline')}</p>
         </motion.div>
 
-        {/* ── links ── */}
-        <nav className="flex flex-col gap-2">
+        {/* ── links ──
+            Lista simples, não cards de site em miniatura. Sem ícone: lupa,
+            quadradinho e calendário são genéricos, não distinguem um item do
+            outro e comem largura numa tela de 390px.
+
+            O primeiro tem destaque, mas por borda e não por preenchimento
+            laranja: cheio, ele pesava tanto que os outros dois pareciam
+            desativados. Os três precisam parecer clicáveis. */}
+        <nav className="flex flex-col gap-2.5">
           {items.map((item, i) => {
             const destaque = item.key === 'auditoria'
-            const acento = item.key === 'whatsapp'
             const href = hrefFor(item.key)
             const externo = href.startsWith('http')
 
             const conteudo = (
               <>
-                <span
-                  className={cn(
-                    'w-10 h-10 shrink-0 rounded-xl flex items-center justify-center transition-colors duration-200',
-                    destaque && 'bg-verde/15 text-verde',
-                    acento && 'bg-verde-luz/15 text-verde-luz group-hover:bg-verde-luz/25',
-                    !destaque && !acento && 'bg-verde-luz/12 text-verde-luz group-hover:bg-verde-luz/20'
-                  )}
-                >
-                  {icons[item.key]}
-                </span>
-
-                <span className="flex-1 min-w-0 text-left">
-                  <span className={cn('flex items-center gap-2 text-[15.5px] font-bold leading-tight', destaque ? 'text-verde' : 'text-menta')}>
-                    {/* min-w-0 em vez de truncate: com o selo ao lado, "Agenda de agosto"
-                        virava "Agenda de ago..." e o mes era justamente o dado do card.
-                        Assim o titulo quebra em duas linhas em vez de cortar. */}
-                    <span className="min-w-0">{withMonth(item.title)}</span>
+                <span className="flex-1 min-w-0">
+                  <span className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
+                    <span className="text-[16px] font-bold leading-tight text-menta">
+                      {withMonth(item.title)}
+                    </span>
                     {item.badge && (
-                      <span className="shrink-0 rounded-full bg-verde/50 px-2 py-[3px] text-[9.5px] font-semibold uppercase tracking-[0.06em] text-verde-luz">
-                        {item.badge}
+                      <span className="shrink-0 rounded-full bg-verde/60 px-2.5 py-[3px] text-[10px] font-semibold uppercase tracking-[0.06em] text-verde-luz">
+                        {withMonth(item.badge)}
                       </span>
                     )}
                   </span>
-                  <span
-                    className={cn(
-                      'block text-[12.5px] leading-snug mt-0.5',
-                      destaque ? 'text-verde' : acento ? 'text-verde-luz/80' : 'text-menta-fraca'
-                    )}
-                  >
-                    {item.desc}
-                  </span>
-                </span>
-
-                <span
-                  className={cn(
-                    'shrink-0 transition-transform duration-200 group-hover:translate-x-1',
-                    destaque ? 'text-verde/70' : acento ? 'text-verde-luz/70' : 'text-white/45'
+                  {item.desc && (
+                    <span className="block text-[13px] leading-snug text-menta-fraca mt-1">
+                      {item.desc}
+                    </span>
                   )}
-                >
-                  <ArrowIcon />
                 </span>
               </>
             )
 
             const classe = cn(
-              'group flex items-center gap-3.5 w-full rounded-2xl px-4 py-3.5 min-h-[68px]',
+              'group flex items-center w-full rounded-2xl px-5 py-4 min-h-[64px]',
               'border transition-all duration-200 active:scale-[0.985]',
-              destaque && 'bg-sol border-sol hover:bg-sol-forte shadow-[0_6px_24px_rgba(226,118,47,0.22)]',
-              acento && 'bg-verde-card border-verde-luz/40 hover:bg-verde-linha hover:border-verde-luz/60',
-              !destaque && !acento && 'bg-white/[0.05] border-white/[0.1] hover:bg-white/[0.09] hover:border-white/25'
+              destaque
+                ? 'bg-sol/[0.14] border-sol/55 hover:bg-sol/20 hover:border-sol'
+                : 'bg-white/[0.06] border-white/[0.14] hover:bg-white/[0.11] hover:border-white/30'
             )
 
             return (
               <motion.div
                 key={item.key}
-                initial={{ opacity: 0, y: 14 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.42, delay: 0.12 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.4, delay: 0.12 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
               >
                 {externo ? (
                   <a href={href} target="_blank" rel="noopener noreferrer" className={classe}>

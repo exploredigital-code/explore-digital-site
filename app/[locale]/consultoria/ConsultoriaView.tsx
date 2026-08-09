@@ -604,18 +604,23 @@ export function ConsultoriaView() {
         </div>
       </section>
 
-      {/* ───────── O PRAZO ───────── */}
+      {/* ───────── SEM ATRITO ─────────
+          A auditoria deixou de se diferenciar por velocidade. Promessa de
+          prazo que falha uma vez custa mais que a urgencia que ela gera, e o
+          que sobra sem ela nao pode ser "auditoria gratuita", que qualquer
+          agencia oferece. O diferencial passa a ser nao exigir nada do
+          visitante: sem reuniao, sem call de descoberta, sem compromisso. */}
       <section className="bg-verde relative overflow-hidden py-14 sm:py-20 lg:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_100%_0%,#2D5238,transparent_65%)] opacity-50 pointer-events-none" />
         <div className="relative z-10 max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
           <AnimateIn className="max-w-[660px]">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-5 h-px bg-verde-luz" />
-              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-luz">{t('prazo_eyebrow')}</span>
+              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-luz">{t('atrito_eyebrow')}</span>
             </div>
-            <h2 className="text-[clamp(28px,4vw,48px)] leading-[1.05] tracking-[-0.02em] text-menta mb-6">{t('prazo_title')}</h2>
-            <p className="text-menta-fraca text-[16px] leading-[1.8] mb-4">{t('prazo_body')}</p>
-            <p className="text-menta-fraca text-[16px] leading-[1.8]">{t('prazo_body_2')}</p>
+            <h2 className="text-[clamp(28px,4vw,48px)] leading-[1.05] tracking-[-0.02em] text-menta mb-6">{t('atrito_title')}</h2>
+            <p className="text-menta-fraca text-[16px] leading-[1.8] mb-4">{t('atrito_body')}</p>
+            <p className="text-menta-fraca text-[16px] leading-[1.8]">{t('atrito_body_2')}</p>
           </AnimateIn>
         </div>
       </section>
