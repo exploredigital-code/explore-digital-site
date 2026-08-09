@@ -43,6 +43,10 @@ const servicosTs = fs.readFileSync('data/services.ts', 'utf8')
 const grupos = [...servicosTs.matchAll(/GRUPO_ORDER: Grupo\[\] = \[([^\]]+)\]/g)]
   .flatMap(m => [...m[1].matchAll(/'([\w-]+)'/g)].map(x => x[1]))
 const slugsMensais = [...servicosTs.matchAll(/slug: '([\w-]+)',[\s\S]{0,400}?period: 'monthly'/g)].map(m => m[1])
+// Os produtos de web, pelo mesmo criterio que roteia a view: o pilar. Sai da
+// fonte e nao de uma lista escrita aqui, senao um produto novo volta a virar
+// vinte chaves falsamente orfas.
+const slugsWeb = [...servicosTs.matchAll(/slug: '([\w-]+)',\s*\n\s*pillar: 'web'/g)].map(m => m[1])
 const nSub = (servicosTs.match(/^\s{8}slug: '/gm) || []).length
 const nGrupo = (servicosTs.match(/^\s{8}grupo: '/gm) || []).length
 
@@ -76,6 +80,8 @@ for (const f of arquivos) {
         if (fallback && nSub !== nGrupo) cita(ns, `grupo_${fallback[1]}${sufixo}`, f)
       } else if (ns === 'recorrente' && /^produtos\.\$\{/.test(tpl)) {
         for (const s of slugsMensais) cita(ns, `produtos.${s}`, f)
+      } else if (ns === 'web' && /^produtos\.\$\{/.test(tpl)) {
+        for (const s of slugsWeb) cita(ns, `produtos.${s}`, f)
       } else if (ns === 'consultoria' && /^s\$\{/.test(tpl)) {
         const sufixo = tpl.replace(/^s\$\{[^}]*\}/, '')
         for (const n of [1, 2, 3, 4, 5]) cita(ns, `s${n}${sufixo}`, f)

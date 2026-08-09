@@ -473,6 +473,126 @@
       }
     }
   },
+  "web": {
+    "prazo_label": "Delivery",
+    "entrega_eyebrow": "What is included",
+    "entrega_title": "What comes with the project.",
+    "inicio_eyebrow": "How it starts",
+    "inicio_title": "Before anything is designed, we study the business.",
+    "inicio_sub": "No screen is opened before these three things happen.",
+    "inicio_etapas": [
+      {
+        "title": "Briefing and conversation",
+        "desc": "A conversation to understand what the house sells, which guest you want to receive, and what is blocking the booking today."
+      },
+      {
+        "title": "Data gathering",
+        "desc": "Rooms, services, differentials, house policy, the sales channels that already exist, and where the booking has to land in the end."
+      },
+      {
+        "title": "Brand materials",
+        "desc": "Logo, photos, videos and whatever else exists. If none of it exists, the block below handles it."
+      }
+    ],
+    "material_eyebrow": "If you have no material",
+    "material_title": "The project moves without you sending a thing.",
+    "material_p1": "This is the most common case, and it is almost never unwillingness: it is a lack of time. Nobody running a guesthouse has a free afternoon to hunt down the original logo file.",
+    "material_p2": "So Explore collects what already exists online about your house and works from there. If there is no defined visual system, we build the minimum the site needs to stand on. You do not become the bottleneck of your own project.",
+    "troca_eyebrow": "Not what you are looking for?",
+    "manutencao_eyebrow": "After the 30 free days",
+    "manutencao_title": "Maintenance, and what it covers.",
+    "manutencao_preco_nota": "These are monthly maintenance figures. The project price is not here, because it depends on the diagnosis.",
+    "manutencao_mes": "/month",
+    "recomendado": "Recommended",
+    "conta_label": "Counts as a change",
+    "conta_itens": [
+      "Swapping a photo",
+      "Changing a price",
+      "Changing a text",
+      "Adding an item or a promotion"
+    ],
+    "naoconta_label": "Does not count",
+    "naoconta_itens": [
+      "A new page",
+      "A layout change",
+      "A new feature"
+    ],
+    "conta_nota": "It is written here so it does not become friction later. What does not count is still possible, it just becomes a separate quote.",
+    "sem_ecommerce": "Maintenance does not apply to e-commerce.",
+    "dominio_eyebrow": "The domain",
+    "dominio_title": "Who owns the address, said plainly.",
+    "dominio_p1": "The domain stays registered and maintained in the Explore account for as long as support lasts. If you would rather take it over, it is transferred to your name.",
+    "dominio_p2": "If you do not continue with maintenance after the first year, the domain becomes your responsibility for the site to stay online. It is written here, not at renewal time.",
+    "produtos": {
+      "website-institucional": {
+        "hero_prazo": "15 days",
+        "troca_title": "Need a page for a single campaign?",
+        "troca_desc": "If it is one offer, one season or one date, a landing page solves it faster and costs less.",
+        "troca_cta": "See landing page",
+        "bonus": {
+          "eyebrow": "Comes with it",
+          "title": "Only have the logo? The visual system comes with it.",
+          "desc": "It is not a giveaway, it is a prerequisite. Without a visual system there is no site with a system, there is a page with colors picked on the spot. Whoever arrives with only a logo gets the minimum the site needs to stand up:",
+          "itens": [
+            "Color palette",
+            "Typography",
+            "Logo usage rules",
+            "Digital application summary"
+          ]
+        },
+        "reserva": {
+          "eyebrow": "The booking path",
+          "title": "A site that does not lead to the booking does not get you off the OTA.",
+          "desc": "Beautiful with no path to purchase is a brochure. The site ships with the path to where the booking actually happens, and that path is part of the product.",
+          "credibilidade": "We have worked with HQBeds, Cloudbeds and other hospitality systems. Your site takes the guest straight to your booking engine or your WhatsApp, with no OTA in between and without you changing how you operate."
+        },
+        "blog": {
+          "eyebrow": "Why the blog",
+          "title": "A site on its own stops climbing on Google.",
+          "desc": "A site that ships and then sits still loses position over time, because Google rewards whoever publishes. The blog is what keeps it showing up, and the text doubles as raw material for social."
+        },
+        "planos": [
+          {
+            "nome": "Maintenance",
+            "preco": "R$ 99.90",
+            "itens": [
+              "Domain",
+              "Hosting",
+              "Security",
+              "Two content changes per month"
+            ]
+          },
+          {
+            "nome": "Maintenance and content",
+            "preco": "R$ 149.90",
+            "recomendado": true,
+            "itens": [
+              "Everything in maintenance",
+              "One blog post per month"
+            ]
+          }
+        ]
+      },
+      "landing-page": {
+        "hero_prazo": "10 to 15 days",
+        "troca_title": "Looking for permanent presence?",
+        "troca_desc": "A landing page is a campaign piece, built for one offer at a time. If what you want is a permanent house for the brand online, with pages for rooms, services and contact, the product is the other one.",
+        "troca_cta": "See institutional website",
+        "planos": [
+          {
+            "nome": "Maintenance",
+            "preco": "R$ 49.90",
+            "itens": [
+              "Domain",
+              "Hosting",
+              "Security",
+              "Two content changes per month"
+            ]
+          }
+        ]
+      }
+    }
+  },
   "service_detail": {
     "recommended": "Recommended",
     "hire_whatsapp": "Hire via WhatsApp",

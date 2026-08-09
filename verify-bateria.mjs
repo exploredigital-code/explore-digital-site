@@ -18,6 +18,9 @@ const rotas = [
   '/pt/plano-de-acao', '/pt/bio', '/pt/blog',
   '/pt/servicos/producao-conteudo', '/pt/servicos/gestao-de-trafego',
   '/pt/servicos/cobertura-de-evento', '/pt/servicos/fotografia',
+  // As duas de web entram porque sao as unicas do catalogo que mostram preco,
+  // e uma guarda de preco que nao visita a pagina com preco nao guarda nada.
+  '/pt/servicos/website-institucional', '/pt/servicos/landing-page',
   '/pt/portfolio/villa-conduru',
 ]
 
@@ -68,8 +71,21 @@ for (const r of rotas) {
   if (vals.length) achados.push([r, vals])
 }
 if (!achados.length) linha('nenhum valor em R$ em rota nenhuma', '')
+// A regra e preco de projeto fora do site, com a /plano-de-acao como unica
+// pagina de preco. As duas de web sao a excecao declarada: o que aparece la e
+// manutencao mensal, valor baixo, e preco visivel em servico pequeno gera
+// confianca. O valor do projeto continua fora, porque depende do diagnostico,
+// entao a excecao vem com um teto: se aparecer numero acima de R$ 200 numa
+// delas, deixou de ser manutencao e a guarda tem que reclamar.
+const MANUTENCAO_TETO = 200
+const excecaoWeb = ['/pt/servicos/website-institucional', '/pt/servicos/landing-page']
 for (const [r, v] of achados) {
-  const permitido = r === '/pt/plano-de-acao' || r === '/pt/servicos/gestao-de-trafego'
+  let permitido = r === '/pt/plano-de-acao' || r === '/pt/servicos/gestao-de-trafego'
+  if (excecaoWeb.includes(r)) {
+    const acima = v.filter(x => Number(x.replace(/[^\d,]/g, '').replace(',', '.')) > MANUTENCAO_TETO)
+    permitido = acima.length === 0
+    if (!permitido) linha('TETO DE MANUTENCAO ESTOURADO ' + r, acima.join(', '))
+  }
   linha((permitido ? 'ok (permitido) ' : 'FORA DA REGRA ') + r, v.join(', '))
 }
 
