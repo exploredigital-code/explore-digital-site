@@ -1002,5 +1002,127 @@
     "estudio_desc": "Strategy, creative, shooting and sales at the same table. Everyone talks to clients, everyone has a hand in the delivery. We work fully online, and we travel to capture what our clients actually offer.",
     "estudio_cta": "Meet the studio",
     "estudio_cta2": "Work with us"
+  },
+  "plano": {
+    "meta_title": "Action plan for guesthouses, hotels and beach clubs · Explore Digital",
+    "meta_description": "Three weeks, three sessions and one document with the priorities for the next 90 days: what to do, in what order, and what to ignore. Three slots a month, because the two partners do the work themselves.",
+    "og_title": "Action plan for hospitality and experiences",
+    "og_description": "Three weeks, three sessions and a 90 day plan that stays with you. Three slots a month.",
+    "hero_badge": "Three slots a month",
+    "hero_title": "You know where you stand.",
+    "hero_title_accent": "What is missing is where to start.",
+    "hero_sub": "The audit shows you the picture. The action plan tells you what to do with it: the priorities for the next 90 days, in order, with what can wait kept separate from what cannot.",
+    "hero_bullets": [
+      "Three weeks, three sessions",
+      "A document that stays with you",
+      "Credited against your first monthly fee if you sign within 30 days"
+    ],
+    "hero_cta": "I want one of the three slots",
+    "preco_de": "from R$ 1,497",
+    "preco_por": "R$ 997",
+    "preco_nota": "One off payment. The full amount is credited against your first monthly fee if you hire Explore within 30 days.",
+    "problema_eyebrow": "Why this exists",
+    "problema_title": "There is no shortage of things to do. There is a shortage of order.",
+    "problema_sub": "Every guesthouse owner has been told they need a new website, reels, ads, review replies and a way off Booking. All at once, with nobody saying what comes first.",
+    "problema_items": [
+      {
+        "num": "01",
+        "title": "Money spread thin",
+        "desc": "A budget split across five fronts at once moves none of them."
+      },
+      {
+        "num": "02",
+        "title": "Commission that never drops",
+        "desc": "The OTA keeps taking the same cut because the direct booking path was never built."
+      },
+      {
+        "num": "03",
+        "title": "Low season by surprise",
+        "desc": "By the time occupancy drops it is late to start building demand."
+      }
+    ],
+    "semanas_eyebrow": "How it works",
+    "semanas_title": "Three weeks, three sessions.",
+    "semanas_items": [
+      {
+        "num": "Week 1",
+        "title": "Diagnosis",
+        "desc": "A one hour interview with you, a full sweep of your digital presence and a read on three direct competitors in your destination. Without that the plan is guesswork."
+      },
+      {
+        "num": "Week 2",
+        "title": "The plan",
+        "desc": "The document is delivered and we spend an hour walking you through it. The priorities for the next 90 days: what to do, in what order, and what to ignore."
+      },
+      {
+        "num": "Week 6",
+        "title": "Course correction",
+        "desc": "An hour reviewing what actually ran and fixing what needs fixing. If little got off the page, the conversation is about unblocking it, not about scolding."
+      }
+    ],
+    "ignorar_eyebrow": "The part nobody delivers",
+    "ignorar_title": "What to ignore over the next 90 days.",
+    "ignorar_body": "You are bombarded with things to do, and almost every list that reaches you only adds. This plan also subtracts: what can wait, what does not apply at your size and what would only make sense after something else happens first.",
+    "ignorar_body_2": "That is usually the part that saves more money than the list of things to do.",
+    "entrega_eyebrow": "What stays with you",
+    "entrega_title": "A document, not a presentation.",
+    "entrega_body": "The plan is written to be used after we leave the call. It is yours, and it works whether Explore executes it or you hand it to someone else.",
+    "entrega_items": [
+      "The priorities for the next 90 days, in order",
+      "What to ignore, with the reason for each",
+      "The read on three direct competitors in your destination",
+      "What changes in the direct booking path",
+      "What has to be ready before high season"
+    ],
+    "quem_eyebrow": "Who it is for",
+    "quem_title": "Not every business needs this right now.",
+    "quem_items": [
+      {
+        "title": "Already trading and tired of improvising",
+        "desc": "You have guests, you have revenue, and marketing decisions today are made on impulse."
+      },
+      {
+        "title": "Too dependent on OTAs",
+        "desc": "The commission hurts and direct booking was never built on purpose."
+      },
+      {
+        "title": "Limited budget that has to land",
+        "desc": "You cannot test five fronts at once and see which one sticks."
+      }
+    ],
+    "quem_nao_title": "It is not for you if",
+    "quem_nao_items": [
+      "The business has not opened yet and there is no operation to diagnose",
+      "You already know exactly what you want and only need execution",
+      "You expect someone to execute the plan within the three weeks"
+    ],
+    "quem_nao_note": "We would rather say this now than take one of the three monthly slots for nothing.",
+    "vagas_eyebrow": "The calendar",
+    "vagas_title": "Three a month, and the reason is simple.",
+    "vagas_body": "The diagnosis, the writing and the presentation are done by the two partners. This is not marketing scarcity: it is what fits in a month without the quality dropping.",
+    "faq_title": "Before you decide",
+    "faq_items": [
+      {
+        "q": "Do I need the free audit first?",
+        "a": "No. It helps, because part of the picture arrives ready, but the diagnosis behind the plan goes deeper and is done from scratch either way."
+      },
+      {
+        "q": "Do you execute the plan?",
+        "a": "We can, and that is where the credit comes in. But the plan is yours and it works in anyone’s hands: some of our clients run it with their own team."
+      },
+      {
+        "q": "What if nothing got done by week 6?",
+        "a": "The third session still stands. We review what blocked it and adjust the plan to what your operation can realistically do."
+      },
+      {
+        "q": "How does the credit work?",
+        "a": "If you hire any recurring Explore service within 30 days of the plan being delivered, the R$ 997 is credited in full against your first monthly fee."
+      }
+    ],
+    "final_title": "Your next season is being decided right now.",
+    "final_sub": "There are three slots a month. If this month is already taken, we will tell you straight away.",
+    "final_cta": "Talk about the action plan",
+    "final_note": "One off payment · credited against your first monthly fee within 30 days",
+    "wa_message": "Hi! I would like to know about the 90 day Action Plan."
   }
 }

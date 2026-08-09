@@ -1002,5 +1002,127 @@
     "estudio_desc": "Estratégia, criação, captação e vendas na mesma mesa. Todo mundo fala com cliente, todo mundo põe a mão na entrega. Atuamos 100% online, com disponibilidade para viajar e captar a experiência dos nossos clientes.",
     "estudio_cta": "Conhecer o estúdio",
     "estudio_cta2": "Trabalhe com a gente"
+  },
+  "plano": {
+    "meta_title": "Plano de ação para pousadas, hotéis e beach clubs · Explore Digital",
+    "meta_description": "Três semanas, três encontros e um documento com as prioridades dos próximos 90 dias: o que fazer, em que ordem e o que ignorar. Três vagas por mês, porque quem faz são os dois sócios.",
+    "og_title": "Plano de ação para hotelaria e experiências",
+    "og_description": "Três semanas, três encontros e um plano de 90 dias que fica com você. Três vagas por mês.",
+    "hero_badge": "Três vagas por mês",
+    "hero_title": "Você sabe onde está.",
+    "hero_title_accent": "Falta saber por onde começar.",
+    "hero_sub": "A auditoria mostra o retrato. O plano de ação diz o que fazer com ele: as prioridades dos próximos 90 dias, na ordem, com o que pode esperar separado do que não pode.",
+    "hero_bullets": [
+      "Três semanas, três encontros",
+      "Um documento que fica com você",
+      "Abate na primeira mensalidade se contratar em 30 dias"
+    ],
+    "hero_cta": "Quero uma das três vagas",
+    "preco_de": "de R$ 1.497",
+    "preco_por": "R$ 997",
+    "preco_nota": "Pagamento único. O valor abate integralmente na primeira mensalidade se você contratar a Explore em até 30 dias.",
+    "problema_eyebrow": "Por que isso existe",
+    "problema_title": "Não falta o que fazer. Falta ordem.",
+    "problema_sub": "Todo dono de pousada já ouviu que precisa de site novo, de reels, de anúncio, de responder avaliação e de sair da Booking. Tudo ao mesmo tempo, sem ninguém dizer o que vem primeiro.",
+    "problema_items": [
+      {
+        "num": "01",
+        "title": "Dinheiro espalhado",
+        "desc": "Verba dividida entre cinco frentes ao mesmo tempo não move nenhuma delas."
+      },
+      {
+        "num": "02",
+        "title": "Comissão que não cai",
+        "desc": "A OTA continua levando a mesma fatia porque o caminho da reserva direta nunca foi montado."
+      },
+      {
+        "num": "03",
+        "title": "Baixa temporada de surpresa",
+        "desc": "Quando a ocupação cai já é tarde para começar a construir demanda."
+      }
+    ],
+    "semanas_eyebrow": "Como funciona",
+    "semanas_title": "Três semanas, três encontros.",
+    "semanas_items": [
+      {
+        "num": "Semana 1",
+        "title": "Diagnóstico",
+        "desc": "Uma hora de entrevista com você, levantamento de todo o canal digital e leitura de três concorrentes diretos no seu destino. Sem isso o plano vira palpite."
+      },
+      {
+        "num": "Semana 2",
+        "title": "Plano",
+        "desc": "Entrega do documento e uma hora apresentando. As prioridades dos próximos 90 dias: o que fazer, em que ordem, e o que ignorar."
+      },
+      {
+        "num": "Semana 6",
+        "title": "Ajuste de rota",
+        "desc": "Uma hora revisando o que rodou e corrigindo o que precisar. Se pouca coisa saiu do papel, a conversa é sobre destravar, não sobre cobrar."
+      }
+    ],
+    "ignorar_eyebrow": "A parte que ninguém entrega",
+    "ignorar_title": "O que ignorar nos próximos 90 dias.",
+    "ignorar_body": "Você é bombardeado de coisa para fazer, e quase toda lista que chega até você só adiciona. O plano também subtrai: o que pode esperar, o que não vale para o seu porte e o que só faria sentido depois de outra coisa acontecer.",
+    "ignorar_body_2": "Essa é a parte que costuma economizar mais dinheiro que a lista do que fazer.",
+    "entrega_eyebrow": "O que fica com você",
+    "entrega_title": "Um documento, não uma apresentação.",
+    "entrega_body": "O plano é escrito para ser usado depois que a gente sai da chamada. Fica com você, e serve tanto se a Explore executar quanto se você levar para outra pessoa.",
+    "entrega_items": [
+      "As prioridades dos próximos 90 dias, na ordem",
+      "O que ignorar, com o motivo de cada um",
+      "A leitura dos três concorrentes diretos no seu destino",
+      "O que muda no caminho da reserva direta",
+      "O que precisa estar pronto antes da alta temporada"
+    ],
+    "quem_eyebrow": "Para quem é",
+    "quem_title": "Nem todo negócio precisa disso agora.",
+    "quem_items": [
+      {
+        "title": "Já opera e quer sair do improviso",
+        "desc": "Tem hóspede, tem receita e a decisão de marketing hoje é tomada no impulso."
+      },
+      {
+        "title": "Depende demais de OTA",
+        "desc": "A comissão pesa e a reserva direta nunca foi construída de propósito."
+      },
+      {
+        "title": "Tem verba limitada e precisa acertar",
+        "desc": "Não dá para testar cinco frentes ao mesmo tempo e ver qual pega."
+      }
+    ],
+    "quem_nao_title": "Não é para você se",
+    "quem_nao_items": [
+      "O negócio ainda não abriu e não há operação para diagnosticar",
+      "Você já sabe exatamente o que quer e só precisa de execução",
+      "Espera que alguém execute o plano dentro das três semanas"
+    ],
+    "quem_nao_note": "Preferimos dizer isso agora do que ocupar uma das três vagas do mês à toa.",
+    "vagas_eyebrow": "A agenda",
+    "vagas_title": "Três por mês, e o motivo é simples.",
+    "vagas_body": "Quem faz o diagnóstico, escreve o plano e apresenta são os dois sócios. Não é escassez de marketing: é o que cabe no mês sem a qualidade cair.",
+    "faq_title": "Antes de decidir",
+    "faq_items": [
+      {
+        "q": "Preciso fazer a auditoria gratuita antes?",
+        "a": "Não. Ela ajuda, porque parte do retrato já vem pronto, mas o diagnóstico do plano é mais fundo e é feito do zero de qualquer forma."
+      },
+      {
+        "q": "Vocês executam o plano?",
+        "a": "Podemos executar, e é aí que entra o abatimento. Mas o plano é seu e funciona na mão de qualquer um: parte dos nossos clientes executa com o time interno."
+      },
+      {
+        "q": "E se eu não conseguir tirar nada do papel até a semana 6?",
+        "a": "A terceira conversa continua valendo. A gente revisa o que travou e ajusta o plano ao que a sua operação realmente consegue fazer."
+      },
+      {
+        "q": "Como funciona o abatimento?",
+        "a": "Se você contratar qualquer serviço recorrente da Explore em até 30 dias depois da entrega do plano, os R$ 997 abatem integralmente na primeira mensalidade."
+      }
+    ],
+    "final_title": "Sua próxima temporada começa a ser decidida agora.",
+    "final_sub": "São três vagas por mês. Se a do mês corrente já foi, a gente diz na hora.",
+    "final_cta": "Falar sobre o plano de ação",
+    "final_note": "Pagamento único · abate na primeira mensalidade em até 30 dias",
+    "wa_message": "Olá! Quero saber sobre o Plano de Ação de 90 dias."
   }
 }

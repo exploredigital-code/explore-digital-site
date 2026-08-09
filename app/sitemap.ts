@@ -41,6 +41,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '',            priority: 1.0,  changeFrequency: 'weekly'  },
     { path: '/consultoria', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/servicos',   priority: 0.9,  changeFrequency: 'monthly' },
+    // Unica pagina do site com preco.
+    { path: '/plano-de-acao', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/servicos/sob-demanda', priority: 0.85, changeFrequency: 'monthly' },
     { path: '/portfolio',  priority: 0.8,  changeFrequency: 'monthly' },
     { path: '/sobre',      priority: 0.6,  changeFrequency: 'yearly'  },
