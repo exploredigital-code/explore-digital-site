@@ -160,7 +160,7 @@ export function ServicosView() {
       </section>
 
       {/* ───────────────────── TRILHO + CONTEÚDO ───────────────────── */}
-      <main id="conteudo" className="bg-white">
+      <main id="conteudo" tabIndex={-1} className="bg-white">
         {/* trilho horizontal no mobile.
             O chip inativo era `bg-g-pale/70 text-g-dark/60`: 3,8:1, reprovado.
             O Lighthouse dava 100 nesta pagina porque o preset desktop nunca

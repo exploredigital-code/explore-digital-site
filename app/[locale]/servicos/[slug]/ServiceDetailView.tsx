@@ -56,7 +56,7 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
       <SkipLink />
       <Navbar />
 
-      <main id="conteudo">
+      <main id="conteudo" tabIndex={-1}>
 
       {/* HERO */}
       <section className={cn('relative min-h-[60vh] flex flex-col justify-end overflow-hidden', 'bg-gradient-to-br', parentService.gradient)}>

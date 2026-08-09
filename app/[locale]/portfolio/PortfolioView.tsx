@@ -155,7 +155,7 @@ export function PortfolioView() {
         </div>
       </section>
 
-      <main id="conteudo" className="bg-g-pale">
+      <main id="conteudo" tabIndex={-1} className="bg-g-pale">
 
         {/* Featured project */}
         {featured && (

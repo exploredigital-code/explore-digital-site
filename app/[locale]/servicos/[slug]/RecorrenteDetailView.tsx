@@ -89,7 +89,7 @@ export function RecorrenteDetailView({ sub, parentService, locale }: Props) {
       <SkipLink />
       <Navbar />
 
-      <main id="conteudo">
+      <main id="conteudo" tabIndex={-1}>
 
         {/* ═══════════════════════ HERO ═══════════════════════ */}
         <section className={cn('relative flex flex-col justify-end overflow-hidden bg-gradient-to-br', parentService.gradient)}>

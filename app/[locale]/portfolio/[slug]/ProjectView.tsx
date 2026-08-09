@@ -96,7 +96,7 @@ export function ProjectView({ project, next, prev }: Props) {
       <SkipLink />
       <Navbar />
 
-      <main id="conteudo">
+      <main id="conteudo" tabIndex={-1}>
 
       {/* ══ HERO ══ */}
       <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">

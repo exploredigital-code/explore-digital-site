@@ -520,7 +520,7 @@ export function ConsultoriaView() {
       {/* O <main> abre no herói e fecha antes do rodapé. É o alvo do skip link
           e o marco que faltava: sem ele o leitor de tela não tinha como saltar
           o cabeçalho fixo e a barra de CTA. */}
-      <main id="conteudo">
+      <main id="conteudo" tabIndex={-1}>
 
       {/* ───────── HERO + FORMULÁRIO ───────── */}
       <section id="formulario" className="page-hero relative overflow-hidden pt-28 lg:pt-32 pb-16 lg:pb-24">

@@ -113,7 +113,7 @@ export function ObrigadoView() {
           cabecalho e o rodape, e um <header>/<footer> dentro de <main> perde a
           condicao de landmark: o leitor de tela ficava sem banner e sem
           contentinfo nesta tela. */}
-      <main id="conteudo" className="relative z-10 flex-1 flex items-center">
+      <main id="conteudo" tabIndex={-1} className="relative z-10 flex-1 flex items-center">
         <div className="w-full max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 py-12 sm:py-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}

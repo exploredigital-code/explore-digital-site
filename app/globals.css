@@ -92,8 +92,21 @@ h3 { font-family: var(--font-quanta), system-ui, sans-serif; font-weight: 600; }
 /* ── Skip link ──
    O estado escondido é `style` inline, para valer antes de a folha carregar.
    Inline vence regra de folha, então o retorno ao foco precisa de !important.
-   Só aqui, e por esse motivo. */
-.skip-link:focus {
+   Só aqui, e por esse motivo.
+
+   `:focus-visible`, e não `:focus`. O App Router move o foco para o primeiro
+   elemento focável do documento a cada navegação client-side, por
+   acessibilidade, e esse elemento é justamente o skip link. Com `:focus`, ele
+   acendia em cima do logo toda vez que alguém clicava num link do menu, com o
+   mouse, sem ter pedido nada. Medido: depois de um clique de mouse o link casa
+   com `:focus` e NÃO casa com `:focus-visible`; depois de uma navegação por
+   teclado casa com os dois. É exatamente a distinção que se quer.
+
+   Nada disso é a correção antiga voltando. Aquela resolveu o flash antes de a
+   folha carregar, e continua de pé no `style` inline. Esta é outra causa, que
+   sempre esteve aqui e foi ficando mais visível conforme o site ganhou links
+   internos. */
+.skip-link:focus-visible {
   position: fixed !important;
   top: 12px !important;
   left: 12px !important;
@@ -113,6 +126,38 @@ h3 { font-family: var(--font-quanta), system-ui, sans-serif; font-weight: 600; }
   outline: 2px solid #FFFFFF !important;
   outline-offset: 2px !important;
 }
+
+/* Navegador sem `:focus-visible` volta ao comportamento antigo: melhor
+   aparecer demais que um skip link que nunca aparece. */
+@supports not selector(:focus-visible) {
+  .skip-link:focus {
+    position: fixed !important;
+    top: 12px !important;
+    left: 12px !important;
+    z-index: 100 !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 12px 20px !important;
+    overflow: visible !important;
+    clip: auto !important;
+    clip-path: none !important;
+    border-radius: 100px !important;
+    background: #E2762F !important;
+    color: #1B3025 !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+  }
+}
+
+/* O alvo do skip link recebe `tabindex="-1"` para poder receber foco de
+   verdade. Sem isso o Enter rolava a página mas o foco voltava para o <body>,
+   e o Tab seguinte recomeçava na navbar: o link pulava a tela e não pulava o
+   teclado, que é a única coisa que ele existe para fazer.
+
+   O anel de foco sai porque quem chegou aqui não clicou em nada: o destaque
+   correto é a rolagem, não uma moldura em volta de meia página. */
+#conteudo:focus { outline: none; }
 
 /* ── Custom selection ── */
 ::selection { background: #4E7D57; color: #E3F3E6; }

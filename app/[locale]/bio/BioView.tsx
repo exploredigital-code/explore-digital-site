@@ -123,7 +123,7 @@ export function BioView() {
             O primeiro tem destaque, mas por borda e não por preenchimento
             laranja: cheio, ele pesava tanto que os outros dois pareciam
             desativados. Os três precisam parecer clicáveis. */}
-        <nav id="conteudo" className="flex flex-col gap-2.5">
+        <nav id="conteudo" tabIndex={-1} className="flex flex-col gap-2.5">
           {items.map((item, i) => {
             const destaque = item.key === 'auditoria'
             const href = hrefFor(item.key)

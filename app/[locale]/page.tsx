@@ -35,7 +35,7 @@ export default function Home() {
           Explore" viraram Gargalos e Estúdio, que dizem a mesma coisa pela
           boca do cliente; os depoimentos saíram porque, sem sobrenome, empresa
           nem foto, derrubavam confiança em vez de construir. */}
-      <main id="conteudo">
+      <main id="conteudo" tabIndex={-1}>
         <Hero />
         <TwoDoors />
         <Portfolio />

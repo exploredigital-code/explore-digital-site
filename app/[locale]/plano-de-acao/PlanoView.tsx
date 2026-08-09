@@ -61,7 +61,7 @@ export function PlanoView() {
       <SkipLink />
       <Navbar />
 
-      <main id="conteudo">
+      <main id="conteudo" tabIndex={-1}>
 
         {/* ───────── ABERTURA E PREÇO ───────── */}
         <section className="page-hero relative overflow-hidden pt-32 pb-16 lg:pt-40 lg:pb-20">

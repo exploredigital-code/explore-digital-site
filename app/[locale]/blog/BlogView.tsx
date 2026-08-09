@@ -209,7 +209,7 @@ export function BlogView() {
         </div>
       </section>
 
-      <main id="conteudo" className="bg-menta-clara">
+      <main id="conteudo" tabIndex={-1} className="bg-menta-clara">
         {featured && (
           <section className="py-16 lg:py-20 border-b border-tinta-16">
             <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">

@@ -103,7 +103,7 @@ export function SobreView() {
       <SkipLink />
       <Navbar />
 
-      <main id="conteudo">
+      <main id="conteudo" tabIndex={-1}>
 
       {/* ══ HERO ══ */}
       <section className="page-hero pt-36 pb-24 relative overflow-hidden">
