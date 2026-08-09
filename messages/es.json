@@ -20,7 +20,7 @@
     "subtitle": "En tres pasos entiendes qué vamos a hacer y cuándo empieza a aparecer en el resultado.",
     "cta": "Auditoría gratuita →",
     "s1_title": "Elige el servicio",
-    "s1_desc": "Mira las seis disciplinas e identifica la que resuelve tu momento.",
+    "s1_desc": "Mira el catálogo agrupado por problema e identifica el producto que resuelve tu momento.",
     "s2_title": "Auditoría gratuita",
     "s2_desc": "Contáctanos para una conversación sin compromiso. Entenderemos tu negocio y alinearemos los detalles.",
     "s3_title": "Resultados en los primeros 90 días",
@@ -670,13 +670,12 @@
     "door2_desc": "Contenido y tráfico funcionando mientras pasa la temporada.",
     "door2_cta": "Ver cómo funciona cada mes",
     "proj_eyebrow": "Proyectos",
-    "proj_title": "Seis disciplinas, seis problemas distintos.",
-    "proj_sub": "No vendemos paquetes cerrados. Contratas el frente que tu momento pide, solo o combinado con otros.",
-    "rail_ondemand": "Bajo demanda",
+    "proj_title": "Cada producto resuelve un problema distinto.",
+    "proj_sub": "No vendemos paquetes cerrados. Contratas el producto que tu momento pide, solo o combinado con otros.",
     "wa_item": "Hola! Vengo desde la web y quiero contratar: {item}.",
     "doors_home_title": "Dos formas de trabajar con nosotros.",
-    "proj_ver_disciplina": "Ver disciplina",
-    "trilho_label": "Piezas de {disciplina}",
+    "proj_ver_disciplina": "Ver producto",
+    "trilho_label": "Piezas de {produto}",
     "grupo_presenca": "Presencia",
     "grupo_presenca_sub": "Donde el huésped te encuentra y reserva.",
     "grupo_marca": "Marca",
@@ -702,7 +701,7 @@
     "etiqueta_pontual": "Puntual",
     "etiqueta_mensal": "Mensual",
     "catalogo_eyebrow": "Lo que hacemos",
-    "catalogo_title": "Trece productos, agrupados por el problema que resuelven.",
+    "catalogo_title": "Todos los productos, agrupados por el problema que resuelven.",
     "catalogo_sub": "Cada uno tiene su alcance. La etiqueta dice si pagas una vez o cada mes."
   },
   "home": {
@@ -730,8 +729,6 @@
       }
     ],
     "disc_eyebrow": "Qué hacemos",
-    "disc_title": "Seis disciplinas, un objetivo.",
-    "disc_sub": "Seis disciplinas que se sostienen solas y se hablan entre sí. Cuatro nacieron atendiendo hotelería y experiencias. Dos nacieron de nuestra propia operación, cuando tuvimos que resolver por dentro lo que hoy resolvemos para el cliente.",
     "disc_cta": "Ver todos los servicios",
     "disc_items": [
       {

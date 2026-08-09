@@ -20,7 +20,7 @@
     "subtitle": "In three steps you understand what we will do and when it starts showing in the result.",
     "cta": "Free audit →",
     "s1_title": "Choose your service",
-    "s1_desc": "Look at the six disciplines and spot the one that fits your moment.",
+    "s1_desc": "Look at the catalogue grouped by problem and find the product that fits your moment.",
     "s2_title": "Free audit",
     "s2_desc": "Reach out for a no-commitment conversation. We'll understand your business and align the details.",
     "s3_title": "Results in the first 90 days",
@@ -670,13 +670,12 @@
     "door2_desc": "Content and paid traffic running while the season happens.",
     "door2_cta": "See how the monthly work runs",
     "proj_eyebrow": "Projects",
-    "proj_title": "Six disciplines, six different problems.",
-    "proj_sub": "We do not sell closed packages. You hire the track your moment calls for, on its own or combined with others.",
-    "rail_ondemand": "On demand",
+    "proj_title": "Each product solves a different problem.",
+    "proj_sub": "We do not sell closed packages. You hire the product your moment calls for, on its own or combined with others.",
     "wa_item": "Hi! I came from the website and I would like to book: {item}.",
     "doors_home_title": "Two ways of working with us.",
-    "proj_ver_disciplina": "See discipline",
-    "trilho_label": "Pieces from {disciplina}",
+    "proj_ver_disciplina": "See product",
+    "trilho_label": "Pieces from {produto}",
     "grupo_presenca": "Presence",
     "grupo_presenca_sub": "Where the guest finds you and books.",
     "grupo_marca": "Brand",
@@ -702,7 +701,7 @@
     "etiqueta_pontual": "One off",
     "etiqueta_mensal": "Monthly",
     "catalogo_eyebrow": "What we do",
-    "catalogo_title": "Thirteen products, grouped by the problem they solve.",
+    "catalogo_title": "Every product, grouped by the problem it solves.",
     "catalogo_sub": "Each has its own scope. The tag tells you whether you pay once or every month."
   },
   "home": {
@@ -730,8 +729,6 @@
       }
     ],
     "disc_eyebrow": "What we do",
-    "disc_title": "Six disciplines, one goal.",
-    "disc_sub": "Six disciplines that stand on their own and talk to each other. Four were born serving hospitality and experiences. Two were born inside our own operation, when we had to solve for ourselves what we now solve for the client.",
     "disc_cta": "See all services",
     "disc_items": [
       {

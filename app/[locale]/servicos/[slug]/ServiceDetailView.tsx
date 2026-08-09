@@ -138,7 +138,7 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
           <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
             <div className="border-t border-tinta-16 pt-14">
               <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-tinta-50 mb-6">{t('media_label')}</div>
-              <GradeDoRegistro chave={sub.slug} rotulo={tServicos('trilho_label', { disciplina: localizedSub.name })} />
+              <GradeDoRegistro chave={sub.slug} rotulo={tServicos('trilho_label', { produto: localizedSub.name })} />
             </div>
           </div>
         </section>
