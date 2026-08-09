@@ -823,14 +823,14 @@
     "cta_secondary": "Chat on WhatsApp",
     "wa_message": "Hi! I came from the services page and would like to talk.",
     "doors_eyebrow": "Two ways to work with us",
-    "door1_label": "On demand",
-    "door1_title": "You know what you need.",
-    "door1_desc": "Fixed scope, fixed deadline. You ask, we deliver. No retainer, no contract.",
-    "door1_cta": "See deliverables and lead times",
-    "door2_label": "Projects",
-    "door2_title": "You know the problem, not the solution.",
-    "door2_desc": "We start with a diagnosis, define the scope and execute. Then, if it makes sense, we run it for you every month.",
-    "door2_cta": "See the project tracks",
+    "door1_label": "Fix one thing",
+    "door1_title": "I want to fix one thing now.",
+    "door1_desc": "Website, brand, production or systems. Fixed scope and deadline, no monthly fee.",
+    "door1_cta": "See the eleven deliveries",
+    "door2_label": "Every month",
+    "door2_title": "I want a team on it every month.",
+    "door2_desc": "Content and paid traffic running while the season happens.",
+    "door2_cta": "See the two recurring ones",
     "od_eyebrow": "On demand",
     "od_title": "One-off deliverables, with a scope and a deadline.",
     "od_sub": "For when you need one specific piece rather than a whole track. You order, you receive, done.",
@@ -925,7 +925,24 @@
     "proj_ver_disciplina": "See discipline",
     "trilho_label": "Pieces from {disciplina}",
     "od_meta_title": "On demand · Explore Digital",
-    "od_meta_description": "Photography, video, drone, editing, design and landing page with a fixed scope and deadline, for hospitality on the coast of Ceará and Rio Grande do Norte. You ask, we deliver."
+    "od_meta_description": "Photography, video, drone, editing, design and landing page with a fixed scope and deadline, for hospitality on the coast of Ceará and Rio Grande do Norte. You ask, we deliver.",
+    "grupo_presenca": "Presence",
+    "grupo_presenca_sub": "Where the guest finds you and books.",
+    "grupo_marca": "Brand",
+    "grupo_marca_sub": "What your property says before anyone talks to you.",
+    "grupo_producao": "Production",
+    "grupo_producao_sub": "The photography and video that feed all of it.",
+    "grupo_operacao": "Operations",
+    "grupo_operacao_sub": "What runs on its own and what keeps contacts from getting lost.",
+    "grupo_recorrente": "Every month",
+    "grupo_recorrente_sub": "Two products that keep working while the season happens.",
+    "pontual_eyebrow": "Fix one thing",
+    "pontual_title": "Eleven deliveries with a fixed scope and deadline.",
+    "pontual_sub": "You hire it, we deliver it and it ends. No monthly fee.",
+    "recorrente_eyebrow": "Every month",
+    "recorrente_title": "Two products that do not end.",
+    "recorrente_sub": "They keep running while the season happens, with the channel decided in the diagnosis.",
+    "ver_produto": "See details"
   },
   "home": {
     "gargalos_eyebrow": "Where we come in",
@@ -936,19 +953,19 @@
         "num": "01",
         "title": "I depend too much on Booking and Airbnb",
         "desc": "Commission eats the margin and the platform keeps the relationship. We build the direct channel so you stop renting your own audience.",
-        "slug": "web-design"
+        "slug": "website-institucional"
       },
       {
         "num": "02",
         "title": "My Instagram grows but does not turn into bookings",
         "desc": "Followers who never book do not pay the bills. Content, offer and funnel working together, not as three separate things.",
-        "slug": "social-media"
+        "slug": "producao-conteudo"
       },
       {
         "num": "03",
         "title": "My operation runs on improvisation",
         "desc": "Bookings in a notebook, enquiries lost in WhatsApp and nobody knows where the guest came from. We automate that.",
-        "slug": "automatizacoes"
+        "slug": "automacoes"
       }
     ],
     "disc_eyebrow": "What we do",

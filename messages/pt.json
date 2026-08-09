@@ -823,14 +823,14 @@
     "cta_secondary": "Falar no WhatsApp",
     "wa_message": "Olá! Vim pela página de serviços do site e gostaria de conversar.",
     "doors_eyebrow": "Duas formas de trabalhar com a gente",
-    "door1_label": "Sob demanda",
-    "door1_title": "Você sabe o que precisa.",
-    "door1_desc": "Escopo e prazo fechados. Você pede, a gente entrega. Sem mensalidade e sem contrato.",
-    "door1_cta": "Ver entregas e prazos",
-    "door2_label": "Projetos",
-    "door2_title": "Você sabe o problema, não a solução.",
-    "door2_desc": "Começa por um diagnóstico, define o escopo e a gente executa. Depois, se fizer sentido, cuidamos da operação todo mês.",
-    "door2_cta": "Ver as frentes de projeto",
+    "door1_label": "Resolver uma coisa",
+    "door1_title": "Quero resolver uma coisa agora.",
+    "door1_desc": "Site, marca, captação ou sistema. Escopo e prazo fechados, sem mensalidade.",
+    "door1_cta": "Ver as onze entregas",
+    "door2_label": "Todo mês",
+    "door2_title": "Quero um time cuidando todo mês.",
+    "door2_desc": "Conteúdo e tráfego rodando enquanto a temporada acontece.",
+    "door2_cta": "Ver os dois recorrentes",
     "od_eyebrow": "Sob demanda",
     "od_title": "Entregas pontuais, com escopo e prazo.",
     "od_sub": "Quando você precisa de uma peça específica e não de uma frente inteira. Contrata, recebe e pronto.",
@@ -925,7 +925,24 @@
     "proj_ver_disciplina": "Ver disciplina",
     "trilho_label": "Peças de {disciplina}",
     "od_meta_title": "Sob demanda · Explore Digital",
-    "od_meta_description": "Fotografia, vídeo, drone, edição, design e landing page com escopo e prazo fechados, para hotelaria no litoral do Ceará e do Rio Grande do Norte. Você pede, a gente entrega."
+    "od_meta_description": "Fotografia, vídeo, drone, edição, design e landing page com escopo e prazo fechados, para hotelaria no litoral do Ceará e do Rio Grande do Norte. Você pede, a gente entrega.",
+    "grupo_presenca": "Presença",
+    "grupo_presenca_sub": "Onde o hóspede te encontra e reserva.",
+    "grupo_marca": "Marca",
+    "grupo_marca_sub": "O que a sua casa comunica antes de alguém falar com você.",
+    "grupo_producao": "Produção",
+    "grupo_producao_sub": "A imagem e o vídeo que alimentam tudo isso.",
+    "grupo_operacao": "Operação",
+    "grupo_operacao_sub": "O que roda sozinho e o que não deixa contato se perder.",
+    "grupo_recorrente": "Todo mês",
+    "grupo_recorrente_sub": "Dois produtos que trabalham enquanto a temporada acontece.",
+    "pontual_eyebrow": "Resolver uma coisa",
+    "pontual_title": "Onze entregas com escopo e prazo fechados.",
+    "pontual_sub": "Você contrata, a gente entrega e acaba. Sem mensalidade.",
+    "recorrente_eyebrow": "Todo mês",
+    "recorrente_title": "Dois produtos que não terminam.",
+    "recorrente_sub": "Ficam rodando enquanto a temporada acontece, com canal definido no diagnóstico.",
+    "ver_produto": "Ver detalhes"
   },
   "home": {
     "gargalos_eyebrow": "Onde a gente entra",
@@ -936,19 +953,19 @@
         "num": "01",
         "title": "Dependo demais de Booking e Airbnb",
         "desc": "A comissão come a margem e a plataforma fica com o relacionamento. Construímos o canal direto para você parar de alugar audiência.",
-        "slug": "web-design"
+        "slug": "website-institucional"
       },
       {
         "num": "02",
         "title": "Meu Instagram cresce mas não vira reserva",
         "desc": "Seguidor que não reserva não paga conta. Conteúdo, oferta e funil trabalhando juntos, não três coisas separadas.",
-        "slug": "social-media"
+        "slug": "producao-conteudo"
       },
       {
         "num": "03",
         "title": "Minha operação vive no improviso",
         "desc": "Reserva no caderno, atendimento perdido no WhatsApp e ninguém sabe de onde veio o hóspede. A gente automatiza isso.",
-        "slug": "automatizacoes"
+        "slug": "automacoes"
       }
     ],
     "disc_eyebrow": "O que fazemos",

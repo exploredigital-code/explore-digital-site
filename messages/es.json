@@ -823,14 +823,14 @@
     "cta_secondary": "Hablar por WhatsApp",
     "wa_message": "¡Hola! Vengo de la página de servicios y me gustaría conversar.",
     "doors_eyebrow": "Dos formas de trabajar con nosotros",
-    "door1_label": "Bajo demanda",
-    "door1_title": "Sabes lo que necesitas.",
-    "door1_desc": "Alcance y plazo cerrados. Tú pides, nosotros entregamos. Sin mensualidad y sin contrato.",
-    "door1_cta": "Ver entregas y plazos",
-    "door2_label": "Proyectos",
-    "door2_title": "Sabes el problema, no la solución.",
-    "door2_desc": "Empezamos por un diagnóstico, definimos el alcance y ejecutamos. Después, si tiene sentido, gestionamos la operación cada mes.",
-    "door2_cta": "Ver los frentes de proyecto",
+    "door1_label": "Resolver una cosa",
+    "door1_title": "Quiero resolver una cosa ahora.",
+    "door1_desc": "Web, marca, producción o sistemas. Alcance y plazo cerrados, sin mensualidad.",
+    "door1_cta": "Ver las once entregas",
+    "door2_label": "Cada mes",
+    "door2_title": "Quiero un equipo cuidándolo cada mes.",
+    "door2_desc": "Contenido y tráfico funcionando mientras pasa la temporada.",
+    "door2_cta": "Ver los dos recurrentes",
     "od_eyebrow": "Bajo demanda",
     "od_title": "Entregas puntuales, con alcance y plazo.",
     "od_sub": "Cuando necesitas una pieza específica y no un frente entero. Contratas, recibes y listo.",
@@ -925,7 +925,24 @@
     "proj_ver_disciplina": "Ver disciplina",
     "trilho_label": "Piezas de {disciplina}",
     "od_meta_title": "Bajo demanda · Explore Digital",
-    "od_meta_description": "Fotografía, vídeo, drone, edición, diseño y landing page con alcance y plazo cerrados, para hotelería en el litoral de Ceará y Rio Grande do Norte. Tú pides, nosotros entregamos."
+    "od_meta_description": "Fotografía, vídeo, drone, edición, diseño y landing page con alcance y plazo cerrados, para hotelería en el litoral de Ceará y Rio Grande do Norte. Tú pides, nosotros entregamos.",
+    "grupo_presenca": "Presencia",
+    "grupo_presenca_sub": "Donde el huésped te encuentra y reserva.",
+    "grupo_marca": "Marca",
+    "grupo_marca_sub": "Lo que tu casa comunica antes de que alguien hable contigo.",
+    "grupo_producao": "Producción",
+    "grupo_producao_sub": "La imagen y el vídeo que alimentan todo eso.",
+    "grupo_operacao": "Operación",
+    "grupo_operacao_sub": "Lo que funciona solo y lo que evita que se pierda un contacto.",
+    "grupo_recorrente": "Cada mes",
+    "grupo_recorrente_sub": "Dos productos que siguen trabajando mientras pasa la temporada.",
+    "pontual_eyebrow": "Resolver una cosa",
+    "pontual_title": "Once entregas con alcance y plazo cerrados.",
+    "pontual_sub": "Lo contratas, lo entregamos y se acaba. Sin mensualidad.",
+    "recorrente_eyebrow": "Cada mes",
+    "recorrente_title": "Dos productos que no terminan.",
+    "recorrente_sub": "Siguen funcionando mientras pasa la temporada, con el canal definido en el diagnóstico.",
+    "ver_produto": "Ver detalles"
   },
   "home": {
     "gargalos_eyebrow": "Dónde entramos",
@@ -936,19 +953,19 @@
         "num": "01",
         "title": "Dependo demasiado de Booking y Airbnb",
         "desc": "La comisión se come el margen y la plataforma se queda con la relación. Construimos el canal directo para que dejes de alquilar tu propia audiencia.",
-        "slug": "web-design"
+        "slug": "website-institucional"
       },
       {
         "num": "02",
         "title": "Mi Instagram crece pero no se convierte en reservas",
         "desc": "Un seguidor que no reserva no paga las facturas. Contenido, oferta y embudo trabajando juntos, no tres cosas separadas.",
-        "slug": "social-media"
+        "slug": "producao-conteudo"
       },
       {
         "num": "03",
         "title": "Mi operación va a base de improvisación",
         "desc": "Reservas en una libreta, consultas perdidas en WhatsApp y nadie sabe de dónde vino el huésped. Eso lo automatizamos.",
-        "slug": "automatizacoes"
+        "slug": "automacoes"
       }
     ],
     "disc_eyebrow": "Qué hacemos",

@@ -4,7 +4,6 @@ import { Hero }         from '@/components/sections/Hero'
 import { TwoDoors }     from '@/components/sections/TwoDoors'
 import { Portfolio }    from '@/components/sections/Portfolio'
 import { Gargalos }     from '@/components/sections/Gargalos'
-import { Disciplinas }  from '@/components/sections/Disciplinas'
 import { Agora }        from '@/components/sections/Agora'
 import { Estudio }      from '@/components/sections/Estudio'
 import { Contact }      from '@/components/sections/Contact'
@@ -41,7 +40,6 @@ export default function Home() {
         <TwoDoors />
         <Portfolio />
         <Gargalos />
-        <Disciplinas />
         <Agora />
         <Estudio />
         <Contact />

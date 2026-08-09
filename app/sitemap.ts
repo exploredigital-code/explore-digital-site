@@ -24,6 +24,9 @@ const REDIRECIONADAS = new Set([
   '/servicos/captacoes', '/servicos/meta-ads', '/servicos/google-ads',
   '/servicos/sistemas-internos', '/servicos/conteudo-serie',
   '/servicos/motion-anuncio', '/servicos/motion',
+  // As cinco disciplinas e o nome velho de 'pontual'.
+  '/servicos/social-media', '/servicos/web-design', '/servicos/branding',
+  '/servicos/performance-ads', '/servicos/automatizacoes', '/servicos/sob-demanda',
 ])
 
 type Entry = {
@@ -43,7 +46,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/servicos',   priority: 0.9,  changeFrequency: 'monthly' },
     // Unica pagina do site com preco.
     { path: '/plano-de-acao', priority: 0.9, changeFrequency: 'monthly' },
-    { path: '/servicos/sob-demanda', priority: 0.85, changeFrequency: 'monthly' },
     { path: '/portfolio',  priority: 0.8,  changeFrequency: 'monthly' },
     { path: '/sobre',      priority: 0.6,  changeFrequency: 'yearly'  },
     { path: '/blog',       priority: 0.7,  changeFrequency: 'weekly', ptOnly: true },

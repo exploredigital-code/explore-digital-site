@@ -6,10 +6,8 @@ import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn } from '@/components/ui/AnimateIn'
-import { servicesData } from '@/data/services'
-import { onDemandItems } from '@/data/on-demand'
-
-type OnDemandCopy = { slug: string; name: string }
+import { pontualPorGrupo, recorrentes, type SubService } from '@/data/services'
+import { getLocalizedSubService } from '@/data/services-content'
 
 function ArrowIcon() {
   return (
@@ -22,15 +20,18 @@ function ArrowIcon() {
 /**
  * As duas portas de compra, logo abaixo do hero.
  *
- * Substitui o accordion de Serviços, que repetia na home o catálogo inteiro de
- * /solucoes. Aqui a home só roteia: quem sabe o que quer vai para sob demanda,
- * quem tem um problema para diagnosticar vai para projetos.
+ * O eixo mudou. Antes dividia por 'sabe o que precisa' contra 'sabe o
+ * problema', o que misturava projeto com mensalidade dentro da mesma porta.
+ * Agora divide por como o dono pensa em dinheiro: gasto uma vez ou gasto todo
+ * mês. Pontual primeiro, porque recorrente é a decisão maior e quem lê onze
+ * avulsos entende o 'todo mês' sem rótulo explicando.
  */
 export function TwoDoors() {
   const t = useTranslations('servicos')
   const locale = useLocale()
 
-  const copy = t.raw('on_demand_items') as OnDemandCopy[]
+  const nomeDe = (p: SubService) => getLocalizedSubService(locale, p.slug)?.name ?? p.name
+  const pontuais = pontualPorGrupo.flatMap(g => g.itens)
 
   const portas = [
     {
@@ -39,10 +40,9 @@ export function TwoDoors() {
       title: t('door1_title'),
       desc: t('door1_desc'),
       cta: t('door1_cta'),
-      href: `/${locale}/servicos/sob-demanda`,
-      // Onde havia "a partir de R$ X" agora vai a contagem de entregas.
-      note: t('od_count', { n: onDemandItems.length }),
-      chips: onDemandItems.map(i => copy.find(c => c.slug === i.slug)?.name).filter(Boolean) as string[],
+      href: `/${locale}/servicos#pontual`,
+      note: t('pontual_sub'),
+      chips: pontuais.map(nomeDe),
       destaque: true,
     },
     {
@@ -51,9 +51,9 @@ export function TwoDoors() {
       title: t('door2_title'),
       desc: t('door2_desc'),
       cta: t('door2_cta'),
-      href: `/${locale}/servicos#projetos`,
-      note: t('count', { n: servicesData.reduce((n, s) => n + s.subServices.length, 0), p: servicesData.length }),
-      chips: servicesData.map(s => s.title),
+      href: `/${locale}/servicos#recorrente`,
+      note: t('recorrente_sub'),
+      chips: recorrentes.map(nomeDe),
       destaque: false,
     },
   ]

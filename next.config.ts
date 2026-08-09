@@ -52,6 +52,19 @@ const MOVED: [from: string, to: string][] = [
   // motion que sobreviveu, e a disciplina inteira foi absorvida por Produção.
   ['/servicos/motion-anuncio',    '/servicos/pecas-animadas'],
   ['/servicos/motion',            '/servicos/producao-conteudo'],
+
+  // As cinco disciplinas restantes. Entram agora, e nao na etapa anterior,
+  // porque ate aqui o hub, a home e o Gargalos ainda linkavam para elas: um
+  // 301 partindo de casa e pior que a rota viva por mais uma etapa.
+  ['/servicos/social-media',      '/servicos/producao-conteudo'],
+  ['/servicos/web-design',        '/servicos/website-institucional'],
+  ['/servicos/branding',          '/servicos/identidade-visual'],
+  ['/servicos/performance-ads',   '/servicos/gestao-de-trafego'],
+  ['/servicos/automatizacoes',    '/servicos/automacoes'],
+
+  // 'Sob demanda' era o nome velho de 'pontual'. A rota nasceu ha tres dias e
+  // nao tem historico, entao o hub e o destino certo.
+  ['/servicos/sob-demanda',       '/servicos'],
 ]
 
 const nextConfig: NextConfig = {
