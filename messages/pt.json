@@ -10,7 +10,7 @@
     "blog": "Blog",
     "menu_open": "Abrir menu",
     "menu_close": "Fechar menu",
-    "consultoria": "Consultoria Gratuita",
+    "consultoria": "Auditoria Gratuita",
     "servicos": "Serviços",
     "skip": "Pular para o conteúdo"
   },
@@ -18,10 +18,10 @@
     "eyebrow": "Como funciona",
     "title": "Do primeiro contato até a primeira reserva.",
     "subtitle": "Em três passos você entende o que vamos fazer e quando começa a aparecer no resultado.",
-    "cta": "Consultoria gratuita →",
+    "cta": "Auditoria gratuita →",
     "s1_title": "Escolha o serviço",
     "s1_desc": "Veja as seis disciplinas e identifique a que resolve o seu momento.",
-    "s2_title": "Consultoria gratuita",
+    "s2_title": "Auditoria gratuita",
     "s2_desc": "Entre em contato para uma conversa sem compromisso. Vamos entender o seu negócio e alinhar os detalhes.",
     "s3_title": "Resultados nos primeiros 90 dias",
     "s3_desc": "Definimos métricas de acompanhamento. Você vê o progresso semana a semana no grupo exclusivo com seu time dedicado."
@@ -78,8 +78,8 @@
     "design_desc": "Para branding e identidade visual trabalhamos com estúdio parceiro. Mesmo modelo da performance: especialista que toca a própria operação, com a Explore como ponto único de contato.",
     "cta_eyebrow": "Próximo passo",
     "cta_title": "Quer a Explore cuidando da sua marca?",
-    "cta_desc": "Em 45 minutos passamos um raio-X no seu site, Instagram, Google e reputação, e apontamos o que priorizar. Sem custo e sem compromisso.",
-    "cta_button": "Agendar consultoria gratuita",
+    "cta_desc": "A auditoria lê o que já é público sobre o seu negócio, no Google, no site, no Instagram e na reputação, e devolve um retrato de onde você está. O relatório chega em minutos, sem custo.",
+    "cta_button": "Quero minha auditoria",
     "cta_secondary": "Falar no WhatsApp",
     "meta_title": "Sobre a Explore Digital · marketing para hotelaria",
     "meta_description": "Agência especializada em hotelaria no litoral do Ceará e do Rio Grande do Norte. Conheça a história, os valores e o time por trás dos projetos.",
@@ -207,8 +207,8 @@
     "form_sending": "Enviando...",
     "form_success": "Mensagem enviada! Retornaremos em breve.",
     "form_error": "Erro ao enviar. Tente pelo WhatsApp.",
-    "trust_1": "Resposta em até 24h",
-    "trust_2": "Consultoria sem custo",
+    "trust_1": "Relatório em minutos",
+    "trust_2": "Auditoria sem custo",
     "trust_3": "Dados protegidos",
     "trust_4": "BR · ES · Internacional",
     "form_disclaimer": "Ao enviar, sua mensagem chega por e-mail e WhatsApp simultaneamente.",
@@ -272,8 +272,8 @@
     "how_label": "Como fazemos",
     "see_details": "Ver detalhes",
     "cta_title": "Quer {discipline} na sua operação?",
-    "cta_desc": "Em 45 minutos analisamos o seu digital e apontamos o que priorizar. Sem custo e sem compromisso.",
-    "cta_button": "Agendar consultoria gratuita",
+    "cta_desc": "A auditoria lê o seu digital a partir do que já é público e devolve um retrato de onde você está. O relatório chega em minutos, sem custo e sem compromisso.",
+    "cta_button": "Quero minha auditoria",
     "cta_secondary": "Falar no WhatsApp"
   },
   "portfolio_detail": {
@@ -438,22 +438,22 @@
     "og_description": "Especialistas em pousadas, hostels e beach clubs do litoral cearense e potiguar. Menos OTA, mais reserva direta."
   },
   "consultoria": {
-    "meta_title": "Consultoria gratuita para hotéis, pousadas e beach clubs · Explore Digital",
-    "meta_description": "45 minutos com uma agência que só trabalha com hotelaria e experiências no litoral do Ceará e do Rio Grande do Norte. Um raio-X completo da sua presença digital: site, Instagram, Google do Negócio, reputação e posicionamento, por escrito em até 24h. Sem custo e sem compromisso.",
-    "og_title": "Consultoria gratuita para negócios de hotelaria e experiências",
-    "og_description": "Raio-X da sua presença digital: site, Instagram, Google do Negócio, reputação e posicionamento. 45 minutos, relatório em 24h, sem custo.",
-    "nav_cta": "Quero minha consultoria",
+    "meta_title": "Auditoria digital gratuita para pousadas e beach clubs · Explore Digital",
+    "meta_description": "Uma leitura do seu posicionamento digital feita a partir do que já é público: Google, dependência de OTA, site, Instagram e reputação. O relatório chega em minutos, sem custo e sem compromisso.",
+    "og_title": "Auditoria digital gratuita para hotelaria e experiências",
+    "og_description": "Google, dependência de OTA, site, Instagram e reputação. O relatório chega em minutos, a partir do que já é público.",
+    "nav_cta": "Quero minha auditoria",
     "nav_site": "Ir para o site",
-    "hero_badge": "Consultoria gratuita · Agenda limitada por mês",
+    "hero_badge": "Auditoria gratuita · Relatório em minutos",
     "hero_title": "O hóspede te encontra.",
     "hero_title_accent": "E reserva pela Booking.",
-    "hero_sub": "Em 45 minutos passamos um raio-X no seu site, Instagram, Google e reputação, e mostramos onde você está perdendo o hóspede para a OTA.",
+    "hero_sub": "A auditoria lê o que já é público sobre o seu negócio e devolve um retrato de onde você está hoje: no Google, na dependência de OTA, no site, no Instagram e na reputação.",
     "hero_bullets": [
-      "Raio-X feito antes da conversa",
-      "Relatório por escrito em até 24h",
-      "Sem custo e sem compromisso"
+      "O relatório chega em minutos, não em dias",
+      "Feito a partir do que qualquer hóspede já consegue ver",
+      "Sem custo, sem cartão e sem compromisso"
     ],
-    "hero_scroll": "Entenda como funciona",
+    "hero_scroll": "Leva menos de dois minutos",
     "cred_items": [
       {
         "value": "CE · RN",
@@ -612,9 +612,9 @@
         "a": "Nada acontece. O raio-X é seu e você executa internamente ou com outro parceiro."
       }
     ],
-    "form_eyebrow": "Agende a sua",
+    "form_eyebrow": "Gere a sua",
     "form_title": "Comece pelo seu negócio.",
-    "form_sub": "Três etapas rápidas. Ao enviar, seus dados chegam direto no WhatsApp da nossa equipe.",
+    "form_sub": "Três etapas rápidas. Ao enviar, a auditoria começa a ser gerada e o relatório chega no seu WhatsApp.",
     "form_step_of": "Etapa {current} de {total}",
     "s1_title": "Sobre o seu negócio",
     "s1_sub": "Para saber com quem estamos falando.",
@@ -675,24 +675,24 @@
     ],
     "btn_next": "Continuar",
     "btn_back": "Voltar",
-    "btn_submit": "Enviar e falar no WhatsApp",
+    "btn_submit": "Gerar minha auditoria",
     "btn_sending": "Enviando...",
     "err_required": "Preencha os campos obrigatórios para continuar.",
     "err_email": "Confira o e-mail digitado.",
     "form_disclaimer": "Ao enviar, seus dados vão para o WhatsApp da Explore Digital e uma cópia chega no nosso e-mail. Não compartilhamos suas informações com ninguém.",
     "trust": [
-      "Resposta em até 24h",
-      "Consultoria sem custo",
+      "Relatório em minutos",
+      "Auditoria sem custo",
       "Dados protegidos",
-      "BR · ES · Internacional"
+      "CE e RN"
     ],
     "final_title": "Sua próxima temporada começa a ser decidida agora.",
-    "final_sub": "A agenda é limitada porque cada consultoria exige análise antes da conversa.",
-    "final_cta": "Quero minha consultoria gratuita",
-    "final_note": "45 minutos · sem custo · sem compromisso",
-    "sticky_cta": "Agendar consultoria gratuita",
-    "wa_header": "NOVA SOLICITAÇÃO DE CONSULTORIA GRATUITA",
-    "wa_footer": "Enviado pela landing page de consultoria",
+    "final_sub": "A auditoria é gratuita e o relatório é seu, contratando a Explore ou não.",
+    "final_cta": "Quero minha auditoria gratuita",
+    "final_note": "Relatório em minutos · sem custo · sem compromisso",
+    "sticky_cta": "Receber minha auditoria",
+    "wa_header": "NOVA SOLICITAÇÃO DE AUDITORIA GRATUITA",
+    "wa_footer": "Enviado pela página de auditoria",
     "wa_labels": {
       "name": "Nome",
       "phone": "WhatsApp",
@@ -736,7 +736,41 @@
     "ty_email_button": "Prefiro por e-mail",
     "ty_email_subject": "Solicitação de consultoria gratuita",
     "ty_channels_note": "Respondemos em até 24 horas, de segunda a sexta.",
-    "f_select": "Selecione"
+    "f_select": "Selecione",
+    "relatorio_eyebrow": "O que o relatório mostra",
+    "relatorio_title": "Onde o seu negócio está agora.",
+    "relatorio_sub": "Cinco leituras, todas a partir de informação pública. O relatório mostra o retrato; o que fazer com ele é conversa nossa depois.",
+    "relatorio_items": [
+      {
+        "num": "01",
+        "title": "Google",
+        "desc": "Se o negócio aparece quando alguém busca pelo nome, e se aparece nas buscas do destino."
+      },
+      {
+        "num": "02",
+        "title": "Dependência de OTA",
+        "desc": "Se a Booking rankeia acima do seu próprio site quando o hóspede procura por você."
+      },
+      {
+        "num": "03",
+        "title": "Site",
+        "desc": "Se existe, se carrega no celular e se dá para reservar direto sem sair dele."
+      },
+      {
+        "num": "04",
+        "title": "Instagram",
+        "desc": "Ritmo de publicação, o que a bio resolve e se o conteúdo mostra a experiência."
+      },
+      {
+        "num": "05",
+        "title": "Reputação",
+        "desc": "Nota, volume de avaliações e se alguém responde o que escrevem sobre você."
+      }
+    ],
+    "prazo_eyebrow": "O prazo",
+    "prazo_title": "Minutos, porque é sistema e não fila.",
+    "prazo_body": "A leitura é feita automaticamente a partir de fontes públicas assim que o formulário chega. Não passa por agenda de ninguém, então o relatório sai enquanto você ainda está com o celular na mão.",
+    "prazo_body_2": "Ele chega pelo WhatsApp, no número que você informar. Se quiser conversar sobre o que apareceu, é só responder ali mesmo."
   },
   "bio": {
     "meta_title": "Explore Digital · Links",
@@ -779,8 +813,8 @@
     "details": "Ver detalhes",
     "cta_eyebrow": "Não sabe por onde começar",
     "cta_title": "Não sabe qual das duas portas é a sua?",
-    "cta_desc": "Em 45 minutos analisamos o seu digital e apontamos o que priorizar. Sem custo e sem compromisso.",
-    "cta_button": "Agendar consultoria gratuita",
+    "cta_desc": "A auditoria lê o seu digital a partir do que já é público e devolve um retrato de onde você está. O relatório chega em minutos, sem custo e sem compromisso.",
+    "cta_button": "Quero minha auditoria",
     "cta_secondary": "Falar no WhatsApp",
     "wa_message": "Olá! Vim pela página de serviços do site e gostaria de conversar.",
     "doors_eyebrow": "Duas formas de trabalhar com a gente",

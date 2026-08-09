@@ -10,7 +10,7 @@
     "blog": "Blog",
     "menu_open": "Open menu",
     "menu_close": "Close menu",
-    "consultoria": "Free Consulting",
+    "consultoria": "Free Audit",
     "servicos": "Services",
     "skip": "Skip to content"
   },
@@ -18,10 +18,10 @@
     "eyebrow": "How it works",
     "title": "From first contact to first booking.",
     "subtitle": "In three steps you understand what we will do and when it starts showing in the result.",
-    "cta": "Free consultation →",
+    "cta": "Free audit →",
     "s1_title": "Choose your service",
     "s1_desc": "Look at the six disciplines and spot the one that fits your moment.",
-    "s2_title": "Free consultation",
+    "s2_title": "Free audit",
     "s2_desc": "Reach out for a no-commitment conversation. We'll understand your business and align the details.",
     "s3_title": "Results in the first 90 days",
     "s3_desc": "We define tracking metrics. You see the progress week by week in the exclusive group with your dedicated team."
@@ -78,8 +78,8 @@
     "design_desc": "For branding and visual identity we work with a partner studio. Same model as performance: a specialist running their own operation, with Explore as your single point of contact.",
     "cta_eyebrow": "Next step",
     "cta_title": "Want Explore looking after your brand?",
-    "cta_desc": "In 45 minutes we X-ray your website, Instagram, Google listing and reputation, and show you what to prioritise. No cost, no commitment.",
-    "cta_button": "Book your free consultation",
+    "cta_desc": "The audit reads what is already public about your business, on Google, on your website, on Instagram and in your reviews, and gives you back a picture of where you stand. The report arrives in minutes, at no cost.",
+    "cta_button": "Get my audit",
     "cta_secondary": "Chat on WhatsApp",
     "meta_title": "About Explore Digital · hospitality marketing",
     "meta_description": "An agency specialised in hospitality on the coast of Ceará and Rio Grande do Norte, Brazil. Our story, our values and the team behind the work.",
@@ -207,8 +207,8 @@
     "form_sending": "Sending...",
     "form_success": "Message sent! We'll be in touch soon.",
     "form_error": "Error sending. Try WhatsApp instead.",
-    "trust_1": "Response within 24h",
-    "trust_2": "Free consultation",
+    "trust_1": "Report in minutes",
+    "trust_2": "Audit at no cost",
     "trust_3": "Data protected",
     "trust_4": "BR · ES · International",
     "form_disclaimer": "When you submit, your message reaches us by email and WhatsApp simultaneously.",
@@ -397,8 +397,8 @@
     "how_label": "How we work",
     "see_details": "See details",
     "cta_title": "Want {discipline} in your operation?",
-    "cta_desc": "In 45 minutes we review your digital presence and show you what to prioritise. No cost, no commitment.",
-    "cta_button": "Book your free consultation",
+    "cta_desc": "The audit reads your digital presence from what is already public and gives you back a picture of where you stand. The report arrives in minutes, at no cost and with no strings.",
+    "cta_button": "Get my audit",
     "cta_secondary": "Chat on WhatsApp"
   },
   "portfolio_detail": {
@@ -438,22 +438,22 @@
     "og_description": "Specialists in guesthouses, hostels and beach clubs on the Ceará and Rio Grande do Norte coast. Fewer OTAs, more direct bookings."
   },
   "consultoria": {
-    "meta_title": "Free consultation for hotels, guesthouses and beach clubs · Explore Digital",
-    "meta_description": "45 minutes with an agency that works exclusively with hospitality and experiences on the coast of Ceará and Rio Grande do Norte. A full X-ray of your digital presence: website, Instagram, Google Business Profile, reputation and positioning, in writing within 24h. No cost, no strings.",
-    "og_title": "Free consultation for hospitality and experience brands",
-    "og_description": "An X-ray of your digital presence: website, Instagram, Google Business Profile, reputation and positioning. 45 minutes, report in 24h, at no cost.",
-    "nav_cta": "Book my session",
+    "meta_title": "Free digital audit for guesthouses and beach clubs · Explore Digital",
+    "meta_description": "A read on your digital positioning built from what is already public: Google, OTA dependency, website, Instagram and reputation. The report arrives in minutes, at no cost and with no strings.",
+    "og_title": "Free digital audit for hospitality and experiences",
+    "og_description": "Google, OTA dependency, website, Instagram and reputation. The report arrives in minutes, built from what is already public.",
+    "nav_cta": "Get my audit",
     "nav_site": "Go to the site",
-    "hero_badge": "Free consulting · Limited slots per month",
-    "hero_title": "Guests find you.",
-    "hero_title_accent": "Then book on Booking.",
-    "hero_sub": "In 45 minutes we run an X-ray on your website, Instagram, Google and reputation, and show you where you are losing guests to the OTAs.",
+    "hero_badge": "Free audit · Report in minutes",
+    "hero_title": "The guest finds you.",
+    "hero_title_accent": "And books through Booking.",
+    "hero_sub": "The audit reads what is already public about your business and gives you back a picture of where you stand today: on Google, on OTA dependency, on your website, on Instagram and on your reputation.",
     "hero_bullets": [
-      "X-ray done before we talk",
-      "Written report within 24h",
-      "No cost and no commitment"
+      "The report arrives in minutes, not days",
+      "Built from what any guest can already see",
+      "No cost, no card and no strings"
     ],
-    "hero_scroll": "See how it works",
+    "hero_scroll": "Takes under two minutes",
     "cred_items": [
       {
         "value": "CE · RN",
@@ -612,9 +612,9 @@
         "a": "Nothing happens. The X-ray is yours and you run it in-house or with another partner."
       }
     ],
-    "form_eyebrow": "Book yours",
+    "form_eyebrow": "Get yours",
     "form_title": "Start with your business.",
-    "form_sub": "Three quick steps. On submit, your answers go straight to our team's WhatsApp.",
+    "form_sub": "Three quick steps. Once you send it, the audit starts running and the report lands on your WhatsApp.",
     "form_step_of": "Step {current} of {total}",
     "s1_title": "About your business",
     "s1_sub": "So we know who we're talking to.",
@@ -675,24 +675,24 @@
     ],
     "btn_next": "Continue",
     "btn_back": "Back",
-    "btn_submit": "Send and open WhatsApp",
+    "btn_submit": "Generate my audit",
     "btn_sending": "Sending...",
     "err_required": "Please fill in the required fields to continue.",
     "err_email": "Please check the email address.",
     "form_disclaimer": "On submit, your details go to Explore Digital's WhatsApp and a copy reaches our inbox. We never share your information.",
     "trust": [
-      "Reply within 24h",
-      "Consulting at no cost",
-      "Your data is protected",
-      "BR · ES · International"
+      "Report in minutes",
+      "Audit at no cost",
+      "Data protected",
+      "Ceará and Rio Grande do Norte"
     ],
     "final_title": "Your next season is being decided right now.",
-    "final_sub": "Slots are limited because every session requires analysis beforehand.",
-    "final_cta": "Book my free consulting session",
-    "final_note": "45 minutes · no cost · no commitment",
-    "sticky_cta": "Book free consulting",
-    "wa_header": "NEW FREE CONSULTING REQUEST",
-    "wa_footer": "Sent from the consulting landing page",
+    "final_sub": "The audit is free and the report is yours, whether you hire Explore or not.",
+    "final_cta": "Get my free audit",
+    "final_note": "Report in minutes · no cost · no strings",
+    "sticky_cta": "Get my audit",
+    "wa_header": "NEW FREE AUDIT REQUEST",
+    "wa_footer": "Sent from the audit page",
     "wa_labels": {
       "name": "Name",
       "phone": "WhatsApp",
@@ -736,7 +736,41 @@
     "ty_email_button": "I’d rather use email",
     "ty_email_subject": "Free consulting request",
     "ty_channels_note": "We reply within 24 hours, Monday to Friday.",
-    "f_select": "Select"
+    "f_select": "Select",
+    "relatorio_eyebrow": "What the report shows",
+    "relatorio_title": "Where your business stands right now.",
+    "relatorio_sub": "Five readings, all from public information. The report shows you the picture; what to do about it is a conversation we have afterwards.",
+    "relatorio_items": [
+      {
+        "num": "01",
+        "title": "Google",
+        "desc": "Whether the business shows up when someone searches for it by name, and whether it shows up in searches for the destination."
+      },
+      {
+        "num": "02",
+        "title": "OTA dependency",
+        "desc": "Whether Booking ranks above your own website when a guest is looking for you."
+      },
+      {
+        "num": "03",
+        "title": "Website",
+        "desc": "Whether it exists, whether it loads on a phone and whether a guest can book directly without leaving it."
+      },
+      {
+        "num": "04",
+        "title": "Instagram",
+        "desc": "Posting rhythm, what the bio resolves and whether the content shows the experience."
+      },
+      {
+        "num": "05",
+        "title": "Reputation",
+        "desc": "Rating, review volume and whether anyone replies to what people write about you."
+      }
+    ],
+    "prazo_eyebrow": "The timing",
+    "prazo_title": "Minutes, because it is a system and not a queue.",
+    "prazo_body": "The reading runs automatically from public sources as soon as the form arrives. It does not go through anyone’s calendar, so the report is ready while you are still holding your phone.",
+    "prazo_body_2": "It arrives on WhatsApp, at the number you give us. If you want to talk about what it found, you can just reply there."
   },
   "bio": {
     "meta_title": "Explore Digital · Links",
@@ -779,8 +813,8 @@
     "details": "See details",
     "cta_eyebrow": "Not sure where to start",
     "cta_title": "Not sure which of the two doors is yours?",
-    "cta_desc": "In 45 minutes we review your digital presence and show you what to prioritise. No cost, no commitment.",
-    "cta_button": "Book free consulting",
+    "cta_desc": "The audit reads your digital presence from what is already public and gives you back a picture of where you stand. The report arrives in minutes, at no cost and with no strings.",
+    "cta_button": "Get my audit",
     "cta_secondary": "Chat on WhatsApp",
     "wa_message": "Hi! I came from the services page and would like to talk.",
     "doors_eyebrow": "Two ways to work with us",

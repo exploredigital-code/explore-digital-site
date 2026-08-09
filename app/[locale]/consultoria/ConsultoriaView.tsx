@@ -19,10 +19,7 @@ const WA_STORAGE_KEY = 'ed_consultoria_wa'
 
 const NOISE_BG = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")`
 
-type Item = { title: string; desc: string }
 type NumItem = { num: string; title: string; desc: string }
-type Cred = { value: string; label: string }
-type Faq = { q: string; a: string }
 
 const scrollToForm = () =>
   document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -501,173 +498,12 @@ function ConsultForm() {
   )
 }
 
-/* ───────────────────────────────  FAQ  ─────────────────────────────── */
-
-function FaqList({ items }: { items: Faq[] }) {
-  const [open, setOpen] = useState<number | null>(0)
-
-  return (
-    <div className="flex flex-col gap-3">
-      {items.map((item, i) => (
-        <div key={i} className="bg-white rounded-2xl border border-tinta-16 overflow-hidden">
-          <button
-            type="button"
-            onClick={() => setOpen(open === i ? null : i)}
-            aria-expanded={open === i}
-            className="w-full flex items-center justify-between gap-4 text-left px-6 py-5"
-          >
-            <span className="text-[15px] sm:text-[16px] font-semibold text-verde">{item.q}</span>
-            <span className={cn('shrink-0 text-verde-medio transition-transform duration-300', open === i && 'rotate-45')}>
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
-                <path d="M9 3v12M3 9h12" />
-              </svg>
-            </span>
-          </button>
-          <AnimatePresence initial={false}>
-            {open === i && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.28, ease: [0.21, 0.47, 0.32, 0.98] }}
-                className="overflow-hidden"
-              >
-                <p className="px-6 pb-5 text-[14px] leading-[1.75] text-tinta-70">{item.a}</p>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      ))}
-    </div>
-  )
-}
-
-/* ───────────────────────── para quem é (lista) ───────────────────────── */
-
-function Chevron({ open }: { open: boolean }) {
-  return (
-    <span className={cn('shrink-0 transition-transform duration-300', open && 'rotate-180')}>
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-        <path d="M4 6l4 4 4-4" />
-      </svg>
-    </span>
-  )
-}
-
-function AudienceList({
-  items,
-  notForTitle,
-  notForItems,
-  notForNote,
-}: {
-  items: Item[]
-  notForTitle: string
-  notForItems: string[]
-  notForNote: string
-}) {
-  // O último índice é sempre o bloco "para quem não é".
-  const notForIndex = items.length
-  const [open, setOpen] = useState<number | null>(0)
-
-  const row = (i: number, dark: boolean, title: string, body: React.ReactNode) => {
-    const isOpen = open === i
-    return (
-      <div key={i} className={cn(dark ? 'bg-verde' : 'bg-white')}>
-        <button
-          type="button"
-          onClick={() => setOpen(isOpen ? null : i)}
-          aria-expanded={isOpen}
-          className={cn(
-            'w-full flex items-center gap-4 text-left px-5 sm:px-7 py-5 transition-colors duration-200',
-            dark ? 'text-menta hover:bg-white/[0.04]' : 'text-verde hover:bg-menta-clara/60'
-          )}
-        >
-          <span
-            className={cn(
-              'w-8 h-8 shrink-0 rounded-full flex items-center justify-center text-[11px] font-bold',
-              dark ? 'bg-white/10 text-menta-fraca' : 'bg-verde-medio/12 text-verde-medio'
-            )}
-          >
-            {dark ? (
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden>
-                <path d="M18 6L6 18M6 6l12 12" />
-              </svg>
-            ) : (
-              <CheckIcon />
-            )}
-          </span>
-
-          <span className={cn('flex-1 text-[15.5px] sm:text-[17px] font-bold leading-snug', dark && 'text-white')}>
-            {title}
-          </span>
-
-          <span className={dark ? 'text-menta-fraca' : 'text-verde-medio'}>
-            <Chevron open={isOpen} />
-          </span>
-        </button>
-
-        <AnimatePresence initial={false}>
-          {isOpen && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.28, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className="overflow-hidden"
-            >
-              <div className="px-5 sm:px-7 pb-5 pl-[68px] sm:pl-[76px]">{body}</div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    )
-  }
-
-  return (
-    <div className="rounded-2xl border border-tinta-16 overflow-hidden divide-y divide-tinta-16 shadow-[0_1px_2px_rgba(27,48,37,0.04)]">
-      {items.map((a, i) =>
-        row(i, false, a.title, <p className="text-[14px] leading-[1.75] text-tinta-70">{a.desc}</p>)
-      )}
-
-      {row(
-        notForIndex,
-        true,
-        notForTitle,
-        <>
-          <ul className="flex flex-col gap-2.5">
-            {notForItems.map(n => (
-              <li key={n} className="flex items-start gap-2.5 text-[14px] leading-[1.65] text-menta-fraca">
-                <span className="text-menta-fraca mt-1 shrink-0">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" aria-hidden>
-                    <path d="M18 6L6 18M6 6l12 12" />
-                  </svg>
-                </span>
-                {n}
-              </li>
-            ))}
-          </ul>
-          <p className="text-[12.5px] text-verde-luz/75 leading-relaxed mt-4 pt-4 border-t border-verde-linha">{notForNote}</p>
-        </>
-      )}
-    </div>
-  )
-}
-
-/* ────────────────────────────── página ────────────────────────────── */
-
 export function ConsultoriaView() {
   const t = useTranslations('consultoria')
   const locale = useLocale()
 
   const HERO_BULLETS = t.raw('hero_bullets') as string[]
-  const CRED = t.raw('cred_items') as Cred[]
-  const PAINS = t.raw('pain_items') as Item[]
-  const DELIVER = t.raw('deliver_items') as NumItem[]
-  const AUDIENCE = t.raw('audience_items') as Item[]
-  const NOTFOR = t.raw('notfor_items') as string[]
-  const HOW = t.raw('how_items') as NumItem[]
-  const BADGES = t.raw('free_badges') as string[]
-  const FAQ = t.raw('faq_items') as Faq[]
+  const RELATORIO = t.raw('relatorio_items') as NumItem[]
   const TRUST = t.raw('trust') as string[]
 
   return (
@@ -735,248 +571,50 @@ export function ConsultoriaView() {
         </div>
       </section>
 
-      {/* ───────── FAIXA DE CREDIBILIDADE ───────── */}
-      <section className="bg-verde-card border-y border-verde-linha py-8">
-        <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
-            {CRED.map(c => (
-              <div key={c.label} className="flex flex-col gap-1">
-                <span className="text-[26px] lg:text-[32px] font-bold text-verde-luz leading-none tracking-tight">{c.value}</span>
-                <span className="text-[12px] text-menta-fraca leading-snug">{c.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ───────── O PROBLEMA ───────── */}
-      <section className="bg-white py-14 sm:py-20 lg:py-28">
+      {/* ───────── O QUE O RELATÓRIO MOSTRA ───────── */}
+      {/* Cada item e uma constatacao, nunca uma instrucao: o relatorio diz
+          ONDE o negocio esta, e o que fazer e o produto pago. Se a copy aqui
+          escorregar para "e aqui esta como resolver", ela canibaliza a
+          /plano-de-acao. */}
+      <section className="bg-white py-14 sm:py-20 lg:py-24">
         <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
           <AnimateIn className="max-w-[640px] mb-10 sm:mb-14">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-5 h-px bg-verde-medio" />
-              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-medio">{t('pain_eyebrow')}</span>
+              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-medio">{t('relatorio_eyebrow')}</span>
             </div>
-            <h2 className="text-[clamp(28px,4vw,50px)] leading-[1.05] tracking-[-0.02em] text-verde mb-5">{t('pain_title')}</h2>
-            <p className="text-tinta-70 text-[16px] leading-[1.75]">{t('pain_sub')}</p>
+            <h2 className="text-[clamp(28px,4vw,50px)] leading-[1.05] tracking-[-0.02em] text-verde mb-5">{t('relatorio_title')}</h2>
+            <p className="text-tinta-70 text-[16px] leading-[1.75]">{t('relatorio_sub')}</p>
           </AnimateIn>
 
-          <AnimateStagger className="grid md:grid-cols-3 gap-5">
-            {PAINS.map((p, i) => (
-              <motion.div key={p.title} variants={itemVariants} className="flex flex-col gap-3 p-6 rounded-2xl bg-menta-clara/60 border border-tinta-16">
-                <span className="text-[13px] font-bold text-verde-medio">0{i + 1}</span>
-                <h3 className="text-[19px] font-bold text-verde leading-snug">{p.title}</h3>
-                <p className="text-[14px] leading-[1.7] text-tinta-70">{p.desc}</p>
+          <AnimateStagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {RELATORIO.map(item => (
+              <motion.div key={item.title} variants={itemVariants} className="flex flex-col gap-3 p-6 rounded-2xl bg-menta-clara/60 border border-tinta-16">
+                <span className="text-[13px] font-bold text-verde-medio">{item.num}</span>
+                <h3 className="text-[19px] font-bold text-verde leading-snug">{item.title}</h3>
+                <p className="text-[14px] leading-[1.7] text-tinta-70">{item.desc}</p>
               </motion.div>
             ))}
           </AnimateStagger>
         </div>
       </section>
 
-      {/* ───────── O QUE VOCÊ RECEBE ───────── */}
-      <section className="bg-verde relative overflow-hidden py-14 sm:py-20 lg:py-28">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_80%_10%,#2D5238,transparent_65%)] opacity-40 pointer-events-none" />
+      {/* ───────── O PRAZO ───────── */}
+      <section className="bg-verde relative overflow-hidden py-14 sm:py-20 lg:py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_100%_0%,#2D5238,transparent_65%)] opacity-50 pointer-events-none" />
         <div className="relative z-10 max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
-          <AnimateIn className="max-w-[680px] mb-10 sm:mb-14">
+          <AnimateIn className="max-w-[660px]">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-5 h-px bg-verde-luz" />
-              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-luz">{t('deliver_eyebrow')}</span>
+              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-luz">{t('prazo_eyebrow')}</span>
             </div>
-            <h2 className="text-[clamp(28px,4vw,50px)] leading-[1.05] tracking-[-0.02em] text-white mb-5">{t('deliver_title')}</h2>
-            <p className="text-menta-fraca text-[16px] leading-[1.75]">{t('deliver_sub')}</p>
-          </AnimateIn>
-
-          <AnimateStagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {DELIVER.map(d => (
-              <motion.div
-                key={d.num}
-                variants={itemVariants}
-                className="flex flex-col gap-3 p-6 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:border-verde-borda hover:bg-white/[0.06] transition-all duration-300"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="w-9 h-9 rounded-full bg-verde-luz/15 border border-verde-luz/30 flex items-center justify-center text-[12px] font-bold text-verde-luz">
-                    {d.num}
-                  </span>
-                </div>
-                <h3 className="text-[20px] font-bold text-white leading-snug">{d.title}</h3>
-                <p className="text-[14px] leading-[1.75] text-menta-fraca">{d.desc}</p>
-              </motion.div>
-            ))}
-          </AnimateStagger>
-
-          <AnimateIn delay={0.1} className="mt-12 lg:mt-14 flex flex-col items-center">
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={scrollToForm}
-              className="w-full sm:w-auto gap-2.5 font-bold hover:shadow-[0_8px_28px_rgba(226,118,47,0.28)] active:scale-[0.98]"
-            >
-              {t('final_cta')}
-              <ArrowIcon />
-            </Button>
-            <p className="text-[12.5px] text-menta-fraca mt-4">{t('final_note')}</p>
+            <h2 className="text-[clamp(28px,4vw,48px)] leading-[1.05] tracking-[-0.02em] text-menta mb-6">{t('prazo_title')}</h2>
+            <p className="text-menta-fraca text-[16px] leading-[1.8] mb-4">{t('prazo_body')}</p>
+            <p className="text-menta-fraca text-[16px] leading-[1.8]">{t('prazo_body_2')}</p>
           </AnimateIn>
         </div>
       </section>
 
-      {/* ───────── PARA QUEM É ───────── */}
-      <section className="bg-menta-clara py-14 sm:py-20 lg:py-28">
-        <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
-          <AnimateIn className="max-w-[680px] mx-auto mb-10 sm:mb-14 text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-5 h-px bg-verde-medio" />
-              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-medio">{t('audience_eyebrow')}</span>
-              <div className="w-5 h-px bg-verde-medio" />
-            </div>
-            <h2 className="text-[clamp(28px,4vw,50px)] leading-[1.05] tracking-[-0.02em] text-verde mb-5">{t('audience_title')}</h2>
-            <p className="text-tinta-70 text-[16px] leading-[1.75]">{t('audience_sub')}</p>
-          </AnimateIn>
-
-          <AnimateIn delay={0.08} className="max-w-[860px] mx-auto">
-            <AudienceList
-              items={AUDIENCE}
-              notForTitle={t('notfor_title')}
-              notForItems={NOTFOR}
-              notForNote={t('notfor_note')}
-            />
-          </AnimateIn>
-        </div>
-      </section>
-
-      {/* ───────── COMO FUNCIONA ───────── */}
-      <section className="bg-white py-14 sm:py-20 lg:py-28">
-        <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
-          <AnimateIn className="max-w-[560px] mb-10 sm:mb-14">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-5 h-px bg-verde-medio" />
-              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-medio">{t('how_eyebrow')}</span>
-            </div>
-            <h2 className="text-[clamp(28px,4vw,50px)] leading-[1.05] tracking-[-0.02em] text-verde">{t('how_title')}</h2>
-          </AnimateIn>
-
-          {/* O trilho é desenhado passo a passo conforme a seção entra na tela:
-              horizontal no desktop, vertical ligando os números no mobile. */}
-          <div className="grid md:grid-cols-3 gap-10 md:gap-8 lg:gap-12">
-            {HOW.map((s, i) => (
-              <motion.div
-                key={s.num}
-                className="relative flex flex-col gap-4"
-                initial={{ opacity: 0, y: 22 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px 0px' }}
-                transition={{ duration: 0.5, delay: i * 0.22, ease: [0.21, 0.47, 0.32, 0.98] }}
-              >
-                {i < HOW.length - 1 && (
-                  <motion.div
-                    aria-hidden
-                    className="md:hidden absolute left-[21px] top-12 -bottom-10 w-px bg-verde-medio/30 origin-top"
-                    initial={{ scaleY: 0 }}
-                    whileInView={{ scaleY: 1 }}
-                    viewport={{ once: true, margin: '-80px 0px' }}
-                    transition={{ duration: 0.5, delay: i * 0.22 + 0.3, ease: 'easeOut' }}
-                  />
-                )}
-
-                <div className="flex items-center gap-4">
-                  <motion.span
-                    className="relative z-10 w-11 h-11 shrink-0 rounded-full border border-verde-medio/30 bg-menta-clara flex items-center justify-center text-[13px] font-bold text-verde-medio"
-                    initial={{ scale: 0.5, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true, margin: '-80px 0px' }}
-                    transition={{ type: 'spring', stiffness: 280, damping: 18, delay: i * 0.22 }}
-                  >
-                    {s.num}
-                  </motion.span>
-                  <motion.div
-                    aria-hidden
-                    className="hidden md:block flex-1 h-px bg-verde-medio/30 origin-left"
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    viewport={{ once: true, margin: '-80px 0px' }}
-                    transition={{ duration: 0.55, delay: i * 0.22 + 0.18, ease: 'easeOut' }}
-                  />
-                </div>
-
-                <h3 className="text-[19px] font-bold text-verde leading-snug">{s.title}</h3>
-                <p className="text-[14px] leading-[1.7] text-tinta-70">{s.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ───────── POR QUE É GRATUITA + PROVA ───────── */}
-      <section className="bg-verde relative overflow-hidden py-14 sm:py-20 lg:py-28">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_70%_at_0%_50%,#2D5238,transparent_60%)] opacity-35 pointer-events-none" />
-        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: NOISE_BG, backgroundSize: '200px' }} />
-
-        <div className="relative z-10 max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
-          <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
-            <AnimateIn>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-5 h-px bg-verde-luz" />
-                <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-luz">{t('free_eyebrow')}</span>
-              </div>
-              <h2 className="text-[clamp(28px,4vw,48px)] leading-[1.05] tracking-[-0.02em] text-white mb-6">{t('free_title')}</h2>
-              <p className="text-menta-fraca text-[16px] leading-[1.8] mb-4">{t('free_body')}</p>
-              <p className="text-menta-fraca text-[16px] leading-[1.8] mb-8">{t('free_body_2')}</p>
-
-              <div className="flex flex-wrap gap-2.5">
-                {BADGES.map(b => (
-                  <span key={b} className="inline-flex items-center gap-2 text-[12.5px] text-verde-luz bg-white/[0.05] border border-verde-linha rounded-full px-4 py-2">
-                    <CheckIcon className="text-verde-luz" />
-                    {b}
-                  </span>
-                ))}
-              </div>
-            </AnimateIn>
-
-            <AnimateIn delay={0.12}>
-              <div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 lg:p-10">
-                <span className="absolute top-6 left-8 text-[80px] leading-none font-display text-verde-luz/25 select-none" aria-hidden>“</span>
-                <div className="relative pt-10">
-                  <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-luz/75">{t('proof_eyebrow')}</span>
-                  <p className="text-[17px] lg:text-[19px] leading-[1.7] text-white/80 mt-4 mb-7">{t('proof_quote')}</p>
-                  <div className="flex items-center gap-3 pt-5 border-t border-white/10">
-                    <div className="w-10 h-10 rounded-full bg-verde-luz/15 border border-verde-luz/30 flex items-center justify-center text-[14px] font-bold text-verde-luz">
-                      {t('proof_author').charAt(0)}
-                    </div>
-                    <div>
-                      <div className="text-[14px] font-bold text-white">{t('proof_author')}</div>
-                      <div className="text-[12px] text-menta-fraca">{t('proof_role')}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </AnimateIn>
-          </div>
-        </div>
-      </section>
-
-      {/* ───────── FAQ ───────── */}
-      <section className="bg-menta-clara py-14 sm:py-20 lg:py-28">
-        <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
-          <div className="grid lg:grid-cols-[380px_1fr] gap-12 lg:gap-20 items-start">
-            <AnimateIn className="lg:sticky lg:top-28">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-5 h-px bg-verde-medio" />
-                <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-medio">{t('faq_eyebrow')}</span>
-              </div>
-              <h2 className="text-[clamp(28px,3.5vw,44px)] leading-[1.05] tracking-[-0.02em] text-verde mb-6">{t('faq_title')}</h2>
-              <a
-                href={`mailto:${EMAIL}`}
-                className="inline-flex items-center gap-2 min-h-[44px] text-[14px] text-verde-medio hover:text-verde font-semibold transition-colors"
-              >
-                {EMAIL}
-              </a>
-            </AnimateIn>
-
-            <AnimateIn delay={0.1}>
-              <FaqList items={FAQ} />
-            </AnimateIn>
-          </div>
-        </div>
-      </section>
 
       {/* ───────── CTA FINAL ───────── */}
       <section className="bg-verde relative overflow-hidden py-14 sm:py-20 lg:py-28">
