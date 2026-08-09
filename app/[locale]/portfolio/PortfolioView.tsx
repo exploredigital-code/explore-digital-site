@@ -82,16 +82,18 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
             <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-verde-medio">
               {getSector(project.sector)}
             </span>
-            <span className="text-[10px] text-g-dark/35 tracking-widest">{project.year}</span>
+            <span className="text-[10px] text-tinta-70 tracking-widest">{project.year}</span>
           </div>
           <h3 className="text-[19px] font-bold text-g-dark leading-tight mb-2 group-hover:text-g-mid transition-colors">
             {project.client}
           </h3>
-          <p className="text-[13px] text-g-dark/50 leading-[1.65] line-clamp-2 mb-4">
+          <p className="text-[13px] text-tinta-70 leading-[1.65] line-clamp-2 mb-4">
             {tagline}
           </p>
+          {/* A localizacao e o argumento da pagina, e estava em `g-dark/40`:
+              2,3:1 sobre o card branco. O ano e a chamada vinham junto. */}
           <div className="pt-4 border-t border-g-dark/6 flex items-center justify-between">
-            <span className="text-[12px] text-g-dark/40">{project.location}</span>
+            <span className="text-[12px] text-tinta-70">{project.location}</span>
             <span className="text-[12px] font-bold text-verde-medio group-hover:text-verde transition-colors flex items-center gap-1">
               {t('view_project')}
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">

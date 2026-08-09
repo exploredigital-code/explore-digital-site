@@ -139,7 +139,8 @@ export function SobreView() {
                     auditável se um cliente pedir a fonte. */}
                 <div className="relative z-10">
                   <div className="text-[clamp(56px,8vw,80px)] font-semibold text-verde-luz leading-none mb-2">+100%</div>
-                  <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-verde-luz/35 leading-[1.5]">{t('years_expertise')}</div>
+                  {/* `verde-luz/35` dava 2,3:1 sobre o card escuro. */}
+                  <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-menta-fraca leading-[1.5]">{t('years_expertise')}</div>
                   <div className="mt-8 grid grid-cols-3 gap-4">
                     {[[t('stat_seguidores'), t('stat_brands')], ['3', t('stat_countries')], ['CE · RN', t('stat_focus')]].map(([v, l]) => (
                       <div key={l}>
@@ -156,7 +157,9 @@ export function SobreView() {
                   <div className="mt-7 pt-6 border-t border-verde-linha grid grid-cols-2 gap-4">
                     {[t('dado_fundacao'), t('dado_clientes')].map(rotulo => (
                       <div key={rotulo}>
-                        <div className="inline-flex items-center gap-1.5 text-[12px] font-medium text-verde-luz/45 border border-dashed border-verde-borda/50 rounded-full px-2.5 py-1">
+                        {/* Placeholder ilegivel e pior que placeholder visivel:
+                            o chip dava 2,8:1 no texto e 2,4:1 na borda. */}
+                        <div className="inline-flex items-center gap-1.5 text-[12px] font-medium text-verde-luz border border-dashed border-verde-luz/60 rounded-full px-2.5 py-1">
                           {t('dados_pendente')}
                         </div>
                         <div className="text-[10px] text-menta-fraca tracking-widest uppercase mt-1.5">{rotulo}</div>
@@ -213,7 +216,7 @@ export function SobreView() {
                   <div className="w-3 h-3 rounded-full bg-g-mid" />
                 </div>
                 <h3 className="text-[17px] text-g-dark mb-3">{v.title}</h3>
-                <p className="text-[14px] text-g-dark/50 leading-[1.7]">{v.desc}</p>
+                <p className="text-[14px] text-tinta-70 leading-[1.7]">{v.desc}</p>
               </motion.div>
             ))}
           </AnimateStagger>

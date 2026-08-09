@@ -161,7 +161,11 @@ export function ServicosView() {
 
       {/* ───────────────────── TRILHO + CONTEÚDO ───────────────────── */}
       <main id="conteudo" className="bg-white">
-        {/* trilho horizontal no mobile */}
+        {/* trilho horizontal no mobile.
+            O chip inativo era `bg-g-pale/70 text-g-dark/60`: 3,8:1, reprovado.
+            O Lighthouse dava 100 nesta pagina porque o preset desktop nunca
+            renderiza este controle. `menta-clara` cheia com `tinta-70` da
+            4,65:1 sem inventar token. */}
         <div className="lg:hidden sticky top-[68px] z-30 bg-white/95 backdrop-blur-md border-b border-g-dark/10">
           <div className="flex gap-1 overflow-x-auto px-5 py-3 no-scrollbar">
             {trilhoFlat.map(f => (
@@ -170,7 +174,7 @@ export function ServicosView() {
                 onClick={() => irPara(f.id)}
                 className={cn(
                   'shrink-0 px-4 py-2 rounded-full text-[13px] font-semibold whitespace-nowrap transition-colors duration-200',
-                  ativo === f.id ? 'bg-g-dark text-g-pale' : 'bg-g-pale/70 text-g-dark/60'
+                  ativo === f.id ? 'bg-g-dark text-g-pale' : 'bg-menta-clara text-tinta-70'
                 )}
               >
                 {f.label}
