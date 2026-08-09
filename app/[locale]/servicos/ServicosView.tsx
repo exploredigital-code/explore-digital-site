@@ -323,9 +323,9 @@ export function ServicosView() {
                         href={`/${locale}/servicos/${p.slug}`}
                         className="group h-full flex flex-col p-6 rounded-2xl border border-verde-medio/30 bg-menta-clara/60 hover:border-verde-medio hover:shadow-md transition-all duration-300"
                       >
-                        <h4 className="text-[18px] leading-tight tracking-[-0.01em] text-verde font-bold mb-2">
+                        <h3 className="text-[18px] leading-tight tracking-[-0.01em] text-verde font-bold mb-2">
                           {nomeDe(p)}
-                        </h4>
+                        </h3>
                         <p className="text-[13.5px] leading-[1.6] text-tinta-70 mb-5 flex-1">{taglineDe(p)}</p>
                         <span className="inline-flex items-center gap-2 text-[12.5px] font-bold text-verde-medio transition-all duration-200 group-hover:gap-2.5">
                           {t('ver_produto')}
