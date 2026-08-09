@@ -1,0 +1,10 @@
+Coloque aqui os arquivos de imagem e video do site.
+
+Depois de soltar o arquivo nesta pasta, abra data/midia.ts, ache a linha do
+slot pelo rotulo e escreva o nome do arquivo no campo `arquivo`.
+
+  antes:  { id: 'home-estudio-1', arquivo: '',                  rotulo: 'Time em captacao' }
+  depois: { id: 'home-estudio-1', arquivo: 'time-captacao.jpg', rotulo: 'Time em captacao' }
+
+Imagem e video usam o mesmo campo. Quem decide e a extensao:
+.mp4 e .webm entram como video em loop e sem som, o resto como imagem.

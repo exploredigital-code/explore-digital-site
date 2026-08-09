@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn } from '@/components/ui/AnimateIn'
-import { SlotMidia, GradeMidia } from '@/components/ui/SlotMidia'
+import { GradeDoRegistro } from '@/components/ui/SlotMidia'
 
 /**
  * O estúdio.
@@ -50,11 +50,7 @@ export function Estudio() {
           </AnimateIn>
 
           <AnimateIn delay={0.1}>
-            <GradeMidia variante="verticais">
-              <SlotMidia proporcao="v45" rotulo="Time em captação no destino" />
-              <SlotMidia proporcao="v45" rotulo="Bastidor de gravação" />
-              <SlotMidia proporcao="v45" rotulo="Foto do time" />
-            </GradeMidia>
+            <GradeDoRegistro chave="home-estudio" rotulo={t('estudio_eyebrow')} />
           </AnimateIn>
         </div>
       </div>

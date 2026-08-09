@@ -10,67 +10,11 @@ import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer } from '@/components/sections/Footer'
 import { Process } from '@/components/sections/Process'
 import { disciplines } from '@/data/services'
-import { SlotMidia, GradeMidia, type Proporcao } from '@/components/ui/SlotMidia'
+import { GradeDoRegistro } from '@/components/ui/SlotMidia'
 import { onDemandItems, formatDays } from '@/data/on-demand'
 
 const WA_BASE = 'https://wa.me/+5585991043067?text='
 const ON_DEMAND_ID = 'sob-demanda'
-
-/**
- * Plano de mídia por disciplina, seguindo o SPEC seção 6.
- *
- * Vertical é o padrão porque o acervo é vertical. 16:9 só onde o material é
- * horizontal de verdade: painel de resultado e site em desktop.
- */
-const MIDIA: Record<string, { variante: 'reels' | 'verticais' | 'destaque'; slots: { p: Proporcao; rotulo: string }[] }> = {
-  'social-media': {
-    variante: 'reels',
-    slots: [
-      { p: 'v916', rotulo: 'Reel de pousada, hóspede em cena' },
-      { p: 'v916', rotulo: 'Reel de beach club no fim de tarde' },
-      { p: 'v916', rotulo: 'Story de bastidor da operação' },
-      { p: 'v916', rotulo: 'Reel de café da manhã' },
-    ],
-  },
-  'performance-ads': {
-    variante: 'destaque',
-    slots: [
-      { p: 'v916', rotulo: 'Criativo vertical de campanha' },
-      { p: 'h169', rotulo: 'Painel de resultado do gerenciador' },
-    ],
-  },
-  'web-design': {
-    variante: 'destaque',
-    slots: [
-      { p: 'v916', rotulo: 'Site aberto no celular' },
-      { p: 'h169', rotulo: 'Site em desktop, dobra inicial' },
-    ],
-  },
-  motion: {
-    variante: 'reels',
-    slots: [
-      { p: 'v916', rotulo: 'Vinheta de abertura' },
-      { p: 'v916', rotulo: 'Story de maré gerado em série' },
-      { p: 'v916', rotulo: 'Lower third aplicado em reel' },
-      { p: 'v916', rotulo: 'Criativo animado de anúncio' },
-    ],
-  },
-  automatizacoes: {
-    variante: 'destaque',
-    slots: [
-      { p: 'v916', rotulo: 'Resposta automática no WhatsApp' },
-      { p: 'h169', rotulo: 'Painel de reserva e ocupação' },
-    ],
-  },
-  branding: {
-    variante: 'verticais',
-    slots: [
-      { p: 'v45', rotulo: 'Aplicação de marca em papelaria' },
-      { p: 'v45', rotulo: 'Paleta e tipografia' },
-      { p: 'v45', rotulo: 'Fachada ou sinalização' },
-    ],
-  },
-}
 
 type OnDemandCopy = { slug: string; name: string; tagline: string; includes: string[] }
 
@@ -479,11 +423,7 @@ export function ServicosView() {
 
                       {/* Grade de mídia. Placeholder marcado até o acervo
                           chegar: o rótulo diz o que entra em cada slot. */}
-                      <GradeMidia variante={MIDIA[frente.slug].variante} rotuloTrilho={t('trilho_label', { disciplina: frente.title })}>
-                        {MIDIA[frente.slug].slots.map((slot, i) => (
-                          <SlotMidia key={i} proporcao={slot.p} rotulo={slot.rotulo} />
-                        ))}
-                      </GradeMidia>
+                      <GradeDoRegistro chave={frente.slug} rotulo={t('trilho_label', { disciplina: frente.title })} />
 
                       <Link
                         href={`/${locale}/servicos/${frente.slug}`}

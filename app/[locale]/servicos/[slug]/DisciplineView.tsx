@@ -7,44 +7,11 @@ import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/sections/Navbar'
 import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer } from '@/components/sections/Footer'
-import { SlotMidia, GradeMidia, type Proporcao } from '@/components/ui/SlotMidia'
+import { GradeDoRegistro } from '@/components/ui/SlotMidia'
 import type { ServiceData } from '@/data/services'
 import { getLocalizedService, getLocalizedSubService } from '@/data/services-content'
 
 const WA_BASE = 'https://wa.me/+5585991043067?text='
-
-/** Mesmo plano de mídia do hub. Vertical por padrão, 16:9 só onde é horizontal de verdade. */
-const MIDIA: Record<string, { variante: 'reels' | 'verticais' | 'destaque'; slots: { p: Proporcao; rotulo: string }[] }> = {
-  'social-media': { variante: 'reels', slots: [
-    { p: 'v916', rotulo: 'Reel de pousada, hóspede em cena' },
-    { p: 'v916', rotulo: 'Reel de beach club no fim de tarde' },
-    { p: 'v916', rotulo: 'Story de bastidor da operação' },
-    { p: 'v916', rotulo: 'Reel de café da manhã' },
-  ]},
-  'performance-ads': { variante: 'destaque', slots: [
-    { p: 'v916', rotulo: 'Criativo vertical de campanha' },
-    { p: 'h169', rotulo: 'Painel de resultado do gerenciador' },
-  ]},
-  'web-design': { variante: 'destaque', slots: [
-    { p: 'v916', rotulo: 'Site aberto no celular' },
-    { p: 'h169', rotulo: 'Site em desktop, dobra inicial' },
-  ]},
-  motion: { variante: 'reels', slots: [
-    { p: 'v916', rotulo: 'Vinheta de abertura' },
-    { p: 'v916', rotulo: 'Story de maré gerado em série' },
-    { p: 'v916', rotulo: 'Lower third aplicado em reel' },
-    { p: 'v916', rotulo: 'Criativo animado de anúncio' },
-  ]},
-  automatizacoes: { variante: 'destaque', slots: [
-    { p: 'v916', rotulo: 'Resposta automática no WhatsApp' },
-    { p: 'h169', rotulo: 'Painel de reserva e ocupação' },
-  ]},
-  branding: { variante: 'verticais', slots: [
-    { p: 'v45', rotulo: 'Aplicação de marca em papelaria' },
-    { p: 'v45', rotulo: 'Paleta e tipografia' },
-    { p: 'v45', rotulo: 'Fachada ou sinalização' },
-  ]},
-}
 
 function ArrowIcon() {
   return (
@@ -67,7 +34,6 @@ export function DisciplineView({ discipline }: { discipline: ServiceData }) {
   const comoFazemos = loc?.how ?? discipline.how
   const paraQuem = loc?.whoFor ?? discipline.whoFor
   const entregas = loc?.deliverables ?? discipline.deliverables
-  const midia = MIDIA[discipline.slug]
 
   const wa = WA_BASE + encodeURIComponent(tServicos('wa_item', { item: titulo }))
 
@@ -115,12 +81,10 @@ export function DisciplineView({ discipline }: { discipline: ServiceData }) {
           </div>
 
           {/* ── Grade de mídia (placeholder até o acervo chegar) ── */}
-          {midia && (
+          {(
             <section className="py-14 border-b border-tinta-16">
               <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-tinta-50 mb-6">{t('media_label')}</div>
-              <GradeMidia variante={midia.variante} rotuloTrilho={tServicos('trilho_label', { disciplina: titulo })}>
-                {midia.slots.map((s, i) => <SlotMidia key={i} proporcao={s.p} rotulo={s.rotulo} />)}
-              </GradeMidia>
+              <GradeDoRegistro chave={discipline.slug} rotulo={tServicos('trilho_label', { disciplina: titulo })} />
             </section>
           )}
 

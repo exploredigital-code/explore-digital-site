@@ -10,7 +10,7 @@ import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer }  from '@/components/sections/Footer'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn, AnimateStagger, itemVariants } from '@/components/ui/AnimateIn'
-import { SlotMidia, GradeMidia } from '@/components/ui/SlotMidia'
+import { GradeDoRegistro } from '@/components/ui/SlotMidia'
 
 const WHATSAPP = 'https://wa.me/+5585991043067'
 
@@ -190,11 +190,7 @@ export function SobreView() {
             </AnimateIn>
 
             <AnimateIn delay={0.1}>
-              <GradeMidia variante="verticais" rotuloTrilho={t('estudio_eyebrow')}>
-                <SlotMidia proporcao="v45" rotulo="Operação antiga: hostel ou pousada" />
-                <SlotMidia proporcao="v45" rotulo="Escola de kite em aula" />
-                <SlotMidia proporcao="v45" rotulo="Time em captação no destino" />
-              </GradeMidia>
+              <GradeDoRegistro chave="sobre-origem" rotulo={t('estudio_eyebrow')} />
             </AnimateIn>
           </div>
         </div>
