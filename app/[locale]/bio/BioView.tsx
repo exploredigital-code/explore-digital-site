@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useLocale, useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { SkipLink } from '@/components/ui/SkipLink'
 
 const WA_BASE = 'https://wa.me/+5585991043067?text='
 const EMAIL = 'agencia.exploredigital@gmail.com'
@@ -72,6 +73,8 @@ export function BioView() {
   ]
 
   return (
+    <>
+    <SkipLink />
     <main className="min-h-[100dvh] bg-verde relative overflow-hidden flex flex-col">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_50%_at_50%_0%,#2D5238,transparent_65%)] opacity-60 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_50%_100%,#2A4233,transparent_70%)] opacity-50 pointer-events-none" />
@@ -86,14 +89,28 @@ export function BioView() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col items-center text-center mb-7"
         >
-          <Image
-            src="/images/logo.png"
-            alt="Explore Digital"
-            width={220}
-            height={56}
-            priority
-            className="h-[46px] w-auto mb-4"
-          />
+          {/* O logo sempre foi o título desta página, só não estava marcado
+              como tal: a página inteira não tinha <h1> nenhum.
+
+              O texto do título é o `<span>` escondido, não o `alt` da imagem.
+              Um <h1> cujo único conteúdo é uma imagem tem texto vazio para
+              qualquer auditoria que leia o DOM, e o `alt` some se a imagem
+              carregar mas o CSS não. Com o texto no span, a imagem passa a ser
+              decorativa (`alt=""`) e o nome acessível não sai duplicado.
+
+              Nada muda na tela, então a página continua cabendo sem rolagem
+              em 390x844. */}
+          <h1 className="mb-4">
+            <Image
+              src="/images/logo.png"
+              alt=""
+              width={220}
+              height={56}
+              priority
+              className="h-[46px] w-auto"
+            />
+            <span className="sr-only">Explore Digital</span>
+          </h1>
           <span className="text-[13px] font-semibold tracking-wide text-verde-luz">{t('handle')}</span>
           <p className="text-[14.5px] leading-[1.55] text-menta-fraca mt-2.5 max-w-[300px]">{t('tagline')}</p>
         </motion.div>
@@ -106,7 +123,7 @@ export function BioView() {
             O primeiro tem destaque, mas por borda e não por preenchimento
             laranja: cheio, ele pesava tanto que os outros dois pareciam
             desativados. Os três precisam parecer clicáveis. */}
-        <nav className="flex flex-col gap-2.5">
+        <nav id="conteudo" className="flex flex-col gap-2.5">
           {items.map((item, i) => {
             const destaque = item.key === 'auditoria'
             const href = hrefFor(item.key)
@@ -190,5 +207,6 @@ export function BioView() {
         </motion.div>
       </div>
     </main>
+    </>
   )
 }

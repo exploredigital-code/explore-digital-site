@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { useLocale, useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { projects } from '@/data/portfolio'
+import { SkipLink } from '@/components/ui/SkipLink'
 
 const WHATSAPP_NUMBER = '+5585991043067'
 const WA_BASE = `https://wa.me/${WHATSAPP_NUMBER}?text=`
@@ -98,6 +99,7 @@ export function ObrigadoView() {
 
   return (
     <div className="min-h-screen bg-verde flex flex-col relative overflow-hidden">
+      <SkipLink />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_25%,#2D5238,transparent_65%)] opacity-50 pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: NOISE_BG, backgroundSize: '200px' }} />
 
