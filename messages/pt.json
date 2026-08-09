@@ -1,11 +1,8 @@
 {
   "nav": {
-    "home": "Início",
     "portfolio": "Portfólio",
-    "services": "Serviços",
     "about": "Sobre nós",
     "contact": "Contato",
-    "cta": "Fale Conosco",
     "work": "Carreiras",
     "blog": "Blog",
     "menu_open": "Abrir menu",
@@ -39,21 +36,15 @@
     "v2_desc": "Não vendemos impressões. Vendemos reservas diretas, leads qualificados e crescimento real e mensurável.",
     "v3_title": "Transparência total",
     "v3_desc": "Você sabe o que está sendo feito, por quê e quais resultados está gerando. Sempre, sem asteriscos.",
-    "tab_story": "Nossa História",
-    "tab_team": "A Equipe",
     "team_eyebrow": "O time",
     "team_title": "Quem faz o trabalho acontecer.",
-    "team_sub": "Cada cliente tem um time dedicado que entende o negócio e pensa estrategicamente no crescimento.",
-    "team_cta": "Trabalhe com a gente",
     "our_history": "Nossa História",
     "years_expertise": "de crescimento no Instagram do Cabaré du Vento em 1 ano",
     "stat_brands": "Seguidores",
     "stat_countries": "Destinos",
     "stat_focus": "Litoral",
     "values_title": "O que nos move todos os dias.",
-    "join_eyebrow": "Faça parte do time",
     "join_title": "Se você chegou até aqui lendo sobre o time, talvez queira fazer parte dele.",
-    "join_desc": "Temos vagas abertas para design, social media, tráfego pago, vendas e mais.",
     "join_button": "Ver vagas abertas →",
     "f1_role": "Co-fundador · Diretor Criativo",
     "f1_bio": "Lidera a criação e o posicionamento das marcas que atendemos.",
@@ -89,7 +80,6 @@
     "estudio_title": "Antes de fazer marketing para hotelaria, a gente tocou hotelaria.",
     "estudio_p1": "Quarto vazio na baixa, comissão de OTA comendo a margem, hóspede reclamando do café. A gente sabe porque já resolveu isso do outro lado do balcão.",
     "estudio_p2": "Hostel e escola de surf, com a mão na operação. É por isso que a conversa começa em ocupação e reserva direta, e não em alcance e engajamento. Quem já teve a operação na mão sabe qual número paga a conta.",
-    "dados_eyebrow": "Em números",
     "dados_pendente": "A confirmar",
     "dado_fundacao": "Ano de fundação",
     "dado_clientes": "Clientes ativos",
@@ -97,19 +87,13 @@
     "estudio_p3": "Atuamos 100% online, com disponibilidade para viajar e captar a experiência dos nossos clientes."
   },
   "hero": {
-    "eyebrow": "Marketing para hotelaria · Litoral do Ceará e Rio Grande do Norte",
     "line1": "Criamos marcas",
     "line2": "que geram desejo.",
     "sub": "Pousadas, hostels e beach clubs que nos contratam param de depender das OTAs. Construímos a presença digital que faz o hóspede reservar direto com você.",
     "cta_primary": "Ver Portfólio",
     "cta_secondary": "Fale Conosco"
   },
-  "marquee_items": {
-    "hospitality": "Hotelaria",
-    "experiences": "Experiências"
-  },
   "stats": {
-    "eyebrow": "Números que falam",
     "nichos_eyebrow": "Onde atuamos",
     "nichos_title1": "Especialistas em um litoral,",
     "nichos_title2": "não em todo mercado.",
@@ -130,7 +114,6 @@
     "filter_social": "Social Media",
     "filter_performance": "Performance",
     "see_case": "Ver projeto →",
-    "result_label": "Resultado",
     "cta": "Ver todos os projetos",
     "page_eyebrow": "Portfólio",
     "page_hero_title": "Cases que geram resultados reais.",
@@ -284,10 +267,26 @@
         "ritmo_title": "O que acontece ao longo do mês.",
         "ritmo_sub": "Conteúdo recorrente não é entrega em bloco no fim do mês. É rotina, e a rotina é esta.",
         "etapas": [
-          { "quando": "Início do mês", "title": "Calendário na mesa", "desc": "A pauta do mês chega pronta, com tema, formato e data de cada peça. Você aprova ou pede troca ali mesmo, no grupo." },
-          { "quando": "Ao longo do mês", "title": "Produção e publicação", "desc": "As peças chegam para aprovação antes de ir ao ar, sem acumular tudo para a última semana. O que é urgente entra fora do calendário, pelo grupo." },
-          { "quando": "Quando muda", "title": "Ajuste no meio do caminho", "desc": "Promoção que surgiu, quarto que vagou, evento que entrou na agenda. Isso não espera o próximo mês." },
-          { "quando": "Fim do mês", "title": "Leitura e próxima pauta", "desc": "O que rendeu e o que não rendeu, e o calendário seguinte já sai dessa leitura." }
+          {
+            "quando": "Início do mês",
+            "title": "Calendário na mesa",
+            "desc": "A pauta do mês chega pronta, com tema, formato e data de cada peça. Você aprova ou pede troca ali mesmo, no grupo."
+          },
+          {
+            "quando": "Ao longo do mês",
+            "title": "Produção e publicação",
+            "desc": "As peças chegam para aprovação antes de ir ao ar, sem acumular tudo para a última semana. O que é urgente entra fora do calendário, pelo grupo."
+          },
+          {
+            "quando": "Quando muda",
+            "title": "Ajuste no meio do caminho",
+            "desc": "Promoção que surgiu, quarto que vagou, evento que entrou na agenda. Isso não espera o próximo mês."
+          },
+          {
+            "quando": "Fim do mês",
+            "title": "Leitura e próxima pauta",
+            "desc": "O que rendeu e o que não rendeu, e o calendário seguinte já sai dessa leitura."
+          }
         ],
         "blocos": [
           {
@@ -308,10 +307,26 @@
         "ritmo_title": "O que acontece ao longo do mês.",
         "ritmo_sub": "Campanha não é feita uma vez e deixada rodando. É lida e mexida, e este é o ciclo.",
         "etapas": [
-          { "quando": "Início", "title": "Estrutura e criativo no ar", "desc": "Canal, público e verba definidos no diagnóstico. As primeiras campanhas sobem com mais de um criativo, para haver o que comparar." },
-          { "quando": "Primeiras semanas", "title": "Fase de aprendizado", "desc": "A plataforma precisa de volume de dado antes de entregar bem. É o período em que o custo por lead ainda oscila e em que mexer demais atrapalha." },
-          { "quando": "Ao longo do mês", "title": "Teste de criativo e de gancho", "desc": "Criativo cansa. Novos entram e os que caíram saem, com a decisão vindo do dado e não de gosto." },
-          { "quando": "Fim do mês", "title": "Leitura e realocação", "desc": "Para onde a verba do mês seguinte vai, e por quê. O que não converteu perde orçamento." }
+          {
+            "quando": "Início",
+            "title": "Estrutura e criativo no ar",
+            "desc": "Canal, público e verba definidos no diagnóstico. As primeiras campanhas sobem com mais de um criativo, para haver o que comparar."
+          },
+          {
+            "quando": "Primeiras semanas",
+            "title": "Fase de aprendizado",
+            "desc": "A plataforma precisa de volume de dado antes de entregar bem. É o período em que o custo por lead ainda oscila e em que mexer demais atrapalha."
+          },
+          {
+            "quando": "Ao longo do mês",
+            "title": "Teste de criativo e de gancho",
+            "desc": "Criativo cansa. Novos entram e os que caíram saem, com a decisão vindo do dado e não de gosto."
+          },
+          {
+            "quando": "Fim do mês",
+            "title": "Leitura e realocação",
+            "desc": "Para onde a verba do mês seguinte vai, e por quê. O que não converteu perde orçamento."
+          }
         ],
         "blocos": [
           {
@@ -335,7 +350,6 @@
     }
   },
   "service_detail": {
-    "back": "Voltar",
     "recommended": "Recomendado",
     "hire_whatsapp": "Contratar via WhatsApp",
     "about_service": "Sobre este serviço",
@@ -345,13 +359,7 @@
     "expected_result": "Resultado esperado",
     "want_service": "Quero este serviço",
     "see_all_services": "Ver todos os serviços",
-    "media_label": "Como isso aparece",
-    "how_label": "Como fazemos",
-    "see_details": "Ver detalhes",
-    "cta_title": "Quer {discipline} na sua operação?",
-    "cta_desc": "A auditoria lê o seu digital a partir do que já é público e devolve um retrato de onde você está. Sem reunião marcada, sem custo e sem compromisso.",
-    "cta_button": "Quero minha auditoria",
-    "cta_secondary": "Falar no WhatsApp"
+    "media_label": "Como isso aparece"
   },
   "portfolio_detail": {
     "client": "Cliente",
@@ -371,7 +379,6 @@
     "work_together": "Vamos trabalhar juntos",
     "cta_title": "Quer um projeto assim para a sua marca?",
     "cta_button": "Falar com a Explore",
-    "video_label": "Vídeo",
     "videos_subtitle": "6 vídeos · 9:16",
     "quote_label": "Depoimento",
     "quote_placeholder": "Espaço para depoimento real do cliente, com nome, cargo e negócio. Curto e específico, falando do que mudou na operação."
@@ -382,7 +389,6 @@
     "subtitle": "Marketing digital para hotelaria e experiências, sem enrolação.",
     "read_time": "de leitura",
     "read_article": "Ler artigo",
-    "view_post": "Ver post",
     "cat_all": "Todos",
     "empty_state_prefix": "Em breve, conteúdo sobre",
     "cta_eyebrow": "Receba antes de todo mundo",
@@ -505,7 +511,6 @@
     "tagline": "Marketing para hotelaria no litoral do Ceará e do Rio Grande do Norte. Reservas diretas, não dependência de OTAs.",
     "nav_title": "Navegação",
     "social_title": "Redes Sociais",
-    "contact_title": "Contato",
     "copyright": "Todos os direitos reservados."
   },
   "meta": {
@@ -531,9 +536,6 @@
       "Sem custo, sem cartão e sem compromisso"
     ],
     "hero_scroll": "Leva menos de dois minutos",
-    "form_eyebrow": "Gere a sua",
-    "form_title": "Comece pelo seu negócio.",
-    "form_sub": "Três etapas rápidas. Ao enviar, o relatório é gerado e chega no seu WhatsApp.",
     "form_step_of": "Etapa {current} de {total}",
     "s1_title": "Sobre o seu negócio",
     "s1_sub": "Para saber com quem estamos falando.",
@@ -687,7 +689,6 @@
       }
     ],
     "ty_espera_eyebrow": "Enquanto o relatório sai",
-    "ty_espera_title": "Um case do seu segmento.",
     "ty_espera_desc": "Leva menos tempo que a auditoria e mostra como a gente trabalha.",
     "ty_espera_cta": "Ver o case",
     "ty_espera_todos": "Ver todos os cases",
@@ -720,7 +721,6 @@
         "badge": "Agenda de {month}"
       }
     ],
-    "wa_message": "Olá! Vim pelo link da bio do Instagram.",
     "wa_message_reserva": "Olá! Quero reservar um serviço da Explore para {month}. Podem me passar a disponibilidade da agenda?",
     "rights": "Todos os direitos reservados"
   },
@@ -729,12 +729,7 @@
     "meta_description": "Branding, web design, social media, performance ads, motion e automatizações para hotelaria e experiências no litoral do Ceará e do Rio Grande do Norte. Entregas pontuais com escopo e prazo, ou projeto completo.",
     "eyebrow": "O que fazemos",
     "title": "Entregas pontuais ou projeto completo.",
-    "sub": "Você contrata o que o seu momento pede: uma peça específica com escopo e prazo, ou uma frente inteira que começa por um diagnóstico.",
-    "rail_label": "Frentes",
-    "includes": "O que inclui",
     "for_whom": "Indicado para",
-    "result": "Resultado",
-    "details": "Ver detalhes",
     "cta_eyebrow": "Não sabe por onde começar",
     "cta_title": "Não sabe qual das duas portas é a sua?",
     "cta_desc": "A auditoria lê o seu digital a partir do que já é público e devolve um retrato de onde você está. Sem reunião marcada, sem custo e sem compromisso.",
@@ -747,12 +742,7 @@
     "door2_title": "Quero um time cuidando todo mês.",
     "door2_desc": "Conteúdo e tráfego rodando enquanto a temporada acontece.",
     "door2_cta": "Ver como funciona todo mês",
-    "proj_eyebrow": "Projetos",
-    "proj_title": "Cada produto resolve um problema diferente.",
-    "proj_sub": "Não vendemos pacote fechado. Você contrata o produto que o seu momento pede, sozinho ou combinado com outros.",
-    "wa_item": "Olá! Vim pelo site e quero contratar: {item}.",
     "doors_home_title": "Duas formas de trabalhar com a gente.",
-    "proj_ver_disciplina": "Ver produto",
     "trilho_label": "Peças de {produto}",
     "grupo_presenca": "Presença",
     "grupo_presenca_sub": "Onde o hóspede te encontra e reserva.",
@@ -762,14 +752,6 @@
     "grupo_producao_sub": "A imagem e o vídeo que alimentam tudo isso.",
     "grupo_operacao": "Operação",
     "grupo_operacao_sub": "O que roda sozinho e o que não deixa contato se perder.",
-    "grupo_recorrente": "Todo mês",
-    "grupo_recorrente_sub": "Dois produtos que trabalham enquanto a temporada acontece.",
-    "pontual_eyebrow": "Resolver uma coisa",
-    "pontual_title": "Onze entregas com escopo e prazo fechados.",
-    "pontual_sub": "Você contrata, a gente entrega e acaba. Sem mensalidade.",
-    "recorrente_eyebrow": "Todo mês",
-    "recorrente_title": "Dois produtos que não terminam.",
-    "recorrente_sub": "Ficam rodando enquanto a temporada acontece, com canal definido no diagnóstico.",
     "ver_produto": "Ver detalhes",
     "doors_eyebrow": "Por onde começar",
     "door1_label": "Pontual",
@@ -807,46 +789,6 @@
         "title": "Minha operação vive no improviso",
         "desc": "Reserva no caderno, atendimento perdido no WhatsApp e ninguém sabe de onde veio o hóspede. A gente automatiza isso.",
         "slug": "automacoes"
-      }
-    ],
-    "disc_eyebrow": "O que fazemos",
-    "disc_cta": "Ver todos os serviços",
-    "disc_items": [
-      {
-        "slug": "social-media",
-        "label": "Social media",
-        "title": "Conteúdo que vira reserva",
-        "desc": "Produção mensal, captação no destino e setup completo do perfil."
-      },
-      {
-        "slug": "performance-ads",
-        "label": "Performance",
-        "title": "Verba medida em reserva",
-        "desc": "Meta e Google operados por quem toca a própria operação de tráfego."
-      },
-      {
-        "slug": "web-design",
-        "label": "Web design",
-        "title": "Canal direto que converte",
-        "desc": "Site e landing page feitos para tirar a reserva da OTA."
-      },
-      {
-        "slug": "motion",
-        "label": "Motion",
-        "title": "Consistência sem esforço",
-        "desc": "Vinheta, assinatura animada e conteúdo gerado automaticamente."
-      },
-      {
-        "slug": "automatizacoes",
-        "label": "Automatizações",
-        "title": "Operação sem improviso",
-        "desc": "Gestão do negócio, redes sociais e CRM rodando sozinhos."
-      },
-      {
-        "slug": "branding",
-        "label": "Branding",
-        "title": "Marca que sustenta preço",
-        "desc": "Identidade visual e posicionamento aplicados em todos os pontos."
       }
     ],
     "destinos_eyebrow": "Destinos",

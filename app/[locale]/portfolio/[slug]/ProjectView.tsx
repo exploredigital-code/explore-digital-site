@@ -41,7 +41,7 @@ function VideoSlot({ videoId, index, clientName }: { videoId: string; index: num
         src={`https://player.vimeo.com/video/${videoId}?autoplay=1&title=0&byline=0&portrait=0`}
         thumbnail={thumbnail}
         aspect="9/16"
-        label={`${clientName} — Vídeo ${index + 1}`}
+        label={`${clientName} · Vídeo ${index + 1}`}
         placeholderClass="bg-[radial-gradient(ellipse_80%_60%_at_50%_30%,#2D5238,#0F2018)]"
       />
     )

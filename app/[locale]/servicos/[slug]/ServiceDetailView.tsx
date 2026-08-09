@@ -73,12 +73,16 @@ export function ServiceDetailView({ sub, parentService, locale }: Props) {
                 virou a página da disciplina na frente 3; e agora a disciplina
                 também deixou de existir. O grupo do catálogo é o único nível
                 acima que sobrou, e ele não vai a lugar nenhum. */}
+            {/* O `?? 'recorrente'` saiu daqui. `grupo` é obrigatório em
+                `SubService` e os catorze produtos têm o seu, então o fallback
+                nunca rodava; ele só mantinha vivas duas chaves de tradução que
+                nenhuma tela renderizava. */}
             <Link
-              href={`/${locale}/servicos#${sub.grupo ?? 'recorrente'}`}
+              href={`/${locale}/servicos#${sub.grupo}`}
               className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-menta-fraca hover:text-menta transition-colors"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 7H2M6 3L2 7l4 4"/></svg>
-              {tServicos(`grupo_${sub.grupo ?? 'recorrente'}`)}
+              {tServicos(`grupo_${sub.grupo}`)}
             </Link>
           </motion.div>
           {sub.recommended && (
