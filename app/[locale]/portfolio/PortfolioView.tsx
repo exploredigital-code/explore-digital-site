@@ -79,7 +79,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
         {/* Content */}
         <div className="p-6">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-g-mid/70">
+            <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-verde-medio">
               {getSector(project.sector)}
             </span>
             <span className="text-[10px] text-g-dark/35 tracking-widest">{project.year}</span>
@@ -92,7 +92,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
           </p>
           <div className="pt-4 border-t border-g-dark/6 flex items-center justify-between">
             <span className="text-[12px] text-g-dark/40">{project.location}</span>
-            <span className="text-[12px] font-bold text-g-mid/70 group-hover:text-g-mid transition-colors flex items-center gap-1">
+            <span className="text-[12px] font-bold text-verde-medio group-hover:text-verde transition-colors flex items-center gap-1">
               {t('view_project')}
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <path d="M2 7h10M8 3l4 4-4 4" />
@@ -160,7 +160,7 @@ export function PortfolioView() {
           <section className="py-16 lg:py-20 border-b border-g-dark/8">
             <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
               <AnimateIn className="mb-8">
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-g-mid/65">{t('featured_label')}</span>
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-verde-medio">{t('featured_label')}</span>
               </AnimateIn>
               <AnimateIn>
                 <FeaturedProjectCard project={featured} />
@@ -244,7 +244,7 @@ export function PortfolioView() {
               <div className="bg-g-dark rounded-2xl p-10 lg:p-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 relative overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_0%_50%,#2D5238,transparent)] opacity-40" />
                 <div className="relative z-10">
-                  <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-g-light/35 mb-3">{t('cta_eyebrow')}</div>
+                  <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-verde-luz/75 mb-3">{t('cta_eyebrow')}</div>
                   <h3 className="text-[clamp(20px,2.5vw,32px)] text-white max-w-[440px] leading-tight">
                     {t('cta_title')}
                   </h3>
@@ -305,17 +305,17 @@ function FeaturedProjectCard({ project }: { project: (typeof projects)[0] }) {
         <div className="p-8 lg:p-12 flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <span className="text-[11px] text-g-light/35">{project.location}</span>
+              <span className="text-[11px] text-verde-luz/75">{project.location}</span>
               <span className="text-g-light/20">·</span>
-              <span className="text-[11px] text-g-light/35">{project.year}</span>
+              <span className="text-[11px] text-verde-luz/75">{project.year}</span>
             </div>
             <h2 className="text-[clamp(28px,3.5vw,44px)] text-white leading-[1.05] tracking-tight mb-3 group-hover:text-g-light transition-colors">
               {project.client}
             </h2>
-            <p className="text-[15px] text-white/45 leading-[1.75] mb-4">{tagline}</p>
-            {result && <div className="text-[13px] font-bold text-g-mid/70">{result}</div>}
+            <p className="text-[15px] text-menta-fraca leading-[1.75] mb-4">{tagline}</p>
+            {result && <div className="text-[13px] font-bold text-verde-luz">{result}</div>}
           </div>
-          <div className="mt-8 inline-flex items-center gap-2 text-[13px] font-bold text-g-light/50 group-hover:text-g-light transition-colors">
+          <div className="mt-8 inline-flex items-center gap-2 text-[13px] font-bold text-verde-luz group-hover:text-menta transition-colors">
             {t('view_full_case')}
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <path d="M2 7h10M8 3l4 4-4 4" />

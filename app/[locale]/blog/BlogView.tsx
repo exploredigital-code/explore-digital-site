@@ -60,16 +60,16 @@ function FeaturedCard({ post }: { post: Post }) {
           <div className="p-8 lg:p-10 flex flex-col justify-between font-sans">
             <div>
               <div className="flex items-center gap-3 mb-5">
-                <span className="text-[11px] text-verde-luz/40">{post.date}</span>
+                <span className="text-[11px] text-verde-luz/75">{post.date}</span>
                 <span className="text-verde-luz/20">·</span>
-                <span className="text-[11px] text-verde-luz/40">{post.readTime} {t('read_time')}</span>
+                <span className="text-[11px] text-verde-luz/75">{post.readTime} {t('read_time')}</span>
               </div>
               <h2 className="font-sans text-[clamp(20px,2.5vw,28px)] font-semibold text-menta leading-[1.3] tracking-tight mb-4 group-hover:text-verde-luz transition-colors">
                 {post.title}
               </h2>
               <p className="text-[15px] font-normal text-menta/55 leading-[1.8]">{post.excerpt}</p>
             </div>
-            <div className="mt-8 inline-flex items-center gap-2 text-[13px] font-bold text-verde-medio/60 group-hover:text-verde-luz transition-colors">
+            <div className="mt-8 inline-flex items-center gap-2 text-[13px] font-bold text-verde-luz group-hover:text-menta transition-colors">
               {t('read_article')}
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <path d="M2 7h10M8 3l4 4-4 4" />
@@ -112,7 +112,7 @@ function PostCard({ post }: { post: Post }) {
           {post.title}
         </h3>
         <p className="text-[13px] font-normal text-tinta-70 leading-[1.7] line-clamp-3 mb-5">{post.excerpt}</p>
-        <span className="inline-flex items-center gap-1.5 text-[12px] font-bold text-verde-medio/70 group-hover:text-verde-medio transition-colors mt-auto">
+        <span className="inline-flex items-center gap-1.5 text-[12px] font-bold text-verde-medio group-hover:text-verde-medio transition-colors mt-auto">
           {t('read_article')}
           <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <path d="M2 7h10M8 3l4 4-4 4" />

@@ -190,16 +190,16 @@ export function ServicosView() {
                             onClick={() => irPara(f.id)}
                             className="group flex items-baseline gap-3 py-2.5 text-left"
                           >
-                            <span className={cn('text-[10.5px] font-bold tabular-nums transition-colors duration-200', on ? 'text-g-mid' : 'text-tinta-70')}>
+                            <span className={cn('text-[10.5px] font-bold tabular-nums transition-colors duration-200', on ? 'text-verde-medio' : 'text-tinta-70')}>
                               {f.num}
                             </span>
                             <span className={cn(
                               'text-[15px] leading-snug transition-all duration-200',
-                              on ? 'font-bold text-g-dark' : 'font-medium text-g-dark/45 group-hover:text-g-dark/75'
+                              on ? 'font-bold text-verde' : 'font-medium text-tinta-70 group-hover:text-verde'
                             )}>
                               {f.label}
                             </span>
-                            <span className={cn('ml-auto text-[11px] tabular-nums transition-colors duration-200', on ? 'text-g-mid' : 'text-tinta-70')}>
+                            <span className={cn('ml-auto text-[11px] tabular-nums transition-colors duration-200', on ? 'text-verde-medio' : 'text-tinta-70')}>
                               {f.count}
                             </span>
                           </button>

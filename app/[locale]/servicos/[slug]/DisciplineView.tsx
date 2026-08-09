@@ -64,11 +64,11 @@ export function DisciplineView({ discipline }: { discipline: ServiceData }) {
           {/* ── O que é + para quem ── */}
           <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 pb-14 border-b border-tinta-16">
             <div>
-              <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-verde-medio mb-4">{t('about_service')}</div>
+              <h2 className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-verde-medio mb-4">{t('about_service')}</h2>
               <p className="text-[16.5px] leading-[1.8] text-tinta-70">{oQueE}</p>
             </div>
             <div>
-              <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-tinta-50 mb-4">{t('for_whom')}</div>
+              <h2 className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-tinta-50 mb-4">{t('for_whom')}</h2>
               <ul className="flex flex-col gap-2.5">
                 {paraQuem.map(q => (
                   <li key={q} className="flex items-start gap-2.5 text-[14.5px] leading-[1.6] text-tinta-70">
@@ -83,14 +83,14 @@ export function DisciplineView({ discipline }: { discipline: ServiceData }) {
           {/* ── Grade de mídia (placeholder até o acervo chegar) ── */}
           {(
             <section className="py-14 border-b border-tinta-16">
-              <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-tinta-50 mb-6">{t('media_label')}</div>
+              <h2 className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-tinta-50 mb-6">{t('media_label')}</h2>
               <GradeDoRegistro chave={discipline.slug} rotulo={tServicos('trilho_label', { disciplina: titulo })} />
             </section>
           )}
 
           {/* ── Como fazemos ── */}
           <section className="py-14 border-b border-tinta-16">
-            <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-verde-medio mb-8">{t('how_label')}</div>
+            <h2 className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-verde-medio mb-8">{t('how_label')}</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {comoFazemos.map((passo, i) => (
                 <motion.div
@@ -110,7 +110,7 @@ export function DisciplineView({ discipline }: { discipline: ServiceData }) {
 
           {/* ── Sub-serviços ── */}
           <section className="py-14 border-b border-tinta-16">
-            <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-verde-medio mb-8">{t('whats_included')}</div>
+            <h2 className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-verde-medio mb-8">{t('whats_included')}</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {discipline.subServices.map((sub, i) => {
                 const ls = getLocalizedSubService(locale, sub.slug)
@@ -141,7 +141,7 @@ export function DisciplineView({ discipline }: { discipline: ServiceData }) {
 
           {/* ── Entregas ── */}
           <section className="py-14">
-            <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-tinta-50 mb-6">{t('you_receive')}</div>
+            <h2 className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-tinta-50 mb-6">{t('you_receive')}</h2>
             <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
               {entregas.map(e => (
                 <li key={e} className="flex items-start gap-2.5 text-[14.5px] leading-[1.6] text-tinta-70">

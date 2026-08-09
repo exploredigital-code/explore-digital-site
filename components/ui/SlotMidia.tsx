@@ -34,20 +34,25 @@ export function SlotMidia({ slot, className }: { slot: Slot; className?: string 
   if (!slot.arquivo) {
     return (
       <figure
+        // Superfície OPACA e clara, com texto escuro. A grade aparece sobre
+        // fundo branco (disciplina, sub-serviço) e sobre fundo verde (home,
+        // /sobre), então uma cor translúcida herdava dois fundos diferentes:
+        // sobre branco virava um cinza-verde de meio-tom e o texto claro sumia
+        // dentro dele. Com o fundo fixo o par de cores vale nos dois lugares.
         className={cn(
           base,
-          'border border-dashed border-verde-borda/45 bg-verde-card/40',
+          'border border-dashed border-verde-medio/30 bg-menta-clara',
           'flex flex-col items-center justify-center gap-2 p-4 text-center'
         )}
         {...comum}
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-verde-luz/45" aria-hidden>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-verde-medio" aria-hidden>
           <rect x="3" y="3" width="18" height="18" rx="2" />
           <circle cx="8.5" cy="8.5" r="1.5" />
           <path d="M21 15l-5-5L5 21" />
         </svg>
-        <figcaption className="text-[11px] leading-snug text-menta-fraca">{slot.rotulo}</figcaption>
-        <span className="text-[9.5px] font-bold tracking-[0.16em] uppercase text-verde-luz/40">{slot.formato}</span>
+        <figcaption className="text-[11px] leading-snug text-tinta-70">{slot.rotulo}</figcaption>
+        <span className="text-[9.5px] font-bold tracking-[0.16em] uppercase text-verde-medio">{slot.formato}</span>
       </figure>
     )
   }
@@ -139,17 +144,17 @@ export function CapaMidia({ id, className }: { id: string; className?: string })
       <div
         className={cn(
           'absolute inset-0 flex flex-col items-center justify-center gap-1.5 p-4 text-center',
-          'border border-dashed border-verde-borda/40 bg-verde-card/35',
+          'border border-dashed border-verde-medio/30 bg-menta-clara',
           className
         )}
         data-slot-id={id}
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-verde-luz/40" aria-hidden>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-verde-medio" aria-hidden>
           <rect x="3" y="3" width="18" height="18" rx="2" />
           <circle cx="8.5" cy="8.5" r="1.5" />
           <path d="M21 15l-5-5L5 21" />
         </svg>
-        {s && <span className="text-[10.5px] leading-snug text-menta-fraca line-clamp-3">{s.rotulo}</span>}
+        {s && <span className="text-[10.5px] leading-snug text-tinta-70 line-clamp-3">{s.rotulo}</span>}
       </div>
     )
   }
