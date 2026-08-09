@@ -178,6 +178,14 @@ const content: Record<string, LocaleContent> = {
         features: ['Diária de captação com direção no local', 'Tomada aérea com drone quando o lugar pede', 'Áudio ambiente e depoimento, quando houver', 'Bruto organizado e entregue por pasta', 'Roteiro de cenas definido antes da diária'],
         result: 'Material bruto suficiente para meses de conteúdo',
       },
+      'cobertura-de-evento': {
+        name: 'Cobertura de evento',
+        tagline: 'A entrega acontece enquanto o evento acontece.',
+        description: 'Equipe no local durante o evento, publicando no seu perfil em tempo real. Quem está lá vê o story acontecendo e fica mais tempo; quem não está vê e quer estar na próxima. É a próxima edição sendo vendida durante a atual.',
+        forWhom: ['Beach clubs e pousadas com réveillon, festival ou temporada de eventos', 'Produtores de evento que precisam de material durante e não depois', 'Casamento em resort e lançamento que dependem de repercussão no mesmo dia'],
+        features: ['Equipe no local pelos dias combinados', 'Fotografia do evento, com seleção entregue no mesmo dia', 'Vídeo vertical e horizontal, para redes e para registro', 'Storymaker publicando no seu perfil durante o evento', 'Edição final entregue depois, com o melhor do material bruto'],
+        result: 'O evento repercutindo enquanto ele ainda está acontecendo',
+      },
       'edicao-video': {
         name: 'Edição de vídeo',
         tagline: 'O bruto vira peça pronta para publicar.',
@@ -384,6 +392,14 @@ const content: Record<string, LocaleContent> = {
         features: ['A shooting day with direction on location', 'Aerial drone footage when the place calls for it', 'Ambient audio and testimonial, where available', 'Raw footage organised and delivered by folder', 'Shot list agreed before the shooting day'],
         result: 'Enough raw material for months of content',
       },
+      'cobertura-de-evento': {
+        name: 'Event coverage',
+        tagline: 'The delivery happens while the event is happening.',
+        description: 'A crew on site during the event, publishing to your profile in real time. People who are there watch the story going up and stay longer; people who are not see it and want to be at the next one. It is the next edition being sold during the current one.',
+        forWhom: ['Beach clubs and guesthouses with a new year party, a festival or an event season', 'Event producers who need the material during, not afterwards', 'Resort weddings and launches that depend on being talked about the same day'],
+        features: ['A crew on site for the agreed number of days', 'Event photography, with a selection delivered the same day', 'Vertical and horizontal video, for social and for the record', 'A storymaker publishing to your profile during the event', 'Final edit delivered afterwards, with the best of the raw material'],
+        result: 'The event being talked about while it is still happening',
+      },
       'edicao-video': {
         name: 'Video editing',
         tagline: 'Raw footage becomes something ready to publish.',
@@ -589,6 +605,14 @@ const content: Record<string, LocaleContent> = {
         forWhom: ['Quien necesita volumen de vídeo para mantener la constancia', 'Establecimientos con vistas, piscina u orilla que la foto no recoge', 'Escuelas y experiencias donde la acción es el producto'],
         features: ['Jornada de rodaje con dirección en el sitio', 'Toma aérea con dron cuando el lugar lo pide', 'Audio ambiente y testimonio, cuando lo haya', 'Bruto organizado y entregado por carpeta', 'Guion de escenas definido antes de la jornada'],
         result: 'Material bruto suficiente para meses de contenido',
+      },
+      'cobertura-de-evento': {
+        name: 'Cobertura de evento',
+        tagline: 'La entrega ocurre mientras ocurre el evento.',
+        description: 'Equipo en el sitio durante el evento, publicando en tu perfil en tiempo real. Quien está allí ve la historia saliendo y se queda más tiempo; quien no está la ve y quiere estar en la próxima. Es la próxima edición vendiéndose durante la actual.',
+        forWhom: ['Beach clubs y alojamientos con fin de año, festival o temporada de eventos', 'Productores de evento que necesitan el material durante y no después', 'Bodas en resort y lanzamientos que dependen de repercusión el mismo día'],
+        features: ['Equipo en el sitio los días acordados', 'Fotografía del evento, con una selección entregada el mismo día', 'Vídeo vertical y horizontal, para redes y para archivo', 'Storymaker publicando en tu perfil durante el evento', 'Edición final entregada después, con lo mejor del material bruto'],
+        result: 'El evento repercutiendo mientras todavía está ocurriendo',
       },
       'edicao-video': {
         name: 'Edición de vídeo',

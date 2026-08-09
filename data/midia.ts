@@ -123,6 +123,10 @@ const produtos: Slot[] = [
   // Edição de vídeo — slots novos
   { id: 'edicao-video-antes-depois', arquivo: '', rotulo: 'Antes e depois de correção de cor',   formato: 'v916' },
   { id: 'edicao-video-reel-final',   arquivo: '', rotulo: 'Reel finalizado com legenda e trilha', formato: 'v916' },
+  // Cobertura de evento
+  { id: 'cobertura-de-evento-story',  arquivo: '', rotulo: 'Story publicado durante o evento, tela do celular', formato: 'v916' },
+  { id: 'cobertura-de-evento-pista',  arquivo: '', rotulo: 'Pista ou público em movimento, fim de noite',       formato: 'v916' },
+  { id: 'cobertura-de-evento-palco',  arquivo: '', rotulo: 'Palco ou line-up visto de longe',                   formato: 'h169' },
 ]
 
 /* ─────────────────────────── CASE / PORTFÓLIO ───────────────────── */
@@ -222,6 +226,7 @@ export const GRADES: Record<string, { variante: 'reels' | 'verticais' | 'destaqu
   'crm':                   { variante: 'verticais', ids: ['crm-resposta-whatsapp'] },
   'fotografia':            { variante: 'verticais', ids: ['fotografia-quarto', 'fotografia-fachada', 'fotografia-gastronomia'] },
   'captacao-video':        { variante: 'verticais', ids: ['captacao-video-bastidor', 'captacao-video-drone', 'captacao-video-hospede'] },
+  'cobertura-de-evento':   { variante: 'verticais', ids: ['cobertura-de-evento-story', 'cobertura-de-evento-pista', 'cobertura-de-evento-palco'] },
   'edicao-video':          { variante: 'verticais', ids: ['edicao-video-antes-depois', 'edicao-video-reel-final'] },
 }
 

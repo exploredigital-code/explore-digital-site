@@ -281,6 +281,25 @@ export const servicesData: ServiceData[] = [
         result: 'Conteúdo com acabamento de marca, independente de quem edita',
       },
       {
+        slug: 'cobertura-de-evento',
+        pillar: 'social',
+        name: 'Cobertura de evento',
+        period: 'once',
+        grupo: 'producao',
+        onSite: true,
+        tagline: 'A entrega acontece enquanto o evento acontece.',
+        description: 'Equipe no local durante o evento, publicando no seu perfil em tempo real. Quem está lá vê o story acontecendo e fica mais tempo; quem não está vê e quer estar na próxima. É a próxima edição sendo vendida durante a atual.',
+        forWhom: ['Beach clubs e pousadas com réveillon, festival ou temporada de eventos', 'Produtores de evento que precisam de material durante e não depois', 'Casamento em resort e lançamento que dependem de repercussão no mesmo dia'],
+        features: [
+          'Equipe no local pelos dias combinados',
+          'Fotografia do evento, com seleção entregue no mesmo dia',
+          'Vídeo vertical e horizontal, para redes e para registro',
+          'Storymaker publicando no seu perfil durante o evento',
+          'Edição final entregue depois, com o melhor do material bruto',
+        ],
+        result: 'O evento repercutindo enquanto ele ainda está acontecendo',
+      },
+      {
         slug: 'edicao-video',
         pillar: 'social',
         name: 'Edição de vídeo',
@@ -493,7 +512,7 @@ export const PRODUTO_ORDER: string[] = [
   // pontual · marca
   'identidade-visual', 'branding-completo',
   // pontual · produção
-  'fotografia', 'captacao-video', 'edicao-video', 'pecas-animadas',
+  'fotografia', 'captacao-video', 'edicao-video', 'cobertura-de-evento', 'pecas-animadas',
   // pontual · operação
   'crm', 'automacoes',
   // recorrente
