@@ -28,12 +28,6 @@ const MOVED: [from: string, to: string][] = [
 ]
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      { protocol: 'https', hostname: 'images.unsplash.com' },
-    ],
-  },
-
   /**
    * Quem recebe a metadata dentro do <head>, de forma bloqueante.
    *

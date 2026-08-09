@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { getBlogPost } from '@/data/blog-posts'
 import { blogContent } from '@/data/blog-content'
 import { canonical } from '@/lib/site'
+import { slot, PASTA } from '@/data/midia'
 import { BlogPostView } from './BlogPostView'
 
 interface Props {
@@ -34,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getBlogPost(slug)
   if (!post) return { title: 'Post não encontrado — Explore Digital' }
 
+  const capa = slot(`blog-${slug}`)
   const title = `${post.title} — Explore Digital`
   const isPt = locale === 'pt'
 
@@ -51,7 +53,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'article',
       // post.date vem como "01 Jan 2026"; OG espera ISO.
       publishedTime: toIso(post.date),
-      images: [post.imageUrl],
+      // A capa vem do registro de mídia. Enquanto o slot estiver vazio, o OG
+      // fica sem imagem em vez de apontar para um arquivo que não existe.
+      images: capa?.arquivo ? [PASTA + capa.arquivo] : undefined,
     },
   }
 }

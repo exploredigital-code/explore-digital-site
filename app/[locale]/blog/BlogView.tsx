@@ -12,6 +12,7 @@ import { Footer } from '@/components/sections/Footer'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { blogPosts, type BlogPostMeta } from '@/data/blog-posts'
+import { CapaMidia } from '@/components/ui/SlotMidia'
 
 const CATEGORIES = ['Todos', 'Web Design', 'Tráfego Pago', 'Social Media', 'Branding', 'Kitesurf & Wingfoil', 'Captações', 'Sistemas']
 
@@ -46,13 +47,7 @@ function FeaturedCard({ post }: { post: Post }) {
         <div className="grid md:grid-cols-2">
           {/* Imagem */}
           <div className="relative h-56 md:h-auto min-h-[240px] overflow-hidden">
-            <Image
-              src={post.imageUrl}
-              alt={post.title}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-500"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+            <CapaMidia id={`blog-${post.slug}`} />
             <div className="absolute inset-0 bg-verde/40" />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-g-dark/60 hidden md:block" />
             <div className="absolute top-5 left-5">
@@ -98,13 +93,7 @@ function PostCard({ post }: { post: Post }) {
     >
       {/* Foto com overlay */}
       <div className="relative h-48 overflow-hidden shrink-0">
-        <Image
-          src={post.imageUrl}
-          alt={post.title}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        />
+        <CapaMidia id={`blog-${post.slug}`} />
         <div className="absolute inset-0 bg-verde/20" />
         <div className="absolute top-4 left-4">
           <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-menta bg-verde/60 backdrop-blur-sm px-2.5 py-1 rounded-full">

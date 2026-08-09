@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
-import { PASTA, ehVideo, grade, type Formato, type Slot } from '@/data/midia'
+import { PASTA, ehVideo, grade, slot, type Formato, type Slot } from '@/data/midia'
 
 /**
  * Um slot de mídia.
@@ -122,6 +122,47 @@ export function GradeMidia({
       {children}
     </div>
   )
+}
+
+/**
+ * Capa que preenche o contêiner do pai, sem impor proporção.
+ *
+ * O card do blog já define a própria altura, então aqui o slot não pode
+ * carregar `aspect-ratio` nem a largura do trilho. Mesmo registro, mesma
+ * regra de vazio, só sem a moldura.
+ */
+export function CapaMidia({ id, className }: { id: string; className?: string }) {
+  const s = slot(id)
+
+  if (!s || !s.arquivo) {
+    return (
+      <div
+        className={cn(
+          'absolute inset-0 flex flex-col items-center justify-center gap-1.5 p-4 text-center',
+          'border border-dashed border-verde-borda/40 bg-verde-card/35',
+          className
+        )}
+        data-slot-id={id}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-verde-luz/40" aria-hidden>
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <circle cx="8.5" cy="8.5" r="1.5" />
+          <path d="M21 15l-5-5L5 21" />
+        </svg>
+        {s && <span className="text-[10.5px] leading-snug text-menta-fraca line-clamp-3">{s.rotulo}</span>}
+      </div>
+    )
+  }
+
+  const src = PASTA + s.arquivo
+  if (ehVideo(s.arquivo)) {
+    return (
+      <video className={cn('absolute inset-0 h-full w-full object-cover', className)} poster={s.capa ? PASTA + s.capa : undefined} autoPlay muted loop playsInline preload="metadata" aria-label={s.rotulo} data-slot-id={id}>
+        <source src={src} />
+      </video>
+    )
+  }
+  return <Image src={src} alt={s.rotulo} fill className={cn('object-cover', className)} sizes="(max-width: 640px) 100vw, 33vw" data-slot-id={id} />
 }
 
 /**

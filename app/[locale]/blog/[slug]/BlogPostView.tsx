@@ -10,6 +10,7 @@ import { SkipLink } from '@/components/ui/SkipLink'
 import { Footer } from '@/components/sections/Footer'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 import { blogContent } from '@/data/blog-content'
+import { CapaMidia } from '@/components/ui/SlotMidia'
 import { blogPosts, getBlogPost, getRelatedPosts } from '@/data/blog-posts'
 
 const CATEGORY_LABEL_KEY: Record<string, string> = {
@@ -45,14 +46,7 @@ export function BlogPostView() {
 
       {/* Hero: foto real com overlay escuro */}
       <div className="relative w-full h-[360px] sm:h-[440px] overflow-hidden">
-        <Image
-          src={post.imageUrl}
-          alt={post.title}
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
+        <CapaMidia id={`blog-${post.slug}`} />
         <div className="absolute inset-0 bg-g-dark/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-g-dark/80 via-g-dark/30 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 pb-10">
@@ -176,13 +170,7 @@ export function BlogPostView() {
                         className="group flex gap-3 items-start"
                       >
                         <div className="relative w-12 h-12 rounded-lg overflow-hidden shrink-0">
-                          <Image
-                            src={r.imageUrl}
-                            alt={r.title}
-                            fill
-                            className="object-cover"
-                            sizes="48px"
-                          />
+                          <CapaMidia id={`blog-${r.slug}`} />
                         </div>
                         <span className="text-[13px] font-semibold text-g-dark/70 leading-snug group-hover:text-g-mid transition-colors line-clamp-2">
                           {r.title}
