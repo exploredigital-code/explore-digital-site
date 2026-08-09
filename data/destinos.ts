@@ -1,10 +1,12 @@
 /**
  * Os destinos que a Explore conhece.
  *
- * Ordem definida pelo cliente, começando na Paraíba e caminhando para o oeste
- * do Ceará. Ela é de tela, não de mapa: Jericoacoara fica a oeste da Ilha do
- * Guajirú, e mesmo assim vem antes. Se um dia a ordem tiver de ser geográfica
- * de verdade, é aqui que se troca, e o componente acompanha sozinho.
+ * Ordem geográfica de verdade, de oeste para leste: sai de Jericoacoara e
+ * caminha até João Pessoa. Começar por Jeri também é o começo mais forte,
+ * porque é o único nome da lista que qualquer pessoa reconhece.
+ *
+ * A ordem da tela sai daqui e de mais lugar nenhum. O componente percorre
+ * este array, então reordenar é editar estas sete linhas.
  *
  * Só `slug` e `uf` moram aqui, mais o nome. Nome de praia não traduz, então
  * mantê-lo neste arquivo evita a terceira cópia que já custa caro em
@@ -25,13 +27,13 @@ export interface Destino {
 }
 
 export const destinos: Destino[] = [
-  { slug: 'joao-pessoa',     nome: 'João Pessoa',      uf: 'PB' },
-  { slug: 'pipa',            nome: 'Pipa',             uf: 'RN' },
-  { slug: 'cumbuco',         nome: 'Cumbuco',          uf: 'CE' },
-  { slug: 'taiba',           nome: 'Taíba',            uf: 'CE' },
-  { slug: 'prea',            nome: 'Preá',             uf: 'CE' },
   { slug: 'jericoacoara',    nome: 'Jericoacoara',     uf: 'CE' },
+  { slug: 'prea',            nome: 'Preá',             uf: 'CE' },
   { slug: 'ilha-do-guajiru', nome: 'Ilha do Guajirú',  uf: 'CE' },
+  { slug: 'taiba',           nome: 'Taíba',            uf: 'CE' },
+  { slug: 'cumbuco',         nome: 'Cumbuco',          uf: 'CE' },
+  { slug: 'pipa',            nome: 'Pipa',             uf: 'RN' },
+  { slug: 'joao-pessoa',     nome: 'João Pessoa',      uf: 'PB' },
 ]
 
 /** O id do slot de mídia de um destino, no registro. */
