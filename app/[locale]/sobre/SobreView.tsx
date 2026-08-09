@@ -181,12 +181,14 @@ export function SobreView() {
             <AnimateIn>
               <SectionEyebrow>{t('estudio_eyebrow')}</SectionEyebrow>
               <h2 className="text-[clamp(28px,4.2vw,50px)] leading-[1.05] tracking-[-0.03em] text-menta mt-2 mb-7">
-                {t('estudio_title')}{' '}
-                <span className="text-verde-luz">{t('estudio_destaque')}</span>{' '}
-                {t('estudio_fim')}
+                {t('estudio_title')}
               </h2>
               <p className="text-menta-fraca text-[16px] leading-[1.8] max-w-[560px] mb-5">{t('estudio_p1')}</p>
-              <p className="text-menta-fraca text-[16px] leading-[1.8] max-w-[560px]">{t('estudio_p2')}</p>
+              <p className="text-menta-fraca text-[16px] leading-[1.8] max-w-[560px] mb-5">{t('estudio_p2')}</p>
+              {/* Migrado da home: o "100% online com disponibilidade para
+                  viajar" e informacao de quem ja esta avaliando, nao de quem
+                  acabou de chegar. */}
+              <p className="text-menta-fraca text-[16px] leading-[1.8] max-w-[560px]">{t('estudio_p3')}</p>
             </AnimateIn>
 
             <AnimateIn delay={0.1}>

@@ -84,16 +84,15 @@
     "meta_title": "Sobre a Explore Digital · marketing para hotelaria",
     "meta_description": "Agência especializada em hotelaria no litoral do Ceará e do Rio Grande do Norte. Conheça a história, os valores e o time por trás dos projetos.",
     "estudio_eyebrow": "De onde viemos",
-    "estudio_title": "A gente não aprendeu turismo em curso.",
-    "estudio_destaque": "Geriu hostel, pousada e escola de kite",
-    "estudio_fim": "antes de virar agência.",
-    "estudio_p1": "Antes de existir Explore Digital, o time já tinha lidado com quarto vazio na baixa temporada, hóspede que reclama do café e OTA levando um quarto de cada reserva. Não estudamos o problema, moramos nele.",
+    "estudio_title": "Antes de fazer marketing para hospedagem, a gente tocou hospedagem.",
+    "estudio_p1": "Hostel e escola de surf, com a mão na operação. Antes de existir Explore Digital, o time já tinha lidado com quarto vazio na baixa temporada, hóspede que reclama do café e OTA levando um quarto de cada reserva. Não estudamos o problema, moramos nele.",
     "estudio_p2": "É por isso que a conversa começa em ocupação e reserva direta, e não em alcance e engajamento. Quem já teve a operação na mão sabe qual número paga a conta.",
     "dados_eyebrow": "Em números",
     "dados_pendente": "A confirmar",
     "dado_fundacao": "Ano de fundação",
     "dado_clientes": "Clientes ativos",
-    "stat_seguidores": "41 mil · o dobro em 1 ano"
+    "stat_seguidores": "41 mil · o dobro em 1 ano",
+    "estudio_p3": "Atuamos 100% online, com disponibilidade para viajar e captar a experiência dos nossos clientes."
   },
   "hero": {
     "eyebrow": "Marketing para hotelaria · Litoral do Ceará e Rio Grande do Norte",
@@ -775,10 +774,8 @@
     "agora_eyebrow": "Agora",
     "agora_title": "O que saiu do estúdio nas últimas semanas.",
     "estudio_eyebrow": "O estúdio",
-    "estudio_title": "A gente não aprendeu turismo em curso.",
-    "estudio_destaque": "Geriu hostel, pousada e escola de kite",
-    "estudio_titulo_fim": "antes de virar agência.",
-    "estudio_desc": "Estratégia, criação, captação e vendas na mesma mesa. Todo mundo fala com cliente, todo mundo põe a mão na entrega. Atuamos 100% online, com disponibilidade para viajar e captar a experiência dos nossos clientes.",
+    "estudio_title": "Antes de fazer marketing para hospedagem, a gente tocou hospedagem.",
+    "estudio_desc": "Hostel e escola de surf, com a mão na operação. Estratégia, criação, captação e vendas na mesma mesa.",
     "estudio_cta": "Conhecer o estúdio",
     "estudio_cta2": "Trabalhe com a gente"
   },

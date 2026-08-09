@@ -84,16 +84,15 @@
     "meta_title": "About Explore Digital · hospitality marketing",
     "meta_description": "An agency specialised in hospitality on the coast of Ceará and Rio Grande do Norte, Brazil. Our story, our values and the team behind the work.",
     "estudio_eyebrow": "Where we come from",
-    "estudio_title": "We did not learn tourism in a classroom.",
-    "estudio_destaque": "We ran a hostel, a guesthouse and a kite school",
-    "estudio_fim": "before becoming an agency.",
-    "estudio_p1": "Before Explore Digital existed, this team had already dealt with empty rooms in the low season, a guest complaining about breakfast, and an OTA taking a quarter of every booking. We did not study the problem, we lived in it.",
+    "estudio_title": "Before doing marketing for hospitality, we ran hospitality.",
+    "estudio_p1": "A hostel and a surf school, hands on the operation. Before Explore Digital existed, this team had already dealt with empty rooms in the low season, guests complaining about breakfast and an OTA taking a quarter of every booking. We did not study the problem, we lived in it.",
     "estudio_p2": "That is why the conversation starts with occupancy and direct bookings, not reach and engagement. Anyone who has run the operation knows which number pays the bills.",
     "dados_eyebrow": "In numbers",
     "dados_pendente": "To confirm",
     "dado_fundacao": "Founded in",
     "dado_clientes": "Active clients",
-    "stat_seguidores": "41k · double in one year"
+    "stat_seguidores": "41k · double in one year",
+    "estudio_p3": "We work fully online, and we travel when a client needs the experience captured on location."
   },
   "hero": {
     "eyebrow": "Hospitality marketing · Ceará and Rio Grande do Norte coast",
@@ -775,10 +774,8 @@
     "agora_eyebrow": "Now",
     "agora_title": "What came out of the studio in the last few weeks.",
     "estudio_eyebrow": "The studio",
-    "estudio_title": "We did not learn tourism in a classroom.",
-    "estudio_destaque": "We ran a hostel, a guesthouse and a kite school",
-    "estudio_titulo_fim": "before becoming an agency.",
-    "estudio_desc": "Strategy, creative, shooting and sales at the same table. Everyone talks to clients, everyone has a hand in the delivery. We work fully online, and we travel to capture what our clients actually offer.",
+    "estudio_title": "Before doing marketing for hospitality, we ran hospitality.",
+    "estudio_desc": "A hostel and a surf school, hands on the operation. Strategy, creative, production and sales at the same table.",
     "estudio_cta": "Meet the studio",
     "estudio_cta2": "Work with us"
   },

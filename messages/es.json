@@ -84,16 +84,15 @@
     "meta_title": "Sobre Explore Digital · marketing para hotelería",
     "meta_description": "Agencia especializada en hotelería en el litoral de Ceará y Rio Grande do Norte, Brasil. Nuestra historia, nuestros valores y el equipo detrás del trabajo.",
     "estudio_eyebrow": "De dónde venimos",
-    "estudio_title": "No aprendimos turismo en un curso.",
-    "estudio_destaque": "Llevamos un hostel, una posada y una escuela de kite",
-    "estudio_fim": "antes de ser agencia.",
-    "estudio_p1": "Antes de que existiera Explore Digital, el equipo ya se había enfrentado a la habitación vacía en temporada baja, al huésped que se queja del desayuno y a la OTA que se lleva una cuarta parte de cada reserva. No estudiamos el problema, vivimos en él.",
+    "estudio_title": "Antes de hacer marketing para hotelería, llevamos hotelería.",
+    "estudio_p1": "Un hostel y una escuela de surf, con la mano en la operación. Antes de que existiera Explore Digital, el equipo ya había lidiado con habitaciones vacías en temporada baja, huéspedes quejándose del desayuno y una OTA llevándose un cuarto de cada reserva. No estudiamos el problema, vivimos en él.",
     "estudio_p2": "Por eso la conversación empieza por ocupación y reserva directa, y no por alcance e interacción. Quien ha llevado la operación sabe qué número paga las facturas.",
     "dados_eyebrow": "En números",
     "dados_pendente": "Por confirmar",
     "dado_fundacao": "Año de fundación",
     "dado_clientes": "Clientes activos",
-    "stat_seguidores": "41 mil · el doble en 1 año"
+    "stat_seguidores": "41 mil · el doble en 1 año",
+    "estudio_p3": "Trabajamos 100% online, con disponibilidad para viajar y captar la experiencia de nuestros clientes."
   },
   "hero": {
     "eyebrow": "Marketing para hotelería · Litoral de Ceará y Rio Grande do Norte",
@@ -775,10 +774,8 @@
     "agora_eyebrow": "Ahora",
     "agora_title": "Lo que salió del estudio en las últimas semanas.",
     "estudio_eyebrow": "El estudio",
-    "estudio_title": "No aprendimos turismo en un curso.",
-    "estudio_destaque": "Llevamos un hostel, una posada y una escuela de kite",
-    "estudio_titulo_fim": "antes de ser agencia.",
-    "estudio_desc": "Estrategia, creatividad, captación y ventas en la misma mesa. Todo el mundo habla con el cliente y todo el mundo mete la mano en la entrega. Trabajamos en remoto y viajamos para captar lo que nuestros clientes ofrecen de verdad.",
+    "estudio_title": "Antes de hacer marketing para hotelería, llevamos hotelería.",
+    "estudio_desc": "Un hostel y una escuela de surf, con la mano en la operación. Estrategia, creación, producción y ventas en la misma mesa.",
     "estudio_cta": "Conocer el estudio",
     "estudio_cta2": "Trabaja con nosotros"
   },
