@@ -195,7 +195,11 @@ export function SobreView() {
               <p className="text-menta-fraca text-[16px] leading-[1.8] max-w-[560px]">{t('estudio_p3')}</p>
             </AnimateIn>
 
-            <AnimateIn delay={0.1}>
+            {/* `min-w-0`: item de grade nasce com `min-width: auto` e se recusa a
+                encolher abaixo do conteudo. Sem isto a faixa de midia empurrava a
+                pagina para 773px no celular. A regra ja estava no GradeMidia, um
+                nivel abaixo, onde nao adianta. */}
+            <AnimateIn delay={0.1} className="min-w-0">
               <GradeDoRegistro chave="sobre-origem" rotulo={t('estudio_eyebrow')} />
             </AnimateIn>
           </div>
