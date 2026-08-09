@@ -50,7 +50,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/40 mb-5">
+            <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-menta-fraca mb-5">
               {t('nav_title')}
             </div>
             <ul className="flex flex-col gap-3">
@@ -58,7 +58,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-[14px] text-white/40 hover:text-white/80 transition-colors duration-200"
+                    className="text-[14px] text-menta-fraca hover:text-white/80 transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -69,7 +69,7 @@ export function Footer() {
 
           {/* Social + Contact */}
           <div>
-            <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/40 mb-5">
+            <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-menta-fraca mb-5">
               {t('social_title')}
             </div>
             <div className="flex flex-col gap-3">
@@ -113,7 +113,7 @@ export function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[14px] text-white/40 hover:text-white/80 transition-colors duration-200 flex items-center gap-2.5 group"
+                  className="text-[14px] text-menta-fraca hover:text-white/80 transition-colors duration-200 flex items-center gap-2.5 group"
                 >
                   <span className="text-white/35 group-hover:text-white/75 transition-colors shrink-0">
                     {s.icon}
