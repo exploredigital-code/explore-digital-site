@@ -221,15 +221,7 @@
       "Restaurant / Gastronomy",
       "Other"
     ],
-    "services_list": [
-      "Branding",
-      "Web Design",
-      "Social Media",
-      "Performance Ads (Google/Meta)",
-      "Initial Setup",
-      "One-off Service",
-      "Not sure yet, I want a consultation"
-    ],
+    "services_unsure": "Not sure yet, I want the audit",
     "whatsapp_greeting": "Hi! I found you through the Explore Digital website.",
     "whatsapp_intro": "Hi! I found you through the website and would like to know more about Explore Digital's services.",
     "whatsapp_tooltip": "Chat with us 👋",

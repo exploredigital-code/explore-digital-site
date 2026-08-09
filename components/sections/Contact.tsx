@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 import { cn } from '@/lib/utils'
+import { gruposDoCatalogo } from '@/data/services'
+import { getLocalizedSubService } from '@/data/services-content'
 
 const WHATSAPP_BASE = 'https://wa.me/+5585991043067?text='
 const FORMSPREE = 'https://formspree.io/f/mlgkrjng'
@@ -40,10 +42,24 @@ function SelectArrow() {
 
 export function Contact() {
   const t = useTranslations('contact')
+  const tServicos = useTranslations('servicos')
   const locale = useLocale()
   const router = useRouter()
   const BUSINESS_TYPES = t.raw('business_types') as string[]
-  const SERVICES = t.raw('services_list') as string[]
+
+  /**
+   * O seletor oferecia Web Design, Social Media, Performance Ads e Setup:
+   * quatro nomes do catálogo antigo, nenhum deles à venda. A pessoa escolhia
+   * o que a Explore não vende e o lead chegava pedindo catálogo morto.
+   *
+   * A lista sai do próprio catálogo, agrupada como no hub, e não de uma
+   * cópia em `messages`. Produto novo entra aqui sozinho, e o nome é sempre
+   * o mesmo que a pessoa acabou de ler na outra página.
+   */
+  const GRUPOS = gruposDoCatalogo.map(g => ({
+    label: tServicos(`grupo_${g.grupo}`),
+    itens: g.itens.map(p => getLocalizedSubService(locale, p.slug)?.name ?? p.name),
+  }))
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [form, setForm] = useState({
     name: '',
@@ -225,7 +241,12 @@ export function Contact() {
                     <select name="service" aria-label={t('form_service')} value={form.service} onChange={handleChange}
                       className={cn(selectClass, !form.service && 'text-white/40')}>
                       <option value="" disabled>{t('form_service')}</option>
-                      {SERVICES.map(s => <option key={s} value={s} className="text-g-dark bg-white">{s}</option>)}
+                      {GRUPOS.map(g => (
+                        <optgroup key={g.label} label={g.label} className="text-g-dark bg-white">
+                          {g.itens.map(s => <option key={s} value={s} className="text-g-dark bg-white">{s}</option>)}
+                        </optgroup>
+                      ))}
+                      <option value={t('services_unsure')} className="text-g-dark bg-white">{t('services_unsure')}</option>
                     </select>
                     <SelectArrow />
                   </div>
