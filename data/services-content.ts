@@ -149,7 +149,7 @@ const content: Record<string, LocaleContent> = {
       'website-institucional': {
         name: 'Website Institucional',
         tagline: 'A casa da sua marca, e o caminho até a reserva.',
-        description: 'O site é o único canal onde a reserva não é dividida com ninguém. Antes de desenhar, a gente estuda o negócio: quem é o hóspede, o que ele procura e por onde ele decide. O que sai não é template preenchido, é um site feito para o público que você quer receber, com o caminho até o motor de reserva ou o WhatsApp dentro dele.',
+        description: 'O site é o único canal onde a reserva não é dividida com ninguém. O que sai não é template preenchido, é um site feito para o público que você quer receber, com o caminho até o motor de reserva ou o WhatsApp dentro dele.',
         forWhom: ['Pousadas e hotéis que hoje só existem dentro da OTA', 'Beach clubs, restaurantes e operadoras de experiência', 'Quem tem perfil ativo e nenhum endereço próprio na internet'],
         features: ['Até 10 páginas', 'Domínio incluso por 1 ano', 'Hospedagem inclusa', 'SEO e geolocalização configurados', 'Estudo do negócio antes de qualquer desenho', 'Site feito para o seu público, não template', 'Caminho de reserva até o motor ou o WhatsApp', '5 rodadas de ajuste', '30 dias de suporte grátis'],
         result: 'Um endereço próprio que leva o hóspede à reserva direta, sem OTA no meio',
@@ -363,7 +363,7 @@ const content: Record<string, LocaleContent> = {
       'website-institucional': {
         name: 'Institutional Website',
         tagline: 'The house your brand owns, and the path to the booking.',
-        description: 'The website is the only channel where the booking is not shared with anyone. Before anything is designed, we study the business: who the guest is, what they are looking for, and where they decide. What comes out is not a filled-in template, it is a site built for the audience you want to receive, with the path to your booking engine or your WhatsApp inside it.',
+        description: 'The website is the only channel where the booking is not shared with anyone. What comes out is not a filled-in template, it is a site built for the audience you want to receive, with the path to your booking engine or your WhatsApp inside it.',
         forWhom: ['Guesthouses and hotels that today exist only inside the OTA', 'Beach clubs, restaurants and experience operators', 'Anyone with an active profile and no address of their own online'],
         features: ['Up to 10 pages', 'Domain included for 1 year', 'Hosting included', 'SEO and geolocation configured', 'A study of the business before anything is designed', 'Built for your audience, not a template', 'A booking path to your engine or your WhatsApp', '5 rounds of revisions', '30 days of free support'],
         result: 'An address of your own that takes the guest to the direct booking, with no OTA in between',
@@ -577,7 +577,7 @@ const content: Record<string, LocaleContent> = {
       'website-institucional': {
         name: 'Sitio Institucional',
         tagline: 'La casa de tu marca, y el camino hasta la reserva.',
-        description: 'El sitio es el único canal donde la reserva no se divide con nadie. Antes de diseñar, estudiamos el negocio: quién es el huésped, qué busca y por dónde decide. Lo que sale no es una plantilla rellenada, es un sitio hecho para el público que quieres recibir, con el camino hasta tu motor de reserva o tu WhatsApp dentro de él.',
+        description: 'El sitio es el único canal donde la reserva no se divide con nadie. Lo que sale no es una plantilla rellenada, es un sitio hecho para el público que quieres recibir, con el camino hasta tu motor de reserva o tu WhatsApp dentro de él.',
         forWhom: ['Posadas y hoteles que hoy solo existen dentro de la OTA', 'Beach clubs, restaurantes y operadoras de experiencia', 'Quien tiene perfil activo y ninguna dirección propia en internet'],
         features: ['Hasta 10 páginas', 'Dominio incluido por 1 año', 'Hosting incluido', 'SEO y geolocalización configurados', 'Estudio del negocio antes de cualquier diseño', 'Sitio hecho para tu público, no plantilla', 'Camino de reserva hasta el motor o el WhatsApp', '5 rondas de ajuste', '30 días de soporte gratis'],
         result: 'Una dirección propia que lleva al huésped a la reserva directa, sin OTA en el medio',

@@ -163,7 +163,7 @@ export const servicesData: ServiceData[] = [
         grupo: 'presenca',
         prazoDias: 15,
         tagline: 'A casa da sua marca, e o caminho até a reserva.',
-        description: 'O site é o único canal onde a reserva não é dividida com ninguém. Antes de desenhar, a gente estuda o negócio: quem é o hóspede, o que ele procura e por onde ele decide. O que sai não é template preenchido, é um site feito para o público que você quer receber, com o caminho até o motor de reserva ou o WhatsApp dentro dele.',
+        description: 'O site é o único canal onde a reserva não é dividida com ninguém. O que sai não é template preenchido, é um site feito para o público que você quer receber, com o caminho até o motor de reserva ou o WhatsApp dentro dele.',
         forWhom: ['Pousadas e hotéis que hoje só existem dentro da OTA', 'Beach clubs, restaurantes e operadoras de experiência', 'Quem tem perfil ativo e nenhum endereço próprio na internet'],
         features: [
           'Até 10 páginas',

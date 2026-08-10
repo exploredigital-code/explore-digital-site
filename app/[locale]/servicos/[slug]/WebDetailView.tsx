@@ -244,14 +244,24 @@ export function WebDetailView({ sub, parentService, locale }: Props) {
               </div>
               <h2 className="text-[clamp(26px,3.5vw,40px)] text-verde tracking-tight">{t('entrega_title')}</h2>
             </AnimateIn>
-            <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* Checklist, e nao nove cartoes numerados.
+                Seis dos nove itens sao sumario do que vem explicado logo
+                abaixo: dominio e hospedagem reaparecem no plano de manutencao,
+                o estudo do negocio vira o titulo da secao seguinte, o caminho
+                de reserva tem secao propria e os 30 dias abrem o bloco de
+                manutencao. So tres sao informacao que nao existe em outro
+                lugar: ate 10 paginas, SEO e geolocalizacao, e as 5 rodadas.
+                Cartao numerado cobra 18,3px por palavra para dizer isso; a
+                lista do "para quem", que e o mesmo formato usado acima nesta
+                mesma pagina, cobra bem menos e diz igual.
+
+                A numeracao saiu junto porque nao havia sequencia nenhuma: o
+                item 07 nao vem depois do 06, sao coisas que entram juntas. */}
+            <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3.5 max-w-[900px]">
               {c.features.map((f, i) => (
-                <motion.div key={i} variants={itemVariants}
-                  className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-tinta-16 hover:border-verde-medio/45 hover:shadow-sm transition-all duration-300">
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-verde-medio/15 flex items-center justify-center mt-0.5">
-                    <span className="text-[11px] font-bold text-verde-medio">{String(i + 1).padStart(2, '0')}</span>
-                  </div>
-                  <p className="text-[14px] text-tinta-70 leading-[1.6]">{f}</p>
+                <motion.div key={i} variants={itemVariants} className="flex items-start gap-3">
+                  <Check />
+                  <p className="text-[14.5px] text-tinta-70 leading-[1.55]">{f}</p>
                 </motion.div>
               ))}
             </AnimateStagger>
