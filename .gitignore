@@ -40,3 +40,6 @@ next-env.d.ts
 
 # saida das varreduras (verify-orfas grava a cada rodada)
 .suspeitas.json
+
+# log do servidor de verificacao local
+.start.log

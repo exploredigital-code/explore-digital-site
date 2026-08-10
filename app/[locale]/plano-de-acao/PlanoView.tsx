@@ -119,6 +119,71 @@ export function PlanoView() {
           </div>
         </section>
 
+        {/* ───────── QUAL DAS DUAS ─────────
+            Primeiro bloco depois do preço, e não no rodapé, porque é a
+            primeira pergunta de quem chega: existe auditoria gratuita e existe
+            consultoria paga, e a pessoa precisa saber qual das duas resolve o
+            problema dela antes de ler mais qualquer coisa.
+
+            As duas aparecem lado a lado, com a etapa atual marcada, porque o
+            ponto é que são etapas e não alternativas. O link só vai para a
+            auditoria: quem já está aqui não precisa de link para cá. */}
+        <section className="bg-white py-14 sm:py-20">
+          <div className="max-w-conteudo mx-auto px-6 sm:px-10 lg:px-16">
+            <AnimateIn className="max-w-[720px] mb-9">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-5 h-px bg-verde-medio" />
+                <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-medio">{t('degrau_eyebrow')}</span>
+              </div>
+              <h2 className="text-[clamp(24px,3.4vw,40px)] leading-[1.1] tracking-[-0.02em] text-verde">{t('degrau_title')}</h2>
+            </AnimateIn>
+
+            <div className="grid md:grid-cols-2 gap-4 mb-7 max-w-[880px]">
+              <AnimateIn>
+                <div className="h-full rounded-2xl border border-tinta-16 bg-menta-clara/60 p-7">
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <h3 className="text-[17px] font-bold text-verde">{t('degrau_auditoria_label')}</h3>
+                    <span className="text-[9.5px] font-bold tracking-[0.16em] uppercase bg-verde-medio/15 text-verde-medio px-2.5 py-1 rounded-full">
+                      {t('degrau_auditoria_tag')}
+                    </span>
+                  </div>
+                  <p className="text-[14.5px] leading-[1.7] text-tinta-70">{t('degrau_auditoria_desc')}</p>
+                </div>
+              </AnimateIn>
+
+              <AnimateIn delay={0.08}>
+                {/* A etapa em que a pessoa está, marcada pela borda de acento
+                    e não por preenchimento: o cartão precisa dizer "você está
+                    aqui" sem virar um segundo CTA competindo com o de cima. */}
+                <div className="h-full rounded-2xl border border-sol/45 bg-sol-fraco p-7">
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <h3 className="text-[17px] font-bold text-verde">{t('degrau_consultoria_label')}</h3>
+                    {/* Laranja chapado aqui lia como botão e competia com o
+                        CTA da própria seção. O acento já está na borda do
+                        cartão, então o selo espelha o tom do cartão vizinho e
+                        só marca onde a pessoa está. */}
+                    <span className="text-[9.5px] font-bold tracking-[0.16em] uppercase bg-sol/20 text-verde px-2.5 py-1 rounded-full">
+                      {t('degrau_consultoria_tag')}
+                    </span>
+                  </div>
+                  <p className="text-[14.5px] leading-[1.7] text-tinta-70">{t('degrau_consultoria_desc')}</p>
+                </div>
+              </AnimateIn>
+            </div>
+
+            <AnimateIn className="max-w-[720px]">
+              <p className="text-[14.5px] leading-[1.75] text-tinta-70 mb-6">{t('degrau_nota')}</p>
+              <Link
+                href={`/${locale}/consultoria`}
+                className="inline-flex items-center gap-2 border border-verde-medio/45 text-verde-medio hover:bg-verde-medio hover:text-white font-bold px-6 py-3.5 rounded-full transition-all duration-200 text-[14px]"
+              >
+                {t('degrau_cta')}
+                <ArrowIcon />
+              </Link>
+            </AnimateIn>
+          </div>
+        </section>
+
         {/* ───────── O PROBLEMA ───────── */}
         <section className="bg-white py-14 sm:py-20 lg:py-24">
           <div className="max-w-conteudo mx-auto px-6 sm:px-10 lg:px-16">
