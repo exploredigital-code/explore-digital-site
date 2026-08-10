@@ -145,11 +145,21 @@ const produtos: Slot[] = [
   { id: 'cobertura-de-evento-palco',  arquivo: '', rotulo: 'Palco ou line-up visto de longe',                   formato: 'h169' },
 ]
 
-/* ─────────────────────────── CASE / PORTFÓLIO ───────────────────── */
-const cases: Slot[] = [
-  { id: 'case-cabare-abertura',  arquivo: '', rotulo: 'Foto ou vídeo de abertura do Cabaré du Vento', formato: 'h169' },
-  { id: 'case-cabare-painel',    arquivo: '', rotulo: 'Print do painel com o período visível',        formato: 'h169' },
-]
+/* ─────────────────────────── CASE / PORTFÓLIO ─────────────────────
+   Vazio de propósito.
+
+   Havia dois slots aqui, `case-cabare-abertura` e `case-cabare-painel`, e
+   nenhuma das 87 rotas do site os desenhava: não existe chave para eles em
+   `grade`, a página de projeto não importa `GradeDoRegistro` nem `CapaMidia`
+   (ela monta a mídia a partir dos `videoIds` do Vimeo), e o slug do projeto é
+   `cabare-du-vento`, então nem por nome eles casariam.
+
+   Eram órfãos, não rota quebrada. Saíram porque registro que anuncia slot sem
+   consumidor manda a pessoa levantar arquivo que não vai aparecer em lugar
+   nenhum, que foi exatamente o que a planilha de acervo expôs.
+
+   Se a página de projeto ganhar grade de mídia um dia, os dois voltam aqui e
+   a chave correspondente entra em `grade`. */
 
 /* ─────────────────────────────── BLOG ────────────────────────────────
    Uma capa por post. Estavam todas no Unsplash, o que colocava imagem de
@@ -220,7 +230,7 @@ const blog: Slot[] = [
 ]
 
 /** Tudo junto, que é o que os componentes consultam. */
-export const slots: Slot[] = [...home, ...destinos, ...sobre, ...produtos, ...cases, ...blog]
+export const slots: Slot[] = [...home, ...destinos, ...sobre, ...produtos, ...blog]
 
 /**
  * Quais slots pertencem a cada grade, na ordem de exibição.
