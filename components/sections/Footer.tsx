@@ -2,7 +2,7 @@
 
 import { useLocale, useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
-import Image from 'next/image'
+import { Logo } from '@/components/ui/Logo'
 
 export function Footer() {
   const t = useTranslations('footer')
@@ -36,13 +36,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-14">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Image
-              src="/images/logo.png"
-              alt="Explore Digital"
-              width={169}
-              height={43}
-              className="h-[42px] w-auto mb-5 opacity-90"
-            />
+            <Logo className="mb-5 opacity-90" />
             <p className="text-[14px] text-menta-fraca leading-[1.75] max-w-[260px]">
               {t('tagline')}
             </p>

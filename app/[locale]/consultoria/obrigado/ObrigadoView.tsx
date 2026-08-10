@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import { Logo } from '@/components/ui/Logo'
 import { useLocale, useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { projects } from '@/data/portfolio'
@@ -105,7 +105,7 @@ export function ObrigadoView() {
 
       <header className="relative z-10 px-6 lg:px-14 py-6">
         <Link href={`/${locale}`} className="inline-flex items-center" aria-label="Explore Digital">
-          <Image src="/images/logo.png" alt="Explore Digital" width={182} height={46} className="h-[38px] w-auto" priority />
+          <Logo priority className="h-[38px]" />
         </Link>
       </header>
 

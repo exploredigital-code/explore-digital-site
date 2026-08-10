@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import Image from 'next/image'
+import { Logo } from '@/components/ui/Logo'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
@@ -91,14 +91,7 @@ export function Navbar() {
       >
         {/* Logo */}
         <Link href={`/${localePrefix}`} className="flex items-center gap-3 shrink-0">
-          <Image
-            src="/images/logo.png"
-            alt="Explore Digital"
-            width={182}
-            height={46}
-            className="h-[42px] w-auto"
-            priority
-          />
+          <Logo priority />
         </Link>
 
         {/* Desktop links */}

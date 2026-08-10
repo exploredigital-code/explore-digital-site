@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import Image from 'next/image'
+import { Logo } from '@/components/ui/Logo'
 import { useTranslations, useLocale } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
@@ -72,7 +72,7 @@ function LpHeader() {
       )}
     >
       <Link href={`/${locale}`} className="flex items-center shrink-0" aria-label="Explore Digital">
-        <Image src="/images/logo.png" alt="Explore Digital" width={182} height={46} className="h-[38px] w-auto" priority />
+        <Logo priority className="h-[38px]" />
       </Link>
 
       <div className="flex items-center gap-5">
@@ -665,7 +665,7 @@ export function ConsultoriaView() {
       <footer className="bg-[#0D1A12] py-10 pb-24 lg:pb-10">
         <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-6">
           <Link href={`/${locale}`} className="flex items-center min-h-[44px]" aria-label="Explore Digital">
-            <Image src="/images/logo.png" alt="Explore Digital" width={140} height={36} className="h-[30px] w-auto opacity-70" />
+            <Logo className="h-[30px] opacity-70" />
           </Link>
 
           <div className="flex items-center gap-6 text-[12.5px] text-menta-fraca">

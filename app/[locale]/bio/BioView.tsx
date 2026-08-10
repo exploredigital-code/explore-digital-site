@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
+import { Logo } from '@/components/ui/Logo'
 import { useLocale, useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
@@ -101,14 +101,7 @@ export function BioView() {
               Nada muda na tela, então a página continua cabendo sem rolagem
               em 390x844. */}
           <h1 className="mb-4">
-            <Image
-              src="/images/logo.png"
-              alt=""
-              width={220}
-              height={56}
-              priority
-              className="h-[46px] w-auto"
-            />
+            <Logo alt="" priority className="h-[46px]" />
             <span className="sr-only">Explore Digital</span>
           </h1>
           <span className="text-[13px] font-semibold tracking-wide text-verde-luz">{t('handle')}</span>
