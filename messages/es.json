@@ -935,14 +935,14 @@
     "estudio_cta2": "Trabaja con nosotros"
   },
   "plano": {
-    "meta_title": "Plan de acción para alojamientos, hoteles y beach clubs · Explore Digital",
-    "meta_description": "Tres semanas, tres encuentros y un documento con las prioridades de los próximos 90 días: qué hacer, en qué orden y qué ignorar. Tres plazas al mes, porque el trabajo lo hacen los dos socios.",
-    "og_title": "Plan de acción para hotelería y experiencias",
+    "meta_title": "Consultoría de Marketing para alojamientos, hoteles y beach clubs · Explore Digital",
+    "meta_description": "Tres semanas, tres encuentros y un documento con las prioridades de los próximos 90 días: qué hacer, en qué orden y qué ignorar. Tres plazas al mes, porque quienes lo hacen son los dos socios.",
+    "og_title": "Consultoría de Marketing para hotelería y experiencias",
     "og_description": "Tres semanas, tres encuentros y un plan de 90 días que se queda contigo. Tres plazas al mes.",
     "hero_badge": "Tres plazas al mes",
-    "hero_title": "Ya sabes dónde estás.",
-    "hero_title_accent": "Falta saber por dónde empezar.",
-    "hero_sub": "La auditoría enseña el retrato. El plan de acción dice qué hacer con él: las prioridades de los próximos 90 días, en orden, con lo que puede esperar separado de lo que no.",
+    "hero_title": "Consultoría de Marketing",
+    "hero_title_accent": "para quien sabe dónde está y no por dónde empezar.",
+    "hero_sub": "Tres semanas para convertir el diagnóstico en decisión: las prioridades de los próximos 90 días, en orden, con lo que puede esperar separado de lo que no.",
     "hero_bullets": [
       "Tres semanas, tres encuentros",
       "Un documento que se queda contigo",
@@ -1052,8 +1052,8 @@
     ],
     "final_title": "Tu próxima temporada se está decidiendo ahora.",
     "final_sub": "Son tres plazas al mes. Si la de este mes ya está ocupada, te lo decimos al momento.",
-    "final_cta": "Hablar del plan de acción",
+    "final_cta": "Hablar de la consultoría",
     "final_note": "Pago único · se descuenta de la primera mensualidad en 30 días",
-    "wa_message": "¡Hola! Quiero saber sobre el Plan de Acción de 90 días."
+    "wa_message": "¡Hola! Quiero saber sobre la Consultoría de Marketing."
   }
 }
