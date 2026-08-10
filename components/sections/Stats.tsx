@@ -56,7 +56,7 @@ export function Stats() {
                   {NICHE_ICONS[i]()}
                 </div>
                 <h3 className="text-[20px] font-bold text-white mb-3 leading-tight">{n.title}</h3>
-                <p className="text-[14px] text-white/45 leading-[1.75]">{n.desc}</p>
+                <p className="text-[14px] text-menta-fraca leading-[1.75]">{n.desc}</p>
               </div>
             </AnimateIn>
           ))}

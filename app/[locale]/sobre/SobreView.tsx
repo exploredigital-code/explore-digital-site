@@ -63,7 +63,11 @@ function MemberCard({ member, dark = false }: {
       <div className="p-5 flex flex-col gap-1 flex-1">
         <div className={cn(
           'text-[9px] font-bold tracking-[0.18em] uppercase leading-[1.5] min-h-[2.7em]',
-          dark ? 'text-g-mid' : 'text-g-mid/80'
+          // O mesmo token nos dois fundos era o defeito: `g-mid` e o texto de
+          // destaque sobre fundo CLARO, e a variante escura o usava sobre
+          // escuro. Agora cada lado recebe o token do seu proprio fundo, e o
+          // /80 do lado claro sai porque so ele ja derrubava de 4,78 para 3,28.
+          dark ? 'text-verde-luz' : 'text-verde-medio'
         )}>
           {member.role}
         </div>
@@ -72,7 +76,7 @@ function MemberCard({ member, dark = false }: {
         </div>
         <p className={cn(
           'text-[13px] leading-[1.7] mt-1 min-h-[5.1em]',
-          dark ? 'text-white/50' : 'text-g-dark/55'
+          dark ? 'text-menta-fraca' : 'text-tinta-70'
         )}>
           {member.bio}
         </p>
@@ -114,7 +118,7 @@ export function SobreView() {
             <h1 className="text-[clamp(36px,5.5vw,72px)] leading-[0.95] tracking-[-0.03em] text-white mt-2 mb-5 max-w-[700px]">
               {t('title')}
             </h1>
-            <p className="text-g-light/60 text-[17px] leading-[1.7] max-w-[500px]">{t('sub')}</p>
+            <p className="text-menta-fraca text-[17px] leading-[1.7] max-w-[500px]">{t('sub')}</p>
           </AnimateIn>
         </div>
       </section>
@@ -126,10 +130,10 @@ export function SobreView() {
             <AnimateIn>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-5 h-px bg-g-mid shrink-0" />
-                <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-mid">{t('our_history')}</span>
+                <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-medio">{t('our_history')}</span>
               </div>
-              <p className="text-[18px] text-g-dark/65 leading-[1.85] mb-6">{t('story')}</p>
-              <p className="text-[18px] text-g-dark/65 leading-[1.85]">{t('story2')}</p>
+              <p className="text-[18px] text-tinta-70 leading-[1.85] mb-6">{t('story')}</p>
+              <p className="text-[18px] text-tinta-70 leading-[1.85]">{t('story2')}</p>
             </AnimateIn>
             <AnimateIn delay={0.1}>
               <div className="relative rounded-3xl overflow-hidden bg-g-dark p-10 h-full min-h-[300px] flex flex-col justify-end">
@@ -241,7 +245,7 @@ export function SobreView() {
           <AnimateIn className="mb-12">
             <SectionEyebrow light>{t('team_eyebrow')}</SectionEyebrow>
             <h2 className="text-[clamp(26px,3.5vw,40px)] text-g-dark tracking-tight mt-2">{t('team_title')}</h2>
-            <p className="text-g-dark/55 text-[15px] mt-3 max-w-[520px] leading-[1.7]">
+            <p className="text-tinta-70 text-[15px] mt-3 max-w-[520px] leading-[1.7]">
               {t('team_desc')}
             </p>
           </AnimateIn>
@@ -282,7 +286,7 @@ export function SobreView() {
           <AnimateIn className="mb-12">
             <SectionEyebrow>{t('partners_eyebrow')}</SectionEyebrow>
             <h2 className="text-[clamp(26px,3.5vw,42px)] text-white tracking-tight mt-2 mb-3">{t('partners_title')}</h2>
-            <p className="text-white/55 text-[15px] max-w-[560px] leading-[1.7]">{t('partners_desc')}</p>
+            <p className="text-menta-fraca text-[15px] max-w-[560px] leading-[1.7]">{t('partners_desc')}</p>
           </AnimateIn>
           <AnimateStagger className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-20 items-stretch">
             {performancePartners.map((member, i) => (
@@ -294,7 +298,7 @@ export function SobreView() {
           <AnimateIn className="mb-12">
             <SectionEyebrow>{t('design_eyebrow')}</SectionEyebrow>
             <h2 className="text-[clamp(26px,3.5vw,42px)] text-white tracking-tight mt-2 mb-3">{t('design_title')}</h2>
-            <p className="text-white/55 text-[15px] max-w-[560px] leading-[1.7]">{t('design_desc')}</p>
+            <p className="text-menta-fraca text-[15px] max-w-[560px] leading-[1.7]">{t('design_desc')}</p>
           </AnimateIn>
           <AnimateStagger className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-16 items-stretch">
             {designPartners.map((member, i) => (
@@ -310,13 +314,13 @@ export function SobreView() {
             <div className="rounded-2xl bg-g-mid/[0.09] border border-g-mid/25 p-10 lg:p-14 mb-6 relative overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_80%_at_100%_0%,#2D5238,transparent_65%)] opacity-45 pointer-events-none" />
               <div className="relative z-10 max-w-[620px]">
-                <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-light/55 mb-4">
+                <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-menta-fraca mb-4">
                   {t('cta_eyebrow')}
                 </div>
                 <h3 className="text-[clamp(24px,3.5vw,40px)] leading-[1.05] tracking-[-0.025em] text-white mb-4">
                   {t('cta_title')}
                 </h3>
-                <p className="text-white/55 text-[15.5px] leading-[1.75] mb-8">
+                <p className="text-menta-fraca text-[15.5px] leading-[1.75] mb-8">
                   {t('cta_desc')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">

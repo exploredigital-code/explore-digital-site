@@ -51,11 +51,11 @@ function VideoSlot({ videoId, index, clientName }: { videoId: string; index: num
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(rgba(27,48,37,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(27,48,37,0.05) 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
       <div className="relative z-10 flex flex-col items-center gap-3 text-center px-4">
         <div className="w-14 h-14 rounded-full border-2 border-g-dark/12 flex items-center justify-center group-hover:border-g-mid/35 group-hover:bg-g-pale transition-all duration-300">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-g-dark/40 translate-x-0.5 group-hover:text-g-mid transition-colors"><path d="M8 5v14l11-7z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-tinta-70 translate-x-0.5 group-hover:text-verde-medio transition-colors"><path d="M8 5v14l11-7z"/></svg>
         </div>
         <div>
-          <div className="text-[13px] font-bold text-g-dark/50 group-hover:text-g-dark/55 transition-colors">Video {index + 1}</div>
-          <div className="text-[10px] text-g-dark/30 mt-1 tracking-wide">9:16 · Vertical</div>
+          <div className="text-[13px] font-bold text-tinta-70 group-hover:text-tinta-70 transition-colors">Video {index + 1}</div>
+          <div className="text-[10px] text-tinta-70 mt-1 tracking-wide">9:16 · Vertical</div>
         </div>
       </div>
       <div className="absolute bottom-4 right-4 text-[11px] font-bold tracking-widest text-g-dark/12">{String(index + 1).padStart(2, '0')}</div>
@@ -113,13 +113,13 @@ export function ProjectView({ project, next, prev }: Props) {
 
         <div className="relative z-10 max-w-screen-xl mx-auto w-full px-6 sm:px-10 lg:px-16 pt-36 pb-20">
           <motion.div initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="mb-12">
-            <Link href={`/${locale}#portfolio`} className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-white/45 hover:text-white/70 transition-colors">
+            <Link href={`/${locale}#portfolio`} className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-menta-fraca hover:text-white/70 transition-colors">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 7H2M6 3L2 7l4 4"/></svg>
               {tNav('portfolio')}
             </Link>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="mb-6">
-            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-light/45">
+            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-menta-fraca">
               · {getSector(project.sector)} · {project.year}
             </span>
           </motion.div>
@@ -128,7 +128,7 @@ export function ProjectView({ project, next, prev }: Props) {
             {project.client}
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-[18px] text-white/50 leading-[1.7] max-w-[520px]">
+            className="text-[18px] text-menta-fraca leading-[1.7] max-w-[520px]">
             {tagline}
           </motion.p>
         </div>
@@ -146,7 +146,7 @@ export function ProjectView({ project, next, prev }: Props) {
             ].map((item, i) => (
               <AnimateIn key={i} delay={i * 0.07}>
                 <div className="py-8 px-6 lg:px-10">
-                  <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-g-dark/45 mb-2">{item.label}</div>
+                  <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-tinta-70 mb-2">{item.label}</div>
                   <div className="text-[15px] font-bold text-g-dark leading-snug">{item.value}</div>
                 </div>
               </AnimateIn>
@@ -163,26 +163,26 @@ export function ProjectView({ project, next, prev }: Props) {
               <AnimateIn>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-5 h-px bg-g-mid" />
-                  <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-mid">{t('about_project')}</span>
+                  <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-medio">{t('about_project')}</span>
                 </div>
-                <p className="text-[19px] text-g-dark/65 leading-[1.85]">{description}</p>
+                <p className="text-[19px] text-tinta-70 leading-[1.85]">{description}</p>
               </AnimateIn>
             </div>
             <div className="lg:col-span-5">
               <AnimateIn delay={0.1}>
                 <div className="bg-white rounded-2xl p-8 border border-g-dark/8 shadow-sm">
-                  <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-g-dark/45 mb-6">{t('services_done')}</div>
+                  <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-tinta-70 mb-6">{t('services_done')}</div>
                   <div className="flex flex-col divide-y divide-g-dark/6">
                     {services.map((s, i) => (
                       <div key={i} className="flex items-center justify-between py-4">
-                        <span className="text-[15px] text-g-dark/65">{s}</span>
-                        <span className="text-[11px] font-bold text-g-dark/30 tracking-widest">{String(i + 1).padStart(2, '0')}</span>
+                        <span className="text-[15px] text-tinta-70">{s}</span>
+                        <span className="text-[11px] font-bold text-tinta-70 tracking-widest">{String(i + 1).padStart(2, '0')}</span>
                       </div>
                     ))}
                   </div>
                   <div className="mt-6 pt-6 border-t border-g-dark/6">
-                    <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-g-dark/45 mb-2">{t('location')}</div>
-                    <div className="text-[14px] text-g-dark/60">{project.location}</div>
+                    <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-tinta-70 mb-2">{t('location')}</div>
+                    <div className="text-[14px] text-tinta-70">{project.location}</div>
                   </div>
                 </div>
               </AnimateIn>
@@ -195,10 +195,10 @@ export function ProjectView({ project, next, prev }: Props) {
       <section className="bg-white py-24 lg:py-32">
         <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
           <AnimateIn className="mb-12">
-            <div className="flex items-center gap-3 mb-3"><div className="w-5 h-px bg-g-mid" /><span className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-mid">{t('videos')}</span></div>
+            <div className="flex items-center gap-3 mb-3"><div className="w-5 h-px bg-g-mid" /><span className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-medio">{t('videos')}</span></div>
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <h2 className="text-[clamp(28px,4vw,48px)] text-g-dark tracking-tight">{t('brand_in_motion')}</h2>
-              <span className="text-[11px] font-bold tracking-widest text-g-dark/40 uppercase shrink-0">{t('videos_subtitle')}</span>
+              <span className="text-[11px] font-bold tracking-widest text-tinta-70 uppercase shrink-0">{t('videos_subtitle')}</span>
             </div>
           </AnimateIn>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4">
@@ -217,7 +217,7 @@ export function ProjectView({ project, next, prev }: Props) {
           <AnimateIn>
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
               <div>
-                <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-g-light/45 mb-3">{t('main_result')}</div>
+                <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-menta-fraca mb-3">{t('main_result')}</div>
                 <div className="text-[clamp(32px,5vw,64px)] font-semibold text-g-light leading-none tracking-tight">{result ?? tagline}</div>
               </div>
               <a href={waUrl} target="_blank" rel="noopener noreferrer"
@@ -252,7 +252,7 @@ export function ProjectView({ project, next, prev }: Props) {
       {/* ══ NEXT / PREV — full-bleed gradient cards ══ */}
       <section className="bg-[#0D1A12]">
         <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 py-6">
-          <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/35 mb-6">{t('more_projects')}</div>
+          <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-menta-fraca mb-6">{t('more_projects')}</div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2">
 
@@ -266,12 +266,12 @@ export function ProjectView({ project, next, prev }: Props) {
             {/* Right border divider */}
             <div className="absolute right-0 top-0 bottom-0 w-px bg-white/[0.06] hidden md:block" />
             <div className="relative z-10 p-8 lg:p-12 h-full flex flex-col justify-between">
-              <div className="flex items-center gap-2 text-[10px] font-bold tracking-[0.15em] uppercase text-white/50 group-hover:text-g-light/70 transition-colors">
+              <div className="flex items-center gap-2 text-[10px] font-bold tracking-[0.15em] uppercase text-menta-fraca group-hover:text-g-light/70 transition-colors">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 7H2M6 3L2 7l4 4"/></svg>
                 {t('prev')}
               </div>
               <div>
-                <div className="text-[11px] font-bold tracking-widest uppercase text-white/45 mb-3">{getSector(prev.sector)} · {prev.year}</div>
+                <div className="text-[11px] font-bold tracking-widest uppercase text-menta-fraca mb-3">{getSector(prev.sector)} · {prev.year}</div>
                 <div className="text-[clamp(24px,3.5vw,44px)] font-semibold text-white group-hover:text-g-light transition-colors leading-tight">
                   {prev.client}
                 </div>
@@ -287,12 +287,12 @@ export function ProjectView({ project, next, prev }: Props) {
             <div className={cn('absolute inset-0 bg-gradient-to-br transition-transform duration-700 group-hover:scale-105', next.gradient)} />
             <div className="absolute inset-0 bg-[#0D1A12]/55 group-hover:bg-[#0D1A12]/30 transition-colors duration-500" />
             <div className="relative z-10 p-8 lg:p-12 h-full flex flex-col justify-between items-end text-right">
-              <div className="flex items-center gap-2 text-[10px] font-bold tracking-[0.15em] uppercase text-white/50 group-hover:text-g-light/70 transition-colors">
+              <div className="flex items-center gap-2 text-[10px] font-bold tracking-[0.15em] uppercase text-menta-fraca group-hover:text-g-light/70 transition-colors">
                 {t('next')}
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
               </div>
               <div>
-                <div className="text-[11px] font-bold tracking-widest uppercase text-white/45 mb-3">{getSector(next.sector)} · {next.year}</div>
+                <div className="text-[11px] font-bold tracking-widest uppercase text-menta-fraca mb-3">{getSector(next.sector)} · {next.year}</div>
                 <div className="text-[clamp(24px,3.5vw,44px)] font-semibold text-white group-hover:text-g-light transition-colors leading-tight">
                   {next.client}
                 </div>
@@ -307,7 +307,7 @@ export function ProjectView({ project, next, prev }: Props) {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_100%_50%,#2D5238,transparent_70%)] opacity-20 pointer-events-none" />
         <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
           <AnimateIn>
-            <div className="flex items-center gap-3 mb-8"><div className="w-5 h-px bg-g-light/22" /><span className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-light/22">{t('work_together')}</span></div>
+            <div className="flex items-center gap-3 mb-8"><div className="w-5 h-px bg-g-light/22" /><span className="text-[11px] font-bold tracking-[0.2em] uppercase text-menta-fraca">{t('work_together')}</span></div>
             <h2 className="text-[clamp(40px,7vw,90px)] leading-[0.9] tracking-[-0.04em] text-white mb-10 max-w-[700px]">
               {t('cta_title')}
             </h2>

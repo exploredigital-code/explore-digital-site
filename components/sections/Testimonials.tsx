@@ -35,7 +35,7 @@ export function Testimonials() {
               className="flex flex-col p-7 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:border-g-light/20 transition-colors duration-300 group"
             >
               {/* Large quote mark */}
-              <div className="text-[56px] leading-none text-g-light/30 font-bold mb-3 -mt-2 select-none">
+              <div className="text-[56px] leading-none text-menta-fraca font-bold mb-3 -mt-2 select-none">
                 &ldquo;
               </div>
 
@@ -45,7 +45,7 @@ export function Testimonials() {
 
               <div className="border-t border-white/[0.07] pt-5">
                 <div className="font-bold text-[15px] text-white">{item.author}</div>
-                <div className="text-[11px] font-bold tracking-[0.1em] uppercase text-g-mid/70 mt-1">{item.location}</div>
+                <div className="text-[11px] font-bold tracking-[0.1em] uppercase text-verde-luz mt-1">{item.location}</div>
               </div>
             </motion.div>
           ))}

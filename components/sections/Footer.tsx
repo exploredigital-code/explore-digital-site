@@ -43,7 +43,7 @@ export function Footer() {
               height={43}
               className="h-[42px] w-auto mb-5 opacity-90"
             />
-            <p className="text-[14px] text-white/50 leading-[1.75] max-w-[260px]">
+            <p className="text-[14px] text-menta-fraca leading-[1.75] max-w-[260px]">
               {t('tagline')}
             </p>
           </div>
@@ -115,7 +115,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-[14px] text-menta-fraca hover:text-white/80 transition-colors duration-200 flex items-center gap-2.5 group"
                 >
-                  <span className="text-white/35 group-hover:text-white/75 transition-colors shrink-0">
+                  <span className="text-menta-fraca group-hover:text-white/75 transition-colors shrink-0">
                     {s.icon}
                   </span>
                   {s.label}
@@ -127,10 +127,10 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/[0.06] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[12px] text-white/50">
+          <p className="text-[12px] text-menta-fraca">
             &copy; {currentYear} Explore Digital · {t('copyright')}
           </p>
-          <p className="text-[12px] text-white/50">
+          <p className="text-[12px] text-menta-fraca">
             somosexplore.com
           </p>
         </div>

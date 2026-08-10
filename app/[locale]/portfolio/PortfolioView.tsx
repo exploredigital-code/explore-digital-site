@@ -84,7 +84,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
             </span>
             <span className="text-[10px] text-tinta-70 tracking-widest">{project.year}</span>
           </div>
-          <h3 className="text-[19px] font-bold text-g-dark leading-tight mb-2 group-hover:text-g-mid transition-colors">
+          <h3 className="text-[19px] font-bold text-g-dark leading-tight mb-2 group-hover:text-verde-medio transition-colors">
             {project.client}
           </h3>
           <p className="text-[13px] text-tinta-70 leading-[1.65] line-clamp-2 mb-4">
@@ -148,7 +148,7 @@ export function PortfolioView() {
             <h1 className="text-[clamp(36px,5.5vw,72px)] leading-[0.95] tracking-[-0.03em] text-white mt-2 mb-5 max-w-[660px]">
               {t('page_hero_title')}
             </h1>
-            <p className="text-g-light/55 text-[16px] leading-[1.75] max-w-[480px]">
+            <p className="text-menta-fraca text-[16px] leading-[1.75] max-w-[480px]">
               {t('page_hero_sub')}
             </p>
           </AnimateIn>
@@ -185,7 +185,7 @@ export function PortfolioView() {
                     'px-5 py-4 text-[13px] font-bold whitespace-nowrap transition-colors duration-200 border-b-2 -mb-px',
                     active === f.key
                       ? 'text-g-dark border-g-mid'
-                      : 'text-g-dark/50 border-transparent hover:text-g-dark/65'
+                      : 'text-tinta-70 border-transparent hover:text-tinta-70'
                   )}
                 >
                   {t(f.labelKey)}
@@ -229,7 +229,7 @@ export function PortfolioView() {
                     )}
                   </>
                 ) : (
-                  <div className="text-center py-20 text-g-dark/30">
+                  <div className="text-center py-20 text-tinta-70">
                     <div className="text-[40px] mb-4">✦</div>
                     <p className="text-[15px]">{t('empty_state')}</p>
                   </div>
@@ -308,7 +308,7 @@ function FeaturedProjectCard({ project }: { project: (typeof projects)[0] }) {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <span className="text-[11px] text-verde-luz/75">{project.location}</span>
-              <span className="text-g-light/20">·</span>
+              <span className="text-menta-fraca">·</span>
               <span className="text-[11px] text-verde-luz/75">{project.year}</span>
             </div>
             <h2 className="text-[clamp(28px,3.5vw,44px)] text-white leading-[1.05] tracking-tight mb-3 group-hover:text-g-light transition-colors">

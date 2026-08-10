@@ -152,7 +152,7 @@ export function Contact() {
               <h2 className="text-[clamp(32px,5vw,64px)] font-bold leading-[1.0] tracking-[-0.03em] text-white mt-2 mb-6">
                 {t('title')}
               </h2>
-              <p className="text-white/50 text-[16px] leading-[1.75] mb-10">
+              <p className="text-menta-fraca text-[16px] leading-[1.75] mb-10">
                 {t('description')}
               </p>
 

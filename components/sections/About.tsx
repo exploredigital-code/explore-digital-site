@@ -64,7 +64,7 @@ export function About() {
           <h2 className="text-[clamp(30px,4.5vw,52px)] font-bold leading-[1.05] tracking-[-0.025em] text-g-dark mt-2 mb-5 max-w-[680px] mx-auto">
             {t('title')}
           </h2>
-          <p className="text-g-dark/55 text-[16px] leading-[1.8] max-w-[560px] mx-auto">
+          <p className="text-tinta-70 text-[16px] leading-[1.8] max-w-[560px] mx-auto">
             {t('description')}
           </p>
         </AnimateIn>
@@ -97,7 +97,7 @@ export function About() {
                       </div>
                       <div>
                         <h3 className="font-bold text-[17px] text-g-dark mb-2">{d.title}</h3>
-                        <p className="text-[14px] text-g-dark/55 leading-[1.7]">{d.desc}</p>
+                        <p className="text-[14px] text-tinta-70 leading-[1.7]">{d.desc}</p>
                       </div>
                     </div>
                   </div>
@@ -110,7 +110,7 @@ export function About() {
 
         {/* Onde atuamos — centralizado na parte inferior */}
         <AnimateIn className="mt-14 text-center">
-          <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-mid mb-4">
+          <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-verde-medio mb-4">
             {t('where_eyebrow')}
           </div>
           <div className="flex flex-wrap justify-center gap-3">
@@ -124,7 +124,7 @@ export function About() {
               </div>
             ))}
           </div>
-          <p className="text-[12px] text-g-dark/40 mt-4 leading-[1.7] max-w-[420px] mx-auto border-l-2 border-g-mid/30 pl-3 text-left">
+          <p className="text-[12px] text-tinta-70 mt-4 leading-[1.7] max-w-[420px] mx-auto border-l-2 border-g-mid/30 pl-3 text-left">
             {t('markets')}
           </p>
         </AnimateIn>

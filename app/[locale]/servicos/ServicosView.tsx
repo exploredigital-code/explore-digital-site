@@ -162,7 +162,7 @@ export function ServicosView() {
       {/* ───────────────────── TRILHO + CONTEÚDO ───────────────────── */}
       <main id="conteudo" tabIndex={-1} className="bg-white">
         {/* trilho horizontal no mobile.
-            O chip inativo era `bg-g-pale/70 text-g-dark/60`: 3,8:1, reprovado.
+            O chip inativo era `bg-g-pale/70 text-tinta-70`: 3,8:1, reprovado.
             O Lighthouse dava 100 nesta pagina porque o preset desktop nunca
             renderiza este controle. `menta-clara` cheia com `tinta-70` da
             4,65:1 sem inventar token. */}
@@ -394,13 +394,13 @@ export function ServicosView() {
             transition={{ duration: 0.55 }}
             className="max-w-[680px]"
           >
-            <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-light/45 mb-4">
+            <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-menta-fraca mb-4">
               {t('cta_eyebrow')}
             </div>
             <h2 className="text-[clamp(28px,4.5vw,54px)] leading-[1.02] tracking-[-0.03em] text-white mb-5">
               {t('cta_title')}
             </h2>
-            <p className="text-white/50 text-[16px] leading-[1.75] mb-9">{t('cta_desc')}</p>
+            <p className="text-menta-fraca text-[16px] leading-[1.75] mb-9">{t('cta_desc')}</p>
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Link

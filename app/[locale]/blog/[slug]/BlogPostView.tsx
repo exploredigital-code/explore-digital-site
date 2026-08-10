@@ -57,9 +57,9 @@ export function BlogPostView() {
             <h1 className="font-display text-[clamp(22px,3.8vw,48px)] font-normal leading-[1.1] tracking-[-0.025em] text-white max-w-[820px]">
               {post.title}
             </h1>
-            <div className="flex items-center gap-3 mt-4 text-[12px] text-g-light/50">
+            <div className="flex items-center gap-3 mt-4 text-[12px] text-menta-fraca">
               <span>{post.date}</span>
-              <span className="text-g-light/25">·</span>
+              <span className="text-menta-fraca">·</span>
               <span>{post.readTime} {t('read_time')}</span>
             </div>
           </AnimateIn>
@@ -84,7 +84,7 @@ export function BlogPostView() {
                   {section.heading}
                 </h2>
                 {section.paragraphs.map((p, j) => (
-                  <p key={j} className="text-[16px] text-g-dark/65 leading-[1.85] mb-4 font-normal">
+                  <p key={j} className="text-[16px] text-tinta-70 leading-[1.85] mb-4 font-normal">
                     {p}
                   </p>
                 ))}
@@ -94,7 +94,12 @@ export function BlogPostView() {
             {content.pullQuote && (
               <AnimateIn>
                 <blockquote className="my-12 px-8 py-6 bg-g-pale rounded-2xl border-l-4 border-g-mid relative overflow-hidden">
-                  <div className="absolute top-4 right-6 text-[64px] leading-none text-g-mid/10 font-serif select-none">&ldquo;</div>
+                  {/* Aspa de ornamento, marca d'agua atras da citacao. Nao e
+                      texto: e `select-none`, nao e lida e nao carrega
+                      informacao. Fica `aria-hidden` para o leitor de tela
+                      pular e para a varredura de contraste parar de cobrar
+                      4,5:1 de uma decoracao que precisa ser fraca. */}
+                  <div aria-hidden className="absolute top-4 right-6 text-[64px] leading-none text-verde-medio/10 font-serif select-none">&ldquo;</div>
                   <p className="text-[18px] font-bold text-g-dark leading-[1.5] relative z-10 italic">
                     {content.pullQuote}
                   </p>
@@ -107,7 +112,7 @@ export function BlogPostView() {
               <div className="mt-14 rounded-2xl bg-g-dark p-8 lg:p-10 relative overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_70%_at_100%_50%,#2D5238,transparent)] opacity-50" />
                 <div className="relative z-10">
-                  <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-g-light/40 mb-3">Explore Digital</p>
+                  <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-menta-fraca mb-3">Explore Digital</p>
                   <h3 className="font-display text-[clamp(18px,2.2vw,26px)] font-normal text-white leading-tight mb-6 max-w-[480px]">
                     {content.cta.heading}
                   </h3>
@@ -130,7 +135,7 @@ export function BlogPostView() {
             <AnimateIn>
               {/* Card serviço */}
               <div className="rounded-2xl border border-g-dark/10 bg-g-pale p-6 mb-6">
-                <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-g-mid mb-3">{t('related_service')}</p>
+                <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-verde-medio mb-3">{t('related_service')}</p>
                 <h4 className="font-sans font-bold text-[16px] text-g-dark leading-snug mb-4">{content.cta.heading}</h4>
                 <Link
                   href={`/${locale}${content.cta.href}`}
@@ -142,7 +147,7 @@ export function BlogPostView() {
 
               {/* WhatsApp */}
               <div className="rounded-2xl border border-g-dark/10 bg-white p-6 mb-6">
-                <p className="text-[13px] text-g-dark/60 mb-4 leading-[1.6]">
+                <p className="text-[13px] text-tinta-70 mb-4 leading-[1.6]">
                   {t('whatsapp_text')}
                 </p>
                 <a
@@ -161,7 +166,7 @@ export function BlogPostView() {
               {/* Posts relacionados */}
               {related.length > 0 && (
                 <div>
-                  <p className="text-[11px] font-bold tracking-[0.15em] uppercase text-g-dark/40 mb-4">{t('read_also')}</p>
+                  <p className="text-[11px] font-bold tracking-[0.15em] uppercase text-tinta-70 mb-4">{t('read_also')}</p>
                   <div className="flex flex-col gap-3">
                     {related.map(r => (
                       <Link
@@ -172,7 +177,7 @@ export function BlogPostView() {
                         <div className="relative w-12 h-12 rounded-lg overflow-hidden shrink-0">
                           <CapaMidia id={`blog-${r.slug}`} />
                         </div>
-                        <span className="text-[13px] font-semibold text-g-dark/70 leading-snug group-hover:text-g-mid transition-colors line-clamp-2">
+                        <span className="text-[13px] font-semibold text-g-dark/70 leading-snug group-hover:text-verde-medio transition-colors line-clamp-2">
                           {r.title}
                         </span>
                       </Link>
@@ -190,7 +195,7 @@ export function BlogPostView() {
           <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
             <Link
               href={`/${locale}/blog`}
-              className="inline-flex items-center gap-2 text-[13px] font-bold text-g-dark/50 hover:text-g-dark transition-colors"
+              className="inline-flex items-center gap-2 text-[13px] font-bold text-tinta-70 hover:text-g-dark transition-colors"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <path d="M9 3L5 7l4 4" />

@@ -36,7 +36,7 @@ export function Process() {
             <h2 className="text-[clamp(30px,4.5vw,52px)] font-bold leading-[1.05] tracking-[-0.025em] text-g-dark mt-2 mb-6">
               {t('title')}
             </h2>
-            <p className="text-g-dark/55 text-[16px] leading-[1.8] mb-10">
+            <p className="text-tinta-70 text-[16px] leading-[1.8] mb-10">
               {t('subtitle')}
             </p>
             <Button href={`/${locale}/consultoria`} variant="primary" size="lg"
@@ -59,13 +59,13 @@ export function Process() {
                 >
                   {/* Number circle */}
                   <div className="shrink-0 w-14 h-14 rounded-full border-2 border-g-mid/30 bg-white flex items-center justify-center group-hover:border-g-mid group-hover:bg-g-pale transition-colors duration-300 z-10">
-                    <span className="text-[13px] font-bold text-g-mid tracking-widest">{step.n}</span>
+                    <span className="text-[13px] font-bold text-verde-medio tracking-widest">{step.n}</span>
                   </div>
 
                   {/* Content */}
                   <div className="pt-1">
                     <h3 className="font-bold text-[18px] text-g-dark mb-1.5">{step.title}</h3>
-                    <p className="text-[14px] text-g-dark/55 leading-[1.7]">{step.desc}</p>
+                    <p className="text-[14px] text-tinta-70 leading-[1.7]">{step.desc}</p>
                   </div>
                 </motion.div>
               </AnimateIn>

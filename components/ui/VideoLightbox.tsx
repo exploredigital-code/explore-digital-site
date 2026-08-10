@@ -52,7 +52,7 @@ export function VideoLightbox({ src, thumbnail, aspect = '9/16', label, placehol
         </div>
         {label && (
           <div className="absolute bottom-4 left-4 right-4">
-            <p className="text-[11px] text-white/60 tracking-widest uppercase truncate">{label}</p>
+            <p className="text-[11px] text-menta-fraca tracking-widest uppercase truncate">{label}</p>
           </div>
         )}
       </div>

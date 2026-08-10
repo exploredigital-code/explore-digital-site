@@ -142,7 +142,7 @@ export function Navbar() {
                     <button
                       key={loc}
                       onClick={() => switchLocale(loc)}
-                      className="block w-full text-left px-4 py-3 text-[12px] font-bold tracking-widest text-white/55 hover:text-white hover:bg-white/5 transition-colors uppercase"
+                      className="block w-full text-left px-4 py-3 text-[12px] font-bold tracking-widest text-menta-fraca hover:text-white hover:bg-white/5 transition-colors uppercase"
                     >
                       {loc}
                     </button>

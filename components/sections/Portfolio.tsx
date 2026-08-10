@@ -55,15 +55,24 @@ function ProjectCard({ project, seeCase, locale, getSector, getTagline }: {
           className="object-cover group-hover:scale-105 transition-transform duration-500"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
+        {/* Véu do topo.
+            Setor e ano ficavam direto sobre a foto, sem nada por baixo. Medido
+            no pixel da tela, o setor dava 1,10:1 contra a parte clara de uma
+            imagem de pôr do sol: praticamente ilegível. Contraste sobre foto
+            não se resolve trocando a cor do texto, porque a foto muda a cada
+            projeto e a próxima pode ser mais clara ainda. Quem resolve é o véu,
+            que fixa o fundo independente do que entrar ali. */}
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-verde/85 to-transparent pointer-events-none" />
+
         {/* Sector */}
         <div className="absolute top-4 left-4">
-          <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-g-light/80">
+          <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-menta-fraca">
             · {getSector(project.sector)}
           </span>
         </div>
 
         {/* Year */}
-        <div className="absolute top-4 right-4 text-[10px] font-bold tracking-widest text-g-light/50 uppercase">
+        <div className="absolute top-4 right-4 text-[10px] font-bold tracking-widest text-menta-fraca uppercase">
           {project.year}
         </div>
 
@@ -72,9 +81,12 @@ function ProjectCard({ project, seeCase, locale, getSector, getTagline }: {
       {/* Hover overlay */}
       <div className="card-overlay absolute inset-0 bg-g-dark/95 flex flex-col justify-end p-6">
         {/* Sector in hover */}
-        <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-g-mid mb-2">{getSector(project.sector)}</div>
+        {/* `verde-luz` e nao `g-mid`: este bloco vive dentro do overlay
+            `bg-g-dark/95`, ou seja, fundo ESCURO, e `g-mid` e o token de texto
+            sobre fundo claro. Dava 2,91:1. */}
+        <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-verde-luz mb-2">{getSector(project.sector)}</div>
         <div className="text-[20px] font-bold text-white leading-tight mb-1">{project.client}</div>
-        <div className="text-[13px] text-white/55 mb-3">{project.location}</div>
+        <div className="text-[13px] text-menta-fraca mb-3">{project.location}</div>
         <div className="text-[14px] text-g-light mb-5 leading-snug">{tagline}</div>
         <span className="inline-flex items-center gap-1.5 text-[12px] font-bold text-g-light/70 group-hover:text-g-light transition-colors">
           {seeCase}
@@ -86,7 +98,7 @@ function ProjectCard({ project, seeCase, locale, getSector, getTagline }: {
       <div className="p-5">
         <div className="font-bold text-[16px] text-white">{project.client}</div>
         <div className="text-[11px] text-white/65 mt-0.5 tracking-wide uppercase">{getSector(project.sector)} · {project.location}</div>
-        {/* `text-g-mid/70` sobre o card escuro dava 1,9:1. Só aparecia no
+        {/* `text-verde-medio` sobre o card escuro dava 1,9:1. Só aparecia no
             celular (`md:hidden`), que é por que passou nas conferências de
             contraste feitas no desktop. */}
         <div className="mt-2 text-[12px] text-menta-fraca font-medium line-clamp-1 md:hidden">{tagline}</div>
@@ -131,7 +143,7 @@ export function Portfolio() {
             </h2>
           </AnimateIn>
           <AnimateIn delay={0.1}>
-            <p className="text-g-dark/45 text-[15px] leading-[1.7] max-w-[380px]">{t('subtitle')}</p>
+            <p className="text-tinta-70 text-[15px] leading-[1.7] max-w-[380px]">{t('subtitle')}</p>
           </AnimateIn>
         </div>
 
@@ -147,7 +159,7 @@ export function Portfolio() {
                 'px-5 py-2.5 text-[11px] font-bold tracking-[0.1em] uppercase transition-all duration-200 rounded-sm',
                 active === f.key
                   ? 'bg-g-dark text-g-pale shadow-sm'
-                  : 'bg-white text-g-dark/45 border border-g-dark/14 hover:border-g-dark/35 hover:text-g-dark'
+                  : 'bg-white text-tinta-70 border border-g-dark/14 hover:border-g-dark/35 hover:text-g-dark'
               )}
             >
               {t(f.labelKey)}

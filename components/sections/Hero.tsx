@@ -152,7 +152,7 @@ export function Hero() {
 
         {/* Scroll indicator */}
         <motion.div {...fadeIn(1.6)} className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/50">scroll</span>
+          <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-menta-fraca">scroll</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}

@@ -13,7 +13,7 @@ export function SectionEyebrow({ children, className, light = false }: Props) {
       <span
         className={cn(
           'text-[11px] font-bold tracking-[0.2em] uppercase leading-none',
-          light ? 'text-g-mid' : 'text-g-light'
+          light ? 'text-verde-medio' : 'text-g-light'
         )}
       >
         {children}
