@@ -659,6 +659,44 @@ export function ConsultoriaView() {
         </div>
       </section>
 
+      {/* ───────── O PASSO SEGUINTE ─────────
+          A /plano-de-acao estava ORFA: zero links entrantes nas 87 rotas do
+          site, alcançável só pelo sitemap. Esta é a porta dela, e fica aqui
+          porque as duas são etapas do mesmo funil, não produtos concorrentes.
+
+          Depois do CTA final, e não antes, de propósito. Esta página existe
+          para converter na auditoria, e uma oferta paga acima do CTA disputaria
+          a conversão que ela veio buscar. Quem chegou até aqui já passou pelo
+          botão.
+
+          Link de texto e não botão, pelo mesmo motivo: o único botão desta
+          página continua sendo o da auditoria.
+
+          Fora daqui, o lugar natural seria a tela de obrigado, e ela NÃO
+          recebe: o comentário de lá registra a decisão de não vender antes de
+          entregar, porque isso faz a auditoria parecer isca. E "depois do
+          relatório" acontece no WhatsApp, que não é código. */}
+      <section className="bg-[#132119] border-t border-verde-linha py-12 sm:py-16">
+        <div className="max-w-screen-xl mx-auto px-6 sm:px-10 lg:px-16">
+          <AnimateIn className="max-w-[680px]">
+            <div className="text-[10.5px] font-bold tracking-[0.2em] uppercase text-verde-luz/75 mb-4">
+              {t('proximo_eyebrow')}
+            </div>
+            <h2 className="text-[clamp(20px,2.6vw,30px)] leading-[1.15] tracking-[-0.02em] text-menta mb-4">
+              {t('proximo_title')}
+            </h2>
+            <p className="text-[15px] leading-[1.75] text-menta-fraca mb-6">{t('proximo_desc')}</p>
+            <Link
+              href={`/${locale}/plano-de-acao`}
+              className="inline-flex items-center gap-2 text-[14.5px] font-bold text-verde-luz hover:text-menta transition-colors min-h-[44px]"
+            >
+              {t('proximo_cta')}
+              <ArrowIcon />
+            </Link>
+          </AnimateIn>
+        </div>
+      </section>
+
       </main>
 
       {/* ───────── RODAPÉ MÍNIMO ───────── */}

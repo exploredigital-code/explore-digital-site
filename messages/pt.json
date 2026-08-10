@@ -817,7 +817,11 @@
     "atrito_body": "Não tem agenda para encaixar, call de descoberta para ouvir nem proposta para escutar antes. A leitura é feita a partir de fonte pública, e o relatório vai direto para o seu WhatsApp.",
     "atrito_body_2": "Se você quiser conversar sobre o que apareceu, responde ali mesmo. Se não quiser, o relatório é seu do mesmo jeito.",
     "ty_lista_eyebrow": "O que vem no relatório",
-    "ty_lista_title": "Cinco leituras, todas do que já é público."
+    "ty_lista_title": "Cinco leituras, todas do que já é público.",
+    "proximo_eyebrow": "Depois da auditoria",
+    "proximo_title": "Se o retrato não bastar, o passo seguinte é decidir.",
+    "proximo_desc": "A auditoria mostra onde você está. Quando a pergunta virar \"por onde eu começo\", existe a Consultoria de Marketing: três semanas, três encontros e um documento com as prioridades dos próximos 90 dias.",
+    "proximo_cta": "Ver a Consultoria de Marketing"
   },
   "bio": {
     "meta_title": "Explore Digital · Links",
